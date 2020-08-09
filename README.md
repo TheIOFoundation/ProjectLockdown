@@ -11,3 +11,11 @@ The objective is to provide an overview of the state of the world to citizens an
 https://ProjectLockdown.world
 
 The IO Foundation: www.TheIOFoundation.org
+
+
+
+
+
+## Contributing
+
+Did you find a bug? Feel free create a PR, and we'll look at it as soon as we can. Please run `npm run format` before pushing 🙂.
