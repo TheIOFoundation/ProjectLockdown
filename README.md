@@ -16,6 +16,11 @@ The IO Foundation: www.TheIOFoundation.org
 
 
 
+## Project Structure
+
+
+
+
 ## Contributing
 
 Did you find a bug? Feel free create a PR, and we'll look at it as soon as we can. Please run `npm run format` before pushing 🙂.
