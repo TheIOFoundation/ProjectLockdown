@@ -18,6 +18,144 @@ The IO Foundation: www.TheIOFoundation.org
 
 ## Project Structure
 
+Project Lockdown is composed of a number of Components (or Deliverables) that complement each other following the project's Operational Framework.
+
+This repository tries to consolidate all of them under a same roof so that the main goal is always kept in mind.
+
+
+<table width="100%">
+  <tr align="center"  width="100%">
+    <td colspan="6"><b> Operational Framework </b> </td>
+  </tr>
+  <tr align="center">
+    <td align="Right">Component</td>
+    <td width="18%"><img src="https://user-images.githubusercontent.com/9198668/94660914-e92ca080-0338-11eb-94ed-72817fadbd2c.png" alt="Data Entry Interface" title="Data Entry Interface" xwidth="100" height="50" />
+<br/>
+Data Entry Interface
+<br/>(DEI - Back Office)
+</td>  
+    <td width="18%"><img src="https://user-images.githubusercontent.com/9198668/94664656-bb962600-033d-11eb-87f6-d26358650532.png" alt="Database" title="Database" xwidth="100" height="50" />
+<br/>
+Database
+<br/>(DB - Back End)
+</td>
+    <td width="18%">
+<img src="https://user-images.githubusercontent.com/9198668/94660909-e7fb7380-0338-11eb-9fc4-e76ecacd4c34.png" alt="API" title="API" xwidth="100" height="50" />
+<br/>
+Open Data API
+<br/>(API - Back End)
+</td>
+    <td width="18%">
+<img src="https://user-images.githubusercontent.com/9198668/94660918-e9c53700-0338-11eb-9a6b-0fda5063301b.png" alt="Mapping Platform" title="Mapping Platform" xwidth="100" height="50" />
+<br/>
+Mapping Platform
+<br/>(MP - Front End)
+</td>
+    <td width="18%">
+<img src="https://user-images.githubusercontent.com/9198668/94660919-e9c53700-0338-11eb-96e4-dd85b22350bf.png" alt="Website" title="Website" xwidth="100" height="50" />
+<br/>
+Website
+<br/>(WEB - Front End)
+</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="Right">Description & Documentation</td>
+    <td>Encoding data interface, including collection of sources.</td>
+    <td>Stores all PLD's data, both encoded and snapshots.</td>
+    <td>Provides an interface to communicate with the database to all components.</td>
+    <td>Mapping platform rendering PLD's research.</td>
+    <td>Project Lockdown's public website.</td>
+  </tr>
+  <tr align="center">
+    <td align="Right">URL</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://DEI.ProjectLockdown.world" style="text-decoration: none;cursor: pointer;" title="Visit the Data Entry Interface" alt="Visit the Data Entry Interface"><span>DEI.ProjectLockdown.world</span>
+</a>
+</td>
+    <td> - </td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://API.ProjectLockdown.world" style="text-decoration: none;cursor: pointer;" title="Test the API" alt="Test the API"><span>API.ProjectLockdown.world</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://MAP.ProjectLockdown.world" style="text-decoration: none;cursor: pointer;" title="Visit the Mapping Platform" alt="Visit the Mapping Platform"><span>MAP.ProjectLockdown.world</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://ProjectLockdown.world" style="text-decoration: none;cursor: pointer;" title="Visit Project Lockdown's website" alt="Visit Project Lockdown's website"><span>ProjectLockdown.world</span>
+</a>
+</td>
+  </tr>
+  <tr align="center">
+    <td align="Right">Repo Folder</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DEI" style="text-decoration: none;cursor: pointer;" title="Check the code at the master branch" alt="Check the code at the master branch"><span>/DEI</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DB" style="text-decoration: none;cursor: pointer;" title="Check the code at the master branch" alt="Check the code at the master branch"><span>/DB</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API" style="text-decoration: none;cursor: pointer;" title="Check the code at the master branch" alt="Check the code at the master branch"><span>/API</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP" style="text-decoration: none;cursor: pointer;" title="Check the code at the master branch" alt="Check the code at the master branch"><span>/MAP</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/WEB" style="text-decoration: none;cursor: pointer;" title="Check the code at the master branch" alt="Check the code at the master branch"><span>/WEB</span>
+</td>
+  </tr>
+  <tr align="center">
+    <td align="Right">Tag</td>
+    <td>
+<a title="Check Issues for this Component" alt="Check Issues for this Component" class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="/TheIOFoundation/ProjectLockdown/labels/DEI">
+<span style="background-color: #fbca04; color: #000000; padding: 0 10px; font-size: 12px; font-weight: 500; line-height: 22px!important; border:1px solid transparent; border-radius: 2em;display: inline-block!important;vertical-align: top!important;text-decoration: none;cursor: pointer;">
+DEI
+</span>
+</a>
+</td>
+    <td><a title="Check Issues for this Component" alt="Check Issues for this Component" class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="/TheIOFoundation/ProjectLockdown/labels/DB" style="background-color: #fbca04; color: #000000; ">
+        <span>DB</span>
+      </a></td>
+    <td><a title="Check Issues for this Component" alt="Check Issues for this Component" class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="/TheIOFoundation/ProjectLockdown/labels/API" style="background-color: #fbca04; color: #000000; ">
+        <span>API</span>
+      </a></td>
+    <td><a title="Check Issues for this Component" alt="Check Issues for this Component" class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="/TheIOFoundation/ProjectLockdown/labels/MP" style="background-color: #fbca04; color: #000000; ">
+        <span>MP</span>
+      </a></td>
+    <td><a title="Check Issues for this Component" alt="Check Issues for this Component" class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="/TheIOFoundation/ProjectLockdown/labels/WEB" style="background-color: #fbca04; color: #000000; ">
+        <span>WEB</span>
+      </a></td>
+  </tr> 
+<tr align="center">
+    <td align="Right">More info</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BBackOffice%5D-Data-Entry-Interface-(DEI)" style="text-decoration: none;cursor: pointer;" title="Learn more about this Component" alt="Learn more about this Component"><span>Wiki</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BBack-End%5D-Database-(DB)" style="text-decoration: none;cursor: pointer;" title="Learn more about this Component" alt="Learn more about this Component"><span>Wiki</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BBackEnd%5D-Open-Data-API-(API)" style="text-decoration: none;cursor: pointer;" title="Learn more about this Component" alt="Learn more about this Component"><span>Wiki</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BFrontEnd%5D-Mapping-Platform-(MP)" style="text-decoration: none;cursor: pointer;" title="Learn more about this Component" alt="Learn more about this Component"><span>Wiki</span>
+</a>
+</td>
+    <td>
+<a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BFrontEnd%5D-Website-(WEB)" style="text-decoration: none;cursor: pointer;" title="Learn more about this Component" alt="Learn more about this Component"><span>Wiki</span>
+</a>
+</td>
+  </tr>
+</table>
+
 
 
 
