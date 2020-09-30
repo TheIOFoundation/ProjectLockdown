@@ -88,7 +88,7 @@ Website
   </tr>
   <tr align="center">
     <td align="Right"><sub>Repo Folder</td>
-    <td>
+    <td><sub>
 <a class="IssueLabel--big d-inline-block v-align-top lh-condensed js-label-link" href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DEI" style="text-decoration: none;cursor: pointer;" title="Check the code at the master branch" alt="Check the code at the master branch"><span>/DEI</span>
 </a>
 </td>
