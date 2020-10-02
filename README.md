@@ -33,25 +33,26 @@ This repository tries to consolidate all of them under a same roof so that the m
 Data Entry Interface
 <br/>(DEI - Back Office)
 </td>  
-    <td width="18%"><sub><img src="https://user-images.githubusercontent.com/9198668/94664656-bb962600-033d-11eb-87f6-d26358650532.png" alt="Database" title="Database" xwidth="100" height="50" />
+    <td width="18%"><sub>
+      <img src="https://user-images.githubusercontent.com/9198668/94664656-bb962600-033d-11eb-87f6-d26358650532.png" alt="Database" title="Database" xwidth="100" height="50" />
 <br/>
 Database
 <br/>(DB - Back End)
 </td>
-    <td width="18%">
-<img src="https://user-images.githubusercontent.com/9198668/94660909-e7fb7380-0338-11eb-9fc4-e76ecacd4c34.png" alt="API" title="API" xwidth="100" height="50" />
+    <td width="18%"><sub>
+      <img src="https://user-images.githubusercontent.com/9198668/94660909-e7fb7380-0338-11eb-9fc4-e76ecacd4c34.png" alt="API" title="API" xwidth="100" height="50" />
 <br/>
 Open Data API
 <br/>(API - Back End)
 </td>
-    <td width="18%">
-<img src="https://user-images.githubusercontent.com/9198668/94660918-e9c53700-0338-11eb-9a6b-0fda5063301b.png" alt="Mapping Platform" title="Mapping Platform" xwidth="100" height="50" />
+    <td width="18%"><sub>
+      <img src="https://user-images.githubusercontent.com/9198668/94660918-e9c53700-0338-11eb-9a6b-0fda5063301b.png" alt="Mapping Platform" title="Mapping Platform" xwidth="100" height="50" />
 <br/>
 Mapping Platform
 <br/>(MP - Front End)
 </td>
-    <td width="18%">
-<img src="https://user-images.githubusercontent.com/9198668/94660919-e9c53700-0338-11eb-96e4-dd85b22350bf.png" alt="Website" title="Website" xwidth="100" height="50" />
+    <td width="18%"><sub>
+      <img src="https://user-images.githubusercontent.com/9198668/94660919-e9c53700-0338-11eb-96e4-dd85b22350bf.png" alt="Website" title="Website" xwidth="100" height="50" />
 <br/>
 Website
 <br/>(WEB - Front End)
