@@ -25,7 +25,7 @@ Project Lockdown is composed of a number of Components (or Deliverables) that co
 This repository tries to consolidate all of them under a same roof so that the main goal is always kept in mind.
 
 <table width="100%">
-  <tr align="center"  width="100%">
+  <tr align="center" width="100%" valign="top">
     <td colspan="6"><b> Operational Framework </b> </td>
   </tr>
   <tr align="center">
@@ -62,7 +62,7 @@ Website
   </tr>
 
   <tr valign="top">
-    <td align="Right"><sub>Description & Documentation</td>
+    <td align="Right"><sub>Description</td>
     <td><sub>Encoding data interface, including collection of sources.</td>
     <td><sub>Stores all PLD's data, both encoded and snapshots.</td>
     <td><sub>Provides an interface to communicate with the database to all components.</td>
