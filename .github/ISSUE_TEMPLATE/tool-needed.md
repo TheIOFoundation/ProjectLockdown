@@ -13,6 +13,19 @@ assignees: ''
 **Objectives**
 
 
+**MoSCoW**
+
+- Must have
+
+- Shoud have
+
+- Ccould have
+
+- Won't have
+
+
+
+
 **Extra information**
 
 
