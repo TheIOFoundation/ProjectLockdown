@@ -1,5 +1,5 @@
 ---
-name: New Issue
+name: Default Issue
 about: Describe this issue template's purpose here.
 title: ''
 labels: ''
@@ -18,6 +18,8 @@ assignees: ''
 
 **Pending**
 
+
+**Resources**
 
 
 **Related Issues**
