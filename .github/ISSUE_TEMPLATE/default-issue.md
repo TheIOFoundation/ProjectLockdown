@@ -1,6 +1,6 @@
 ---
 name: Default Issue
-about: Describe this issue template's purpose here.
+about: General Issue for Project Lockdown.
 title: ''
 labels: ''
 assignees: ''

@@ -1,6 +1,6 @@
 ---
 name: Documentation
-about: Describe this issue template's purpose here.
+about: Documentation tasks for Project Lockdown.
 title: ''
 labels: Documentation, Not Ready
 assignees: ''
