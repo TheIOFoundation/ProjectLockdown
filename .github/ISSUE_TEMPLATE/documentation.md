@@ -2,13 +2,12 @@
 name: Documentation
 about: Describe this issue template's purpose here.
 title: ''
-labels: Documentation
+labels: Documentation, Not Ready
 assignees: ''
 
 ---
 
-@TheIOFoundation/tiof-pld-team-documentation 
-
+@tiof-pld-team-documentation
 **Problem**
 
 
