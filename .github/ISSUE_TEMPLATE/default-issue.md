@@ -2,7 +2,7 @@
 name: Default Issue
 about: General Issue for Project Lockdown.
 title: ''
-labels: ''
+labels: Not Ready
 assignees: ''
 
 ---
