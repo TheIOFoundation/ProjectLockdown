@@ -10,6 +10,12 @@ assignees: ''
 ![logo](https://user-images.githubusercontent.com/9198668/85232285-68543380-b430-11ea-8353-1aafb79baf78.png) 
 
 If interested, please fill the following form.
+
+Share this position:
+- GitHub
+- Twitter
+- LinkedIn
+
 # Terms of Reference
 
 ## Position name
@@ -29,3 +35,7 @@ If interested, please fill the following form.
 ## Related Issues
 
 If interested, please fill the following form.
+Share this position:
+- GitHub
+- Twitter
+- LinkedIn
