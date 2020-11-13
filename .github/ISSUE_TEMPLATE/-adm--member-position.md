@@ -2,7 +2,7 @@
 name: "[ADM] Member Position"
 about: Description of Position in Project Lockdown.
 title: "[ADM] Position: "
-labels: 'Stage: Not Ready, Need: Position, Priority: Medium, Project: PLD'
+labels: 'Need: Position, Priority: Medium, Project: PLD, Stage: Not Ready'
 assignees: ''
 
 ---
