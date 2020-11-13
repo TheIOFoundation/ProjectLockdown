@@ -2,7 +2,7 @@
 name: New Feature
 about: Define a Feature for Project Lockdown.
 title: ''
-labels: Enhancement, Not Ready
+labels: ''
 assignees: ''
 
 ---

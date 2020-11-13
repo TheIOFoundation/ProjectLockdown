@@ -1,10 +1,25 @@
 ---
 name: Tool needed
 about: Describe a tool/platform that Project Lockdown needs to source.
-title: ''
-labels: Not Ready, Tools
+title: "[NEED] "
+labels: 'Need: Tool, Stage: Not Ready, Project: PLD'
 assignees: ''
 
+---
+
+# INSTRUCTIONS
+- Fill up this template (be as accurate as possible)
+- Review Labels. You should at least have the following:
+- Need: Tool [MANDATORY]
+ - Stage: Assign the corresponding one [MANDATORY]
+ - good first issue [OPTIONAL]
+ - Keyword: Assing the corresponding ones [OPTIONAL]
+ - Module: Assign the correspponding ones [MANDATORY]
+ - Priority: Assign the corresponding one [MANDATORY] 
+ - Project: PLD [MANDATORY]
+ - Team: Assign the corresponding ones [MANDATORY]
+
+Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 ---
 
 **Problem**
@@ -13,17 +28,14 @@ assignees: ''
 **Objectives**
 
 
-**MoSCoW**
-
+**Requirements**
 - Must have
 
-- Shoud have
+- Should have
 
-- Ccould have
+- Could have
 
 - Won't have
-
-
 
 
 **Extra information**
