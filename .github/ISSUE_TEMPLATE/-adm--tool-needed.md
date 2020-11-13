@@ -1,7 +1,7 @@
 ---
 name: "[ADM] Tool needed"
-about: Describe a tool/platform that Project Lockdown needs to source.
-title: "[NEED] "
+about: Describe a tool/platform that Project Lockdown needs to identify.
+title: "[NEED]"
 labels: 'Need: Tool, Project: PLD, Stage: Not Ready'
 assignees: ''
 
