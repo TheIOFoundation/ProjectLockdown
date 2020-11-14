@@ -2,7 +2,8 @@
 name: "[ADM] Seeking public advice"
 about: Define a request for public advice to improve some area of Project Lockdown.
 title: "[NEED] Seeking advice on: "
-labels: ''
+labels: 'good first issue, Stage: Not Ready, Priority: Medium, Project: PLD, Need:
+  Advice'
 assignees: ''
 
 ---
