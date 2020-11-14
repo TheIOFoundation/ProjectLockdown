@@ -2,7 +2,7 @@
 name: Documentation
 about: Documentation tasks for Project Lockdown.
 title: ''
-labels: Documentation, Not Ready
+labels: Documentation
 assignees: ''
 
 ---
