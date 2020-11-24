@@ -2,7 +2,7 @@
 name: "[PROD] Problem report"
 about: Create a report to help us improve
 title: "[PROBLEM] "
-labels: 'Type: Bug, Stage: Not Ready, Project: PLD'
+labels: 'Project: PLD, Stage: Not Ready, Type: Bug'
 assignees: ''
 
 ---
