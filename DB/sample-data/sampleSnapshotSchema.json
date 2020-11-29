@@ -1,0 +1,73 @@
+{
+    "DatasetLayer": {
+        "DSLUID" : "AB123",
+        "Version" : "AB123",
+        "PermalinkDocs": "https://TIOF.Click?DSL=1&type=doc",
+        "DSLType" : "AB123",
+        "DSLAccessLevel" : "AB123",
+        "SchemaPermaURL" : "AB123",
+        "TrelloBoardPermaURL" : "AB123",
+        "LocalName" : "AB123",
+        "LocalCode" : "AB123",
+        "Status" : "AB123",
+        "PermalinkDSL" : "AB123",
+        "PermalinkDEI" : "AB123",
+        "Name" : "AB123",
+        "Description" : "AB123",
+        "DateTimeFormat" : "AB123",
+        "PublishedFirst" : "AB123",
+        "UpdatedLast" : "AB123",
+        "UpdatedNext" : "AB123",
+        "UpdatedFreq" : "AB123",
+        "PermalinkContact" : "AB123",
+        "PermalinkMethodology" : "AB123",
+        "MethodologyCode" : "AB123",
+        "Audiences" : "AB123",
+        "FirstDay" : "AB123",
+        "LastDay" : "AB123",
+        "PermalinkAPIURL": "https://TIOF.Click?DSL=1&type=doc",
+        "PermalinkSchema": "https://TIOF.Click?DSL=1&type=doc",
+        "MaxBoundary" : "AB123",
+        "SourceTypes" : "AB123",
+        "CountDataPoints" : 1,
+        "PermalinkQALog": "https://TIOF.Click?DSL=1&type=doc",
+        "Ontology" : "AB123",
+        "ResearchURL": "https://TIOF.Click?DSL=1&type=doc",
+        "AvailableLocales" : "en-us",
+        "PermalinkLicenseURL": "https://TIOF.Click?DSL=1&type=doc",
+        "LicenseCOde" : "MIT",
+        "PermalinkCitingPolicy": "https://TIOF.Click?DSL=1&type=doc",
+        "CitingPolicyCode" : "MIT",
+        "StatsBox" : "MIT",
+        "Tags" : "MIT",
+        "DefaultDPs" : {
+            "DefaultDP" : {
+                "DPObjectType" : "AB123",
+                "DPUID" : "AB123"
+            },
+            "Interface" : {},
+            "Territories" : {
+                "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=doc",
+                "TerritoriesStats" : {
+                    "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=doc",
+                    "CountTotal" : 10,
+                    "CountNoData" : 10,
+                    "CountReady" : 10,
+                    "CountDemo" : 10,
+                    "CountReview" : 10,
+                    "CountNeedsSources" : 10
+                },
+                "SoureTypeStats" : {
+                    "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=doc",
+                    "CountTotal" : 10,
+                    "CountTypeOfficial" : 10,
+                    "CountTypeMedia" : 10,
+                    "CountTypeFM" : 10,
+                    "CountTypeNGO" : 10,
+                    "CountOther" : 10
+                }
+
+            }
+        }
+    }
+}
