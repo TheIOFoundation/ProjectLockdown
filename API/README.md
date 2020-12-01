@@ -2,6 +2,18 @@
 ![logo](https://user-images.githubusercontent.com/9198668/85232285-68543380-b430-11ea-8353-1aafb79baf78.png)
 ***
 
+
+## NOTE: This documentation page is still a work in progress.
+
+The following diagram showcases how this Module integrates in the project:
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20API%20ENG%20v1.0.png" alt="API Module Diagram" title="API Module Diagram"/>
+
+
+# What does this Module do?
+
+
+
+
 <table width="100%">
   <tr>
     <td width="20%" align="Right" valign="top"><img src="https://user-images.githubusercontent.com/9198668/94660909-e7fb7380-0338-11eb-9fc4-e76ecacd4c34.png" alt="Data Entry Interface" title="Data Entry Interface" xwidth="100" height="50" />
