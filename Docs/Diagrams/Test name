@@ -1,107 +1,185 @@
-<mxfile host="app.diagrams.net" modified="2020-12-01T16:42:02.534Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.165 Safari/537.36" etag="h1ljk_HKJtJOPBETQ0EI" version="13.10.5" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-01T18:08:13.679Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.165 Safari/537.36" etag="ypB5VOhoVqpBmZ4ltUBs" version="13.10.5" type="github">
   <diagram id="0LWXl8Nej_9N3wY8k6Rw" name="Page-1">
-    <mxGraphModel dx="1019" dy="710" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1019" dy="710" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="MXacxPHh818Y2eHlZTsX-1" value="BACK OFFICE (BO)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="20" width="500" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-59" value="" style="endArrow=none;html=1;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="827.5" y="70.29000000000002" as="sourcePoint" />
+            <mxPoint x="1447.5" y="70" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-2" value="FUNNELS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="390" y="250" width="120" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-21" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;rotation=-90;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="104.1" y="340.17" width="919.57" height="477.25" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-4" value="Insourcing&lt;br&gt;(IS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="250" y="290" width="40" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-53" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="987.5" y="90" width="140" height="950" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-6" value="Crowdsourcing&lt;br&gt;(CS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="364" y="290" width="40" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-54" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1147.5" y="90" width="140" height="950" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-9" value="Machine Learning&lt;br&gt;(ML)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="430" y="290" width="110" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-55" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1307.5" y="90" width="140" height="950" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-10" value="Direct Feed&lt;br&gt;(DF)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="290" width="110" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-51" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="827.5" y="90" width="140" height="950" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-12" value="STAGE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="50" y="110" width="40" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-1" value="&lt;font style=&quot;font-size: 35px&quot;&gt;&lt;b&gt;BACK OFFICE (BO)&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="20" y="30" width="500" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-13" value="RESEARCH" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="180" width="40" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-2" value="FUNNELS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=20;fontStyle=1;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1077.5" y="60" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-15" value="ASSIGNMENT" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="50" y="350" width="40" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-4" value="Insourcing&lt;br style=&quot;font-size: 11px;&quot;&gt;(IS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="877.5" y="100" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-16" value="ENCODING" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="50" y="460" width="40" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-6" value="Crowdsourcing&lt;br style=&quot;font-size: 11px;&quot;&gt;(CS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1037.5" y="100" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-17" value="REVIEW" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="670" width="40" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-9" value="Machine Learning&lt;br style=&quot;font-size: 11px;&quot;&gt;(ML)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1162.5" y="100" width="110" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-19" value="SOURCE ORIGINS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="380" y="120" width="120" height="20" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-10" value="Direct Feed&lt;br style=&quot;font-size: 11px;&quot;&gt;(DF)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1322.5" y="100" width="110" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-20" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="200" y="170" width="360" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-17" value="&lt;font style=&quot;font-size: 20px&quot;&gt;REVIEW&lt;/font&gt;" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="742.5" y="930" width="100" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-21" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="330" width="440" height="110" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-23" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="530" width="280" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-23" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="440" width="160" height="290" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-24" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1137.5" y="530" width="160" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-24" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="440" y="440" width="100" height="290" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-25" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1317.5" y="530" width="120" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-25" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="600" y="440" width="100" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-26" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="890" width="600" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-26" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="750" width="440" height="140" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-28" value="Public Form" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="997.5" y="140" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-28" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="605" y="170" width="100" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-31" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;QA cycle&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;- Approve&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;- Flag&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="857.5" y="950" width="70" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-31" value="&lt;div style=&quot;text-align: left&quot;&gt;QA cycle&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;- Approve&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;- Flag&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="260" y="810" width="70" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-34" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;Capture&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;STATS&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="937.5" y="950" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-34" value="&lt;div style=&quot;text-align: left&quot;&gt;Capture&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;STATS&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="340" y="810" width="60" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-36" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Easily compare Source Highlights vs encoded data points&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="857.5" y="900" width="320" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-36" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Easily compare Source Highlights vs encoded data points&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="260" y="760" width="320" height="40" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-37" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;List assigned Sources&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="852.5" y="544" width="135" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-37" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;List assigned Sources&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="245" y="450" width="135" height="40" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-38" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Encode data points&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Text highlight&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="852.5" y="594" width="135" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-38" value="&lt;div style=&quot;&quot;&gt;&lt;span&gt;Encode data points&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span&gt;Text highlight&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="245" y="500" width="135" height="40" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-39" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;QA cycle&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;- Ready&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;- Flag&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="852.5" y="645" width="66" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-39" value="&lt;div style=&quot;&quot;&gt;QA cycle&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Ready&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Flag&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="244" y="550" width="120" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-41" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;Capture&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;STATS&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="714" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-40" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div&gt;Capture&lt;/div&gt;&lt;div&gt;STATS&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="245" y="620" width="120" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-43" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Process assigned Sources&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="544" width="135" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-41" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div&gt;Capture&lt;/div&gt;&lt;div&gt;STATS&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="440" y="620" width="120" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-44" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Encode data points&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Text highlight&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="595" width="135" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-42" value="&lt;div style=&quot;text-align: left&quot;&gt;QA cycle&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;- Ready&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;- Flag&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="440" y="550" width="120" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-49" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;Capture&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;STATS&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="852.5" y="714" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-43" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Process assigned Sources&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="440" y="450" width="135" height="40" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-50" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;QA cycle&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;- Ready&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;- Flag&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="645" width="66" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-44" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Encode data points&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Text highlight&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="440" y="500" width="135" height="40" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-57" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;API&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1327.5" y="544" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-45" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;List Users + DSLs + Territories + Sources&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="250" y="340" width="240" height="40" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-58" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;Capture&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;STATS&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1327.5" y="714" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-46" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Assign Users to (DSLs + Territories)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="250" y="390" width="240" height="40" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-65" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;PLD Research Team&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;(Manual)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="140" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="MXacxPHh818Y2eHlZTsX-47" value="&lt;div style=&quot;text-align: left&quot;&gt;Show&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;STATS&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;" vertex="1" parent="1">
-          <mxGeometry x="500" y="355" width="50" height="60" as="geometry" />
+        <mxCell id="MXacxPHh818Y2eHlZTsX-66" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;PLD Research Team&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;(Automated)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-67" value="Sources Repository&lt;br style=&quot;font-size: 11px;&quot;&gt;Stage: (Pending to) Encode" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="470" width="600" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-68" value="Sources Repository&lt;br style=&quot;font-size: 11px;&quot;&gt;Stage: (Pending to) Review" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="830" width="600" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-69" value="Sources Repository&lt;br style=&quot;font-size: 11px;&quot;&gt;Stage: (Pending to)&amp;nbsp;Triage" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="250" width="440" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-70" value="DATA POINTS in DATABASE" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="1075" width="600" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-72" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;Research&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;(Automated)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1157.5" y="140" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-73" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;Partnerships&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1317.5" y="140" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-74" value="&lt;font style=&quot;font-size: 20px&quot;&gt;DATA READY&lt;/font&gt;" style="text;html=1;strokeColor=#432D57;fillColor=#76608a;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontColor=#ffffff;fontStyle=1;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="697.5" y="1070" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-75" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="837.5" y="310" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-76" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Triage assigned Sources&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="852.5" y="324" width="145" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-78" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;QA cycle&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;- Ready&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;- Flag&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="852.5" y="375" width="66" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-79" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;Capture&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;STATS&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="937.5" y="375" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-83" value="&lt;font style=&quot;font-size: 20px&quot;&gt;TRIAGE&lt;/font&gt;" style="text;html=1;strokeColor=#10739e;fillColor=#b1ddf0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="730" y="362.5" width="125" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-84" value="&lt;font style=&quot;font-size: 20px&quot;&gt;ENCODING&lt;/font&gt;" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="665" y="651.5" width="255" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-85" value="&lt;font style=&quot;font-size: 20px&quot;&gt;RESEARCH&lt;/font&gt;" style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="730" y="172.5" width="125" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-86" value="&lt;font style=&quot;font-size: 20px&quot;&gt;RESEARCH CONTROL PANEL&lt;/font&gt;" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="100" y="549" width="440" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-88" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;Source Providers&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1317.5" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-89" value="&lt;font style=&quot;font-size: 20px&quot;&gt;STAGE&lt;/font&gt;" style="text;html=1;strokeColor=#0e8088;fillColor=#b0e3e6;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontStyle=1;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="697.5" y="60" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-45" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;List Users + DSLs + Territories&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;rotation=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="450" y="544" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-46" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Assign Users to (DSLs + Territories)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;rotation=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="450" y="594" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-47" value="&lt;div style=&quot;text-align: left&quot;&gt;Show&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;STATS&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;rotation=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="450" y="645" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-91" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;List Users + DSLs + Territories + Sources&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;rotation=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="450" y="320" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-92" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Assign Users to (DSLs + Territories)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;rotation=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="450" y="370" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-93" value="&lt;div style=&quot;text-align: left&quot;&gt;Show&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;STATS&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;rotation=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="450" y="420" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-94" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Assign Users to (DSLs + Territories)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;rotation=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="450" y="900" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXacxPHh818Y2eHlZTsX-95" value="&lt;div style=&quot;text-align: left&quot;&gt;Show&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;STATS&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=7;rotation=0;fontFamily=Montserrat;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DMontserrat;" vertex="1" parent="1">
+          <mxGeometry x="450" y="951" width="50" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
