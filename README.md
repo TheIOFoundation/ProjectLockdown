@@ -27,8 +27,6 @@ The IO Foundation: www.TheIOFoundation.org
 Project Lockdown is composed of a number of Modules that complement each other following the project's Operational Framework.
 This repository tries to consolidate all of them under a same roof so that the main goal is always kept in mind.
 
-
-## Operational Framework
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/General/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Operational%20Framework%20ENG%20v1.5.png" alt="Operational Framework" title="Operational Framework"/>
 
 
