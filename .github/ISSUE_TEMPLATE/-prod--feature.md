@@ -16,7 +16,9 @@ assignees: ''
  -- Keyword: Assign the corresponding ones [OPTIONAL]
  -- Priority: Assign the corresponding one [MANDATORY] 
  -- Project: PLD [MANDATORY]
+ -- Module: Assign the corresponding one [MANDATORY]
  -- Team: Assign the corresponding ones [MANDATORY]
+ -- Assignees: Assign the corresponding ones [OPTIONAL]
 
 Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 ---

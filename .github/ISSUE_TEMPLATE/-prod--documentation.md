@@ -2,8 +2,7 @@
 name: "[PROD] Documentation"
 about: Documentation tasks for Project Lockdown.
 title: ''
-labels: 'Type: Documentation, Stage: Not Ready, Priority: Medium, Team: Docs, Project:
-  PLD'
+labels: 'Priority: Medium, Project: PLD, Stage: Not Ready, Team: Docs, Type: Documentation'
 assignees: ''
 
 ---
