@@ -24,9 +24,22 @@ The IO Foundation: www.TheIOFoundation.org
 
 ## Project Structure
 
-Project Lockdown is composed of a number of Components (or Deliverables) that complement each other following the project's Operational Framework.
-
+Project Lockdown is composed of a number of Modules that complement each other following the project's Operational Framework.
 This repository tries to consolidate all of them under a same roof so that the main goal is always kept in mind.
+
+
+## Operational Framework
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/General/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Operational%20Framework%20ENG%20v1.5.png" alt="Operational Framework" title="Operational Framework"/>
+
+
+## Project structure
+The following diagram showcases how all Modules integrate in the project:
+
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
+
+
+
+
 
 <table width="100%">
   <tr align="center" width="100%" valign="top">
