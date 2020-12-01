@@ -6,7 +6,7 @@ Datapoints
 Contains the icons representing data points.
 
 - Format: SVG
-- Nomenclature: {DPUID}.svg
+- Nomenclature: DP{DPUID}.svg
 - Size: @@@Pending
 - Background: transparent
 
