@@ -12,4 +12,10 @@ Contains the icons representing data points.
 
 
 Graphics
+Contains all other necessary graphics for the platform.
+
+- Format: SVG/WEBP?
+- Nomenclature: INT-{Concept}.svg/webp
+- Size: @@@Pending
+- Background: transparent
 
