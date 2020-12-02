@@ -38,7 +38,7 @@ The following diagram showcases how this module integrates in the project:
 # General overview of the module
 The following diagram showcases the general design of the Back End module:
 
-[WIP}
+[WIP]
 
 The WEB is based on Wordpress and incorporates the following plugins for public features:
 
