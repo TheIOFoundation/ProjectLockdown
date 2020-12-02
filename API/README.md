@@ -4,6 +4,10 @@
 
 ## DOCUMENTATION STAGE: WIP - This documentation page is still a work in progress.
 
+For current internal documentation, please visit:
+[TIOF PLD] Devs [I] API Guidelines ENG v1.0 (only for Project Lockdown members at the moment - Scheduled to be published)
+https://docs.google.com/document/d/19DcvhEj1f2m3mzuUYFufOPAHtNyqiQ_FHWncqGn85GQ/edit#heading=h.joekn2c04741
+
 # Project Lockdown: API module
 
 # Table of Contents
