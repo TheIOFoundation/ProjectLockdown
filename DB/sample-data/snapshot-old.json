@@ -1,0 +1,53 @@
+{
+    "_id" : ObjectId("5f2945a0dc60a70a908661fe"),
+    "source_name" : "Local action to tackle coronavirus",
+    "source_url" : "https://www.gov.uk/government/speeches/local-action-to-tackle-coronavirus",
+    "unique_id" : "GBR_065caf01-2dc2-4931-bbc5-5c8b2148b789",
+    "issue_id" : "",
+    "start_date" : {
+        "$date" : 1593475200000
+    },
+    "end_date" : {
+        "$date" : 1594684800000
+    },
+    "measures" : [
+        {
+            "value" : "2",
+            "label" : "measure.lockdown_status"
+        },
+        {
+            "value" : "2",
+            "label" : "measure.city_movement_restriction"
+        },
+        {
+            "value" : "2",
+            "label" : "measure.going_to_work"
+        },
+        {
+            "value" : "2",
+            "label" : "measure.going_to_shops"
+        },
+        {
+            "value" : "2",
+            "label" : "land.local"
+        },
+        {
+            "value" : null,
+            "label" : "land.stopovers"
+        },
+        {
+            "value" : null,
+            "label" : "flight.cross_border_workers"
+        },
+        {
+            "value" : null,
+            "label" : "flight.stopovers"
+        },
+        {
+            "value" : null,
+            "label" : "sea.stopovers"
+        }
+    ],
+    "iso3" : "GBR",
+    "iso2" : "GB"
+}

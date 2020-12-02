@@ -1,0 +1,120 @@
+{
+    "_id": ObjectId("5f2945a0dc60a70a908661fe"),
+    "SnapshotUID": "GBR_065caf01-2dc2-4931-bbc5-5c8b2148b789",
+    "Version" : "1",
+    "PermalinkDocs" : "1",
+    "SnapshotType" : "Thematic",  /*Thematic, Transversal or External*/
+    "SchemaPermaURL" : "1",
+    "TerritoryPLDCode" : "GBR",
+    "DSLUID" : "1",
+    "Status" : "Ready",  /* Global says it is Active, Snapshot says it is Ready */
+    "PermalinkSnapshot" : "1",
+    "Description" : "1",
+    "DatesFormat" : "Unix Time Stamp",
+    "PubllishedFirst" : "1",
+    "UpdatedLast" : "2020-08-20 15:00T+01:00",
+    "UpdatedNext" : 1594020600000,
+    "UpdatedFreq" : "Review in two weeks time",  /* what format? Daily / Weekly / Monthly? */
+    "PermalinkMethodology" : "1",
+    "MethodologyCode" : "1",
+    "FirstDay" : 1593475200000, /* is this Start Date? are dates in local time? not specified in GSheet, can we store in unix time format? or json format? */
+    "LastDay" : 1594684800000, /* is this End Date? are dates in local time? not specified in GSheet */
+    "PermalinkAPIURL" : "1",
+    "PermalinkSchema" : "1",
+    "Source Types2" : "1",  /* duplicated */
+    "PermalinkQALog" : "1",
+    "Ontology" : "1",
+    "ResearchURL" : "1",
+    "PermalinkLicenseURL" : "1",
+    "LicenseCode" : "1",
+    "PermalinkCitingPolicy" : "1",
+    "CitingPolicyCode" : "1",
+    "Source Types": [
+        {
+            "PermalinkDocs" : "1",
+            "SourceTypeStats" : {
+                "PermalinkDocs" : "1",
+                "CountTotal" : "1",
+                "CountTypeOfficial" : "1",
+                "CountTypeMedia" : "1",
+                "CountTypeFM" : "1",
+                "CountTypeNGO" : "1",
+                "CountOther" : "1"
+            },
+            "SourceType" : {
+                "PermalinkDocs" : "1",
+                "Type" : "measure.lockdown_status",   /* is this correct? */
+                "DefaultOrder": "1",
+                "SnapDPs" : [
+                    {
+                        "PermalinkDocs" : "1",
+                        "SnapDP" : {
+                            "PermalinkDocs" : "1",
+                            "SnapDPUID" : "1",
+                            "TimeStamp" : "1593502206000",
+                            "Status" : "Ready",  /* Snapshot status? */
+                            "SourceType" : "measure.lockdown_status",   /* is this correct? */
+                            "ProcessedBy" : "Julie Green",
+                            "Dates" : [
+                                {
+                                    "PermalinkDocs" : "1",
+                                    "Day" : [
+                                        {
+                                            "PermalinkDocs" : "1",
+                                            "Date" : "1593388800000",
+                                            "Value" : "2",
+                                            "Origin" : "1"
+                                        }
+                                    ]                            
+                                }                        
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "PermalinkDocs" : "1",
+            "SourceTypeStats" : {
+                "PermalinkDocs" : "1",
+                "CountTotal" : "1",
+                "CountTypeOfficial" : "1",
+                "CountTypeMedia" : "1",
+                "CountTypeFM" : "1",
+                "CountTypeNGO" : "1",
+                "CountOther" : "1"
+            },
+            "SourceType" : {
+                "PermalinkDocs" : "1",
+                "Type" : "measure.city_movement_restriction",   /* is this correct? */
+                "DefaultOrder": "1",
+                "SnapDPs" : [
+                    {
+                        "PermalinkDocs" : "1",
+                        "SnapDP" : {
+                            "PermalinkDocs" : "1",
+                            "SnapDPUID" : "1",
+                            "TimeStamp" : "1593502206000",
+                            "Status" : "Ready",  /* Snapshot status? */
+                            "SourceType" : "measure.city_movement_restriction",   /* is this correct? */
+                            "ProcessedBy" : "Julie Green",
+                            "Dates" : [
+                                {
+                                    "PermalinkDocs" : "1",
+                                    "Day" : [
+                                        {
+                                            "PermalinkDocs" : "1",
+                                            "Date" : "1593388800000",
+                                            "Value" : "2",
+                                            "Origin" : "1"
+                                        }
+                                    ]                            
+                                }                        
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
