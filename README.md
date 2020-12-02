@@ -5,7 +5,7 @@
 <!-- ![screenshot](https://user-images.githubusercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
 ***
 
-## NOTE: This is the new reppository for v2.0. Some information is still a work in progress. You can access the current runnning v1.0 repository <a href="https://github.com/Code-for-All/lockdown/">here</a>.
+## NOTE: This is the new reppository for v2.0. Some information is still a work in progress. You can access the current runnning v1.0 repository <a href="https://github.com/Code-for-All/lockdown/">here</a> while we transition to the new version.
 
 
 **Project Lockdown** (an initiative from The IO Foundation) is a civic tech, interactive platform providing an overview of the state of Human and  Digital Rights around the globe. It evaluates policies obtained from high quality sources that may impact their observance. It provides, among other tools, a layered map interface that allows for a visual representation of the policies adopted, assisting a broad range of stakeholders in understanding the global state of their Rights. This empowers them to become active agents of global change.
@@ -19,29 +19,30 @@ https://ProjectLockdown.world
 The IO Foundation: www.TheIOFoundation.org
 
 
+## Values
+Project Lockdown delivers its mission through the observance of the following values:
+- Community
+- Accountability
+- Impact
 
+See more about our mission, vision and values in the [wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki).
 
+## Operational Framework
 
-## Project Structure
-
-Project Lockdown is composed of a number of Modules that complement each other following the project's Operational Framework.
+Project Lockdown is composed of a number of modules that complement each other following the project's Operational Framework.
 This repository tries to consolidate all of them under a same roof so that the main goal is always kept in mind.
 
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/General/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Operational%20Framework%20ENG%20v1.5.png" alt="Operational Framework" title="Operational Framework"/>
 
 
-## Project structure
+## Project architecture
 The following diagram showcases how all Modules integrate in the project:
 
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
 
-
-
-
-
 <table width="100%">
   <tr align="center" width="100%" valign="top">
-    <td colspan="6"><b> Operational Framework </b> </td>
+    <td colspan="6"><b> Modules summary </b> </td>
   </tr>
   <tr align="center">
     <td align="Right"><sub>Component</sub></td>
