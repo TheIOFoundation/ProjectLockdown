@@ -35,7 +35,7 @@ It provides:
 # The module in Project Lockdown
 The following diagram showcases how this module integrates in the project:
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20BO%20ENG%20v1.0.png" alt="DEI in Project Lockdown general diagram" title="DEI in Project Lockdown general diagram"/>
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20DEI%20ENG%20v1.0.png" alt="DEI in Project Lockdown general diagram" title="DEI in Project Lockdown general diagram"/>
 
 <a href="#top">Back to top</a>
 
