@@ -46,8 +46,7 @@ The following diagram showcases the general design of the MAP module:
 
 # Accessing the module
 To access the MAP, please visit
-https://ProjectLockdown.earth (to be converted into https://map.ProjectLockdown.world)
-(Status: DEPLOYED)
+https://ProjectLockdown.earth (Status: DEPLOYED - To be converted into https://map.ProjectLockdown.world)
 
 The MAP offers the possibility of using regional TLDs in order to customize the landing area in an easy, intuitive manner according to Project Lockdown's [regions](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Mapping-Platform-(MAP)#regions).
 
