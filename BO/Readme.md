@@ -14,10 +14,8 @@
 5. [Contributing](#contributing)
 6. [More information](#more-information)
 
-
 ***
 
---- 
 # About this module
 
 The Back Office module is responsible for managing sources, encoding data points and reviewing them.
