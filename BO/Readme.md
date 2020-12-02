@@ -53,13 +53,13 @@ https://BO.ProjectLockdown.world
 # Contributing
 The open GitHub Issues can be found here:
 
-Pending tasks (Labels: Module:BO + Stage: Ready)
+Pending tasks (Labels: Module: BO + Stage: Ready)
 https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+BO%22+label%3A%22Status%3A+Ready%22
 
-Tasks in progress (Labels: Module:BO + Stage: In Progress)
+Tasks in progress (Labels: Module: BO + Stage: In Progress)
 https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+BO%22+OR+label%3A%22Stage%3A+In+Progress%22
 
-Upcoming tasks that are being prepared (Labels: Module:BO + Stage: Not Ready)
+Upcoming tasks that are being prepared (Labels: Module: BO + Stage: Not Ready)
 https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+BO%22+label%3A%22Stage%3A+Not+Ready%22
 
 <a href="#top">Back to top</a>
