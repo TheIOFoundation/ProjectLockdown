@@ -59,7 +59,7 @@ https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue
 Tasks in progress (Labels: Module:BO + Stage: In Progress)
 https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+BO%22+OR+label%3A%22Stage%3A+In+Progress%22
 
-Upcoming tasks that are being prepared  (Labels: Module:BO + Stage: Not Ready)
+Upcoming tasks that are being prepared (Labels: Module:BO + Stage: Not Ready)
 https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+BO%22+label%3A%22Stage%3A+Not+Ready%22
 
 <a href="#top">Back to top</a>
