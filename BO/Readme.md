@@ -7,12 +7,12 @@
 # Project Lockdown: Back Office module
 
 # Table of Contents
-1. [About this module](#Introduction)
-2. [The module in Project Lockdown](#Background-perspective)
-3. [General overview of the module](#Intended-audience)
-4. [Accessing the module](#What-next)
-5. [Contributing](#What-next)
-6. [More information](#What-next)
+1. [About this module](#about-this-module)
+2. [The module in Project Lockdown](#the-module-in-project-lockdown)
+3. [General overview of the module](#general-overview-of-the-module)
+4. [Accessing the module](#accessing-the-module)
+5. [Contributing](#contributing)
+6. [More information](#more-information)
 
 
 ***
