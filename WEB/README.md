@@ -68,6 +68,6 @@ https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue
 
 # More information
 For all the necessary information please refer to the technical documentation in the wiki:
-https://github.com/TheIOFoundation/ProjectLockdown/wiki/Back-Office-(BO)
+https://github.com/TheIOFoundation/ProjectLockdown/wiki/Website-(WEB)
 
 <a href="#top">Back to top</a>
