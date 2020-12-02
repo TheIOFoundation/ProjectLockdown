@@ -4,7 +4,7 @@
 
 ## DOCUMENTATION STAGE: WIP - This documentation page is still a work in progress.
 
-# Project Lockdown: Back Office module
+# Project Lockdown: DataBase module
 
 # Table of Contents
 1. [About this module](#about-this-module)
