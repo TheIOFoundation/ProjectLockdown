@@ -46,9 +46,9 @@ The following diagram showcases how this Module integrates in the project:
 <a href="#top">Back to top</a>
 
 # General overview of the module
-The following diagram showcases the general design of the Back End module:
+The following diagram showcases the general design of the API module:
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20Diagram%20BO%20%2B%20Funnels%20ENG%20v1.0.png" alt="BO Module Diagram" title="BO Module Diagram"/>
+[WIP]
 
 <a href="#top">Back to top</a>
 
