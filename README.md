@@ -25,7 +25,7 @@ Project Lockdown delivers its mission through the observance of the following va
 - Accountability
 - Impact
 
-See more about our mission, vision and values in the [wiki (About::Values)](https://github.com/TheIOFoundation/ProjectLockdown/wiki/About/_edit#values).
+See more about our [mission](https://github.com/TheIOFoundation/ProjectLockdown/wiki/About/#mission), [vision](https://github.com/TheIOFoundation/ProjectLockdown/wiki/About/#vision) and [values](https://github.com/TheIOFoundation/ProjectLockdown/wiki/About/#values) in the wiki.
 
 ## Operational Framework
 
