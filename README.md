@@ -4,7 +4,7 @@
 
 <!-- ![screenshot](https://user-images.githubusercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
 ***
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Code-of-Conduct)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/TheIOFoundation/ProjectLockdown/blob/master/LICENSE)
 
 
@@ -29,6 +29,8 @@ Project Lockdown delivers its mission through the observance of the following va
 - Impact
 
 See more about our [mission](https://github.com/TheIOFoundation/ProjectLockdown/wiki/About/#mission), [vision](https://github.com/TheIOFoundation/ProjectLockdown/wiki/About/#vision) and [values](https://github.com/TheIOFoundation/ProjectLockdown/wiki/About/#values) in the wiki.
+
+By participating in Project Lockdown you also confirm to abide by its [Code of Conduct](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Code-of-Conduct).
 
 ## Operational Framework
 
