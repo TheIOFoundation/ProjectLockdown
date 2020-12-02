@@ -18,11 +18,12 @@
 
 # About this module
 
-The Mapping Platform module offers an accessible representation of the data in Project Lockdown.
+The Mapping Platform (MAP) module offers an accessible representation of the data in Project Lockdown.
 It provides:
-- An map of where DataSet Layers (DSL) are presented
+- An interactive map where DataSet Layers (DSL) are presented
 - A StatsBox (SB) with contextual information valuable to the DSL
 - A Time Slider (TS) to navigate through the DSL across time
+- A Territory Detail Overlay (TDO) that showcases all the DSL data points organized by categories + a report view of them
 - A Search box (S) to locate specific territories
 - A Tab Menu (TB) that contains all the specific information of the DSL, from methodology to information on each data point
 - A simple QueryString controlled interface that allows to customize the final user experience and embed the MAP in any other website
