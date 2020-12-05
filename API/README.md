@@ -2,50 +2,84 @@
 ![logo](https://user-images.githubusercontent.com/9198668/85232285-68543380-b430-11ea-8353-1aafb79baf78.png)
 ***
 
-<table width="100%">
-  <tr>
-    <td width="20%" align="Right" valign="top"><img src="https://user-images.githubusercontent.com/9198668/94660909-e7fb7380-0338-11eb-9fc4-e76ecacd4c34.png" alt="Data Entry Interface" title="Data Entry Interface" xwidth="100" height="50" />
-</td>  
-    <td>Open Data API (API - Back End)
-</td>
-  </tr>
-   <tr valign="top">
-    <td align="Right">Diagram</td>
-     <td>
-       <img src="https://user-images.githubusercontent.com/9198668/94913690-46ad2280-04dc-11eb-8998-53e89a9c0bf9.png" alt="Data Entry Interface" title="Data Entry Interface" xwidth="100" height="350" />
-    <td>
-</td>
-  </tr>
-  
-  <tr valign="top">
-    <td align="Right">About this Module</td>
-    <td>This module takes care of interfacing the
-       <a href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BBack-End%5D-Database-(DB)" style="text-decoration: none;cursor: pointer;" title="Check this Module's documentation" alt="Check this Module's documentation">Database (DB)</a>
-<a href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DB" style="text-decoration: none;cursor: pointer;" title="Go to this Module's repository folder" alt="Go to this Module's repository folder"><img src="https://user-images.githubusercontent.com/9198668/94901447-3ccdf400-04c9-11eb-809a-00db846a47e3.jpg" alt="Go to this Module's repository folder" title="Go to this Module's repository folder" xwidth="100" height="15px" /></a>
-      with the
-      <a href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BBack-Office%5D-Data-Entry-Interface-(DEI)" style="text-decoration: none;cursor: pointer;" title="Check this Module's documentation" alt="Check this Module's documentation">Data Entry Interface (DEI)</a>
-<a href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DEI" style="text-decoration: none;cursor: pointer;" title="Go to this Module's repository folder" alt="Go to this Module's repository folder"><img src="https://user-images.githubusercontent.com/9198668/94901447-3ccdf400-04c9-11eb-809a-00db846a47e3.jpg" alt="Go to this Module's repository folder" title="Go to this Module's repository folder" xwidth="100" height="15px" /></a>
-      and the
-      <a href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BFront-End%5D-Mapping-Platform-(MAP)" style="text-decoration: none;cursor: pointer;" title="Check this Module's documentation" alt="Check this Module's documentation">Mapping Platform (MAP)</a> <a href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP" style="text-decoration: none;cursor: pointer;" title="Go to this Module's repository folder" alt="Go to this Module's repository folder"><img src="https://user-images.githubusercontent.com/9198668/94901447-3ccdf400-04c9-11eb-809a-00db846a47e3.jpg" alt="Go to this Module's repository folder" title="Go to this Module's repository folder" xwidth="100" height="15px" /></a>.
+## DOCUMENTATION STAGE: WIP - This documentation page is still a work in progress.
 
-It also allows for data access from 3rd parties in a number of differet formats.</td>
+For current internal documentation, please visit:
+[TIOF PLD] Devs [I] API Guidelines ENG v1.0 (only for Project Lockdown members at the moment - Scheduled to be published)
+https://docs.google.com/document/d/19DcvhEj1f2m3mzuUYFufOPAHtNyqiQ_FHWncqGn85GQ/edit#heading=h.joekn2c04741
 
-  </tr>
-  <tr valign="top">
-    <td align="Right">Documentation</td>
-    <td>See all the documentation in the repository's <a href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/%5BBack-End%5D-Open-Data-API-(API)" style="text-decoration: none;cursor: pointer;" title="Check this Module's documentation" alt="Check this Module's documentation">wiki</a>.
-      <br/> If you find that anything is missing, please <a href="https://github.com/TheIOFoundation/ProjectLockdown/issues/new?labels=Documentation,Improvement,API&title=API+documentation+needs+improvement" style="text-decoration: none;cursor: pointer;" title="Open an Issue reporting documentation problems" alt="Open an Issue reporting documentation problems">open an Issue</a>.
+# Project Lockdown: API module
 
-</td>
-  <tr valign="top">
-    <td align="Right">Pull Requests</td>
-    <td>When requesting a PR please make sure to associate them only with their corresponding individual module.
-</td>
-  </tr>
-</table>
+# Table of Contents
+1. [About this module](#about-this-module)
+2. [The module in Project Lockdown](#the-module-in-project-lockdown)
+3. [General overview of the module](#general-overview-of-the-module)
+4. [Accessing the module](#accessing-the-module)
+5. [Contributing](#contributing)
+6. [More information](#more-information)
+
+***
+
+# About this module
+
+The API module is a back end component that is responsible for providing all the necessary interfacing to manipulate Project Lockdown's data.
+
+It handles the data operations between the <a href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/Database-(DB)" style="text-decoration: none;cursor: pointer;" title="Check this Module's documentation" alt="Check this Module's documentation">Database (DB)</a>
+<a href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DB" style="text-decoration: none;cursor: pointer;" title="Go to this Module's repository folder" alt="Go to this Module's repository folder"><img src="https://user-images.githubusercontent.com/9198668/94901447-3ccdf400-04c9-11eb-809a-00db846a47e3.jpg" alt="Go to this Module's repository folder" title="Go to this Module's repository folder" xwidth="100" height="15px" /></a> and
+
+- the <a href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/Back-Office-(BO)" style="text-decoration: none;cursor: pointer;" title="Check this Module's documentation" alt="Check this Module's documentation">Back office (BO)</a> <a href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO" style="text-decoration: none;cursor: pointer;" title="Go to this Module's repository folder" alt="Go to this Module's repository folder"><img src="https://user-images.githubusercontent.com/9198668/94901447-3ccdf400-04c9-11eb-809a-00db846a47e3.jpg" alt="Go to this Module's repository folder" title="Go to this Module's repository folder" xwidth="100" height="15px" /></a> (STAGE: IN PROGRESS)
+
+- the <a href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/Mapping-Platform-(MAP)" style="text-decoration: none;cursor: pointer;" title="Check this Module's documentation" alt="Check this Module's documentation">Mapping Platform (MAP)</a> <a href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP" style="text-decoration: none;cursor: pointer;" title="Go to this Module's repository folder" alt="Go to this Module's repository folder"><img src="https://user-images.githubusercontent.com/9198668/94901447-3ccdf400-04c9-11eb-809a-00db846a47e3.jpg" alt="Go to this Module's repository folder" title="Go to this Module's repository folder" xwidth="100" height="15px" /></a> (STAGE: IN PROGRESS)
+
+- the <a href="https://github.com/TheIOFoundation/ProjectLockdown/wiki/Data-Entry-Interface-(DEI)" style="text-decoration: none;cursor: pointer;" title="Check this Module's documentation" alt="Check this Module's documentation">Data Entry Interface (DEI)</a>
+<a href="https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DEI" style="text-decoration: none;cursor: pointer;" title="Go to this Module's repository folder" alt="Go to this Module's repository folder"><img src="https://user-images.githubusercontent.com/9198668/94901447-3ccdf400-04c9-11eb-809a-00db846a47e3.jpg" alt="Go to this Module's repository folder" title="Go to this Module's repository folder" xwidth="100" height="15px" /></a> (STAGE: DEPRECATED)
+
+It also allows for data access from 3rd parties in a number of differet formats.
 
 
 
-## Contributing
 
-Did you find a bug? Feel free create a PR, and we'll look at it as soon as we can. Please run `npm run format` before pushing 🙂.
+
+<a href="#top">Back to top</a>
+
+# The module in Project Lockdown
+The following diagram showcases how this Module integrates in the project:
+
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20API%20ENG%20v1.0.png" alt="API Module Diagram" title="API Module Diagram"/>
+
+<a href="#top">Back to top</a>
+
+# General overview of the module
+The following diagram showcases the general design of the API module:
+
+[WIP]
+
+<a href="#top">Back to top</a>
+
+# Accessing the module
+To access the API, please visit
+https://API.ProjectLockdown.world
+(Status: Under development)
+
+<a href="#top">Back to top</a>
+
+# Contributing
+The open GitHub Issues can be found here:
+
+Pending tasks (Labels: Module: API + Stage: Ready)
+https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+API%22+label%3A%22Stage%3A+Ready%22
+
+Tasks in progress (Labels: Module: API + Stage: In Progress)
+https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+API%22+label%3A%22Stage%3A+In+Progress%22
+
+Upcoming tasks that are being prepared (Labels: Module: API + Stage: Not Ready)
+https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Stage%3A+Not+Ready%22+label%3A%22Module%3A+API%22
+
+<a href="#top">Back to top</a>
+
+# More information
+For all the necessary information please refer to the technical documentation in the wiki:
+https://github.com/TheIOFoundation/ProjectLockdown/wiki/Open-Data-API-(API)
+
+<a href="#top">Back to top</a>
+

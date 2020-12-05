@@ -1,8 +1,8 @@
 ---
-name: "[PROD] Feature"
-about: Define or request a Feature for Project Lockdown.
-title: "[PROD] Feature: "
-labels: 'Priority: Medium, Project: PLD, Stage: Not Ready'
+name: "[PROD] API Definition"
+about: Define an API for the Back End.
+title: "[API] "
+labels: 'Module: API, Priority: Medium, Project: PLD, Stage: Not Ready, Team: Devs'
 assignees: ''
 
 ---
@@ -30,11 +30,11 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 
 
 # Proposed solution
+Implement an API that will provide with the following services as described below.
 
-
-# Extra information
+# Expected behavior
 - Must have
- -- 
+ -- REST OpenAPI 
 
 
 - Should have
@@ -48,11 +48,20 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 
 
 # Resources
+## Tools
+Recommended tools would be the following:
+Stoplight.io: https://Stoplight.io
+Postman: https://Postman.com 
+DBDiagram: https://dbdiagram.io/
+
+Note: For Project Lockdown members all these tools are available in your TIOF environment.
+
 ## Usage documentation
 
 ## Technical documentation
-
-## UXUI resources
+Back End guidelines: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Back-End-Guidelines
+Back End APIs: https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API
+Database objects: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Database-(DB)
 
 ## Other documentation resources
 

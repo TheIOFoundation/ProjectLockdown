@@ -1,8 +1,8 @@
 ---
-name: "[PROD] Feature"
-about: Define or request a Feature for Project Lockdown.
-title: "[PROD] Feature: "
-labels: 'Priority: Medium, Project: PLD, Stage: Not Ready'
+name: "[PROD] Documentation"
+about: Documentation tasks for Project Lockdown.
+title: ''
+labels: 'Priority: Medium, Project: PLD, Stage: Not Ready, Team: Docs, Type: Documentation'
 assignees: ''
 
 ---
@@ -23,19 +23,18 @@ assignees: ''
 Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 ---
 
-# Problem
+# What to document
 
 
 # Objectives
 
 
-# Proposed solution
+# Where to store
 
 
 # Extra information
 - Must have
  -- 
-
 
 - Should have
  -- 
@@ -46,8 +45,7 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 - Won't have
  -- 
 
-
-# Resources
+# Related documentation
 ## Usage documentation
 
 ## Technical documentation
@@ -55,7 +53,5 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 ## UXUI resources
 
 ## Other documentation resources
-
-# Tests
 
 # Related Issues
