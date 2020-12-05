@@ -1,26 +1,26 @@
 
 
 
-Core tasks:  
 
-Terminology:
+
+**Terminology**
 DSL: DataSet Layer
 DP: Data Point
 
+**Core tasks**
 T1) Observe the value of the assigned DPs in the map  
 T2) Finding a specific territory information (TDO)
 T3) Looking at the assigned DP value situation over time  
 T4) Looking at information of one territory (TDO) over time
-Finding information about the DSL
+T5) Finding information about the DSL
 
-Non-core tasks:
-
-Consult the Legend
-Find a territory via search  
-T4) Finding background information on the project  
-T5) Change settings of the of the app  
-T5) Finding information on contributing to the project  
-T6) Finding information on recent updates
+**Non-core tasks**
+T6) Consult the Legend
+T7) Find a territory via search  
+T8) Finding background information on the project  
+T9) Change settings of the of the app  
+T10) Finding information on contributing to the project  
+T11) Finding information on recent updates
 
 
 
@@ -168,5 +168,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY1NDEwMjE0XX0=
+eyJoaXN0b3J5IjpbMTEzMDUzNTI0M119
 -->
