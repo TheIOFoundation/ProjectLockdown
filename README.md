@@ -36,6 +36,7 @@ By participating in Project Lockdown you also confirm to abide by its [Code of C
 
 ## Contributing
 
+As simple and very quick way to support us is Staring the repo if you like what we are building. This will open the doors to us to crowdfunding platforms such as Open Collective.
 
 <table xwidth="100%">
   <tr align="center">
