@@ -63,6 +63,7 @@ Features under consideration (Stage: Not Ready)</a>
   </tr>
  </table>
 
+(**Note**: We are currently adding Issues covering from code to positions and other needs. Stay tune thourough the next days!)
 
 Did you find a bug? Feel free create a PR and we'll look at it as soon as possible. Please run `npm run format` before pushing 🙂.
 
