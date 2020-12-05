@@ -1,0 +1,77 @@
+{
+    "_id": ObjectId("123456789012345678901234"),
+    "SnapshotUID": "AFG_449f9944-6518-4e23-a84a-7b2cef79f386",
+    "Version" : "1",
+    "PermalinkDocs" : "1",
+    "SnapshotType" : "Official Pronouncement",
+    "SchemaPermaURL" : "1",
+    "TerritoryPLDCode" : "AFG",
+    "DSLUID" : "1",
+    "Status" : "Ready",  /* Global says it is Active, Snapshot says it is Ready */
+    "PermalinkSnapshot" : "1",
+    "Description" : "1",
+    "DatesFormat" : "Unix Time Stamp",
+    "PubllishedFirst" : "1",
+    "UpdatedLast" : "1587649022",
+    "UpdatedNext" : "1587649022",
+    "UpdatedFreq" : "None",  /* what format? Daily / Weekly / Monthly? */
+    "PermalinkMethodology" : "1",
+    "MethodologyCode" : "1",
+    "FirstDay" : "1585353600", /* is this Start Date? are dates in local time? not specified in GSheet, can we store in unix time format? or json format? */
+    "LastDay" : "1587168000", /* is this End Date? are dates in local time? not specified in GSheet */
+    "PermalinkAPIURL" : "1",
+    "PermalinkSchema" : "1",
+    "Source Types2" : "1",  /* duplicated */
+    "PermalinkQALog" : "1",
+    "Ontoloy" : "1",
+    "ResearchURL" : "1",
+    "PermalinkLicenseURL" : "1",
+    "LicenseCode" : "1",
+    "PermalinkCitingPolicy" : "1",
+    "CitingPolicyCode" : "1",
+    "Source Types": [
+        {
+            "PermalinkDocs" : "1",
+            "SourceTypeStats" : {
+                "PermalinkDocs" : "1",
+                "CountTotal" : "1",
+                "CountTypeOfficial" : "1",
+                "CountTypeMedia" : "1",
+                "CountTypeFM" : "1",
+                "CountTypeNGO" : "1",
+                "CountOther" : "1"
+            },
+            "SourceType" : {
+                "PermalinkDocs" : "1",
+                "Type" : "measure.lockdown_status",   /* is this correct? */
+                "DefaultOrder": "1",
+                "SnapDPs" : [
+                    {
+                        "PermalinkDocs" : "1",
+                        "SnapDP" : {
+                            "PermalinkDocs" : "1",
+                            "SnapDPUID" : "1",
+                            "TimeStamp" : "1587649022",
+                            "Status" : "Ready",  /* Snapshot status? */
+                            "SourceType" : "1",
+                            "ProcessedBy" : "Arky",
+                            "Dates" : [
+                                {
+                                    "PermalinkDocs" : "1",
+                                    "Day" : [
+                                        {
+                                            "PermalinkDocs" : "1",
+                                            "Date" : "1587945600",
+                                            "Value" : "2",
+                                            "Origin" : "1"
+                                        }
+                                    ]                            
+                                }                        
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

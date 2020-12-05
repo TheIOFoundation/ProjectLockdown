@@ -1,0 +1,35 @@
+.user-description {
+    /* Texts written in Dataedo application are wrapped using tag with class .user-description. */
+    /* Setting the white-space property to pre-wrap means that all newlines will be preserved. */
+    white-space: pre-wrap;
+}
+
+/* Default font configuration. */
+.v-layout {
+    font-family: -apple-system, Segoe UI, Open Sans, Arial, sans-serif;
+    line-height: initial;
+    font-size: 14px;
+}
+
+.v-content .doc-summary, /* table with object basic information */
+.v-content .doc-actions, /* permlinks on the right side */
+.v-content .doc-metadata, /* timestamps at the object bottom */
+.v-content .table table th, /* table headers */
+.v-content .table table td, /* table cells */
+.v-content .doc-breadcrumb .v-item /* breadcrumb */ {
+    font-size: 13px;
+}
+
+/* Headers font configuration. */
+h1, h2, h3,
+h4, h5, h6 {
+    font-family: -apple-system, Segoe UI, Open Sans, Arial, sans-serif;
+    font-weight: 700;
+}
+
+h1 { font-size: 22px; }
+h2, .v-content .v-header { font-size: 15px; }
+
+/* Color of hyperlinks and their color on mouse hover. */
+a { color: #4679C6; }
+a:hover { color: #04589f; }
