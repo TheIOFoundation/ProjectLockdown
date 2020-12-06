@@ -200,6 +200,24 @@
             "type": "string"
           }
         }
+      },
+      "DataPoint": {
+        "title": "DataPoint",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Category": {
+        "title": "Category",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
       }
     }
   },
