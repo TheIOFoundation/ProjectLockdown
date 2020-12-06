@@ -1,0 +1,424 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Project Lockdown",
+    "version": "1.0",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/users/{userId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "integer"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "description": "Id of an existing user."
+        }
+      ],
+      "get": {
+        "summary": "Get User Info by User ID",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "User Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Get User Alice Smith": {
+                    "value": {
+                      "id": 142,
+                      "firstName": "Alice",
+                      "lastName": "Smith",
+                      "email": "alice.smith@gmail.com",
+                      "dateOfBirth": "1997-10-31",
+                      "emailVerified": true,
+                      "signUpDate": "2019-08-24"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found"
+          }
+        },
+        "operationId": "get-users-userId",
+        "description": "Retrieve the information of the user with the matching user ID."
+      },
+      "patch": {
+        "summary": "Update User Information",
+        "operationId": "patch-users-userId",
+        "responses": {
+          "200": {
+            "description": "User Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Updated User Rebecca Baker": {
+                    "value": {
+                      "id": 13,
+                      "firstName": "Rebecca",
+                      "lastName": "Baker",
+                      "email": "rebecca@gmail.com",
+                      "dateOfBirth": "1985-10-02",
+                      "emailVerified": false,
+                      "createDate": "2019-08-24"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found"
+          },
+          "409": {
+            "description": "Email Already Taken"
+          }
+        },
+        "description": "Update the infromation of an existing user.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "If a new email is given, the user's email verified property will be set to false."
+                  },
+                  "dateOfBirth": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Update First Name": {
+                  "value": {
+                    "firstName": "Rebecca"
+                  }
+                },
+                "Update Email": {
+                  "value": {
+                    "email": "rebecca@gmail.com"
+                  }
+                },
+                "Update Last Name & Date of Birth": {
+                  "value": {
+                    "lastName": "Baker",
+                    "dateOfBirth": "1985-10-02"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Patch user properties to update."
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "summary": "Create New User",
+        "operationId": "post-user",
+        "responses": {
+          "200": {
+            "description": "User Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "New User Bob Fellow": {
+                    "value": {
+                      "id": 12,
+                      "firstName": "Bob",
+                      "lastName": "Fellow",
+                      "email": "bob.fellow@gmail.com",
+                      "dateOfBirth": "1996-08-24",
+                      "emailVerified": false,
+                      "createDate": "2020-11-18"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Required Information"
+          },
+          "409": {
+            "description": "Email Already Taken"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "dateOfBirth": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "firstName",
+                  "lastName",
+                  "email",
+                  "dateOfBirth"
+                ]
+              },
+              "examples": {
+                "Create User Bob Fellow": {
+                  "value": {
+                    "firstName": "Bob",
+                    "lastName": "Fellow",
+                    "email": "bob.fellow@gmail.com",
+                    "dateOfBirth": "1996-08-24"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Post the necessary fields for the API to create a new user."
+        },
+        "description": "Create a new user."
+      }
+    },
+    "/Environments": {
+      "get": {
+        "summary": "Extract Environment object for MAP.",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Environment"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-Environments",
+        "description": "Handles Environment objects",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "DSLUID",
+            "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "title": "User",
+        "type": "object",
+        "description": "",
+        "x-examples": {
+          "Alice Smith": {
+            "id": 142,
+            "firstName": "Alice",
+            "lastName": "Smith",
+            "email": "alice.smith@gmail.com",
+            "dateOfBirth": "1997-10-31",
+            "emailVerified": true,
+            "signUpDate": "2019-08-24"
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the given user."
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "example": "1997-10-31"
+          },
+          "emailVerified": {
+            "type": "boolean",
+            "description": "Set to true if the user's email has been verified."
+          },
+          "createDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date that the user was created."
+          }
+        },
+        "required": [
+          "id",
+          "firstName",
+          "lastName",
+          "email",
+          "emailVerified"
+        ]
+      },
+      "Environment": {
+        "title": "Environment",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": {}
+          }
+        },
+        "description": "Describes the features and behavior of the whole MAP environment.",
+        "properties": {
+          "TabMenu": {
+            "$ref": "#/components/schemas/TabMenu"
+          },
+          "TimeSlider": {
+            "$ref": "#/components/schemas/TimeSlider"
+          }
+        },
+        "required": [
+          "TabMenu",
+          "TimeSlider"
+        ]
+      },
+      "TabMenu": {
+        "title": "TabMenu",
+        "type": "object",
+        "description": "Describes the features and behavior of the Time Slider (TS) in MAP.",
+        "x-examples": {
+          "Example: Default": {
+            "id": "1",
+            "Show": "True",
+            "Position": "Right"
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Show": {
+            "type": "string",
+            "description": "  - Description: Controls if the TabMenu is shown. \\n\n  - QS Parameter:  \\n\n  - QS Implemented:  \\n\n  - QS Required:  \\n\n  - Notes:  \\n"
+          },
+          "Position": {
+            "type": "string",
+            "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
+          }
+        }
+      },
+      "TimeSlider": {
+        "title": "TimeSlider",
+        "type": "object",
+        "description": "Describes the features and behavior of the Time Slider (TS) in MAP.",
+        "x-examples": {
+          "example-1": {
+            "id": "string",
+            "Show": "string",
+            "Position": "string",
+            "StartDate": "string",
+            "EndDate": "string",
+            "ViewDate": "string"
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Show": {
+            "type": "string",
+            "description": "  - Description: Controls if the TimeSlider (TS) is to be rendered.\n  - QS Parameter: TimeSlider -> TimeSliderShow\n  - QS Implemented: YES\n  - QS Required: NO\n  - Notes: @@@ PENDING UPDATE",
+            "enum": [
+              "True",
+              "False"
+            ],
+            "example": "True"
+          },
+          "Position": {
+            "type": "string",
+            "description": "  - Description: Controls where in the map is the Time Slider (TS) to be rendered.\n  - QS Parameter: TimeSliderPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: Only for scalability purposes. There are not plans to render this anywhere else than Bottom.",
+            "enum": [
+              "Top",
+              "Bottom",
+              "Left",
+              "Right"
+            ],
+            "example": "Bottom"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "EndDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "ViewDate": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": [
+          "id",
+          "Show",
+          "Position",
+          "StartDate",
+          "EndDate",
+          "ViewDate"
+        ]
+      },
+      "DSL": {
+        "title": "DSL",
+        "type": "object",
+        "properties": {
+          "DSLID": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
