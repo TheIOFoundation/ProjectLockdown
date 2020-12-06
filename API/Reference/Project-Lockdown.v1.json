@@ -187,19 +187,6 @@
           "ViewDate"
         ]
       },
-      "DSL": {
-        "title": "DSL",
-        "type": "object",
-        "properties": {
-          "DSLID": {
-            "type": "string"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "description": "Describes a DataSet Layer."
-      },
       "Territory": {
         "title": "Territory",
         "type": "object",
@@ -207,7 +194,8 @@
           "id": {
             "type": "string"
           }
-        }
+        },
+        "description": "Manipulates PLD Territories."
       },
       "DataPoint": {
         "title": "DataPoint",
@@ -216,7 +204,8 @@
           "id": {
             "type": "string"
           }
-        }
+        },
+        "description": "Manipulates PLD Data Points."
       },
       "Category": {
         "title": "Category",
@@ -225,7 +214,21 @@
           "id": {
             "type": "string"
           }
-        }
+        },
+        "description": "Manipulates PLD Categories."
+      },
+      "DataSetLayer": {
+        "title": "DataSet Layer (DSL)",
+        "type": "object",
+        "properties": {
+          "DSLUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "description": "Describes a DataSet Layer (DSL)."
       }
     }
   },
