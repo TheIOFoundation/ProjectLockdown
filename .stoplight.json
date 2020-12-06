@@ -1,5 +1,5 @@
 {
-  "exclude": ["/docs/minimal Dataedo sample", "docs/Diagrams"],
+  "exclude": ["/docs/minimal Dataedo sample", "docs/Diagrams", "Docs/Diagrams"],
   "formats": {
     "openapi": {
       "rootDir": "API/Reference",
@@ -8,7 +8,7 @@
       ]
     },
     "json_schema": {
-      "rootDir": "models",
+      "rootDir": "DB/Models",
       "include": [
         "**"
       ]
