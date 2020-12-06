@@ -219,7 +219,14 @@
     "/Environments": {
       "get": {
         "summary": "Extract Environment object for MAP.",
-        "tags": [],
+        "tags": [
+          "ProjectLockdown",
+          "TIOF",
+          "The IO Foundation",
+          "Human Rights",
+          "Digital Rights",
+          "Nonprofit"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -416,9 +423,32 @@
         "properties": {
           "DSLID": {
             "type": "string"
+          },
+          "Name": {
+            "type": "string"
           }
         }
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "ProjectLockdown"
+    },
+    {
+      "name": "TIOF"
+    },
+    {
+      "name": "The IO Foundation"
+    },
+    {
+      "name": "Human Rights"
+    },
+    {
+      "name": "Digital Rights"
+    },
+    {
+      "name": "Nonprofit"
+    }
+  ]
 }
