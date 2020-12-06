@@ -2,7 +2,7 @@
   "exclude": ["/docs/minimal Dataedo sample"],
   "formats": {
     "openapi": {
-      "rootDir": "reference",
+      "rootDir": "API/Reference",
       "include": [
         "**"
       ]
@@ -17,7 +17,7 @@
       "rootDir": "docs"
     },
     "image": {
-      "rootDir": "assets/images"
+      "rootDir": "Assets/APIImages"
     }
   }
 }
