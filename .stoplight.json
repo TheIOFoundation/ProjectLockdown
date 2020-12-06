@@ -1,5 +1,5 @@
 {
-  "exclude": [],
+  "exclude": ["/docs/minimal Dataedo sample"],
   "formats": {
     "openapi": {
       "rootDir": "reference",
