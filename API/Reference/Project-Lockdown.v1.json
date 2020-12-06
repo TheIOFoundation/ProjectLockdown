@@ -39,7 +39,7 @@
           }
         },
         "operationId": "get-Environments",
-        "description": "Handles Environment objects",
+        "description": "Handles PLD Environment objects.",
         "parameters": [
           {
             "schema": {
@@ -61,7 +61,8 @@
             "description": "OK"
           }
         },
-        "operationId": "get-Territories"
+        "operationId": "get-Territories",
+        "description": "Handles PLD Territory objects."
       }
     },
     "/DataPoints": {
@@ -73,7 +74,8 @@
             "description": "OK"
           }
         },
-        "operationId": "get-DataPoints"
+        "operationId": "get-DataPoints",
+        "description": "Handles PLD DataPoint objects."
       }
     }
   },
@@ -87,7 +89,7 @@
             "id": {}
           }
         },
-        "description": "Describes the features and behavior of the whole MAP environment.",
+        "description": "Describes the features and behavior of the MAP environment.",
         "properties": {
           "TabMenu": {
             "$ref": "#/components/schemas/TabMenu"
@@ -129,7 +131,7 @@
       "TimeSlider": {
         "title": "TimeSlider",
         "type": "object",
-        "description": "Describes the features and behavior of the Time Slider (TS) in MAP.",
+        "description": "Defines the features and behavior of the Time Slider (TS) in MAP.",
         "x-examples": {
           "example-1": {
             "id": "string",
@@ -190,12 +192,73 @@
       "Territory": {
         "title": "Territory",
         "type": "object",
+        "description": "Decribes PLD Territories.",
+        "x-examples": {
+          "example-1": {
+            "id": "string",
+            "PLDInfo": {
+              "id": "string",
+              "PermalinkDocs": "string",
+              "PLDCode": "string",
+              "ParentPLDCode": "string",
+              "PermalinkDEI": "string",
+              "Name": "string",
+              "LastTimeUpdate": "string",
+              "Region": "string",
+              "Status": "string"
+            },
+            "ISOInfo": {
+              "id": "string"
+            },
+            "UNInfo": {
+              "id": "string"
+            },
+            "NATOInfo": {
+              "id": "string"
+            },
+            "WikiMediaInfo": {
+              "PermalinkDocs": "string",
+              "WikidataID": "string"
+            },
+            "MapboxInfo": {
+              "id": "string"
+            },
+            "PermalinkDocs": "string"
+          }
+        },
         "properties": {
           "id": {
             "type": "string"
+          },
+          "PLDInfo": {
+            "$ref": "#/components/schemas/PLDInfo"
+          },
+          "ISOInfo": {
+            "$ref": "#/components/schemas/ISOInfo"
+          },
+          "UNInfo": {
+            "$ref": "#/components/schemas/UNInfo"
+          },
+          "NATOInfo": {
+            "$ref": "#/components/schemas/NATOInfo"
+          },
+          "WikiMediaInfo": {
+            "$ref": "#/components/schemas/WikimediaInfo"
+          },
+          "MapboxInfo": {
+            "$ref": "#/components/schemas/MapBoxInfo"
+          },
+          "PermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation explaining this object."
           }
         },
-        "description": "Manipulates PLD Territories."
+        "required": [
+          "id",
+          "PLDInfo",
+          "MapboxInfo",
+          "PermalinkDocs"
+        ]
       },
       "DataPoint": {
         "title": "DataPoint",
@@ -205,7 +268,7 @@
             "type": "string"
           }
         },
-        "description": "Manipulates PLD Data Points."
+        "description": "Describes PLD Data Points."
       },
       "Category": {
         "title": "Category",
@@ -215,7 +278,7 @@
             "type": "string"
           }
         },
-        "description": "Manipulates PLD Categories."
+        "description": "Describes PLD Categories."
       },
       "DataSetLayer": {
         "title": "DataSet Layer (DSL)",
@@ -228,7 +291,186 @@
             "type": "string"
           }
         },
-        "description": "Describes a DataSet Layer (DSL)."
+        "description": "Describes PLD Categories."
+      },
+      "WikimediaInfo": {
+        "title": "WikimediaInfo",
+        "type": "object",
+        "description": "Describes WikiMedia-related description fields for PLD Territories.",
+        "properties": {
+          "PermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation explaining this object."
+          },
+          "WikidataID": {
+            "type": "string",
+            "description": "WikidataID for the Territory."
+          }
+        },
+        "required": [
+          "PermalinkDocs",
+          "WikidataID"
+        ]
+      },
+      "PLDInfo": {
+        "title": "PLDInfo",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": "string",
+            "PermalinkDocs": "string",
+            "PLDCode": "string",
+            "ParentPLDCode": "string",
+            "PermalinkDEI": "string",
+            "Name": "string",
+            "LastTimeUpdate": "string",
+            "Region": "string",
+            "Status": "string"
+          }
+        },
+        "description": "Describes PLD-related description fields for PLD Territories.\nInformation originated internally by Project Lockdown.",
+        "properties": {
+          "UID": {
+            "type": "string",
+            "description": "UID for this PLDCode object."
+          },
+          "PermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation explaining this object."
+          },
+          "PLDCode": {
+            "type": "string",
+            "description": "Internal PLDCode for this Territory."
+          },
+          "ParentPLDCode": {
+            "type": "string",
+            "description": "PLDCode of the Territory that contains this Territory."
+          },
+          "PermalinkDEI": {
+            "type": "string",
+            "description": "Permalink to the Sheet for this Territory in the DEI."
+          },
+          "Name": {
+            "type": "string",
+            "description": "Territory Name (Default ENG)"
+          },
+          "LastTimeUpdate": {
+            "type": "string",
+            "description": "Last Date and Time this Territory was updated (UTC+0)"
+          },
+          "Region": {
+            "type": "string",
+            "description": "Region to which this Territory belongs."
+          },
+          "Status": {
+            "type": "string",
+            "description": "Indicates the status of this Territory in the DEI (see Definitions)"
+          },
+          "UnitCode": {
+            "type": "string",
+            "description": "Internal Unit PLDCode for this Territory."
+          }
+        },
+        "required": [
+          "UID",
+          "PermalinkDocs",
+          "PLDCode",
+          "ParentPLDCode",
+          "PermalinkDEI",
+          "Name",
+          "LastTimeUpdate",
+          "Region",
+          "Status",
+          "UnitCode"
+        ]
+      },
+      "ISOInfo": {
+        "title": "ISOInfo",
+        "type": "object",
+        "description": "Describes ISO-related description fields for PLD Territories.\nInformation originated by the International Starndards Organization (ISO).",
+        "properties": {
+          "PermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation documenting this object."
+          },
+          "ISO2": {
+            "type": "string",
+            "description": "Code ISO Alpha 2 of this Territory (or its parent, if territory is a subdivision)."
+          },
+          "ISO3": {
+            "type": "string",
+            "description": "Code ISO Alpha 3 of this Territory (or its parent, if territory is a subdivision)."
+          }
+        },
+        "required": [
+          "ISO2",
+          "ISO3"
+        ]
+      },
+      "UNInfo": {
+        "title": "UNInfo",
+        "type": "object",
+        "description": "Describes UN-related description fields for PLD Territories.\nInformation originated by United Nations (UN).",
+        "properties": {
+          "PermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation explaining this object."
+          },
+          "LOCODE": {
+            "type": "string",
+            "description": "UN LOCODE code for this territory."
+          }
+        },
+        "required": [
+          "PermalinkDocs",
+          "LOCODE"
+        ]
+      },
+      "NATOInfo": {
+        "title": "NATOInfo",
+        "type": "object",
+        "description": "Describes NATO-related description fields for PLD Territories.\nInformation originated by the North Atlantic Treaty Organization (NATO).",
+        "properties": {
+          "PermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation explaining this object."
+          },
+          "STANAG": {
+            "type": "string",
+            "description": "https://en.wikipedia.org/wiki/List_of_NATO_country_codes"
+          }
+        }
+      },
+      "MapBoxInfo": {
+        "title": "MapBoxInfo",
+        "type": "object",
+        "description": "Describes Mapbox-related description fields for PLD Territories.\nInformation originated by Mapbox (Map platform provider).",
+        "properties": {
+          "PermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation explaining this object."
+          },
+          "BoundaryLevel": {
+            "type": "string",
+            "description": "Boundary Level for this Territory.",
+            "enum": [
+              "Adm0",
+              "Adm1",
+              "Adm2",
+              "Adm3",
+              "Adm4",
+              "Adm5"
+            ]
+          },
+          "FeatureID": {
+            "type": "string",
+            "description": "FeatureID (unique ID) for this Territory."
+          }
+        },
+        "required": [
+          "BoundaryLevel",
+          "FeatureID"
+        ]
       }
     }
   },
