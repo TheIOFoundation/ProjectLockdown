@@ -92,101 +92,58 @@
         "description": "Describes the features and behavior of the MAP environment.",
         "properties": {
           "TabMenu": {
-            "$ref": "#/components/schemas/TabMenu"
+            "type": "object",
+            "description": "Describes the features and behavior of the Tab Menu (TB) in MAP.",
+            "properties": {
+              "Show": {
+                "type": "string",
+                "description": "  - Description: Controls if the TabMenu is shown.\n  - QS Parameter:  \n  - QS Implemented:  \n  - QS Required:  \n  - Notes:  "
+              },
+              "Position": {
+                "type": "string",
+                "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
+              }
+            }
           },
           "TimeSlider": {
-            "$ref": "#/components/schemas/TimeSlider"
+            "type": "object",
+            "description": "Defines the features and behavior of the Time Slider (TS) in MAP.",
+            "properties": {
+              "Show": {
+                "type": "string",
+                "description": "  - Description: Controls if the TimeSlider (TS) is to be rendered.\n  - QS Parameter: TimeSlider -> TimeSliderShow\n  - QS Implemented: YES\n  - QS Required: NO\n  - Notes: @@@ PENDING UPDATE",
+                "enum": [
+                  "True",
+                  "False"
+                ]
+              },
+              "Position": {
+                "type": "string",
+                "enum": [
+                  "Top",
+                  "Bottom",
+                  "Left",
+                  "Right"
+                ]
+              },
+              "StartDate": {
+                "type": "string",
+                "format": "date"
+              },
+              "EndDate": {
+                "type": "string",
+                "format": "date"
+              },
+              "ViewDate": {
+                "type": "string",
+                "format": "date"
+              }
+            }
           }
         },
         "required": [
           "TabMenu",
           "TimeSlider"
-        ]
-      },
-      "TabMenu": {
-        "title": "TabMenu",
-        "type": "object",
-        "description": "Describes the features and behavior of the Time Slider (TS) in MAP.",
-        "x-examples": {
-          "Example: Default": {
-            "id": "1",
-            "Show": "True",
-            "Position": "Right"
-          }
-        },
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "Show": {
-            "type": "string",
-            "description": "  - Description: Controls if the TabMenu is shown. \\n\n  - QS Parameter:  \\n\n  - QS Implemented:  \\n\n  - QS Required:  \\n\n  - Notes:  \\n"
-          },
-          "Position": {
-            "type": "string",
-            "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
-          }
-        }
-      },
-      "TimeSlider": {
-        "title": "TimeSlider",
-        "type": "object",
-        "description": "Defines the features and behavior of the Time Slider (TS) in MAP.",
-        "x-examples": {
-          "example-1": {
-            "id": "string",
-            "Show": "string",
-            "Position": "string",
-            "StartDate": "string",
-            "EndDate": "string",
-            "ViewDate": "string"
-          }
-        },
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "Show": {
-            "type": "string",
-            "description": "  - Description: Controls if the TimeSlider (TS) is to be rendered.\n  - QS Parameter: TimeSlider -> TimeSliderShow\n  - QS Implemented: YES\n  - QS Required: NO\n  - Notes: @@@ PENDING UPDATE",
-            "enum": [
-              "True",
-              "False"
-            ],
-            "example": "True"
-          },
-          "Position": {
-            "type": "string",
-            "description": "  - Description: Controls where in the map is the Time Slider (TS) to be rendered.\n  - QS Parameter: TimeSliderPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: Only for scalability purposes. There are not plans to render this anywhere else than Bottom.",
-            "enum": [
-              "Top",
-              "Bottom",
-              "Left",
-              "Right"
-            ],
-            "example": "Bottom"
-          },
-          "StartDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "EndDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "ViewDate": {
-            "type": "string",
-            "format": "date"
-          }
-        },
-        "required": [
-          "id",
-          "Show",
-          "Position",
-          "StartDate",
-          "EndDate",
-          "ViewDate"
         ]
       },
       "Territory": {
@@ -257,19 +214,70 @@
             }
           },
           "ISOInfo": {
-            "type": "object"
+            "type": "object",
+            "description": "Describes ISO-related description fields for PLD Territories.\nInformation originated by the International Starndards Organization (ISO).",
+            "properties": {
+              "ISO2": {
+                "type": "string",
+                "description": "Code ISO Alpha 2 of this Territory (or its parent, if territory is a subdivision)."
+              },
+              "ISO3": {
+                "type": "string",
+                "description": "Code ISO Alpha 3 of this Territory (or its parent, if territory is a subdivision)."
+              }
+            }
           },
           "UNInfo": {
-            "type": "object"
+            "type": "object",
+            "description": "Describes UN-related description fields for PLD Territories.\nInformation originated by United Nations (UN).",
+            "properties": {
+              "LOCODE": {
+                "type": "string",
+                "description": "UN LOCODE code for this territory."
+              }
+            }
           },
           "NATOInfo": {
-            "type": "object"
+            "type": "object",
+            "description": "Describes NATO-related description fields for PLD Territories.\nInformation originated by the North Atlantic Treaty Organization (NATO).",
+            "properties": {
+              "STANAG": {
+                "type": "string",
+                "description": "https://en.wikipedia.org/wiki/List_of_NATO_country_codes"
+              }
+            }
           },
           "WikiMediaInfo": {
-            "type": "object"
+            "type": "object",
+            "description": "Describes WikiMedia-related description fields for PLD Territories.",
+            "properties": {
+              "WikidataID": {
+                "type": "string",
+                "description": "WikidataID for the Territory."
+              }
+            }
           },
           "MapboxInfo": {
-            "type": "object"
+            "type": "object",
+            "description": "Describes Mapbox-related description fields for PLD Territories.\nInformation originated by Mapbox (Map platform provider).",
+            "properties": {
+              "BoundaryLevel": {
+                "type": "string",
+                "description": "Boundary Level for this Territory.",
+                "enum": [
+                  "Adm0",
+                  "Adm1",
+                  "Adm2",
+                  "Adm3",
+                  "Adm4",
+                  "Adm5"
+                ]
+              },
+              "FeatureID": {
+                "type": "string",
+                "description": "FeatureID (unique ID) for this Territory."
+              }
+            }
           },
           "PermalinkDocs": {
             "type": "string",
@@ -339,7 +347,7 @@
               "Definition": {
                 "type": "string"
               },
-              "": {
+              "Al": {
                 "type": "string"
               }
             }
@@ -347,17 +355,55 @@
           "Value": {
             "type": "object",
             "properties": {
-              "Answer": {
-                "$ref": "#/components/schemas/DPAnswer"
+              "": {
+                "type": "object",
+                "properties": {
+                  "GeneratedBy": {
+                    "type": "string",
+                    "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n",
+                    "enum": [
+                      "Funnel",
+                      "Algorithm"
+                    ]
+                  },
+                  "XXXHighlights": {
+                    "type": "string",
+                    "description": "Set of xyz coordinates that identify the snippet of text in the Source that explains this information."
+                  },
+                  "XXXValueType": {
+                    "type": "string"
+                  },
+                  "Value": {
+                    "type": "string",
+                    "description": "Value for the Answer field."
+                  }
+                }
               },
               "StartDate": {
-                "$ref": "#/components/schemas/DPStartDate"
+                "type": "object",
+                "properties": {
+                  "GeneratedBy": {
+                    "type": "string"
+                  },
+                  "Highlights": {
+                    "type": "string"
+                  },
+                  "DateFormat": {
+                    "type": "string"
+                  },
+                  "Value": {
+                    "type": "string"
+                  },
+                  "ValueUTC": {
+                    "type": "string"
+                  }
+                }
               },
               "EndDate": {
-                "$ref": "#/components/schemas/DPEndDate"
+                "type": "object"
               },
               "Details": {
-                "$ref": "#/components/schemas/DPDetails"
+                "type": "object"
               }
             }
           },
@@ -376,7 +422,7 @@
           "LastUpdated": {
             "type": "string"
           },
-          "": {
+          "GeneratedBy": {
             "type": "string"
           }
         }
@@ -584,195 +630,6 @@
           "DSLType"
         ]
       },
-      "WikimediaInfo": {
-        "title": "WikimediaInfo",
-        "type": "object",
-        "description": "Describes WikiMedia-related description fields for PLD Territories.",
-        "properties": {
-          "PermalinkDocs": {
-            "type": "string",
-            "description": "Permalink to the documentation explaining this object."
-          },
-          "WikidataID": {
-            "type": "string",
-            "description": "WikidataID for the Territory."
-          }
-        },
-        "required": [
-          "PermalinkDocs",
-          "WikidataID"
-        ]
-      },
-      "ISOInfo": {
-        "title": "ISOInfo",
-        "type": "object",
-        "description": "Describes ISO-related description fields for PLD Territories.\nInformation originated by the International Starndards Organization (ISO).",
-        "properties": {
-          "PermalinkDocs": {
-            "type": "string",
-            "description": "Permalink to the documentation documenting this object."
-          },
-          "ISO2": {
-            "type": "string",
-            "description": "Code ISO Alpha 2 of this Territory (or its parent, if territory is a subdivision)."
-          },
-          "ISO3": {
-            "type": "string",
-            "description": "Code ISO Alpha 3 of this Territory (or its parent, if territory is a subdivision)."
-          }
-        },
-        "required": [
-          "ISO2",
-          "ISO3"
-        ]
-      },
-      "UNInfo": {
-        "title": "UNInfo",
-        "type": "object",
-        "description": "Describes UN-related description fields for PLD Territories.\nInformation originated by United Nations (UN).",
-        "properties": {
-          "PermalinkDocs": {
-            "type": "string",
-            "description": "Permalink to the documentation explaining this object."
-          },
-          "LOCODE": {
-            "type": "string",
-            "description": "UN LOCODE code for this territory."
-          }
-        },
-        "required": [
-          "PermalinkDocs",
-          "LOCODE"
-        ]
-      },
-      "NATOInfo": {
-        "title": "NATOInfo",
-        "type": "object",
-        "description": "Describes NATO-related description fields for PLD Territories.\nInformation originated by the North Atlantic Treaty Organization (NATO).",
-        "properties": {
-          "PermalinkDocs": {
-            "type": "string",
-            "description": "Permalink to the documentation explaining this object."
-          },
-          "STANAG": {
-            "type": "string",
-            "description": "https://en.wikipedia.org/wiki/List_of_NATO_country_codes"
-          }
-        }
-      },
-      "MapBoxInfo": {
-        "title": "MapBoxInfo",
-        "type": "object",
-        "description": "Describes Mapbox-related description fields for PLD Territories.\nInformation originated by Mapbox (Map platform provider).",
-        "properties": {
-          "PermalinkDocs": {
-            "type": "string",
-            "description": "Permalink to the documentation explaining this object."
-          },
-          "BoundaryLevel": {
-            "type": "string",
-            "description": "Boundary Level for this Territory.",
-            "enum": [
-              "Adm0",
-              "Adm1",
-              "Adm2",
-              "Adm3",
-              "Adm4",
-              "Adm5"
-            ]
-          },
-          "FeatureID": {
-            "type": "string",
-            "description": "FeatureID (unique ID) for this Territory."
-          }
-        },
-        "required": [
-          "BoundaryLevel",
-          "FeatureID"
-        ]
-      },
-      "DPDetails": {
-        "title": "DPDetails",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "DPAnswer": {
-        "title": "DPAnswer",
-        "type": "object",
-        "properties": {
-          "PermalinkDocs": {
-            "type": "string",
-            "description": "Permalink to the documentation explaining this object."
-          },
-          "GeneratedBy": {
-            "type": "string",
-            "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n",
-            "enum": [
-              "Human",
-              "Algorithm"
-            ]
-          },
-          "XXXHighlights": {
-            "type": "string",
-            "description": "Set of xyz coordinates that identify the snippet of text in the Source that explains this information."
-          },
-          "XXXValueType": {
-            "type": "string",
-            "description": "DataType of the DataPoint (as per standard Taxonomy)"
-          },
-          "Value": {
-            "type": "string",
-            "description": "Value for the Answer field."
-          }
-        }
-      },
-      "DPStartDate": {
-        "title": "DPStartDate",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "PermalinkDocs": {
-            "type": "string",
-            "description": "Permalink to the documentation explaining this object.\n"
-          },
-          "GeneratedBy": {
-            "type": "string"
-          },
-          "Highlights": {
-            "type": "string"
-          },
-          "DateFormat": {
-            "type": "string"
-          },
-          "Value": {
-            "type": "string"
-          },
-          "ValueUTC": {
-            "type": "string"
-          }
-        }
-      },
-      "DPEndDate": {
-        "title": "DPEndDate",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "PermalinkDocs": {
-            "type": "string"
-          },
-          "": {
-            "type": "string"
-          }
-        }
-      },
       "DataSetEntry": {
         "title": "DataSetEntry",
         "type": "object",
@@ -880,6 +737,24 @@
             "type": "string"
           },
           "": {
+            "type": "string"
+          }
+        }
+      },
+      "Regions": {
+        "title": "Regions",
+        "type": "object",
+        "properties": {
+          "RegionUID": {
+            "type": "string"
+          },
+          "": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
             "type": "string"
           }
         }
