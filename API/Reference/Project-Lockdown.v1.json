@@ -3,7 +3,11 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data"
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data",
+    "contact": {
+      "name": "The IO Foundation",
+      "email": "Contact@ProjectLockdown.net"
+    }
   },
   "servers": [
     {
@@ -169,7 +173,8 @@
           "Name": {
             "type": "string"
           }
-        }
+        },
+        "description": "Describes a DataSet Layer."
       }
     }
   },
