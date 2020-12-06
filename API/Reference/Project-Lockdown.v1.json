@@ -1,0 +1,201 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Project Lockdown",
+    "version": "1.0",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data",
+    "contact": {
+      "name": "The IO Foundation",
+      "email": "Contact@ProjectLockdown.net"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/Environments": {
+      "get": {
+        "summary": "Extract Environment object for MAP.",
+        "tags": [
+          "ProjectLockdown",
+          "TIOF",
+          "The IO Foundation",
+          "Human Rights",
+          "Digital Rights",
+          "Nonprofit"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Environment"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-Environments",
+        "description": "Handles Environment objects",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "DSLUID",
+            "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Environment": {
+        "title": "Environment",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": {}
+          }
+        },
+        "description": "Describes the features and behavior of the whole MAP environment.",
+        "properties": {
+          "TabMenu": {
+            "$ref": "#/components/schemas/TabMenu"
+          },
+          "TimeSlider": {
+            "$ref": "#/components/schemas/TimeSlider"
+          }
+        },
+        "required": [
+          "TabMenu",
+          "TimeSlider"
+        ]
+      },
+      "TabMenu": {
+        "title": "TabMenu",
+        "type": "object",
+        "description": "Describes the features and behavior of the Time Slider (TS) in MAP.",
+        "x-examples": {
+          "Example: Default": {
+            "id": "1",
+            "Show": "True",
+            "Position": "Right"
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Show": {
+            "type": "string",
+            "description": "  - Description: Controls if the TabMenu is shown. \\n\n  - QS Parameter:  \\n\n  - QS Implemented:  \\n\n  - QS Required:  \\n\n  - Notes:  \\n"
+          },
+          "Position": {
+            "type": "string",
+            "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
+          }
+        }
+      },
+      "TimeSlider": {
+        "title": "TimeSlider",
+        "type": "object",
+        "description": "Describes the features and behavior of the Time Slider (TS) in MAP.",
+        "x-examples": {
+          "example-1": {
+            "id": "string",
+            "Show": "string",
+            "Position": "string",
+            "StartDate": "string",
+            "EndDate": "string",
+            "ViewDate": "string"
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Show": {
+            "type": "string",
+            "description": "  - Description: Controls if the TimeSlider (TS) is to be rendered.\n  - QS Parameter: TimeSlider -> TimeSliderShow\n  - QS Implemented: YES\n  - QS Required: NO\n  - Notes: @@@ PENDING UPDATE",
+            "enum": [
+              "True",
+              "False"
+            ],
+            "example": "True"
+          },
+          "Position": {
+            "type": "string",
+            "description": "  - Description: Controls where in the map is the Time Slider (TS) to be rendered.\n  - QS Parameter: TimeSliderPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: Only for scalability purposes. There are not plans to render this anywhere else than Bottom.",
+            "enum": [
+              "Top",
+              "Bottom",
+              "Left",
+              "Right"
+            ],
+            "example": "Bottom"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "EndDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "ViewDate": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": [
+          "id",
+          "Show",
+          "Position",
+          "StartDate",
+          "EndDate",
+          "ViewDate"
+        ]
+      },
+      "DSL": {
+        "title": "DSL",
+        "type": "object",
+        "properties": {
+          "DSLID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "description": "Describes a DataSet Layer."
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "ProjectLockdown"
+    },
+    {
+      "name": "TIOF"
+    },
+    {
+      "name": "The IO Foundation"
+    },
+    {
+      "name": "Human Rights"
+    },
+    {
+      "name": "Digital Rights"
+    },
+    {
+      "name": "Nonprofit"
+    }
+  ]
+}

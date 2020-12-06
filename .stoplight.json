@@ -1,0 +1,24 @@
+{
+  "exclude": ["/docs/minimal Dataedo sample", "docs/Diagrams", "Docs/Diagrams"],
+  
+  "formats": {
+    "openapi": {
+      "rootDir": "API/Reference",
+      "include": [
+        "**"
+      ]
+    },
+    "json_schema": {
+      "rootDir": "DB/Models",
+      "include": [
+        "**"
+      ]
+    },
+    "markdown": {
+      "rootDir": "docs"
+    },
+    "image": {
+      "rootDir": "Assets/APIImages"
+    }
+  }
+}
