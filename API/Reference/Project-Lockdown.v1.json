@@ -51,6 +51,14 @@
           }
         ]
       }
+    },
+    "/Territories": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-Territories"
+      }
     }
   },
   "components": {
@@ -175,6 +183,15 @@
           }
         },
         "description": "Describes a DataSet Layer."
+      },
+      "Territory": {
+        "title": "Territory",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
       }
     }
   },
