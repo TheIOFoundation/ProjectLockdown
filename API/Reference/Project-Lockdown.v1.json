@@ -734,7 +734,16 @@
             "type": "string"
           },
           "SourceType": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "Government",
+              "Media",
+              "NGO",
+              "Foreign Mission",
+              "Other",
+              "API Provider",
+              "3PT Provider"
+            ]
           },
           "SourceURL": {
             "type": "string"
@@ -777,7 +786,7 @@
               "Timestamp": {
                 "type": "string"
               },
-              "": {
+              "Media": {
                 "type": "string"
               }
             }
@@ -921,6 +930,16 @@
           "PermalinkCode": {
             "type": "string",
             "description": "Where in the code this snapshot is generated."
+          },
+          "Frequency": {
+            "type": "string",
+            "description": "Indicates how often does the snapshot get rebuilt.\nReference: First day of current year."
+          },
+          "LastUpdate": {
+            "type": "string"
+          },
+          "DateCreated": {
+            "type": "string"
           }
         }
       },
