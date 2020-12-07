@@ -150,16 +150,13 @@
             "id": {}
           }
         },
-        "description": "Describes the features and behavior of the MAP environment.\n\n0 = DEFAULT APP\nAnything else = Other environment configurations?\nWe may want to consider custom environments for Users?",
+        "description": "Describes the features and behavior of the environment for all the Modules.\n\n0 = DEFAULT APP\nAnything else = Other environment configurations?\nWe may want to consider custom environments for Users?",
         "properties": {
-
-          
-          "DSL": {
-            "$ref": "#/components/schemas/DataSetLayer"
-          },
-          
           "EnvironmentUID": {
             "type": "string"
+          },
+          "DSL": {
+            "$ref": "#/components/schemas/DataSetLayer"
           },
           "Project": {
             "$ref": "#/components/schemas/Project"
@@ -168,10 +165,7 @@
             "$ref": "#/components/schemas/Module"
           }
         },
-        "required": [
-          "TabMenu",
-          "TimeSlider"
-        ]
+        "required": []
       },
       "Territory": {
         "title": "Territory",
@@ -316,7 +310,7 @@
             "type": "string",
             "description": "Permalink to the documentation explaining this object."
           },
-          "Territories": {
+          "": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Territory"
@@ -780,6 +774,9 @@
               "EntryUID": {
                 "type": "string"
               },
+              "Timestamp": {
+                "type": "string"
+              },
               "": {
                 "type": "string"
               }
@@ -790,6 +787,15 @@
             "items": {
               "$ref": "#/components/schemas/TimeMachine"
             }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
+          },
+          "IssueUID": {
+            "type": "string"
           }
         }
       },
@@ -961,6 +967,10 @@
           "Global": {
             "type": "object",
             "properties": {
+              "PermalinkSourcesURL": {
+                "type": "string",
+                "description": "Permalink to where the Sources are located. Should be a GitHub repo URL."
+              },
               "": {
                 "type": "string"
               }
@@ -996,159 +1006,162 @@
           "MAP": {
             "type": "object",
             "properties": {
-                        "TabMenu": {
-            "type": "object",
-            "description": "Describes the features and behavior of the Tab Menu (TB) in MAP.",
-            "properties": {
-              "Show": {
-                "type": "string",
-                "description": "  - Description: Controls if the TabMenu is shown.\n  - QS Parameter:  \n  - QS Implemented:  \n  - QS Required:  \n  - Notes:  "
+              "TabMenu": {
+                "type": "object",
+                "description": "Describes the features and behavior of the Tab Menu (TB) in MAP.",
+                "properties": {
+                  "Show": {
+                    "type": "string",
+                    "description": "  - Description: Controls if the TabMenu is shown.\n  - QS Parameter:  \n  - QS Implemented:  \n  - QS Required:  \n  - Notes:  "
+                  },
+                  "Position": {
+                    "type": "string",
+                    "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
+                  },
+                  "Page": {
+                    "type": "string",
+                    "enum": [
+                      "DataSetInfo",
+                      "Settings",
+                      "Updates"
+                    ]
+                  }
+                }
               },
-              "Position": {
-                "type": "string",
-                "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
+              "TimeSlider": {
+                "type": "object",
+                "description": "Defines the features and behavior of the Time Slider (TS) in MAP.",
+                "properties": {
+                  "Position": {
+                    "type": "string",
+                    "enum": [
+                      "Top",
+                      "Bottom",
+                      "Left",
+                      "Right"
+                    ]
+                  },
+                  "StartDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "EndDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "ViewDate": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
               },
-              "Page": {
-                "type": "string",
-                "enum": [
-                  "DataSetInfo",
-                  "Settings",
-                  "Updates"
-                ]
-              }
-            }
-          },
-          "TimeSlider": {
-            "type": "object",
-            "description": "Defines the features and behavior of the Time Slider (TS) in MAP.",
-            "properties": {
-              "": {
-                "type": "string",
-                "description": "  - Description: Controls if the TimeSlider (TS) is to be rendered.\n  - QS Parameter: TimeSlider -> TimeSliderShow\n  - QS Implemented: YES\n  - QS Required: NO\n  - Notes: @@@ PENDING UPDATE",
-                "enum": [
-                  "True",
-                  "False"
-                ]
+              "StatsBox": {
+                "type": "object",
+                "properties": {
+                  "Something": {
+                    "type": "string"
+                  }
+                }
               },
-              "Position": {
-                "type": "string",
-                "enum": [
-                  "Top",
-                  "Bottom",
-                  "Left",
-                  "Right"
-                ]
+              "Map": {
+                "type": "object",
+                "properties": {
+                  "Region": {
+                    "type": "string"
+                  },
+                  "Zoom": {
+                    "type": "string"
+                  },
+                  "Lat": {
+                    "type": "string"
+                  },
+                  "Lng": {
+                    "type": "string"
+                  }
+                }
               },
-              "StartDate": {
-                "type": "string",
-                "format": "date"
+              "PressPlay": {
+                "type": "object",
+                "properties": {
+                  "Show": {
+                    "type": "string"
+                  },
+                  "Behavior": {
+                    "type": "string"
+                  },
+                  "StartDelay": {
+                    "type": "string"
+                  },
+                  "Step": {
+                    "type": "string"
+                  }
+                }
               },
-              "EndDate": {
-                "type": "string",
-                "format": "date"
+              "UI": {
+                "type": "object",
+                "properties": {
+                  "Locale": {
+                    "type": "string"
+                  },
+                  "Mode": {
+                    "type": "string"
+                  },
+                  "Watermark": {
+                    "type": "string"
+                  }
+                }
               },
-              "ViewDate": {
-                "type": "string",
-                "format": "date"
-              }
-            }
-          },
-          "StatsBox": {
-            "type": "object",
-            "properties": {
-              "Something": {
+              "TerritoryDetailsOverlay": {
+                "type": "object",
+                "properties": {
+                  "Show": {
+                    "type": "string",
+                    "enum": [
+                      "True",
+                      "False"
+                    ]
+                  },
+                  "Position": {
+                    "type": "string",
+                    "enum": [
+                      "Top",
+                      "Bottom",
+                      "Left",
+                      "Right",
+                      "Center"
+                    ]
+                  },
+                  "CategoryUID": {
+                    "type": "string",
+                    "description": "In which category the TDO should open."
+                  },
+                  "Behavior": {
+                    "type": "string",
+                    "description": "  Description: Controls the behavior of the Territory Details Overlay (TDO).\n  QS Parameter: MapTDOBehavior\n  QS Implemented: @@@ VERIFY\n  QS Required: NO\n  Notes: \n    \n      OnTap\n    Note:\"\n    - Meaning: TDO opens as per user's interaction (Default).\n    - Notes: Standard TDO behavior.\n    \n    No \n    Note:\"\n    - Meaning: TDO can't be opened.\n    - Notes: Implies WATERMARK ON.\n    \n    Forced\n    Note:\"\n    - Meaning: TDO is open on loadng.\n    - Notes: Forcefully opens the TDO on page load.\n    - IMPORTANT: Implies PLDCode and Panel params mandatory.",
+                    "enum": [
+                      "OnTap",
+                      "No",
+                      "Forced"
+                    ],
+                    "example": "    OnTap  [     Note:\"     - Meaning: TDO opens as per user's interaction (Default).     - Notes: Standard TDO behavior.     \"]          No [     Note:\"     - Meaning: TDO can't be opened.     - Notes: Implies WATERMARK ON.     \"]          Forced [     Note:\"     - Meaning: TDO is open on loadng.     - Notes: Forcefully opens the TDO on page load.     - IMPORTANT: Implies PLDCode and Panel params mandatory."
+                  },
+                  "PLDCode": {
+                    "type": "string"
+                  }
+                }
+              },
+              "ModuleUID": {
                 "type": "string"
-              }
-            }
-          },
-          "Map": {
-            "type": "object",
-            "properties": {
-              "Region": {
+              },
+              "Name": {
                 "type": "string"
               },
-              "Zoom": {
+              "Description": {
                 "type": "string"
-              },
-              "Lat": {
-                "type": "string"
-              },
-              "Lng": {
-                "type": "string"
-              }
-            }
-          },
-          "PressPlay": {
-            "type": "object",
-            "properties": {
-              "Show": {
-                "type": "string"
-              },
-              "Behavior": {
-                "type": "string"
-              },
-              "StartDelay": {
-                "type": "string"
-              },
-              "Step": {
-                "type": "string"
-              }
-            }
-          },
-          "UI": {
-            "type": "object",
-            "properties": {
-              "Locale": {
-                "type": "string"
-              },
-              "Mode": {
-                "type": "string"
-              },
-              "Watermark": {
-                "type": "string"
-              }
-            }
-          },"TerritoryDetailsOverlay": {
-            "type": "object",
-            "properties": {
-              "Show": {
-                "type": "string",
-                "enum": [
-                  "True",
-                  "False"
-                ]
-              },
-              "Position": {
-                "type": "string",
-                "enum": [
-                  "Top",
-                  "Bottom",
-                  "Left",
-                  "Right",
-                  "Center"
-                ]
-              },
-              "CategoryUID": {
-                "type": "string",
-                "description": "In which category the TDO should open."
-              },
-              "Behavior": {
-                "type": "string",
-                "description": "  Description: Controls the behavior of the Territory Details Overlay (TDO).\n  QS Parameter: MapTDOBehavior\n  QS Implemented: @@@ VERIFY\n  QS Required: NO\n  Notes: \n    \n      OnTap\n    Note:\"\n    - Meaning: TDO opens as per user's interaction (Default).\n    - Notes: Standard TDO behavior.\n    \n    No \n    Note:\"\n    - Meaning: TDO can't be opened.\n    - Notes: Implies WATERMARK ON.\n    \n    Forced\n    Note:\"\n    - Meaning: TDO is open on loadng.\n    - Notes: Forcefully opens the TDO on page load.\n    - IMPORTANT: Implies PLDCode and Panel params mandatory.",
-                "enum": [
-                  "OnTap",
-                  "No",
-                  "Forced"
-                ],
-                "example": "    OnTap  [     Note:\"     - Meaning: TDO opens as per user's interaction (Default).     - Notes: Standard TDO behavior.     \"]          No [     Note:\"     - Meaning: TDO can't be opened.     - Notes: Implies WATERMARK ON.     \"]          Forced [     Note:\"     - Meaning: TDO is open on loadng.     - Notes: Forcefully opens the TDO on page load.     - IMPORTANT: Implies PLDCode and Panel params mandatory."
               },
               "PLDCode": {
-                "type": "string"
-              }
-            }
-          },
-              "": {
-                "type": "string"
+                "type": "string",
+                "default": "MAP"
               }
             }
           },
@@ -1169,6 +1182,41 @@
           },
           "BO1": {
             "type": "object"
+          },
+          "": {
+            "type": "string"
+          }
+        }
+      },
+      "Log": {
+        "title": "Log",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Operation": {
+            "type": "string",
+            "enum": [
+              "Encode",
+              "Review",
+              "Approve",
+              "Flag",
+              "Initiate Deliberation",
+              "Close Deliberation",
+              "Assign: Triage",
+              "Assigne: Encode",
+              "Assign: Review"
+            ]
+          },
+          "UserUID": {
+            "type": "string"
+          },
+          "Notes": {
+            "type": "string"
+          },
+          "SourceUID": {
+            "type": "string"
           },
           "": {
             "type": "string"
