@@ -908,6 +908,19 @@
           },
           "DSLUID": {
             "type": "string"
+          },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "DataPoint",
+              "Red Flag",
+              "Territory Status",
+              "External"
+            ]
+          },
+          "PermalinkCode": {
+            "type": "string",
+            "description": "Where in the code this snapshot is generated."
           }
         }
       },
