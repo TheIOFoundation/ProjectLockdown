@@ -408,6 +408,9 @@
               },
               "Al": {
                 "type": "string"
+              },
+              "Encoding": {
+                "$ref": "#/components/schemas/Encoding"
               }
             }
           },
@@ -1252,6 +1255,48 @@
           },
           "": {
             "type": "string"
+          }
+        }
+      },
+      "Encoding": {
+        "title": "Encoding",
+        "type": "object",
+        "properties": {
+          "EncodingUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "URL for UI": {
+            "type": "string"
+          },
+          "Algorithm Details": {
+            "type": "string"
+          },
+          "Items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Value": {
+                  "type": "string"
+                },
+                "Type": {
+                  "type": "string",
+                  "enum": [
+                    "Image",
+                    "ColorCode"
+                  ]
+                },
+                "": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
