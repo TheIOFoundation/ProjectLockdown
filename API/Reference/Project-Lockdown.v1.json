@@ -178,7 +178,7 @@
             "type": "object",
             "description": "Defines the features and behavior of the Time Slider (TS) in MAP.",
             "properties": {
-              "Show": {
+              "": {
                 "type": "string",
                 "description": "  - Description: Controls if the TimeSlider (TS) is to be rendered.\n  - QS Parameter: TimeSlider -> TimeSliderShow\n  - QS Implemented: YES\n  - QS Required: NO\n  - Notes: @@@ PENDING UPDATE",
                 "enum": [
@@ -312,6 +312,12 @@
           },
           "EnvironmentUID": {
             "type": "string"
+          },
+          "Project": {
+            "$ref": "#/components/schemas/Project"
+          },
+          "Module": {
+            "$ref": "#/components/schemas/Module"
           }
         },
         "required": [
@@ -357,7 +363,7 @@
           }
         },
         "properties": {
-          "id": {
+          "TerritoryUID": {
             "type": "string"
           },
           "PLDInfo": {
@@ -379,9 +385,15 @@
                 "type": "string"
               },
               "Region": {
-                "type": "string"
+                "$ref": "#/components/schemas/Region"
               },
               "UnitCode": {
+                "type": "string"
+              },
+              "Notes": {
+                "type": "string"
+              },
+              "Description": {
                 "type": "string"
               }
             }
@@ -473,10 +485,36 @@
             "items": {
               "$ref": "#/components/schemas/Origin"
             }
+          },
+          "DEPRECATED?": {
+            "type": "object",
+            "properties": {
+              "DEI-LastTimeUpdated": {
+                "type": "string"
+              },
+              "DEI-Jump": {
+                "type": "string"
+              },
+              "DEI-TerritorySource": {
+                "type": "string"
+              },
+              "DEI-PopulationSource": {
+                "type": "string"
+              },
+              "DEI-COVID-19Source": {
+                "type": "string"
+              },
+              "DEI-URL": {
+                "type": "string"
+              },
+              "": {
+                "type": "string"
+              }
+            }
           }
         },
         "required": [
-          "id",
+          "TerritoryUID",
           "PLDInfo",
           "MapboxInfo",
           "PermalinkDocs"
@@ -1071,6 +1109,17 @@
         "properties": {
           "id": {
             "type": "string"
+          },
+          "Global": {
+            "type": "object",
+            "properties": {
+              "": {
+                "type": "string"
+              }
+            }
+          },
+          "": {
+            "type": "string"
           }
         }
       },
@@ -1086,6 +1135,36 @@
           },
           "": {
             "type": "string"
+          }
+        }
+      },
+      "Module": {
+        "title": "Module",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "MAP": {
+            "type": "object"
+          },
+          "BO": {
+            "type": "object"
+          },
+          "DEI": {
+            "type": "object"
+          },
+          "WEB": {
+            "type": "object"
+          },
+          "DB": {
+            "type": "object"
+          },
+          "API": {
+            "type": "object"
+          },
+          "": {
+            "type": "object"
           }
         }
       }
