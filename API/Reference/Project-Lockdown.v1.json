@@ -54,7 +54,7 @@
     },
     "/Territories": {
       "get": {
-        "summary": "Extract Territory objects.",
+        "summary": "Extract Territory objects",
         "tags": [],
         "responses": {
           "200": {
@@ -128,7 +128,7 @@
     },
     "/DataPoints": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Extract DataPoint objects",
         "tags": [],
         "responses": {
           "200": {
