@@ -89,7 +89,7 @@
             "id": {}
           }
         },
-        "description": "Describes the features and behavior of the MAP environment.",
+        "description": "Describes the features and behavior of the MAP environment.\n\n0 = DEFAULT APP\nAnything else = Other environment configurations?\nWe may want to consider custom environments for Users?",
         "properties": {
           "TabMenu": {
             "type": "object",
@@ -102,6 +102,14 @@
               "Position": {
                 "type": "string",
                 "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
+              },
+              "Page": {
+                "type": "string",
+                "enum": [
+                  "DataSetInfo",
+                  "Settings",
+                  "Updates"
+                ]
               }
             }
           },
@@ -139,6 +147,63 @@
                 "format": "date"
               }
             }
+          },
+          "StatsBox": {
+            "type": "object",
+            "properties": {
+              "Something": {
+                "type": "string"
+              }
+            }
+          },
+          "Map": {
+            "type": "object"
+          },
+          "PressPlay": {
+            "type": "object"
+          },
+          "UI": {
+            "type": "object",
+            "properties": {
+              "Locale": {
+                "type": "string"
+              },
+              "": {
+                "type": "string"
+              }
+            }
+          },
+          "DSL": {
+            "$ref": "#/components/schemas/DataSetLayer"
+          },
+          "TerritoryDetailsOverlay": {
+            "type": "object",
+            "properties": {
+              "Show": {
+                "type": "string",
+                "enum": [
+                  "True",
+                  "False"
+                ]
+              },
+              "Position": {
+                "type": "string",
+                "enum": [
+                  "Top",
+                  "Bottom",
+                  "Left",
+                  "Right",
+                  "Center"
+                ]
+              },
+              "Category": {
+                "type": "string",
+                "description": "In which category the TDO should open."
+              }
+            }
+          },
+          "EnvironmentUID": {
+            "type": "string"
           }
         },
         "required": [
@@ -294,6 +359,12 @@
           },
           "Status": {
             "type": "string"
+          },
+          "Origins": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Origin"
+            }
           }
         },
         "required": [
@@ -355,7 +426,7 @@
           "Value": {
             "type": "object",
             "properties": {
-              "": {
+              "Answer": {
                 "type": "object",
                 "properties": {
                   "GeneratedBy": {
@@ -465,7 +536,7 @@
             "type": "object",
             "properties": {
               "TDOLayout": {
-                "type": "string"
+                "$ref": "#/components/schemas/Layout"
               },
               "TabMaxWidth": {
                 "type": "string"
@@ -621,6 +692,24 @@
           "Tags": {
             "type": "string",
             "description": "String of Hashtags separated by coma to group DSLs - To be used on searches."
+          },
+          "Snapshots": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Snapshot"
+            }
+          },
+          "Categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            }
+          },
+          "Sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            }
           }
         },
         "required": [
@@ -630,67 +719,10 @@
           "DSLType"
         ]
       },
-      "DataSetEntry": {
-        "title": "DataSetEntry",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "Categories": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Category"
-            }
-          },
-          "Funnel": {
-            "type": "string",
-            "enum": [
-              "Insourcing",
-              "Crowdsourcing",
-              "Direct Feed",
-              "Machine Learning"
-            ],
-            "description": "Indicates which Funnel was use to produce this DataSet Entry."
-          },
-          "Status": {
-            "type": "string"
-          },
-          "": {
-            "type": "string"
-          }
-        }
-      },
-      "DataEntry": {
-        "title": "DataEntry",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "Categories": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Category"
-            }
-          },
-          "": {
-            "type": "string"
-          },
-          "EntryUID": {
-            "type": "string"
-          },
-          "TimeStamp": {
-            "type": "string"
-          },
-          "Status": {
-            "type": "string"
-          }
-        }
-      },
       "Source": {
         "title": "Source",
         "type": "object",
+        "description": "",
         "properties": {
           "id": {
             "type": "string"
@@ -704,15 +736,52 @@
           "SourceTitle": {
             "type": "string"
           },
-          "Status": {
-            "type": "string"
+          "TerritoryUID": {
+            "type": "string",
+            "description": "The Territory this Source applies to."
           },
           "": {
             "type": "string"
+          },
+          "Categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            }
+          },
+          "DSE": {
+            "type": "object",
+            "properties": {
+              "Funnel": {
+                "type": "string",
+                "enum": [
+                  "Insourcing",
+                  "Crowdsourcing",
+                  "Machine Learning",
+                  "Direct Feed"
+                ],
+                "description": "Indicates which Funnel was use to produce this DataSet Entry."
+              },
+              "Status": {
+                "type": "string"
+              },
+              "EntryUID": {
+                "type": "string"
+              },
+              "": {
+                "type": "string"
+              }
+            }
+          },
+          "TimeMachines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeMachine"
+            }
           }
         }
       },
-      "SourceTypes": {
+      "SourceType": {
         "title": "SourceTypes",
         "type": "object",
         "properties": {
@@ -726,7 +795,9 @@
               "Media",
               "Foreign Mission",
               "Other",
-              "Government"
+              "Government",
+              "Red Flag",
+              "PLD"
             ],
             "description": "The type of Source.\n\nOptions:\n- Government\n- Media\n- NGO\n- Foreign Mission\n- Other"
           },
@@ -741,7 +812,7 @@
           }
         }
       },
-      "Regions": {
+      "Region": {
         "title": "Regions",
         "type": "object",
         "properties": {
@@ -755,6 +826,139 @@
             "type": "string"
           },
           "Description": {
+            "type": "string"
+          }
+        }
+      },
+      "Origin": {
+        "title": "Origin",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "URL": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          },
+          "": {
+            "type": "string"
+          }
+        }
+      },
+      "TimeMachine": {
+        "title": "TimeMachine",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Snapshot": {
+        "title": "Snapshot",
+        "type": "object",
+        "properties": {
+          "SnapshotUID": {
+            "type": "string"
+          },
+          "SourceType": {
+            "$ref": "#/components/schemas/SourceType"
+          },
+          "TimeRange": {
+            "type": "array",
+            "description": "Prepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Date": {
+                  "type": "string"
+                },
+                "Value": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "DSLUID": {
+            "type": "string"
+          }
+        }
+      },
+      "Layout": {
+        "title": "Layout",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "PermaLink": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          }
+        }
+      },
+      "User": {
+        "title": "User",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "Human",
+              "Other"
+            ]
+          },
+          "": {
+            "type": "string"
+          }
+        }
+      },
+      "License": {
+        "title": "License",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Project": {
+        "title": "Project",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Right": {
+        "title": "Right",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "OriginUID": {
+            "type": "string"
+          },
+          "": {
             "type": "string"
           }
         }
