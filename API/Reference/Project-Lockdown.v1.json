@@ -157,10 +157,41 @@
             }
           },
           "Map": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "Region": {
+                "type": "string"
+              },
+              "Zoom": {
+                "type": "string"
+              },
+              "Lat": {
+                "type": "string"
+              },
+              "Lng": {
+                "type": "string"
+              },
+              "": {
+                "type": "string"
+              }
+            }
           },
           "PressPlay": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "Show": {
+                "type": "string"
+              },
+              "Behavior": {
+                "type": "string"
+              },
+              "StartDelay": {
+                "type": "string"
+              },
+              "Step": {
+                "type": "string"
+              }
+            }
           },
           "UI": {
             "type": "object",
@@ -168,7 +199,10 @@
               "Locale": {
                 "type": "string"
               },
-              "": {
+              "Mode": {
+                "type": "string"
+              },
+              "Watermark": {
                 "type": "string"
               }
             }
@@ -196,9 +230,22 @@
                   "Center"
                 ]
               },
-              "Category": {
+              "CategoryUID": {
                 "type": "string",
                 "description": "In which category the TDO should open."
+              },
+              "Behavior": {
+                "type": "string",
+                "description": "  Description: Controls the behavior of the Territory Details Overlay (TDO).\n  QS Parameter: MapTDOBehavior\n  QS Implemented: @@@ VERIFY\n  QS Required: NO\n  Notes: \n    \n      OnTap\n    Note:\"\n    - Meaning: TDO opens as per user's interaction (Default).\n    - Notes: Standard TDO behavior.\n    \n    No \n    Note:\"\n    - Meaning: TDO can't be opened.\n    - Notes: Implies WATERMARK ON.\n    \n    Forced\n    Note:\"\n    - Meaning: TDO is open on loadng.\n    - Notes: Forcefully opens the TDO on page load.\n    - IMPORTANT: Implies PLDCode and Panel params mandatory.",
+                "enum": [
+                  "OnTap",
+                  "No",
+                  "Forced"
+                ],
+                "example": "    OnTap  [     Note:\"     - Meaning: TDO opens as per user's interaction (Default).     - Notes: Standard TDO behavior.     \"]          No [     Note:\"     - Meaning: TDO can't be opened.     - Notes: Implies WATERMARK ON.     \"]          Forced [     Note:\"     - Meaning: TDO is open on loadng.     - Notes: Forcefully opens the TDO on page load.     - IMPORTANT: Implies PLDCode and Panel params mandatory."
+              },
+              "PLDCode": {
+                "type": "string"
               }
             }
           },
@@ -709,6 +756,24 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Source"
+            }
+          },
+          "Snap": {
+            "type": "array",
+            "items": {}
+          },
+          "DefaultDPs": {
+            "type": "object",
+            "properties": {
+              "Territory": {
+                "type": "string"
+              },
+              "Border": {
+                "type": "string"
+              },
+              "Location": {
+                "type": "string"
+              }
             }
           }
         },
