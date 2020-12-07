@@ -54,7 +54,7 @@
     },
     "/Territories": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Extract Territory objects.",
         "tags": [],
         "responses": {
           "200": {
@@ -65,6 +65,57 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/Territory"
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": "string",
+                        "PLDInfo": {
+                          "UID": "string",
+                          "PLDCode": "string",
+                          "ParentPLDCode": "string",
+                          "PermalinkDEI": "string",
+                          "Name": "string",
+                          "Region": "string",
+                          "UnitCode": "string"
+                        },
+                        "ISOInfo": {
+                          "ISO2": "string",
+                          "ISO3": "string"
+                        },
+                        "UNInfo": {
+                          "LOCODE": "string"
+                        },
+                        "NATOInfo": {
+                          "STANAG": "string"
+                        },
+                        "WikiMediaInfo": {
+                          "WikidataID": "string"
+                        },
+                        "MapboxInfo": {
+                          "BoundaryLevel": "Adm0",
+                          "FeatureID": "string"
+                        },
+                        "PermalinkDocs": "string",
+                        "Territories": [
+                          {}
+                        ],
+                        "LastTimeUpdate": "string",
+                        "Status": "string",
+                        "Origins": [
+                          {
+                            "id": "string",
+                            "Name": "string",
+                            "Description": "string",
+                            "URL": "string",
+                            "Status": "string",
+                            "": "string"
+                          }
+                        ]
+                      }
+                    ]
                   }
                 }
               }
