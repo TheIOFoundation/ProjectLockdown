@@ -169,7 +169,7 @@
       "Territory": {
         "title": "Territory",
         "type": "object",
-        "description": "Decribes PLD Territories.",
+        "description": "@@@\nDecribes PLD Territories.\n",
         "x-examples": {
           "example-1": {
             "id": "string",
@@ -210,84 +210,96 @@
           "PLDInfo": {
             "type": "object",
             "properties": {
-              "UID": {
+              "@@@PLDInfoUID": {
                 "type": "string"
               },
-              "PLDCode": {
+              "XXXPLDCode": {
                 "type": "string"
               },
-              "ParentPLDCode": {
+              "XXXPLDCodeParent": {
                 "type": "string"
               },
-              "PermalinkDEI": {
+              "XXXPermalinkDEI": {
                 "type": "string"
               },
-              "Name": {
+              "XXXName": {
                 "type": "string"
               },
-              "Region": {
+              "XXXRegion": {
                 "$ref": "#/components/schemas/Region"
               },
-              "UnitCode": {
+              "XXXUnitCode": {
                 "type": "string"
               },
-              "Notes": {
+              "XXXNotes": {
                 "type": "string"
               },
-              "Description": {
+              "XXXDescription": {
                 "type": "string"
               }
             }
           },
-          "ISOInfo": {
+          "XXXISOInfo": {
             "type": "object",
             "description": "Describes ISO-related description fields for PLD Territories.\nInformation originated by the International Starndards Organization (ISO).",
             "properties": {
-              "ISO2": {
+              "XXXISO2": {
                 "type": "string",
                 "description": "Code ISO Alpha 2 of this Territory (or its parent, if territory is a subdivision)."
               },
-              "ISO3": {
+              "XXXISO3": {
                 "type": "string",
                 "description": "Code ISO Alpha 3 of this Territory (or its parent, if territory is a subdivision)."
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
               }
             }
           },
-          "UNInfo": {
+          "XXXUNInfo": {
             "type": "object",
             "description": "Describes UN-related description fields for PLD Territories.\nInformation originated by United Nations (UN).",
             "properties": {
-              "LOCODE": {
+              "XXXLOCODE": {
                 "type": "string",
                 "description": "UN LOCODE code for this territory."
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
               }
             }
           },
-          "NATOInfo": {
+          "XXXNATOInfo": {
             "type": "object",
             "description": "Describes NATO-related description fields for PLD Territories.\nInformation originated by the North Atlantic Treaty Organization (NATO).",
             "properties": {
-              "STANAG": {
+              "XXXSTANAG": {
                 "type": "string",
                 "description": "https://en.wikipedia.org/wiki/List_of_NATO_country_codes"
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
               }
             }
           },
-          "WikiMediaInfo": {
+          "XXXWikiMediaInfo": {
             "type": "object",
             "description": "Describes WikiMedia-related description fields for PLD Territories.",
             "properties": {
-              "WikidataID": {
+              "XXXWikidataID": {
                 "type": "string",
                 "description": "WikidataID for the Territory."
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
               }
             }
           },
-          "MapboxInfo": {
+          "XXXMapboxInfo": {
             "type": "object",
             "description": "Describes Mapbox-related description fields for PLD Territories.\nInformation originated by Mapbox (Map platform provider).",
             "properties": {
-              "BoundaryLevel": {
+              "XXXBoundaryLevel": {
                 "type": "string",
                 "description": "Boundary Level for this Territory.",
                 "enum": [
@@ -299,35 +311,40 @@
                   "Adm5"
                 ]
               },
-              "FeatureID": {
+              "XXXFeatureID": {
                 "type": "string",
                 "description": "FeatureID (unique ID) for this Territory."
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
               }
             }
           },
-          "PermalinkDocs": {
+          "XXXPermalinkDocs": {
             "type": "string",
             "description": "Permalink to the documentation explaining this object."
           },
-          "": {
+          "XXXTerritories": {
             "type": "array",
+            "description": "List of sub territories that compose this territory.",
             "items": {
               "$ref": "#/components/schemas/Territory"
             }
           },
-          "LastTimeUpdate": {
+          "XXXLastTimeUpdate": {
             "type": "string"
           },
-          "Status": {
+          "XXXStatus": {
             "type": "string"
           },
-          "Origins": {
+          "XXXOrigins": {
             "type": "array",
+            "description": "List of Origins that are linked to this Territory.",
             "items": {
               "$ref": "#/components/schemas/Origin"
             }
           },
-          "DEPRECATED?": {
+          "@@@DEPRECATED?": {
             "type": "object",
             "properties": {
               "DEI-LastTimeUpdated": {
@@ -357,8 +374,8 @@
         "required": [
           "TerritoryUID",
           "PLDInfo",
-          "MapboxInfo",
-          "PermalinkDocs"
+          "XXXMapboxInfo",
+          "XXXPermalinkDocs"
         ]
       },
       "DataPoint": {
@@ -842,18 +859,58 @@
       "Region": {
         "title": "Regions",
         "type": "object",
+        "description": "@@@\nPLD regions\n\n- Africa\n- Asia\n- Europe\n- Middle East\n- Latin America\n- North America\n\nMissing: Pacific - No assigned TLD seems to be available\n\n\nSee documentation on how to use the TLDs for localization.\n",
         "properties": {
-          "RegionUID": {
+          "XXXRegionUID": {
             "type": "string"
           },
-          "": {
+          "XXXName": {
             "type": "string"
           },
-          "Name": {
+          "XXXDescription": {
             "type": "string"
           },
-          "Description": {
-            "type": "string"
+          "XXXXTerritories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Territory"
+            }
+          },
+          "XXXTLD": {
+            "type": "string",
+            "enum": [
+              ".africa",
+              ".asia",
+              ".eu",
+              ".me",
+              ".lat",
+              ".us"
+            ]
+          },
+          "XXXMAPInfo": {
+            "type": "object",
+            "description": "Stores all specs for that region per mapping provider.",
+            "properties": {
+              "XXXMapbox": {
+                "type": "object",
+                "description": "Specs for Mapbox.",
+                "properties": {
+                  "XXXZoom": {
+                    "type": "string"
+                  },
+                  "XXXLat": {
+                    "type": "string"
+                  },
+                  "XXXLng": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "XXXPermalinkGraphs": {
+            "type": "string",
+            "description": "Image for the Region."
           }
         }
       },
@@ -885,41 +942,68 @@
       "TimeMachine": {
         "title": "TimeMachine",
         "type": "object",
+        "description": "Objects describing all the different Time Machines used to back up Sources.",
         "properties": {
-          "id": {
+          "TimeMachineUID": {
             "type": "string"
+          },
+          "Priority": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "CreateURL": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "ReadURL": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "HelpURL": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": ""
+            }
           }
         }
       },
       "Snapshot": {
         "title": "Snapshot",
         "type": "object",
+        "description": "@@@\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n",
         "properties": {
-          "SnapshotUID": {
+          "XXXSnapshotUID": {
             "type": "string"
           },
-          "SourceType": {
+          "XXXSourceType": {
             "$ref": "#/components/schemas/SourceType"
           },
-          "TimeRange": {
+          "XXXTimeRange": {
             "type": "array",
             "description": "Prepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n",
             "items": {
               "type": "object",
               "properties": {
-                "Date": {
+                "XXXDate": {
                   "type": "string"
                 },
-                "Value": {
-                  "type": "string"
+                "XXXValue": {
+                  "type": "string",
+                  "description": "This is the encoded value as it corresponds to the corresponding Encoding."
                 }
               }
             }
           },
-          "DSLUID": {
+          "XXXDSLUID": {
             "type": "string"
           },
-          "Type": {
+          "XXXType": {
             "type": "string",
             "enum": [
               "DataPoint",
@@ -928,19 +1012,28 @@
               "External"
             ]
           },
-          "PermalinkCode": {
+          "XXXPermalinkCode": {
             "type": "string",
             "description": "Where in the code this snapshot is generated."
           },
-          "Frequency": {
+          "XXXFrequency": {
             "type": "string",
-            "description": "Indicates how often does the snapshot get rebuilt.\nReference: First day of current year."
+            "description": "Indicates how often does the snapshot get rebuilt.\nReference: First day of current year.",
+            "enum": [
+              "OnSpot",
+              "Scheduled - Daily",
+              "Scheduled - Weekly",
+              "Scheduled - Monthly"
+            ]
           },
-          "LastUpdate": {
+          "XXXDateLastUpdated": {
             "type": "string"
           },
-          "DateCreated": {
+          "XXXDateCreated": {
             "type": "string"
+          },
+          "@@@Encoding": {
+            "$ref": "#/components/schemas/Encoding"
           }
         }
       },
@@ -994,23 +1087,33 @@
         "title": "Project",
         "type": "object",
         "properties": {
-          "id": {
+          "ProjectUID": {
             "type": "string"
           },
-          "Global": {
+          "XXXGlobalVars": {
             "type": "object",
             "properties": {
               "PermalinkSourcesURL": {
                 "type": "string",
                 "description": "Permalink to where the Sources are located. Should be a GitHub repo URL."
               },
-              "": {
-                "type": "string"
+              "XXXLocale": {
+                "type": "string",
+                "description": "Default Locale = ENG"
               }
             }
           },
-          "": {
+          "Name": {
             "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "DateCreated": {
+            "type": "string"
+          },
+          "Contact": {
+            "$ref": "#/components/schemas/User"
           }
         }
       },
@@ -1297,6 +1400,68 @@
             }
           }
         }
+      },
+      "Link": {
+        "title": "Link",
+        "type": "object",
+        "description": "Objects representing links",
+        "properties": {
+          "XXXLinkUID": {
+            "type": "string"
+          },
+          "XXXLinkType": {
+            "type": "string",
+            "description": "Enumerator with the different kinds of Links.",
+            "enum": [
+              "Source",
+              "Docs",
+              "UI"
+            ]
+          },
+          "XXXName": {
+            "type": "string"
+          },
+          "XXXDescription": {
+            "type": "string"
+          },
+          "XXXTimeMachine": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeMachine"
+            }
+          }
+        }
+      },
+      "Stat": {
+        "title": "Stats",
+        "type": "object",
+        "properties": {
+          "StatsUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Notes": {
+            "type": "string"
+          },
+          "StatsType": {
+            "type": "string",
+            "enum": [
+              "SourcesPerTerritory",
+              "SourcesPerUser"
+            ],
+            "description": "Stores all the different Stats that we can have in the platform as an effective Enum."
+          },
+          "StatsValue": {
+            "type": "string",
+            "description": "Stores the value of the stat."
+          }
+        },
+        "description": "@@@\n\nStats are counters we collect across the platform.\n\n"
       }
     }
   },
