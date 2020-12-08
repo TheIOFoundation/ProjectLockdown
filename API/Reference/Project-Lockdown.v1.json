@@ -150,22 +150,21 @@
             "id": {}
           }
         },
-        "description": "Describes the features and behavior of the environment for all the Modules.\n\n0 = DEFAULT APP\nAnything else = Other environment configurations?\nWe may want to consider custom environments for Users?",
+        "description": "@@@\nDescribes the features and behavior of the environment for all the Modules.\n\n0 = DEFAULT APP\nAnything else = Other environment configurations?\nWe may want to consider custom environments for Users?\n",
         "properties": {
-          "EnvironmentUID": {
+          "XXXEnvironmentUID": {
             "type": "string"
           },
-          "DSL": {
+          "XXXDSL": {
             "$ref": "#/components/schemas/DataSetLayer"
           },
-          "Project": {
+          "XXXProject": {
             "$ref": "#/components/schemas/Project"
           },
-          "Module": {
+          "XXXModule": {
             "$ref": "#/components/schemas/Module"
           }
-        },
-        "required": []
+        }
       },
       "Territory": {
         "title": "Territory",
@@ -815,10 +814,10 @@
         "title": "SourceTypes",
         "type": "object",
         "properties": {
-          "SourceTypeUID": {
+          "XXXSourceTypeUID": {
             "type": "string"
           },
-          "Type": {
+          "XXXType": {
             "type": "string",
             "enum": [
               "NGO",
@@ -829,18 +828,16 @@
               "Red Flag",
               "PLD"
             ],
-            "description": "The type of Source.\n\nOptions:\n- Government\n- Media\n- NGO\n- Foreign Mission\n- Other"
+            "description": "@@@\n\nThe type of Source.\n\nOptions:\n- Government\n- Media\n- NGO\n- Foreign Mission\n- Other\n\nAlso to be used used for APIs and other external providers."
           },
-          "Name": {
+          "XXXName": {
             "type": "string"
           },
-          "Description": {
-            "type": "string"
-          },
-          "": {
+          "XXXDescription": {
             "type": "string"
           }
-        }
+        },
+        "description": "@@@\nDefines the types of sources from where Sources are extracted and/or generated. This applies to all data, from the one generated for PLD to external providers.\n\n\n"
       },
       "Region": {
         "title": "Regions",
@@ -863,24 +860,25 @@
       "Origin": {
         "title": "Origin",
         "type": "object",
+        "description": "@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.",
         "properties": {
-          "id": {
+          "XXXOriginUID": {
             "type": "string"
           },
-          "Name": {
+          "XXXName": {
             "type": "string"
           },
-          "Description": {
+          "XXXDescription": {
             "type": "string"
           },
-          "URL": {
+          "XXXURL": {
             "type": "string"
           },
-          "Status": {
+          "XXXStatus": {
             "type": "string"
           },
-          "": {
-            "type": "string"
+          "XXXContact": {
+            "$ref": "#/components/schemas/User"
           }
         }
       },
