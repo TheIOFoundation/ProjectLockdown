@@ -163,6 +163,12 @@
           },
           "XXXModule": {
             "$ref": "#/components/schemas/Module"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       },
@@ -369,6 +375,13 @@
                 "type": "string"
               }
             }
+          },
+          "Stats": {
+            "type": "array",
+            "description": "List of Stats for this Territory.\n\n@@@Indicate the list of Stats\n\n\n@@@Make sure all these are in the Stat.StatType enumerator.\n\n",
+            "items": {
+              "$ref": ""
+            }
           }
         },
         "required": [
@@ -383,96 +396,117 @@
         "type": "object",
         "description": "Describes PLD Data Points.",
         "properties": {
-          "DPUID": {
+          "XXXDPUID": {
             "type": "string"
           },
-          "Definition": {
+          "XXXDefinition": {
             "type": "object",
             "properties": {
-              "NameShort": {
+              "XXXNameShort": {
                 "type": "string"
               },
-              "Name": {
+              "XXXName": {
                 "type": "string"
               },
-              "Description": {
+              "XXXDescription": {
                 "type": "string"
               },
               "XXXIconID": {
                 "type": "string"
               },
-              "Inheritance": {
+              "@@@Inheritance": {
                 "type": "string"
               },
-              "DPObjectType": {
+              "@@@DPObjectType": {
                 "type": "string"
               },
-              "RightUID": {
+              "XXXRight": {
+                "$ref": "#/components/schemas/Right"
+              },
+              "XXXTags": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Tag"
+                }
+              },
+              "@@@PermalinkIconIDURL": {
                 "type": "string"
               },
-              "Tags": {
+              "XXXTooltip": {
                 "type": "string"
               },
-              "PermalinkIconIDURL": {
+              "XXXDefinition": {
                 "type": "string"
               },
-              "Tooltip": {
+              "@@@Al": {
                 "type": "string"
               },
-              "Definition": {
-                "type": "string"
-              },
-              "Al": {
-                "type": "string"
-              },
-              "Encoding": {
+              "XXXEncoding": {
                 "$ref": "#/components/schemas/Encoding"
               }
             }
           },
-          "Value": {
+          "XXXValue": {
             "type": "object",
             "properties": {
-              "Answer": {
+              "XXXAnswer": {
                 "type": "object",
                 "properties": {
-                  "GeneratedBy": {
+                  "XXXGeneratedBy": {
                     "type": "string",
-                    "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n",
+                    "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n\n\nThe Log indicates who did the operation.\n",
                     "enum": [
                       "Funnel",
                       "Algorithm"
                     ]
                   },
-                  "XXXHighlights": {
+                  "@@@Highlights": {
                     "type": "string",
                     "description": "Set of xyz coordinates that identify the snippet of text in the Source that explains this information."
                   },
                   "XXXValueType": {
                     "type": "string"
                   },
-                  "Value": {
+                  "XXXValue": {
                     "type": "string",
                     "description": "Value for the Answer field."
+                  },
+                  "XXXDescription": {
+                    "type": "string"
+                  },
+                  "XXXEditorGuide": {
+                    "type": "string"
+                  },
+                  "XXXTooltip": {
+                    "type": "string"
                   }
                 }
               },
-              "StartDate": {
+              "XXXStartDate": {
                 "type": "object",
                 "properties": {
-                  "GeneratedBy": {
+                  "XXXGeneratedBy": {
                     "type": "string"
                   },
-                  "Highlights": {
+                  "@@@Highlights": {
                     "type": "string"
                   },
-                  "DateFormat": {
+                  "XXXDateFormat": {
                     "type": "string"
                   },
-                  "Value": {
+                  "XXXValue": {
                     "type": "string"
                   },
-                  "ValueUTC": {
+                  "XXXValueUTC": {
+                    "type": "string"
+                  },
+                  "XXXDescription": {
+                    "type": "string"
+                  },
+                  "XXXEditorGuide": {
+                    "type": "string"
+                  },
+                  "XXXTooltip": {
                     "type": "string"
                   }
                 }
@@ -485,23 +519,29 @@
               }
             }
           },
-          "PermalinkDocs": {
+          "@@@PermalinkDocs": {
             "type": "string"
           },
-          "PermalinkDPURL": {
+          "@@@PermalinkDPURL": {
             "type": "string"
           },
-          "DPStatus": {
+          "XXXStatus": {
             "type": "string"
           },
-          "FirstCreated": {
+          "XXXFirstCreated": {
             "type": "string"
           },
-          "LastUpdated": {
+          "XXXLastUpdated": {
             "type": "string"
           },
-          "GeneratedBy": {
+          "@@@GeneratedBy": {
             "type": "string"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       },
@@ -510,7 +550,7 @@
         "type": "object",
         "description": "Describes PLD Categories.",
         "properties": {
-          "id": {
+          "XXXXCategoryUID": {
             "type": "string"
           },
           "DataPoints": {
@@ -566,23 +606,23 @@
         "type": "object",
         "description": "Describes PLD DataSet Layers.\nA DataSet Layer (DSL) is a collection of DataPoints (DP) that are selected to track the impact of a specific family of policies that may impact Human and/or Digital Rights. They are composed of a series of child objects formed by metadata and actual policy information encoded following a DSL-specific methodology.",
         "properties": {
-          "DSLUID": {
+          "XXXDSLUID": {
             "type": "string",
             "description": "Indicates the UID for this DSL inside PLD."
           },
-          "Name": {
+          "XXXName": {
             "type": "string",
             "description": "Name of the DSL (Default ENG)."
           },
-          "Version": {
+          "XXXVersion": {
             "type": "string",
             "description": "Version of the DSL."
           },
-          "PermalinkDocs": {
+          "@@@PermalinkDocs": {
             "type": "string",
             "description": "Permalink to the documentation explaining this object."
           },
-          "DSLType": {
+          "XXXType": {
             "type": "string",
             "description": "Indicates if it is Thematic, Transversal or External.",
             "enum": [
@@ -591,116 +631,103 @@
               "Transversal"
             ]
           },
-          "DSLAccessLevel": {
+          "@@@AccessLevel": {
             "type": "string",
             "description": "Indicates the access conditions for this DSL"
           },
-          "Status": {
+          "XXXStatus": {
             "type": "string",
             "description": "Status of the DSL."
           },
-          "PermalinkDSL": {
+          "@@@PermalinkDSL": {
             "type": "string",
             "description": "Permalink for this DSL."
           },
-          "PermalinkDEI": {
+          "@@@PermalinkDEI": {
             "type": "string",
             "description": "Permalink to the DEI for this DSL."
           },
-          "Description": {
+          "XXXDescription": {
             "type": "string",
             "description": "Description of the DSL (Default ENG)."
           },
-          "DateTimeFormat": {
-            "type": "string",
-            "description": "Format used for the whole DSL. If conversions need be done, they are performed on the resulting field.\nDefault: ENG"
+          "Contact": {
+            "$ref": "#/components/schemas/User"
           },
-          "PublishedFirst": {
-            "type": "string",
-            "description": "Fist Date and Time the DSL was published. Format as per DatesFormat."
-          },
-          "UpdatedLast": {
-            "type": "string",
-            "description": "Last Date and Time the DSL was updated. Format as per DatesFormat."
-          },
-          "UpdatedNext": {
-            "type": "string",
-            "description": "Next scheduled Date and Time the DSL will be updated. Format as per DatesFormat."
-          },
-          "UpdatedFreq": {
-            "type": "string",
-            "description": "Scheduled frequency for updates on the DSL, in milliseconds."
-          },
-          "PermalinkContact": {
-            "type": "string",
-            "description": "Permalink providing Contact information for this DSL."
-          },
-          "PermalinkMethodology": {
+          "@@@PermalinkMethodology": {
             "type": "string",
             "description": "Permalink providing Methodology information for the DSL."
           },
-          "MethodologyCode": {
+          "@@@MethodologyCode": {
             "type": "string",
             "description": "Extra information inside the Methodology."
           },
-          "Audiences": {
-            "type": "string",
-            "description": "Array of IDs for Audiences."
+          "XXXAudiences": {
+            "type": "array",
+            "description": "Array of IDs for Audiences.",
+            "items": {
+              "$ref": "#/components/schemas/Audience"
+            }
           },
-          "FirstDay": {
+          "XXXFirstDay": {
             "type": "string",
             "description": "First Day (Left limit) considered in the DSL."
           },
-          "LastDay": {
+          "XXXLastDay": {
             "type": "string",
             "description": "Last Day (Right limit) considered in the DSL."
           },
-          "PermalinkAPIURL": {
+          "XXXPermalinkAPIURL": {
             "type": "string",
             "description": "Permalink providing access to the API serving this DSL."
           },
-          "PermalinkSchema": {
+          "XXXPermalinkSchema": {
             "type": "string",
             "description": "Permalink providing access to the Schema forming this DSL."
           },
-          "MaxBoundary": {
+          "XXXMaxBoundary": {
             "type": "string",
             "description": "Max Boundary considered in this DSL."
           },
           "SourceTypes": {
             "type": "array",
             "description": "Array of IDs for Source Types, ordered by their default order of application for the Snapshots.",
-            "items": {}
+            "items": {
+              "$ref": "#/components/schemas/SourceType"
+            }
           },
-          "CountDataPoints": {
+          "XXXCountDataPoints": {
             "type": "string",
             "description": "A simple count of the DataPoints in this DSL."
           },
-          "PermalinkQALog?": {
+          "@@@PermalinkQALog?": {
             "type": "string",
             "description": "Permalink providing access to the QA log for the DSL."
           },
-          "PermalinkLicenseURL": {
+          "@@@PermalinkLicenseURL": {
             "type": "string",
             "description": "Permalink providing Licensing information for the DSL."
           },
-          "LicenseCode": {
+          "@@@LicenseCode": {
             "type": "string",
             "description": "Extra information inside the Licensing."
           },
-          "PermalinkCitingPolicy": {
+          "@@@PermalinkCitingPolicy": {
             "type": "string",
             "description": "Permalink providing Citing information for the DSL."
           },
-          "CitingPolicyCode": {
+          "@@@CitingPolicyCode": {
             "type": "string",
             "description": "Extra information inside the Citing."
           },
-          "Tags": {
-            "type": "string",
-            "description": "String of Hashtags separated by coma to group DSLs - To be used on searches."
+          "XXXTags": {
+            "type": "array",
+            "description": "String of Hashtags separated by coma to group DSLs - To be used on searches.",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
           },
-          "Snapshots": {
+          "XXXSnapshots": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Snapshot"
@@ -735,13 +762,25 @@
                 "type": "string"
               }
             }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": ""
+            }
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
           }
         },
         "required": [
-          "DSLUID",
-          "Name",
-          "Version",
-          "DSLType"
+          "XXXDSLUID",
+          "XXXName",
+          "XXXVersion",
+          "XXXType"
         ]
       },
       "Source": {
@@ -824,6 +863,9 @@
           },
           "IssueUID": {
             "type": "string"
+          },
+          "Stats": {
+            "$ref": "#/components/schemas/Stat"
           }
         }
       },
@@ -968,7 +1010,7 @@
           "Stats": {
             "type": "array",
             "items": {
-              "$ref": ""
+              "$ref": "#/components/schemas/Stat"
             }
           }
         }
@@ -1034,6 +1076,9 @@
           },
           "@@@Encoding": {
             "$ref": "#/components/schemas/Encoding"
+          },
+          "Stats": {
+            "$ref": "#/components/schemas/Stat"
           }
         }
       },
@@ -1052,6 +1097,12 @@
           },
           "Description": {
             "type": "string"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       },
@@ -1071,6 +1122,9 @@
           },
           "": {
             "type": "string"
+          },
+          "Stats": {
+            "$ref": "#/components/schemas/Stat"
           }
         }
       },
@@ -1080,6 +1134,12 @@
         "properties": {
           "id": {
             "type": "string"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       },
@@ -1129,6 +1189,9 @@
           },
           "": {
             "type": "string"
+          },
+          "Stats": {
+            "$ref": "#/components/schemas/Stat"
           }
         }
       },
@@ -1298,11 +1361,25 @@
               "PLDCode": {
                 "type": "string",
                 "default": "MAP"
+              },
+              "Stats": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Stat"
+                }
               }
             }
           },
           "BO": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "Stats": {
+                "type": "array",
+                "items": {
+                  "$ref": ""
+                }
+              }
+            }
           },
           "DEI": {
             "type": "object"
@@ -1319,8 +1396,11 @@
           "BO1": {
             "type": "object"
           },
-          "": {
-            "type": "string"
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       },
@@ -1354,13 +1434,16 @@
           "SourceUID": {
             "type": "string"
           },
-          "": {
-            "type": "string"
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       },
       "Encoding": {
-        "title": "Encoding",
+        "title": "@@@Encoding",
         "type": "object",
         "properties": {
           "EncodingUID": {
@@ -1392,24 +1475,28 @@
                     "Image",
                     "ColorCode"
                   ]
-                },
-                "": {
-                  "type": "string"
                 }
               }
             }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
-        }
+        },
+        "description": "@@@"
       },
       "Link": {
         "title": "Link",
         "type": "object",
-        "description": "Objects representing links",
+        "description": "Objects representing links\n\n\n\n\n\nDSL\nPermalinkDocs\nPermalinkDSL\nPermalinkDEI\nPermalinkMethodology\nPermalinkAPIURL\nPermalinkSchema\nPermalinkQALog?\nPermalinkLicenseURL\nPermalinkCitingPolicy\n\n\nDP\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL",
         "properties": {
           "XXXLinkUID": {
             "type": "string"
           },
-          "XXXLinkType": {
+          "XXXType": {
             "type": "string",
             "description": "Enumerator with the different kinds of Links.",
             "enum": [
@@ -1429,12 +1516,19 @@
             "items": {
               "$ref": "#/components/schemas/TimeMachine"
             }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       },
       "Stat": {
-        "title": "Stats",
+        "title": "Stat",
         "type": "object",
+        "description": "@@@\n\nStats are counters we collect across the platform.\n\n\n\n\nStats DSL\nCountDataPoints\n\n",
         "properties": {
           "StatsUID": {
             "type": "string"
@@ -1448,7 +1542,7 @@
           "Notes": {
             "type": "string"
           },
-          "StatsType": {
+          "Type": {
             "type": "string",
             "enum": [
               "SourcesPerTerritory",
@@ -1456,12 +1550,115 @@
             ],
             "description": "Stores all the different Stats that we can have in the platform as an effective Enum."
           },
-          "StatsValue": {
+          "Value": {
             "type": "string",
             "description": "Stores the value of the stat."
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          }
+        }
+      },
+      "Date": {
+        "title": "Date",
+        "type": "object",
+        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n\n\n\nDSL\nDateTimeFormat\nDatePublishedFirst\nUpdatedLast\nLast Date and Time the DSL was updated. Format as per DatesFormat.\n\nUpdatedNext\nNext scheduled Date and Time the DSL will be updated. Format as per DatesFormat.\n\nUpdatedFreq\nScheduled frequency for updates on the DSL, in milliseconds.\n\nXXXFirstDay\nFirst Day (Left limit) considered in the DSL.\n\nXXXLastDay\nLast Day (Right limit) considered in the DSL.\n\n\nDP\nFirstCreated\nLastUpdated\n\n\n",
+        "properties": {
+          "DateUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Type": {
+            "type": "string",
+            "description": "Enumerator of all types of Dates in the platform."
+          },
+          "@@@Tooltip": {
+            "type": "string"
+          },
+          "Value": {
+            "type": "string"
+          },
+          "ValueUTC": {
+            "type": "string"
+          }
+        }
+      },
+      "Audience": {
+        "title": "Audience",
+        "type": "object",
+        "properties": {
+          "AudienceUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Notes": {
+            "type": "string"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         },
-        "description": "@@@\n\nStats are counters we collect across the platform.\n\n"
+        "description": "@@@@"
+      },
+      "Tag": {
+        "title": "Tag",
+        "type": "object",
+        "properties": {
+          "TagUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Descrtiption": {
+            "type": "string"
+          },
+          "Synonyms": {
+            "type": "array",
+            "description": "These are tags that would also make sense searching if this particular tag is used. Algorithm to avoid circular references by skipping it Tag already exists in final list.",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          },
+          "Date": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Date"
+            }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          },
+          "Value": {
+            "type": "string"
+          }
+        },
+        "description": "@@@\n\n@@@@\nLook into maybe synchronizing some of these Tags with GitHub Labels.\n\n"
       }
     }
   },
