@@ -162,7 +162,10 @@
             "type": "string"
           },
           "XXXDSL": {
-            "$ref": "#/components/schemas/DataSetLayer"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSetLayer"
+            }
           },
           "XXXProject": {
             "$ref": "#/components/schemas/Project"
@@ -170,7 +173,7 @@
           "XXXModule": {
             "$ref": "#/components/schemas/Module"
           },
-          "Stats": {
+          "XXXStats": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Stat"
@@ -435,9 +438,6 @@
                   "$ref": "#/components/schemas/Tag"
                 }
               },
-              "@@@PermalinkIconIDURL": {
-                "type": "string"
-              },
               "XXXTooltip": {
                 "type": "string"
               },
@@ -489,64 +489,38 @@
                 }
               },
               "XXXStartDate": {
-                "type": "object",
-                "properties": {
-                  "XXXGeneratedBy": {
-                    "type": "string"
-                  },
-                  "@@@Highlights": {
-                    "type": "string"
-                  },
-                  "XXXDateFormat": {
-                    "type": "string"
-                  },
-                  "XXXValue": {
-                    "type": "string"
-                  },
-                  "XXXValueUTC": {
-                    "type": "string"
-                  },
-                  "XXXDescription": {
-                    "type": "string"
-                  },
-                  "XXXEditorGuide": {
-                    "type": "string"
-                  },
-                  "XXXTooltip": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/Date"
               },
               "EndDate": {
-                "type": "object"
+                "$ref": "#/components/schemas/Date"
               },
               "Details": {
                 "type": "object"
               }
             }
           },
-          "@@@PermalinkDocs": {
-            "type": "string"
-          },
-          "@@@PermalinkDPURL": {
-            "type": "string"
-          },
           "XXXStatus": {
             "type": "string"
           },
           "XXXFirstCreated": {
-            "type": "string"
+            "$ref": "#/components/schemas/Date"
           },
           "XXXLastUpdated": {
-            "type": "string"
+            "$ref": "#/components/schemas/Date"
           },
           "@@@GeneratedBy": {
             "type": "string"
           },
-          "Stats": {
+          "XXXStats": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Stat"
+            }
+          },
+          "XXXLinka": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
             }
           }
         }
@@ -579,6 +553,10 @@
               },
               "Tags": {
                 "type": "string"
+              },
+              "Order": {
+                "type": "string",
+                "description": "Indicates the render order of this category in the DSL."
               }
             }
           },
@@ -1153,32 +1131,37 @@
         "title": "Project",
         "type": "object",
         "properties": {
-          "ProjectUID": {
+          "XXXProjectUID": {
             "type": "string"
           },
           "XXXGlobalVars": {
             "type": "object",
             "properties": {
-              "PermalinkSourcesURL": {
-                "type": "string",
-                "description": "Permalink to where the Sources are located. Should be a GitHub repo URL."
-              },
               "XXXLocale": {
                 "type": "string",
                 "description": "Default Locale = ENG"
+              },
+              "XXXLinks": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Link"
+                }
               }
             }
           },
-          "Name": {
+          "XXXName": {
             "type": "string"
           },
-          "Description": {
+          "XXXDescription": {
             "type": "string"
           },
-          "DateCreated": {
-            "type": "string"
+          "XXXDates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Date"
+            }
           },
-          "Contact": {
+          "XXXContact": {
             "$ref": "#/components/schemas/User"
           }
         }
@@ -1205,10 +1188,10 @@
         "title": "Module",
         "type": "object",
         "properties": {
-          "id": {
+          "XXXModuleUID": {
             "type": "string"
           },
-          "MAP": {
+          "XXXMAP": {
             "type": "object",
             "properties": {
               "TabMenu": {
@@ -1402,7 +1385,7 @@
           "BO1": {
             "type": "object"
           },
-          "Stats": {
+          "XXXStats": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Stat"
@@ -1497,7 +1480,7 @@
       "Link": {
         "title": "Link",
         "type": "object",
-        "description": "Objects representing links\n\n\n\n\n\nDSL\nPermalinkDocs\nPermalinkDSL\nPermalinkDEI\nPermalinkMethodology\nPermalinkAPIURL\nPermalinkSchema\nPermalinkQALog?\nPermalinkLicenseURL\nPermalinkCitingPolicy\n\n\nDP\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL",
+        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\nProject\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n\nDSL\nPermalinkDocs\nPermalinkDSL\nPermalinkDEI\nPermalinkMethodology\nPermalinkAPIURL\nPermalinkSchema\nPermalinkQALog?\nPermalinkLicenseURL\nPermalinkCitingPolicy\n\n\nDP\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\n\n\nDate\nEditorGuide",
         "properties": {
           "XXXLinkUID": {
             "type": "string"
@@ -1536,19 +1519,19 @@
         "type": "object",
         "description": "@@@\n\nStats are counters we collect across the platform.\n\n\n\n\nStats DSL\nCountDataPoints\n\n",
         "properties": {
-          "StatsUID": {
+          "XXXStatsUID": {
             "type": "string"
           },
-          "Name": {
+          "XXXName": {
             "type": "string"
           },
-          "Description": {
+          "XXXDescription": {
             "type": "string"
           },
-          "Notes": {
+          "XXXNotes": {
             "type": "string"
           },
-          "Type": {
+          "XXXType": {
             "type": "string",
             "enum": [
               "SourcesPerTerritory",
@@ -1556,11 +1539,11 @@
             ],
             "description": "Stores all the different Stats that we can have in the platform as an effective Enum."
           },
-          "Value": {
+          "XXXValue": {
             "type": "string",
             "description": "Stores the value of the stat."
           },
-          "Links": {
+          "XXXLinks": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Link"
@@ -1571,7 +1554,7 @@
       "Date": {
         "title": "Date",
         "type": "object",
-        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n\n\n\nDSL\nDateTimeFormat\nDatePublishedFirst\nUpdatedLast\nLast Date and Time the DSL was updated. Format as per DatesFormat.\n\nUpdatedNext\nNext scheduled Date and Time the DSL will be updated. Format as per DatesFormat.\n\nUpdatedFreq\nScheduled frequency for updates on the DSL, in milliseconds.\n\nXXXFirstDay\nFirst Day (Left limit) considered in the DSL.\n\nXXXLastDay\nLast Day (Right limit) considered in the DSL.\n\n\nDP\nFirstCreated\nLastUpdated\n\n\n",
+        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\nProject\nDateCreated\n\n\nDSL\nDateTimeFormat\nDatePublishedFirst\nUpdatedLast\nLast Date and Time the DSL was updated. Format as per DatesFormat.\n\nUpdatedNext\nNext scheduled Date and Time the DSL will be updated. Format as per DatesFormat.\n\nUpdatedFreq\nScheduled frequency for updates on the DSL, in milliseconds.\n\nXXXFirstDay\nFirst Day (Left limit) considered in the DSL.\n\nXXXLastDay\nLast Day (Right limit) considered in the DSL.\n\n\nDP\nFirstCreated\nLastUpdated\n\n\n\nLink Type\nEditorGuide\n\n\n\n",
         "properties": {
           "DateUID": {
             "type": "string"
@@ -1594,6 +1577,21 @@
           },
           "ValueUTC": {
             "type": "string"
+          },
+          "XXXGeneratedBy": {
+            "type": "string"
+          },
+          "@@@Highlights": {
+            "type": "string"
+          },
+          "XXXDateFormat": {
+            "type": "string"
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
           }
         }
       },
@@ -1602,26 +1600,23 @@
         "type": "object",
         "description": "@@@@",
         "properties": {
-          "AudienceUID": {
+          "XXXAudienceUID": {
             "type": "string"
           },
-          "Name": {
+          "XXXName": {
             "type": "string"
           },
-          "Description": {
+          "XXXDescription": {
             "type": "string"
           },
-          "Notes": {
+          "XXXNotes": {
             "type": "string"
           },
-          "Stats": {
+          "XXXStats": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
-          },
-          "fsdfsfsdfd": {
-            "type": "string"
           }
         }
       },
