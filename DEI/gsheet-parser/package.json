@@ -1,0 +1,40 @@
+{
+  "name": "lockdown-backend",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node dist/server.js",
+    "start:job": "npm run build && node dist/index.js",
+    "build": "babel src -d dist --copy-files",
+    "dev": "babel-node src/index.js",
+    "test": "jest ./tests",
+    "debug": "babel-node debug src/index.js",
+    "server": "nodemon --exec babel-node src/server.js",
+    "server:debug": "nodemon --inspect src/server.js"
+  },
+  "dependencies": {
+    "@azure/service-bus": "^1.1.10",
+    "@babel/node": "^7.12.6",
+    "axios": "^0.19.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "google-spreadsheet": "^3.0.14",
+    "moment-range": "^4.0.2",
+    "moment-timezone": "^0.5.32",
+    "mongodb": "^3.6.3",
+    "node-cache": "^5.1.2",
+    "swagger-ui-express": "^4.1.5",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "babel-jest": "^25.5.1",
+    "dotenv": "^8.2.0",
+    "jest": "^25.5.4",
+    "nodemon": "^2.0.6"
+  }
+}

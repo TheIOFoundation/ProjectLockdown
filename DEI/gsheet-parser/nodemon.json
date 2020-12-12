@@ -1,0 +1,11 @@
+{
+  "verbose": true,
+  "restartable": "rs",
+  "ignore": [
+    "CHANGELOG.md", "README.md",
+    "docs/*", "coverage/*", ".github/*", ".nyc_output",
+    "test/*", ".env-example", ".gitignore", ".nvmrc",
+    ".travis.yml", "dist/*"
+  ],
+  "exec": "node ./src/server.js | pino-pretty --colorize --translateTime"
+}
