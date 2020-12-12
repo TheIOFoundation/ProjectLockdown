@@ -1,0 +1,269 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Lockdown API
+tags:
+  - name: By Countries
+    description: All NPIs by country
+  - name: World
+    description: Only lockdown statuses for whole world
+  - name: By Measures
+    description: Specific NPIs for country
+paths:
+  /status/world/{date}:
+    get:
+      tags:
+        - World
+      summary: Retrieve lockdown status of all countries for date
+      parameters:
+        - name: date
+          description: Date of status snapshot
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: "List of NPIs for date. Additional property is lockdown date."
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    lockdown:
+                      $ref: '#/components/schemas/Lockdown'
+        default:
+          description: Unexpected error
+  /status/world/{startDate}/{endDate}:
+    get:
+      tags:
+        - World
+      summary: Retrieve lockdown status of all countries for date range. Maximum date range is 70 days
+      parameters:
+        - name: startDate
+          description: Date of status snapshot
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          description: Date of status snapshot. Date range not more than 70 days
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: "List of NPIs for date. Additional property is lockdown date."
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+                  properties:
+                    lockdown:
+                      $ref: '#/components/schemas/Lockdown'
+        default:
+          description: Unexpected error
+  /status/{iso}/{date}:
+    get:
+      tags:
+        - By Countries
+      summary: "Retrieve all NPIs for country by date"
+      parameters:
+        - name: iso
+          in: path
+          description: ISO2 or ISO3 country code
+          required: true
+          schema:
+            type: string
+        - name: date
+          description: Date of status snapshot
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: "List of NPIs for date"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lockdown:
+                    $ref: '#/components/schemas/Lockdown'
+
+        default:
+          description: Unexpected error
+  /status/{iso}/{startDate}/{endDate}:
+    get:
+      tags:
+        - By Countries
+      summary: "Retrieve all NPIs for country by date range. Maximum date range is 70 days."
+      parameters:
+        - name: iso
+          in: path
+          description: ISO2 or ISO3 country code
+          required: true
+          schema:
+            type: string
+        - name: startDate
+          description: Start Date of range
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          description: End Date of range (range not more than 70 days)
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: "List of NPIs for by date"
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+                  properties:
+                    lockdown:
+                      $ref: '#/components/schemas/Lockdown'
+        default:
+          description: Unexpected error
+  /measures/{iso}/{startDate}/{endDate}:
+    get:
+      tags:
+        - By Measures
+      summary: "Retrieve specific NPIs for country by date range. Maximum date range is 70 days."
+      parameters:
+        - name: iso
+          in: path
+          description: ISO2 or ISO3 country code
+          required: true
+          schema:
+            type: string
+        - name: startDate
+          description: Start Date of range
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          description: End Date of range (range not more than 70 days)
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: measures
+          description: Measures for retrieving
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        "200":
+          description: "List of NPIs"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lockdown'
+        default:
+          description: Unexpected error
+  /totals/lockdown/{startDate}/{endDate}:
+    get:
+      tags:
+        - World
+      summary: "Retrieve count of countries in lockdown and affected people"
+      parameters:
+        - name: startDate
+          description: Start Date of range
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          description: End Date of range (range not more than 70 days)
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: "List of counters"
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+                  properties:
+                    lockdown:
+                      type: number
+                    affected:
+                      type: number
+        default:
+          description: Unexpected error
+components:
+  schemas:
+    Measure:
+      type: object
+      properties:
+        label:
+          type: string
+        name:
+          type: string
+        value:
+          type: string
+        '#date+start':
+          type: string
+          format: date
+        '#date+end':
+          type: string
+          format: date
+        '#meta+url':
+          type: string
+        '#country+code+iso3':
+          type: string
+    Lockdown:
+      type: object
+      properties:
+        iso:
+          type: string
+        max_gathering: 
+          type: array
+          items:
+            $ref: '#/components/schemas/Measure'
+        measure:
+          type: array
+          items:
+            $ref: '#/components/schemas/Measure'
+        land:
+          type: array
+          items:
+            $ref: '#/components/schemas/Measure'
+        sea:
+          type: array
+          items:
+            $ref: '#/components/schemas/Measure'
+        flight:
+          type: array
+          items:
+            $ref: '#/components/schemas/Measure'
