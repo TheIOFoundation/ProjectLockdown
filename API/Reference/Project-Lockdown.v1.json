@@ -47,10 +47,25 @@
             },
             "in": "query",
             "name": "DSLUID",
-            "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID"
+            "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "MAP",
+                "BO",
+                "API"
+              ]
+            },
+            "in": "query",
+            "name": "MODULE",
+            "required": true
           }
         ]
-      }
+      },
+      "parameters": []
     },
     "/Territories": {
       "get": {
@@ -143,6 +158,18 @@
         "operationId": "post-DataPoints",
         "parameters": [],
         "description": ""
+      }
+    },
+    "/MAPEnvironments": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query"
+          }
+        ]
       }
     }
   },
