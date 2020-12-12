@@ -139,6 +139,24 @@
         },
         "operationId": "get-Territories",
         "description": "Handles PLD Territory objects."
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-Territories",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-Territories",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/DataPoints": {
@@ -158,18 +176,6 @@
         "operationId": "post-DataPoints",
         "parameters": [],
         "description": ""
-      }
-    },
-    "/MAPEnvironments": {
-      "get": {
-        "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "in": "query"
-          }
-        ]
       }
     }
   },
@@ -4256,7 +4262,7 @@
       "Territory": {
         "title": "XXX Territory",
         "type": "object",
-        "description": "@@@\nDecribes PLD Territories.\n",
+        "description": "@@@\nDecribes PLD Territories.\n\n\n###URL fields\nURLDEI\nPermalink for direct access to the DEI\n\nURLDoc\nPermalink for direct access to the territory info (to be implemented later).\n\n###Date fields\nDateLastUpdate\nLast time the Territory info was updated.\n@@@Probably also put in Log?\n",
         "x-examples": {
           "example-1": {
             "id": "string",
@@ -4466,16 +4472,19 @@
               "$ref": "#/components/schemas/Stat"
             }
           },
-          "Links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            }
+          "URLDEI": {
+            "$ref": "#/components/schemas/Link"
           },
-          "Dates": {
+          "URLDoc": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "DateLastUpdate": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "Log": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Date"
+              "$ref": "#/components/schemas/Log"
             }
           }
         },
@@ -4488,7 +4497,7 @@
       "DataPoint": {
         "title": "DataPoint",
         "type": "object",
-        "description": "Describes PLD Data Points.",
+        "description": "Describes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. ",
         "properties": {
           "DataPointUID": {
             "type": "string"
@@ -4529,9 +4538,6 @@
               "Definition": {
                 "type": "string"
               },
-              "???Al": {
-                "type": "string"
-              },
               "Encoding": {
                 "$ref": "#/components/schemas/Encoding"
               }
@@ -4540,10 +4546,10 @@
           "Status": {
             "type": "string"
           },
-          "CreatedDate": {
+          "DateCreated": {
             "$ref": "#/components/schemas/Date"
           },
-          "LastUpdatedDate": {
+          "DateLastUpdated": {
             "$ref": "#/components/schemas/Date"
           },
           "Stats": {
@@ -4552,17 +4558,17 @@
               "$ref": "#/components/schemas/Stat"
             }
           },
-          "XXXLinka": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            }
-          },
           "Answers": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Answer"
             }
+          },
+          "URLDoc": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLEditorGuide": {
+            "$ref": "#/components/schemas/Link"
           }
         }
       },
@@ -4760,6 +4766,12 @@
               "API": {
                 "$ref": "#/components/schemas/Module"
               }
+            }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
             }
           }
         },
@@ -5344,6 +5356,12 @@
                         "type": "string"
                       }
                     }
+                  },
+                  "DefaultSnapshotOrder": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 }
               },
@@ -5552,6 +5570,7 @@
       "Encoding": {
         "title": "@@@Encoding",
         "type": "object",
+        "description": "@@@",
         "properties": {
           "EncodingUID": {
             "type": "string"
@@ -5568,7 +5587,7 @@
           "Algorithm Details": {
             "type": "string"
           },
-          "Items": {
+          "Options": {
             "type": "array",
             "items": {
               "type": "object",
@@ -5592,13 +5611,12 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        },
-        "description": "@@@"
+        }
       },
       "Link": {
         "title": "XXX Link",
         "type": "object",
-        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\n###Datapoint\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\nPermalinkEditorGuideURL\n\n###Date\n???EditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n###Origin\nOriginURL\n\n###Territory\nPermalinkDEI\nPermalinkDocURL\n\n###Layout\n",
+        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\n\n",
         "properties": {
           "LinkUID": {
             "type": "string"
@@ -5675,7 +5693,7 @@
       "Date": {
         "title": "XXX Date",
         "type": "object",
-        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n\n###Stat\nLastUpdate\nFequency?\n\n###Territory\nLastTimeUpdate\n",
+        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n\n###Stat\nLastUpdate\nFequency?\n\n",
         "properties": {
           "DateUID": {
             "type": "string"
@@ -5846,9 +5864,6 @@
           "Value": {
             "type": "string",
             "description": "Value for the Answer field\nOR\nThe Snapshop value"
-          },
-          "Encoding": {
-            "$ref": "#/components/schemas/Encoding"
           }
         }
       }
