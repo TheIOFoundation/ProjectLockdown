@@ -4218,9 +4218,6 @@
           "Project": {
             "$ref": "#/components/schemas/Project"
           },
-          "Module": {
-            "$ref": "#/components/schemas/Module"
-          },
           "Stats": {
             "type": "array",
             "items": {
@@ -4724,42 +4721,17 @@
           "DateLastDay": {
             "$ref": "#/components/schemas/Date"
           },
-          "Modules": {
+          "ModuleConfigs": {
             "type": "object",
             "properties": {
               "MAP": {
-                "type": "object",
-                "properties": {
-                  "DefaultDP": {
-                    "type": "object",
-                    "properties": {
-                      "Territory": {
-                        "type": "string"
-                      },
-                      "Border": {
-                        "type": "string"
-                      },
-                      "Location": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "Categories": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Category"
-                    }
-                  },
-                  "DateDefaultStart": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/Module"
               },
               "BO": {
-                "type": "object"
+                "$ref": "#/components/schemas/Module"
               },
               "API": {
-                "type": "string"
+                "$ref": "#/components/schemas/Module"
               }
             }
           }
@@ -5109,13 +5081,11 @@
               "$ref": "#/components/schemas/Stat"
             }
           },
-          "Links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            }
+          "URLCSS": {
+            "$ref": "#/components/schemas/Link"
           }
-        }
+        },
+        "description": "\n@@@MISSING\nHow to correlate the DPUIs with the layout placeholders.\nThis will depend on the implementation model."
       },
       "User": {
         "title": "XXX User",
@@ -5190,6 +5160,7 @@
       "Project": {
         "title": "XXX Project",
         "type": "object",
+        "description": "DateCreated\nDate when this project was created.\n\nContact\nContact person for this project.\n",
         "properties": {
           "ProjectUID": {
             "type": "string"
@@ -5201,11 +5172,11 @@
                 "type": "string",
                 "description": "Default Locale = ENG"
               },
-              "Links": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Link"
-                }
+              "URLSources": {
+                "$ref": "#/components/schemas/Link"
+              },
+              "DefaultDSL": {
+                "type": "string"
               }
             }
           },
@@ -5216,10 +5187,7 @@
             "type": "string"
           },
           "Dates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Date"
-            }
+            "$ref": "#/components/schemas/Date"
           },
           "Contact": {
             "$ref": "#/components/schemas/User"
@@ -5253,11 +5221,9 @@
       "Module": {
         "title": "XXX Module",
         "type": "object",
+        "description": "\n\n###Accessed by\nMAP\nBO\nAPI",
         "properties": {
-          "ModuleUID": {
-            "type": "string"
-          },
-          "XXXMAP": {
+          "MAP": {
             "type": "object",
             "properties": {
               "TabMenu": {
@@ -5312,8 +5278,14 @@
               "StatsBox": {
                 "type": "object",
                 "properties": {
-                  "Something": {
-                    "type": "string"
+                  "Layout": {
+                    "$ref": "#/components/schemas/Layout"
+                  },
+                  "DefaultDP": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Snapshot"
+                    }
                   }
                 }
               },
@@ -5331,6 +5303,20 @@
                   },
                   "Lng": {
                     "type": "string"
+                  },
+                  "DefaultDP": {
+                    "type": "object",
+                    "properties": {
+                      "Territory": {
+                        "type": "string"
+                      },
+                      "Border": {
+                        "type": "string"
+                      },
+                      "Location": {
+                        "type": "string"
+                      }
+                    }
                   }
                 }
               },
@@ -5385,7 +5371,7 @@
                       "Center"
                     ]
                   },
-                  "CategoryUID": {
+                  "DefaultCategoryUID": {
                     "type": "string",
                     "description": "In which category the TDO should open."
                   },
@@ -5401,6 +5387,12 @@
                   },
                   "PLDCode": {
                     "type": "string"
+                  },
+                  "Categories": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Category"
+                    }
                   }
                 }
               },
@@ -5486,8 +5478,7 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        },
-        "description": "\n\n###Accessed by\nMAP\nBO\nAPI"
+        }
       },
       "Log": {
         "title": "Log",
@@ -5580,7 +5571,7 @@
       "Link": {
         "title": "XXX Link",
         "type": "object",
-        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n###Project\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n###Datapoint\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\nPermalinkEditorGuideURL\n\n###Date\n???EditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n###Origin\nOriginURL\n\n###Territory\nPermalinkDEI\nPermalinkDocURL\n\n###Layout\nCSSURL",
+        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\n###Datapoint\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\nPermalinkEditorGuideURL\n\n###Date\n???EditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n###Origin\nOriginURL\n\n###Territory\nPermalinkDEI\nPermalinkDocURL\n\n###Layout\n",
         "properties": {
           "LinkUID": {
             "type": "string"
@@ -5657,7 +5648,7 @@
       "Date": {
         "title": "XXX Date",
         "type": "object",
-        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###Project\nDateCreated\n\n\n\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n\n###Stat\nLastUpdate\nFequency?\n\n###Territory\nLastTimeUpdate\n",
+        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n\n###Stat\nLastUpdate\nFequency?\n\n###Territory\nLastTimeUpdate\n",
         "properties": {
           "DateUID": {
             "type": "string"
