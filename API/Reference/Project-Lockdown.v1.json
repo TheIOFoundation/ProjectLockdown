@@ -182,7 +182,7 @@
         }
       },
       "Territory": {
-        "title": "Territory",
+        "title": "XXX Territory",
         "type": "object",
         "description": "@@@\nDecribes PLD Territories.\n",
         "x-examples": {
@@ -225,96 +225,105 @@
           "PLDInfo": {
             "type": "object",
             "properties": {
-              "@@@PLDInfoUID": {
+              "???PLDInfoUID": {
                 "type": "string"
               },
-              "XXXPLDCode": {
+              "PLDCode": {
                 "type": "string"
               },
-              "XXXPLDCodeParent": {
+              "PLDCodeParent": {
                 "type": "string"
               },
-              "XXXPermalinkDEI": {
+              "Name": {
                 "type": "string"
               },
-              "XXXName": {
-                "type": "string"
-              },
-              "XXXRegion": {
+              "Region": {
                 "$ref": "#/components/schemas/Region"
               },
-              "XXXUnitCode": {
+              "UnitCode": {
                 "type": "string"
               },
-              "XXXNotes": {
+              "Notes": {
                 "type": "string"
               },
-              "XXXDescription": {
+              "Description": {
                 "type": "string"
               }
             }
           },
-          "XXXISOInfo": {
+          "ISOInfo": {
             "type": "object",
             "description": "Describes ISO-related description fields for PLD Territories.\nInformation originated by the International Starndards Organization (ISO).",
             "properties": {
-              "XXXISO2": {
+              "ISO2": {
                 "type": "string",
                 "description": "Code ISO Alpha 2 of this Territory (or its parent, if territory is a subdivision)."
               },
-              "XXXISO3": {
+              "ISO3": {
                 "type": "string",
                 "description": "Code ISO Alpha 3 of this Territory (or its parent, if territory is a subdivision)."
               },
-              "@@@PermalinkDocURL": {
-                "type": "string"
+              "Links": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Link"
+                }
               }
             }
           },
-          "XXXUNInfo": {
+          "UNInfo": {
             "type": "object",
             "description": "Describes UN-related description fields for PLD Territories.\nInformation originated by United Nations (UN).",
             "properties": {
-              "XXXLOCODE": {
+              "LOCODE": {
                 "type": "string",
                 "description": "UN LOCODE code for this territory."
               },
-              "@@@PermalinkDocURL": {
-                "type": "string"
+              "Links": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Link"
+                }
               }
             }
           },
-          "XXXNATOInfo": {
+          "NATOInfo": {
             "type": "object",
             "description": "Describes NATO-related description fields for PLD Territories.\nInformation originated by the North Atlantic Treaty Organization (NATO).",
             "properties": {
-              "XXXSTANAG": {
+              "STANAG": {
                 "type": "string",
                 "description": "https://en.wikipedia.org/wiki/List_of_NATO_country_codes"
               },
-              "@@@PermalinkDocURL": {
-                "type": "string"
+              "Links": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Link"
+                }
               }
             }
           },
-          "XXXWikiMediaInfo": {
+          "WikiMediaInfo": {
             "type": "object",
             "description": "Describes WikiMedia-related description fields for PLD Territories.",
             "properties": {
-              "XXXWikidataID": {
+              "WikidataID": {
                 "type": "string",
                 "description": "WikidataID for the Territory."
               },
-              "@@@PermalinkDocURL": {
-                "type": "string"
+              "Links": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Link"
+                }
               }
             }
           },
-          "XXXMapboxInfo": {
+          "MapboxInfo": {
             "type": "object",
             "description": "Describes Mapbox-related description fields for PLD Territories.\nInformation originated by Mapbox (Map platform provider).",
             "properties": {
-              "XXXBoundaryLevel": {
+              "BoundaryLevel": {
                 "type": "string",
                 "description": "Boundary Level for this Territory.",
                 "enum": [
@@ -326,40 +335,36 @@
                   "Adm5"
                 ]
               },
-              "XXXFeatureID": {
+              "FeatureID": {
                 "type": "string",
                 "description": "FeatureID (unique ID) for this Territory."
               },
-              "@@@PermalinkDocURL": {
-                "type": "string"
+              "Links": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Link"
+                }
               }
             }
           },
-          "XXXPermalinkDocs": {
-            "type": "string",
-            "description": "Permalink to the documentation explaining this object."
-          },
-          "XXXTerritories": {
+          "Territories": {
             "type": "array",
             "description": "List of sub territories that compose this territory.",
             "items": {
               "$ref": "#/components/schemas/Territory"
             }
           },
-          "XXXLastTimeUpdate": {
+          "Status": {
             "type": "string"
           },
-          "XXXStatus": {
-            "type": "string"
-          },
-          "XXXOrigins": {
+          "Origins": {
             "type": "array",
             "description": "List of Origins that are linked to this Territory.",
             "items": {
               "$ref": "#/components/schemas/Origin"
             }
           },
-          "@@@DEPRECATED?": {
+          "???DEPRECATED?": {
             "type": "object",
             "properties": {
               "DEI-LastTimeUpdated": {
@@ -379,9 +384,6 @@
               },
               "DEI-URL": {
                 "type": "string"
-              },
-              "": {
-                "type": "string"
               }
             }
           },
@@ -389,15 +391,26 @@
             "type": "array",
             "description": "List of Stats for this Territory.\n\n@@@Indicate the list of Stats\n\n\n@@@Make sure all these are in the Stat.StatType enumerator.\n\n",
             "items": {
-              "$ref": ""
+              "$ref": "#/components/schemas/Stat"
+            }
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          },
+          "Dates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Date"
             }
           }
         },
         "required": [
           "TerritoryUID",
           "PLDInfo",
-          "XXXMapboxInfo",
-          "XXXPermalinkDocs"
+          "MapboxInfo"
         ]
       },
       "DataPoint": {
@@ -696,6 +709,12 @@
             "items": {
               "$ref": "#/components/schemas/Date"
             }
+          },
+          "Territories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Territory"
+            }
           }
         },
         "required": [
@@ -798,9 +817,9 @@
         }
       },
       "SourceType": {
-        "title": "XXX SourceType",
+        "title": "??? SourceType",
         "type": "object",
-        "description": "@@@\nDefines the types of sources from where Sources are extracted and/or generated. This applies to all data, from the one generated for PLD to external providers.\n\n\n",
+        "description": "MAYBE THESE ARE ACTUALLY ORIGINS\n\n@@@\nDefines the types of sources from where Sources are extracted and/or generated. This applies to all data, from the one generated for PLD to external providers.\n\n\n",
         "properties": {
           "SourceTypeUID": {
             "type": "string"
@@ -891,34 +910,56 @@
         }
       },
       "Origin": {
-        "title": "Origin",
+        "title": "XXX Origin",
         "type": "object",
         "description": "@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.",
         "properties": {
-          "XXXOriginUID": {
+          "OriginUID": {
             "type": "string"
           },
-          "XXXName": {
+          "Name": {
             "type": "string"
           },
-          "XXXDescription": {
+          "Description": {
             "type": "string"
           },
-          "XXXURL": {
+          "Status": {
             "type": "string"
           },
-          "XXXStatus": {
-            "type": "string"
-          },
-          "XXXContact": {
+          "Contact": {
             "$ref": "#/components/schemas/User"
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "Gov Website",
+              "Gov SocMed"
+            ]
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
         }
       },
       "TimeMachine": {
-        "title": "TimeMachine",
+        "title": "??? TimeMachine",
         "type": "object",
-        "description": "Objects describing all the different Time Machines used to back up Sources.",
+        "description": "REPLACED BY SOURCE???\n\n\nObjects describing all the different Time Machines used to back up Sources.",
         "properties": {
           "TimeMachineUID": {
             "type": "string"
@@ -1000,10 +1041,7 @@
         "title": "Layout",
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string"
-          },
-          "PermaLink": {
+          "LayoutUID": {
             "type": "string"
           },
           "Name": {
@@ -1017,12 +1055,19 @@
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
           }
         }
       },
       "User": {
         "title": "XXX User",
         "type": "object",
+        "description": "",
         "properties": {
           "UserUID": {
             "type": "string"
@@ -1045,9 +1090,14 @@
             "items": {
               "$ref": "#/components/schemas/License"
             }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
-        },
-        "description": ""
+        }
       },
       "License": {
         "title": "License",
@@ -1064,8 +1114,25 @@
           },
           "DSLUID": {
             "type": "string"
+          },
+          "Modules": {
+            "type": "object",
+            "properties": {
+              "API": {
+                "type": "object"
+              },
+              "MAP": {
+                "type": "object",
+                "properties": {
+                  "Operations": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "description": "In Short:\n\n- Each Module has different components\nEx: API has different Endpoints\nEx: BO has different interfaces/pages/screens\n\n- Each component allows a number of Operations on them\n\n"
       },
       "Project": {
         "title": "XXX Project",
@@ -1372,8 +1439,9 @@
       "Log": {
         "title": "Log",
         "type": "object",
+        "description": "\n\n\n###User\nCreated\nBanned\nSuspended\nAddLicense\nRemoveLicense\n\nServiceRequest\nKeeps track of the usage of the platform. For instance, allows to track how many API requestes in 24h have been made.\n\n\n",
         "properties": {
-          "id": {
+          "LogUID": {
             "type": "string"
           },
           "Operation": {
@@ -1399,11 +1467,14 @@
           "SourceUID": {
             "type": "string"
           },
-          "Stats": {
+          "Dates": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Stat"
+              "$ref": "#/components/schemas/Date"
             }
+          },
+          "Module": {
+            "type": "string"
           }
         }
       },
@@ -1454,14 +1525,14 @@
         "description": "@@@"
       },
       "Link": {
-        "title": "Link",
+        "title": "XXX Link",
         "type": "object",
-        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n###Project\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n\n###DSL\nPermalinkDocs\nPermalink to the documentation explaining this object.\n\nPermalinkDSL\nPermalink for this DSL.\n\nPermalinkDEI\nPermalink to the DEI for this DSL.\n\nPermalinkMethodology\nPermalink providing Methodology information for the DSL.\n\nPermalinkAPIURL\nPermalink providing access to the API serving this DSL.\n\nPermalinkSchema\nPermalink providing access to the Schema forming this DSL.\n\nPermalinkQALog?\nPermalink providing access to the QA log for the DSL.\n\nPermalinkLicenseURL\nPermalink providing Licensing information for the DSL.\n\nPermalinkCitingPolicy\nPermalink providing Citing information for the DSL.\n\n\n###DP\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\n\n\n###Date\nEditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n",
+        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n###Project\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n\n###DSL\nPermalinkDocs\nPermalink to the documentation explaining this object.\n\nPermalinkDSL\nPermalink for this DSL.\n\nPermalinkDEI\nPermalink to the DEI for this DSL.\n\nPermalinkMethodology\nPermalink providing Methodology information for the DSL.\n\nPermalinkAPIURL\nPermalink providing access to the API serving this DSL.\n\nPermalinkSchema\nPermalink providing access to the Schema forming this DSL.\n\nPermalinkQALog?\nPermalink providing access to the QA log for the DSL.\n\nPermalinkLicenseURL\nPermalink providing Licensing information for the DSL.\n\nPermalinkCitingPolicy\nPermalink providing Citing information for the DSL.\n\n\n###DP\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\n\n\n###Date\n???EditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n###Origin\nOriginURL\n\n###Territory\nPermalinkDEI\nPermalinkDocURL\n\n###Layout\nCSSURL",
         "properties": {
-          "XXXLinkUID": {
+          "LinkUID": {
             "type": "string"
           },
-          "XXXType": {
+          "Type": {
             "type": "string",
             "description": "Enumerator with the different kinds of Links.",
             "enum": [
@@ -1470,17 +1541,11 @@
               "UI"
             ]
           },
-          "XXXName": {
+          "Name": {
             "type": "string"
           },
-          "XXXDescription": {
+          "Description": {
             "type": "string"
-          },
-          "XXXTimeMachine": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TimeMachine"
-            }
           },
           "Stats": {
             "type": "array",
@@ -1493,7 +1558,7 @@
       "Stat": {
         "title": "XXX Stat",
         "type": "object",
-        "description": "@@@\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n",
+        "description": "@@@\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n\n\n###User\nReliability Index\n",
         "properties": {
           "StatUID": {
             "type": "string"
@@ -1530,13 +1595,16 @@
             "items": {
               "$ref": "#/components/schemas/Date"
             }
+          },
+          "Status": {
+            "type": "string"
           }
         }
       },
       "Date": {
-        "title": "Date",
+        "title": "XXX Date",
         "type": "object",
-        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###Project\nDateCreated\n\n###DSL\nDateTimeFormat\nDatePublishedFirst\nUpdatedLast\nLast Date and Time the DSL was updated. Format as per DatesFormat.\n\nUpdatedNext\nNext scheduled Date and Time the DSL will be updated. Format as per DatesFormat.\n\nUpdatedFreq\nScheduled frequency for updates on the DSL, in milliseconds.\n\nXXXFirstDay\nFirst Day (Left limit) considered in the DSL.\n\nXXXLastDay\nLast Day (Right limit) considered in the DSL.\n\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n",
+        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###Project\nDateCreated\n\n###DSL\nDateTimeFormat\nDatePublishedFirst\nUpdatedLast\nLast Date and Time the DSL was updated. Format as per DatesFormat.\n\nUpdatedNext\nNext scheduled Date and Time the DSL will be updated. Format as per DatesFormat.\n\nUpdatedFreq\nScheduled frequency for updates on the DSL, in milliseconds.\n\nXXXFirstDay\nFirst Day (Left limit) considered in the DSL.\n\nXXXLastDay\nLast Day (Right limit) considered in the DSL.\n\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n\n###Stat\nLastUpdate\nFequency?\n\n###Territory\nLastTimeUpdate\n",
         "properties": {
           "DateUID": {
             "type": "string"
@@ -1551,28 +1619,42 @@
             "type": "string",
             "description": "Enumerator of all types of Dates in the platform."
           },
-          "@@@Tooltip": {
-            "type": "string"
-          },
           "Value": {
             "type": "string"
           },
           "ValueUTC": {
             "type": "string"
           },
-          "XXXGeneratedBy": {
+          "GeneratedBy": {
             "type": "string"
           },
           "@@@Highlights": {
             "type": "string"
           },
-          "XXXDateFormat": {
-            "type": "string"
-          },
-          "Links": {
+          "???Links": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Link"
+            }
+          },
+          "UI": {
+            "type": "object",
+            "properties": {
+              "Tooltip": {
+                "type": "string"
+              },
+              "???Name": {
+                "type": "string"
+              },
+              "???Description": {
+                "type": "string"
+              }
+            }
+          },
+          "???Stats": {
+            "type": "array",
+            "items": {
+              "$ref": ""
             }
           }
         }
