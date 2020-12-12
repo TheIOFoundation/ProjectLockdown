@@ -28,7 +28,7 @@ The DataBase is build on top of MongoDB and all the data is retrieved in JSON fo
 # The module in Project Lockdown
 The following diagram showcases how this Module integrates in the project:
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20DB%20ENG%20v1.0.png" alt="DB Module Diagram" title="DB Module Diagram"/>
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20DB%20ENG%20v1.0.png" alt="DB Module Diagram" title="DB Module Diagram"/>
 
 <a href="#top">Back to top</a>
 

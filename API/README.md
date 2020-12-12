@@ -45,7 +45,7 @@ It also allows for data access from 3rd parties in a number of differet formats.
 # The module in Project Lockdown
 The following diagram showcases how this Module integrates in the project:
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20API%20ENG%20v1.0.png" alt="API Module Diagram" title="API Module Diagram"/>
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20API%20ENG%20v1.0.png" alt="API Module Diagram" title="API Module Diagram"/>
 
 <a href="#top">Back to top</a>
 
