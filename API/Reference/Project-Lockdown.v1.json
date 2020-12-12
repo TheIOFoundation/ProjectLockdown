@@ -4466,7 +4466,7 @@
         "type": "object",
         "description": "Describes PLD Data Points.",
         "properties": {
-          "DPUID": {
+          "DataPointUID": {
             "type": "string"
           },
           "Definition": {
@@ -4513,63 +4513,16 @@
               }
             }
           },
-          "Value": {
-            "type": "object",
-            "properties": {
-              "Answer": {
-                "type": "object",
-                "properties": {
-                  "GeneratedBy": {
-                    "type": "string",
-                    "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n\n\nThe Log indicates who did the operation.\n",
-                    "enum": [
-                      "Funnel",
-                      "Algorithm"
-                    ]
-                  },
-                  "???Highlights": {
-                    "type": "string",
-                    "description": "Set of xyz coordinates that identify the snippet of text in the Source that explains this information."
-                  },
-                  "ValueType": {
-                    "type": "string"
-                  },
-                  "Value": {
-                    "type": "string",
-                    "description": "Value for the Answer field."
-                  },
-                  "Description": {
-                    "type": "string"
-                  },
-                  "Tooltip": {
-                    "type": "string"
-                  },
-                  "Encoding": {
-                    "$ref": "#/components/schemas/Encoding"
-                  }
-                }
-              },
-              "DateStart": {
-                "$ref": "#/components/schemas/Date"
-              },
-              "DateEnd": {
-                "$ref": "#/components/schemas/Date"
-              }
-            }
-          },
           "Status": {
             "type": "string"
           },
-          "XXXFirstCreated": {
+          "CreatedDate": {
             "$ref": "#/components/schemas/Date"
           },
-          "XXXLastUpdated": {
+          "LastUpdatedDate": {
             "$ref": "#/components/schemas/Date"
           },
-          "@@@GeneratedBy": {
-            "type": "string"
-          },
-          "XXXStats": {
+          "Stats": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Stat"
@@ -4579,6 +4532,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Link"
+            }
+          },
+          "Answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer"
             }
           }
         }
@@ -4635,9 +4594,6 @@
               },
               "TabTooltip": {
                 "type": "string"
-              },
-              "": {
-                "type": "string"
               }
             }
           }
@@ -4646,7 +4602,7 @@
       "DataSetLayer": {
         "title": "XXX DataSet Layer (DSL)",
         "type": "object",
-        "description": "Describes PLD DataSet Layers.\nA DataSet Layer (DSL) is a collection of DataPoints (DP) that are selected to track the impact of a specific family of policies that may impact Human and/or Digital Rights. They are composed of a series of child objects formed by metadata and actual policy information encoded following a DSL-specific methodology.\n\n\n###Accessed by\nMAP\nBO\nAPI\n\n\n#DUBIOUS FIELDS\nMethodologyCode\nExtra information inside the Methodology.\n\n@@@AccessLevel\nIndicates the access conditions for this DSL\n\nLicenseCode\nExtra information inside the Licensing.\n\nCitingPolicyCode\nExtra information inside the Citing.",
+        "description": "Describes PLD DataSet Layers.\nA DataSet Layer (DSL) is a collection of DataPoints (DP) that are selected to track the impact of a specific family of policies that may impact Human and/or Digital Rights. They are composed of a series of child objects formed by metadata and actual policy information encoded following a DSL-specific methodology.\n\n\n###Accessed by\nMAP\nBO\nAPI\n\n###URL fields\nURLDocs\nPermalink to the documentation explaining this object.\n\nURLDSL\nPermalink for this DSL.\n\nURLDEI\nPermalink to the DEI for this DSL.\n\nURLMethodology\nPermalink providing Methodology information for the DSL.\n\n???URLAPI\nPermalink providing access to the API serving this DSL.\n\nURLSchema\nPermalink providing access to the Schema forming this DSL.\n\n???URLQALog\nPermalink providing access to the QA log for the DSL.\n\nURLLicense\nPermalink providing Licensing information for the DSL.\n\nURLCitingPolicy\nPermalink providing Citing information for the DSL.\n\n\n###Date Fields\nDateFirstPublished\nFirst time this DSL was published.\nNote: Maybe we put this in Log too?\n\nDateLastUpdated\nLast Date and Time the DSL was updated.\nNote: Maybe we put this in Log too?\n\nDateUpdatedNext\nNext scheduled Date and Time the DSL will be updated.\n\nDateFirstDay\nFirst Day (Left limit) considered in the DSL.\n\nDateLastDay\nLast Day (Right limit) considered in the DSL.\n\n#DUBIOUS FIELDS\nDateTimeFormat\n\nUpdatedFreq\nScheduled frequency for updates on the DSL, in milliseconds.\n\nMethodologyCode\nExtra information inside the Methodology.\n\n@@@AccessLevel\nIndicates the access conditions for this DSL\n\nLicenseCode\nExtra information inside the Licensing.\n\nCitingPolicyCode\nExtra information inside the Citing.",
         "properties": {
           "DSLUID": {
             "type": "string",
@@ -4711,54 +4667,100 @@
               "$ref": "#/components/schemas/Snapshot"
             }
           },
-          "Categories": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Category"
-            }
-          },
           "Sources": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Source"
             }
           },
-          "DefaultDPs": {
-            "type": "object",
-            "properties": {
-              "Territory": {
-                "type": "string"
-              },
-              "Border": {
-                "type": "string"
-              },
-              "Location": {
-                "type": "string"
-              }
-            }
-          },
           "Stats": {
             "type": "array",
             "items": {
-              "$ref": ""
-            }
-          },
-          "Links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            }
-          },
-          "Dates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Date"
+              "$ref": "#/components/schemas/Stat"
             }
           },
           "Territories": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Territory"
+            }
+          },
+          "URLDocs": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLDSL": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLDEI": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLMethodology": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "???URLAPI": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLSchema": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLQALog": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLLicense": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLCitingPolicy": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "DateFirstPublished": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DateUpdatedNext": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DateFirstDay": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DateLastDay": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "Modules": {
+            "type": "object",
+            "properties": {
+              "MAP": {
+                "type": "object",
+                "properties": {
+                  "DefaultDP": {
+                    "type": "object",
+                    "properties": {
+                      "Territory": {
+                        "type": "string"
+                      },
+                      "Border": {
+                        "type": "string"
+                      },
+                      "Location": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Categories": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Category"
+                    }
+                  },
+                  "DateDefaultStart": {
+                    "type": "string"
+                  }
+                }
+              },
+              "BO": {
+                "type": "object"
+              },
+              "API": {
+                "type": "string"
+              }
             }
           }
         },
@@ -4772,7 +4774,7 @@
       "Source": {
         "title": "XXX Source",
         "type": "object",
-        "description": "",
+        "description": "###Accessed by\nBO\nAPI",
         "properties": {
           "SourceUID": {
             "type": "string"
@@ -5044,7 +5046,7 @@
       "Snapshot": {
         "title": "Snapshot",
         "type": "object",
-        "description": "@@@\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n\n###DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\n",
+        "description": "@@@\n\n###Accessed by\nMAP\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n\n###DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\n",
         "properties": {
           "SnapshotUID": {
             "type": "string"
@@ -5225,7 +5227,7 @@
           "Stats": {
             "type": "array",
             "items": {
-              "$ref": ""
+              "$ref": "#/components/schemas/Stat"
             }
           }
         }
@@ -5578,7 +5580,7 @@
       "Link": {
         "title": "XXX Link",
         "type": "object",
-        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n###Project\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n\n###DSL\nPermalinkDocs\nPermalink to the documentation explaining this object.\n\nPermalinkDSL\nPermalink for this DSL.\n\nPermalinkDEI\nPermalink to the DEI for this DSL.\n\nPermalinkMethodology\nPermalink providing Methodology information for the DSL.\n\nPermalinkAPIURL\nPermalink providing access to the API serving this DSL.\n\nPermalinkSchema\nPermalink providing access to the Schema forming this DSL.\n\nPermalinkQALog?\nPermalink providing access to the QA log for the DSL.\n\nPermalinkLicenseURL\nPermalink providing Licensing information for the DSL.\n\nPermalinkCitingPolicy\nPermalink providing Citing information for the DSL.\n\n\n###Datapoint\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\nPermalinkEditorGuideURL\n\n###Date\n???EditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n###Origin\nOriginURL\n\n###Territory\nPermalinkDEI\nPermalinkDocURL\n\n###Layout\nCSSURL",
+        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n###Project\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n###Datapoint\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\nPermalinkEditorGuideURL\n\n###Date\n???EditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n###Origin\nOriginURL\n\n###Territory\nPermalinkDEI\nPermalinkDocURL\n\n###Layout\nCSSURL",
         "properties": {
           "LinkUID": {
             "type": "string"
@@ -5655,7 +5657,7 @@
       "Date": {
         "title": "XXX Date",
         "type": "object",
-        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###Project\nDateCreated\n\n###DSL\nDateTimeFormat\nDatePublishedFirst\nUpdatedLast\nLast Date and Time the DSL was updated. Format as per DatesFormat.\n\nUpdatedNext\nNext scheduled Date and Time the DSL will be updated. Format as per DatesFormat.\n\nUpdatedFreq\nScheduled frequency for updates on the DSL, in milliseconds.\n\nXXXFirstDay\nFirst Day (Left limit) considered in the DSL.\n\nXXXLastDay\nLast Day (Right limit) considered in the DSL.\n\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n\n###Stat\nLastUpdate\nFequency?\n\n###Territory\nLastTimeUpdate\n",
+        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###Project\nDateCreated\n\n\n\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n\n###Stat\nLastUpdate\nFequency?\n\n###Territory\nLastTimeUpdate\n",
         "properties": {
           "DateUID": {
             "type": "string"
@@ -5782,18 +5784,22 @@
       "Answer": {
         "title": "Answer",
         "type": "object",
+        "description": "\n\nNote:\nFor DSEs\nDateStart + DateEnd typially different\n\nFor Snapshopts\nDateStart = DateEnd (Can even ignore DateEnd)",
         "properties": {
           "AnswerUID": {
             "type": "string"
           },
-          "Value": {
-            "$ref": "#/components/schemas/Value"
+          "Response": {
+            "$ref": "#/components/schemas/Response"
           },
           "DateStart": {
             "$ref": "#/components/schemas/Date"
           },
           "DateEnd": {
             "$ref": "#/components/schemas/Date"
+          },
+          "DataPointUID": {
+            "type": "string"
           }
         }
       },
@@ -5801,20 +5807,30 @@
         "title": "Response",
         "type": "object",
         "properties": {
-          "ValueUID": {
+          "ResponseUID": {
             "type": "string"
           },
           "GeneratedBy": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n\n\nThe Log indicates who did the operation.\n",
+            "enum": [
+              "Funnel",
+              "Algorithm"
+            ]
           },
           "???Highlights": {
-            "type": "string"
+            "type": "string",
+            "description": "Set of xyz coordinates that identify the snippet of text in the Source that explains this information."
           },
           "Type": {
             "type": "string"
           },
           "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "Value for the Answer field\nOR\nThe Snapshop value"
+          },
+          "Encoding": {
+            "$ref": "#/components/schemas/Encoding"
           }
         }
       }
