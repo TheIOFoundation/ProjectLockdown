@@ -7,7 +7,6 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Code-of-Conduct)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/TheIOFoundation/ProjectLockdown/blob/master/LICENSE)
 
-
 ## NOTE: This is the new reppository for v2.0. Some information is still a work in progress. You can access the current runnning v1.0 repository <a href="https://github.com/Code-for-All/lockdown/">here</a> while we transition to the new version.
 
 
@@ -75,13 +74,13 @@ Did you find a bug? Feel free create a PR and we'll look at it as soon as possib
 Project Lockdown is composed of a number of modules that complement each other following the project's Operational Framework.
 This repository tries to consolidate all of them under a same roof so that the main goal is always kept in mind.
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/General/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Operational%20Framework%20ENG%20v1.5.png" alt="Operational Framework" title="Operational Framework"/>
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/General/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Operational%20Framework%20ENG%20v1.5.png" alt="Operational Framework" title="Operational Framework"/>
 
 
 ## Project architecture
 The following diagram showcases how all Modules integrate in the project:
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
 
 
 

@@ -1,0 +1,251 @@
+{
+    "DSLUID": "1",
+    "Version": "0.01",
+    "PermalinkDocs": "https://TIOF.Click?DSL=1&type=doc",
+    "DSLType": "",
+    "DSLAccessLevel": "",
+    "SchemaPermaURL": "https://TIOF.Click?DSL=1",
+    "TrelloBoardPermaURL": "https://TIOF.Click?DSL=1&type=trello",
+    "LocaleName": "Afganistan",
+    "LocaleCode": "AFG",
+    "Status": "Ready",
+    "PermalinkDSL": "https://TIOF.Click?DSL=1",  
+    "PermalinkDEI": "https://TIOF.Click?DSL=1&type=dei",
+    "Name": "Afganistan Data Set Layer",
+    "Description": "Afganistan Data Set Layer",
+    "DateTimeFormat": "yyyy-MM-ddTHH:mmZ",  /* changed from DatesFormat */
+    "PubllishedFirst": "2019-06-01T00:00Z",
+    "UpdatedLast": "2020-09-17T12:00Z",
+    "UpdatedNext": "2020-09-24T12:00Z",
+    "UpdatedFreq": "604800000", /* in milliseconds */
+    "PermalinkContact": "https://TIOF.Click?DSL=1&type=contact",
+    "PermalinkMethodology": "https://TIOF.Click?DSL=1&type=methodology",
+    "MethodologyCode": "AB1234", //?
+    "Audiences": ["1", "2", "3"], //format for audience ID?
+    "FirstDay": "2019-06-01T00:00Z",
+    "LastDay": "2029-06-01T00:00Z",
+    "PermalinkAPIURL": "https://TIOF.Click?DSL=1&type=apiurl",
+    "PermalinkSchema": "https://TIOF.Click?DSL=1&type=schema",
+    "MaxBoundary": "123.3, 44.3, 11.2, 44.5",  
+    "SourceTypes": ["1", "2", "3"], //?
+    "Count Data Points": 173,
+    "PermalinkQALog": "https://TIOF.Click?DSL=1&type=qalog",
+    "Ontoloy": "https://TIOF.Click?DSL=1&type=ontoloy",
+    "ResearchURL": "https://TIOF.Click?DSL=1&type=researchurl",
+    "AvailableLocales": ["1", "2", "3"],
+    "PermalinkLicenseURL": "https://TIOF.Click?DSL=1&type=licenseurl", 
+    "LicenseCode": "MIT", 
+    "PermalinkCitingPolicy": "Lorem ipsem...", //?
+    "CitingPolicyCode": "AB123",
+    "StatsBox": ["1", "2", "3"],
+    "Tags": ["Afghanistan", "lockdown", "status"],
+    "DefaultDPs": [
+        {
+            "DPObjectType": "AB123",
+            "DPUID": "1"
+        },
+        {
+            "DPObjectType": "BC223",
+            "DPUID": "2"
+        }
+    ],
+    "Interface": {},
+    "Territories": [
+        {
+            "PermalinkDocs": "https://TIOF.Click?Territory=1", 
+            "TerritoriesStats": 
+            {
+                "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoriesStats",
+                "CountTotal": 1,
+                "CountNoData": 0,
+                "CountReady": 1,
+                "CountDemo": 1,
+                "CountReview": 1,
+                "CountNeedsSources": 0
+            },
+            "SourceTypeStats": {
+                "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=sourceTypeStats",
+                "CountTotal": 1,
+                "CountTypeOfficial": 1,
+                "CountTypeMedia": 0,
+                "CountTypeFM": 0,
+                "CountTypeNGO": 0,
+                "CountOther": 0
+            },
+            "Territory": {
+                "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territory",
+                "WikimediaInfo": {
+                    "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoryWikimediaInfo",
+                    "WikidataID" : "WK123123"
+                },
+                "PLDInfo": {
+                    "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoryPLDInfoDoc",
+                    "PLDCode": "AB123",
+                    "UnitCode": "AB123",
+                    "ParentPLDCode": "AB123",
+                    "Permalink": "https://TIOF.Click?DSL=1&type=territoryPLDInfo",
+                    "Name": "Afghanistan",
+                    "LastTimeUpdate": "2020-09-17T12:00Z",
+                    "Region": "Afghanistan",
+                    "Status": "Ready"
+                },
+                "ISOInfo": {
+                    "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoryISOInfoDoc",
+                    "ISO2": "AF",
+                    "ISO3": "AFG"
+                },
+                "UNInfo": {
+                    "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoryUNInfoDoc",
+                    "LOCODE": "AFG"
+                },
+                "NATO": {
+                    "STANAG": "AFG"
+                },
+                "MapBoxInfo": {
+                    "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoryMapBoxInfoDoc",
+                    "Boundary Level": "xxx,yyy,zzz,aaa",
+                    "FeatureID": "AB123"
+                },
+                "Territories": {},
+                "DataSetEntries": {
+                    "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoryDataSetEntriesDoc",
+                    "Entries" : [
+                      {
+                        "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDataSetEntriesDoc",
+                        "EntryUID": "AFG_449f9944-6518-4e23-a84a-7b2cef79f386",
+                        "TimeStamp": "2020-09-17T12:00Z",
+                        "Status": "Ready",
+                        "SourceType": "Official Pronouncement",
+                        "SourceURL": "https://TIOF.Click?DSL=1&type=territoryDataSetEntries",
+                        "SourceTitle": "Message for U.S. Citizens: Movement Restrictions in Kabul",
+                        "Editor": "Arky",
+                        "ReviewedBy": "Mark W. Datysgeld",
+                        "Type": "",
+                        "DEIURL": "",
+                        "TerritoryPermURL": "",
+                        "ProcessedBy": "",
+                        "Datapoints": {
+                          "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                          "Categories": {
+                            "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                            "Category": {
+                              "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                              "CategoryStatus": "Ready",
+                              "TDOLayout": "Ready", //?
+                              "TabMaxWidth": "Ready",
+                              "TabTitle": "Ready",
+                              "TabToolTip": "Ready",
+                              "Tags": "Afganistan, data, datapoints",
+                              "Datapoint": {
+                                "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                                "DPUID": "AB123",
+                                "Label": "AB123",
+                                "DPPermURL": "AB123",
+                                "DPStatus": "AB123",
+                                "Name": "AB123",
+                                "NameShort": "AB123",
+                                "Description": "AB123",
+                                "DescriptionShort": "AB123",
+                                "RightsObserved": "AB123",
+                                "Definition": "AB123",
+                                "DefinitionPermURL": "AB123",
+                                "Tooltip": "AB123",
+                                "DataType": "AB123",
+                                "PLDDataType": "AB123",
+                                "Origin": "AB123",
+                                "OriginPermURL": "AB123",
+                                "FirstCreated": "AB123",
+                                "LastCreated": "AB123",
+                                "CellPermURL": "AB123",
+                                "EditorGuidePermURL": "AB123",
+                                "IconID": "AB123",
+                                "IconIDPermURL": "AB123",
+                                "LayoutXYZ": "AB123",
+                                "QALogPermURL": "AB123",
+                                "DataVocabulary": "AB123",
+                                "DataVocabularyPermURL": "AB123",
+                                "BackEndPermURL": "AB123",
+                                "FrontEndPermURL": "AB123",
+                                "inheritance": "AB123",
+                                "DPOObjectType": "AB123",
+                                "RightUID": "AB123",
+                                "Tags": "AB123",
+                                "Values": {
+                                  "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                                  "Value": {
+                                    "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                                    "Answer": {
+                                      "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                                      "GeneratedBy": "AB123",
+                                      "ContestationPermURL": "AB123",
+                                      "Highlights": "AB123",
+                                      "ValueType": "AB123",
+                                      "Value": "AB123"
+                                    },
+                                    "StartDate": {
+                                      "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                                      "GeneratedBy": "AB123",
+                                      "Highlights": "AB123",
+                                      "DateFormat": "AB123",
+                                      "Value": "AB123",
+                                      "ValueUTC": "AB123"
+                                    },
+                                    "EndDate": {
+                                      "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                                      "GeneratedBy": "AB123",
+                                      "Highlights": "AB123",
+                                      "DateFormat": "AB123",
+                                      "Value": "AB123",
+                                      "ValueUTC": "AB123"
+                                    },
+                                    "Details": {
+                                      "PermalinkDocs": "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                                      "GeneratedBy": "AB123",
+                                      "ContestationPermURL": "AB123",
+                                      "Highlights": "AB123",
+                                      "ValueType": "AB123",
+                                      "Value": "AB123"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+
+                        }
+
+                      }]
+                }
+            }       
+
+        }
+    ]
+}
+
+
+
+datapoints
+{
+    "DPUID": "1",
+    "Values": [{
+        "Answer": "yes",
+        "StartDate": "...",
+        "EndDate": "...",
+        "Details": "...",
+    },{
+        "Answer": "yes",
+        "StartDate": "...",
+        "EndDate": "...",
+        "Details": "...",
+    },{
+        "Answer": "yes",
+        "StartDate": "...",
+        "EndDate": "...",
+        "Details": "...",
+    },{
+        "Answer": "yes",
+        "StartDate": "...",
+        "EndDate": "...",
+        "Details": "...",
+    }]
+}

@@ -1,0 +1,1690 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Project Lockdown",
+    "version": "1.0",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data",
+    "contact": {
+      "name": "The IO Foundation",
+      "email": "Contact@ProjectLockdown.net"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/Environments": {
+      "get": {
+        "summary": "Extract Environment object for MAP.",
+        "tags": [
+          "ProjectLockdown",
+          "TIOF",
+          "The IO Foundation",
+          "Human Rights",
+          "Digital Rights",
+          "Nonprofit"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Environment"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-Environments",
+        "description": "Handles PLD Environment objects.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "DSLUID",
+            "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID"
+          }
+        ]
+      }
+    },
+    "/Territories": {
+      "get": {
+        "summary": "Extract Territory objects",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Territory"
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": "string",
+                        "PLDInfo": {
+                          "UID": "string",
+                          "PLDCode": "string",
+                          "ParentPLDCode": "string",
+                          "PermalinkDEI": "string",
+                          "Name": "string",
+                          "Region": "string",
+                          "UnitCode": "string"
+                        },
+                        "ISOInfo": {
+                          "ISO2": "string",
+                          "ISO3": "string"
+                        },
+                        "UNInfo": {
+                          "LOCODE": "string"
+                        },
+                        "NATOInfo": {
+                          "STANAG": "string"
+                        },
+                        "WikiMediaInfo": {
+                          "WikidataID": "string"
+                        },
+                        "MapboxInfo": {
+                          "BoundaryLevel": "Adm0",
+                          "FeatureID": "string"
+                        },
+                        "PermalinkDocs": "string",
+                        "Territories": [
+                          {}
+                        ],
+                        "LastTimeUpdate": "string",
+                        "Status": "string",
+                        "Origins": [
+                          {
+                            "id": "string",
+                            "Name": "string",
+                            "Description": "string",
+                            "URL": "string",
+                            "Status": "string",
+                            "": "string"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-Territories",
+        "description": "Handles PLD Territory objects."
+      }
+    },
+    "/DataPoints": {
+      "get": {
+        "summary": "Extract DataPoint objects",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "get-DataPoints",
+        "description": "Handles PLD DataPoint objects."
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-DataPoints",
+        "parameters": [],
+        "description": ""
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Environment": {
+        "title": "Environment",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": {}
+          }
+        },
+        "description": "@@@\nDescribes the features and behavior of the environment for all the Modules.\n\n0 = DEFAULT APP\nAnything else = Other environment configurations?\nWe may want to consider custom environments for Users?\n",
+        "properties": {
+          "XXXEnvironmentUID": {
+            "type": "string"
+          },
+          "XXXDSL": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSetLayer"
+            }
+          },
+          "XXXProject": {
+            "$ref": "#/components/schemas/Project"
+          },
+          "XXXModule": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "XXXStats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        }
+      },
+      "Territory": {
+        "title": "Territory",
+        "type": "object",
+        "description": "@@@\nDecribes PLD Territories.\n",
+        "x-examples": {
+          "example-1": {
+            "id": "string",
+            "PLDInfo": {
+              "id": "string",
+              "PermalinkDocs": "string",
+              "PLDCode": "string",
+              "ParentPLDCode": "string",
+              "PermalinkDEI": "string",
+              "Name": "string",
+              "LastTimeUpdate": "string",
+              "Region": "string",
+              "Status": "string"
+            },
+            "ISOInfo": {
+              "id": "string"
+            },
+            "UNInfo": {
+              "id": "string"
+            },
+            "NATOInfo": {
+              "id": "string"
+            },
+            "WikiMediaInfo": {
+              "PermalinkDocs": "string",
+              "WikidataID": "string"
+            },
+            "MapboxInfo": {
+              "id": "string"
+            },
+            "PermalinkDocs": "string"
+          }
+        },
+        "properties": {
+          "TerritoryUID": {
+            "type": "string"
+          },
+          "PLDInfo": {
+            "type": "object",
+            "properties": {
+              "@@@PLDInfoUID": {
+                "type": "string"
+              },
+              "XXXPLDCode": {
+                "type": "string"
+              },
+              "XXXPLDCodeParent": {
+                "type": "string"
+              },
+              "XXXPermalinkDEI": {
+                "type": "string"
+              },
+              "XXXName": {
+                "type": "string"
+              },
+              "XXXRegion": {
+                "$ref": "#/components/schemas/Region"
+              },
+              "XXXUnitCode": {
+                "type": "string"
+              },
+              "XXXNotes": {
+                "type": "string"
+              },
+              "XXXDescription": {
+                "type": "string"
+              }
+            }
+          },
+          "XXXISOInfo": {
+            "type": "object",
+            "description": "Describes ISO-related description fields for PLD Territories.\nInformation originated by the International Starndards Organization (ISO).",
+            "properties": {
+              "XXXISO2": {
+                "type": "string",
+                "description": "Code ISO Alpha 2 of this Territory (or its parent, if territory is a subdivision)."
+              },
+              "XXXISO3": {
+                "type": "string",
+                "description": "Code ISO Alpha 3 of this Territory (or its parent, if territory is a subdivision)."
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
+              }
+            }
+          },
+          "XXXUNInfo": {
+            "type": "object",
+            "description": "Describes UN-related description fields for PLD Territories.\nInformation originated by United Nations (UN).",
+            "properties": {
+              "XXXLOCODE": {
+                "type": "string",
+                "description": "UN LOCODE code for this territory."
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
+              }
+            }
+          },
+          "XXXNATOInfo": {
+            "type": "object",
+            "description": "Describes NATO-related description fields for PLD Territories.\nInformation originated by the North Atlantic Treaty Organization (NATO).",
+            "properties": {
+              "XXXSTANAG": {
+                "type": "string",
+                "description": "https://en.wikipedia.org/wiki/List_of_NATO_country_codes"
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
+              }
+            }
+          },
+          "XXXWikiMediaInfo": {
+            "type": "object",
+            "description": "Describes WikiMedia-related description fields for PLD Territories.",
+            "properties": {
+              "XXXWikidataID": {
+                "type": "string",
+                "description": "WikidataID for the Territory."
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
+              }
+            }
+          },
+          "XXXMapboxInfo": {
+            "type": "object",
+            "description": "Describes Mapbox-related description fields for PLD Territories.\nInformation originated by Mapbox (Map platform provider).",
+            "properties": {
+              "XXXBoundaryLevel": {
+                "type": "string",
+                "description": "Boundary Level for this Territory.",
+                "enum": [
+                  "Adm0",
+                  "Adm1",
+                  "Adm2",
+                  "Adm3",
+                  "Adm4",
+                  "Adm5"
+                ]
+              },
+              "XXXFeatureID": {
+                "type": "string",
+                "description": "FeatureID (unique ID) for this Territory."
+              },
+              "@@@PermalinkDocURL": {
+                "type": "string"
+              }
+            }
+          },
+          "XXXPermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation explaining this object."
+          },
+          "XXXTerritories": {
+            "type": "array",
+            "description": "List of sub territories that compose this territory.",
+            "items": {
+              "$ref": "#/components/schemas/Territory"
+            }
+          },
+          "XXXLastTimeUpdate": {
+            "type": "string"
+          },
+          "XXXStatus": {
+            "type": "string"
+          },
+          "XXXOrigins": {
+            "type": "array",
+            "description": "List of Origins that are linked to this Territory.",
+            "items": {
+              "$ref": "#/components/schemas/Origin"
+            }
+          },
+          "@@@DEPRECATED?": {
+            "type": "object",
+            "properties": {
+              "DEI-LastTimeUpdated": {
+                "type": "string"
+              },
+              "DEI-Jump": {
+                "type": "string"
+              },
+              "DEI-TerritorySource": {
+                "type": "string"
+              },
+              "DEI-PopulationSource": {
+                "type": "string"
+              },
+              "DEI-COVID-19Source": {
+                "type": "string"
+              },
+              "DEI-URL": {
+                "type": "string"
+              },
+              "": {
+                "type": "string"
+              }
+            }
+          },
+          "Stats": {
+            "type": "array",
+            "description": "List of Stats for this Territory.\n\n@@@Indicate the list of Stats\n\n\n@@@Make sure all these are in the Stat.StatType enumerator.\n\n",
+            "items": {
+              "$ref": ""
+            }
+          }
+        },
+        "required": [
+          "TerritoryUID",
+          "PLDInfo",
+          "XXXMapboxInfo",
+          "XXXPermalinkDocs"
+        ]
+      },
+      "DataPoint": {
+        "title": "DataPoint",
+        "type": "object",
+        "description": "Describes PLD Data Points.",
+        "properties": {
+          "XXXDPUID": {
+            "type": "string"
+          },
+          "XXXDefinition": {
+            "type": "object",
+            "properties": {
+              "XXXNameShort": {
+                "type": "string"
+              },
+              "XXXName": {
+                "type": "string"
+              },
+              "XXXDescription": {
+                "type": "string"
+              },
+              "XXXIconID": {
+                "type": "string"
+              },
+              "@@@Inheritance": {
+                "type": "string"
+              },
+              "@@@DPObjectType": {
+                "type": "string"
+              },
+              "XXXRight": {
+                "$ref": "#/components/schemas/Right"
+              },
+              "XXXTags": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Tag"
+                }
+              },
+              "XXXTooltip": {
+                "type": "string"
+              },
+              "XXXDefinition": {
+                "type": "string"
+              },
+              "@@@Al": {
+                "type": "string"
+              },
+              "XXXEncoding": {
+                "$ref": "#/components/schemas/Encoding"
+              }
+            }
+          },
+          "XXXValue": {
+            "type": "object",
+            "properties": {
+              "XXXAnswer": {
+                "type": "object",
+                "properties": {
+                  "XXXGeneratedBy": {
+                    "type": "string",
+                    "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n\n\nThe Log indicates who did the operation.\n",
+                    "enum": [
+                      "Funnel",
+                      "Algorithm"
+                    ]
+                  },
+                  "@@@Highlights": {
+                    "type": "string",
+                    "description": "Set of xyz coordinates that identify the snippet of text in the Source that explains this information."
+                  },
+                  "XXXValueType": {
+                    "type": "string"
+                  },
+                  "XXXValue": {
+                    "type": "string",
+                    "description": "Value for the Answer field."
+                  },
+                  "XXXDescription": {
+                    "type": "string"
+                  },
+                  "XXXEditorGuide": {
+                    "type": "string"
+                  },
+                  "XXXTooltip": {
+                    "type": "string"
+                  }
+                }
+              },
+              "XXXStartDate": {
+                "$ref": "#/components/schemas/Date"
+              },
+              "EndDate": {
+                "$ref": "#/components/schemas/Date"
+              },
+              "Details": {
+                "type": "object"
+              }
+            }
+          },
+          "XXXStatus": {
+            "type": "string"
+          },
+          "XXXFirstCreated": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "XXXLastUpdated": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "@@@GeneratedBy": {
+            "type": "string"
+          },
+          "XXXStats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          },
+          "XXXLinka": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          }
+        }
+      },
+      "Category": {
+        "title": "Category",
+        "type": "object",
+        "description": "Describes PLD Categories.",
+        "properties": {
+          "XXXXCategoryUID": {
+            "type": "string"
+          },
+          "DataPoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataPoint"
+            }
+          },
+          "PermalinkDocs": {
+            "type": "string"
+          },
+          "Definition": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "type": "string"
+              },
+              "Description": {
+                "type": "string"
+              },
+              "Tags": {
+                "type": "string"
+              },
+              "Order": {
+                "type": "string",
+                "description": "Indicates the render order of this category in the DSL."
+              }
+            }
+          },
+          "CategoryStatus": {
+            "type": "string"
+          },
+          "UI": {
+            "type": "object",
+            "properties": {
+              "TDOLayout": {
+                "$ref": "#/components/schemas/Layout"
+              },
+              "TabMaxWidth": {
+                "type": "string"
+              },
+              "TabTitle": {
+                "type": "string"
+              },
+              "TabTooltip": {
+                "type": "string"
+              },
+              "": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "DataSetLayer": {
+        "title": "DataSet Layer (DSL)",
+        "type": "object",
+        "description": "Describes PLD DataSet Layers.\nA DataSet Layer (DSL) is a collection of DataPoints (DP) that are selected to track the impact of a specific family of policies that may impact Human and/or Digital Rights. They are composed of a series of child objects formed by metadata and actual policy information encoded following a DSL-specific methodology.",
+        "properties": {
+          "XXXDSLUID": {
+            "type": "string",
+            "description": "Indicates the UID for this DSL inside PLD."
+          },
+          "XXXName": {
+            "type": "string",
+            "description": "Name of the DSL (Default ENG)."
+          },
+          "XXXVersion": {
+            "type": "string",
+            "description": "Version of the DSL."
+          },
+          "@@@PermalinkDocs": {
+            "type": "string",
+            "description": "Permalink to the documentation explaining this object."
+          },
+          "XXXType": {
+            "type": "string",
+            "description": "Indicates if it is Thematic, Transversal or External.",
+            "enum": [
+              "Thematic",
+              "External",
+              "Transversal"
+            ]
+          },
+          "@@@AccessLevel": {
+            "type": "string",
+            "description": "Indicates the access conditions for this DSL"
+          },
+          "XXXStatus": {
+            "type": "string",
+            "description": "Status of the DSL."
+          },
+          "@@@PermalinkDSL": {
+            "type": "string",
+            "description": "Permalink for this DSL."
+          },
+          "@@@PermalinkDEI": {
+            "type": "string",
+            "description": "Permalink to the DEI for this DSL."
+          },
+          "XXXDescription": {
+            "type": "string",
+            "description": "Description of the DSL (Default ENG)."
+          },
+          "Contact": {
+            "$ref": "#/components/schemas/User"
+          },
+          "@@@PermalinkMethodology": {
+            "type": "string",
+            "description": "Permalink providing Methodology information for the DSL."
+          },
+          "@@@MethodologyCode": {
+            "type": "string",
+            "description": "Extra information inside the Methodology."
+          },
+          "XXXAudiences": {
+            "type": "array",
+            "description": "Array of IDs for Audiences.",
+            "items": {
+              "$ref": "#/components/schemas/Audience"
+            }
+          },
+          "XXXFirstDay": {
+            "type": "string",
+            "description": "First Day (Left limit) considered in the DSL."
+          },
+          "XXXLastDay": {
+            "type": "string",
+            "description": "Last Day (Right limit) considered in the DSL."
+          },
+          "XXXPermalinkAPIURL": {
+            "type": "string",
+            "description": "Permalink providing access to the API serving this DSL."
+          },
+          "XXXPermalinkSchema": {
+            "type": "string",
+            "description": "Permalink providing access to the Schema forming this DSL."
+          },
+          "XXXMaxBoundary": {
+            "type": "string",
+            "description": "Max Boundary considered in this DSL."
+          },
+          "SourceTypes": {
+            "type": "array",
+            "description": "Array of IDs for Source Types, ordered by their default order of application for the Snapshots.",
+            "items": {
+              "$ref": "#/components/schemas/SourceType"
+            }
+          },
+          "XXXCountDataPoints": {
+            "type": "string",
+            "description": "A simple count of the DataPoints in this DSL."
+          },
+          "@@@PermalinkQALog?": {
+            "type": "string",
+            "description": "Permalink providing access to the QA log for the DSL."
+          },
+          "@@@PermalinkLicenseURL": {
+            "type": "string",
+            "description": "Permalink providing Licensing information for the DSL."
+          },
+          "@@@LicenseCode": {
+            "type": "string",
+            "description": "Extra information inside the Licensing."
+          },
+          "@@@PermalinkCitingPolicy": {
+            "type": "string",
+            "description": "Permalink providing Citing information for the DSL."
+          },
+          "@@@CitingPolicyCode": {
+            "type": "string",
+            "description": "Extra information inside the Citing."
+          },
+          "XXXTags": {
+            "type": "array",
+            "description": "String of Hashtags separated by coma to group DSLs - To be used on searches.",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          },
+          "XXXSnapshots": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Snapshot"
+            }
+          },
+          "Categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            }
+          },
+          "Sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            }
+          },
+          "Snap": {
+            "type": "array",
+            "items": {}
+          },
+          "DefaultDPs": {
+            "type": "object",
+            "properties": {
+              "Territory": {
+                "type": "string"
+              },
+              "Border": {
+                "type": "string"
+              },
+              "Location": {
+                "type": "string"
+              }
+            }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": ""
+            }
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          }
+        },
+        "required": [
+          "XXXDSLUID",
+          "XXXName",
+          "XXXVersion",
+          "XXXType"
+        ]
+      },
+      "Source": {
+        "title": "Source",
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "SourceType": {
+            "type": "string",
+            "enum": [
+              "Government",
+              "Media",
+              "NGO",
+              "Foreign Mission",
+              "Other",
+              "API Provider",
+              "3PT Provider"
+            ]
+          },
+          "SourceURL": {
+            "type": "string"
+          },
+          "SourceTitle": {
+            "type": "string"
+          },
+          "TerritoryUID": {
+            "type": "string",
+            "description": "The Territory this Source applies to."
+          },
+          "": {
+            "type": "string"
+          },
+          "Categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            }
+          },
+          "DSE": {
+            "type": "object",
+            "properties": {
+              "Funnel": {
+                "type": "string",
+                "enum": [
+                  "Insourcing",
+                  "Crowdsourcing",
+                  "Machine Learning",
+                  "Direct Feed"
+                ],
+                "description": "Indicates which Funnel was use to produce this DataSet Entry."
+              },
+              "Status": {
+                "type": "string"
+              },
+              "EntryUID": {
+                "type": "string"
+              },
+              "Timestamp": {
+                "type": "string"
+              },
+              "Media": {
+                "type": "string"
+              }
+            }
+          },
+          "TimeMachines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeMachine"
+            }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
+          },
+          "IssueUID": {
+            "type": "string"
+          },
+          "Stats": {
+            "$ref": "#/components/schemas/Stat"
+          }
+        }
+      },
+      "SourceType": {
+        "title": "SourceTypes",
+        "type": "object",
+        "properties": {
+          "XXXSourceTypeUID": {
+            "type": "string"
+          },
+          "XXXType": {
+            "type": "string",
+            "enum": [
+              "NGO",
+              "Media",
+              "Foreign Mission",
+              "Other",
+              "Government",
+              "Red Flag",
+              "PLD"
+            ],
+            "description": "@@@\n\nThe type of Source.\n\nOptions:\n- Government\n- Media\n- NGO\n- Foreign Mission\n- Other\n\nAlso to be used used for APIs and other external providers."
+          },
+          "XXXName": {
+            "type": "string"
+          },
+          "XXXDescription": {
+            "type": "string"
+          }
+        },
+        "description": "@@@\nDefines the types of sources from where Sources are extracted and/or generated. This applies to all data, from the one generated for PLD to external providers.\n\n\n"
+      },
+      "Region": {
+        "title": "Regions",
+        "type": "object",
+        "description": "@@@\nPLD regions\n\n- Africa\n- Asia\n- Europe\n- Middle East\n- Latin America\n- North America\n\nMissing: Pacific - No assigned TLD seems to be available\n\n\nSee documentation on how to use the TLDs for localization.\n",
+        "properties": {
+          "XXXRegionUID": {
+            "type": "string"
+          },
+          "XXXName": {
+            "type": "string"
+          },
+          "XXXDescription": {
+            "type": "string"
+          },
+          "XXXXTerritories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Territory"
+            }
+          },
+          "XXXTLD": {
+            "type": "string",
+            "enum": [
+              ".africa",
+              ".asia",
+              ".eu",
+              ".me",
+              ".lat",
+              ".us"
+            ]
+          },
+          "XXXMAPInfo": {
+            "type": "object",
+            "description": "Stores all specs for that region per mapping provider.",
+            "properties": {
+              "XXXMapbox": {
+                "type": "object",
+                "description": "Specs for Mapbox.",
+                "properties": {
+                  "XXXZoom": {
+                    "type": "string"
+                  },
+                  "XXXLat": {
+                    "type": "string"
+                  },
+                  "XXXLng": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "XXXPermalinkGraphs": {
+            "type": "string",
+            "description": "Image for the Region."
+          }
+        }
+      },
+      "Origin": {
+        "title": "Origin",
+        "type": "object",
+        "description": "@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.",
+        "properties": {
+          "XXXOriginUID": {
+            "type": "string"
+          },
+          "XXXName": {
+            "type": "string"
+          },
+          "XXXDescription": {
+            "type": "string"
+          },
+          "XXXURL": {
+            "type": "string"
+          },
+          "XXXStatus": {
+            "type": "string"
+          },
+          "XXXContact": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "TimeMachine": {
+        "title": "TimeMachine",
+        "type": "object",
+        "description": "Objects describing all the different Time Machines used to back up Sources.",
+        "properties": {
+          "TimeMachineUID": {
+            "type": "string"
+          },
+          "Priority": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "CreateURL": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "ReadURL": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "HelpURL": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        }
+      },
+      "Snapshot": {
+        "title": "Snapshot",
+        "type": "object",
+        "description": "@@@\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n",
+        "properties": {
+          "XXXSnapshotUID": {
+            "type": "string"
+          },
+          "XXXSourceType": {
+            "$ref": "#/components/schemas/SourceType"
+          },
+          "XXXTimeRange": {
+            "type": "array",
+            "description": "Prepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n",
+            "items": {
+              "type": "object",
+              "properties": {
+                "XXXDate": {
+                  "type": "string"
+                },
+                "XXXValue": {
+                  "type": "string",
+                  "description": "This is the encoded value as it corresponds to the corresponding Encoding."
+                }
+              }
+            }
+          },
+          "XXXDSLUID": {
+            "type": "string"
+          },
+          "XXXType": {
+            "type": "string",
+            "enum": [
+              "DataPoint",
+              "Red Flag",
+              "Territory Status",
+              "External"
+            ]
+          },
+          "XXXPermalinkCode": {
+            "type": "string",
+            "description": "Where in the code this snapshot is generated."
+          },
+          "XXXFrequency": {
+            "type": "string",
+            "description": "Indicates how often does the snapshot get rebuilt.\nReference: First day of current year.",
+            "enum": [
+              "OnSpot",
+              "Scheduled - Daily",
+              "Scheduled - Weekly",
+              "Scheduled - Monthly"
+            ]
+          },
+          "XXXDateLastUpdated": {
+            "type": "string"
+          },
+          "XXXDateCreated": {
+            "type": "string"
+          },
+          "@@@Encoding": {
+            "$ref": "#/components/schemas/Encoding"
+          },
+          "Stats": {
+            "$ref": "#/components/schemas/Stat"
+          }
+        }
+      },
+      "Layout": {
+        "title": "Layout",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "PermaLink": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        }
+      },
+      "User": {
+        "title": "User",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "Human",
+              "Other"
+            ]
+          },
+          "": {
+            "type": "string"
+          },
+          "Stats": {
+            "$ref": "#/components/schemas/Stat"
+          }
+        }
+      },
+      "License": {
+        "title": "License",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        }
+      },
+      "Project": {
+        "title": "Project",
+        "type": "object",
+        "properties": {
+          "XXXProjectUID": {
+            "type": "string"
+          },
+          "XXXGlobalVars": {
+            "type": "object",
+            "properties": {
+              "XXXLocale": {
+                "type": "string",
+                "description": "Default Locale = ENG"
+              },
+              "XXXLinks": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Link"
+                }
+              }
+            }
+          },
+          "XXXName": {
+            "type": "string"
+          },
+          "XXXDescription": {
+            "type": "string"
+          },
+          "XXXDates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Date"
+            }
+          },
+          "XXXContact": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "Right": {
+        "title": "Right",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "OriginUID": {
+            "type": "string"
+          },
+          "": {
+            "type": "string"
+          },
+          "Stats": {
+            "$ref": "#/components/schemas/Stat"
+          }
+        }
+      },
+      "Module": {
+        "title": "Module",
+        "type": "object",
+        "properties": {
+          "XXXModuleUID": {
+            "type": "string"
+          },
+          "XXXMAP": {
+            "type": "object",
+            "properties": {
+              "TabMenu": {
+                "type": "object",
+                "description": "Describes the features and behavior of the Tab Menu (TB) in MAP.",
+                "properties": {
+                  "Show": {
+                    "type": "string",
+                    "description": "  - Description: Controls if the TabMenu is shown.\n  - QS Parameter:  \n  - QS Implemented:  \n  - QS Required:  \n  - Notes:  "
+                  },
+                  "Position": {
+                    "type": "string",
+                    "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
+                  },
+                  "Page": {
+                    "type": "string",
+                    "enum": [
+                      "DataSetInfo",
+                      "Settings",
+                      "Updates"
+                    ]
+                  }
+                }
+              },
+              "TimeSlider": {
+                "type": "object",
+                "description": "Defines the features and behavior of the Time Slider (TS) in MAP.",
+                "properties": {
+                  "Position": {
+                    "type": "string",
+                    "enum": [
+                      "Top",
+                      "Bottom",
+                      "Left",
+                      "Right"
+                    ]
+                  },
+                  "StartDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "EndDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "ViewDate": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              },
+              "StatsBox": {
+                "type": "object",
+                "properties": {
+                  "Something": {
+                    "type": "string"
+                  }
+                }
+              },
+              "Map": {
+                "type": "object",
+                "properties": {
+                  "Region": {
+                    "type": "string"
+                  },
+                  "Zoom": {
+                    "type": "string"
+                  },
+                  "Lat": {
+                    "type": "string"
+                  },
+                  "Lng": {
+                    "type": "string"
+                  }
+                }
+              },
+              "PressPlay": {
+                "type": "object",
+                "properties": {
+                  "Show": {
+                    "type": "string"
+                  },
+                  "Behavior": {
+                    "type": "string"
+                  },
+                  "StartDelay": {
+                    "type": "string"
+                  },
+                  "Step": {
+                    "type": "string"
+                  }
+                }
+              },
+              "UI": {
+                "type": "object",
+                "properties": {
+                  "Locale": {
+                    "type": "string"
+                  },
+                  "Mode": {
+                    "type": "string"
+                  },
+                  "Watermark": {
+                    "type": "string"
+                  }
+                }
+              },
+              "TerritoryDetailsOverlay": {
+                "type": "object",
+                "properties": {
+                  "Show": {
+                    "type": "string",
+                    "enum": [
+                      "True",
+                      "False"
+                    ]
+                  },
+                  "Position": {
+                    "type": "string",
+                    "enum": [
+                      "Top",
+                      "Bottom",
+                      "Left",
+                      "Right",
+                      "Center"
+                    ]
+                  },
+                  "CategoryUID": {
+                    "type": "string",
+                    "description": "In which category the TDO should open."
+                  },
+                  "Behavior": {
+                    "type": "string",
+                    "description": "  Description: Controls the behavior of the Territory Details Overlay (TDO).\n  QS Parameter: MapTDOBehavior\n  QS Implemented: @@@ VERIFY\n  QS Required: NO\n  Notes: \n    \n      OnTap\n    Note:\"\n    - Meaning: TDO opens as per user's interaction (Default).\n    - Notes: Standard TDO behavior.\n    \n    No \n    Note:\"\n    - Meaning: TDO can't be opened.\n    - Notes: Implies WATERMARK ON.\n    \n    Forced\n    Note:\"\n    - Meaning: TDO is open on loadng.\n    - Notes: Forcefully opens the TDO on page load.\n    - IMPORTANT: Implies PLDCode and Panel params mandatory.",
+                    "enum": [
+                      "OnTap",
+                      "No",
+                      "Forced"
+                    ],
+                    "example": "    OnTap  [     Note:\"     - Meaning: TDO opens as per user's interaction (Default).     - Notes: Standard TDO behavior.     \"]          No [     Note:\"     - Meaning: TDO can't be opened.     - Notes: Implies WATERMARK ON.     \"]          Forced [     Note:\"     - Meaning: TDO is open on loadng.     - Notes: Forcefully opens the TDO on page load.     - IMPORTANT: Implies PLDCode and Panel params mandatory."
+                  },
+                  "PLDCode": {
+                    "type": "string"
+                  }
+                }
+              },
+              "ModuleUID": {
+                "type": "string"
+              },
+              "Name": {
+                "type": "string"
+              },
+              "Description": {
+                "type": "string"
+              },
+              "PLDCode": {
+                "type": "string",
+                "default": "MAP"
+              },
+              "Stats": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Stat"
+                }
+              }
+            }
+          },
+          "BO": {
+            "type": "object",
+            "properties": {
+              "Stats": {
+                "type": "array",
+                "items": {
+                  "$ref": ""
+                }
+              }
+            }
+          },
+          "DEI": {
+            "type": "object"
+          },
+          "WEB": {
+            "type": "object"
+          },
+          "DB": {
+            "type": "object"
+          },
+          "API": {
+            "type": "object"
+          },
+          "BO1": {
+            "type": "object"
+          },
+          "XXXStats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        }
+      },
+      "Log": {
+        "title": "Log",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Operation": {
+            "type": "string",
+            "enum": [
+              "Encode",
+              "Review",
+              "Approve",
+              "Flag",
+              "Initiate Deliberation",
+              "Close Deliberation",
+              "Assign: Triage",
+              "Assigne: Encode",
+              "Assign: Review"
+            ]
+          },
+          "UserUID": {
+            "type": "string"
+          },
+          "Notes": {
+            "type": "string"
+          },
+          "SourceUID": {
+            "type": "string"
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        }
+      },
+      "Encoding": {
+        "title": "@@@Encoding",
+        "type": "object",
+        "properties": {
+          "EncodingUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "URL for UI": {
+            "type": "string"
+          },
+          "Algorithm Details": {
+            "type": "string"
+          },
+          "Items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Value": {
+                  "type": "string"
+                },
+                "Type": {
+                  "type": "string",
+                  "enum": [
+                    "Image",
+                    "ColorCode"
+                  ]
+                }
+              }
+            }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        },
+        "description": "@@@"
+      },
+      "Link": {
+        "title": "Link",
+        "type": "object",
+        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\nProject\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n\nDSL\nPermalinkDocs\nPermalinkDSL\nPermalinkDEI\nPermalinkMethodology\nPermalinkAPIURL\nPermalinkSchema\nPermalinkQALog?\nPermalinkLicenseURL\nPermalinkCitingPolicy\n\n\nDP\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\n\n\nDate\nEditorGuide",
+        "properties": {
+          "XXXLinkUID": {
+            "type": "string"
+          },
+          "XXXType": {
+            "type": "string",
+            "description": "Enumerator with the different kinds of Links.",
+            "enum": [
+              "Source",
+              "Docs",
+              "UI"
+            ]
+          },
+          "XXXName": {
+            "type": "string"
+          },
+          "XXXDescription": {
+            "type": "string"
+          },
+          "XXXTimeMachine": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeMachine"
+            }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        }
+      },
+      "Stat": {
+        "title": "Stat",
+        "type": "object",
+        "description": "@@@\n\nStats are counters we collect across the platform.\n\n\n\n\nStats DSL\nCountDataPoints\n\n",
+        "properties": {
+          "XXXStatsUID": {
+            "type": "string"
+          },
+          "XXXName": {
+            "type": "string"
+          },
+          "XXXDescription": {
+            "type": "string"
+          },
+          "XXXNotes": {
+            "type": "string"
+          },
+          "XXXType": {
+            "type": "string",
+            "enum": [
+              "SourcesPerTerritory",
+              "SourcesPerUser"
+            ],
+            "description": "Stores all the different Stats that we can have in the platform as an effective Enum."
+          },
+          "XXXValue": {
+            "type": "string",
+            "description": "Stores the value of the stat."
+          },
+          "XXXLinks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          }
+        }
+      },
+      "Date": {
+        "title": "Date",
+        "type": "object",
+        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\nProject\nDateCreated\n\n\nDSL\nDateTimeFormat\nDatePublishedFirst\nUpdatedLast\nLast Date and Time the DSL was updated. Format as per DatesFormat.\n\nUpdatedNext\nNext scheduled Date and Time the DSL will be updated. Format as per DatesFormat.\n\nUpdatedFreq\nScheduled frequency for updates on the DSL, in milliseconds.\n\nXXXFirstDay\nFirst Day (Left limit) considered in the DSL.\n\nXXXLastDay\nLast Day (Right limit) considered in the DSL.\n\n\nDP\nFirstCreated\nLastUpdated\n\n\n\nLink Type\nEditorGuide\n\n\n\n",
+        "properties": {
+          "DateUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Type": {
+            "type": "string",
+            "description": "Enumerator of all types of Dates in the platform."
+          },
+          "@@@Tooltip": {
+            "type": "string"
+          },
+          "Value": {
+            "type": "string"
+          },
+          "ValueUTC": {
+            "type": "string"
+          },
+          "XXXGeneratedBy": {
+            "type": "string"
+          },
+          "@@@Highlights": {
+            "type": "string"
+          },
+          "XXXDateFormat": {
+            "type": "string"
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          }
+        }
+      },
+      "Audience": {
+        "title": "Audience",
+        "type": "object",
+        "description": "@@@@",
+        "properties": {
+          "XXXAudienceUID": {
+            "type": "string"
+          },
+          "XXXName": {
+            "type": "string"
+          },
+          "XXXDescription": {
+            "type": "string"
+          },
+          "XXXNotes": {
+            "type": "string"
+          },
+          "XXXStats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          }
+        }
+      },
+      "Tag": {
+        "title": "Tag",
+        "type": "object",
+        "properties": {
+          "TagUID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Descrtiption": {
+            "type": "string"
+          },
+          "Synonyms": {
+            "type": "array",
+            "description": "These are tags that would also make sense searching if this particular tag is used. Algorithm to avoid circular references by skipping it Tag already exists in final list.",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          },
+          "Date": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Date"
+            }
+          },
+          "Stats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
+          },
+          "Links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          },
+          "Value": {
+            "type": "string"
+          }
+        },
+        "description": "@@@\n\n@@@@\nLook into maybe synchronizing some of these Tags with GitHub Labels.\n\n"
+      }
+    },
+    "parameters": {}
+  },
+  "tags": [
+    {
+      "name": "ProjectLockdown"
+    },
+    {
+      "name": "TIOF"
+    },
+    {
+      "name": "The IO Foundation"
+    },
+    {
+      "name": "Human Rights"
+    },
+    {
+      "name": "Digital Rights"
+    },
+    {
+      "name": "Nonprofit"
+    }
+  ]
+}

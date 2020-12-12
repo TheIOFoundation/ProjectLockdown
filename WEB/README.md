@@ -31,7 +31,7 @@ The WEB module is the website under which Project Lockdown is hosted and made av
 # The module in Project Lockdown
 The following diagram showcases how this module integrates in the project:
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20WEB%20ENG%20v1.0.png" alt="WEB Module Diagram" title="WEB Module Diagram"/>
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20WEB%20ENG%20v1.0.png" alt="WEB Module Diagram" title="WEB Module Diagram"/>
 
 <a href="#top">Back to top</a>
 
