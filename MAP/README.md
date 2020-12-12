@@ -33,7 +33,7 @@ It provides:
 # The module in Project Lockdown
 The following diagram showcases how this Module integrates in the project:
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/Docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20MAP%20ENG%20v1.0.png" alt="MAP Module Diagram" title="MAP Module Diagram"/>
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20Focus%20MAP%20ENG%20v1.0.png" alt="MAP Module Diagram" title="MAP Module Diagram"/>
 
 <a href="#top">Back to top</a>
 
