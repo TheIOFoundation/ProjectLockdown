@@ -152,7 +152,7 @@
         "title": "XXX Environment",
         "type": "object",
         "x-examples": {
-          "Default": {
+          "Default - Minimal": {
             "EnvironmentUID": "0",
             "DSL": [
               {
@@ -162,460 +162,7 @@
                 "Type": "Thematic",
                 "Status": "Ready",
                 "Description": "",
-                "Contact": {
-                  "UserUID": "string",
-                  "Type": "Human",
-                  "Stats": [
-                    {
-                      "StatUID": "string",
-                      "Name": "string",
-                      "Description": "string",
-                      "Notes": "string",
-                      "Type": "SourcesPerTerritory",
-                      "Value": "string",
-                      "Links": [
-                        {
-                          "LinkUID": "string",
-                          "Type": "Source",
-                          "Name": "string",
-                          "Description": "string",
-                          "Stats": [
-                            {}
-                          ]
-                        }
-                      ],
-                      "Dates": [
-                        {
-                          "DateUID": "string",
-                          "Name": "string",
-                          "Description": "string",
-                          "Type": "string",
-                          "Value": "string",
-                          "ValueUTC": "string",
-                          "GeneratedBy": "string",
-                          "@@@Highlights": "string",
-                          "???Links": [
-                            {
-                              "LinkUID": "string",
-                              "Type": "Source",
-                              "Name": "string",
-                              "Description": "string",
-                              "Stats": [
-                                {}
-                              ]
-                            }
-                          ],
-                          "UI": {
-                            "Tooltip": "string",
-                            "???Name": "string",
-                            "???Description": "string"
-                          },
-                          "???Stats": [
-                            null
-                          ]
-                        }
-                      ],
-                      "Status": "string"
-                    }
-                  ],
-                  "Licenses": [
-                    {
-                      "LicenseUID": "string",
-                      "Stats": [
-                        {
-                          "StatUID": "string",
-                          "Name": "string",
-                          "Description": "string",
-                          "Notes": "string",
-                          "Type": "SourcesPerTerritory",
-                          "Value": "string",
-                          "Links": [
-                            {
-                              "LinkUID": "string",
-                              "Type": "Source",
-                              "Name": "string",
-                              "Description": "string",
-                              "Stats": [
-                                {}
-                              ]
-                            }
-                          ],
-                          "Dates": [
-                            {
-                              "DateUID": "string",
-                              "Name": "string",
-                              "Description": "string",
-                              "Type": "string",
-                              "Value": "string",
-                              "ValueUTC": "string",
-                              "GeneratedBy": "string",
-                              "@@@Highlights": "string",
-                              "???Links": [
-                                {
-                                  "LinkUID": "string",
-                                  "Type": "Source",
-                                  "Name": "string",
-                                  "Description": "string",
-                                  "Stats": [
-                                    {}
-                                  ]
-                                }
-                              ],
-                              "UI": {
-                                "Tooltip": "string",
-                                "???Name": "string",
-                                "???Description": "string"
-                              },
-                              "???Stats": [
-                                null
-                              ]
-                            }
-                          ],
-                          "Status": "string"
-                        }
-                      ],
-                      "DSLUID": "string",
-                      "Modules": {
-                        "API": {},
-                        "MAP": {
-                          "Operations": {}
-                        }
-                      }
-                    }
-                  ],
-                  "Log": [
-                    {
-                      "LogUID": "string",
-                      "Operation": "Encode",
-                      "UserUID": "string",
-                      "Notes": "string",
-                      "SourceUID": "string",
-                      "Dates": [
-                        {
-                          "DateUID": "string",
-                          "Name": "string",
-                          "Description": "string",
-                          "Type": "string",
-                          "Value": "string",
-                          "ValueUTC": "string",
-                          "GeneratedBy": "string",
-                          "@@@Highlights": "string",
-                          "???Links": [
-                            {
-                              "LinkUID": "string",
-                              "Type": "Source",
-                              "Name": "string",
-                              "Description": "string",
-                              "Stats": [
-                                {
-                                  "StatUID": "string",
-                                  "Name": "string",
-                                  "Description": "string",
-                                  "Notes": "string",
-                                  "Type": "SourcesPerTerritory",
-                                  "Value": "string",
-                                  "Links": [
-                                    {}
-                                  ],
-                                  "Dates": [
-                                    {}
-                                  ],
-                                  "Status": "string"
-                                }
-                              ]
-                            }
-                          ],
-                          "UI": {
-                            "Tooltip": "string",
-                            "???Name": "string",
-                            "???Description": "string"
-                          },
-                          "???Stats": [
-                            null
-                          ]
-                        }
-                      ],
-                      "Module": "string"
-                    }
-                  ]
-                },
-                "Audiences": [
-                  {
-                    "AudienceUID": "string",
-                    "Name": "string",
-                    "Description": "string",
-                    "Notes": "string",
-                    "Stats": [
-                      {
-                        "StatUID": "string",
-                        "Name": "string",
-                        "Description": "string",
-                        "Notes": "string",
-                        "Type": "SourcesPerTerritory",
-                        "Value": "string",
-                        "Links": [
-                          {
-                            "LinkUID": "string",
-                            "Type": "Source",
-                            "Name": "string",
-                            "Description": "string",
-                            "Stats": [
-                              {}
-                            ]
-                          }
-                        ],
-                        "Dates": [
-                          {
-                            "DateUID": "string",
-                            "Name": "string",
-                            "Description": "string",
-                            "Type": "string",
-                            "Value": "string",
-                            "ValueUTC": "string",
-                            "GeneratedBy": "string",
-                            "@@@Highlights": "string",
-                            "???Links": [
-                              {
-                                "LinkUID": "string",
-                                "Type": "Source",
-                                "Name": "string",
-                                "Description": "string",
-                                "Stats": [
-                                  {}
-                                ]
-                              }
-                            ],
-                            "UI": {
-                              "Tooltip": "string",
-                              "???Name": "string",
-                              "???Description": "string"
-                            },
-                            "???Stats": [
-                              null
-                            ]
-                          }
-                        ],
-                        "Status": "string"
-                      }
-                    ]
-                  }
-                ],
                 "MaxBoundary": "string",
-                "SourceTypes": [
-                  {
-                    "SourceTypeUID": "string",
-                    "Type": "NGO",
-                    "Name": "string",
-                    "Description": "string",
-                    "Stats": [
-                      {
-                        "StatUID": "string",
-                        "Name": "string",
-                        "Description": "string",
-                        "Notes": "string",
-                        "Type": "SourcesPerTerritory",
-                        "Value": "string",
-                        "Links": [
-                          {
-                            "LinkUID": "string",
-                            "Type": "Source",
-                            "Name": "string",
-                            "Description": "string",
-                            "Stats": [
-                              {}
-                            ]
-                          }
-                        ],
-                        "Dates": [
-                          {
-                            "DateUID": "string",
-                            "Name": "string",
-                            "Description": "string",
-                            "Type": "string",
-                            "Value": "string",
-                            "ValueUTC": "string",
-                            "GeneratedBy": "string",
-                            "@@@Highlights": "string",
-                            "???Links": [
-                              {
-                                "LinkUID": "string",
-                                "Type": "Source",
-                                "Name": "string",
-                                "Description": "string",
-                                "Stats": [
-                                  {}
-                                ]
-                              }
-                            ],
-                            "UI": {
-                              "Tooltip": "string",
-                              "???Name": "string",
-                              "???Description": "string"
-                            },
-                            "???Stats": [
-                              null
-                            ]
-                          }
-                        ],
-                        "Status": "string"
-                      }
-                    ]
-                  }
-                ],
-                "Tags": [
-                  {
-                    "TagUID": "string",
-                    "Name": "string",
-                    "Descrtiption": "string",
-                    "Synonyms": [
-                      {}
-                    ],
-                    "Dates": [
-                      {
-                        "DateUID": "string",
-                        "Name": "string",
-                        "Description": "string",
-                        "Type": "string",
-                        "Value": "string",
-                        "ValueUTC": "string",
-                        "GeneratedBy": "string",
-                        "@@@Highlights": "string",
-                        "???Links": [
-                          {
-                            "LinkUID": "string",
-                            "Type": "Source",
-                            "Name": "string",
-                            "Description": "string",
-                            "Stats": [
-                              {
-                                "StatUID": "string",
-                                "Name": "string",
-                                "Description": "string",
-                                "Notes": "string",
-                                "Type": "SourcesPerTerritory",
-                                "Value": "string",
-                                "Links": [
-                                  {}
-                                ],
-                                "Dates": [
-                                  {}
-                                ],
-                                "Status": "string"
-                              }
-                            ]
-                          }
-                        ],
-                        "UI": {
-                          "Tooltip": "string",
-                          "???Name": "string",
-                          "???Description": "string"
-                        },
-                        "???Stats": [
-                          null
-                        ]
-                      }
-                    ],
-                    "Stats": [
-                      {
-                        "StatUID": "string",
-                        "Name": "string",
-                        "Description": "string",
-                        "Notes": "string",
-                        "Type": "SourcesPerTerritory",
-                        "Value": "string",
-                        "Links": [
-                          {
-                            "LinkUID": "string",
-                            "Type": "Source",
-                            "Name": "string",
-                            "Description": "string",
-                            "Stats": [
-                              {}
-                            ]
-                          }
-                        ],
-                        "Dates": [
-                          {
-                            "DateUID": "string",
-                            "Name": "string",
-                            "Description": "string",
-                            "Type": "string",
-                            "Value": "string",
-                            "ValueUTC": "string",
-                            "GeneratedBy": "string",
-                            "@@@Highlights": "string",
-                            "???Links": [
-                              {
-                                "LinkUID": "string",
-                                "Type": "Source",
-                                "Name": "string",
-                                "Description": "string",
-                                "Stats": [
-                                  {}
-                                ]
-                              }
-                            ],
-                            "UI": {
-                              "Tooltip": "string",
-                              "???Name": "string",
-                              "???Description": "string"
-                            },
-                            "???Stats": [
-                              null
-                            ]
-                          }
-                        ],
-                        "Status": "string"
-                      }
-                    ],
-                    "Links": [
-                      {
-                        "LinkUID": "string",
-                        "Type": "Source",
-                        "Name": "string",
-                        "Description": "string",
-                        "Stats": [
-                          {
-                            "StatUID": "string",
-                            "Name": "string",
-                            "Description": "string",
-                            "Notes": "string",
-                            "Type": "SourcesPerTerritory",
-                            "Value": "string",
-                            "Links": [
-                              {}
-                            ],
-                            "Dates": [
-                              {
-                                "DateUID": "string",
-                                "Name": "string",
-                                "Description": "string",
-                                "Type": "string",
-                                "Value": "string",
-                                "ValueUTC": "string",
-                                "GeneratedBy": "string",
-                                "@@@Highlights": "string",
-                                "???Links": [
-                                  {}
-                                ],
-                                "UI": {
-                                  "Tooltip": "string",
-                                  "???Name": "string",
-                                  "???Description": "string"
-                                },
-                                "???Stats": [
-                                  null
-                                ]
-                              }
-                            ],
-                            "Status": "string"
-                          }
-                        ]
-                      }
-                    ],
-                    "Value": "string"
-                  }
-                ],
                 "Snapshots": [
                   {
                     "SnapshotUID": "string",
@@ -4919,22 +4466,22 @@
         "type": "object",
         "description": "Describes PLD Data Points.",
         "properties": {
-          "XXXDPUID": {
+          "DPUID": {
             "type": "string"
           },
-          "XXXDefinition": {
+          "Definition": {
             "type": "object",
             "properties": {
-              "XXXNameShort": {
+              "NameShort": {
                 "type": "string"
               },
-              "XXXName": {
+              "Name": {
                 "type": "string"
               },
-              "XXXDescription": {
+              "Description": {
                 "type": "string"
               },
-              "XXXIconID": {
+              "IconID": {
                 "type": "string"
               },
               "@@@Inheritance": {
@@ -4943,36 +4490,36 @@
               "@@@DPObjectType": {
                 "type": "string"
               },
-              "XXXRight": {
+              "Right": {
                 "$ref": "#/components/schemas/Right"
               },
-              "XXXTags": {
+              "Tags": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/Tag"
                 }
               },
-              "XXXTooltip": {
+              "Tooltip": {
                 "type": "string"
               },
-              "XXXDefinition": {
+              "Definition": {
                 "type": "string"
               },
-              "@@@Al": {
+              "???Al": {
                 "type": "string"
               },
-              "XXXEncoding": {
+              "Encoding": {
                 "$ref": "#/components/schemas/Encoding"
               }
             }
           },
-          "XXXValue": {
+          "Value": {
             "type": "object",
             "properties": {
-              "XXXAnswer": {
+              "Answer": {
                 "type": "object",
                 "properties": {
-                  "XXXGeneratedBy": {
+                  "GeneratedBy": {
                     "type": "string",
                     "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n\n\nThe Log indicates who did the operation.\n",
                     "enum": [
@@ -4980,40 +4527,37 @@
                       "Algorithm"
                     ]
                   },
-                  "@@@Highlights": {
+                  "???Highlights": {
                     "type": "string",
                     "description": "Set of xyz coordinates that identify the snippet of text in the Source that explains this information."
                   },
-                  "XXXValueType": {
+                  "ValueType": {
                     "type": "string"
                   },
-                  "XXXValue": {
+                  "Value": {
                     "type": "string",
                     "description": "Value for the Answer field."
                   },
-                  "XXXDescription": {
+                  "Description": {
                     "type": "string"
                   },
-                  "XXXEditorGuide": {
+                  "Tooltip": {
                     "type": "string"
                   },
-                  "XXXTooltip": {
-                    "type": "string"
+                  "Encoding": {
+                    "$ref": "#/components/schemas/Encoding"
                   }
                 }
               },
-              "XXXStartDate": {
+              "DateStart": {
                 "$ref": "#/components/schemas/Date"
               },
-              "EndDate": {
+              "DateEnd": {
                 "$ref": "#/components/schemas/Date"
-              },
-              "Details": {
-                "type": "object"
               }
             }
           },
-          "XXXStatus": {
+          "Status": {
             "type": "string"
           },
           "XXXFirstCreated": {
@@ -5284,6 +4828,12 @@
                 "type": "string"
               },
               "Dates": {
+                "type": "array",
+                "items": {
+                  "$ref": ""
+                }
+              },
+              "Categories": {
                 "type": "array",
                 "items": {
                   "$ref": ""
@@ -6028,7 +5578,7 @@
       "Link": {
         "title": "XXX Link",
         "type": "object",
-        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n###Project\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n\n###DSL\nPermalinkDocs\nPermalink to the documentation explaining this object.\n\nPermalinkDSL\nPermalink for this DSL.\n\nPermalinkDEI\nPermalink to the DEI for this DSL.\n\nPermalinkMethodology\nPermalink providing Methodology information for the DSL.\n\nPermalinkAPIURL\nPermalink providing access to the API serving this DSL.\n\nPermalinkSchema\nPermalink providing access to the Schema forming this DSL.\n\nPermalinkQALog?\nPermalink providing access to the QA log for the DSL.\n\nPermalinkLicenseURL\nPermalink providing Licensing information for the DSL.\n\nPermalinkCitingPolicy\nPermalink providing Citing information for the DSL.\n\n\n###DP\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\n\n\n###Date\n???EditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n###Origin\nOriginURL\n\n###Territory\nPermalinkDEI\nPermalinkDocURL\n\n###Layout\nCSSURL",
+        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n###Project\nPermaSourcesURL\n(Permalink to where the Sources are located. Should be a GitHub repo URL.)\n\n\n###DSL\nPermalinkDocs\nPermalink to the documentation explaining this object.\n\nPermalinkDSL\nPermalink for this DSL.\n\nPermalinkDEI\nPermalink to the DEI for this DSL.\n\nPermalinkMethodology\nPermalink providing Methodology information for the DSL.\n\nPermalinkAPIURL\nPermalink providing access to the API serving this DSL.\n\nPermalinkSchema\nPermalink providing access to the Schema forming this DSL.\n\nPermalinkQALog?\nPermalink providing access to the QA log for the DSL.\n\nPermalinkLicenseURL\nPermalink providing Licensing information for the DSL.\n\nPermalinkCitingPolicy\nPermalink providing Citing information for the DSL.\n\n\n###Datapoint\nPermalinkIconIDURL\nPermalinkDocs\nPermalinkDPURL\nPermalinkEditorGuideURL\n\n###Date\n???EditorGuide\n\n###Snapshot\nPermalinkCode\nWhere in the code this snapshot is generated.\n\n\n###Source\nSourceURL\n\nTimeMachine\n\nGitHubIssueURL\n\n###Origin\nOriginURL\n\n###Territory\nPermalinkDEI\nPermalinkDocURL\n\n###Layout\nCSSURL",
         "properties": {
           "LinkUID": {
             "type": "string"
@@ -6223,6 +5773,45 @@
             "items": {
               "$ref": "#/components/schemas/Link"
             }
+          },
+          "Value": {
+            "type": "string"
+          }
+        }
+      },
+      "Answer": {
+        "title": "Answer",
+        "type": "object",
+        "properties": {
+          "AnswerUID": {
+            "type": "string"
+          },
+          "Value": {
+            "$ref": "#/components/schemas/Value"
+          },
+          "DateStart": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DateEnd": {
+            "$ref": "#/components/schemas/Date"
+          }
+        }
+      },
+      "Response": {
+        "title": "Response",
+        "type": "object",
+        "properties": {
+          "ValueUID": {
+            "type": "string"
+          },
+          "GeneratedBy": {
+            "type": "string"
+          },
+          "???Highlights": {
+            "type": "string"
+          },
+          "Type": {
+            "type": "string"
           },
           "Value": {
             "type": "string"
