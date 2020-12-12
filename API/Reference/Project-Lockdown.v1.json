@@ -1491,7 +1491,7 @@
         }
       },
       "Stat": {
-        "title": "Stat",
+        "title": "XXX Stat",
         "type": "object",
         "description": "@@@\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n",
         "properties": {
@@ -1523,6 +1523,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Link"
+            }
+          },
+          "Dates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Date"
             }
           }
         }
