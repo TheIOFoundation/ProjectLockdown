@@ -72,6 +72,7 @@ Did you find a bug? Feel free create a PR and we'll look at it as soon as possib
 
 
 
+
 ## Operational Framework
 
 Project Lockdown is composed of a number of modules that complement each other following the project's Operational Framework.
@@ -87,3 +88,6 @@ The following diagram showcases how all Modules integrate in the project:
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTk1MDQ0MzA2OF19
+-->
