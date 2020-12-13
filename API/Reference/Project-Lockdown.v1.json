@@ -12,6 +12,10 @@
   "servers": [
     {
       "url": "http://localhost:3000"
+    },
+    {
+      "url": "https://TheIOFoundation.Stoplight.io",
+      "description": ""
     }
   ],
   "paths": {
@@ -154,6 +158,74 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Right"
+                },
+                "examples": {
+                  "BASIC": {
+                    "value": {
+                      "RightUID": "53",
+                      "OriginUID": "4",
+                      "Name": "Freedom of Movement",
+                      "Stats": {
+                        "StatUID": "string",
+                        "Name": "string",
+                        "Description": "string",
+                        "Notes": "string",
+                        "Type": "SourcesPerTerritory",
+                        "Value": "string",
+                        "URLDoc": {
+                          "LinkUID": "string",
+                          "Type": "Source",
+                          "Name": "string",
+                          "Description": "string",
+                          "Stats": [
+                            {}
+                          ]
+                        },
+                        "Status": "string",
+                        "DateLastUpdate": {
+                          "DateUID": "string",
+                          "Name": "string",
+                          "Description": "string",
+                          "Type": "string",
+                          "Value": "string",
+                          "ValueUTC": "string",
+                          "GeneratedBy": "string",
+                          "@@@Highlights": "string",
+                          "???Links": [
+                            {
+                              "LinkUID": "string",
+                              "Type": "Source",
+                              "Name": "string",
+                              "Description": "string",
+                              "Stats": [
+                                {}
+                              ]
+                            }
+                          ],
+                          "UI": {
+                            "Tooltip": "string",
+                            "???Name": "string",
+                            "???Description": "string"
+                          },
+                          "???Stats": [
+                            null
+                          ]
+                        },
+                        "URLCode": [
+                          {
+                            "LinkUID": "string",
+                            "Type": "Source",
+                            "Name": "string",
+                            "Description": "string",
+                            "Stats": [
+                              {}
+                            ]
+                          }
+                        ]
+                      },
+                      "Description": "string"
+                    }
+                  }
                 }
               }
             }
