@@ -177,6 +177,35 @@
         "parameters": [],
         "description": ""
       }
+    },
+    "/DataSetLayer": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-DataSetLayer"
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-DataSetLayer",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-DataSetLayer",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -5828,7 +5857,7 @@
           "AnswerUID": {
             "type": "string"
           },
-          "Response": {
+          "Value": {
             "$ref": "#/components/schemas/Response"
           },
           "DateStart": {
