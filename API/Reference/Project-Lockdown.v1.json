@@ -229,6 +229,9 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "Created"
           }
         },
         "operationId": "get-Rights",
@@ -5933,7 +5936,8 @@
             "type": "string"
           },
           "Details": {
-            "type": "string"
+            "type": "string",
+            "description": "sddfsdfssdfsdf\n\n\n"
           }
         }
       },
@@ -6000,7 +6004,6 @@
       "Module": {
         "name": "Module",
         "in": "query",
-        "required": true,
         "schema": {
           "type": "string",
           "enum": [
@@ -6008,7 +6011,8 @@
             "API",
             "MAP"
           ]
-        }
+        },
+        "required": true
       },
       "DSLUID": {
         "name": "DSLUID",
