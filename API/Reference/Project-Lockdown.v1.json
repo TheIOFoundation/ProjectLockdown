@@ -143,7 +143,7 @@
         "description": "Handles PLD DataPoint objects."
       }
     },
-    "/DataSetLayer": {
+    "/Rights": {
       "get": {
         "summary": "Your GET endpoint",
         "tags": [],
@@ -153,22 +153,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DataSetLayer"
+                  "$ref": "#/components/schemas/Right"
                 }
               }
             }
           }
         },
-        "operationId": "get-DataSetLayer",
-        "description": "Gets list of DataSetLayers",
-        "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "in": "query"
-          }
-        ]
+        "operationId": "get-Rights",
+        "description": "Handles Rights"
       }
     }
   },
@@ -4767,18 +4759,12 @@
               "$ref": "#/components/schemas/Log"
             }
           }
-        },
-        "required": [
-          "DSLUID",
-          "Name",
-          "Version",
-          "Type"
-        ]
+        }
       },
       "Source": {
         "title": "XXX Source",
         "type": "object",
-        "description": "###Accessed by\nBO\nAPI\n\n###URL fields\nURLSource\nPoints to where the source document is.\n\nURLGitHubIssue\nPoints to the GitHub Issue where the Source has been stored.\n\n###Date fields\n???TimeStampCreated\n???TimeStampTriaged\n???TimestampEncoded (when the DSE is first created)\n???TimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?",
+        "description": "###Accessed by\nBO\nAPI\n\n###URL fields\nURLSource\nPoints to where the source document is.\n\nURLGitHubIssue\nPoints to the GitHub Issue where the Source has been stored.\n\n###Date fields\n???TimeStampCreated\n???TimeStampTriaged\n???TimestampEncoded (when the DSE is first created)\n???TimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\nDateIssued\nDateStart\nDateEnd",
         "properties": {
           "SourceUID": {
             "type": "string"
@@ -5276,17 +5262,20 @@
         "title": "Right",
         "type": "object",
         "properties": {
-          "id": {
+          "RightUID": {
             "type": "string"
           },
           "OriginUID": {
             "type": "string"
           },
-          "": {
+          "Name": {
             "type": "string"
           },
           "Stats": {
             "$ref": "#/components/schemas/Stat"
+          },
+          "Description": {
+            "type": "string"
           }
         }
       },
@@ -5681,7 +5670,7 @@
       "Stat": {
         "title": "XXX Stat",
         "type": "object",
-        "description": "@@@\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n\n\n###User\nReliability Index\n",
+        "description": "@@@\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n\n\n###User\nReliability Index\n\n\n###URL fields\nURLDoc\nIndicates where are the docs explaining this Stat.\n\nURLCode\nIndicates where in the code is this Stat calculated.\n\n\n###Date fields\nDateLastUpdate\n\n???Fequency\n",
         "properties": {
           "StatUID": {
             "type": "string"
@@ -5707,20 +5696,20 @@
             "type": "string",
             "description": "Stores the value of the stat."
           },
-          "Links": {
+          "URLDoc": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "Status": {
+            "type": "string"
+          },
+          "DateLastUpdate": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "URLCode": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Link"
             }
-          },
-          "Dates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Date"
-            }
-          },
-          "Status": {
-            "type": "string"
           }
         }
       },
