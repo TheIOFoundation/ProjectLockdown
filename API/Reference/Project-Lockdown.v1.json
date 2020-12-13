@@ -134,7 +134,8 @@
                   }
                 }
               }
-            }
+            },
+            "headers": {}
           }
         },
         "operationId": "get-Territories",
@@ -162,7 +163,10 @@
     "/DataPoints": {
       "get": {
         "summary": "Extract DataPoint objects",
-        "tags": [],
+        "tags": [
+          "Tag1",
+          "Human Rights"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -170,41 +174,26 @@
         },
         "operationId": "get-DataPoints",
         "description": "Handles PLD DataPoint objects."
-      },
-      "post": {
-        "summary": "",
-        "operationId": "post-DataPoints",
-        "parameters": [],
-        "description": ""
       }
     },
     "/DataSetLayer": {
       "get": {
         "summary": "Your GET endpoint",
         "tags": [],
-        "responses": {},
-        "operationId": "get-DataSetLayer"
-      },
-      "post": {
-        "summary": "",
-        "operationId": "post-DataSetLayer",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSetLayer"
+                }
+              }
+            }
           }
-        }
-      },
-      "put": {
-        "summary": "",
-        "operationId": "put-DataSetLayer",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
+        },
+        "operationId": "get-DataSetLayer",
+        "description": "Gets list of DataSetLayers"
       }
     }
   },
@@ -4526,7 +4515,7 @@
       "DataPoint": {
         "title": "DataPoint",
         "type": "object",
-        "description": "Describes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. ",
+        "description": "Describes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. \n\n###Date fields\nDateCreated\n\nDateUpdated\n",
         "properties": {
           "DataPointUID": {
             "type": "string"
@@ -4578,7 +4567,7 @@
           "DateCreated": {
             "$ref": "#/components/schemas/Date"
           },
-          "DateLastUpdated": {
+          "DateUpdated": {
             "$ref": "#/components/schemas/Date"
           },
           "Stats": {
@@ -4814,7 +4803,7 @@
       "Source": {
         "title": "XXX Source",
         "type": "object",
-        "description": "###Accessed by\nBO\nAPI",
+        "description": "###Accessed by\nBO\nAPI\n\n###URL fields\nURLSource\nPoints to where the source document is.\n\nURLGitHubIssue\nPoints to the GitHub Issue where the Source has been stored.\n\n###Date fields\n???TimeStampCreated\n???TimeStampTriaged\n???TimestampEncoded (when the DSE is first created)\n???TimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?",
         "properties": {
           "SourceUID": {
             "type": "string"
@@ -4869,17 +4858,14 @@
               "???Media": {
                 "type": "string"
               },
-              "Dates": {
-                "type": "array",
-                "items": {
-                  "$ref": ""
-                }
-              },
               "Categories": {
                 "type": "array",
                 "items": {
                   "$ref": ""
                 }
+              },
+              "DateTimestampEncoded ": {
+                "$ref": "#/components/schemas/Date"
               }
             }
           },
@@ -4895,16 +4881,40 @@
           "Stats": {
             "$ref": "#/components/schemas/Stat"
           },
-          "Links": {
+          "TimeMachines": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Link"
+              "$ref": "#/components/schemas/TimeMachine"
             }
           },
-          "Dates": {
+          "URLSource": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLGitHubIssue": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "DateIssued": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DateStart": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DateEnd": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "Stage": {
+            "type": "string",
+            "enum": [
+              "BO: Triage",
+              "BO: Encode",
+              "BO: Review",
+              "Flag: XXX"
+            ]
+          },
+          "SourceInstances": {
             "type": "array",
             "items": {
-              "$ref": ""
+              "$ref": "#/components/schemas/SourceInstance"
             }
           }
         }
@@ -4940,6 +4950,14 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Stat"
+            }
+          },
+          "UI": {
+            "type": "object",
+            "properties": {
+              "Icon": {
+                "type": "string"
+              }
             }
           }
         }
@@ -5005,7 +5023,7 @@
       "Origin": {
         "title": "XXX Origin",
         "type": "object",
-        "description": "@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.",
+        "description": "@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.\n\n###URL fields\nURLOrigin\nPoints to the official location where Sources are extracted from.",
         "properties": {
           "OriginUID": {
             "type": "string"
@@ -5022,12 +5040,6 @@
           "Contact": {
             "$ref": "#/components/schemas/User"
           },
-          "Links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            }
-          },
           "Stats": {
             "type": "array",
             "items": {
@@ -5038,7 +5050,9 @@
             "type": "string",
             "enum": [
               "Gov Website",
-              "Gov SocMed"
+              "Gov SocMed",
+              "3PT Provider",
+              "3PT Provider API"
             ]
           },
           "Log": {
@@ -5046,6 +5060,9 @@
             "items": {
               "$ref": "#/components/schemas/Log"
             }
+          },
+          "URLOrigin": {
+            "$ref": "#/components/schemas/Link"
           }
         }
       },
@@ -5080,13 +5097,16 @@
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
+          },
+          "DateFirstCreated": {
+            "$ref": "#/components/schemas/Date"
           }
         }
       },
       "Snapshot": {
         "title": "Snapshot",
         "type": "object",
-        "description": "@@@\n\n###Accessed by\nMAP\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n\n###DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\n",
+        "description": "@@@\n\n###Accessed by\nMAP\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n\n###DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\n###URL fields\nURLCode\nWhere in the code this snapshot is generated.\n\n###Date fields\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nDateLastUpdated\n\nDateFirstCreated\n",
         "properties": {
           "SnapshotUID": {
             "type": "string"
@@ -5119,17 +5139,23 @@
           "Stats": {
             "$ref": "#/components/schemas/Stat"
           },
-          "Dates": {
-            "type": "array",
-            "items": {
-              "$ref": ""
-            }
-          },
           "Answers": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Answer"
             }
+          },
+          "URLCodebase": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          },
+          "DateLastUpdated": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DateFirstCreated": {
+            "$ref": "#/components/schemas/Date"
           }
         }
       },
@@ -5460,7 +5486,7 @@
                       "No",
                       "Forced"
                     ],
-                    "example": "    OnTap  [     Note:\"     - Meaning: TDO opens as per user's interaction (Default).     - Notes: Standard TDO behavior.     \"]          No [     Note:\"     - Meaning: TDO can't be opened.     - Notes: Implies WATERMARK ON.     \"]          Forced [     Note:\"     - Meaning: TDO is open on loadng.     - Notes: Forcefully opens the TDO on page load.     - IMPORTANT: Implies PLDCode and Panel params mandatory."
+                    "example": "OnTap"
                   },
                   "PLDCode": {
                     "type": "string"
@@ -5659,7 +5685,8 @@
             "enum": [
               "Source",
               "Docs",
-              "UI"
+              "UI",
+              "Codebase"
             ]
           },
           "Name": {
@@ -5725,7 +5752,7 @@
       "Date": {
         "title": "XXX Date",
         "type": "object",
-        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n###DP\nFirstCreated\nLastUpdated\n\n###???\nLink Type\nEditorGuide\n\n###Snapshot\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nXXXDateLastUpdated\n\nXXXDateCreated\n\n\n###Source\nTimeStampCreated\nTimeStampTriaged\nTimestampEncoded (when the DSE is \nTimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\n\nDateIssued\nDateStart\nDateEnd\n\n###Stat\nLastUpdate\nFequency?\n\n",
+        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n\n\n\n",
         "properties": {
           "DateUID": {
             "type": "string"
@@ -5901,6 +5928,30 @@
             "description": "Value for the Answer field\nOR\nThe Snapshop value"
           }
         }
+      },
+      "SourceInstance": {
+        "title": "SourceInstance",
+        "type": "object",
+        "properties": {
+          "SourceInstanceUID": {
+            "type": "string"
+          },
+          "Research": {
+            "type": "string"
+          },
+          "Triage": {
+            "type": "string"
+          },
+          "Encode": {
+            "type": "string"
+          },
+          "Review": {
+            "type": "string"
+          },
+          "Log": {
+            "$ref": "#/components/schemas/Log"
+          }
+        }
       }
     },
     "parameters": {},
@@ -5924,6 +5975,9 @@
     },
     {
       "name": "Nonprofit"
+    },
+    {
+      "name": "Tag1"
     }
   ]
 }
