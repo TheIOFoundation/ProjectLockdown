@@ -5903,7 +5903,8 @@
         }
       }
     },
-    "parameters": {}
+    "parameters": {},
+    "securitySchemes": {}
   },
   "tags": [
     {
