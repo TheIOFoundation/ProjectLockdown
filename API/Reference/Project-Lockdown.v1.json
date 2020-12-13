@@ -140,24 +140,6 @@
         },
         "operationId": "get-Territories",
         "description": "Handles PLD Territory objects."
-      },
-      "post": {
-        "summary": "",
-        "operationId": "post-Territories",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "summary": "",
-        "operationId": "put-Territories",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
     "/DataPoints": {
@@ -5950,6 +5932,12 @@
           },
           "Log": {
             "$ref": "#/components/schemas/Log"
+          },
+          "Stage": {
+            "type": "string"
+          },
+          "": {
+            "type": "string"
           }
         }
       }
