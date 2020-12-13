@@ -35,6 +35,10 @@ By participating in Project Lockdown you also confirm to abide by its [Code of C
 
 ## Contributing
 
+**Quick Links to the project's different needs:**
+
+![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Code?color=%23D44937&label=Need%3A%20Code) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Position?color=%23FF8A50&label=Need%3A%20Position) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Tool?color=%23D998FA&label=Need%3A%20Tool) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Advice?color=%23DBCDC6&label=Need%3A%20Advice) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Lead?color=%2386D677&label=Need%3A%20Lead) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Translation?color=%2388e6e8&label=Need%3A%20Translation)
+
 A simple and very quick way to support us is Staring the repo if you like what we are building. This will open the doors to us to crowdfunding platforms such as Open Collective.
 
 <table xwidth="100%">
@@ -65,7 +69,6 @@ Features under consideration (Stage: Not Ready)</a>
 (**Note**: We are currently adding Issues covering from code to positions and other needs. Stay tune thourough the next days!)
 
 Did you find a bug? Feel free create a PR and we'll look at it as soon as possible. Please run `npm run format` before pushing 🙂.
-
 
 
 
