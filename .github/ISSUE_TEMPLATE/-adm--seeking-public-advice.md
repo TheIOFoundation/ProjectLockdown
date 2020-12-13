@@ -2,7 +2,8 @@
 name: "[ADM] Seeking public advice"
 about: Define a request for public advice to improve some area of Project Lockdown.
 title: "[NEED] Seeking advice on: "
-labels: 'Need: Advice, Priority: Medium, Project: PLD, Stage: Not Ready'
+labels: 'Need: Advice, Priority: Medium, Project: PLD, Stage: Not Ready, good first
+  issue'
 assignees: ''
 
 ---
@@ -50,3 +51,6 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 
 
 **Related Issues**
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMzE0MzgxMjE2XX0=
+-->
