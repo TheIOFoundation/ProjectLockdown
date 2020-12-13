@@ -18,6 +18,9 @@ npm install
 ```
 npm start
 ```
+```
+npm run start:job 
+```
 
 #### Debug run
 *Note: Still replaces data*
