@@ -33,7 +33,8 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Environment"
-                }
+                },
+                "examples": {}
               }
             }
           }
@@ -42,26 +43,10 @@
         "description": "Handles PLD Environment objects.",
         "parameters": [
           {
-            "schema": {
-              "type": "string"
-            },
-            "in": "query",
-            "name": "DSLUID",
-            "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID",
-            "required": true
+            "$ref": "#/components/parameters/DSLUID"
           },
           {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "MAP",
-                "BO",
-                "API"
-              ]
-            },
-            "in": "query",
-            "name": "MODULE",
-            "required": true
+            "$ref": "#/components/parameters/Module"
           }
         ]
       },
@@ -175,7 +160,15 @@
           }
         },
         "operationId": "get-DataSetLayer",
-        "description": "Gets list of DataSetLayers"
+        "description": "Gets list of DataSetLayers",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query"
+          }
+        ]
       }
     }
   },
@@ -5942,8 +5935,47 @@
         }
       }
     },
-    "parameters": {},
-    "securitySchemes": {}
+    "parameters": {
+      "Module": {
+        "name": "Module",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "BO",
+            "API",
+            "MAP"
+          ]
+        }
+      },
+      "DSLUID": {
+        "name": "DSLUID",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID"
+      }
+    },
+    "securitySchemes": {},
+    "responses": {
+      "test": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   },
   "tags": [
     {
