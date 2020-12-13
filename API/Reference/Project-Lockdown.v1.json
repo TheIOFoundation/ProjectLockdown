@@ -5087,9 +5087,6 @@
               "Scheduled - Monthly"
             ]
           },
-          "@@@Encoding": {
-            "$ref": "#/components/schemas/Encoding"
-          },
           "Stats": {
             "$ref": "#/components/schemas/Stat"
           },
@@ -5097,6 +5094,12 @@
             "type": "array",
             "items": {
               "$ref": ""
+            }
+          },
+          "Answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer"
             }
           }
         }
@@ -5300,15 +5303,15 @@
                       "Right"
                     ]
                   },
-                  "StartDate": {
+                  "DateStart": {
                     "type": "string",
                     "format": "date"
                   },
-                  "EndDate": {
+                  "DateEnd": {
                     "type": "string",
                     "format": "date"
                   },
-                  "ViewDate": {
+                  "DateView": {
                     "type": "string",
                     "format": "date"
                   }
@@ -5835,6 +5838,9 @@
             "$ref": "#/components/schemas/Date"
           },
           "DataPointUID": {
+            "type": "string"
+          },
+          "Details": {
             "type": "string"
           }
         }
