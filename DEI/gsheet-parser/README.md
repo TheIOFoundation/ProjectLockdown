@@ -8,7 +8,7 @@ For google sheet access, you will need either:
 - A credentials.json generated from the google developer for sheets api v4 in the base folder
 - Set `GOOGLE_SERVICE_ACCOUNT_EMAIL` and `GOOGLE_PRIVATE_KEY` environment variable
 
-For MongoDB please set `MONGO_DB_USER` and `MONGO_DB_PASSWORD` and `MONGO_DB` in env.variables
+For MongoDB please set `MONGO_DB_USER` and `MONGO_DB_PASSWORD` and `MONGO_DB` and `MONGO_PORT` in env.variables
 ```
 npm install
 ```
