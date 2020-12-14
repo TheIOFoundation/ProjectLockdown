@@ -1,4 +1,3 @@
-import { Logger } from 'mongodb';
 import Database from './Database';
 
 require('dotenv').config();
