@@ -1,7 +1,7 @@
 ---
 name: "[PROD] Feature"
 about: Define or request a Feature for Project Lockdown.
-title: "[PROD] "
+title: "[PROD] Feature: "
 labels: 'Need: Code, Priority: Medium, Project: PLD, Stage: Not Ready'
 assignees: ''
 
@@ -59,3 +59,6 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 # Tests
 
 # Related Issues
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTE2MDU1Mjc3XX0=
+-->
