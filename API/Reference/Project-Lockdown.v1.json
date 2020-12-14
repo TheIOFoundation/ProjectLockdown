@@ -6028,7 +6028,7 @@
     "securitySchemes": {},
     "responses": {
       "test": {
-        "description": "Example response",
+        "description": "Example response test",
         "content": {
           "application/json": {
             "schema": {
