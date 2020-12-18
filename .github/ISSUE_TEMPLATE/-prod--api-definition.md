@@ -34,8 +34,7 @@ Implement an API that will provide with the following services as described belo
 
 # Expected behavior
 - Must have
- -- REST OpenAPI 
-
+-- 
 
 - Should have
  -- 
@@ -46,15 +45,27 @@ Implement an API that will provide with the following services as described belo
 - Won't have
  -- 
 
+# Implementation stages
+- [ ] Define Modules needed
+
+- [ ] Define Endpoints
+
+- [ ] Define Tests
+
+- [ ] Enable Mocking
+
+- [ ] Document API
+
+- [ ] Deployment
+
 
 # Resources
 ## Tools
 Recommended tools would be the following:
 Stoplight.io: https://Stoplight.io
-Postman: https://Postman.com 
-DBDiagram: https://dbdiagram.io/
+Postman: https://Postman.com
 
-Note: For Project Lockdown members all these tools are available in your TIOF environment.
+Note: For Project Lockdown members all these tools are available in your Basaas TIOF environment.
 
 ## Usage documentation
 
