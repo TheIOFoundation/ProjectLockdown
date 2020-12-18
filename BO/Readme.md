@@ -37,7 +37,7 @@ The following diagram showcases how this Module integrates in the project:
 # General overview of the module
 The following diagram showcases the general design of the Back End module:
 
-<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20Diagram%20BOFunnels%20ENG%20v1.0.png" alt="BO Module Diagram" title="BO Module Diagram"/>
+<img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20Diagram%20BO%20%2B%20Funnels%20ENG%20v1.0.png" alt="BO Module Diagram" title="BO Module Diagram"/>
 
 <a href="#top">Back to top</a>
 
@@ -68,3 +68,6 @@ https://github.com/TheIOFoundation/ProjectLockdown/wiki/Back-Office-(BO)
 
 <a href="#top">Back to top</a>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbOTQ1MTQ3MDU0XX0=
+-->
