@@ -5,6 +5,7 @@
 
 <!-- ![screenshot](https://user-images.githubusercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
 
+
 ---
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Code-of-Conduct)
@@ -38,7 +39,17 @@ By participating in Project Lockdown you also confirm to abide by its [Code of C
 
 **Quick Links to the project's different needs:**
 
-![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Code?color=%23D44937&label=Need%3A%20Code) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Position?color=%23FF8A50&label=Need%3A%20Position) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Tool?color=%23D998FA&label=Need%3A%20Tool) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Advice?color=%23DBCDC6&label=Need%3A%20Advice) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Lead?color=%2386D677&label=Need%3A%20Lead) ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Translation?color=%2388e6e8&label=Need%3A%20Translation)
+[![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Code?color=%23D44937&label=Need%3A%20Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Code%22)
+[
+![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Position?color=%23FF8A50&label=Need%3A%20Position)
+](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Position%22+)
+[ ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Tool?color=%23D998FA&label=Need%3A%20Tool)
+](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Tool%22+)
+[![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Advice?color=%23DBCDC6&label=Need%3A%20Advice)
+](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Advice%22+)
+[![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Lead?color=%2386D677&label=Need%3A%20Lead)
+](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Lead%22+)
+[![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Translation?color=%2388e6e8&label=Need%3A%20Translation)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Translation%22+)
 
 A simple and very quick way to support us is Staring the repo if you like what we are building. This will open the doors to us to crowdfunding platforms such as Open Collective.
 
