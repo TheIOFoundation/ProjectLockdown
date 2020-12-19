@@ -2,7 +2,7 @@
 name: "[PROD] API Definition"
 about: Define an API for the Back End.
 title: "[API] "
-labels: 'Module: API, Priority: Medium, Project: PLD, Stage: Not Ready, Team: Devs'
+labels: 'Module: API, Priority: Medium, Project: PLD,'
 assignees: ''
 
 ---
@@ -80,5 +80,5 @@ Database objects: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Databa
 
 # Related Issues
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTc2NTIzNTBdfQ==
+eyJoaXN0b3J5IjpbMjk0NjI2MDA3LC0xMzk3NjUyMzUwXX0=
 -->
