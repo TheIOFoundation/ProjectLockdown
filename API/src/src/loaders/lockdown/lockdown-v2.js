@@ -6,8 +6,7 @@ import { SimpleGrid } from '../../utils/SimpleGrid';
 import { ENTRY_COLUMN_LENGTH, parseEntry } from './parsers/lockdownParser';
 import { getSnapshots } from './snapshot/processor';
 import { connect } from '../../repositories';
-
-const fs = require('fs');
+import { MessagesService } from '../../services/MessagesService';
 
 // Number of territories to query through batchGet at a time
 const BATCH_SIZE = 25;
@@ -88,26 +87,18 @@ export async function batchGetTerritoriesEntryData(territories) {
             snapshots.forEach(s => {
               s.iso3 = batch[i]['iso3'];
               s.iso2 = batch[i]['iso2'];
-              // TODO: test, write out, remove when ready
-              if (!fs.existsSync('./out')) {
-                fs.mkdir('./out', { recursive: true }, (err) => {
-                  logger.error(err);
-                });  
-              }            
-              fs.writeFileSync('./out/' + s.iso3 + '.json', JSON.stringify(s));
             });
 
-            // TODO: insert into Cosmosdb when ready
-            // try {
-            //   let insertResult = await database.snapshotRepository.insertMany(snapshots);
-            //   // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
-            //   if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
-            //     shouldResetApiCache = true;
-            //   }
-            // } catch (error) {
-            //   logger.log(`Error insertMany for country ${batch[i]['iso2']} ${batch[i]['iso3']}...`);
-            //   logger.error(error);
-            // }
+            try {
+              let insertResult = await database.snapshotRepository.insertMany(snapshots);
+              // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
+              if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
+                shouldResetApiCache = true;
+              }
+            } catch (error) {
+              logger.log(`Error insertMany for country ${batch[i]['iso2']} ${batch[i]['iso3']}...`);
+              logger.error(error);
+            }
           }
 
           result.push({
@@ -118,26 +109,23 @@ export async function batchGetTerritoriesEntryData(territories) {
               snapshots
             }
           });
-
         }
         catch (error) {
           throw new Error(`Error during processing ${batch[i]['iso3']}: ${error}`);
         }
-        // TODO: test, break out
-        break;
       }
     }
 
     if (shouldResetApiCache) {
-      // const cacheMessageBus = new MessagesService(process.env.AZURE_SERVICEBUS_CONNECTION_STRING, process.env.AZURE_SERVICEBUS_CACHE_QUEUE);
-      // await cacheMessageBus.sendMessage(
-      //   `Reset cache`,
-      //   "Reset cache",
-      //   {
-      //     timestamp: new Date()
-      //   }
-      // );
-      // await cacheMessageBus.close();
+      const cacheMessageBus = new MessagesService(process.env.AZURE_SERVICEBUS_CONNECTION_STRING, process.env.AZURE_SERVICEBUS_CACHE_QUEUE);
+      await cacheMessageBus.sendMessage(
+        `Reset cache`,
+        "Reset cache",
+        {
+          timestamp: new Date()
+        }
+      );
+      await cacheMessageBus.close();
     }
   }
   catch (error) {
