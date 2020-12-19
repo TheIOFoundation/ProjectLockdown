@@ -2,7 +2,7 @@
 name: "[PROD] API Definition"
 about: Define an API for the Back End.
 title: "[API] "
-labels: 'Module: API, Priority: Medium, Project: PLD, Stage: Not Ready, Team: Devs'
+labels: 'Module: API, Priority: Medium, Project: PLD,'
 assignees: ''
 
 ---
@@ -34,8 +34,7 @@ Implement an API that will provide with the following services as described belo
 
 # Expected behavior
 - Must have
- -- REST OpenAPI 
-
+-- 
 
 - Should have
  -- 
@@ -46,15 +45,27 @@ Implement an API that will provide with the following services as described belo
 - Won't have
  -- 
 
+# Implementation stages
+- [ ] Define Modules needed
+
+- [ ] Define Endpoints
+
+- [ ] Define Tests
+
+- [ ] Enable Mocking
+
+- [ ] Document API
+
+- [ ] Deployment
+
 
 # Resources
 ## Tools
 Recommended tools would be the following:
 Stoplight.io: https://Stoplight.io
-Postman: https://Postman.com 
-DBDiagram: https://dbdiagram.io/
+Postman: https://Postman.com
 
-Note: For Project Lockdown members all these tools are available in your TIOF environment.
+Note: For Project Lockdown members all these tools are available in your Basaas TIOF environment.
 
 ## Usage documentation
 
@@ -68,3 +79,6 @@ Database objects: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Databa
 # Tests
 
 # Related Issues
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjk0NjI2MDA3LC0xMzk3NjUyMzUwXX0=
+-->

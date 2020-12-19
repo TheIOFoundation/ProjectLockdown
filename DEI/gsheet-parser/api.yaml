@@ -1,0 +1,9 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: GSheet Parser, parse data and store them in CosmosDB (Azure's MongoDB)
+tags:
+  - name: Data Set Layer
+    description: Data Set Layer
+  - name: Environemnts
+    description: Environemnt

@@ -1,0 +1,39 @@
+{
+  //Stoplight.io config file documentation.
+  //https://meta.stoplight.io/docs/platform/2.-workspaces/c.config.md
+  //Comments by Jean F. Queralt
+  //https://github.com/JFQueralt
+
+  //Exclude Irrelevant folders.
+  "exclude": ["/docs/minimal Dataedo sample", "docs/Diagrams", "Docs/Diagrams"],
+  
+  //Force API documentation to be under API folder.
+  "formats": {
+    "openapi": {
+      "rootDir": "API/Reference",
+      "include": [
+        "**"
+      ]
+    },
+
+      //Force Schema documentation to be under DB folder.
+      //Note: Looks like this setting is being currently ignored by Stoplight.io
+    "json_schema": {
+      "rootDir": "DB/Models",
+      "include": [
+        "**"
+      ]
+    },
+
+    //Default folder for Stoplight.io documentation.
+    "markdown": {
+      "rootDir": "docs"
+    },
+
+    //Force Stoplight.io images to be under API folder.
+    "image": {
+      //"rootDir": "Assets/APIImages"
+    "rootDir": "API/Reference/Images"
+    }
+  }
+}
