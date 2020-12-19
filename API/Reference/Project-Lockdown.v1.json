@@ -19,9 +19,9 @@
     }
   ],
   "paths": {
-    "/Environment/{DSLUID}/{Module}": {
+    "/Environments/{DSLUID}/{Module}": {
       "get": {
-        "summary": "Extract Environment object for MAP.",
+        "summary": "Extract Environment objects for MAP.",
         "tags": [
           "ProjectLockdown",
           "TIOF",
