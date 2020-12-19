@@ -1,19 +1,15 @@
 {
-  "name": "lockdown-backend",
+  "name": "gsheet-parser",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node dist/server.js",
     "start:job": "npm run build && node dist/index.js",
     "build": "babel src -d dist --copy-files",
     "dev": "babel-node src/index.js",
     "test": "jest ./tests",
-    "debug": "babel-node debug src/index.js",
-    "server": "nodemon --exec babel-node src/server.js",
-    "server:debug": "nodemon --inspect src/server.js"
+    "debug": "babel-node debug src/index.js"
   },
   "dependencies": {
-    "@azure/service-bus": "^1.1.10",
     "@babel/node": "^7.12.10",
     "axios": "^0.19.2",
     "compression": "^1.7.4",
