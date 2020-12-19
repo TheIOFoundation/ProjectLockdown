@@ -15763,7 +15763,8 @@
         "description": "\n\nNote:\nFor DSEs\nDateStart + DateEnd typially different\n\nFor Snapshopts\nDateStart = DateEnd (Can even ignore DateEnd)",
         "properties": {
           "AnswerUID": {
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "Value": {
             "$ref": "#/components/schemas/Response"
