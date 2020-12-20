@@ -15788,6 +15788,9 @@
           },
           "TEST IGNORE": {
             "type": "string"
+          },
+          "TEST IGNORE 2": {
+            "type": "string"
           }
         }
       },
