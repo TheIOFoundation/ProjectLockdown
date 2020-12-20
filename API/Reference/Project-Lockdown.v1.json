@@ -10103,7 +10103,7 @@
   "components": {
     "schemas": {
       "Environment": {
-        "title": "XXX Environment",
+        "title": "Environment",
         "type": "object",
         "x-examples": {
           "Default - Minimal": {
