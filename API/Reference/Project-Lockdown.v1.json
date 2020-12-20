@@ -16127,7 +16127,11 @@
             "description": "Value of the date, referenced to UTC (GMT+0) and stored in 📑 XXX format."
           },
           "GeneratedBy": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "Human",
+              "Algorithm"
+            ]
           },
           "📑 Highlights": {
             "type": "string",
