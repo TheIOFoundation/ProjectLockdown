@@ -3,7 +3,7 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940; (Forbiden)\n&#128226; (Megaphone 1)\n&#128227; (Megaphone 2)\n&#128230; (Mail)\n\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n👁️‍🗨️\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n⚡ (About)\n🎯 (Usage)\n📢 (Invoked by)\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940; (Forbiden)\n&#128226; (Megaphone 1)\n&#128227; (Megaphone 2)\n&#128230; (Mail)\n\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n👁️‍🗨️\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n⚡ (About)\n🎯 (Usage)\n📢 (Invoked by)\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n\n\n\nModules\n- 🗺 MAP\n- ⌨ BO\n- 🌐 (Website)\n- 🗃 API\n-🗄 DEI\n- 🤖 ML Funnel\n- 👨‍💻 📁 ✋ Insourcing Funnel\n- 💫 📦 🌠 Direct Feed Funnel\n- ✨ ✨ 🤲 Crowdsourcinng",
     "contact": {
       "name": "The IO Foundation",
       "email": "Contact@ProjectLockdown.net"
@@ -15191,7 +15191,7 @@
       "Project": {
         "title": "👁️‍🗨️ Project",
         "type": "object",
-        "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nA Project object represents the collection of data that is necessary to represent a TIOF project.\n\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 \n\n\n## ❓ DUBIOUS FIELDS\n",
+        "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nA Project object represents the collection of data that is necessary to represent a TIOF project.\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 \n\n\n## ❓ DUBIOUS FIELDS\n",
         "x-examples": {
           "example-1": {
             "ProjectUID": "string",
@@ -15638,7 +15638,7 @@
       "Module": {
         "title": "🚧 Module",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n###Accessed by\nMAP\nBO\nAPI",
+        "description": "# Status: 🚧\n\n## ⚡ About\nA Module object represents the collection of data that is necessary to define and configure a PLD Module.\n\nThe object itself is divided in as many subobjects as Modules in Project Lockdown:\nModules\n- 🗺 Mapping platform [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- ⌨ Back Office [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- 🗃 Backend Endpoints [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n- 🌐 Official Website [WEB]()\n- 🗄 Data Entry Interface [DEI](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DEI)\n- 💾 Database [DB](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DB)\n- ✋ Insourcing Funnel [IS]()\n- 🤲 Crowdsourcing [CS]()\n- 🤖 ML Funnel [ML]()\n- 📦 Direct Feed Funnel [DF]()\n\n## 📢 Used by\n- 💠 \n\n\n###Accessed by\nMAP\nBO\nAPI",
         "properties": {
           "MAP": {
             "type": "object",
