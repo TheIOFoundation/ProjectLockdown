@@ -15605,7 +15605,7 @@
         }
       },
       "Stat": {
-        "title": "XXX Stat",
+        "title": "🚧 Stat",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n\n\n###User\nReliability Index\n\n\n###URL fields\nURLDoc\nIndicates where are the docs explaining this Stat.\n\nURLCode\nIndicates where in the code is this Stat calculated.\n\n\n###Date fields\nDateLastUpdate\n\n???Fequency\n",
         "properties": {
