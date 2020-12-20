@@ -15634,7 +15634,7 @@
         }
       },
       "Date": {
-        "title": "XX? Date",
+        "title": "XXX Date",
         "type": "object",
         "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n",
         "properties": {
