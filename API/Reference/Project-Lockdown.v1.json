@@ -3,7 +3,7 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940 (Forbiden)\n",
     "contact": {
       "name": "The IO Foundation",
       "email": "Contact@ProjectLockdown.net"
@@ -19,7 +19,7 @@
     }
   ],
   "paths": {
-    "/Environments/{DSLUID}/{Module}": {
+    "/Environments/{DSLUID}/{Module}/{EnvironmentUID}": {
       "get": {
         "summary": "Extract Environment objects for MAP.",
         "tags": [
@@ -9897,6 +9897,14 @@
           "name": "Module",
           "in": "path",
           "description": "Enum BO, API or MAP. Defaults to MAP if not specified"
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "EnvironmentUID",
+          "in": "path",
+          "description": "Sets a specific Environment  via its UID."
         }
       ]
     },
@@ -14141,7 +14149,7 @@
             ]
           }
         },
-        "description": "@@@\nDescribes the features and behavior of the environment for all the Modules.\n\n0 = DEFAULT APP\nAnything else = Other environment configurations?\nWe may want to consider custom environments for Users?\n\n\n###Accessed by\nMAP\nBO\nAPI\n",
+        "description": "# Status: &#128679;\n\n## &#9889; About\n\nThis Endpoint is returns the necessary data for a Module to function:\n- Project global variables (Project)\n- DataSet Layer to be rendered (DSL)\n\nIt also includes a number of Statistics (Stats) that can be used to present information to the user.\n@@@ Pending: Listing of Stats & their definitions\n\n## &#127919; Usage\n\nParameters:\n - DSLUID:\n   - 0 / Empty = Default DSL (taken from Project > GlobalVars > DLSDefault)\n   - Any other value = UID of the DSL to be loaded.\n \n - MODULE:\n   - MAP = Requesting environment info for [MAP Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n   - BO = Requesting environment info for [BO Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n   - API = Requesting environment info for [API Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n- EnvironmenUID: (Optional)\n  - 0 = Default App configuration\n  - Any other value = Custom environment configurations, for instance custom environments for Users (User Preferences).\n\n## Accessed by\n- [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- [BO]\n- [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n\n",
         "properties": {
           "EnvironmentUID": {
             "type": "string"
