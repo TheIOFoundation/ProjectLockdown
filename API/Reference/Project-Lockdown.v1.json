@@ -3,7 +3,7 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940; (Forbiden)\n&#128226; (Megaphone 1)\n&#128227; (Megaphone 2)\n&#128230; (Mail)\n\n\n\nhttps://html-css-js.com/html/character-codes/\n\n⚡ (About)\n💡 (Idea / Suggestion)\n🚧 (Work in Progress)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🎯 (Usage)\n📢 (Invoked by)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n👁️‍🗨️\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n👁️‍🗨️ (Pay attention)\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940; (Forbiden)\n&#128226; (Megaphone 1)\n&#128227; (Megaphone 2)\n&#128230; (Mail)\n\n\n\nhttps://html-css-js.com/html/character-codes/\n\n⚡ (About)\n💡 (Idea / Suggestion)\n🚧 (Work in Progress)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🎯 (Usage)\n📢 (Invoked by)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n👁️‍🗨️\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n👁️‍🗨️ (Pay attention)\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n\n🌀 Mandatory field\n🃏 Optional field",
     "contact": {
       "name": "The IO Foundation",
       "email": "Contact@ProjectLockdown.net"
@@ -9874,7 +9874,7 @@
           }
         },
         "operationId": "get-Environment",
-        "description": "## ⚡ About\n\n&nbsp; This Endpoint handles all the necessary data for a Module to function.\n\nIt returns a Module of type [Environment](https://theiofoundation.stoplight.io/studio/projectlockdown/edit#status-).\n\n&nbsp; It also includes a number of Statistics (Stats) that can be used to present information to the user.\n@@@ Pending: Listing of Stats & their definitions\n\n## 🎯 Usage\n\n&nbsp; Parameters:\n - DSLUID:\n   - 0 / Empty = Default DSL (taken from Project > GlobalVars > DLSDefault)\n   - Any other value = UID of the DSL to be loaded.\n \n - MODULE:\n   - MAP = Requesting environment info for [MAP Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n   - BO = Requesting environment info for [BO Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n   - API = Requesting environment info for [API Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n- EnvironmenUID: (Optional)\n  - 0 = Default App configuration\n  - Any other value = Custom environment configurations, for instance custom environments for Users (User Preferences).\n\n\n## 📢 Invoked by\n- [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- 📑 [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- 📑 [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)",
+        "description": "## ⚡ About\nThis Endpoint exctracts all the necessary data for a Module to function.\n\nIt returns a Model of type [Environment](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Environment#status-).\n\nThe information is used to:\n- Set App Global Vars\n- Set the Module Vars\n- Get the necessary DSL information\n\n## 🎯 Path Parameters\n\n - 🃏 DSLUID\n   - 0 / Empty = Default DSL (taken from Project > GlobalVars > DLSDefault)\n   - Any other value = UID of the DSL to be loaded.\n \n - 🃏 MODULE\n   - MAP = Requesting environment info for [MAP Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n   - BO = Requesting environment info for [BO Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n   - API = Requesting environment info for [API Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n- 🃏 EnvironmenUID\n  - 0 = Default App configuration\n  - Any other value = Custom environment configurations, for instance custom environments for Users (User Preferences).\n\n\n## 📢 Invoked by\n- [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- 📑 [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- 📑 [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)",
         "parameters": []
       },
       "parameters": [
@@ -14149,7 +14149,7 @@
             ]
           }
         },
-        "description": "# Status: ✔\n\n## ⚡ About\n\n&nbsp; An Environment represents the collection of data that is necessary for for a Module to function.\n\nIt is composed by 2 main objects:\n- Project global variables (Project)\n- DataSet Layer to be rendered (DSL)\n\n&nbsp; It also includes a number of Statistics (Stats) that can be used to present information to the user.\n@@@ Pending: Listing of Stats & their definitions\n\n## 🎯 Usage\n\n&nbsp; Parameters:\n - DSLUID:\n   - 0 / Empty = Default DSL (taken from Project > GlobalVars > DLSDefault)\n   - Any other value = UID of the DSL to be loaded.\n \n - MODULE:\n   - MAP = Requesting environment info for [MAP Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n   - BO = Requesting environment info for [BO Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n   - API = Requesting environment info for [API Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n- EnvironmenUID: (Optional)\n  - 0 = Default App configuration\n  - Any other value = Custom environment configurations, for instance custom environments for Users (User Preferences).\n\n## 📢 Invoked by\n- [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n\n",
+        "description": "# Status: ✔\n\n## ⚡ About\nAn Environment object represents the collection of data that is necessary for for a Module to function.\n\nIt is composed by 2 main objects:\n- [Project](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Project) global variables\n- [DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) to be rendered in the Module\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 [Environments](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/paths/~1Environments~1%7BDSLUID%7D~1%7BModule%7D~1%7BEnvironmentUID%7D/get)\n",
         "properties": {
           "EnvironmentUID": {
             "type": "string",
@@ -14180,9 +14180,9 @@
         ]
       },
       "Territory": {
-        "title": "XXX Territory",
+        "title": "🚧 Territory",
         "type": "object",
-        "description": "@@@\nDecribes PLD Territories.\n\n\n###URL fields\nURLDEI\nPermalink for direct access to the DEI\n\nURLDoc\nPermalink for direct access to the territory info (to be implemented later).\n\n###Date fields\nDateLastUpdate\nLast time the Territory info was updated.\n@@@Probably also put in Log?\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nDecribes PLD Territories.\n\n\n###URL fields\nURLDEI\nPermalink for direct access to the DEI\n\nURLDoc\nPermalink for direct access to the territory info (to be implemented later).\n\n###Date fields\nDateLastUpdate\nLast time the Territory info was updated.\n@@@Probably also put in Log?\n",
         "x-examples": {
           "example-1": {
             "id": "string",
@@ -14415,9 +14415,9 @@
         ]
       },
       "DataPoint": {
-        "title": "DataPoint",
+        "title": "🚧 DataPoint",
         "type": "object",
-        "description": "Describes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. \n\n###Date fields\nDateCreated\n\nDateUpdated\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\nDescribes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. \n\n###Date fields\nDateCreated\n\nDateUpdated\n",
         "properties": {
           "DataPointUID": {
             "type": "string"
@@ -14493,9 +14493,9 @@
         }
       },
       "Category": {
-        "title": "Category",
+        "title": "🚧 Category",
         "type": "object",
-        "description": "Describes PLD Categories.",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nDescribes PLD Categories.",
         "properties": {
           "CategoryUID": {
             "type": "string"
@@ -14552,7 +14552,7 @@
       "DataSetLayer": {
         "title": "🚧 DataSet Layer (DSL)",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About  \n\n&nbsp; This Endpoint is returns the necessary data for a Module to function:\n- Project global variables (Project)\n- DataSet Layer to be rendered (DSL)\n\n&nbsp; It also includes a number of Statistics (Stats) that can be used to present information to the user.\n@@@ Pending: Listing of Stats & their definitions\n\nDescribes PLD DataSet Layers.\nA DataSet Layer (DSL) is a collection of DataPoints (DP) that are selected to track the impact of a specific family of policies that may impact Human and/or Digital Rights. They are composed of a series of child objects formed by metadata and actual policy information encoded following a DSL-specific methodology.\n\n\n## 🎯 Usage\n\n&nbsp; Parameters:\n - DSLUID:\n   - 0 / Empty = Default DSL (taken from Project > GlobalVars > DLSDefault)\n   - Any other value = UID of the DSL to be loaded.\n \n - MODULE:\n   - MAP = Requesting environment info for [MAP Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n   - BO = Requesting environment info for [BO Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n   - API = Requesting environment info for [API Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n- EnvironmenUID: (Optional)\n  - 0 = Default App configuration\n  - Any other value = Custom environment configurations, for instance custom environments for Users (User Preferences).\n\n## 📢 Invoked by\n- 📑 [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- 📑 [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- 📑 [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n\n\n\n## 🔗 URL fields\n- URLDocs: Permalink to the documentation explaining this DSL.\n- URLDSL: Permalink for this DSL.\n- URLDEI: Permalink to the DEI for this DSL.\n- URLMethodology: Permalink providing Methodology information for the DSL.\n- 📑 URLAPI: Permalink providing access to the API serving this DSL.\n- URLSchema: Permalink providing access to the Schema forming this DSL.\n- 📑 URLQALog: Permalink providing access to the QA log for the DSL.\n- URLLicense: Permalink providing Licensing information for the DSL.\n- URLCitingPolicy: Permalink providing Citing information for the DSL.\n\n## 📅 Date Fields\n- DateFirstPublished: First time this DSL was published.\n   📑 Note: Maybe we put this in Log too?\n- DateLastUpdated: Last Date and Time the DSL was updated.\n   📑 Note: Maybe we put this in Log too?\n- DateUpdatedNext: Next scheduled Date and Time the DSL will be updated.\n- DateFirstDay: First Day (Left limit) considered in the DSL.\n- DateLastDay: Last Day (Right limit) considered in the DSL.\n\n## ❓ DUBIOUS FIELDS\n- DateTimeFormat\n- UpdatedFreq: Scheduled frequency for updates on the DSL, in milliseconds.\n- MethodologyCode: Extra information inside the Methodology.\n- 📑 AccessLevel: Indicates the access conditions for this DSL\n- LicenseCode: Extra information inside the Licensing.\n- CitingPolicyCode: Extra information inside the Citing.",
+        "description": "# Status: 🚧\n\n## ⚡ About  \nA DataSet Layer object represents the collection of data that defines a DSL in Project Lockdown. A DSL is a collection of [DataPoints](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataPoint) (DP) that are selected to track the impact of a specific family of policies over a specific Human or Digital Right.\n\nIt is composed by 📑:\n\n\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n\n## 📢 Used by\n- 📑 ???\n\n## 🔗 URL fields\n- URLDocs: Permalink to the documentation explaining this DSL.\n- URLDSL: Permalink for this DSL.\n- URLDEI: Permalink to the DEI for this DSL.\n- URLMethodology: Permalink providing Methodology information for the DSL.\n- 📑 URLAPI: Permalink providing access to the API serving this DSL.\n- URLSchema: Permalink providing access to the Schema forming this DSL.\n- 📑 URLQALog: Permalink providing access to the QA log for the DSL.\n- URLLicense: Permalink providing Licensing information for the DSL.\n- URLCitingPolicy: Permalink providing Citing information for the DSL.\n\n## 📅 Date Fields\n- DateFirstPublished: First time this DSL was published.\n   📑 Note: Maybe we put this in Log too?\n- DateLastUpdated: Last Date and Time the DSL was updated.\n   📑 Note: Maybe we put this in Log too?\n- DateUpdatedNext: Next scheduled Date and Time the DSL will be updated.\n- DateFirstDay: First Day (Left limit) considered in the DSL.\n- DateLastDay: Last Day (Right limit) considered in the DSL.\n\n## ❓ DUBIOUS FIELDS\n- DateTimeFormat\n- UpdatedFreq: Scheduled frequency for updates on the DSL, in milliseconds.\n- MethodologyCode: Extra information inside the Methodology.\n- 📑 AccessLevel: Indicates the access conditions for this DSL\n- LicenseCode: Extra information inside the Licensing.\n- CitingPolicyCode: Extra information inside the Citing.",
         "properties": {
           "DSLUID": {
             "type": "string",
@@ -14697,9 +14697,9 @@
         }
       },
       "Source": {
-        "title": "XXX Source",
+        "title": "🚧 Source",
         "type": "object",
-        "description": "###Accessed by\nBO\nAPI\n\n###URL fields\nURLSource\nPoints to where the source document is.\n\nURLGitHubIssue\nPoints to the GitHub Issue where the Source has been stored.\n\n###Date fields\n???TimeStampCreated\n???TimeStampTriaged\n???TimestampEncoded (when the DSE is first created)\n???TimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\nDateIssued\nDateStart\nDateEnd",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n###Accessed by\nBO\nAPI\n\n###URL fields\nURLSource\nPoints to where the source document is.\n\nURLGitHubIssue\nPoints to the GitHub Issue where the Source has been stored.\n\n###Date fields\n???TimeStampCreated\n???TimeStampTriaged\n???TimestampEncoded (when the DSE is first created)\n???TimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\nDateIssued\nDateStart\nDateEnd",
         "properties": {
           "SourceUID": {
             "type": "string"
@@ -14816,9 +14816,9 @@
         }
       },
       "SourceType": {
-        "title": "??? SourceType",
+        "title": "🚧 SourceType",
         "type": "object",
-        "description": "MAYBE THESE ARE ACTUALLY ORIGINS\n\n@@@\nDefines the types of sources from where Sources are extracted and/or generated. This applies to all data, from the one generated for PLD to external providers.\n\n\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nMAYBE THESE ARE ACTUALLY ORIGINS\n\n@@@\nDefines the types of sources from where Sources are extracted and/or generated. This applies to all data, from the one generated for PLD to external providers.\n\n\n",
         "properties": {
           "SourceTypeUID": {
             "type": "string"
@@ -14859,9 +14859,9 @@
         }
       },
       "Region": {
-        "title": "Regions",
+        "title": "🚧 Region",
         "type": "object",
-        "description": "@@@\nPLD regions\n\n- Africa\n- Asia\n- Europe\n- Middle East\n- Latin America\n- North America\n\nMissing: Pacific - No assigned TLD seems to be available\n\n\nSee documentation on how to use the TLDs for localization.\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nPLD regions\n\n- Africa\n- Asia\n- Europe\n- Middle East\n- Latin America\n- North America\n\nMissing: Pacific - No assigned TLD seems to be available\n\n\nSee documentation on how to use the TLDs for localization.\n",
         "properties": {
           "XXXRegionUID": {
             "type": "string"
@@ -14917,9 +14917,9 @@
         }
       },
       "Origin": {
-        "title": "XXX Origin",
+        "title": "🚧 Origin",
         "type": "object",
-        "description": "@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.\n\n###URL fields\nURLOrigin\nPoints to the official location where Sources are extracted from.",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.\n\n###URL fields\nURLOrigin\nPoints to the official location where Sources are extracted from.",
         "properties": {
           "OriginUID": {
             "type": "string"
@@ -14963,9 +14963,9 @@
         }
       },
       "TimeMachine": {
-        "title": "??? TimeMachine",
+        "title": "🚧 TimeMachine",
         "type": "object",
-        "description": "REPLACED BY SOURCE???\n\n\nObjects describing all the different Time Machines used to back up Sources.",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nREPLACED BY SOURCE???\n\n\nObjects describing all the different Time Machines used to back up Sources.",
         "properties": {
           "TimeMachineUID": {
             "type": "string"
@@ -15000,9 +15000,9 @@
         }
       },
       "Snapshot": {
-        "title": "Snapshot",
+        "title": "🚧 Snapshot",
         "type": "object",
-        "description": "@@@\n\n###Accessed by\nMAP\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n\n###DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\n###URL fields\nURLCode\nWhere in the code this snapshot is generated.\n\n###Date fields\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nDateLastUpdated\n\nDateFirstCreated\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n###Accessed by\nMAP\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n\n###DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\n###URL fields\nURLCode\nWhere in the code this snapshot is generated.\n\n###Date fields\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nDateLastUpdated\n\nDateFirstCreated\n",
         "properties": {
           "SnapshotUID": {
             "type": "string"
@@ -15056,7 +15056,7 @@
         }
       },
       "Layout": {
-        "title": "Layout",
+        "title": "🚧 Layout",
         "type": "object",
         "properties": {
           "LayoutUID": {
@@ -15078,12 +15078,12 @@
             "$ref": "#/components/schemas/Link"
           }
         },
-        "description": "\n@@@MISSING\nHow to correlate the DPUIs with the layout placeholders.\nThis will depend on the implementation model."
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n@@@MISSING\nHow to correlate the DPUIs with the layout placeholders.\nThis will depend on the implementation model."
       },
       "User": {
-        "title": "XXX User",
+        "title": "🚧 User",
         "type": "object",
-        "description": "",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n",
         "properties": {
           "UserUID": {
             "type": "string"
@@ -15116,7 +15116,7 @@
         }
       },
       "License": {
-        "title": "License",
+        "title": "🚧 License",
         "type": "object",
         "properties": {
           "LicenseUID": {
@@ -15148,12 +15148,12 @@
             }
           }
         },
-        "description": "In Short:\n\n- Each Module has different components\nEx: API has different Endpoints\nEx: BO has different interfaces/pages/screens\n\n- Each component allows a number of Operations on them\n\n"
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nIn Short:\n\n- Each Module has different components\nEx: API has different Endpoints\nEx: BO has different interfaces/pages/screens\n\n- Each component allows a number of Operations on them\n\n"
       },
       "Project": {
-        "title": "XXX Project",
+        "title": "🚧 Project",
         "type": "object",
-        "description": "DateCreated\nDate when this project was created.\n\nContact\nContact person for this project.\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nDateCreated\nDate when this project was created.\n\nContact\nContact person for this project.\n",
         "properties": {
           "ProjectUID": {
             "type": "string"
@@ -15194,7 +15194,7 @@
         }
       },
       "Right": {
-        "title": "Right",
+        "title": "🚧 Right",
         "type": "object",
         "properties": {
           "RightUID": {
@@ -15212,12 +15212,13 @@
           "Description": {
             "type": "string"
           }
-        }
+        },
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n"
       },
       "Module": {
-        "title": "XXX Module",
+        "title": "🚧 Module",
         "type": "object",
-        "description": "\n\n###Accessed by\nMAP\nBO\nAPI",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n###Accessed by\nMAP\nBO\nAPI",
         "properties": {
           "MAP": {
             "type": "object",
@@ -15483,9 +15484,9 @@
         }
       },
       "Log": {
-        "title": "Log",
+        "title": "🚧 Log",
         "type": "object",
-        "description": "\n\n\n###User\nCreated\nBanned\nSuspended\nAddLicense\nRemoveLicense\n\nServiceRequest\nKeeps track of the usage of the platform. For instance, allows to track how many API requestes in 24h have been made.\n\n\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n###User\nCreated\nBanned\nSuspended\nAddLicense\nRemoveLicense\n\nServiceRequest\nKeeps track of the usage of the platform. For instance, allows to track how many API requestes in 24h have been made.\n\n\n",
         "properties": {
           "LogUID": {
             "type": "string"
@@ -15525,9 +15526,9 @@
         }
       },
       "Encoding": {
-        "title": "@@@Encoding",
+        "title": "🚧 Encoding",
         "type": "object",
-        "description": "@@@",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
         "properties": {
           "EncodingUID": {
             "type": "string"
@@ -15571,9 +15572,9 @@
         }
       },
       "Link": {
-        "title": "XXX Link",
+        "title": "🚧 Link",
         "type": "object",
-        "description": "Objects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\n\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nObjects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\n\n",
         "properties": {
           "LinkUID": {
             "type": "string"
@@ -15606,7 +15607,7 @@
       "Stat": {
         "title": "XXX Stat",
         "type": "object",
-        "description": "@@@\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n\n\n###User\nReliability Index\n\n\n###URL fields\nURLDoc\nIndicates where are the docs explaining this Stat.\n\nURLCode\nIndicates where in the code is this Stat calculated.\n\n\n###Date fields\nDateLastUpdate\n\n???Fequency\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n\n\n###User\nReliability Index\n\n\n###URL fields\nURLDoc\nIndicates where are the docs explaining this Stat.\n\nURLCode\nIndicates where in the code is this Stat calculated.\n\n\n###Date fields\nDateLastUpdate\n\n???Fequency\n",
         "properties": {
           "StatUID": {
             "type": "string"
@@ -15650,9 +15651,9 @@
         }
       },
       "Date": {
-        "title": "XXX Date",
+        "title": "🚧 Date",
         "type": "object",
-        "description": "@@@\n\n\nMake a list of all the different Date Types PER OBJECT that can be defined.\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n",
         "properties": {
           "DateUID": {
             "type": "string"
@@ -15709,9 +15710,9 @@
         }
       },
       "Audience": {
-        "title": "XXX Audience",
+        "title": "🚧 Audience",
         "type": "object",
-        "description": "@@@@",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
         "properties": {
           "AudienceUID": {
             "type": "string"
@@ -15734,9 +15735,9 @@
         }
       },
       "Tag": {
-        "title": "XXX Tag",
+        "title": "🚧 Tag",
         "type": "object",
-        "description": "@@@@\nLook into maybe synchronizing some of these Tags with GitHub Labels.\n\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n@@@@\nLook into maybe synchronizing some of these Tags with GitHub Labels.\n\n",
         "properties": {
           "TagUID": {
             "type": "string"
@@ -15778,9 +15779,9 @@
         }
       },
       "Answer": {
-        "title": "Answer",
+        "title": "🚧 Answer",
         "type": "object",
-        "description": "\n\nNote:\nFor DSEs\nDateStart + DateEnd typially different\n\nFor Snapshopts\nDateStart = DateEnd (Can even ignore DateEnd)",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nNote:\nFor DSEs\nDateStart + DateEnd typially different\n\nFor Snapshopts\nDateStart = DateEnd (Can even ignore DateEnd)",
         "properties": {
           "AnswerUID": {
             "type": "string",
@@ -15801,17 +15802,11 @@
           "Details": {
             "type": "string",
             "description": "sddfsdfssdfsdf\n\n\n"
-          },
-          "TEST IGNORE": {
-            "type": "string"
-          },
-          "TEST IGNORE 2": {
-            "type": "string"
           }
         }
       },
       "Response": {
-        "title": "Response",
+        "title": "🚧 Response",
         "type": "object",
         "properties": {
           "ResponseUID": {
@@ -15836,10 +15831,11 @@
             "type": "string",
             "description": "Value for the Answer field\nOR\nThe Snapshop value"
           }
-        }
+        },
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n"
       },
       "SourceInstance": {
-        "title": "SourceInstance",
+        "title": "🚧 SourceInstance",
         "type": "object",
         "properties": {
           "SourceInstanceUID": {
@@ -15866,7 +15862,8 @@
           "": {
             "type": "string"
           }
-        }
+        },
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n"
       }
     },
     "parameters": {
