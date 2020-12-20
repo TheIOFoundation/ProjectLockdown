@@ -3,7 +3,7 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940 (Forbiden)\n",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940; (Forbiden)\n&#128226; (Megaphone 1)\n&#128227; (Megaphone 2)\n&#128230; (Mail)\n\n\n\nhttps://html-css-js.com/html/character-codes/\n\n⚡ (About)\n💡 (Idea / Suggestion)\n🚧 (Work in Progress)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🎯 (Usage)\n📢 (Invoked by)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n👁️‍🗨️\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n👁️‍🗨️ (Pay attention)\n☠ (Do not!)",
     "contact": {
       "name": "The IO Foundation",
       "email": "Contact@ProjectLockdown.net"
@@ -14149,13 +14149,15 @@
             ]
           }
         },
-        "description": "# Status: &#128679;\n\n## &#9889; About\n\n&nbsp; This Endpoint is returns the necessary data for a Module to function:\n- Project global variables (Project)\n- DataSet Layer to be rendered (DSL)\n\nIt also includes a number of Statistics (Stats) that can be used to present information to the user.\n@@@ Pending: Listing of Stats & their definitions\n\n## &#127919; Usage\n\nParameters:\n - DSLUID:\n   - 0 / Empty = Default DSL (taken from Project > GlobalVars > DLSDefault)\n   - Any other value = UID of the DSL to be loaded.\n \n - MODULE:\n   - MAP = Requesting environment info for [MAP Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n   - BO = Requesting environment info for [BO Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n   - API = Requesting environment info for [API Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n- EnvironmenUID: (Optional)\n  - 0 = Default App configuration\n  - Any other value = Custom environment configurations, for instance custom environments for Users (User Preferences).\n\n## Accessed by\n- [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- [BO]\n- [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n\n",
+        "description": "# Status: ✔\n\n## ⚡ About\n\n&nbsp; This Endpoint is returns the necessary data for a Module to function:\n- Project global variables (Project)\n- DataSet Layer to be rendered (DSL)\n\n&nbsp; It also includes a number of Statistics (Stats) that can be used to present information to the user.\n@@@ Pending: Listing of Stats & their definitions\n\n## 🎯 Usage\n\n&nbsp; Parameters:\n - DSLUID:\n   - 0 / Empty = Default DSL (taken from Project > GlobalVars > DLSDefault)\n   - Any other value = UID of the DSL to be loaded.\n \n - MODULE:\n   - MAP = Requesting environment info for [MAP Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n   - BO = Requesting environment info for [BO Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n   - API = Requesting environment info for [API Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n- EnvironmenUID: (Optional)\n  - 0 = Default App configuration\n  - Any other value = Custom environment configurations, for instance custom environments for Users (User Preferences).\n\n## 📢 Invoked by\n- [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n\n",
         "properties": {
           "EnvironmentUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n\n@@@ 🚧 Document how it is generated"
           },
           "DSL": {
             "type": "array",
+            "description": "DataSet Layer object",
             "items": {
               "$ref": "#/components/schemas/DataSetLayer"
             }
@@ -14165,11 +14167,17 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧 @@@\nStatistics related to Environment objects.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "required": [
+          "EnvironmentUID",
+          "DSL",
+          "Project"
+        ]
       },
       "Territory": {
         "title": "XXX Territory",
