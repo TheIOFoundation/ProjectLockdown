@@ -19,7 +19,7 @@
     }
   ],
   "paths": {
-    "/Environments/{DSLUID}/{Module}/{Test}": {
+    "/Environments/{DSLUID}/{Module}": {
       "get": {
         "summary": "Extract Environment objects for MAP.",
         "tags": [
@@ -9897,14 +9897,6 @@
           "name": "Module",
           "in": "path",
           "description": "Enum BO, API or MAP. Defaults to MAP if not specified"
-        },
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "Test",
-          "in": "path",
-          "description": "test path - to be removed"
         }
       ]
     },
@@ -10089,15 +10081,6 @@
         "operationId": "get-Rights",
         "description": "Handles Rights"
       }
-    },
-    "/Environments/{DSLUID}/{Module}": {
-      "parameters": [
-        null,
-        null,
-        {
-          "required": true
-        }
-      ]
     }
   },
   "components": {
