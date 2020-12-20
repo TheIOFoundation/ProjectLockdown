@@ -1,6 +1,6 @@
 {
-  "name": "project-lockdown-map",
-  "version": "0.1.0",
+  "name": "TIOFProjectLockdown",
+  "version": "2.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
