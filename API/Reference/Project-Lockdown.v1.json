@@ -3,7 +3,7 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940; (Forbiden)\n&#128226; (Megaphone 1)\n&#128227; (Megaphone 2)\n&#128230; (Mail)\n\n\n\nhttps://html-css-js.com/html/character-codes/\n\n⚡ (About)\n💡 (Idea / Suggestion)\n🚧 (Work in Progress)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🎯 (Usage)\n📢 (Invoked by)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n👁️‍🗨️\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n👁️‍🗨️ (Pay attention)\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n\n🌀 Mandatory field\n🃏 Optional field",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940; (Forbiden)\n&#128226; (Megaphone 1)\n&#128227; (Megaphone 2)\n&#128230; (Mail)\n\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n👁️‍🗨️\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n⚡ (About)\n🎯 (Usage)\n📢 (Invoked by)\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n",
     "contact": {
       "name": "The IO Foundation",
       "email": "Contact@ProjectLockdown.net"
@@ -14171,7 +14171,7 @@
           },
           "Stats": {
             "type": "array",
-            "description": "🚧\nStatistics related to Environment objects.",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -14392,7 +14392,7 @@
           },
           "Stats": {
             "type": "array",
-            "description": "List of Stats for this Territory.\n\n@@@Indicate the list of Stats\n\n\n@@@Make sure all these are in the Stat.StatType enumerator.\n\n",
+            "description": "🚧\nStatistics related to this object.\n\nList of Stats for this Territory.\n\n@@@Indicate the list of Stats\n\n\n@@@Make sure all these are in the Stat.StatType enumerator.\n\n",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -14480,6 +14480,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -14632,6 +14633,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -14783,7 +14785,11 @@
             "type": "string"
           },
           "Stats": {
-            "$ref": "#/components/schemas/Stat"
+            "type": "array",
+            "description": "🚧\nStatistics related to this object.",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           },
           "TimeMachines": {
             "type": "array",
@@ -14853,6 +14859,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -14923,6 +14930,13 @@
           "PermalinkGraphs": {
             "type": "string",
             "description": "Image for the Region."
+          },
+          "Stats": {
+            "type": "array",
+            "description": "🚧\nStatistics related to this object.",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       },
@@ -14949,6 +14963,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -15002,6 +15017,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -15046,7 +15062,11 @@
             ]
           },
           "Stats": {
-            "$ref": "#/components/schemas/Stat"
+            "type": "array",
+            "description": "🚧\nStatistics related to this object.",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           },
           "Answers": {
             "type": "array",
@@ -15085,6 +15105,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -15111,6 +15132,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -15140,6 +15162,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -15166,9 +15189,9 @@
         }
       },
       "Project": {
-        "title": "🚧 Project",
+        "title": "👁️‍🗨️ Project",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n## 🔗 URL fields\n\n\n## 📅 Date Fields\n\n\n## ❓ DUBIOUS FIELDS\n",
+        "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nA Project object represents the collection of data that is necessary to represent a TIOF project.\n\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 \n\n\n## ❓ DUBIOUS FIELDS\n",
         "x-examples": {
           "example-1": {
             "ProjectUID": "string",
@@ -15572,7 +15595,7 @@
           },
           "Stats": {
             "type": "array",
-            "description": "🚧\nStatistics related to Project objects.",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -15601,7 +15624,11 @@
             "type": "string"
           },
           "Stats": {
-            "$ref": "#/components/schemas/Stat"
+            "type": "array",
+            "description": "🚧\nStatistics related to this object.",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           },
           "Description": {
             "type": "string"
@@ -15807,6 +15834,7 @@
               },
               "Stats": {
                 "type": "array",
+                "description": "🚧\nStatistics related to this object.",
                 "items": {
                   "$ref": "#/components/schemas/Stat"
                 }
@@ -15818,6 +15846,7 @@
             "properties": {
               "Stats": {
                 "type": "array",
+                "description": "🚧\nStatistics related to this object.",
                 "items": {
                   "$ref": "#/components/schemas/Stat"
                 }
@@ -15829,6 +15858,7 @@
             "properties": {
               "Stats": {
                 "type": "array",
+                "description": "🚧\nStatistics related to this object.",
                 "items": {
                   "$ref": ""
                 }
@@ -15840,6 +15870,7 @@
             "properties": {
               "Stats": {
                 "type": "array",
+                "description": "🚧\nStatistics related to this object.",
                 "items": {
                   "$ref": "#/components/schemas/Stat"
                 }
@@ -15851,6 +15882,7 @@
             "properties": {
               "Stats": {
                 "type": "array",
+                "description": "🚧\nStatistics related to this object.",
                 "items": {
                   "$ref": "#/components/schemas/Stat"
                 }
@@ -15862,6 +15894,7 @@
             "properties": {
               "Stats": {
                 "type": "array",
+                "description": "🚧\nStatistics related to this object.",
                 "items": {
                   "$ref": "#/components/schemas/Stat"
                 }
@@ -15870,6 +15903,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -15956,6 +15990,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -15967,9 +16002,9 @@
         }
       },
       "Link": {
-        "title": "🚧 Link",
+        "title": "👁️‍🗨️ Link",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\nAn Link object represents the collection of data that is necessary to set an URL and to describe its function.\n\nIt is composed by 2 main objects:\n- [Project]\n\n## 📢 Used by\n- 💠 \n\n\n\n## 🔗 URL fields\n\n\n## 📅 Date Fields\n\n\n## ❓ DUBIOUS FIELDS\n\n\nObjects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\n\n",
+        "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nAn Link object represents the collection of data that is necessary to set an URL and to describe its function.\n\nThe Type field indicates what kind of information the Link points to:\n- Source: The object itself.\n- Docs: Documentation describing the object.\n- UI: UI asset representing the object.\n- Codebase: Line of code involving this object.\n📑 \n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 \n📑 \n\n\n## ❓ DUBIOUS FIELDS\nLocalesURL -> To be applied to all?\n\n\n\n",
         "properties": {
           "LinkUID": {
             "type": "string",
@@ -15986,19 +16021,34 @@
             ]
           },
           "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Nane of the URL."
           },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the URL."
           },
           "Stats": {
             "type": "array",
-            "description": "[Optional]",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
+          },
+          "Help": {
+            "type": "string",
+            "description": "Text used for\n- Alt\n- Title\n- Tooltip"
+          },
+          "URL": {
+            "type": "string",
+            "description": "Uniform Resource Locator\n\n**Format**\n{protocol}{domain}{path}{querystring}"
           }
-        }
+        },
+        "required": [
+          "LinkUID",
+          "Type",
+          "URL"
+        ]
       },
       "Stat": {
         "title": "🚧 Stat",
@@ -16048,38 +16098,42 @@
         }
       },
       "Date": {
-        "title": "🚧 Date",
+        "title": "👁️‍🗨️ Date",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n",
+        "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nAn Date object represents the collection of data that is necessary to establish a _date & time_ and to describe its function.\n\nDates can be generated though one of the several [Funnels](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/Funnels) and according to transparent algorithms (see 📑 documentation).\n\n🔥 The actual Date value is stored in 📑 XXX format in 2 different fields:\n- Value: As entered via [Funnel](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/Funnels)\n- valueUTC: Converted to UTC (GMT+0), which enables a properly referenced timeline of events.\n\nThe Type field indicates what kind of information the Link points to:\n\n📑 \n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 \n\n## ❓ DUBIOUS FIELDS\nHighlights: Where the text is from where the Date may have been extracted.\nLinks: Is this necessary? (Documentation?, Codebase?)",
         "properties": {
           "DateUID": {
             "type": "string",
             "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Date."
           },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the Date."
           },
           "Type": {
             "type": "string",
-            "description": "Enumerator of all types of Dates in the platform."
+            "description": "Enumerator of all types of Dates in the project."
           },
           "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "Value of the date, as entered via a funnel."
           },
           "ValueUTC": {
-            "type": "string"
+            "type": "string",
+            "description": "Value of the date, referenced to UTC (GMT+0) and stored in 📑 XXX format."
           },
           "GeneratedBy": {
             "type": "string"
           },
-          "@@@Highlights": {
+          "📑 Highlights": {
             "type": "string",
             "description": "[DC]: What is this?"
           },
-          "???Links": {
+          "📑 Links": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Link"
@@ -16087,25 +16141,43 @@
           },
           "UI": {
             "type": "object",
+            "required": [
+              "Tooltip",
+              "Name",
+              "Description"
+            ],
             "properties": {
               "Tooltip": {
                 "type": "string"
               },
-              "???Name": {
-                "type": "string"
+              "Name": {
+                "type": "string",
+                "description": "Name of the Date field to be used in a UI."
               },
-              "???Description": {
-                "type": "string"
+              "Description": {
+                "type": "string",
+                "description": "Description of the Date field to be used in a UI."
               }
             }
           },
-          "???Stats": {
+          "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
-              "$ref": ""
+              "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "required": [
+          "DateUID",
+          "Name",
+          "Description",
+          "Type",
+          "Value",
+          "ValueUTC",
+          "GeneratedBy",
+          "UI"
+        ]
       },
       "Audience": {
         "title": "🚧 Audience",
@@ -16127,6 +16199,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -16163,6 +16236,7 @@
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to this object.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -16261,8 +16335,12 @@
           "Stage": {
             "type": "string"
           },
-          "": {
-            "type": "string"
+          "Stats": {
+            "type": "array",
+            "description": "🚧\nStatistics related to this object.",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       }
