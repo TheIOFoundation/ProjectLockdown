@@ -9888,7 +9888,11 @@
         },
         {
           "schema": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "MAP",
+              "BO"
+            ]
           },
           "name": "Module",
           "in": "path",
