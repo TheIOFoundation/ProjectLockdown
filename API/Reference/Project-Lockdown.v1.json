@@ -14149,11 +14149,11 @@
             ]
           }
         },
-        "description": "# Status: ✔\n\n## ⚡ About\nAn Environment object represents the collection of data that is necessary for for a Module to function.\n\nIt is composed by 2 main objects:\n- [Project](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Project) global variables\n- [DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) to be rendered in the Module\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 [Environments](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/paths/~1Environments~1%7BDSLUID%7D~1%7BModule%7D~1%7BEnvironmentUID%7D/get)\n",
+        "description": "# Status: ✔\n\n## ⚡ About\nAn Environment object represents the collection of data that is necessary for a Module to function.\n\nIt is composed by 2 main objects:\n- [Project](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Project) global variables\n- [DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) to be rendered in the Module\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 [Environments](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/paths/~1Environments~1%7BDSLUID%7D~1%7BModule%7D~1%7BEnvironmentUID%7D/get)\n",
         "properties": {
           "EnvironmentUID": {
             "type": "string",
-            "description": "Universal ID\n\n@@@ 🚧 Document how it is generated"
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "DSL": {
             "type": "array",
@@ -14163,11 +14163,15 @@
             }
           },
           "Project": {
-            "$ref": "#/components/schemas/Project"
+            "type": "array",
+            "description": "Project object",
+            "items": {
+              "$ref": "#/components/schemas/Project"
+            }
           },
           "Stats": {
             "type": "array",
-            "description": "🚧 @@@\nStatistics related to Environment objects.",
+            "description": "🚧\nStatistics related to Environment objects.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
@@ -14218,7 +14222,8 @@
         },
         "properties": {
           "TerritoryUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "PLDInfo": {
             "type": "object",
@@ -14420,7 +14425,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\nDescribes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. \n\n###Date fields\nDateCreated\n\nDateUpdated\n",
         "properties": {
           "DataPointUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Definition": {
             "type": "object",
@@ -14498,7 +14504,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nDescribes PLD Categories.",
         "properties": {
           "CategoryUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "DataPoints": {
             "type": "array",
@@ -14556,7 +14563,7 @@
         "properties": {
           "DSLUID": {
             "type": "string",
-            "description": "Indicates the UID for this DSL inside PLD."
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Name": {
             "type": "string",
@@ -14702,7 +14709,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n###Accessed by\nBO\nAPI\n\n###URL fields\nURLSource\nPoints to where the source document is.\n\nURLGitHubIssue\nPoints to the GitHub Issue where the Source has been stored.\n\n###Date fields\n???TimeStampCreated\n???TimeStampTriaged\n???TimestampEncoded (when the DSE is first created)\n???TimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\nDateIssued\nDateStart\nDateEnd",
         "properties": {
           "SourceUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Type": {
             "type": "string",
@@ -14821,7 +14829,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nMAYBE THESE ARE ACTUALLY ORIGINS\n\n@@@\nDefines the types of sources from where Sources are extracted and/or generated. This applies to all data, from the one generated for PLD to external providers.\n\n\n",
         "properties": {
           "SourceTypeUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Type": {
             "type": "string",
@@ -14863,22 +14872,23 @@
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nPLD regions\n\n- Africa\n- Asia\n- Europe\n- Middle East\n- Latin America\n- North America\n\nMissing: Pacific - No assigned TLD seems to be available\n\n\nSee documentation on how to use the TLDs for localization.\n",
         "properties": {
-          "XXXRegionUID": {
+          "RegionUID": {
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
+          },
+          "Name": {
             "type": "string"
           },
-          "XXXName": {
+          "Description": {
             "type": "string"
           },
-          "XXXDescription": {
-            "type": "string"
-          },
-          "XXXXTerritories": {
+          "Territories": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Territory"
             }
           },
-          "XXXTLD": {
+          "TLD": {
             "type": "string",
             "enum": [
               ".africa",
@@ -14889,28 +14899,28 @@
               ".us"
             ]
           },
-          "XXXMAPInfo": {
+          "MAPInfo": {
             "type": "object",
             "description": "Stores all specs for that region per mapping provider.",
             "properties": {
-              "XXXMapbox": {
+              "Mapbox": {
                 "type": "object",
                 "description": "Specs for Mapbox.",
                 "properties": {
-                  "XXXZoom": {
+                  "Zoom": {
                     "type": "string"
                   },
-                  "XXXLat": {
+                  "Lat": {
                     "type": "string"
                   },
-                  "XXXLng": {
+                  "Lng": {
                     "type": "string"
                   }
                 }
               }
             }
           },
-          "XXXPermalinkGraphs": {
+          "PermalinkGraphs": {
             "type": "string",
             "description": "Image for the Region."
           }
@@ -14922,7 +14932,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.\n\n###URL fields\nURLOrigin\nPoints to the official location where Sources are extracted from.",
         "properties": {
           "OriginUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Name": {
             "type": "string"
@@ -14968,7 +14979,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nREPLACED BY SOURCE???\n\n\nObjects describing all the different Time Machines used to back up Sources.",
         "properties": {
           "TimeMachineUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Priority": {
             "type": "string"
@@ -15005,7 +15017,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n###Accessed by\nMAP\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n\n###DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\n###URL fields\nURLCode\nWhere in the code this snapshot is generated.\n\n###Date fields\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nDateLastUpdated\n\nDateFirstCreated\n",
         "properties": {
           "SnapshotUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "SourceTypeUID": {
             "type": "string"
@@ -15058,9 +15071,11 @@
       "Layout": {
         "title": "🚧 Layout",
         "type": "object",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n@@@MISSING\nHow to correlate the DPUIs with the layout placeholders.\nThis will depend on the implementation model.",
         "properties": {
           "LayoutUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Name": {
             "type": "string"
@@ -15077,8 +15092,7 @@
           "URLCSS": {
             "$ref": "#/components/schemas/Link"
           }
-        },
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n@@@MISSING\nHow to correlate the DPUIs with the layout placeholders.\nThis will depend on the implementation model."
+        }
       },
       "User": {
         "title": "🚧 User",
@@ -15118,9 +15132,11 @@
       "License": {
         "title": "🚧 License",
         "type": "object",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nIn Short:\n\n- Each Module has different components\nEx: API has different Endpoints\nEx: BO has different interfaces/pages/screens\n\n- Each component allows a number of Operations on them\n\n",
         "properties": {
           "LicenseUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Stats": {
             "type": "array",
@@ -15147,58 +15163,436 @@
               }
             }
           }
-        },
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nIn Short:\n\n- Each Module has different components\nEx: API has different Endpoints\nEx: BO has different interfaces/pages/screens\n\n- Each component allows a number of Operations on them\n\n"
+        }
       },
       "Project": {
         "title": "🚧 Project",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nDateCreated\nDate when this project was created.\n\nContact\nContact person for this project.\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n## 🔗 URL fields\n\n\n## 📅 Date Fields\n\n\n## ❓ DUBIOUS FIELDS\n",
+        "x-examples": {
+          "example-1": {
+            "ProjectUID": "string",
+            "GlobalVars": {
+              "Locale": "ENG",
+              "URLSources": {
+                "LinkUID": "string",
+                "Type": "Source",
+                "Name": "string",
+                "Description": "string",
+                "Stats": [
+                  {
+                    "StatUID": "string",
+                    "Name": "string",
+                    "Description": "string",
+                    "Notes": "string",
+                    "Type": "SourcesPerTerritory",
+                    "Value": "string",
+                    "URLDoc": {},
+                    "Status": "string",
+                    "DateLastUpdate": {
+                      "DateUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Type": "string",
+                      "Value": "string",
+                      "ValueUTC": "string",
+                      "GeneratedBy": "string",
+                      "@@@Highlights": "string",
+                      "???Links": [
+                        {}
+                      ],
+                      "UI": {
+                        "Tooltip": "string",
+                        "???Name": "string",
+                        "???Description": "string"
+                      },
+                      "???Stats": [
+                        null
+                      ]
+                    },
+                    "URLCode": [
+                      {}
+                    ]
+                  }
+                ]
+              },
+              "DefaultDSL": "string"
+            },
+            "Name": "string",
+            "Description": "string",
+            "Dates": {
+              "DateUID": "string",
+              "Name": "string",
+              "Description": "string",
+              "Type": "string",
+              "Value": "string",
+              "ValueUTC": "string",
+              "GeneratedBy": "string",
+              "@@@Highlights": "string",
+              "???Links": [
+                {
+                  "LinkUID": "string",
+                  "Type": "Source",
+                  "Name": "string",
+                  "Description": "string",
+                  "Stats": [
+                    {
+                      "StatUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Notes": "string",
+                      "Type": "SourcesPerTerritory",
+                      "Value": "string",
+                      "URLDoc": {},
+                      "Status": "string",
+                      "DateLastUpdate": {},
+                      "URLCode": [
+                        {}
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "UI": {
+                "Tooltip": "string",
+                "???Name": "string",
+                "???Description": "string"
+              },
+              "???Stats": [
+                null
+              ]
+            },
+            "Contact": {
+              "UserUID": "string",
+              "Type": "Human",
+              "Stats": [
+                {
+                  "StatUID": "string",
+                  "Name": "string",
+                  "Description": "string",
+                  "Notes": "string",
+                  "Type": "SourcesPerTerritory",
+                  "Value": "string",
+                  "URLDoc": {
+                    "LinkUID": "string",
+                    "Type": "Source",
+                    "Name": "string",
+                    "Description": "string",
+                    "Stats": [
+                      {}
+                    ]
+                  },
+                  "Status": "string",
+                  "DateLastUpdate": {
+                    "DateUID": "string",
+                    "Name": "string",
+                    "Description": "string",
+                    "Type": "string",
+                    "Value": "string",
+                    "ValueUTC": "string",
+                    "GeneratedBy": "string",
+                    "@@@Highlights": "string",
+                    "???Links": [
+                      {
+                        "LinkUID": "string",
+                        "Type": "Source",
+                        "Name": "string",
+                        "Description": "string",
+                        "Stats": [
+                          {}
+                        ]
+                      }
+                    ],
+                    "UI": {
+                      "Tooltip": "string",
+                      "???Name": "string",
+                      "???Description": "string"
+                    },
+                    "???Stats": [
+                      null
+                    ]
+                  },
+                  "URLCode": [
+                    {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string",
+                      "Stats": [
+                        {}
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "Licenses": [
+                {
+                  "LicenseUID": "string",
+                  "Stats": [
+                    {
+                      "StatUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Notes": "string",
+                      "Type": "SourcesPerTerritory",
+                      "Value": "string",
+                      "URLDoc": {
+                        "LinkUID": "string",
+                        "Type": "Source",
+                        "Name": "string",
+                        "Description": "string",
+                        "Stats": [
+                          {}
+                        ]
+                      },
+                      "Status": "string",
+                      "DateLastUpdate": {
+                        "DateUID": "string",
+                        "Name": "string",
+                        "Description": "string",
+                        "Type": "string",
+                        "Value": "string",
+                        "ValueUTC": "string",
+                        "GeneratedBy": "string",
+                        "@@@Highlights": "string",
+                        "???Links": [
+                          {
+                            "LinkUID": "string",
+                            "Type": "Source",
+                            "Name": "string",
+                            "Description": "string",
+                            "Stats": [
+                              {}
+                            ]
+                          }
+                        ],
+                        "UI": {
+                          "Tooltip": "string",
+                          "???Name": "string",
+                          "???Description": "string"
+                        },
+                        "???Stats": [
+                          null
+                        ]
+                      },
+                      "URLCode": [
+                        {
+                          "LinkUID": "string",
+                          "Type": "Source",
+                          "Name": "string",
+                          "Description": "string",
+                          "Stats": [
+                            {}
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "DSLUID": "string",
+                  "Modules": {
+                    "API": {},
+                    "MAP": {
+                      "Operations": {}
+                    }
+                  }
+                }
+              ],
+              "Log": [
+                {
+                  "LogUID": "string",
+                  "Operation": "Encode",
+                  "UserUID": "string",
+                  "Notes": "string",
+                  "SourceUID": "string",
+                  "Dates": [
+                    {
+                      "DateUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Type": "string",
+                      "Value": "string",
+                      "ValueUTC": "string",
+                      "GeneratedBy": "string",
+                      "@@@Highlights": "string",
+                      "???Links": [
+                        {
+                          "LinkUID": "string",
+                          "Type": "Source",
+                          "Name": "string",
+                          "Description": "string",
+                          "Stats": [
+                            {
+                              "StatUID": "string",
+                              "Name": "string",
+                              "Description": "string",
+                              "Notes": "string",
+                              "Type": "SourcesPerTerritory",
+                              "Value": "string",
+                              "URLDoc": {},
+                              "Status": "string",
+                              "DateLastUpdate": {},
+                              "URLCode": [
+                                {}
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "UI": {
+                        "Tooltip": "string",
+                        "???Name": "string",
+                        "???Description": "string"
+                      },
+                      "???Stats": [
+                        null
+                      ]
+                    }
+                  ],
+                  "Module": "string"
+                }
+              ]
+            },
+            "Stats": [
+              {
+                "StatUID": "string",
+                "Name": "string",
+                "Description": "string",
+                "Notes": "string",
+                "Type": "SourcesPerTerritory",
+                "Value": "string",
+                "URLDoc": {
+                  "LinkUID": "string",
+                  "Type": "Source",
+                  "Name": "string",
+                  "Description": "string",
+                  "Stats": [
+                    {}
+                  ]
+                },
+                "Status": "string",
+                "DateLastUpdate": {
+                  "DateUID": "string",
+                  "Name": "string",
+                  "Description": "string",
+                  "Type": "string",
+                  "Value": "string",
+                  "ValueUTC": "string",
+                  "GeneratedBy": "string",
+                  "@@@Highlights": "string",
+                  "???Links": [
+                    {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string",
+                      "Stats": [
+                        {}
+                      ]
+                    }
+                  ],
+                  "UI": {
+                    "Tooltip": "string",
+                    "???Name": "string",
+                    "???Description": "string"
+                  },
+                  "???Stats": [
+                    null
+                  ]
+                },
+                "URLCode": [
+                  {
+                    "LinkUID": "string",
+                    "Type": "Source",
+                    "Name": "string",
+                    "Description": "string",
+                    "Stats": [
+                      {}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
         "properties": {
           "ProjectUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "GlobalVars": {
             "type": "object",
+            "description": "Global variables for all Project Lockdown",
+            "required": [
+              "Locale",
+              "URLSources",
+              "DefaultDSL"
+            ],
             "properties": {
               "Locale": {
                 "type": "string",
-                "description": "Default Locale = ENG"
+                "description": "Default Locale\nDefault value = ENG",
+                "default": "ENG"
               },
               "URLSources": {
-                "$ref": "#/components/schemas/Link"
+                "type": "array",
+                "description": "Repository URL where Project Lockdown Souces are stored.\n\nDefault: https://github.com/TheIOFoundation/ProjectLockdown.Sources",
+                "items": {
+                  "$ref": "#/components/schemas/Link"
+                }
               },
               "DefaultDSL": {
-                "type": "string"
+                "type": "string",
+                "description": "Default DSL to be loaded if no external request is made."
               }
             }
           },
           "Name": {
-            "type": "string"
+            "type": "string",
+            "default": "Project Lockdown",
+            "description": "Name of the project."
           },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "default": " A global rights observatory tracking worldwide policies and their impact on Human and Digital Rights.",
+            "description": "Description of the project."
           },
-          "Dates": {
-            "$ref": "#/components/schemas/Date"
+          "DateCreated": {
+            "type": "array",
+            "description": "Date when this project was created.\nReferenced to 00:00 UTC.",
+            "items": {
+              "$ref": "#/components/schemas/Date"
+            }
           },
           "Contact": {
-            "$ref": "#/components/schemas/User"
+            "type": "array",
+            "description": "List of Users acting as Contact for this Project.",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
           },
           "Stats": {
             "type": "array",
+            "description": "🚧\nStatistics related to Project objects.",
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "required": [
+          "ProjectUID",
+          "GlobalVars",
+          "Name",
+          "Description"
+        ]
       },
       "Right": {
         "title": "🚧 Right",
         "type": "object",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
         "properties": {
           "RightUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "OriginUID": {
             "type": "string"
@@ -15212,8 +15606,7 @@
           "Description": {
             "type": "string"
           }
-        },
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n"
+        }
       },
       "Module": {
         "title": "🚧 Module",
@@ -15489,7 +15882,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n###User\nCreated\nBanned\nSuspended\nAddLicense\nRemoveLicense\n\nServiceRequest\nKeeps track of the usage of the platform. For instance, allows to track how many API requestes in 24h have been made.\n\n\n",
         "properties": {
           "LogUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Operation": {
             "type": "string",
@@ -15530,9 +15924,6 @@
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
         "properties": {
-          "EncodingUID": {
-            "type": "string"
-          },
           "Name": {
             "type": "string"
           },
@@ -15568,16 +15959,21 @@
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
+          },
+          "EncodingUID": {
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           }
         }
       },
       "Link": {
         "title": "🚧 Link",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nObjects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\n\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\nAn Link object represents the collection of data that is necessary to set an URL and to describe its function.\n\nIt is composed by 2 main objects:\n- [Project]\n\n## 📢 Used by\n- 💠 \n\n\n\n## 🔗 URL fields\n\n\n## 📅 Date Fields\n\n\n## ❓ DUBIOUS FIELDS\n\n\nObjects representing links\n\n\nLocalesURL -> To be applied to all?\n\n\n\n",
         "properties": {
           "LinkUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Type": {
             "type": "string",
@@ -15610,7 +16006,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n\n\n###User\nReliability Index\n\n\n###URL fields\nURLDoc\nIndicates where are the docs explaining this Stat.\n\nURLCode\nIndicates where in the code is this Stat calculated.\n\n\n###Date fields\nDateLastUpdate\n\n???Fequency\n",
         "properties": {
           "StatUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Name": {
             "type": "string"
@@ -15656,7 +16053,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n",
         "properties": {
           "DateUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Name": {
             "type": "string"
@@ -15715,7 +16113,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
         "properties": {
           "AudienceUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Name": {
             "type": "string"
@@ -15740,7 +16139,8 @@
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n@@@@\nLook into maybe synchronizing some of these Tags with GitHub Labels.\n\n",
         "properties": {
           "TagUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Name": {
             "type": "string"
@@ -15785,7 +16185,7 @@
         "properties": {
           "AnswerUID": {
             "type": "string",
-            "description": ""
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Value": {
             "$ref": "#/components/schemas/Response"
@@ -15808,6 +16208,7 @@
       "Response": {
         "title": "🚧 Response",
         "type": "object",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
         "properties": {
           "ResponseUID": {
             "type": "string"
@@ -15831,15 +16232,16 @@
             "type": "string",
             "description": "Value for the Answer field\nOR\nThe Snapshop value"
           }
-        },
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n"
+        }
       },
       "SourceInstance": {
         "title": "🚧 SourceInstance",
         "type": "object",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
         "properties": {
           "SourceInstanceUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
           },
           "Research": {
             "type": "string"
@@ -15862,8 +16264,7 @@
           "": {
             "type": "string"
           }
-        },
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n"
+        }
       }
     },
     "parameters": {
