@@ -43,7 +43,7 @@ By participating in Project Lockdown you also confirm to abide by its [Code of C
 
 **Quick Links to the project's different needs:**
 
-[![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Code?color=%23D44937&label=Need%3A%20Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Code%22)
+[![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Create?color=%23D44937&label=Need%3A%20Create)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Create%22)
 [
 ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Position?color=%23FF8A50&label=Need%3A%20Position)
 ](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Position%22+)
