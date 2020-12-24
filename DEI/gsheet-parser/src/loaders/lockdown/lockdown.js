@@ -6,7 +6,6 @@ import { SimpleGrid } from '../../utils/SimpleGrid';
 import { ENTRY_COLUMN_LENGTH, parseEntry } from './parsers/lockdownParser';
 import { getSnapshots } from './snapshot/processor';
 import { connect } from '../../repositories';
-import { MessagesService } from '../../services/MessagesService';
 
 const fs = require('fs');
 
