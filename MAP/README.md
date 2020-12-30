@@ -78,5 +78,10 @@ https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue
 For all the necessary information please refer to the technical documentation in the wiki:
 https://github.com/TheIOFoundation/ProjectLockdown/wiki/Mapping-Platform-(MAP)
 
+For UXUI technical information as well as other diagrams, please refer to this Figma board:
+[MAP](https://www.figma.com/file/aqMv7PnA2WXUabC5mT1Vvs/PROD-MAP-v2?node-id=0%3A1)
+
+
+
 <a href="#top">Back to top</a>
 
