@@ -23,12 +23,7 @@
       "get": {
         "summary": "🚧 Handles Environment objects for Modules",
         "tags": [
-          "ProjectLockdown",
-          "TIOF",
-          "The IO Foundation",
-          "Human Rights",
-          "Digital Rights",
-          "Nonprofit"
+          "Endpoints"
         ],
         "responses": {
           "200": {
@@ -9911,7 +9906,6 @@
     "/Territories": {
       "get": {
         "summary": "Extract Territory objects",
-        "tags": [],
         "responses": {
           "200": {
             "description": "OK",
@@ -9980,14 +9974,17 @@
           }
         },
         "operationId": "get-Territories",
-        "description": "Handles PLD Territory objects."
+        "description": "Handles PLD Territory objects.",
+        "tags": [
+          "Endpoints"
+        ]
       }
     },
     "/DataPoints": {
       "get": {
         "summary": "Extract DataPoint objects",
         "tags": [
-          "Tag1",
+          "Endpoints",
           "Human Rights"
         ],
         "responses": {
@@ -10002,7 +9999,6 @@
     "/Rights": {
       "get": {
         "summary": "Your GET endpoint",
-        "tags": [],
         "responses": {
           "200": {
             "description": "OK",
@@ -10087,7 +10083,10 @@
           }
         },
         "operationId": "get-Rights",
-        "description": "Handles Rights"
+        "description": "Handles Rights",
+        "tags": [
+          "Endpoints"
+        ]
       }
     }
   },
@@ -14181,6 +14180,9 @@
           "EnvironmentUID",
           "DSL",
           "Project"
+        ],
+        "x-tags": [
+          "Models"
         ]
       },
       "Territory": {
@@ -14417,6 +14419,9 @@
           "TerritoryUID",
           "PLDInfo",
           "MapboxInfo"
+        ],
+        "x-tags": [
+          "Models"
         ]
       },
       "DataPoint": {
@@ -14497,7 +14502,10 @@
           "URLEditorGuide": {
             "$ref": "#/components/schemas/Link"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Category": {
         "title": "🚧 Category",
@@ -14555,7 +14563,10 @@
               }
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "DataSetLayer": {
         "title": "🚧 DataSet Layer (DSL)",
@@ -14703,7 +14714,10 @@
               "$ref": "#/components/schemas/Log"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Source": {
         "title": "🚧 Source",
@@ -14827,7 +14841,10 @@
               "$ref": "#/components/schemas/SourceInstance"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "SourceType": {
         "title": "🚧 SourceType",
@@ -14872,7 +14889,10 @@
               }
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Region": {
         "title": "🚧 Region",
@@ -14938,7 +14958,10 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Origin": {
         "title": "🚧 Origin",
@@ -14986,7 +15009,10 @@
           "URLOrigin": {
             "$ref": "#/components/schemas/Link"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "TimeMachine": {
         "title": "🚧 TimeMachine",
@@ -15025,7 +15051,10 @@
           "DateFirstCreated": {
             "$ref": "#/components/schemas/Date"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Snapshot": {
         "title": "🚧 Snapshot",
@@ -15086,7 +15115,10 @@
           "DateFirstCreated": {
             "$ref": "#/components/schemas/Date"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Layout": {
         "title": "🚧 Layout",
@@ -15113,7 +15145,10 @@
           "URLCSS": {
             "$ref": "#/components/schemas/Link"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "User": {
         "title": "🚧 User",
@@ -15149,7 +15184,10 @@
               "$ref": "#/components/schemas/Log"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "License": {
         "title": "🚧 License",
@@ -15186,7 +15224,10 @@
               }
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Project": {
         "title": "👁️‍🗨️ Project",
@@ -15606,6 +15647,9 @@
           "GlobalVars",
           "Name",
           "Description"
+        ],
+        "x-tags": [
+          "Models"
         ]
       },
       "Right": {
@@ -15633,7 +15677,10 @@
           "Description": {
             "type": "string"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Module": {
         "title": "🚧 Module",
@@ -15908,7 +15955,10 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Log": {
         "title": "🚧 Log",
@@ -15951,7 +16001,10 @@
           "Module": {
             "type": "string"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Encoding": {
         "title": "🚧 Encoding",
@@ -15999,7 +16052,10 @@
             "type": "string",
             "description": "Universal ID\n🚧 Document how it is generated"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Link": {
         "title": "👁️‍🗨️ Link",
@@ -16048,6 +16104,9 @@
           "LinkUID",
           "Type",
           "URL"
+        ],
+        "x-tags": [
+          "Models"
         ]
       },
       "Stat": {
@@ -16095,7 +16154,10 @@
               "$ref": "#/components/schemas/Link"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Date": {
         "title": "👁️‍🗨️ Date",
@@ -16181,6 +16243,9 @@
           "ValueUTC",
           "GeneratedBy",
           "UI"
+        ],
+        "x-tags": [
+          "Models"
         ]
       },
       "Audience": {
@@ -16208,7 +16273,10 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Tag": {
         "title": "🚧 Tag",
@@ -16254,7 +16322,10 @@
           "Value": {
             "type": "string"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Answer": {
         "title": "🚧 Answer",
@@ -16281,7 +16352,178 @@
             "type": "string",
             "description": "sddfsdfssdfsdf\n\n\n"
           }
-        }
+        },
+        "x-examples": {
+          "example-1": {
+            "AnswerUID": "string",
+            "Value": {
+              "ResponseUID": "string",
+              "GeneratedBy": "Funnel",
+              "???Highlights": "string",
+              "Type": "string",
+              "Value": "string"
+            },
+            "DateStart": {
+              "DateUID": "string",
+              "Name": "string",
+              "Description": "string",
+              "Type": "string",
+              "Value": "string",
+              "ValueUTC": "string",
+              "GeneratedBy": "Human",
+              "📑 Highlights": "string",
+              "📑 Links": [
+                {
+                  "LinkUID": "string",
+                  "Type": "Source",
+                  "Name": "string",
+                  "Description": "string",
+                  "Stats": [
+                    {
+                      "StatUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Notes": "string",
+                      "Type": "SourcesPerTerritory",
+                      "Value": "string",
+                      "URLDoc": {},
+                      "Status": "string",
+                      "DateLastUpdate": {},
+                      "URLCode": [
+                        {}
+                      ]
+                    }
+                  ],
+                  "Help": "string",
+                  "URL": "string"
+                }
+              ],
+              "UI": {
+                "Tooltip": "string",
+                "Name": "string",
+                "Description": "string"
+              },
+              "Stats": [
+                {
+                  "StatUID": "string",
+                  "Name": "string",
+                  "Description": "string",
+                  "Notes": "string",
+                  "Type": "SourcesPerTerritory",
+                  "Value": "string",
+                  "URLDoc": {
+                    "LinkUID": "string",
+                    "Type": "Source",
+                    "Name": "string",
+                    "Description": "string",
+                    "Stats": [
+                      {}
+                    ],
+                    "Help": "string",
+                    "URL": "string"
+                  },
+                  "Status": "string",
+                  "DateLastUpdate": {},
+                  "URLCode": [
+                    {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string",
+                      "Stats": [
+                        {}
+                      ],
+                      "Help": "string",
+                      "URL": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            "DateEnd": {
+              "DateUID": "string",
+              "Name": "string",
+              "Description": "string",
+              "Type": "string",
+              "Value": "string",
+              "ValueUTC": "string",
+              "GeneratedBy": "Human",
+              "📑 Highlights": "string",
+              "📑 Links": [
+                {
+                  "LinkUID": "string",
+                  "Type": "Source",
+                  "Name": "string",
+                  "Description": "string",
+                  "Stats": [
+                    {
+                      "StatUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Notes": "string",
+                      "Type": "SourcesPerTerritory",
+                      "Value": "string",
+                      "URLDoc": {},
+                      "Status": "string",
+                      "DateLastUpdate": {},
+                      "URLCode": [
+                        {}
+                      ]
+                    }
+                  ],
+                  "Help": "string",
+                  "URL": "string"
+                }
+              ],
+              "UI": {
+                "Tooltip": "string",
+                "Name": "string",
+                "Description": "string"
+              },
+              "Stats": [
+                {
+                  "StatUID": "string",
+                  "Name": "string",
+                  "Description": "string",
+                  "Notes": "string",
+                  "Type": "SourcesPerTerritory",
+                  "Value": "string",
+                  "URLDoc": {
+                    "LinkUID": "string",
+                    "Type": "Source",
+                    "Name": "string",
+                    "Description": "string",
+                    "Stats": [
+                      {}
+                    ],
+                    "Help": "string",
+                    "URL": "string"
+                  },
+                  "Status": "string",
+                  "DateLastUpdate": {},
+                  "URLCode": [
+                    {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string",
+                      "Stats": [
+                        {}
+                      ],
+                      "Help": "string",
+                      "URL": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            "DataPointUID": "string",
+            "Details": "string"
+          }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "Response": {
         "title": "🚧 Response",
@@ -16310,7 +16552,10 @@
             "type": "string",
             "description": "Value for the Answer field\nOR\nThe Snapshop value"
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       },
       "SourceInstance": {
         "title": "🚧 SourceInstance",
@@ -16346,7 +16591,10 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       }
     },
     "parameters": {
@@ -16393,25 +16641,10 @@
   },
   "tags": [
     {
-      "name": "ProjectLockdown"
-    },
-    {
-      "name": "TIOF"
-    },
-    {
-      "name": "The IO Foundation"
-    },
-    {
       "name": "Human Rights"
     },
     {
-      "name": "Digital Rights"
-    },
-    {
-      "name": "Nonprofit"
-    },
-    {
-      "name": "Tag1"
+      "name": "Endpoints"
     }
   ]
 }
