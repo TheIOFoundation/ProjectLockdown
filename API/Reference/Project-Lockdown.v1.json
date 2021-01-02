@@ -23,12 +23,7 @@
       "get": {
         "summary": "🚧 Handles Environment objects for Modules",
         "tags": [
-          "ProjectLockdown",
-          "TIOF",
-          "The IO Foundation",
-          "Human Rights",
-          "Digital Rights",
-          "Nonprofit"
+          "Endpoints"
         ],
         "responses": {
           "200": {
@@ -9911,9 +9906,6 @@
     "/Territories": {
       "get": {
         "summary": "Extract Territory objects",
-        "tags": [
-          "ProjectLockdown"
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -9982,14 +9974,17 @@
           }
         },
         "operationId": "get-Territories",
-        "description": "Handles PLD Territory objects."
+        "description": "Handles PLD Territory objects.",
+        "tags": [
+          "Endpoints"
+        ]
       }
     },
     "/DataPoints": {
       "get": {
         "summary": "Extract DataPoint objects",
         "tags": [
-          "ProjectLockdown",
+          "Endpoints",
           "Human Rights"
         ],
         "responses": {
@@ -10004,9 +9999,6 @@
     "/Rights": {
       "get": {
         "summary": "Your GET endpoint",
-        "tags": [
-          "ProjectLockdown"
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -10091,7 +10083,10 @@
           }
         },
         "operationId": "get-Rights",
-        "description": "Handles Rights"
+        "description": "Handles Rights",
+        "tags": [
+          "Endpoints"
+        ]
       }
     }
   },
@@ -16646,22 +16641,10 @@
   },
   "tags": [
     {
-      "name": "ProjectLockdown"
-    },
-    {
-      "name": "TIOF"
-    },
-    {
-      "name": "The IO Foundation"
-    },
-    {
       "name": "Human Rights"
     },
     {
-      "name": "Digital Rights"
-    },
-    {
-      "name": "Nonprofit"
+      "name": "Endpoints"
     }
   ]
 }
