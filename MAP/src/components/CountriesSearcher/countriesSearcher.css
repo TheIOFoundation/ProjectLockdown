@@ -1,0 +1,64 @@
+.countriesSearcher#blank {
+  display: none;
+}
+.countriesSearcher {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 125px;
+  left: 2.5vw;
+  z-index: 1;
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  transition: width 1s;
+}
+.countriesSearcher.dark {
+  background-color: #333333;
+  color: white;
+}
+.countriesSearcher.dark .icon-provider {
+  color: white;
+}
+.countriesSearcher.dark .countryInput {
+  color: white;
+}
+.countriesSearcher:hover {
+  cursor: pointer;
+}
+.countriesSearcher .icon-provider {
+  color: #333333;
+}
+.countriesSearcher.show {
+  border-radius: 25px;
+  padding-left: 15.6px;
+}
+.countriesSearcher.show .icon-provider {
+  margin-right: 20.04px;
+}
+.countriesSearcher.show > div {
+  display: flex;
+}
+
+.countriesSearcher > div {
+  position: relative;
+  display: none;
+  align-items: center;
+}
+.countriesSearcher > div .placeholder {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -1;
+  background: transparent;
+  border: 0px;
+}
+.countriesSearcher > div .countryInput {
+  background: transparent;
+  border: 0px;
+}
