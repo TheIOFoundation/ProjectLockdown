@@ -1,6 +1,6 @@
-import { Component, createRef } from "react";
+import { Component } from "react";
 
-import { magnify } from "../assets/icons/icons.js";
+import { magnify } from "../../assets/icons/icons.js";
 import { router } from "../router.js";
 
 const mapbox_token =
