@@ -1,10 +1,9 @@
 import { Component } from "react";
 
 import { magnify } from "../../assets/icons/icons.js";
-import { router } from "../router.js";
-
-const mapbox_token =
-  "pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw";
+// @fixme uncomment after implementing router
+//import { router } from "../router.js";
+import { mapboxToken } from "../Map/Map";
 
 class CountriesSearcher extends Component {
   constructor() {
@@ -30,7 +29,7 @@ class CountriesSearcher extends Component {
   componentWillMount() {
     const { i18n } = this.props;
     let geocoder = new window.MapboxGeocoder({
-      accessToken: mapbox_token,
+      accessToken: mapboxToken,
       language: i18n ? i18n.locale : "en-US" + ", en-US",
       mapboxgl: window.mapboxgl,
       types: "country",
@@ -79,14 +78,18 @@ class CountriesSearcher extends Component {
         parsedText: "",
       });
       this.props.map.flyTo({ center: geoResult.center, maxDuration: 500 });
-      setTimeout(() => {
-        router.setSearchParam("country", geoResult.place_name);
-        router.setSearchParam(
-          "iso2",
-          geoResult.properties.short_code.toUpperCase()
-        );
-        router.setSearchParam("wikidata", geoResult.properties.wikidata);
-      }, 501);
+
+      // --------------
+      // @fixme: uncomment after implementing router
+      // --------------
+      // setTimeout(() => {
+      //   router.setSearchParam("country", geoResult.place_name);
+      //   router.setSearchParam(
+      //     "iso2",
+      //     geoResult.properties.short_code.toUpperCase()
+      //   );
+      //   router.setSearchParam("wikidata", geoResult.properties.wikidata);
+      // }, 501);
     }
   }
   onSearch(e) {
