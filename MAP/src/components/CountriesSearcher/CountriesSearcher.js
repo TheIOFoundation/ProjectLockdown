@@ -1,4 +1,6 @@
 import { Component } from "react";
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
+import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
 import { magnify } from "../../assets/icons/icons.js";
 // @fixme uncomment after implementing router
@@ -28,7 +30,7 @@ class CountriesSearcher extends Component {
   }
   componentWillMount() {
     const { i18n } = this.props;
-    let geocoder = new window.MapboxGeocoder({
+    let geocoder = new MapboxGeocoder({
       accessToken: mapboxToken,
       language: i18n ? i18n.locale : "en-US" + ", en-US",
       mapboxgl: window.mapboxgl,
@@ -133,19 +135,21 @@ class CountriesSearcher extends Component {
       mouseHover: isHover,
     });
   }
-  render(_, { showSearchInput, results, parsedText }) {
+  render() {
+    const { showSearchInput, results, parsedText } = this.state;
+
     return (
       <div
         onMouseOver={() => this.onToogleMouseState(true)}
         onMouseOut={() => this.onToogleMouseState(false)}
         onClick={this.onClick}
-        class="countriesSearcher ${showSearchInput ? 'show' : ''}"
+        className={`countriesSearcher ${showSearchInput ? "show" : ""}`}
       >
-        <span class="icon-provider"> ${magnify} </span>
+        <span className="icon-provider"> {magnify} </span>
         <div>
-          <input class="placeholder" value="${results}" disabled />
+          <input className="placeholder" value={results} disabled />
           <input
-            class="countryInput"
+            className="countryInput"
             onInput={this.onSearch}
             value={parsedText}
           />
