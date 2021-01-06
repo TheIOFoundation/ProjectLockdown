@@ -1,11 +1,12 @@
-import { Component } from "react";
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
-import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
+import { Component } from 'react';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import './countriesSearcher.css';
 
-import { magnify } from "../../assets/icons/icons.js";
+import { magnify } from '../../assets/icons/icons.js';
 // @fixme uncomment after implementing router
 //import { router } from "../router.js";
-import { mapboxToken } from "../Map/Map";
+import { mapboxToken } from '../Map/Map';
 
 class CountriesSearcher extends Component {
   constructor() {
@@ -13,9 +14,9 @@ class CountriesSearcher extends Component {
     this.state = {
       showSearchInput: false,
       geocoder: {},
-      results: "",
+      results: '',
       geoResult: {},
-      parsedText: "",
+      parsedText: '',
       mouseHover: false,
     };
     this.openSearchInput = this.openSearchInput.bind(this);
@@ -32,24 +33,24 @@ class CountriesSearcher extends Component {
     const { i18n } = this.props;
     let geocoder = new MapboxGeocoder({
       accessToken: mapboxToken,
-      language: i18n ? i18n.locale : "en-US" + ", en-US",
+      language: i18n ? i18n.locale : 'en-US' + ', en-US',
       mapboxgl: window.mapboxgl,
-      types: "country",
+      types: 'country',
     });
     window.geoCoder = geocoder;
-    geocoder.on("results", this.onGetResult);
+    geocoder.on('results', this.onGetResult);
     this.setState({
       geocoder,
     });
   }
   componentWillUnmount() {
-    window.removeEventListener("keydown", this.onPressKey);
-    document.removeEventListener("click", this.closeComponent);
+    window.removeEventListener('keydown', this.onPressKey);
+    document.removeEventListener('click', this.closeComponent);
   }
   componentDidMount() {
-    this.state.geocoder.addTo("#blank");
-    window.addEventListener("keydown", this.onPressKey);
-    document.addEventListener("click", this.closeComponent);
+    this.state.geocoder.addTo('#blank');
+    window.addEventListener('keydown', this.onPressKey);
+    document.addEventListener('click', this.closeComponent);
   }
   componentDidUpdate(previousProps, previousState, snapshot) {
     if (previousProps.i18n !== this.props.i18n) {
@@ -62,10 +63,10 @@ class CountriesSearcher extends Component {
     geocoder.setLanguage(i18n.locale);
   }
   onPressKey(e) {
-    if (e.code === "Enter" && this.state.showSearchInput) {
+    if (e.code === 'Enter' && this.state.showSearchInput) {
       e.preventDefault();
       this.onConfirm();
-    } else if (e.code === "Escape" && this.state.showSearchInput) {
+    } else if (e.code === 'Escape' && this.state.showSearchInput) {
       e.preventDefault();
       this.openSearchInput();
     }
@@ -75,9 +76,9 @@ class CountriesSearcher extends Component {
     if (geoResult.center) {
       this.openSearchInput();
       this.setState({
-        results: "",
+        results: '',
         geoResult: {},
-        parsedText: "",
+        parsedText: '',
       });
       this.props.map.flyTo({ center: geoResult.center, maxDuration: 500 });
 
@@ -122,7 +123,7 @@ class CountriesSearcher extends Component {
       });
     } else {
       this.setState({
-        results: "",
+        results: '',
         geoResult: {},
       });
     }
@@ -143,7 +144,7 @@ class CountriesSearcher extends Component {
         onMouseOver={() => this.onToogleMouseState(true)}
         onMouseOut={() => this.onToogleMouseState(false)}
         onClick={this.onClick}
-        className={`countriesSearcher ${showSearchInput ? "show" : ""}`}
+        className={`countriesSearcher ${showSearchInput ? 'show' : ''}`}
       >
         <span className="icon-provider"> {magnify} </span>
         <div>

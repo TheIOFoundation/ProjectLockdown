@@ -1,4 +1,4 @@
-.countriesSearcher#blank {
+.countriesSearcher #blank {
   display: none;
 }
 .countriesSearcher {
@@ -61,4 +61,5 @@
 .countriesSearcher > div .countryInput {
   background: transparent;
   border: 0px;
+  outline: 0px;
 }
