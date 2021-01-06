@@ -9,8 +9,8 @@ import { magnify } from '../../assets/icons/icons.js';
 import { mapboxToken } from '../Map/Map';
 
 class CountriesSearcher extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showSearchInput: false,
       geocoder: {},
@@ -18,6 +18,7 @@ class CountriesSearcher extends Component {
       geoResult: {},
       parsedText: '',
       mouseHover: false,
+      ...props.initialState,
     };
     this.openSearchInput = this.openSearchInput.bind(this);
     this.onClick = this.onClick.bind(this);
@@ -33,7 +34,7 @@ class CountriesSearcher extends Component {
     const { i18n } = this.props;
     let geocoder = new MapboxGeocoder({
       accessToken: mapboxToken,
-      language: i18n ? i18n.locale : 'en-US' + ', en-US',
+      language: i18n ? i18n.locale : 'en, en-US',
       mapboxgl: window.mapboxgl,
       types: 'country',
     });
