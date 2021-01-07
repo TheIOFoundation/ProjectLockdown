@@ -9903,7 +9903,7 @@
         }
       ]
     },
-    "/Territories": {
+    "/Territories/{PLDCode}/{Depth}": {
       "get": {
         "summary": "Extract Territory objects",
         "responses": {
@@ -9974,11 +9974,19 @@
           }
         },
         "operationId": "get-Territories",
-        "description": "Handles PLD Territory objects.",
+        "description": "Handles PLD Territory objects.\n\n\n### Access\nPublic: Yes\n\nBO: Yes\n\n\n",
         "tags": [
           "Endpoints"
         ]
-      }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/PLDCode"
+        },
+        {
+          "$ref": "#/components/parameters/Depth"
+        }
+      ]
     },
     "/DataPoints": {
       "get": {
@@ -16619,6 +16627,22 @@
           "type": "string"
         },
         "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID"
+      },
+      "PLDCode": {
+        "name": "PLDCode",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Depth": {
+        "name": "Depth",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
       }
     },
     "securitySchemes": {},
