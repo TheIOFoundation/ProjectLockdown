@@ -9974,7 +9974,7 @@
           }
         },
         "operationId": "get-Territories",
-        "description": "Handles PLD Territory objects.\n\n\n### Access\nPublic: Yes\n\nBO: Yes\n\n\n",
+        "description": "Handles PLD Territory objects.\n\n\n## Params\nPLDCode: To find the territory\n***We need to provide options to select by other codes (see Info objects)\n\nDepth: How many subterritories are to be extracted\n\nFormat\n\n\n### Access\nPublic: Yes\n\nBO: Yes\n\n\n",
         "tags": [
           "Endpoints"
         ]
@@ -9985,6 +9985,9 @@
         },
         {
           "$ref": "#/components/parameters/Depth"
+        },
+        {
+          "$ref": "#/components/parameters/Format"
         }
       ]
     },
@@ -16631,7 +16634,6 @@
       "PLDCode": {
         "name": "PLDCode",
         "in": "path",
-        "required": true,
         "schema": {
           "type": "string"
         }
@@ -16639,7 +16641,13 @@
       "Depth": {
         "name": "Depth",
         "in": "path",
-        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Format": {
+        "name": "Format",
+        "in": "path",
         "schema": {
           "type": "string"
         }
