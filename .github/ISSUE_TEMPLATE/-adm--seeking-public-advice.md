@@ -2,7 +2,8 @@
 name: "[ADM] Seeking public advice"
 about: Define a request for public advice to improve some area of Project Lockdown.
 title: "[NEED] Seeking advice on: "
-labels: 'Need: Advice, Priority: Medium, Project: PLD, Stage: Not Ready'
+labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, \U0001F4AD Need: Advice, \U0001F4A7
+  Priority: Medium"
 assignees: ''
 
 ---
@@ -12,7 +13,7 @@ assignees: ''
 - Review Labels. You should at least have the following:
  -- Need: Advice [MANDATORY]
  -- Stage: Assign the corresponding one [MANDATORY]
- -- good first issue [OPTIONAL]
+ -- Flag: Good First Issue [OPTIONAL]
  -- Keyword: Assign the corresponding ones [OPTIONAL]
  -- Module: Assign the corresponding ones [MANDATORY]
  -- Priority: Assign the corresponding one [MANDATORY] 

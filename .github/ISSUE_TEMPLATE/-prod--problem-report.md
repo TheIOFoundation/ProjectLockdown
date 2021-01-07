@@ -2,7 +2,8 @@
 name: "[PROD] Problem report"
 about: Create a report to help us improve
 title: "[PROBLEM] "
-labels: 'Need: Code, Priority: High, Project: PLD, Stage: Not Ready, Type: Bug'
+labels: "\U0001F6A7 Stage: Not Ready, ⚡ Priority: High, Project: PLD, ⌨ Need: Code,
+  \U0001F4A5 Type: Error, ⌨ Team: Devs"
 assignees: ''
 
 ---

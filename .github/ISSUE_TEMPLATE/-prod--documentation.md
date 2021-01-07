@@ -2,7 +2,8 @@
 name: "[PROD] Documentation"
 about: Documentation tasks for Project Lockdown.
 title: ''
-labels: 'Priority: Medium, Project: PLD, Stage: Not Ready, Team: Docs'
+labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, \U0001F4D1 Need: Documentation,
+  \U0001F4A7 Priority: Medium, \U0001F4D1 Team: Docs"
 assignees: ''
 
 ---
