@@ -5,14 +5,17 @@ import mapboxgl from "mapbox-gl";
 /**
  * Primary UI component for user interaction
  */
+
+// @fixme This should not be committed to the repository
+export const mapboxToken = 'pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw';
+
 interface IProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export class Map extends React.Component<IProps> {
 
   public componentDidMount() {
-    // @fixme This should not be committed to the repository
-    mapboxgl.accessToken = 'pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw';
+    mapboxgl.accessToken = mapboxToken;
 
     const map = new mapboxgl.Map({
       container: 'map',
@@ -29,12 +32,12 @@ export class Map extends React.Component<IProps> {
 
   render() {
     return (
-        <div
-            id="map"
-            className="map-container"
-        >
+      <div
+        id="map"
+        className="map-container"
+      >
 
-        </div>
+      </div>
     );
   }
 }
