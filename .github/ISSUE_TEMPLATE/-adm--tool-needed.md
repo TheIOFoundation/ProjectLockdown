@@ -2,7 +2,8 @@
 name: "[ADM] Tool needed"
 about: Describe a tool/platform that Project Lockdown needs to identify.
 title: "[NEED]"
-labels: 'Need: Tool, Project: PLD, Stage: Not Ready'
+labels: "\U0001F6E0 Need: Tool, \U0001F6A7 Stage: Not Ready, Project: PLD, \U0001F4A7
+  Priority: Medium, ⚙ Team: Infrastructure"
 assignees: ''
 
 ---
@@ -12,7 +13,7 @@ assignees: ''
 - Review Labels. You should at least have the following:
  -- Need: Tool [MANDATORY]
  -- Stage: Assign the corresponding one [MANDATORY]
- -- good first issue [OPTIONAL]
+ -- Flag: Good First Issue [OPTIONAL]
  -- Keyword: Assign the corresponding ones [OPTIONAL]
  -- Module: Assign the corresponding ones [MANDATORY]
  -- Priority: Assign the corresponding one [MANDATORY] 

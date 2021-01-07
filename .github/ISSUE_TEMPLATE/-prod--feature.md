@@ -2,7 +2,8 @@
 name: "[PROD] Feature"
 about: Define or request a Feature for Project Lockdown.
 title: "[PROD] "
-labels: 'Need: Code, Priority: Medium, Project: PLD, Stage: Not Ready'
+labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, ⌨ Need: Code, \U0001F4A7 Priority:
+  Medium, \U0001F4D1 Team: Docs, ⌨ Team: Devs"
 assignees: ''
 
 ---

@@ -14,7 +14,7 @@
 // export { arrowRight } from './arrow-right';
 // export { burger } from './burger.svg.js';
 // export { menuLeft, menuRight } from './menu.svg.js';
-export { list } from './list.svg.js';
+export { list } from "./list.svg.js";
 // export { unlock } from './unlock.svg.js';
 // export { lock } from './lock.svg.js';
 // export { virus } from './virus.svg.js';
@@ -23,6 +23,6 @@ export { list } from './list.svg.js';
 // export { chevronDown } from './chevron-down.js';
 // export { chevronUp } from './chevron-up.js';
 // export { world } from './world.js';
-// export { magnify } from './magnify.svg.js';
+export { magnify } from "./magnify.svg.js";
 //
 // export { home, citymovement, religion, work, military, academia, shops, electricity, water, internet } from './measures.svg.js';

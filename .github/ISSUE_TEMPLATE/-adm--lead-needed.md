@@ -2,7 +2,8 @@
 name: "[ADM] Lead needed"
 about: Describe a Lead that we have identified is needed for Project Lockdown.
 title: "[ADM] Lead: "
-labels: 'Need: Lead, Priority: Medium, Project: PLD, Stage: Not Ready'
+labels: "\U0001F6A7 Stage: Not Ready, \U0001F91D Team: Partners, Project: PLD, \U0001F4AC
+  Need: Lead, \U0001F4A7 Priority: Medium"
 assignees: ''
 
 ---
