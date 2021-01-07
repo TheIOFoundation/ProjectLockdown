@@ -8,7 +8,7 @@ import { magnify } from '../../assets/icons/icons.js';
 //import { router } from "../router.js";
 import { mapboxToken } from '../Map/Map';
 
-function CountriesSearcher({ i18n, map, initialState }) {
+function CountriesSearcher({ i18n, map, dark, initialState }) {
   const [showSearchInput, setShowSearchInput] = useState(
     (initialState && initialState.showSearchInput) || false
   );
@@ -45,7 +45,9 @@ function CountriesSearcher({ i18n, map, initialState }) {
       onMouseOver={() => setMouseHover(true)}
       onMouseOut={() => setMouseHover(false)}
       onClick={onClick}
-      className={`countriesSearcher ${showSearchInput ? 'show' : ''}`}
+      className={`countriesSearcher 
+      ${showSearchInput ? 'show' : ''}
+      ${dark ? 'dark' : ''}`}
     >
       <span className="icon-provider"> {magnify} </span>
       <div>

@@ -3,6 +3,9 @@ import CountriesSearcher from './CountriesSearcher';
 export default {
   title: 'Component/CountriesSearcher',
   component: CountriesSearcher,
+  argTypes: {
+    dark: { control: 'boolean' },
+  },
 };
 
 const Template = args => {
