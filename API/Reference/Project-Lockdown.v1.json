@@ -14188,7 +14188,7 @@
       "Territory": {
         "title": "🚧 Territory",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nDecribes PLD Territories.\n\n\n###URL fields\nURLDEI\nPermalink for direct access to the DEI\n\nURLDoc\nPermalink for direct access to the territory info (to be implemented later).\n\n###Date fields\nDateLastUpdate\nLast time the Territory info was updated.\n@@@Probably also put in Log?\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nDecribes PLD Territories.\n\n\n###URL fields\nURLDEI\nPermalink for direct access to the DEI\n\nURLDoc\nPermalink for direct access to the territory info (to be implemented later).\n\n###Date fields\nDateLastUpdate\nLast time the Territory info was updated.\n@@@Probably also put in Log?\n\n\n### Pending\nTERRITORIES should include\nthe necessary language to cover for official pronouncements.\nthe list of official/reliable sources for pronouncements.\n",
         "x-examples": {
           "example-1": {
             "id": "string",
