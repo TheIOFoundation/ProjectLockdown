@@ -2,8 +2,8 @@
 name: "[ADM] Tool needed"
 about: Describe a tool/platform that Project Lockdown needs to identify.
 title: "[NEED]"
-labels: "\U0001F6E0 Need: Tool, \U0001F6A7 Stage: Not Ready, Project: PLD, \U0001F4A7
-  Priority: Medium, ⚙ Team: Infrastructure"
+labels: "Project: PLD, ⚙ Team: Infrastructure, \U0001F4A7 Priority: Medium, \U0001F6A7
+  Stage: Not Ready, \U0001F6E0 Need: Tool"
 assignees: ''
 
 ---
