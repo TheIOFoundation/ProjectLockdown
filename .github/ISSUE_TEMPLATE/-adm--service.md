@@ -2,8 +2,8 @@
 name: "[ADM] Service"
 about: Create a request for a service or procedure.
 title: "[ADM] Request for "
-labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, \U0001F4A7 Priority: Medium, \U0001F4BC
-  Need: Service"
+labels: "Project: PLD, \U0001F4A7 Priority: Medium, \U0001F4BC Need: Service, \U0001F6A7
+  Stage: Not Ready"
 assignees: ''
 
 ---
@@ -14,7 +14,6 @@ assignees: ''
 - Fill up this template (be as accurate as possible)
 - Review Labels. You should at least have the following:
  -- Need: Service [MANDATORY]
- -- Need: Design [OPTIONAL]
  -- Stage: Assign the corresponding one [MANDATORY]
  -- Keyword: Assign the corresponding ones [OPTIONAL]
  -- Priority: Assign the corresponding one [MANDATORY] 
