@@ -1,6 +1,4 @@
-import { html } from 'htm/preact';
-
-export const trues = html`
+export const trues = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -14,4 +12,4 @@ export const trues = html`
   >
     <polyline points="20 6 9 17 4 12"></polyline>
   </svg>
-`;
+);

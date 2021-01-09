@@ -1,6 +1,4 @@
-import { html } from 'htm/preact';
-
-export const offline = html`
+export const offline = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.76 45.17">
     <defs>
       <style>
@@ -19,5 +17,4 @@ export const offline = html`
         />
       </g>
     </g>
-  </svg>
-`;
+  </svg>);
