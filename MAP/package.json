@@ -12,6 +12,7 @@
     "@types/node": "^14.14.14",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "focus-trap-react": "^8.3.2",
     "mapbox-gl": "^2.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
