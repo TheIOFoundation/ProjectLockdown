@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 // @fixme uncomment after implementing router
 // import { router } from '../router.js';
-import { close } from '../assets/icons/icons.js';
-import { FocusTrap } from '../../../node_modules/focus-trap-react';
+import { close } from '../../assets/icons/icons.js';
+import FocusTrap from 'focus-trap-react';
 
 const KEYCODE_ESC = 27;
 
-export default function Dialog({ title, template, onClose }) {
+function Dialog({ title, template, onClose }) {
   const dialogRef = useRef(null);
 
   useEffect(() => {
@@ -20,16 +20,16 @@ export default function Dialog({ title, template, onClose }) {
     // @fixme uncomment after implementing router
     // let prevRoute = location.href;
     // router.addEventListener('path-changed', () => {
-    //   if (prevRoute !== location.href && this.dialogRef) {
-    //     this.dialogRef.setAttribute('tabindex', '-1');
-    //     this.dialogRef.focus();
-    //     this.dialogRef.removeAttribute('tabindex');
+    //   if (prevRoute !== location.href && dialogRef) {
+    //     dialogRef.setAttribute('tabindex', '-1');
+    //     dialogRef.focus();
+    //     dialogRef.removeAttribute('tabindex');
     //     prevRoute = location.href;
     //   }
     // });
-    this.dialogRef.setAttribute('tabindex', '-1');
-    this.dialogRef.focus();
-    this.dialogRef.removeAttribute('tabindex');
+    // dialogRef.setAttribute('tabindex', '-1');
+    // dialogRef.focus();
+    // dialogRef.removeAttribute('tabindex');
   }, []);
 
   return (
@@ -41,36 +41,38 @@ export default function Dialog({ title, template, onClose }) {
         class="ld-dialog--container"
       >
         <FocusTrap>
-          <div class="ld-dialog--header">
-            <h1 id="dialogtitle">{this.props.title}</h1>
-            <div class="ld-dialog--close-cont">
-              <button
-                onClick={closeDialog}
-                class="ld-dialog--close"
-                aria-labelledby="button-name"
-              >
-                <span id="button-name" hidden>
-                  close
-                </span>
-                {close}
-              </button>
+          <>
+            <div class="ld-dialog--header">
+              <h1 id="dialogtitle">{title}</h1>
+              <div class="ld-dialog--close-cont">
+                <button
+                  onClick={closeDialog}
+                  class="ld-dialog--close"
+                  aria-labelledby="button-name"
+                >
+                  <span id="button-name" hidden>
+                    close
+                  </span>
+                  {close}
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="ld-dialog--content">{this.props.template}</div>
+            <div class="ld-dialog--content">{template}</div>
+          </>
         </FocusTrap>
       </div>
     </div>
   );
 
   function onClick(e) {
-    const clickedOutside = !e.composedPath().includes(this.dialogRef);
+    const clickedOutside = !e.composedPath().includes(dialogRef);
     if (clickedOutside) {
       closeDialog();
     }
   }
 
   function closeDialog() {
-    this.props.onClose();
+    onClose();
   }
 
   function onKeyDown(e) {
@@ -79,3 +81,5 @@ export default function Dialog({ title, template, onClose }) {
     }
   }
 }
+
+export default Dialog;

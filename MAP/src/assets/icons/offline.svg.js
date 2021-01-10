@@ -1,13 +1,7 @@
+import './offline.svg.css';
+
 export const offline = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.76 45.17">
-    <defs>
-      <style>
-        .cls-1 {
-          fill: #828282;
-          fill-rule: evenodd;
-        }
-      </style>
-    </defs>
     <title>Asset 2</title>
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -17,4 +11,5 @@ export const offline = (
         />
       </g>
     </g>
-  </svg>);
+  </svg>
+);
