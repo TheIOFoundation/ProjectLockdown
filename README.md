@@ -42,7 +42,7 @@ By participating in Project Lockdown you also confirm to abide by its [Code of C
 
 
 **Quick Links to the project's different needs:**
-[![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%23D44937&query=is%3Aopen+is%3Aissue+label%3A"⌨+Need%3A+Code"+label%3A"✔+Stage%3A+Ready"&label=Need:%20Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%A8+Need%3A+Code%22
+[![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%23D44937&query=is%3Aopen+is%3Aissue+label%3A"⌨+Need%3A+Code"+label%3A"✔+Stage%3A+Ready"&label=Need:%20Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%A8+Need%3A+Code%22)
 [![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%23FF8A50&query=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%96%96+Need%3A+Position%22&label=Need:%20Design)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%A8+Need%3A+Code%22)
 [
 ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Position?color=%23FF8A50&label=Need%3A%20Position)
@@ -100,6 +100,6 @@ The following diagram showcases how all Modules integrate in the project:
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNDY1NTgwOSwtOTY0OTkwMjczLDE5NT
-A0NDMwNjhdfQ==
+eyJoaXN0b3J5IjpbNzg0NTcxOTI0LC05NjQ5OTAyNzMsMTk1MD
+Q0MzA2OF19
 -->
