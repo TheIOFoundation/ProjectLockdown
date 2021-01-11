@@ -43,7 +43,7 @@ By participating in Project Lockdown you also confirm to abide by its [Code of C
 [![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%2523D44937&query=is%3Aopen+is%3Aissue+label:⌨ Need: Code&label=%E2%8C%A8%20Need%3A%20Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9C%94+Stage%3A+Ready%22+label:"%E2%8C%A8%20Need%3A%20Code")
 **Quick Links to the project's different needs:**
 [![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%23D44937&query=is%3Aopen+is%3Aissue+label%3A"⌨+Need%3A+Code"+label%3A"✔+Stage%3A+Ready"&label=%E2%8C%A8+Need%3A+Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%A8+Need%3A+Code%22)
-[![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%23FF8A50&query=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%96%96+Need%3A+Desu%22&label=Need:%20Design)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%A8+Need%3A+Code%22)
+[![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%23FF8A50&query=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%96%96+Need%3A+Design%22&label=Need:%20Design)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%A8+Need%3A+Code%22)
 [
 ![GitHub issues](https://img.shields.io/github/issues-raw/TheIOFoundation/ProjectLockdown/Need%3A%20Position?color=%23FF8A50&label=Need%3A%20Position)
 ](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Need%3A+Position%22+)
@@ -100,7 +100,7 @@ The following diagram showcases how all Modules integrate in the project:
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjUyNDMwNiwtOTgwNzU5MTgwLDE0Nj
+eyJoaXN0b3J5IjpbLTM1NzcxMjU2NywtOTgwNzU5MTgwLDE0Nj
 Y1NTM3NjEsLTkwOTQ1ODg0OSwtMjU1ODE5MTg0LC05NjQ5OTAy
 NzMsMTk1MDQ0MzA2OF19
 -->
