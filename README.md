@@ -40,7 +40,7 @@ By participating in Project Lockdown you also confirm to abide by its [Code of C
 
 **Master Branch Deploy:** [https://dazzling-visvesvaraya-f47271.netlify.app/](https://dazzling-visvesvaraya-f47271.netlify.app/)
 
-[![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%2523D44937&query=is%3Aopen+is%3Aissue+label%3A✔ Stage: Ready+label%3A⌨+Need:+Code&label=%E2%8C%A8%20Need%3A%20Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9C%94+Stage%3A+Ready%22+label:"%E2%8C%A8%20Need%3A%20Code")
+[![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%2523D44937&query=is%3Aopen+is%3Aissue+label%3A"✔ Stage: Ready"+label%3A"⌨+Need:+Code"&label=%E2%8C%A8%20Need%3A%20Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9C%94+Stage%3A+Ready%22+label:"%E2%8C%A8%20Need%3A%20Code")
 
 
 **Quick Links to the project's different needs:**
@@ -102,7 +102,7 @@ The following diagram showcases how all Modules integrate in the project:
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTUxNjQ0MzIyLC00NDcyOTY3MDEsLTk4MD
-c1OTE4MCwxNDY2NTUzNzYxLC05MDk0NTg4NDksLTI1NTgxOTE4
-NCwtOTY0OTkwMjczLDE5NTA0NDMwNjhdfQ==
+eyJoaXN0b3J5IjpbLTk1NzIxNDQzMCwtNDQ3Mjk2NzAxLC05OD
+A3NTkxODAsMTQ2NjU1Mzc2MSwtOTA5NDU4ODQ5LC0yNTU4MTkx
+ODQsLTk2NDk5MDI3MywxOTUwNDQzMDY4XX0=
 -->
