@@ -40,7 +40,7 @@ By participating in Project Lockdown you also confirm to abide by its [Code of C
 
 **Master Branch Deploy:** [https://dazzling-visvesvaraya-f47271.netlify.app/](https://dazzling-visvesvaraya-f47271.netlify.app/)
 
-[![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/TIOF?color=%2523D44937&query=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%96%96+%E2%8C%A8%20Need%3A%20Code&label=%E2%8C%A8%20Need%3A%20Code)](https://github.com/TheIOFoundation/TIOF/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9C%94+Stage%3A+Ready%22+label:"%E2%8C%A8%20Need%3A%20Code")
+[![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%2523D44937&query=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%96%96+%E2%8C%A8%20Need%3A%20Code&label=%E2%8C%A8%20Need%3A%20Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9C%94+Stage%3A+Ready%22+label:"%E2%8C%A8%20Need%3A%20Code")
 **Quick Links to the project's different needs:**
 [![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%23D44937&query=is%3Aopen+is%3Aissue+label%3A"⌨+Need%3A+Code"+label%3A"✔+Stage%3A+Ready"&label=%E2%8C%A8+Need%3A+Code)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%A8+Need%3A+Code%22)
 [![GitHub issues](https://img.shields.io/github/issues-search/TheIOFoundation/ProjectLockdown?color=%23FF8A50&query=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%96%96+Need%3A+Position%22&label=Need:%20Design)](https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%A8+Need%3A+Code%22)
@@ -100,6 +100,6 @@ The following diagram showcases how all Modules integrate in the project:
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwOTQ1ODg0OSwtMjU1ODE5MTg0LC05Nj
-Q5OTAyNzMsMTk1MDQ0MzA2OF19
+eyJoaXN0b3J5IjpbMTQ2NjU1Mzc2MSwtOTA5NDU4ODQ5LC0yNT
+U4MTkxODQsLTk2NDk5MDI3MywxOTUwNDQzMDY4XX0=
 -->
