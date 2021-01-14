@@ -2,8 +2,8 @@
 name: "[ADM] Meeting"
 about: Describe this issue template's purpose here.
 title: "[ADM] Meeting Minutes: "
-labels: "\U0001F6A7 Stage: Not Ready, ⚡ Priority: High, Project: PLD, Module: ADM,
-  \U0001F5C3 Need: Procedure"
+labels: "Module: ADM, Project: PLD, ⚡ Priority: High, \U0001F5C3 Need: Procedure,
+  \U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
@@ -46,3 +46,8 @@ Notes: If anything is missing or is incorrect please make a mention on the Issue
 
 
 ## Related Issues
+
+
+## When to close Meeting Issues:
+- [ ] All Action Items completed
+- [ ] Recording link set (if applicable)
