@@ -3,7 +3,7 @@ name: "[ADM] Meeting"
 about: Describe this issue template's purpose here.
 title: "[ADM] Meeting Minutes: "
 labels: "\U0001F6A7 Stage: Not Ready, ⚡ Priority: High, Project: PLD, Module: ADM,
-  ❄ Stage: Abandoned, \U0001F5C3 Need: Procedure"
+  \U0001F5C3 Need: Procedure"
 assignees: ''
 
 ---
