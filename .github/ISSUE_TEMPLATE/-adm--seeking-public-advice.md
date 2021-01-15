@@ -8,6 +8,8 @@ assignees: ''
 
 ---
 
+![logo](https://user-images.githubusercontent.com/9198668/85232285-68543380-b430-11ea-8353-1aafb79baf78.png) 
+
 # INSTRUCTIONS
 - Fill up this template (be as accurate as possible)
 - Review Labels. You should at least have the following:
