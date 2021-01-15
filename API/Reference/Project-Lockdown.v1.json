@@ -16555,49 +16555,10 @@
           "Models"
         ]
       },
-      "SourceInstance": {
-        "title": "🚧 SourceInstance",
-        "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
-        "properties": {
-          "SourceInstanceUID": {
-            "type": "string",
-            "description": "Universal ID\n🚧 Document how it is generated"
-          },
-          "Research": {
-            "type": "string"
-          },
-          "Triage": {
-            "type": "string"
-          },
-          "Encode": {
-            "type": "string"
-          },
-          "Review": {
-            "type": "string"
-          },
-          "Log": {
-            "$ref": "#/components/schemas/Log"
-          },
-          "Stage": {
-            "type": "string"
-          },
-          "Stats": {
-            "type": "array",
-            "description": "🚧\nStatistics related to this object.",
-            "items": {
-              "$ref": "#/components/schemas/Stat"
-            }
-          }
-        },
-        "x-tags": [
-          "Models"
-        ]
-      },
       "DataSetEntry": {
         "title": "🚧 DataSetEntry",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About  \nA DataSet Entry object represents the collection of data points extracted from a Source for a given DSL. A DSL is a collection of [DataPoints](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataPoint) (DP) that are selected to track the impact of a specific family of policies over a specific Human or Digital Right.\n\n\n\nIt is composed by 📑:\n\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## ❗ Important\nOne source can be the origin of different DSEs as it may contain policies that are monitored in separate DSLs.\n\n\n## 📢 Used by\n- 📑 ???\n\n## 🔗 URL fields\nURLIssue\nPermalink to the GH Issue where the instancce of the Source is stored to produce this DSE.\n\nURLDeliberation\nPermalink to the Discussion on the Repo where this DSE may be discussed in case someone challenges something in it.\n\n## 📅 Date Fields\nDateTimestampEncoded \nTimeStamp referenced to UTC+0 to indicate when was this DSE created (currently time of creation in the G Sheet)\nTimestamp field in G Sheet\n\n## ❓ DUBIOUS FIELDS\n",
+        "description": "# Status: 🚧\n\n## ⚡ About  \nA DataSet Entry object represents the collection of data points extracted from a Source for a given DSL. A DSL is a collection of [DataPoints](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataPoint) (DP) that are selected to track the impact of a specific family of policies over a specific Human or Digital Right.\n\n\n\nIt is composed by 📑:\n\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## ❗ Important\nOne source can be the origin of different DSEs as it may contain policies that are monitored in separate DSLs.\n\n\n## Status\n\n\n\n## 📢 Used by\n- 📑 ???\n\n## 🔗 URL fields\nURLIssue\nPermalink to the GH Issue where the instancce of the Source is stored to produce this DSE.\n\nURLDeliberation\nPermalink to the Discussion on the Repo where this DSE may be discussed in case someone challenges something in it.\n\n## 📅 Date Fields\nDateTimestampEncoded \nTimeStamp referenced to UTC+0 to indicate when was this DSE created (currently time of creation in the G Sheet)\nTimestamp field in G Sheet\n\n## ❓ DUBIOUS FIELDS\n",
         "properties": {
           "DSEUID": {
             "type": "string",
@@ -16615,7 +16576,7 @@
           },
           "Status": {
             "type": "string",
-            "description": "Status of this DSE.",
+            "description": "Status of this DSE.\n\n\n",
             "enum": [
               "Standby",
               "Ready",
@@ -16656,6 +16617,33 @@
           },
           "URLDeliberation": {
             "$ref": "#/components/schemas/Link"
+          },
+          "TerritoryUID": {
+            "type": "string",
+            "description": "Territory for which the data in this DSE applies to."
+          },
+          "Stage": {
+            "type": "string",
+            "description": "Stage in which this DSE is at\n\nResearch\nTriage\nEncode\nReview",
+            "enum": [
+              "Research",
+              "Triage",
+              "Encode",
+              "Review"
+            ]
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
+          },
+          "Stats": {
+            "type": "array",
+            "description": "🚧\nStatistics related to this object.",
+            "items": {
+              "$ref": "#/components/schemas/Stat"
+            }
           }
         }
       }
