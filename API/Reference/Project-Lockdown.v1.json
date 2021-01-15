@@ -14439,6 +14439,9 @@
         "title": "🚧 DataPoint",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\nDescribes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. \n\n###Date fields\nDateCreated\n\nDateUpdated\n",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "DataPointUID": {
             "type": "string",
@@ -14512,16 +14515,22 @@
           },
           "URLEditorGuide": {
             "$ref": "#/components/schemas/Link"
+          },
+          "DSLUID": {
+            "type": "string"
+          },
+          "": {
+            "type": "string"
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "Category": {
         "title": "🚧 Category",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nDescribes PLD Categories.",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "CategoryUID": {
             "type": "string",
@@ -14573,11 +14582,11 @@
                 "type": "string"
               }
             }
+          },
+          "DSLUID": {
+            "type": "string"
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "DataSetLayer": {
         "title": "🚧 DataSet Layer (DSL)",
@@ -14734,6 +14743,9 @@
         "title": "🚧 Source",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n###Accessed by\nBO\nAPI\n\n###URL fields\nURLSource\nPoints to where the source document is.\n\nURLGitHubIssue\nPoints to the GitHub Issue where the Source has been stored.\n\n###Date fields\n???TimeStampCreated\n???TimeStampTriaged\n???TimestampEncoded (when the DSE is first created)\n???TimeStampReviewed\n@@@DO WE REALLY NEED THESE IF WE ARE GOING TO USE LOGS?\n\nDateIssued\nDateStart\nDateEnd",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "SourceUID": {
             "type": "string",
@@ -14768,36 +14780,9 @@
             }
           },
           "DSE": {
-            "type": "object",
-            "properties": {
-              "Funnel": {
-                "type": "string",
-                "enum": [
-                  "Insourcing",
-                  "Crowdsourcing",
-                  "Machine Learning",
-                  "Direct Feed"
-                ],
-                "description": "Indicates which Funnel was use to produce this DataSet Entry."
-              },
-              "Status": {
-                "type": "string"
-              },
-              "EntryUID": {
-                "type": "string"
-              },
-              "???Media": {
-                "type": "string"
-              },
-              "Categories": {
-                "type": "array",
-                "items": {
-                  "$ref": ""
-                }
-              },
-              "DateTimestampEncoded ": {
-                "$ref": "#/components/schemas/Date"
-              }
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSetEntry"
             }
           },
           "Log": {
@@ -14807,7 +14792,8 @@
             }
           },
           "IssueUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the GH Issue in which this source is described.\n\nImportant: Please note that each DSE has its own GH Issue too as the interpretation of the specific policies from DSL to DSL varies."
           },
           "Stats": {
             "type": "array",
@@ -14818,6 +14804,7 @@
           },
           "TimeMachines": {
             "type": "array",
+            "description": "A collection of backups made for this Source.\n\nCurrently implemented:\n- Wayback Machine (Internet Archive)",
             "items": {
               "$ref": "#/components/schemas/TimeMachine"
             }
@@ -14852,10 +14839,7 @@
               "$ref": "#/components/schemas/SourceInstance"
             }
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "SourceType": {
         "title": "🚧 SourceType",
@@ -16342,28 +16326,6 @@
         "title": "🚧 Answer",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nNote:\nFor DSEs\nDateStart + DateEnd typially different\n\nFor Snapshopts\nDateStart = DateEnd (Can even ignore DateEnd)",
-        "properties": {
-          "AnswerUID": {
-            "type": "string",
-            "description": "Universal ID\n🚧 Document how it is generated"
-          },
-          "Value": {
-            "$ref": "#/components/schemas/Response"
-          },
-          "DateStart": {
-            "$ref": "#/components/schemas/Date"
-          },
-          "DateEnd": {
-            "$ref": "#/components/schemas/Date"
-          },
-          "DataPointUID": {
-            "type": "string"
-          },
-          "Details": {
-            "type": "string",
-            "description": "sddfsdfssdfsdf\n\n\n"
-          }
-        },
         "x-examples": {
           "example-1": {
             "AnswerUID": "string",
@@ -16534,7 +16496,32 @@
         },
         "x-tags": [
           "Models"
-        ]
+        ],
+        "properties": {
+          "AnswerUID": {
+            "type": "string",
+            "description": "Universal ID\n🚧 Document how it is generated"
+          },
+          "Value": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "DateStart": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DateEnd": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DataPointUID": {
+            "type": "string"
+          },
+          "Details": {
+            "type": "string",
+            "description": "sddfsdfssdfsdf\n\n\n"
+          },
+          "DSEUID": {
+            "type": "string"
+          }
+        }
       },
       "Response": {
         "title": "🚧 Response",
@@ -16606,6 +16593,71 @@
         "x-tags": [
           "Models"
         ]
+      },
+      "DataSetEntry": {
+        "title": "🚧 DataSetEntry",
+        "type": "object",
+        "description": "# Status: 🚧\n\n## ⚡ About  \nA DataSet Entry object represents the collection of data points extracted from a Source for a given DSL. A DSL is a collection of [DataPoints](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataPoint) (DP) that are selected to track the impact of a specific family of policies over a specific Human or Digital Right.\n\n\n\nIt is composed by 📑:\n\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## ❗ Important\nOne source can be the origin of different DSEs as it may contain policies that are monitored in separate DSLs.\n\n\n## 📢 Used by\n- 📑 ???\n\n## 🔗 URL fields\nURLIssue\nPermalink to the GH Issue where the instancce of the Source is stored to produce this DSE.\n\nURLDeliberation\nPermalink to the Discussion on the Repo where this DSE may be discussed in case someone challenges something in it.\n\n## 📅 Date Fields\nDateTimestampEncoded \nTimeStamp referenced to UTC+0 to indicate when was this DSE created (currently time of creation in the G Sheet)\nTimestamp field in G Sheet\n\n## ❓ DUBIOUS FIELDS\n",
+        "properties": {
+          "DSEUID": {
+            "type": "string",
+            "description": "UID of the DSE\nGenerated by G Sheet at the moment\nG Sheet field: EntryUID\n\n"
+          },
+          "Funnel": {
+            "type": "string",
+            "description": "Indicates which Funnel was use to produce this DataSet Entry.",
+            "enum": [
+              "Insourcing",
+              "Crowdsourcing",
+              "Machine Learning",
+              "Direct Feed"
+            ]
+          },
+          "Status": {
+            "type": "string",
+            "description": "Status of this DSE.",
+            "enum": [
+              "Standby",
+              "Ready",
+              "Demo",
+              "Flagged"
+            ]
+          },
+          "???Media": {
+            "type": "string"
+          },
+          "Categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            }
+          },
+          "DateTimestampEncoded ": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "DSLUID": {
+            "type": "string",
+            "description": "Indicates for which DSL is this DSE collecting data for."
+          },
+          "URLIssue": {
+            "type": "string",
+            "description": "GH Issue in which this DSE is managed.\n\nImportant:\nFor each Source >> 1 or more DSEs\nSource has its hown GH Issue\nEach DSE has its own GH Issue\n\nMoreover, the Source GH Issue should have a list of all of its chidren DSE GH Issues."
+          },
+          "Type": {
+            "type": "string",
+            "description": "Discussion where \n\n\nTo be agreed: Do we create Deliberations over a whole DSE or PER Datapoint?",
+            "enum": [
+              "Media",
+              "Other",
+              "Foreign Missions",
+              "NGOs",
+              "Government"
+            ]
+          },
+          "URLDeliberation": {
+            "$ref": "#/components/schemas/Link"
+          }
+        }
       }
     },
     "parameters": {
