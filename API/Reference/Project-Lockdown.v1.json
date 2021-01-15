@@ -16624,7 +16624,7 @@
           },
           "Stage": {
             "type": "string",
-            "description": "Stage in which this DSE is at\n\nResearch\nTriage\nEncode\nReview",
+            "description": "Stage in which this DSE is at according to the BO (see Data Lifecycle)\n\nResearch\nTriage (QA1)\nEncode\nReview (QA2)",
             "enum": [
               "Research",
               "Triage",
