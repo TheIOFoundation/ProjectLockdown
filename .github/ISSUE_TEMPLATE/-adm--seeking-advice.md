@@ -1,5 +1,5 @@
 ---
-name: "[ADM] Seeking public advice"
+name: "[ADM] Seeking advice"
 about: Define a request for public advice to improve some area of Project Lockdown.
 title: "[NEED] Seeking advice on: "
 labels: "Project: PLD, \U0001F4A7 Priority: Medium, \U0001F4AD Need: Advice, \U0001F6A7
