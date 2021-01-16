@@ -1,9 +1,9 @@
 ---
-name: "[ADM] Tool needed"
-about: Describe a tool/platform that Project Lockdown needs to identify.
-title: "[NEED]"
-labels: "Project: PLD, ⚙ Team: Infrastructure, \U0001F4A7 Priority: Medium, \U0001F6A7
-  Stage: Not Ready, \U0001F6E0 Need: Tool"
+name: "[ADM] Seeking advice"
+about: Define a request for public advice to improve some area of Project Lockdown.
+title: "[NEED] Seeking advice on: "
+labels: "Project: PLD, \U0001F4A7 Priority: Medium, \U0001F4AD Need: Advice, \U0001F6A7
+  Stage: Not Ready"
 assignees: ''
 
 ---
@@ -13,15 +13,15 @@ assignees: ''
 # INSTRUCTIONS
 - Fill up this template (be as accurate as possible)
 - Review Labels. You should at least have the following:
- -- Need: Tool [MANDATORY]
+ -- Need: Advice [MANDATORY]
  -- Stage: Assign the corresponding one [MANDATORY]
  -- Flag: Good First Issue [OPTIONAL]
  -- Keyword: Assign the corresponding ones [OPTIONAL]
  -- Module: Assign the corresponding ones [MANDATORY]
  -- Priority: Assign the corresponding one [MANDATORY] 
  -- Project: PLD [MANDATORY]
- -- Module: Assign the corresponding one [MANDATORY]
- -- Team: Assign the corresponding ones [MANDATORY]
+ -- Module: Assign the corresponding one [OPTIONAL]
+ -- Team: Assign the corresponding ones [OPTIONAL]
  -- Assignees: Assign the corresponding ones [OPTIONAL]
 
 Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
@@ -53,3 +53,6 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 
 
 **Related Issues**
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMzE0MzgxMjE2XX0=
+-->
