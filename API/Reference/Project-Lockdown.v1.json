@@ -10094,7 +10094,7 @@
           }
         },
         "operationId": "get-Rights",
-        "description": "Handles Rights",
+        "description": "Handles Rights\n\nParams\nOptional RightUID\nIf not, then all\n\nReturns the list of Rights that we contemplate.\n\n",
         "tags": [
           "Endpoints"
         ]
@@ -10103,33 +10103,45 @@
     "/DataSetLayers": {
       "get": {
         "summary": "🚧 DataSetLayers",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {},
-        "operationId": "get-DataSetLayers"
+        "operationId": "get-DataSetLayers",
+        "description": "Handles DataSet Layers\n\n\nGet\nParams\nDSLUID <> 0 \nReturns the DSL (DSEs only, never Snapshots) data\n\nDSLUID = 0\nReturns all the DSLs definition data (not DSEs)\n\n\n\n\n"
       }
     },
     "/Origins": {
       "get": {
         "summary": "🚧 Origins",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {},
-        "operationId": "get-Origins"
+        "operationId": "get-Origins",
+        "description": "Handles Origins\n\nParams\nTerritoryUID\nReturns all the Origins for a given Territory\n\nDSLUID\nReturns all the Origins used in a given DSL\n\n\n"
       }
     },
     "/Sources": {
       "get": {
         "summary": "🚧 Sources",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {},
-        "operationId": "get-Sources"
+        "operationId": "get-Sources",
+        "description": "Handles Sources\n\n\nParams\nOriginUID\nReturns all Sources obtained from a Source\n\nDSLUID\nReturns all Sources used in a given DSL\n\n\n\n\n\n"
       }
     },
     "/DataSetEntries": {
       "get": {
         "summary": "🚧 DataSetEntries",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {},
-        "operationId": "get-DataSetEntries"
+        "operationId": "get-DataSetEntries",
+        "description": "Handles DataSetEntriese\n(The actual encoding of a Source)\n\n\nParams\nSourceUID\nReturns the DSE for a specific SourceUID\n\nDSLUID\nReturns ALL the DSEs for a specific DSLUID\n\n\n"
       }
     }
   },
