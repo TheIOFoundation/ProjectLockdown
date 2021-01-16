@@ -21,7 +21,7 @@
   "paths": {
     "/Environments/{DSLUID}/{Module}/{EnvironmentUID}": {
       "get": {
-        "summary": "🚧 Handles Environment objects for Modules",
+        "summary": "🚧 Environments",
         "tags": [
           "Endpoints"
         ],
@@ -9905,7 +9905,7 @@
     },
     "/Territories/{PLDCode}/{Depth}": {
       "get": {
-        "summary": "Extract Territory objects",
+        "summary": "🚧 Territories",
         "responses": {
           "200": {
             "description": "OK",
