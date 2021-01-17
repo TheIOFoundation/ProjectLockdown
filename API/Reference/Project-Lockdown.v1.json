@@ -15946,7 +15946,7 @@
               "$ref": "#/components/schemas/Category"
             }
           },
-          "DSE": {
+          "DataSetEntries": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DataSetEntry"
@@ -15999,12 +15999,6 @@
               "BO: Review",
               "Flag: XXX"
             ]
-          },
-          "SourceInstances": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SourceInstance"
-            }
           }
         }
       },
