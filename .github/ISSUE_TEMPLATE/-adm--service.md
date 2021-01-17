@@ -1,6 +1,6 @@
 ---
 name: "[ADM] Service"
-about: Create a request for a service.
+about: Create a request for a service or procedure.
 title: "[ADM] Request for "
 labels: "Project: PLD, \U0001F4A7 Priority: Medium, \U0001F4BC Need: Service, \U0001F6A7
   Stage: Not Ready"
@@ -60,5 +60,5 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 
 # Related Issues
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2MDU1Mjc3XX0=
+eyJoaXN0b3J5IjpbMTg3NDAzNDI0NSwxMTYwNTUyNzddfQ==
 -->
