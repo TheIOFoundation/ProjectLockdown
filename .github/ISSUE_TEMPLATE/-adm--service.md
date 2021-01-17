@@ -1,6 +1,6 @@
 ---
 name: "[ADM] Service"
-about: Create a request for a service or procedure.
+about: Create a request for a service.
 title: "[ADM] Request for "
 labels: "Project: PLD, \U0001F4A7 Priority: Medium, \U0001F4BC Need: Service, \U0001F6A7
   Stage: Not Ready"
