@@ -22,7 +22,9 @@ const renderMenu = (
         template: (
           <>
             <h1>Project Lockdown</h1>
-            <p class="ld-alpha">{locale.t('menu.informationSection.banner')}</p>
+            <p className="ld-alpha">
+              {locale.t('menu.informationSection.banner')}
+            </p>
             <p>
               <b>{locale.t('menu.informationSection.main.name')}</b>
               {locale.t('menu.informationSection.main.text')}
@@ -52,10 +54,10 @@ const renderMenu = (
                   <p>
                     <b>{locale.t('menu.informationSection.main.name')}</b>
                     {locale.t('menu.informationSection.sources.subtitle')}
-                    <ul class="ld-sources">
+                    <ul className="ld-sources">
                       <li>
                         <a
-                          class="ld-link"
+                          className="ld-link"
                           target="_blank"
                           rel="noopener noreferrer"
                           href="https://TIOF.Click/LockdownData"
@@ -73,7 +75,7 @@ const renderMenu = (
                       </li>
                       <li>
                         <a
-                          class="ld-link"
+                          className="ld-link"
                           target="_blank"
                           rel="noopener noreferrer"
                           href="https://covid19api.com/"
@@ -107,9 +109,9 @@ const renderMenu = (
                     </a>
                     .
                   </p>
-                  <div class="link-container">
+                  <div className="link-container">
                     <a
-                      class="ld-link"
+                      className="ld-link"
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://tiof.click/LockdownData"
@@ -120,7 +122,7 @@ const renderMenu = (
                       )}
                     </a>
                     <a
-                      class="ld-link"
+                      className="ld-link"
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://tiof.click/pldpsf"
@@ -196,7 +198,7 @@ const renderMenu = (
               follow this link:
             </p>
             <a
-              class="ld-link"
+              className="ld-link"
               target="_blank"
               rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSfDWe2qlzUnd3e-YYspMzT9adUswDEYIdJMb7jz7ule34-yiA/viewform"
@@ -216,7 +218,7 @@ const renderMenu = (
               Contact us via Telegram at:
               <br />
               <a
-                class="ld-link"
+                className="ld-link"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://t.me/ProjectLockdown"
@@ -322,10 +324,10 @@ export class TabMenu extends Component {
     const { activeItem, updateAvailable, currentDropdown } = this.state;
     return this.state.showLateralMenu || this.props.isMobile === true ? (
       <>
-        <div class="menu-overlay"></div>
-        <main id="main" class="ld-menu">
-          <div class="ld-menu-nav">
-            <button class="menu-close-btn" onClick={this.closeNavbar}>
+        <div className="menu-overlay"></div>
+        <main id="main" className="ld-menu">
+          <div className="ld-menu-nav">
+            <button className="menu-close-btn" onClick={this.closeNavbar}>
               {closeIcon}
             </button>
             <nav>
@@ -340,9 +342,9 @@ export class TabMenu extends Component {
               </Tabs>
             </nav>
           </div>
-          <div class="{this.state.showLateralMenu ? 'ld-menu--content' : ''}">
-            <div class="mb-only">
-              <div class="ld-menu--header">
+          <div className="{this.state.showLateralMenu ? 'ld-menu--content' : ''}">
+            <div className="mb-only">
+              <div className="ld-menu--header">
                 <h1>{activeItem}</h1>
               </div>
             </div>
@@ -360,7 +362,7 @@ export class TabMenu extends Component {
         </main>
       </>
     ) : (
-      <button onClick={this.showSideBar} class="menu-side-btn">
+      <button onClick={this.showSideBar} className="menu-side-btn">
         {burger}
       </button>
     );
