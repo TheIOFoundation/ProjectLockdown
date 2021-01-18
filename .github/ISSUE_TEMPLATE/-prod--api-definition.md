@@ -2,8 +2,9 @@
 name: "[PROD] API Definition"
 about: Define an API for the Back End.
 title: "[API] "
-labels: "Module: API, \U0001F6A7 Stage: Not Ready, Project: PLD, ⌨ Need: Code, \U0001F4A7
-  Priority: Medium, \U0001F4D1 Team: Docs, ⌨ Team: Devs, \U0001F511 Keyword: Stoplight"
+labels: "Module: API, \U0001F6A7 Stage: Not Ready, Project: PLD, ⌨ Need: Code, ⌨ Team: Devs, \U0001F4A7
+  Priority:
+  Medium, \U0001F4D1 Team: Docs, ⌨ Team: Devs, \U0001F511 Keyword: Stoplight\U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
@@ -66,8 +67,9 @@ Implement an API that will provide with the following services as described belo
 
 # Resources
 ## Tools
+Recommended tools would be the following:
 Stoplight.io: https://Stoplight.io
-Figma: https://www.Figma.com
+FigPostman: https://www.FigPostman.com
 DRAW.io: https://app.diagrams.net/
 
 Note: For Project Lockdown members all these tools are available in your Basaas TIOF environment.
@@ -96,7 +98,9 @@ Note: For Project Lockdown members all these tools are available in your Basaas 
 🔶 DB
 * Getting Started: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Database-(DB))
 * JSON Models reference (schemas): [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Schemas)
-
+Back End guidelines: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Back-End-Guidelines
+Back End APIs: https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API
+Database objects: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Database-(DB)
 
 ## Other documentation resources
 
@@ -104,5 +108,6 @@ Note: For Project Lockdown members all these tools are available in your Basaas 
 
 # Related Issues
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk0NjI2MDA3LC0xMzk3NjUyMzUwXX0=
+eyJoaXN0b3J5IjpbNTIwMzMyMzkyLDI5NDYyNjAwNywtMTM5Nz
+Y1MjM1MF19
 -->
