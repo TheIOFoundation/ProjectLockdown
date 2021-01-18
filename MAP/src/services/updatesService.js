@@ -5,9 +5,7 @@ class UpdatesService extends EventTargetShim {
     if (forceRefresh || !this.updates) {
       try {
         // @fixme get actual dynamic data
-        this.updates = await fetch(
-          new URL('../data/updates.json', import.meta.url)
-        ).then(r => r.json());
+        this.updates = await fetch('../data/updates.json').then(r => r.json());
         await this.updates;
       } catch {
         return {

@@ -22,7 +22,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 export const installMediaQueryWatcher = (mediaQuery, layoutChangedCallback) => {
   let mql = window.matchMedia(mediaQuery);
-  mql.addEventListener(e => layoutChangedCallback(e.matches));
+  mql.addEventListener('change', e => layoutChangedCallback(e.matches));
   layoutChangedCallback(mql.matches);
 };
 //# sourceMappingURL=media-query.js.map

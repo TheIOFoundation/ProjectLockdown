@@ -1,11 +1,11 @@
 import { Component } from 'react';
-import 'TabMenu.scss';
+import './TabMenu.scss';
 import { Expandable } from '../Expandable/Expandable';
 import { Ticker } from '../Ticker/Ticker';
 import { Settings } from '../Settings/Settings';
 import { installMediaQueryWatcher } from '../../utils/media-query';
 import Tabs from '../Tabs/Tabs';
-import { burger, close as closeIcon } from '../assets/icons/icons.js';
+import { burger, close as closeIcon } from '../../assets/icons/icons.js';
 
 const renderMenu = (
   menuItem,
@@ -243,7 +243,7 @@ const renderMenu = (
   }
 };
 
-export class Menu extends Component {
+export class TabMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -322,7 +322,7 @@ export class Menu extends Component {
     const { activeItem, updateAvailable, currentDropdown } = this.state;
     return this.state.showLateralMenu || this.props.isMobile === true ? (
       <>
-        <div class="menu-overlay {overlay}"></div>
+        <div class="menu-overlay"></div>
         <main id="main" class="ld-menu">
           <div class="ld-menu-nav">
             <button class="menu-close-btn" onClick={this.closeNavbar}>
@@ -352,8 +352,8 @@ export class Menu extends Component {
                 this.closeNavbar,
                 currentDropdown,
                 this.onDropDown,
-                _.onLocateChange,
-                _.locale
+                this.props.onLocateChange,
+                this.props.locale
               ).template
             }
           </div>

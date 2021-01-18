@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { updatesService } from '../services/updatesService.js';
-import { offline, loading } from '../assets/icons/icons.js';
-import '../style/shared.styles.scss';
+import { updatesService } from '../../services/updatesService.js';
+import { offline, loading } from '../../assets/icons/icons.js';
+import '../../style/shared.styles.scss';
 
 const UPDATE_TYPES = {
   new_entry: 'new entry',
@@ -14,9 +14,12 @@ const UPDATE_TYPES = {
 export function Ticker() {
   const [updates, setUpdates] = useState(undefined);
 
-  useEffect(async () => {
-    const response = await updatesService.getUpdates();
-    setUpdates(response);
+  useEffect(() => {
+    async function getUpdates() {
+      const response = await updatesService.getUpdates();
+      setUpdates(response);
+    }
+    getUpdates();
   }, []);
 
   /* Offline & no cached data state */
