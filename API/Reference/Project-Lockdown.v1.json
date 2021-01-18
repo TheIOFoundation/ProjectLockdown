@@ -11223,8 +11223,9 @@
         ],
         "responses": {},
         "operationId": "get-DataSetLayers",
-        "description": "Handles DataSet Layers\n\n\nGet\nParams\nDSLUID <> 0 \nReturns the DSL (DSEs only, never Snapshots) data\n\nDSLUID = 0\nReturns all the DSLs definition data (not DSEs)\n\n\n\n\n"
-      }
+        "description": "Handles DataSet Layers\n\n\nGet\nParams\nDSLUID <> 0 \nReturns the DSL (DSEs only, never Snapshots) data\n\nDSLUID = 0\nReturns all the DSLs definition data (not DSEs)\n\nFormat\n\n\n"
+      },
+      "parameters": []
     },
     "/Origins": {
       "get": {
@@ -17918,8 +17919,15 @@
         "name": "Format",
         "in": "path",
         "schema": {
-          "type": "string"
-        }
+          "type": "string",
+          "enum": [
+            "JSON",
+            "CSV",
+            "XLS",
+            "HXL"
+          ]
+        },
+        "description": "Used to set the format in which the data is to be obtained from the endpoint."
       }
     },
     "securitySchemes": {},
