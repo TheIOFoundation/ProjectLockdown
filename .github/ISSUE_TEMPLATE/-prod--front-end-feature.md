@@ -2,9 +2,9 @@
 name: "[PROD] Front End Feature"
 about: Define or request a Feature for Project Lockdown.
 title: "[PROD] "
-labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, ⌨ Need: Code, \U0001F4A7 Priority:
-  Medium, \U0001F511 Keyword: Javascript, \U0001F4D1 Team: Docs, \U0001F511 Keyword:
-  React, ⌨ Team: Devs, \U0001F511 Keyword: Storybook"
+labels: "Project: PLD, ⌨ Need: Code, ⌨ Team: Devs, \U0001F4A7 Priority: Medium, \U0001F4D1
+  Team: Docs, \U0001F511 Keyword: Javascript, \U0001F511 Keyword: React, \U0001F511
+  Keyword: Storybook, \U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
@@ -13,6 +13,7 @@ assignees: ''
 
 # INSTRUCTIONS
 - Fill up this template (be as accurate as possible)
+
 - Review Labels. You should at least have the following:
  -- Need: Code [MANDATORY]
  -- Need: Design [OPTIONAL]
@@ -25,6 +26,8 @@ assignees: ''
  -- Team: Assign the corresponding ones [MANDATORY]
  -- Assignees: Assign the corresponding ones [OPTIONAL]
  -- Supported by: Assign the corresponding ones [OPTIONAL]
+
+- Review the documentation links and remove what is not necessary for this Issue.
 
 Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 ---
@@ -54,9 +57,28 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 # Resources
 ## Usage documentation
 
-## Technical documentation
+## 📖 Technical documentation
+* General considerations: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Dev-Guidelines)
+* Project Architecture: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Project-Architecture)
+* Data Lifecycle: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Data-Lifecycle)
 
-## UXUI resources
+🔶 MAP
+* Getting Started: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Mapping-Platform-(MAP))
+* UXUI Documentation: [Figma](https://TIOF.Click/PLDDocsMAPuxui)
+
+🔶 BO
+* Getting Started: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Back-Office-(BO))
+* UXUI Documentation: [Figma](https://TIOF.Click/PLDDocsBOuxui)
+
+🔶 API
+* Getting Started: [Project Wiki]()
+* API reference (includes mock server): [Stoplight](https://TIOF.Click/PLDDocsAPIEndpoints)
+* JSON Models reference (schemas): [Stoplight](https://TIOF.Click/PLDDocsAPIModels)
+* UXUI Documentation: [Figma](https://TIOF.Click/PLDDocsAPIuxui)
+
+🔶 DB
+* Getting Started: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Database-(DB))
+* JSON Models reference (schemas): [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Schemas)
 
 ## Other documentation resources
 
