@@ -3,7 +3,7 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\n\n## How is this documentation structured\n\n\n\n🔶 All objects mentioned in the documentation link to their Model definition page.\nShould there be more information to observe, a link will be provided at the top of the Model's definition page.\n\n🔶 Icon representation for each documentation object:\n- 📦 Model\n- 💠 Endpoint\n\n\n\n## Documentation sections\n- 🌐 **Expanded information**: Links to the extendend documentation of this 📦 Model or 💠Endpoint.\n\n- ⚡ About \n- 📢 Used by\n- 🔗 URL fields\n- 📅 Date Fields\n- ⚙ Algorithm-related\n- 📊 Stats\n- 📝 Log\n\n\n\n## ❔ Legend:\n\n**Status:**\n- 🚧 Work in Progress\n- 👁️‍🗨️ Documentation is ready for review & QA\n- ✔ Documentation is ready\n\n- 🔶 Items in a list\n- ▶ Providing an code/data example\n- \n- ❗ Important\n- ⚠ Warning\n- ⛔ Prohibition\n- ❓ Attention needed: This information still requires a consensus/decision\n- 🚧 Work in Progress\n\n\n\n\n\n🔶 PLD Datapoint\n🔷 External Datapoint\n🚩 Red Flag\n\n\n✴\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n⚡ (About)\n🎯 (Usage)\n📢 (Invoked by)\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n\n\n\n**Modules**\n- 🗺 MAP\n- ⌨ BO\n- 🌐 (Website)\n- 🗃 API\n-🗄 DEI\n- 🤖 ML Funnel\n- 👨‍💻 📁 ✋ Insourcing Funnel\n- 💫 📦 🌠 Direct Feed Funnel\n- ✨ ✨ 🤲 Crowdsourcinng\n\n\n----------\n# Basic Template for Documentation\n\n# Status: 👁️‍🗨️\n\n## ⚡ About\n\n## 🌐 Expanded information\n\n## Snapshot generation\n\n🔶 **Item** \n\n▶ **Sample for code/data**: \n\n```\nCODE/DATA CONTENTS\n```\n## [GENERIC HEADER]\n\n## ⚙ ALGORITHM/CODE HEADER\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- [MODULE]\n    - 💠 \n\n## 🔗 URL fields\n\n## 📅 Date Fields\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\n\n\n",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\n\n## How is this documentation structured\n\n\n\n🔶 All objects mentioned in the documentation link to their Model definition page.\nShould there be more information to observe, a link will be provided at the top of the Model's definition page.\n\n🔶 Icon representation for each documentation object:\n- 📦 Model\n- 💠 Endpoint\n\n\n\n## Documentation sections\n- 🌐 **Expanded information**: Links to the extendend documentation of this 📦 Model or 💠Endpoint.\n\n- ⚡ About \n- 📢 Used by\n- 🔗 URL fields\n- 📅 Date Fields\n- ⚙ Algorithm-related\n- 📊 Stats\n- 📝 Log\n\n\n\n## ❔ Legend:\n\n**Status:**\n- 🚧 Work in Progress\n- 👁️‍🗨️ Documentation is ready for review & QA\n- ✔ Documentation is ready\n\n- 🔶 Items in a list\n- ▶ Providing an code/data example\n- \n- ❗ Important\n- ⚠ Warning\n- ⛔ Prohibition\n- ❓ Attention needed: This information still requires a consensus/decision\n- 🚧 Work in Progress\n\n\n\n\n\n🔶 PLD Datapoint\n🔷 External Datapoint\n🚩 Red Flag\n\n\n✴\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n⚡ (About)\n🎯 (Usage)\n📢 (Invoked by)\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n\n\n\n**Modules**\n- 🗺 MAP\n- ⌨ BO\n- 🌐 (Website)\n- 🗃 API\n-🗄 DEI\n- 🤖 ML Funnel\n- 👨‍💻 📁 ✋ Insourcing Funnel\n- 💫 📦 🌠 Direct Feed Funnel\n- ✨ ✨ 🤲 Crowdsourcinng\n\n\n----------\n# Basic Template for Documentation\n\n# Status: 🚧 👁️‍🗨️ ✔\n\n## ⚡ About\n\n## 🌐 Expanded information\n\n## [GENERIC HEADER]\n\n🔶 **Item** \n\n▶ **Sample for code/data**: \n\n```\nCODE/DATA CONTENTS\n```\n\n## ⚙ ALGORITHM/CODE HEADER\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- [MODULE]\n    - 💠 \n\n## 🔗 URL fields\n\n## 📅 Date Fields\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\n\n\n",
     "contact": {
       "name": "The IO Foundation",
       "email": "Contact@ProjectLockdown.net"
@@ -16213,7 +16213,7 @@
       "Snapshot": {
         "title": "👁️‍🗨️ Snapshot",
         "type": "object",
-        "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nA Snapshot is represents the individual, daily value of a datapoint. They are used to render the datapoint's value on MAP in a sinple and efficient way, avoiding complex and resource comsiming calculations in the client.\n\nSnapshots are stored in Answer objects. This allows to reuse the same Model for both RAW and Snapshot data since there is no difference between both.\nFor more information about RAW and Snapshot data, see the diagram below.\n\n![image](https://user-images.githubusercontent.com/9198668/104857302-69abf700-5952-11eb-9918-93a6736af696.png)\n❓ >> Make proper diagram\n\n\n## 🌐 Expanded information\nMore information about Snapshots can be found on the \n\n## Snapshot generation\nSnapshots can be generated in a number of ways.\n\n\n🔶 **Deduced** - Generated by applying some sort of methodology over the DSE data to extract a pattern that is relevant. This type of snapshot is generated by a PLD script based on the data obtained from all the 📦 [DataSet Entry](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetEntry) in a 📦 [DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) or from the **Encoded Snapshopt** data from an external 3rd party (see below).\n\n**Examples**\n- COVID-19 NPIs: Military presence policy without DateEnd\n- COVID-19 NPIs: Schools closed for over 3 months\n\n▶ **Snapshot example from PLD DSL RAW data**: A RAW datapoint encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"RAW\" \n  - GeneratedBy: \"Funnel:IS\"\n  - Value: \"3\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"03/01/2020'\n```\nwould generate a Snapshot encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020\"\n```\n\n▶ **Snapshot example from a 3rd party ENDCODED Snapshot data** (see below): \nFollowing the example indicated above, a Snapshot encoded with an [Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this (which was obtained from a 3rd party \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"125.000\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020'\n \n - Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"147.000\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020'\n \n  - Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"152.000\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020'\n```\nwould generate a Snapshot encoded with an [Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"0\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"1\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"0\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020\"\n```\n\n\n🔶 **Encoded** - Generated by a PLD script out of data obtained from 3rd party sources, typically APIs. This is used to translate 3rd party data in a format that can be easily processed by MAP.\n\n**Examples**\n- World population by territory\n- COVID-19 declared cases\n\n**Snapshot example**\nA 3rd party segment of data encoded like this \n```\n- Country\n  - Name: Malaysia \n  - Year: 2019\n  - Population: 43.000.000\n```\nwould generate a Snapshot encoded with an [Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"43.000.000\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n \n [...]\n \n- Answer\n  - Type: \"Snapshot' \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"43.000.000\"\n  - DateStart: \"31/12/2020\"\n  - DateEnd: \"31/12/2020\"\n```\n\n## SourceTypes and Snapshots\nEach [DataSet Layer]() has a list of approved [SourceTypes]() from which data is extracted to generate the RAW data for its datapoints.\n\n❗ Each SourceType generates its own Snapshot per dataproint.\nThis is represented in the SourceTypeUID field.\n\n\n## ⚙ Generating Snapshots ❓\n\n**Recalculating Snapshots** can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n**General Snapshot generation**\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote: \nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n## 📢 Used by\n- 💠 \n\n## 📢 Used by\nThis Model is used in the following modules:\n- MAP\n\n## 🔗 URL fields\n- URLCodebase: Perrmalink to the code where this snapshot is generated.\n\n## 📅 Date Fields\n- DateFirstCreated: Date and time when the Snapshot was generated for the first time.\n- DateLastUpdated: Date and time when the Snapshot was last generated.\n\n❓ Should this information go on Logs instead?\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\n",
+        "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nA Snapshot is represents the individual, daily value of a datapoint. They are used to render the datapoint's value on MAP in a sinple and efficient way, avoiding complex and resource comsiming calculations in the client.\n\nSnapshots are stored in Answer objects. This allows to reuse the same Model for both RAW and Snapshot data since there is no difference between both.\nFor more information about RAW and Snapshot data, see the diagram below.\n\n![image](https://user-images.githubusercontent.com/9198668/104857302-69abf700-5952-11eb-9918-93a6736af696.png)\n❓ >> Make proper diagram\n\n\n## 🌐 Expanded information\nMore information about Snapshots can be found on the \n\n## Snapshot generation\nSnapshots can be generated in a number of ways.\n\n\n🔶 **Deduced** - Generated by applying some sort of methodology over the DSE data to extract a pattern that is relevant. This type of snapshot is generated by a PLD script based on the data obtained from all the 📦 [DataSet Entry](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetEntry) in a 📦 [DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) or from the **Encoded Snapshopt** data from an external 3rd party (see below).\n\n**Examples**\n- COVID-19 NPIs: Military presence policy without DateEnd\n- COVID-19 NPIs: Schools closed for over 3 months\n\n▶ **Snapshot example from PLD DSL RAW data**: A RAW datapoint encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"RAW\" \n  - GeneratedBy: \"Funnel:IS\"\n  - Value: \"3\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"03/01/2020'\n```\nwould generate a Snapshot encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020\"\n```\n\n▶ **Snapshot example from a 3rd party ENDCODED Snapshot data** (see below): \nFollowing the example indicated above, a Snapshot encoded with an [Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this (which was obtained from a 3rd party \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"125.000\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020'\n \n - Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"147.000\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020'\n \n  - Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"152.000\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020'\n```\nwould generate a Snapshot encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"0\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"1\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"0\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020\"\n```\n\n\n🔶 **Encoded** - Generated by a PLD script out of data obtained from 3rd party sources, typically APIs. This is used to translate 3rd party data in a format that can be easily processed by MAP.\n\n**Examples**\n- World population by territory\n- COVID-19 declared cases\n\n**Snapshot example**\nA 3rd party segment of data encoded like this \n```\n- Country\n  - Name: Malaysia \n  - Year: 2019\n  - Population: 43.000.000\n```\nwould generate a Snapshot encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"43.000.000\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n \n [...]\n \n- Answer\n  - Type: \"Snapshot' \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"43.000.000\"\n  - DateStart: \"31/12/2020\"\n  - DateEnd: \"31/12/2020\"\n```\n\n## SourceTypes and Snapshots\nEach 📦[DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) has a list of approved 📦[SourceType](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/SourceType) from which data is extracted to generate the RAW data for its datapoints.\n\n❗ Each SourceType generates its own Snapshot per dataproint.\nThis is represented in the SourceTypeUID field.\n\n\n## ⚙ Generating Snapshots ❓\n\n**Recalculating Snapshots** can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n**General Snapshot generation**\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote: \nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- MAP\n    - 💠 [Environments](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/paths/~1Environments~1%7BDSLUID%7D~1%7BModule%7D~1%7BEnvironmentUID%7D/get)\n    (Indirecly)\n\n## 🔗 URL fields\n- URLCodebase: Perrmalink to the code where this snapshot is generated.\n\n## 📅 Date Fields\n- DateFirstCreated: Date and time when the Snapshot was generated for the first time.\n- DateLastUpdated: Date and time when the Snapshot was last generated.\n\n❓ Should this information go on Logs instead?\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\n",
         "x-tags": [
           "Models"
         ],
@@ -16223,19 +16223,20 @@
             "description": "Universal ID\n🚧 Document how it is generated"
           },
           "SourceTypeUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the SourceType associated to this Snapshot."
           },
           "DSLUID": {
-            "type": "string"
+            "type": "string",
+            "description": "DSL to which this Snapshot is associated with."
           },
           "Type": {
             "type": "string",
             "enum": [
-              "DataPoint",
-              "Red Flag",
-              "Territory Status",
-              "External"
-            ]
+              "DEDUCED",
+              "ENCODED"
+            ],
+            "description": "Indicates the type of Snapshot.\nSee Model documentation for more details."
           },
           "XXXFrequency": {
             "type": "string",
@@ -16256,15 +16257,13 @@
           },
           "Answers": {
             "type": "array",
+            "description": "Collection of Answers conforming ",
             "items": {
               "$ref": "#/components/schemas/Answer"
             }
           },
           "URLCodebase": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            }
+            "$ref": "#/components/schemas/Link"
           },
           "DateLastUpdated": {
             "$ref": "#/components/schemas/Date"
@@ -16278,11 +16277,19 @@
           },
           "Log": {
             "type": "array",
+            "description": "🚧\nLog of operations related to this object.",
             "items": {
               "$ref": "#/components/schemas/Log"
             }
           }
-        }
+        },
+        "required": [
+          "SnapshotUID",
+          "SourceTypeUID",
+          "DSLUID",
+          "Type",
+          "Answers"
+        ]
       },
       "Layout": {
         "title": "🚧 Layout",
@@ -17494,7 +17501,7 @@
       "Answer": {
         "title": "🚧 Answer",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\nTypes:\nRAW\nData obtained through some of the Funnels.\n\n\n\nSnapshot\nData is generated out of processing RAW data.\n\n\n\n## 📢 Used by\n- 💠 \n\n\nNote:\nFor DSEs\nDateStart + DateEnd typially different\n\nFor Snapshopts\nDateStart = DateEnd (Can even ignore DateEnd)\n\n\n\nURLCodebase\nPermalink to the piece of code that has generated this Anwer object.\n\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\nAnswers are the objects storing the values of PLD datapoints, both in RAW and as Snapshots.\n\nNote:\nFor RAW\nDateStart and DateEnd typially different\n\nFor Snapshots\nDateStart = DateEnd (Can even ignore DateEnd)\n\n## 🌐 Expanded information\nFor more information about this model, visit \n\n## Snapshot generation\n\n🔶 **Item** \n\n▶ **Sample for code/data**: \n\n```\nCODE/DATA CONTENTS\n```\n## [GENERIC HEADER]\n\n## ⚙ ALGORITHM/CODE HEADER\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- [MODULE]\n    - 💠 \n\n## 🔗 URL fields\n-URLCodebase: Permalink to the piece of code that has generated this Anwer object.\n\n## 📅 Date Fields\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\n\n\n\n# Status: 🚧\n\n## ⚡ About\n\n\nTypes:\nRAW\nData obtained through some of the Funnels.\n\n\n\nSnapshot\nData is generated out of processing RAW data.\n\n\n\n## 📢 Used by\n- 💠 \n\n\n\n\n\n\n",
         "x-examples": {
           "example-1": {
             "AnswerUID": "string",
@@ -17685,22 +17692,36 @@
           },
           "Details": {
             "type": "string",
-            "description": "sddfsdfssdfsdf\n\n\n"
+            "description": "Extra details about this Answer.\n\n"
           },
           "DSEUID": {
-            "type": "string"
+            "type": "string",
+            "description": "DataSetEntry to which this Answer belongs to."
           },
           "Type": {
             "type": "string",
             "enum": [
               "RAW",
               "Snapshot"
-            ]
+            ],
+            "description": "Indicates the type of Answer. See Model documentation for more details."
           },
           "URLCodebase": {
             "$ref": "#/components/schemas/Link"
+          },
+          "URLCodebaseBookmarkID": {
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "AnswerUID",
+          "Value",
+          "DateStart",
+          "DateEnd",
+          "DataPointUID",
+          "DSEUID",
+          "Type"
+        ]
       },
       "Response": {
         "title": "🚧 Response",
