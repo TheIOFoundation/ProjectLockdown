@@ -15684,8 +15684,11 @@
           "DSLUID": {
             "type": "string"
           },
-          "": {
-            "type": "string"
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
         }
       },
@@ -16172,6 +16175,9 @@
         "title": "🚧 TimeMachine",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nREPLACED BY SOURCE???\n\n\nObjects describing all the different Time Machines used to back up Sources.",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "TimeMachineUID": {
             "type": "string",
@@ -16204,11 +16210,14 @@
           },
           "DateFirstCreated": {
             "$ref": "#/components/schemas/Date"
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "Snapshot": {
         "title": "👁️‍🗨️ Snapshot",
@@ -16364,6 +16373,9 @@
         "title": "🚧 License",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nIn Short:\n\n- Each Module has different components\nEx: API has different Endpoints\nEx: BO has different interfaces/pages/screens\n\n- Each component allows a number of Operations on them\n\n",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "LicenseUID": {
             "type": "string",
@@ -16394,11 +16406,14 @@
                 }
               }
             }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "Project": {
         "title": "👁️‍🗨️ Project",
@@ -16749,6 +16764,9 @@
             ]
           }
         },
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "ProjectUID": {
             "type": "string",
@@ -16811,6 +16829,12 @@
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
         },
         "required": [
@@ -16818,9 +16842,6 @@
           "GlobalVars",
           "Name",
           "Description"
-        ],
-        "x-tags": [
-          "Models"
         ]
       },
       "Right": {
@@ -17334,6 +17355,9 @@
         "title": "👁️‍🗨️ Date",
         "type": "object",
         "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nAn Date object represents the collection of data that is necessary to establish a _date & time_ and to describe its function.\n\nDates can be generated though one of the several [Funnels](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/Funnels) and according to transparent algorithms (see 📑 documentation).\n\n🔥 The actual Date value is stored in 📑 XXX format in 2 different fields:\n- Value: As entered via [Funnel](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/Funnels)\n- valueUTC: Converted to UTC (GMT+0), which enables a properly referenced timeline of events.\n\nThe Type field indicates what kind of information the Link points to:\n\n📑 \n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 \n\n## ❓ DUBIOUS FIELDS\nHighlights: Where the text is from where the Date may have been extracted.\nLinks: Is this necessary? (Documentation?, Codebase?)",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "DateUID": {
             "type": "string",
@@ -17414,9 +17438,6 @@
           "ValueUTC",
           "GeneratedBy",
           "UI"
-        ],
-        "x-tags": [
-          "Models"
         ]
       },
       "Audience": {
@@ -17711,6 +17732,12 @@
           },
           "URLCodebaseBookmarkID": {
             "type": "string"
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
         },
         "required": [
