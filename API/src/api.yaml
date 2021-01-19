@@ -1,7 +1,9 @@
 openapi: 3.0.0
 info:
+  description: "Environment listing for territories"
   version: 1.0.0
   title: Lockdown API
+  contact: Contact@projectlockdown.net
 tags:
   - name: Get Environment
     description: Get all environments
