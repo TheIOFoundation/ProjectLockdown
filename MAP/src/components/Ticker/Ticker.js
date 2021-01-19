@@ -51,7 +51,6 @@ export function Ticker() {
     );
   }
 
-  console.log('updates', updates);
   return (
     <div className=".ticker">
       <ul>
