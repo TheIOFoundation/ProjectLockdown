@@ -9878,6 +9878,7 @@
             "type": "string"
           },
           "name": "DSLUID",
+          "required": true,
           "in": "path",
           "description": "The UID for the DSL to be returned"
         },
@@ -9890,6 +9891,7 @@
             ]
           },
           "name": "Module",
+          "required": true,
           "in": "path",
           "description": "Enum BO, API or MAP. Defaults to MAP if not specified"
         },
@@ -9898,6 +9900,7 @@
             "type": "string"
           },
           "name": "EnvironmentUID",
+          "required": true,
           "in": "path",
           "description": "Sets a specific Environment  via its UID."
         }
@@ -11264,7 +11267,7 @@
         ],
         "responses": {},
         "operationId": "get-DataSetEntries",
-        "description": "Handles DataSetEntriese\n(The actual encoding of a Source)\n\n\nParams\nSourceUID\nReturns the DSE for a specific SourceUID\n\nDSLUID\nReturns ALL the DSEs for a specific DSLUID\n\n\n"
+        "description": "Handles DataSetEntries\n(The actual encoding of a Source)\n\n\nParams\nSourceUID\nReturns the DSE for a specific SourceUID\n\nDSLUID\nReturns ALL the DSEs for a specific DSLUID\n\n\n"
       }
     }
   },
@@ -17840,6 +17843,7 @@
       },
       "PLDCode": {
         "name": "PLDCode",
+        "required": true,
         "in": "path",
         "schema": {
           "type": "string"
@@ -17847,6 +17851,7 @@
       },
       "Depth": {
         "name": "Depth",
+        "required": true,
         "in": "path",
         "schema": {
           "type": "string"
@@ -17854,6 +17859,7 @@
       },
       "Format": {
         "name": "Format",
+        "required": true,
         "in": "path",
         "schema": {
           "type": "string"
