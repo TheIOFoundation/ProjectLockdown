@@ -26,7 +26,7 @@ export function Ticker() {
   if (!navigator.onLine) {
     if (updates?.status !== 'success') {
       return (
-        <div class="offline-style">
+        <div className="offline-style">
           {offline}
           <b>You are not connected to the internet</b>
           <p>
@@ -40,40 +40,40 @@ export function Ticker() {
 
   /* Loading state */
   if (!updates && navigator.onLine) {
-    return <div class=".loading-style">{loading}</div>;
+    return <div className=".loading-style">{loading}</div>;
   }
-
   /* Error state */
   if (updates.status === 'failed' && navigator.onLine) {
     return (
-      <div style="margin-top: 14px;">
+      <div style={{ marginTop: '14px' }}>
         An error occured while fetching updates.
       </div>
     );
   }
 
+  console.log('updates', updates);
   return (
-    <div class=".ticker">
+    <div className=".ticker">
       <ul>
         {updates?.data?.updates?.map(update => (
-          <li>
-            <div class="ld-ticker--bar">
-              <div class="ld-ticker--dot-container">
+          <li key={update.date}>
+            <div className="ld-ticker--bar">
+              <div className="ld-ticker--dot-container">
                 <div
                   aria-label={UPDATE_TYPES[update.type.toLowerCase()]}
-                  class={'ld-ticker--dot' + update.type.toLowerCase()}
+                  className={'ld-ticker--dot' + update.type.toLowerCase()}
                 ></div>
               </div>
-              <div class="ld-ticker--line"></div>
+              <div className="ld-ticker--line"></div>
             </div>
-            <div class="ld-ticker--content">
-              <div class="ld-ticker--title">{update.title}</div>
-              <div class="ld-ticker--content">{update.content}</div>
+            <div className="ld-ticker--content">
+              <div className="ld-ticker--title">{update.title}</div>
+              <div className="ld-ticker--content">{update.content}</div>
               {update.link ? (
-                <div class="ld-ticker--link">
+                <div className="ld-ticker--link">
                   <a
                     target="_blank"
-                    rel="noopener noreferer"
+                    rel="noopener noreferrer"
                     href={update.link}
                   >
                     Source
@@ -82,7 +82,7 @@ export function Ticker() {
               ) : (
                 ''
               )}
-              <div class="ld-ticker--date">{update.date}</div>
+              <div className="ld-ticker--date">{update.date}</div>
             </div>
           </li>
         ))}

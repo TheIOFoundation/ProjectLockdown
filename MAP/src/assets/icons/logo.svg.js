@@ -21,7 +21,7 @@ export const logo = (
   //           background
   //         </title>
   //         <g stroke="null" id="svg_22" display="none">
-  //           <rect stroke="null" id="svg_25" width="580" height="400" x="14.798918" y="87.143019" stroke-width="0" />
+  //           <rect stroke="null" id="svg_25" width="580" height="400" x="14.798918" y="87.143019" strokeWidth="0" />
   //         </g>
   //       </g>
   //       <g stroke="null" transform="matrix(0.5686664770035428,0,0,0.5686664770035428,-7.765926295118788,-49.59477232097561) " id="svg_26">
@@ -35,10 +35,10 @@ export const logo = (
   //           <g
   //             stroke="null"
   //             id="svg_20"
-  //             stroke-linecap="round"
+  //             strokeLinecap="round"
   //             fillRule="evenodd"
   //             font-size="9pt"
-  //             stroke-width="0.25mm"
+  //             strokeWidth="0.25mm"
   //             transform="matrix(0.4046201041691139,0,0,0.4046201041691139,-2294.6313297135057,-1675.2340553707181) "
   //           >
   //             <path

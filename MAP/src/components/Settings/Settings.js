@@ -34,8 +34,8 @@ export function Settings({ onClose, locale }) {
   }, []);
 
   return (
-    <div class="settings">
-      <button onClick={toggleDarkmode} class="ld-button">
+    <div className="settings">
+      <button onClick={toggleDarkmode} className="ld-button">
         {locale.t('menu.userPreferenceSection.theme.action')}
         {darkMode
           ? locale.t('menu.userPreferenceSection.theme.light')
@@ -44,7 +44,7 @@ export function Settings({ onClose, locale }) {
 
       {pwaUpdateAvailable ? (
         <pwa-update-available>
-          <button onClick={() => onClose()} class="ld-button">
+          <button onClick={() => onClose()} className="ld-button">
             {locale.t('menu.userPreferenceSection.app.update')}
           </button>
         </pwa-update-available>

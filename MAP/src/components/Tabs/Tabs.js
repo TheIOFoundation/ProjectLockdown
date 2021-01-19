@@ -98,27 +98,27 @@ export default class Tabs extends Component {
   render() {
     const { index } = this.state;
     return (
-      <ul class="ld-menu--tabs" role="tablist">
+      <ul className="ld-menu--tabs" role="tablist">
         {this.props.children.map((child, i) => {
           return (
-            <li role="presentation" key={i} class={i > 1 ? 'hide' : ''}>
+            <li role="presentation" key={i} className={i > 1 ? 'hide' : ''}>
               <button
                 role="tab"
                 ref={ref => (this.tabRefs['tab' + i] = ref)}
-                tabindex={index === i ? '0' : '-1'}
+                tabIndex={index === i ? '0' : '-1'}
                 aria-selected={index === i ? 'true' : 'false'}
-                class={index === i ? 'ld-menu--active' : ''}
+                className={index === i ? 'ld-menu--active' : ''}
                 data-label={child.props.id}
                 onKeyUp={this.__onFocusMove}
                 onClick={() => this.__onTabClick(i, child.props.id)}
               >
                 {child.props.id === 'settings' && this.state.updateAvailable ? (
-                  <div class="ld-menu--notification"></div>
+                  <div className="ld-menu--notification"></div>
                 ) : (
                   ''
                 )}
                 {ICONS[child.props.id]}
-                <p class={index === i ? 'ld-menu--active' : ''}>
+                <p className={index === i ? 'ld-menu--active' : ''}>
                   {child.props.id.toUpperCase()}
                 </p>
               </button>

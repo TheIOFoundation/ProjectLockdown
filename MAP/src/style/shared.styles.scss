@@ -18,9 +18,9 @@
     /* 0px is requires for edge 15 and lower */
     stroke-dashoffset: 0px;
     animation: dash 2000ms ease-in-out infinite;
-    stroke-linecap: round;
-    stroke-width: var(--spinner-stroke-width, 4px);
-    stroke-miterlimit: 10;
+    strokelinecap: round;
+    strokewidth: var(--spinner-strokeWidth, 4px);
+    strokemiterlimit: 10;
     fill: none;
     stroke: #828282;
   }
@@ -54,7 +54,7 @@
     }
 
     circle {
-      stroke-linecap: square;
+      strokelinecap: square;
     }
   }
 

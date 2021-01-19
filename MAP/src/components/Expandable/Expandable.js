@@ -18,28 +18,28 @@ export function Expandable(props) {
   }, [props.currentDropdown]);
 
   return (
-    <div class="ld-expandable">
+    <div className="ld-expandable">
       <button
         onClick={() => {
           props.onDropDown(expanded ? false : props.toggle);
           setExpanded(!expanded);
         }}
-        class="ld-expandable--toggle"
+        className="ld-expandable--toggle"
         aria-expanded={expanded}
       >
-        <div class="ld-expandable--icon">
+        <div className="ld-expandable--icon">
           {expanded ? chevronDown : chevronRight}
         </div>
-        <div class="ld-expandable--toggle-content">
+        <div className="ld-expandable--toggle-content">
           <h2>{props.toggle}</h2>
         </div>
       </button>
 
       <div
         ref={detail}
-        class="ld-expandable--detail {expanded ? 'ld-expandable--expanded' : 'ld-expandable--closed'}"
+        className="ld-expandable--detail {expanded ? 'ld-expandable--expanded' : 'ld-expandable--closed'}"
         role="region"
-        tabindex="-1"
+        tabIndex="-1"
       >
         {props.detail}
       </div>
@@ -50,15 +50,15 @@ export function Expandable(props) {
 const chevronRight = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="icon icon-tabler icon-tabler-chevron-right"
+    className="icon icon-tabler icon-tabler-chevron-right"
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    stroke-width="2"
+    strokeWidth="2"
     stroke="currentColor"
     fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
     <path stroke="none" d="M0 0h24v24H0z" />
     <polyline points="9 6 15 12 9 18" />
@@ -68,15 +68,15 @@ const chevronRight = (
 const chevronDown = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="icon icon-tabler icon-tabler-chevron-down"
+    className="icon icon-tabler icon-tabler-chevron-down"
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    stroke-width="2"
+    strokeWidth="2"
     stroke="currentColor"
     fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
     <path stroke="none" d="M0 0h24v24H0z" />
     <polyline points="6 9 12 15 18 9" />

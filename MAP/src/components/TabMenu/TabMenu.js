@@ -54,49 +54,51 @@ const renderMenu = (
                   <p>
                     <b>{locale.t('menu.informationSection.main.name')}</b>
                     {locale.t('menu.informationSection.sources.subtitle')}
-                    <ul className="ld-sources">
-                      <li>
-                        <a
-                          className="ld-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://TIOF.Click/LockdownData"
-                          target="_blank"
-                        >
-                          {' '}
-                          {locale.t(
-                            'menu.informationSection.sources.linksList.first.linkTitle'
-                          )}
-                        </a>
-                        <br />
+                  </p>
+                  <ul className="ld-sources">
+                    <li>
+                      <a
+                        className="ld-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://TIOF.Click/LockdownData"
+                        target="_blank"
+                      >
+                        {' '}
                         {locale.t(
-                          'menu.informationSection.sources.linksList.first.text'
+                          'menu.informationSection.sources.linksList.first.linkTitle'
                         )}
-                      </li>
-                      <li>
-                        <a
-                          className="ld-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://covid19api.com/"
-                          target="_blank"
-                        >
-                          {locale.t(
-                            'menu.informationSection.sources.linksList.second.linkTitle'
-                          )}
-                        </a>
-                        <br />
+                      </a>
+                      <br />
+                      {locale.t(
+                        'menu.informationSection.sources.linksList.first.text'
+                      )}
+                    </li>
+                    <li>
+                      <a
+                        className="ld-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://covid19api.com/"
+                        target="_blank"
+                      >
                         {locale.t(
-                          'menu.informationSection.sources.linksList.second.text'
-                        )}{' '}
-                        <a href="https://systems.jhu.edu/" target="_blank">
-                          {locale.t(
-                            'menu.informationSection.sources.linksList.second.highlight'
-                          )}
-                        </a>
-                        <br />
-                      </li>
-                    </ul>
+                          'menu.informationSection.sources.linksList.second.linkTitle'
+                        )}
+                      </a>
+                      <br />
+                      {locale.t(
+                        'menu.informationSection.sources.linksList.second.text'
+                      )}{' '}
+                      <a href="https://systems.jhu.edu/" target="_blank">
+                        {locale.t(
+                          'menu.informationSection.sources.linksList.second.highlight'
+                        )}
+                      </a>
+                      <br />
+                    </li>
+                  </ul>
+                  <p>
                     {locale.t('menu.informationSection.sources.issues.text')}{' '}
                     <a
                       rel="noopener noreferrer"

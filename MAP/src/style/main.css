@@ -18,7 +18,7 @@
   --ld-hover: rgb(247, 247, 247);
   --ld-active: blue;
   --ld-focus: rgba(0, 0, 255, 0.5);
-  --ld-icon-stroke-width: 1.5;
+  --ld-icon-strokeWidth: 1.5;
   --ld-button-text: black;
 }
 .rtl {
@@ -90,7 +90,7 @@
   --ld-hover: rgb(38, 39, 43);
   --ld-active: rgb(131, 251, 195);
   --ld-focus: rgba(131, 251, 195, 1);
-  --ld-icon-stroke-width: 1.2;
+  --ld-icon-strokeWidth: 1.2;
   --ld-button-text: white;
 }
 
@@ -205,7 +205,7 @@ a:visited {
 
 .ld-menu {
   font-size: 14px;
-  stroke-width: var(--ld-icon-stroke-width);
+  strokewidth: var(--ld-icon-strokeWidth);
   background-color: var(--ld-bg);
   --ld-text: #333333;
   color: var(--ld-text);
@@ -273,7 +273,7 @@ a:visited {
 }
 
 .ld-menu-nav svg {
-  stroke-width: var(--ld-icon-stroke-width);
+  strokewidth: var(--ld-icon-strokeWidth);
   /*display: none;*/
 }
 
