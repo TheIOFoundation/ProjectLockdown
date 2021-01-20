@@ -1,10 +1,10 @@
 ---
-name: "[PROD] API Definition"
-about: Define an API for the Back End.
-title: "[API] "
-labels: "Module: API, \U0001F6A7 Stage: Not Ready, Project: PLD, ⌨ Need: Code, ⌨ Team: Devs, \U0001F4A7
-  Priority:
-  Medium, \U0001F4D1 Team: Docs, ⌨ Team: Devs, \U0001F511 Keyword: Stoplight\U0001F6A7 Stage: Not Ready"
+name: "[PROD] Front End Feature"
+about: Define or request a Feature for Project Lockdown.
+title: "[PROD] "
+labels: "Project: PLD, ⌨ Need: Code, ⌨ Team: Devs, \U0001F4A7 Priority: Medium, \U0001F4D1
+  Team: Docs, \U0001F511 Keyword: Javascript, \U0001F511 Keyword: React, \U0001F511
+  Keyword: Storybook, \U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
@@ -16,13 +16,16 @@ assignees: ''
 
 - Review Labels. You should at least have the following:
  -- Need: Code [MANDATORY]
+ -- Need: Design [OPTIONAL]
  -- Stage: Assign the corresponding one [MANDATORY]
- -- Keyword: Assign the corresponding ones [OPTIONAL]
+ -- Keyword: Javascript, Storybook, React [MANDATORY]
+ -- Keyword: Assign other corresponding ones [OPTIONAL]
  -- Priority: Assign the corresponding one [MANDATORY] 
  -- Project: PLD [MANDATORY]
  -- Module: Assign the corresponding one [MANDATORY]
  -- Team: Assign the corresponding ones [MANDATORY]
  -- Assignees: Assign the corresponding ones [OPTIONAL]
+ -- Supported by: Assign the corresponding ones [OPTIONAL]
 
 - Review the documentation links and remove what is not necessary for this Issue.
 
@@ -36,11 +39,11 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 
 
 # Proposed solution
-Implement an API that will provide with the following services as described below.
 
-# Expected behavior
+
+# Extra information
 - Must have
--- 
+ -- 
 
 - Should have
  -- 
@@ -51,29 +54,7 @@ Implement an API that will provide with the following services as described belo
 - Won't have
  -- 
 
-# Implementation stages
-- [ ] Define Modules needed
-
-- [ ] Define Endpoints
-
-- [ ] Define Tests
-
-- [ ] Enable Mocking
-
-- [ ] Document API
-
-- [ ] Deployment
-
-
 # Resources
-## Tools
-Recommended tools would be the following:
-Stoplight.io: https://Stoplight.io
-FigPostman: https://www.FigPostman.com
-DRAW.io: https://app.diagrams.net/
-
-Note: For Project Lockdown members all these tools are available in your Basaas TIOF environment.
-
 ## Usage documentation
 
 ## 📖 Technical documentation
@@ -98,9 +79,6 @@ Note: For Project Lockdown members all these tools are available in your Basaas 
 🔶 DB
 * Getting Started: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Database-(DB))
 * JSON Models reference (schemas): [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Schemas)
-Back End guidelines: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Back-End-Guidelines
-Back End APIs: https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API
-Database objects: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Database-(DB)
 
 ## Other documentation resources
 
@@ -108,6 +86,5 @@ Database objects: https://github.com/TheIOFoundation/ProjectLockdown/wiki/Databa
 
 # Related Issues
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIwMzMyMzkyLDI5NDYyNjAwNywtMTM5Nz
-Y1MjM1MF19
+eyJoaXN0b3J5IjpbMTE2MDU1Mjc3XX0=
 -->

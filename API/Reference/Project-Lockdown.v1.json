@@ -3,21 +3,13 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\nSource: https://www.w3schools.com/charsets/ref_emoji.asp\n\n&#127744;\n&#127919; (bullseye)\n&#128203; (Checklist 1)\n&#128196; (Doc 1)\n&#128214; (Book 1)\n&#128216; (Book 2)\n&#128221; (Checklist 2)\n&#128679; (Work in Progress)\n&#128681; (Red Flag)\n&#128640; (Rocket)\n&#128293; (On Fire!)\n&#128206; \n&#128064; (About?)\n&#127881; (Party)\n&#127775; (Start 2)\n&#127760; (Globe)\n&#11088;  (Star)\n&#10071; (Exclamation)\n&#10067; (Question Mark)\n&#9889; (Thunder)\n&#9940; (Forbiden)\n&#128226; (Megaphone 1)\n&#128227; (Megaphone 2)\n&#128230; (Mail)\n\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n👁️‍🗨️\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n⚡ (About)\n🎯 (Usage)\n📢 (Invoked by)\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n\n\n\nModules\n- 🗺 MAP\n- ⌨ BO\n- 🌐 (Website)\n- 🗃 API\n-🗄 DEI\n- 🤖 ML Funnel\n- 👨‍💻 📁 ✋ Insourcing Funnel\n- 💫 📦 🌠 Direct Feed Funnel\n- ✨ ✨ 🤲 Crowdsourcinng",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\n\n## How is this documentation structured\n\n\n\n🔶 All objects mentioned in the documentation link to their Model definition page.\nShould there be more information to observe, a link will be provided at the top of the Model's definition page.\n\n🔶 Icon representation for each documentation object:\n- 📦 Model\n- 💠 Endpoint\n\n\n\n## Documentation sections\n- 🌐 **Expanded information**: Links to the extendend documentation of this 📦 Model or 💠Endpoint.\n\n- ⚡ About \n- 📢 Used by\n- 🔗 URL fields\n- 📅 Date Fields\n- ⚙ Algorithm-related\n- 📊 Stats\n- 📝 Log\n\n\n\n## ❔ Legend:\n\n**Status:**\n- 🚧 Work in Progress\n- 👁️‍🗨️ Documentation is ready for review & QA\n- ✔ Documentation is ready\n\n- 🔶 Items in a list\n- ▶ Providing an code/data example\n- \n- ❗ Important\n- ⚠ Warning\n- ⛔ Prohibition\n- ❓ Attention needed: This information still requires a consensus/decision\n- 🚧 Work in Progress\n\n\n\n\n\n🔶 PLD Datapoint\n🔷 External Datapoint\n🚩 Red Flag\n\n\n✴\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n⚡ (About)\n🎯 (Usage)\n📢 (Invoked by)\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n\n\n\n**Modules**\n- 🗺 MAP\n- ⌨ BO\n- 🌐 (Website)\n- 🗃 API\n-🗄 DEI\n- 🤖 ML Funnel\n- 👨‍💻 📁 ✋ Insourcing Funnel\n- 💫 📦 🌠 Direct Feed Funnel\n- ✨ ✨ 🤲 Crowdsourcinng\n\n\n----------\n>>> Possibly move this to a page in the Wiki\n# Basic Template for Documentation\n\n\n# Status: 🚧 👁️‍🗨️ ✔\n\n## ⚡ About\n\n## 🌐 Expanded information\n\n## [GENERIC HEADER]\n\n🔶 **Item** \n\n▶ **Sample for code/data**: \n\n```\nCODE/DATA CONTENTS\n```\n\n## ⚙ ALGORITHM/CODE HEADER\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- [MODULE]\n    - 💠 \n\n## 🔗 URL fields\n\n## 📅 Date Fields\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\n\n\n",
     "contact": {
       "name": "The IO Foundation",
       "email": "Contact@ProjectLockdown.net"
     }
   },
-  "servers": [
-    {
-      "url": "http://localhost:3000"
-    },
-    {
-      "url": "https://TheIOFoundation.Stoplight.io",
-      "description": ""
-    }
-  ],
+  "servers": [],
   "paths": {
     "/Environments/{DSLUID}/{Module}/{EnvironmentUID}": {
       "get": {
@@ -11231,8 +11223,9 @@
         ],
         "responses": {},
         "operationId": "get-DataSetLayers",
-        "description": "Handles DataSet Layers\n\n\nGet\nParams\nDSLUID <> 0 \nReturns the DSL (DSEs only, never Snapshots) data\n\nDSLUID = 0\nReturns all the DSLs definition data (not DSEs)\n\n\n\n\n"
-      }
+        "description": "Handles DataSet Layers\n\n\nGet\nParams\nDSLUID <> 0 \nReturns the DSL (DSEs only, never Snapshots) data\n\nDSLUID = 0\nReturns all the DSLs definition data (not DSEs)\n\nFormat\n\n\n"
+      },
+      "parameters": []
     },
     "/Origins": {
       "get": {
@@ -15327,6 +15320,9 @@
           }
         },
         "description": "# Status: ✔\n\n## ⚡ About\nAn Environment object represents the collection of data that is necessary for a Module to function.\n\nIt is composed by 2 main objects:\n- [Project](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Project) global variables\n- [DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) to be rendered in the Module\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 [Environments](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/paths/~1Environments~1%7BDSLUID%7D~1%7BModule%7D~1%7BEnvironmentUID%7D/get)\n",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "EnvironmentUID": {
             "type": "string",
@@ -15352,15 +15348,18 @@
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
         },
         "required": [
           "EnvironmentUID",
           "DSL",
           "Project"
-        ],
-        "x-tags": [
-          "Models"
         ]
       },
       "Territory": {
@@ -15686,8 +15685,11 @@
           "DSLUID": {
             "type": "string"
           },
-          "": {
-            "type": "string"
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
         }
       },
@@ -15946,7 +15948,7 @@
               "$ref": "#/components/schemas/Category"
             }
           },
-          "DSE": {
+          "DataSetEntries": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DataSetEntry"
@@ -15999,12 +16001,6 @@
               "BO: Review",
               "Flag: XXX"
             ]
-          },
-          "SourceInstances": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SourceInstance"
-            }
           }
         }
       },
@@ -16180,6 +16176,9 @@
         "title": "🚧 TimeMachine",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nREPLACED BY SOURCE???\n\n\nObjects describing all the different Time Machines used to back up Sources.",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "TimeMachineUID": {
             "type": "string",
@@ -16212,35 +16211,42 @@
           },
           "DateFirstCreated": {
             "$ref": "#/components/schemas/Date"
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "Snapshot": {
-        "title": "🚧 Snapshot",
+        "title": "👁️‍🗨️ Snapshot",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n###Accessed by\nMAP\n\nSnapshots are generated for all data to be represented in MAP, regardless of their Origin type.\n\nIt stores a whole\n\n\n\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote:\nRecalculating Snapshots can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n@@@Note2:\nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n\n###DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\n###URL fields\nURLCode\nWhere in the code this snapshot is generated.\n\n###Date fields\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\nDateLastUpdated\n\nDateFirstCreated\n",
+        "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nA Snapshot is represents the individual, daily value of a datapoint. They are used to render the datapoint's value on MAP in a sinple and efficient way, avoiding complex and resource comsiming calculations in the client.\n\nSnapshots are stored in Answer objects. This allows to reuse the same Model for both RAW and Snapshot data since there is no difference between both.\nFor more information about RAW and Snapshot data, see the diagram below.\n\n![image](https://user-images.githubusercontent.com/9198668/104857302-69abf700-5952-11eb-9918-93a6736af696.png)\n❓ >> Make proper diagram\n\n\n## 🌐 Expanded information\nMore information about Snapshots can be found on the \n\n## Snapshot generation\nSnapshots can be generated in a number of ways.\n\n\n🔶 **Deduced** - Generated by applying some sort of methodology over the DSE data to extract a pattern that is relevant. This type of snapshot is generated by a PLD script based on the data obtained from all the 📦 [DataSet Entry](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetEntry) in a 📦 [DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) or from the **Encoded Snapshopt** data from an external 3rd party (see below).\n\n**Examples**\n- COVID-19 NPIs: Military presence policy without DateEnd\n- COVID-19 NPIs: Schools closed for over 3 months\n\n▶ **Snapshot example from PLD DSL RAW data**: A RAW datapoint encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"RAW\" \n  - GeneratedBy: \"Funnel:IS\"\n  - Value: \"3\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"03/01/2020'\n```\nwould generate a Snapshot encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"3\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020\"\n```\n\n▶ **Snapshot example from a 3rd party ENDCODED Snapshot data** (see below): \nFollowing the example indicated above, a Snapshot encoded with an [Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this (which was obtained from a 3rd party \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"125.000\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020'\n \n - Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"147.000\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020'\n \n  - Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"152.000\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020'\n```\nwould generate a Snapshot encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"0\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"1\"\n  - DateStart: \"02/01/2020\"\n  - DateEnd: \"02/01/2020\"\n\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: Snapshot\"\n  - Value: \"0\"\n  - DateStart: \"03/01/2020\"\n  - DateEnd: \"03/01/2020\"\n```\n\n\n🔶 **Encoded** - Generated by a PLD script out of data obtained from 3rd party sources, typically APIs. This is used to translate 3rd party data in a format that can be easily processed by MAP.\n\n**Examples**\n- World population by territory\n- COVID-19 declared cases\n\n**Snapshot example**\nA 3rd party segment of data encoded like this \n```\n- Country\n  - Name: Malaysia \n  - Year: 2019\n  - Population: 43.000.000\n```\nwould generate a Snapshot encoded with an 📦[Answer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Answer) like this \n```\n- Answer\n  - Type: \"Snapshot\" \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"43.000.000\"\n  - DateStart: \"01/01/2020\"\n  - DateEnd: \"01/01/2020\"\n \n [...]\n \n- Answer\n  - Type: \"Snapshot' \n  - GeneratedBy: \"Algorithm: API\"\n  - Value: \"43.000.000\"\n  - DateStart: \"31/12/2020\"\n  - DateEnd: \"31/12/2020\"\n```\n\n## SourceTypes and Snapshots\nEach 📦[DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) has a list of approved 📦[SourceType](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/SourceType) from which data is extracted to generate the RAW data for its datapoints.\n\n❗ Each SourceType generates its own Snapshot per dataproint.\nThis is represented in the SourceTypeUID field.\n\n\n## ⚙ Generating Snapshots ❓\n\n**Recalculating Snapshots** can be done\n- Triggered on the spot\n- Scheduled\n- Scheduled with execution triggered by some flag or a pending queue\n\n**General Snapshot generation**\n- Each DSL has a FirstDate and and LastDate\n- When creating a new DSL, all DPs get a Snapshot PER SourceType that is initialized.\n- Compression applied(?)\n- When a new DP is entered for a specific SourceType then\n    - All such snapshots are recalculated\n- When a new DP is entered with StartDate < FirstDate then\n    - All Snapshots of that DSL are expanded \"to the left\"\n    - FirstDate = StartDate\n    - All such snapshots are recalculated\n- When a new DP is entered with LastDate < EndDate then\n    - All Snapshots of that DSL are expanded \"to the right\"\n    - LastDate = EndDate \n    - All such snapshots are recalculated\n\nNote: \nWe need to look into compression while being able to filter PER DATE RANGE unless we download ALL the range since it would be compressed.\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- MAP\n    - 💠 [Environments](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/paths/~1Environments~1%7BDSLUID%7D~1%7BModule%7D~1%7BEnvironmentUID%7D/get)\n    (Indirecly)\n\n## 🔗 URL fields\n- URLCodebase: Perrmalink to the code where this snapshot is generated.\n\n## 📅 Date Fields\n- DateFirstCreated: Date and time when the Snapshot was generated for the first time.\n- DateLastUpdated: Date and time when the Snapshot was last generated.\n\n❓ Should this information go on Logs instead?\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\nXXXTimeRange\nTHIS MAY NOT BE NEEDED IF WE CONSIDER FIRSTDATE & LASTDATE FROM THE DSL\nPrepopulated.\nThe range extends from \n- FirstDate\nto\n- LastDate\nfor EACH DSL.\n\nXXXFrequency @@@LOOK INTO THIS - NOT SURE IT IS FOR DATE OBJECT\nIndicates how often does the snapshot get rebuilt.\nReference: First day of current year.\n\n",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "SnapshotUID": {
             "type": "string",
             "description": "Universal ID\n🚧 Document how it is generated"
           },
           "SourceTypeUID": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the SourceType associated to this Snapshot."
           },
           "DSLUID": {
-            "type": "string"
+            "type": "string",
+            "description": "DSL to which this Snapshot is associated with."
           },
           "Type": {
             "type": "string",
             "enum": [
-              "DataPoint",
-              "Red Flag",
-              "Territory Status",
-              "External"
-            ]
+              "DEDUCED",
+              "ENCODED"
+            ],
+            "description": "Indicates the type of Snapshot.\nSee Model documentation for more details."
           },
           "XXXFrequency": {
             "type": "string",
@@ -16261,25 +16267,38 @@
           },
           "Answers": {
             "type": "array",
+            "description": "Collection of Answers conforming ",
             "items": {
               "$ref": "#/components/schemas/Answer"
             }
           },
           "URLCodebase": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            }
+            "$ref": "#/components/schemas/Link"
           },
           "DateLastUpdated": {
             "$ref": "#/components/schemas/Date"
           },
           "DateFirstCreated": {
             "$ref": "#/components/schemas/Date"
+          },
+          "URLCodebaseBookmarkID": {
+            "type": "string",
+            "description": "ID used in the codebase to bookmark where in the code is this Snapshot generated.\n\nThe URLCodebase field is generated with a script that seeks for this bookmark ID then extracts the URL."
+          },
+          "Log": {
+            "type": "array",
+            "description": "🚧\nLog of operations related to this object.",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
         },
-        "x-tags": [
-          "Models"
+        "required": [
+          "SnapshotUID",
+          "SourceTypeUID",
+          "DSLUID",
+          "Type",
+          "Answers"
         ]
       },
       "Layout": {
@@ -16355,6 +16374,9 @@
         "title": "🚧 License",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nIn Short:\n\n- Each Module has different components\nEx: API has different Endpoints\nEx: BO has different interfaces/pages/screens\n\n- Each component allows a number of Operations on them\n\n",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "LicenseUID": {
             "type": "string",
@@ -16385,11 +16407,14 @@
                 }
               }
             }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "Project": {
         "title": "👁️‍🗨️ Project",
@@ -16740,6 +16765,9 @@
             ]
           }
         },
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "ProjectUID": {
             "type": "string",
@@ -16802,6 +16830,12 @@
             "items": {
               "$ref": "#/components/schemas/Stat"
             }
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
         },
         "required": [
@@ -16809,9 +16843,6 @@
           "GlobalVars",
           "Name",
           "Description"
-        ],
-        "x-tags": [
-          "Models"
         ]
       },
       "Right": {
@@ -17325,6 +17356,9 @@
         "title": "👁️‍🗨️ Date",
         "type": "object",
         "description": "# Status: 👁️‍🗨️\n\n## ⚡ About\nAn Date object represents the collection of data that is necessary to establish a _date & time_ and to describe its function.\n\nDates can be generated though one of the several [Funnels](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/Funnels) and according to transparent algorithms (see 📑 documentation).\n\n🔥 The actual Date value is stored in 📑 XXX format in 2 different fields:\n- Value: As entered via [Funnel](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/Funnels)\n- valueUTC: Converted to UTC (GMT+0), which enables a properly referenced timeline of events.\n\nThe Type field indicates what kind of information the Link points to:\n\n📑 \n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n📑 Listing of Stats & their definitions\n\n## 📢 Used by\n- 💠 \n\n## ❓ DUBIOUS FIELDS\nHighlights: Where the text is from where the Date may have been extracted.\nLinks: Is this necessary? (Documentation?, Codebase?)",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "DateUID": {
             "type": "string",
@@ -17405,9 +17439,6 @@
           "ValueUTC",
           "GeneratedBy",
           "UI"
-        ],
-        "x-tags": [
-          "Models"
         ]
       },
       "Audience": {
@@ -17492,7 +17523,7 @@
       "Answer": {
         "title": "🚧 Answer",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\nNote:\nFor DSEs\nDateStart + DateEnd typially different\n\nFor Snapshopts\nDateStart = DateEnd (Can even ignore DateEnd)",
+        "description": "# Status: 🚧\n\n## ⚡ About\nAnswers are the objects storing the values of PLD datapoints, both in RAW and as Snapshots.\n\nNote:\nFor RAW\nDateStart and DateEnd typially different\n\nFor Snapshots\nDateStart = DateEnd (Can even ignore DateEnd)\n\n## 🌐 Expanded information\nFor more information about this model, visit \n\n## Snapshot generation\n\n🔶 **Item** \n\n▶ **Sample for code/data**: \n\n```\nCODE/DATA CONTENTS\n```\n## [GENERIC HEADER]\n\n## ⚙ ALGORITHM/CODE HEADER\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- [MODULE]\n    - 💠 \n\n## 🔗 URL fields\n-URLCodebase: Permalink to the piece of code that has generated this Anwer object.\n\n## 📅 Date Fields\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\n\n\n\n# Status: 🚧\n\n## ⚡ About\n\n\nTypes:\nRAW\nData obtained through some of the Funnels.\n\n\n\nSnapshot\nData is generated out of processing RAW data.\n\n\n\n## 📢 Used by\n- 💠 \n\n\n\n\n\n\n",
         "x-examples": {
           "example-1": {
             "AnswerUID": "string",
@@ -17683,17 +17714,50 @@
           },
           "Details": {
             "type": "string",
-            "description": "sddfsdfssdfsdf\n\n\n"
+            "description": "Extra details about this Answer.\n\n"
           },
           "DSEUID": {
+            "type": "string",
+            "description": "DataSetEntry to which this Answer belongs to."
+          },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "RAW",
+              "Snapshot"
+            ],
+            "description": "Indicates the type of Answer. See Model documentation for more details."
+          },
+          "URLCodebase": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "URLCodebaseBookmarkID": {
             "type": "string"
+          },
+          "Log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            }
           }
-        }
+        },
+        "required": [
+          "AnswerUID",
+          "Value",
+          "DateStart",
+          "DateEnd",
+          "DataPointUID",
+          "DSEUID",
+          "Type"
+        ]
       },
       "Response": {
         "title": "🚧 Response",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "ResponseUID": {
             "type": "string"
@@ -17702,8 +17766,10 @@
             "type": "string",
             "description": "Indicates what did generated the value in the field.\n\nOptions:\n- Funnel: The value was introduced by the funnel process\n- Algorithm: The value was inferred by an algorithm in the back end when saving the field.\n\n\nThe Log indicates who did the operation.\n",
             "enum": [
-              "Funnel",
-              "Algorithm"
+              "Funnel: IS",
+              "Funnel: CS",
+              "Funnel: ML",
+              "Funnel: DF"
             ]
           },
           "???Highlights": {
@@ -17717,10 +17783,7 @@
             "type": "string",
             "description": "Value for the Answer field\nOR\nThe Snapshop value"
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "DataSetEntry": {
         "title": "🚧 DataSetEntry",
@@ -17856,8 +17919,15 @@
         "name": "Format",
         "in": "path",
         "schema": {
-          "type": "string"
-        }
+          "type": "string",
+          "enum": [
+            "JSON",
+            "CSV",
+            "XLS",
+            "HXL"
+          ]
+        },
+        "description": "Used to set the format in which the data is to be obtained from the endpoint."
       }
     },
     "securitySchemes": {},
