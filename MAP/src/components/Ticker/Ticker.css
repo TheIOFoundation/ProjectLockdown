@@ -1,28 +1,28 @@
-.ticker ul {
+.ld-ticker ul {
   list-style: none;
   margin: 0;
   padding: 20px 0 0 0;
   font-family: 'Montserrat', sans-serif;
 }
 
-.ticker li {
+.ld-ticker li {
   display: flex;
   margin-bottom: 20px;
 }
 
-.new_entry {
+.ld-ticker--dot.new_entry {
   background-color: #769de2;
 }
-.promoting_project {
+.ld-ticker--dot.promoting_project {
   background-color: #ebb577;
 }
-.rectification {
+.ld-ticker--dot.rectification {
   background-color: #d36d6b;
 }
-.promoting_petition {
+.ld-ticker--dot.promoting_petition {
   background-color: #ba87f0;
 }
-.announcement {
+.ld-ticker--dot.announcement {
   background-color: #9fc184;
 }
 

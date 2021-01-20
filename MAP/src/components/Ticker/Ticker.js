@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { updatesService } from '../../services/updatesService.js';
 import { offline, loading } from '../../assets/icons/icons.js';
+import './Ticker.css';
 import '../../style/shared.styles.scss';
 
 const UPDATE_TYPES = {
@@ -52,7 +53,7 @@ export function Ticker() {
   }
 
   return (
-    <div className=".ticker">
+    <div className="ld-ticker">
       <ul>
         {updates?.data?.updates?.map(update => (
           <li key={update.date}>
@@ -60,7 +61,7 @@ export function Ticker() {
               <div className="ld-ticker--dot-container">
                 <div
                   aria-label={UPDATE_TYPES[update.type.toLowerCase()]}
-                  className={'ld-ticker--dot' + update.type.toLowerCase()}
+                  className={'ld-ticker--dot ' + update.type.toLowerCase()}
                 ></div>
               </div>
               <div className="ld-ticker--line"></div>
