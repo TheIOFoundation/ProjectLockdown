@@ -37,7 +37,9 @@ export function Expandable(props) {
 
       <div
         ref={detail}
-        className="ld-expandable--detail {expanded ? 'ld-expandable--expanded' : 'ld-expandable--closed'}"
+        className={`ld-expandable--detail ${
+          expanded ? 'ld-expandable--expanded' : 'ld-expandable--closed'
+        }`}
         role="region"
         tabIndex="-1"
       >
