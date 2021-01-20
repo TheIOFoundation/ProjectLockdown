@@ -5,4 +5,10 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/preset-create-react-app',
   ],
+  webpackFinal: config => {
+    config.resolve.alias['../../utils/setFavIcon.js'] = require.resolve(
+      './__mocks__/setFavicon.js'
+    );
+    return config;
+  },
 };
