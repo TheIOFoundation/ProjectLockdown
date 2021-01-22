@@ -2,9 +2,8 @@
 name: "[PROD] API Definition"
 about: Define an API for the Back End.
 title: "[API] "
-labels: "Module: API, \U0001F6A7 Stage: Not Ready, Project: PLD, ⌨ Need: Code, ⌨ Team: Devs, \U0001F4A7
-  Priority:
-  Medium, \U0001F4D1 Team: Docs, ⌨ Team: Devs, \U0001F511 Keyword: Stoplight\U0001F6A7 Stage: Not Ready"
+labels: "Module: API, Project: PLD, ⌨ Need: Code, ⌨ Team: Devs, \U0001F4A7 Priority:
+  Medium, \U0001F4D1 Team: Docs, \U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
