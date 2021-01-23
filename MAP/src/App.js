@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
+import Totals from './components/Totals/Totals';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +17,7 @@ function App() {
     <>
       <LoadingAnimation isLoading={isLoading} />
       <Map setIsLoading={setIsLoading}></Map>
+      <Totals dark={isDark} />
       <Legend dark={isDark} />
     </>
   );
