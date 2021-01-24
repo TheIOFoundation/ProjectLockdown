@@ -2,8 +2,7 @@
 name: "[ADM] Procedure"
 about: Create a request for a procedure or task.
 title: "[ADM] Procedure: "
-labels: "Module: ADM\U0001F6A7 Stage: Not Ready, Project: PLD, Module: ADM, \U0001F4A7 Priority:
-  Medium, \U0001F5C3 Need:
+labels: "Module: ADM, Project: PLD, \U0001F4A7 Priority: Medium, \U0001F5C3 Need:
   Procedure, \U0001F6A7 Stage: Not Ready"
 assignees: ''
 

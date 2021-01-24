@@ -1,7 +1,7 @@
 ---
 name: "[ADM] Tool needed"
 about: Describe a tool/platform that Project Lockdown needs to identify.
-title: "[NEED]"
+title: "[ADM] Looking for:"
 labels: "Project: PLD, ⚙ Team: Infrastructure, \U0001F4A7 Priority: Medium, \U0001F6A7
   Stage: Not Ready, \U0001F6E0 Need: Tool"
 assignees: ''
@@ -11,6 +11,10 @@ assignees: ''
 ![logo](https://user-images.githubusercontent.com/9198668/85232285-68543380-b430-11ea-8353-1aafb79baf78.png) 
 
 # INSTRUCTIONS
+
+**NOTE: Use this template ONLY if the tool is exclusively for Project Lockdown.
+If the scope of use is global, please post it under https://github.com/TheIOFoundation/TIOF**
+
 - Fill up this template (be as accurate as possible)
 - Review Labels. You should at least have the following:
  -- Need: Tool [MANDATORY]
