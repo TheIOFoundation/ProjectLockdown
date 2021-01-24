@@ -1,4 +1,6 @@
 .Header {
+  z-index: 2000;
+  display: flex;
   position: relative;
   top: 0;
   left: 0;
@@ -7,9 +9,24 @@
   align-items: center;
   height: 55px;
   width: 100%;
-  background-color: #333333;
+  background-color: white;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12), 0 8px 8px 0 rgba(0, 0, 0, 0.24);
 }
 img {
   margin: auto;
+}
+
+.Header .dark {
+  position: relative;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 55px;
+  width: 100%;
+  /* background-color: rgba(51, 51, 51); */
+  background-color: #333333;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12), 0 8px 8px 0 rgba(0, 0, 0, 0.24);
 }

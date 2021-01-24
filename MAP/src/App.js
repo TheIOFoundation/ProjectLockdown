@@ -19,7 +19,7 @@ function App() {
     <>
       <LoadingAnimation isLoading={isLoading} />
       <Map setIsLoading={setIsLoading}></Map>
-      <Header />
+      <Header dark={isDark} />
       <Totals dark={isDark} />
       <Legend dark={isDark} />
       <LanguageSelector dark={isDark} />
