@@ -1,6 +1,7 @@
 .Totals {
   z-index: 2000;
   display: flex;
+  position: relative;
   flex-direction: row;
   height: 100%;
   width: fit-content;

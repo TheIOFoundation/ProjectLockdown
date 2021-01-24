@@ -4,6 +4,8 @@ import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
 import Totals from './components/Totals/Totals';
+import Header from './components/Header/Header';
+import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,8 +19,10 @@ function App() {
     <>
       <LoadingAnimation isLoading={isLoading} />
       <Map setIsLoading={setIsLoading}></Map>
+      <Header />
       <Totals dark={isDark} />
       <Legend dark={isDark} />
+      <LanguageSelector dark={isDark} />
     </>
   );
 }
