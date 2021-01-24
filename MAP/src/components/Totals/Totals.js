@@ -3,7 +3,7 @@ import './Totals.css'
 
 const Totals = ({dark}) => {
   return (
-    <div style={{backgroundColor: 'white'}} className={`Totals ${dark && 'dark'}`}>
+    <div style={{backgroundColor: `${dark ? '#333333' : 'white'}`}} className={`Totals ${dark && 'dark'}`}>
       <div>
         <div className='label'>
           Territories in lockdown

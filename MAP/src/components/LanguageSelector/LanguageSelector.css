@@ -1,0 +1,124 @@
+.SelectedLang {
+  position: absolute;
+  top: 25vh;
+  right: 2.5vw;
+  height: 30px;
+  min-width: 30px;
+  width: fit-content;
+  padding: 0px;
+  padding-left: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  color: #333333;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.SelectedLang:hover {
+  cursor: pointer;
+}
+
+.SelectedLang .dark {
+  background-color: #333333;
+  color: #fff;
+}
+
+.CircleBtn {
+  margin-left: 5px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.CircleBtn .dark {
+  background-color: #333333;
+  color: #fff;
+}
+
+.LangOptions {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: calc(25vh + 37px);
+  right: 5vw;
+  max-width: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+  padding: 5px 0px;
+  flex-wrap: no-wrap;
+}
+
+/* .LangOptions */
+.show {
+  max-width: 50vw;
+  flex-wrap: wrap;
+}
+
+.LangOptions .LangOpt {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #333333;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  margin-left: 10px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* .LangOpt .dark .active {
+  border: 10px solid #fff;
+  background-color: #828282!important;
+} */
+
+.LangOpt .active {
+  border: 10px solid #333333;
+  background-color: #e0e0e0;
+}
+
+
+
+.LangOptions .dark {
+  background-color: #333333;
+  color: #fff;
+}
+.LangOptions.dark:hover {
+  background-color: #828282;
+}
+
+ .LangOpt .dark:hover {
+  background-color: #828282;
+}
+ .LangOpt:hover {
+  cursor: pointer;
+  border: 0px solid rgba(51, 51, 51, 0.5);
+  background-color: #e0e0e0;
+}
+
+/* .LangOptions */
+.LangOpt.active {
+  border: 0px solid #333333;
+  background-color: #e0e0e0;
+}
+
+.LangOpt, .active, .dark {
+  border: 0px solid #fff;
+  background-color: #828282;
+}
