@@ -1,3 +1,8 @@
+.LangSelector .dark{
+ background-color: #333333;
+ color: #fff!important;
+}
+
 .SelectedLang {
   position: absolute;
   top: 25vh;
@@ -9,7 +14,7 @@
   padding-left: 10px;
   border-radius: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-  color: #333333;
+  color: #333333!important;
   background-color: #fff;
   display: flex;
   justify-content: space-around;
@@ -23,7 +28,7 @@
 }
 
 .SelectedLang .dark {
-  background-color: #333333;
+  background-color: #333;
   color: #fff;
 }
 

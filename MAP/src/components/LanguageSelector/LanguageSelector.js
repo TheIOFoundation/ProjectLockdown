@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { world } from '../../assets/icons/world'
-import './LanguageSelector.css'
+import * as classes from './LanguageSelector.module.css'
 
-const LanguageSelector = ({dark}) => {
+const LanguageSelector = ({ dark }) => {
   const [showLanguages, setShowLanguages] = useState(false)
 
   const [selectedLang, setSelectedLang] = useState('en')
@@ -13,19 +13,26 @@ const LanguageSelector = ({dark}) => {
     setShowLanguages((prevState) => !prevState)
   }
   return (
-    <div 
-    // className={`${dark ? 'dark' : ''}`} 
-    onClick={toggleShowLanguages}>
-      <div className={`${dark ? 'dark SelectedLang' : 'SelectedLang'}`} >
+    <div
+      className={`${classes.LangSelector} ${dark && classes.dark }`}
+      onClick={toggleShowLanguages}
+    >
+      <div className={`${classes.SelectedLang} ${dark && classes.dark}`}>
         {selectedLang.toUpperCase()}
-        <div className={`${dark ? 'dark CircleBtn' : 'CircleBtn'}`}>{world}</div>
+        <div className={`${classes.CircleBtn} ${dark ? classes.dark : ''}`}>
+          {world}
+        </div>
       </div>
-      <div className={`LangOptions ${showLanguages && 'show'}`}>
+      <div
+        className={`${classes.LangOptions} ${showLanguages && classes.show}`}
+      >
         {languages.map((language) => {
           return (
             <div
-            // style={{color: `${dark ? 'white' : '#333333'}`}}
-              className={`LangOpt ${language === selectedLang ? 'active' : ''} ${dark ? 'dark ' : ''}`}
+              style={{ color: `${dark ? 'white' : '#333333'}` }}
+              className={`${classes.LangOpt} ${
+                language === selectedLang && classes.active
+              } ${dark && classes.dark}`}
               onClick={() => setSelectedLang(language)}
             >
               {language.toUpperCase().replace('-', '\n')}
