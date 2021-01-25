@@ -3,6 +3,7 @@ import { info, settings, refresh, add } from '../../assets/icons/icons.js';
 import { addPwaUpdateListener } from '../../utils/addPwaUpdateListener.js';
 import { installMediaQueryWatcher } from '../../utils/media-query.js';
 import { dialogService } from '../../services/dialogService.js';
+import '../../style/main.css';
 
 const ICONS = {
   info,
