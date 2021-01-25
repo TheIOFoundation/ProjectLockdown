@@ -1,6 +1,6 @@
 import CountriesSearcher from './CountriesSearcher';
 
-export default {
+const parameters = {
   title: 'Component/CountriesSearcher',
   component: CountriesSearcher,
   argTypes: {
@@ -22,3 +22,5 @@ Open.args = {
   ...Primary.args,
   initialState: { showSearchInput: true },
 };
+
+export default parameters;

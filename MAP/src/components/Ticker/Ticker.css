@@ -1,0 +1,90 @@
+.ld-ticker ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0 0 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ld-ticker li {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.ld-ticker--dot.new_entry {
+  background-color: #769de2;
+}
+.ld-ticker--dot.promoting_project {
+  background-color: #ebb577;
+}
+.ld-ticker--dot.rectification {
+  background-color: #d36d6b;
+}
+.ld-ticker--dot.promoting_petition {
+  background-color: #ba87f0;
+}
+.ld-ticker--dot.announcement {
+  background-color: #9fc184;
+}
+
+.ld-ticker {
+  width: 100%;
+}
+
+.ld-ticker--bar {
+  width: 15px;
+  display: flex;
+  margin-right: 20px;
+  flex-direction: column;
+}
+
+.ld-ticker--dot-container {
+  display: flex;
+  justify-content: center;
+  width: 15px;
+  height: 20px;
+}
+
+.ld-ticker--dot {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+
+.ld-ticker--line {
+  width: 15px;
+  height: 100%;
+  position: relative;
+}
+
+.ld-ticker--line::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid lightgrey;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+.ld-ticker--title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.ld-ticker--content {
+  margin-bottom: 10px;
+}
+.ld-ticker--link {
+  margin-bottom: 10px;
+}
+.ld-ticker--link a {
+  color: var(--ld-active);
+}
+.ld-ticker--date {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.ld-ticker--text {
+  font-size: 14px;
+}

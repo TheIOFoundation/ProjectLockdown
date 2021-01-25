@@ -2,15 +2,15 @@
 //   role="img"
 //   aria-labelledby="srInfo"
 //   xmlns="http://www.w3.org/2000/svg"
-//   class="icon icon-tabler icon-tabler-info-circle"
+//   className="icon icon-tabler icon-tabler-info-circle"
 //   width="40"
 //   height="40"
 //   viewBox="0 0 24 24"
-//   stroke-width="2"
+//   strokeWidth="2"
 //   stroke="currentColor"
 //   fill="none"
-//   stroke-linecap="round"
-//   stroke-linejoin="round"
+//   strokeLinecap="round"
+//   strokeLinejoin="round"
 // >
 //   <title id="srInfo">info</title>
 //   <path stroke="none" d="M0 0h24v24H0z" />
@@ -20,7 +20,7 @@
 // </svg>-->
 export const info = (
   <svg
-    class="icon icon-tabler icon-tabler-info-circle"
+    className="icon icon-tabler icon-tabler-info-circle"
     aria-labelledby="srInfo"
     width="28"
     height="29"
@@ -34,20 +34,20 @@ export const info = (
     />
   </svg>
 );
-const settings = (
+export const settings = (
   <svg
     role="img"
     aria-labelledby="srSettings"
     xmlns="http://www.w3.org/2000/svg"
-    class="icon icon-tabler icon-tabler-settings"
+    className="icon icon-tabler icon-tabler-settings"
     width="40"
     height="40"
     viewBox="0 0 24 24"
-    stroke-width="2"
+    strokeWidth="2"
     stroke="currentColor"
     fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
     <title id="srSettings">settings</title>
     <path stroke="none" d="M0 0h24v24H0z" />
