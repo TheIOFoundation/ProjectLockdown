@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import '../../style/main.css';
 import './TabMenu.scss';
 import { Expandable } from '../Expandable/Expandable';
 import { Ticker } from '../Ticker/Ticker';
@@ -344,7 +345,7 @@ export class TabMenu extends Component {
               </Tabs>
             </nav>
           </div>
-          <div className="{this.state.showLateralMenu ? 'ld-menu--content' : ''}">
+          <div className={this.state.showLateralMenu ? 'ld-menu--content' : ''}>
             <div className="mb-only">
               <div className="ld-menu--header">
                 <h1>{activeItem}</h1>
