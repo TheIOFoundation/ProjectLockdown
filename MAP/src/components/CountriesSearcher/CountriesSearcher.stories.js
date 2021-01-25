@@ -15,6 +15,11 @@ const Template = args => {
 export const Primary = Template.bind({});
 Primary.args = {
   i18n: { locale: 'en, en-US' },
+  map: {
+    flyTo: function () {
+      console.log(...arguments);
+    },
+  },
 };
 
 export const Open = Template.bind({});
