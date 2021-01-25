@@ -1,24 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { fetchTotals } from '../../services'
 import './Totals.css'
 
-const Totals = ({dark}) => {
+const Totals = ({ dark, startDate, endDate, selectedDate = '2021-01-01', daysRange = 10 }) => {
+  const [totalsData, setTotalsData] = useState({
+    lockdown: 0,
+    affected: 0,
+  })
+  useEffect(() => {
+    fetchTotals(startDate, endDate, selectedDate, daysRange)
+      .then((res) => {
+        setTotalsData(res)
+        console.log(res[Object.keys(res)[0]])
+      })
+      .catch((e) => console.log(e))
+  })
   return (
-    <div style={{backgroundColor: `${dark ? '#333333' : 'white'}`, marginTop: '3vh'}} className={`Totals ${dark && 'dark'}`}>
+    <div
+      style={{
+        backgroundColor: `${dark ? '#333333' : 'white'}`,
+        marginTop: '3vh',
+      }}
+      className={`Totals ${dark && 'dark'}`}
+    >
       <div>
-        <div className='label'>
-          Territories in lockdown
-        </div>
-        <div className='data'>
-          56
-        </div>
+        <div className='label'>Territories in lockdown</div>
+        {/* <div className='data'>{totalsData[Object.keys(totalsData)[0]].lockdown}</div> */}
+        <div className='data'>{totalsData.lockdown}</div>
       </div>
       <div>
-      <div className='label'>
-          people affected
-        </div>
-        <div className='data'>
-        4,479,114,543
-        </div>
+        <div className='label'>people affected</div>
+        {/* <div className='data'>{totalsData[Object.keys(totalsData)[0]].affected}</div> */}
+        <div className='data'>{totalsData.affected}</div>
       </div>
     </div>
   )
