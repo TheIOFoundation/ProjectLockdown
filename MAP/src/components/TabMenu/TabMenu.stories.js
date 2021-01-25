@@ -17,7 +17,6 @@ Primary.args = {
   ...SettingsStories.Primary.args,
   ...TabsStories.Primary.args,
   ...TickerStories.Primary.args,
-  locale: { t: s => s },
   opened: false,
   close: () => {
     console.log('close');
