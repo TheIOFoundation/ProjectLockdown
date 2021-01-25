@@ -4,7 +4,7 @@ import * as SettingsStories from '../Settings/Settings.stories';
 import * as TabsStories from '../Tabs/Tabs.stories';
 import * as TickerStories from '../Ticker/Ticker.stories';
 
-export default {
+const parameters = {
   title: 'Component/TabMenu',
   component: TabMenu,
 };
@@ -26,3 +26,5 @@ Primary.args = {
   },
   isMobile: false,
 };
+
+export default parameters;

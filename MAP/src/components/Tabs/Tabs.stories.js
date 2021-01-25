@@ -1,6 +1,6 @@
 import Tabs from './Tabs';
 
-export default {
+const parameters = {
   title: 'Component/Tabs',
   component: Tabs,
   argTypes: {},
@@ -27,3 +27,5 @@ Primary.args = {
   close: () => console.log('onClose'),
   switchContent: val => console.log('onSwitchContent', val),
 };
+
+export default parameters;

@@ -93,6 +93,8 @@ export default class Tabs extends Component {
           );
         }
         break;
+      default:
+        return;
     }
   }
 

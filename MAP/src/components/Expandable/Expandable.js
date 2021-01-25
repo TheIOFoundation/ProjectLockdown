@@ -15,7 +15,7 @@ export function Expandable(props) {
     if (props.currentDropdown !== props.toggle) {
       setExpanded(false);
     }
-  }, [props.currentDropdown]);
+  }, [props.currentDropdown, props.toggle]);
 
   return (
     <div className="ld-expandable">

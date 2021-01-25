@@ -34,7 +34,7 @@ export const info = (
     />
   </svg>
 );
-const settings = (
+export const settings = (
   <svg
     role="img"
     aria-labelledby="srSettings"

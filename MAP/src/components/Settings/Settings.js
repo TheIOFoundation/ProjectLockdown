@@ -24,13 +24,16 @@ export function Settings({ onClose, locale }) {
     }
   }
 
-  useEffect(async () => {
-    addPwaUpdateListener(updateAvailable => {
-      setPwaUpdateAvailable(updateAvailable);
-    });
-    let dark = localStorage.getItem('darkmode');
-    dark = dark !== 'false' && dark !== null;
-    setDarkMode(dark);
+  useEffect(() => {
+    async function addListener() {
+      addPwaUpdateListener(updateAvailable => {
+        setPwaUpdateAvailable(updateAvailable);
+      });
+      let dark = localStorage.getItem('darkmode');
+      dark = dark !== 'false' && dark !== null;
+      setDarkMode(dark);
+    }
+    addListener();
   }, []);
 
   return (

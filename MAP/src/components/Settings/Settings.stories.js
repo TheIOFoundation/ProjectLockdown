@@ -1,6 +1,6 @@
 import { Settings } from './Settings';
 
-export default {
+const parameters = {
   title: 'Component/Settings',
   component: Settings,
   argTypes: {
@@ -30,3 +30,5 @@ Primary.args = {
     console.log('onClose');
   },
 };
+
+export default parameters;

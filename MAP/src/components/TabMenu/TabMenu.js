@@ -63,7 +63,6 @@ const renderMenu = (
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://TIOF.Click/LockdownData"
-                        target="_blank"
                       >
                         {' '}
                         {locale.t(
@@ -81,7 +80,6 @@ const renderMenu = (
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://covid19api.com/"
-                        target="_blank"
                       >
                         {locale.t(
                           'menu.informationSection.sources.linksList.second.linkTitle'
@@ -91,7 +89,11 @@ const renderMenu = (
                       {locale.t(
                         'menu.informationSection.sources.linksList.second.text'
                       )}{' '}
-                      <a href="https://systems.jhu.edu/" target="_blank">
+                      <a
+                        href="https://systems.jhu.edu/"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
                         {locale.t(
                           'menu.informationSection.sources.linksList.second.highlight'
                         )}
@@ -118,7 +120,6 @@ const renderMenu = (
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://tiof.click/LockdownData"
-                      target="_blank"
                     >
                       {locale.t(
                         `menu.contribution.contributionLinks.firstLink`
@@ -129,7 +130,6 @@ const renderMenu = (
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://tiof.click/pldpsf"
-                      target="_blank"
                     >
                       {locale.t(
                         `menu.contribution.contributionLinks.secondLink`
@@ -150,6 +150,7 @@ const renderMenu = (
                   <a
                     href="https://docs.google.com/spreadsheets/d/1mVyQxxLxAF3E1dw870WHXTOLgYzmumojvzIekpgvLV0/edit?ts=5e74ac83#gid=634415797"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {locale.t('menu.informationSection.credits.highlight')}
                   </a>
@@ -324,7 +325,7 @@ export class TabMenu extends Component {
   }
 
   render() {
-    const { activeItem, updateAvailable, currentDropdown } = this.state;
+    const { activeItem, currentDropdown } = this.state;
     return this.state.showLateralMenu || this.props.isMobile === true ? (
       <>
         <div className="menu-overlay"></div>

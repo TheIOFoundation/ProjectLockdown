@@ -1,6 +1,6 @@
 import { Expandable } from './Expandable';
 
-export default {
+const parameters = {
   title: 'Component/Expandable',
   component: Expandable,
 };
@@ -25,3 +25,5 @@ Primary.args = {
   currentDropdown,
   onDropDown: id => (currentDropdown = id),
 };
+
+export default parameters;
