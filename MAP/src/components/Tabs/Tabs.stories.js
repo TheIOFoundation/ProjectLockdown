@@ -11,10 +11,18 @@ const Template = args => <Tabs {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   children: [
-    <button id="info">info</button>,
-    <button id="settings">settings</button>,
-    <button id="updates">updates</button>,
-    <button id="contribute">contribute</button>,
+    <button id="info" key={0}>
+      info
+    </button>,
+    <button id="settings" key={1}>
+      settings
+    </button>,
+    <button id="updates" key={2}>
+      updates
+    </button>,
+    <button id="contribute" key={3}>
+      contribute
+    </button>,
   ],
   close: () => console.log('onClose'),
   switchContent: val => console.log('onSwitchContent', val),
