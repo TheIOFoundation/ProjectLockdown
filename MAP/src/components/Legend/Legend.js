@@ -1,7 +1,7 @@
-import React, { Component, createRef } from "react";
-import PropTypes from "prop-types";
-import "./legend.css";
-import { list } from "../../assets/icons/icons.js";
+import { Component, createRef } from 'react';
+import PropTypes from 'prop-types';
+import './legend.css';
+import { list } from '../../assets/icons/icons.js';
 
 export class Legend extends Component {
   constructor() {
@@ -20,41 +20,41 @@ export class Legend extends Component {
 
   initBtn(ref) {
     this.btn = ref;
-    ref.addEventListener("touchmove", this.onTouch);
-    ref.addEventListener("touchend", this.onTouchEnd);
+    ref.addEventListener('touchmove', this.onTouch);
+    ref.addEventListener('touchend', this.onTouchEnd);
   }
 
   // Mobile
   onTouch(e) {
     let touchLocation = e.targetTouches[0];
-    this.btn.style.left = touchLocation.pageX + "px";
-    this.btn.style.top = touchLocation.pageY + "px";
+    this.btn.style.left = touchLocation.pageX + 'px';
+    this.btn.style.top = touchLocation.pageY + 'px';
   }
   onTouchEnd(e) {
     let side = this.state.x;
     let vertical = this.state.y;
     let x = window.innerWidth || window.clientWidth;
     let y = window.innerHeight || window.clientHeight;
-    let currentVertical = Number(this.btn.style.top.replace("px", ""));
-    let currentSide = Number(this.btn.style.left.replace("px", ""));
+    let currentVertical = Number(this.btn.style.top.replace('px', ''));
+    let currentSide = Number(this.btn.style.left.replace('px', ''));
 
     if (currentVertical > y / 2) {
       if (currentVertical >= y - 150) {
-        this.btn.style.top = y - 150 + "px";
+        this.btn.style.top = y - 150 + 'px';
       }
-      vertical = "bottom";
+      vertical = 'bottom';
     } else {
       if (currentVertical <= 160) {
-        this.btn.style.top = 160 + "px";
+        this.btn.style.top = 160 + 'px';
       }
-      vertical = "top";
+      vertical = 'top';
     }
     if (currentSide > x / 2) {
-      side = "right";
-      this.btn.style.left = x - 70 + "px";
+      side = 'right';
+      this.btn.style.left = x - 70 + 'px';
     } else {
-      side = "left";
-      this.btn.style.left = "10px";
+      side = 'left';
+      this.btn.style.left = '10px';
     }
     this.setState({
       x: side,
@@ -69,17 +69,17 @@ export class Legend extends Component {
   }
 
   render() {
-    const mode = this.props.dark ? "dark" : "";
+    const mode = this.props.dark ? 'dark' : '';
     return (
       <legend
         onClick={this.onClick}
         type="legend"
-        className={["btn", mode].join(" ")}
+        className={['btn', mode].join(' ')}
         {...this.props}
       >
         {list}
         <div
-          className={`dialog ${this.state.showDialog ? "show" : ""} ${
+          className={`dialog ${this.state.showDialog ? 'show' : ''} ${
             this.props.y
           } ${this.props.x}`}
         >
@@ -128,16 +128,16 @@ Legend.propTypes = {
   /**
    * Horizontal dialog position?
    */
-  x: PropTypes.oneOf(["right", "left"]),
+  x: PropTypes.oneOf(['right', 'left']),
   /**
    * Vertical dialog position?
    */
-  y: PropTypes.oneOf(["top", "bottom"]),
+  y: PropTypes.oneOf(['top', 'bottom']),
 };
 
 Legend.defaultProps = {
   dark: false,
   // size: 'medium',
-  x: "left",
-  y: "bottom",
+  x: 'left',
+  y: 'bottom',
 };

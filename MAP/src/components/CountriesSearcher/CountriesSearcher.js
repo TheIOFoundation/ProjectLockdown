@@ -72,19 +72,19 @@ function useGeocoderHook(i18n, map, setGeocoder, setResults, setGeoResult) {
     geocoder.addTo('#blank');
     geocoder.setLanguage(i18n.locale);
     setGeocoder(geocoder);
-  }, [i18n, map]);
 
-  function onGetResult(results) {
-    let { features } = results;
-    if (features[0]) {
-      let countryName = features[0].text.toUpperCase();
-      setResults(countryName);
-      setGeoResult(features[0]);
-    } else {
-      setResults('');
-      setGeoResult({});
+    function onGetResult(results) {
+      let { features } = results;
+      if (features[0]) {
+        let countryName = features[0].text.toUpperCase();
+        setResults(countryName);
+        setGeoResult(features[0]);
+      } else {
+        setResults('');
+        setGeoResult({});
+      }
     }
-  }
+  }, [i18n, map, setGeocoder, setResults, setGeoResult]);
 }
 
 function useSearch(
