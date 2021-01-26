@@ -9,8 +9,8 @@
   margin: auto;
   text-align: center;
   text-transform: uppercase;
-  font-family: montserrat,sans-serif;
-  border-radius: 10px;    
+  font-family: montserrat, sans-serif;
+  border-radius: 10px;
   box-shadow: 1px 1px 9px -1px grey;
   background-color: white;
 }
@@ -29,7 +29,7 @@
 }
 
 .Totals .dark {
-  background-color: #333333!important;
+  background-color: #333333 !important;
   color: white;
 }
 
@@ -42,17 +42,16 @@
   font-weight: 800;
 }
 
-div:not(:last-of-type)::after {
+.LeftDiv div:not(:last-of-type)::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
+  height: 200%;
   right: 0;
   width: 1px;
   background-color: #e0e0e0;
 }
-
-
 
 /* .dt {
   display: block;

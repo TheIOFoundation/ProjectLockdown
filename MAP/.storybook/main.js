@@ -1,3 +1,4 @@
+import ThemeContext from '../src/context/ThemeContext'
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -12,3 +13,10 @@ module.exports = {
     return config;
   },
 };
+
+addDecorator(story => (
+  <ThemeContext.Provider value=''>
+    {story()}
+  </ThemeContext.Provider>
+))
+
