@@ -1,6 +1,6 @@
 import React from 'react'
 import { logo } from '../../assets/icons/icons.js'
-import './Header.css'
+import './header.css'
 
 const Header = ({ dark }) => {
   return (
