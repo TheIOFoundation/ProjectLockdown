@@ -11,6 +11,7 @@ body {
 .dark {
   --ld-text: #fff;
   background-color: #333333;
+  color: #fff;
 }
 
 code {
