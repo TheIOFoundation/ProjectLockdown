@@ -18,7 +18,7 @@ export const fetchTotals = async (
   }
 
   try {
-    const res = await api.get(`totals/lockdown/${startDate}/${endDate}`)
+    const res = await api.get(`/totals/lockdown/${startDate}/${endDate}`)
     console.log(res.data)
     return res.data[selectedDate]
   } catch (e) {

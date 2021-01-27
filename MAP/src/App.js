@@ -8,6 +8,11 @@ import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
 import ThemeContext from './context/ThemeContext';
+import format from 'date-fns/format';
+
+function toJsonString(date) {
+  return format(date, 'yyyy-MM-dd');
+}
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +38,13 @@ function App() {
   return (
     <ThemeContext.Provider value={{ isDark, setIsDark }}>
       <LoadingAnimation isLoading={isLoading} />
-      <Map setIsLoading={setIsLoading}></Map>
+      <Map
+        selectedDate={toJsonString(new Date())}
+        startDate={false}
+        endDate={false}
+        setIsLoading={setIsLoading}
+        daysRange={20}
+      ></Map>
       <TabMenu />
       <Header dark={isDark} />
       <Totals dark={isDark} />
