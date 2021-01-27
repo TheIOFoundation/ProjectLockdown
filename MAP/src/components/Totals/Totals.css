@@ -1,5 +1,5 @@
 .Totals {
-  z-index: 2000;
+  z-index: 1000;
   display: flex;
   position: relative;
   flex-direction: row;
