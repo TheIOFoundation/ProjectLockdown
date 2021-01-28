@@ -44,7 +44,7 @@ export class Map extends React.Component {
     let url = window.location.href;
     let isLocationSet = false;
     for (let country in deviceCoords) {
-      if (url.indexOf('lockdown.' + country) != -1) {
+      if (url.indexOf('lockdown.' + country) !== -1) {
         coords = deviceCoords[country];
         isLocationSet = true;
       }
@@ -399,24 +399,24 @@ export class Map extends React.Component {
       'get',
       'name_' + iso,
     ]);
-    let map = this.state.map.setLayoutProperty('country-label', 'text-field', [
-      'get',
-      'name_' + iso,
-    ]);
+    // let map = this.state.map.setLayoutProperty('country-label', 'text-field', [
+    //   'get',
+    //   'name_' + iso,
+    // ]);
   }
 
   onGetResult(results) {
-    let { features } = results;
-    if (features[0]) {
-      let countryName = features[0].text;
-      let wikidata = features[0].properties.wikidata;
-      // router.setSearchParam('wikidata', wikidata);
-      // router.setSearchParam('country', countryName);
-      // router.setSearchParam('iso2', this.state.lastCountry.iso2);
-    } else {
-      // router.setSearchParam('country', this.state.lastCountry.country);
-      // router.setSearchParam('iso2', this.state.lastCountry.iso2);
-    }
+    // let { features } = results;
+    // if (features[0]) {
+    //   let countryName = features[0].text;
+    //   let wikidata = features[0].properties.wikidata;
+    //   // router.setSearchParam('wikidata', wikidata);
+    //   // router.setSearchParam('country', countryName);
+    //   // router.setSearchParam('iso2', this.state.lastCountry.iso2);
+    // } else {
+    //   // router.setSearchParam('country', this.state.lastCountry.country);
+    //   // router.setSearchParam('iso2', this.state.lastCountry.iso2);
+    // }
   }
 
   async componentDidMount() {
