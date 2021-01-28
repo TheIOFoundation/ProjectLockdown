@@ -129,7 +129,9 @@ export class Map extends React.Component {
 
     map.on('style.load', () => {
       let hoveredStateId = null;
-      let iso = this.props.currentLanguage.locale;
+      let iso = this.props.currentLanguage
+        ? this.props.currentLanguage.locale
+        : 'es';
       if (iso) {
         if (iso.includes('zh-')) {
           if (iso.includes('-CN')) {
