@@ -7,7 +7,7 @@ const LanguageSelector = ({ dark }) => {
 
   const [selectedLang, setSelectedLang] = useState('en')
 
-  const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zhcn', 'zhhk']
+  const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh cn', 'zh hk']
 
   const toggleShowLanguages = () => {
     setShowLanguages((prevState) => !prevState)
@@ -33,7 +33,7 @@ const LanguageSelector = ({ dark }) => {
               className={`${classes.LangOpt} ${
                 language === selectedLang && classes.active
               } ${dark && classes.dark}`}
-              onClick={() => setSelectedLang(language)}
+              onClick={() => setSelectedLang(language.replace(/\s+/g, '-'))}
             >
               {language.toUpperCase().replace('-', '\n')}
             </div>
