@@ -18,12 +18,19 @@ function toJsonString(date) {
   return format(date, 'yyyy-MM-dd');
 }
 
-const states = {
+const daysRange = 50;
+
+const startingPoint = -300;
+
+const playSpeed = 1000;
+// i.e. delay between skipping to the next date (in ms)
+
+const playerStates = {
   PLAYING: 'PLAYING',
   PAUSED: 'PAUSED',
 };
 
-const { PLAYING, PAUSED } = states;
+const { PLAYING, PAUSED } = playerStates;
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,10 +40,14 @@ function App() {
   // selectedDate -> the date for which the datapoints are being displayed. defaults to todays' date.
   // Currently using 4th April 2020 as a starting date, and end date 50 days away from it. This will be handled once the timeslider is done.
   const [selectedDate, setSelectedDate] = useState(
-    toJsonString(addDays(new Date(), -300))
+    toJsonString(addDays(new Date(), startingPoint))
   );
-  const [startDate, setStartDate] = useState(addDays(new Date(), -300));
-  const [endDate, setEndDate] = useState(addDays(new Date(), -250));
+  const [startDate, setStartDate] = useState(
+    addDays(new Date(), startingPoint)
+  );
+  const [endDate, setEndDate] = useState(
+    addDays(new Date(), startingPoint + daysRange)
+  );
 
   const toggleState = newState => {
     setPlayerState(newState);
@@ -64,7 +75,7 @@ function App() {
             format(addDays(formattedSelectedDate, 1), 'yyyy-MM-dd')
           );
         }
-      }, 1000);
+      }, playSpeed);
     }
 
     return () => clearInterval(loop);
@@ -104,7 +115,7 @@ function App() {
           startDate={startDate}
           endDate={endDate}
           setIsLoading={setIsLoading}
-          daysRange={20}
+          daysRange={daysRange}
         ></Map>
         <TabMenu />
         <Header dark={isDark} />
