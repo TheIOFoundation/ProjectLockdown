@@ -113,7 +113,7 @@ export class Map extends React.Component {
       accessToken: mapboxToken,
       language: this.props.currentLanguage
         ? this.props.currentLanguage.locale
-        : 'es',
+        : 'en',
       mapboxgl: mapboxgl,
       types: 'country',
     });
@@ -131,7 +131,7 @@ export class Map extends React.Component {
       let hoveredStateId = null;
       let iso = this.props.currentLanguage
         ? this.props.currentLanguage.locale
-        : 'es';
+        : 'en';
       if (iso) {
         if (iso.includes('zh-')) {
           if (iso.includes('-CN')) {
@@ -422,6 +422,8 @@ export class Map extends React.Component {
   }
 
   async componentDidMount() {
+    console.log('Selected date', this.props.selectedDate);
+
     const { daysRange } = this.props;
 
     let { startDate, endDate } = this.props;
@@ -437,14 +439,6 @@ export class Map extends React.Component {
       getWorldData(startDate, endDate),
       fetch('./data/boundaries-adm0-v3.json').then(r => r.json()),
     ]);
-    // const mapData = await getWorldData(startDate, endDate);
-
-    // const lookupTable = await fetch('./data/boundaries-adm0-v3.json', {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Accept: 'application/json',
-    //   },
-    // }).then(r => r.json());
 
     // we need to prepare a static country list not dynamically calculate them
     const countries = Object.values[lookupTable];
@@ -466,14 +460,18 @@ export class Map extends React.Component {
   }
 
   componentDidUpdate(previousProps, previousState, snapshot) {
-    if (this.state.isMapReady) {
-      this.updateMap(
-        this.state.mapData,
-        this.state.lookupTable,
-        this.props.selectedDate
-      );
-      if (previousProps.currentLanguage !== this.props.currentLanguage) {
-        this.updateMapLanguage(this.props.currentLanguage);
+    if (previousProps.selectedDate !== this.props.selectedDate) {
+      console.log('Selected date didUpdate', this.props.selectedDate);
+
+      if (this.state.isMapReady) {
+        this.updateMap(
+          this.state.mapData,
+          this.state.lookupTable,
+          this.props.selectedDate
+        );
+        if (previousProps.currentLanguage !== this.props.currentLanguage) {
+          this.updateMapLanguage(this.props.currentLanguage);
+        }
       }
     }
   }
