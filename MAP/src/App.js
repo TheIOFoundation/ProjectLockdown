@@ -42,12 +42,17 @@ function App() {
   const [selectedDate, setSelectedDate] = useState(
     toJsonString(addDays(new Date(), startingPoint))
   );
-  const [startDate, setStartDate] = useState(
-    addDays(new Date(), startingPoint)
-  );
-  const [endDate, setEndDate] = useState(
-    addDays(new Date(), startingPoint + daysRange)
-  );
+
+  const startDate = addDays(new Date(), startingPoint);
+  const endDate = addDays(new Date(), startingPoint + daysRange);
+
+  // For later, when we integrate the timeslider
+  // const [startDate, setStartDate] = useState(
+  //   addDays(new Date(), startingPoint)
+  // );
+  // const [endDate, setEndDate] = useState(
+  //   addDays(new Date(), startingPoint + daysRange)
+  // );
 
   const toggleState = newState => {
     setPlayerState(newState);
