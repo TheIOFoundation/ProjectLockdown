@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import { world } from '../../assets/icons/world'
-import * as classes from './LanguageSelector.module.css'
+import React, { useState } from 'react';
+import { world } from '../../assets/icons/world';
+import * as classes from './LanguageSelector.module.css';
 
 const LanguageSelector = ({ dark }) => {
-  const [showLanguages, setShowLanguages] = useState(false)
+  const [showLanguages, setShowLanguages] = useState(false);
 
-  const [selectedLang, setSelectedLang] = useState('en')
+  const [selectedLang, setSelectedLang] = useState('en');
 
-  const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh cn', 'zh hk']
+  const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh cn', 'zh hk'];
 
   const toggleShowLanguages = () => {
-    setShowLanguages((prevState) => !prevState)
-  }
+    setShowLanguages(prevState => !prevState);
+  };
   return (
     <div
-      className={`${classes.LangSelector} ${dark && classes.dark }`}
+      className={`${classes.LangSelector} ${dark && classes.dark}`}
       onClick={toggleShowLanguages}
     >
       <div className={`${classes.SelectedLang} ${dark && classes.dark}`}>
@@ -26,9 +26,10 @@ const LanguageSelector = ({ dark }) => {
       <div
         className={`${classes.LangOptions} ${showLanguages && classes.show}`}
       >
-        {languages.map((language) => {
+        {languages.map((language, idx) => {
           return (
             <div
+              key={idx}
               style={{ color: `${dark ? 'white' : '#333333'}` }}
               className={`${classes.LangOpt} ${
                 language === selectedLang && classes.active
@@ -37,11 +38,11 @@ const LanguageSelector = ({ dark }) => {
             >
               {language.toUpperCase().replace('-', '\n')}
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LanguageSelector
+export default LanguageSelector;

@@ -1,4 +1,4 @@
-import api from '../api'
+import api from '../api';
 
 export const fetchTotals = async (
   startDate,
@@ -7,21 +7,19 @@ export const fetchTotals = async (
   daysRange
 ) => {
   if (!startDate) {
-    startDate = new Date(selectedDate).toISOString()
-    // console.log('startDate', startDate)
+    startDate = new Date(selectedDate).toISOString();
   }
   if (!endDate) {
-    const currDate = new Date(selectedDate)
-    currDate.setDate(currDate.getDate() + daysRange)
-    endDate = currDate.toISOString()
-    // console.log('endDate', endDate)
+    const currDate = new Date(selectedDate);
+    currDate.setDate(currDate.getDate() + daysRange);
+    endDate = currDate.toISOString();
   }
 
   try {
-    const res = await api.get(`/totals/lockdown/${startDate}/${endDate}`)
-    console.log(res.data)
-    return res.data[selectedDate]
+    const res = await api.get(`/totals/lockdown/${startDate}/${endDate}`);
+    console.log(res.data);
+    return res.data[selectedDate];
   } catch (e) {
-    console.log('Error in fetchTotals', e)
+    console.log('Error in fetchTotals', e);
   }
-}
+};
