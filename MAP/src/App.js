@@ -14,6 +14,8 @@ import { addDays } from 'date-fns';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
+// TODO: Reset selectedDate to startDate once endDate is reached.
+
 function toJsonString(date) {
   return format(date, 'yyyy-MM-dd');
 }
@@ -22,7 +24,7 @@ const daysRange = 50;
 
 const startingPoint = -300;
 
-const playSpeed = 1000;
+const playSpeed = 200;
 // i.e. delay between skipping to the next date (in ms)
 
 const playerStates = {
@@ -57,6 +59,19 @@ function App() {
   const toggleState = newState => {
     setPlayerState(newState);
   };
+
+  useEffect(() => {
+    const formattedSelectedDate = new Date(selectedDate);
+
+    console.log('End date', endDate);
+    console.log('Selected date v', formattedSelectedDate);
+
+    if (formattedSelectedDate.getDate() === endDate.getDate()) {
+      alert('Ended');
+      setPlayerState(PAUSED);
+      setSelectedDate(format(startDate, 'yyyy-MM-dd'));
+    }
+  }, [selectedDate, endDate, startDate]);
 
   useEffect(() => {
     console.log('Selected date', selectedDate);
