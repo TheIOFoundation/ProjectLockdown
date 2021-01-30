@@ -32376,7 +32376,7 @@
       "Region": {
         "title": "🚧 Region",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nPLD regions\n\n- Africa\n- Asia\n- Europe\n- Middle East\n- Latin America\n- North America\n\nMissing: Pacific - No assigned TLD seems to be available\n\n\nSee documentation on how to use the TLDs for localization.\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nPLD regions\n\nUID   Name   (Notes)\n1 - Africa (.africa)\n2 - Asia (.asia)\n3 - Americas (.lat + .us)\n4 - Europe (.eu)\n5 - Middle East (.me)\n6 - Pacific (NONE >> See GH Issue XXXX)\nMissing: Pacific - No assigned TLD seems to be available\n\n\nSee documentation on how to use the TLDs for localization.\n",
         "properties": {
           "RegionUID": {
             "type": "string",
@@ -34060,6 +34060,10 @@
             "items": {
               "$ref": "#/components/schemas/Log"
             }
+          },
+          "TerritoryUID": {
+            "type": "string",
+            "description": "Indicates the Territory to which this Answer applies to."
           }
         },
         "required": [
@@ -34069,7 +34073,8 @@
           "DateEnd",
           "DataPointUID",
           "DSEUID",
-          "Type"
+          "Type",
+          "TerritoryUID"
         ]
       },
       "Response": {
