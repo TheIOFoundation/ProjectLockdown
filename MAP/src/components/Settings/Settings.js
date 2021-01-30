@@ -5,11 +5,16 @@ import { setFavIcon } from '../../utils/setFavIcon.js';
 import '../pwa-update-available';
 import './Settings.scss';
 
-export function Settings({ onClose, locale }) {
+export function Settings({ 
+  onClose, 
+  locale, 
+  darkMode, 
+  setDarkMode 
+}) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
 
-  const { isDark: darkMode, setIsDark: setDarkMode } = useContext(ThemeContext);
-// const [darkMode, setDarkMode] = useState(false)
+  // const { isDark: darkMode, setIsDark: setDarkMode } = useContext(ThemeContext); 
+
   function toggleDarkmode() {
     if (document.getElementsByTagName('html')[0].classList.contains('dark')) {
       document.getElementsByTagName('html')[0].classList.remove('dark');

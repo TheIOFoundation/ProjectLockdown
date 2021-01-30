@@ -137,7 +137,7 @@ function App() {
           setIsLoading={setIsLoading}
           daysRange={daysRange}
         ></Map>
-        <TabMenu />
+        <TabMenu darkMode={isDark} setDarkMode={setIsDark} />
         <Header dark={isDark} />
         <Totals dark={isDark} />
         <Legend dark={isDark} />
