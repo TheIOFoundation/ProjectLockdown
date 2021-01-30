@@ -31686,7 +31686,7 @@
       "Territory": {
         "title": "🚧 Territory",
         "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nDecribes PLD Territories.\n\n\n###URL fields\nURLDEI\nPermalink for direct access to the DEI\n\nURLDoc\nPermalink for direct access to the territory info (to be implemented later).\n\n###Date fields\nDateLastUpdate\nLast time the Territory info was updated.\n@@@Probably also put in Log?\n\n\n### Pending\nTERRITORIES should include\nthe necessary language to cover for official pronouncements.\nthe list of official/reliable sources for pronouncements.\n",
+        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\nDecribes PLD Territories.\n\n\n###URL fields\nURLDEI\nPermalink for direct access to the DEI\n\nURLDoc\nPermalink for direct access to the territory info (to be implemented later).\n\n###Date fields\nDateLastUpdate\nLast time the Territory info was updated.\n@@@Probably also put in Log?\n\n\n### Pending\nTERRITORIES should include\nthe necessary language to cover for official pronouncements.\nthe list of official/reliable sources for pronouncements.\n\n\nFor \n",
         "x-examples": {
           "example-1": {
             "id": "string",
@@ -31720,6 +31720,9 @@
             "PermalinkDocs": "string"
           }
         },
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "TerritoryUID": {
             "type": "string",
@@ -31727,24 +31730,33 @@
           },
           "PLDInfo": {
             "type": "object",
+            "required": [
+              "PLDCode",
+              "PLDCodeParent",
+              "Name"
+            ],
             "properties": {
               "???PLDInfoUID": {
                 "type": "string"
               },
               "PLDCode": {
-                "type": "string"
+                "type": "string",
+                "description": "Arbitrary coding of territories for Project Lockdown.\nUsing an internal codification, while seemigly problematic, allows to avoid dependencies towards a number of codifications out that are NOT considered standard across the board (ISO, UN LOCODE and so on are somehow competing with each other and there is no international consensus as to what to use)."
               },
               "PLDCodeParent": {
-                "type": "string"
+                "type": "string",
+                "description": "For Federal level:\n1 = Earth\n\n\nFor any other level\n= TerritoryUID of the father object"
               },
               "Name": {
-                "type": "string"
+                "type": "string",
+                "description": "Name of the territory.\nDefault ENG."
               },
               "Region": {
                 "$ref": "#/components/schemas/Region"
               },
               "UnitCode": {
-                "type": "string"
+                "type": "string",
+                "description": "Additional ID segment for sub Territories\n\nFederal\nUnitCode = 0\n\nSub Federal\nUnitCode = Auto Incremental Int\n(Do we want to generate UIDs)?\n\n"
               },
               "Notes": {
                 "type": "string"
@@ -31917,9 +31929,6 @@
           "TerritoryUID",
           "PLDInfo",
           "MapboxInfo"
-        ],
-        "x-tags": [
-          "Models"
         ]
       },
       "DataPoint": {
@@ -33200,6 +33209,9 @@
         "title": "🚧 Module",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\nA Module object represents the collection of data that is necessary to define and configure a PLD Module.\n\nThe object itself is divided in as many subobjects as Modules in Project Lockdown:\nModules\n- 🗺 Mapping platform [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- ⌨ Back Office [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- 🗃 Backend Endpoints [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n- 🌐 Official Website [WEB]()\n- 🗄 Data Entry Interface [DEI](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DEI)\n- 💾 Database [DB](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DB)\n- ✋ Insourcing Funnel [IS]()\n- 🤲 Crowdsourcing [CS]()\n- 🤖 ML Funnel [ML]()\n- 📦 Direct Feed Funnel [DF]()\n\n## 📢 Used by\n- 💠 \n\n\n###Accessed by\nMAP\nBO\nAPI",
+        "x-tags": [
+          "Models"
+        ],
         "properties": {
           "MAP": {
             "type": "object",
@@ -33207,14 +33219,28 @@
               "TabMenu": {
                 "type": "object",
                 "description": "Describes the features and behavior of the Tab Menu (TB) in MAP.",
+                "required": [
+                  "Show",
+                  "Position",
+                  "Page"
+                ],
                 "properties": {
                   "Show": {
                     "type": "string",
-                    "description": "  - Description: Controls if the TabMenu is shown.\n  - QS Parameter:  \n  - QS Implemented:  \n  - QS Required:  \n  - Notes:  "
+                    "description": "  - Description: Controls if the TabMenu is shown.\n  - QS Parameter:  \n  - QS Implemented:  \n  - QS Required:  \n  - Notes:  \n  \n  \n  True [\n    Note:\"\n    - Meaning: Yes, render (Default)\n    \"]\n    \n   False [\n    Note:\"\n    - Meaning:No, hide\n    - IMPORTANT: Implies WATERMARK.\n    \"]\n    \n    \n    Forced\n    The MAP will load with the TabMenu forcedly open to the page indicated in Page param.",
+                    "enum": [
+                      "True",
+                      "False",
+                      "Forced"
+                    ]
                   },
                   "Position": {
                     "type": "string",
-                    "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)"
+                    "description": "  - Description: Indicates in which position the menu is to be rendered.\n  - QS Parameter: TabMenuPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)\n  \n  \n  \nLeft [\n    Note:\"\n    - Meaning: Render on v-2/3 h-left of the map.\n    \"]\n    \nRight [\n    Note:\"\n    - Meaning: Render on v-2/3 h-Right of the map (Default).\n    \"]\n    ",
+                    "enum": [
+                      "Left",
+                      "Right"
+                    ]
                   },
                   "Page": {
                     "type": "string",
@@ -33222,13 +33248,21 @@
                       "DataSetInfo",
                       "Settings",
                       "Updates"
-                    ]
+                    ],
+                    "description": "Indicates in which TabMenu page will this UI Component open be default.\n\n"
                   }
                 }
               },
               "TimeSlider": {
                 "type": "object",
                 "description": "Defines the features and behavior of the Time Slider (TS) in MAP.",
+                "required": [
+                  "Position",
+                  "DateStart",
+                  "DateEnd",
+                  "DateView",
+                  "Show"
+                ],
                 "properties": {
                   "Position": {
                     "type": "string",
@@ -33237,19 +33271,31 @@
                       "Bottom",
                       "Left",
                       "Right"
-                    ]
+                    ],
+                    "description": "  Note: \"\n  - Description: Controls where in the map is the Time Slider (TS) to be rendered.\n  - QS Parameter: TimeSliderPosition\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes: Only for scalability purposes. There are not plans to render this anywhere else than Bottom.\n  \"]\n  \n      Top [\n    Note:\"\n    - Meaning: Render on v-top h-center of the map.\n    \"]\n    \n    Bottom [\n    Note:\"\n    - Meaning: Render on v-bottom h-center of the map (Default).\n    \"]\n    \n    Left [\n    Note:\"\n    - Meaning: Render on v-center h-left of the map.\n    \"]\n    \n    Right [\n    Note:\"\n    - Meaning: Render on v-center h-Right of the map. \n    \"]"
                   },
                   "DateStart": {
                     "type": "string",
-                    "format": "date"
+                    "format": "date",
+                    "description": "  Note: \"\n  - Description: Date in format DD/MM/YYYY - UTC+0 referenced \n  - QS Parameter: TimeSliderStartDate\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes:\n  - IMPORTANT: If StartDate <> EndDate then TimeSliderShow = True\n  \"]\n  \n  \n  "
                   },
                   "DateEnd": {
                     "type": "string",
-                    "format": "date"
+                    "format": "date",
+                    "description": "  Note: \"\n  - Description: Date in format DD/MM/YYYY - UTC+0 referenced\n  - QS Parameter: TimeSliderEndDate\n  - QS Implemented: @@@ VERIFY\n  - QS Required: NO\n  - Notes:\n  - IMPORTANT: If StartDate <> EndDate then TimeSliderShow = True \n  \"]"
                   },
                   "DateView": {
                     "type": "string",
-                    "format": "date"
+                    "format": "date",
+                    "description": "  Note: \"\n  - Description: Selects the date use for the 10 weeks date range.\n  - QS Parameter: TimeSliderCenterDate\n  - QS Implemented: NO\n  - QS Required: NO\n  - Notes:\n  - IMPORTANT: Currently follows the rule [2 weeks - CenterDate - 8 weeks]\n  \"]"
+                  },
+                  "Show": {
+                    "type": "string",
+                    "description": "  - Description: Controls if the TimeSlider (TS) is to be rendered.\n  - QS Parameter: TimeSlider -> TimeSliderShow\n  - QS Implemented: YES\n  - QS Required: NO\n  - Notes: @@@ PENDING UPDATE\n  \n  True [\n    Note:\"\n    - Meaning: Yes, render (Default)\n    \"]\n    \n   False [\n    Note:\"\n    - Meaning:No, hide\n      \"]\n  \n  \n  ",
+                    "enum": [
+                      "True",
+                      "False"
+                    ]
                   }
                 }
               },
@@ -33261,9 +33307,36 @@
                   },
                   "DefaultDP": {
                     "type": "array",
+                    "description": " Note: \"\n  - Description: Array of DPUIDs that are to be used in the StatsBox when rendering this DSL.\n  - QS Parameter: N/A\n  - QS Implemented: N/A\n  - QS Required: N/A\n  - Notes: Data Points are rendered in the SB according to the Layout, sequentially.\n  - STAGE: N/A\n  \n  \n  IMPORTANT: These should be SNAPSHOT type Answers.\n  \n  ",
                     "items": {
                       "$ref": "#/components/schemas/Snapshot"
                     }
+                  },
+                  "Show": {
+                    "type": "string",
+                    "enum": [
+                      "True",
+                      "False"
+                    ],
+                    "description": "  Note: \"\n  - Description: Controls if the StatsBox is to be rendered with this DSL.\n  - QS Parameter: StatsBox -> StatsBoxShow\n  - QS Implemented: YES (To be updated)\n  - QS Required: NO\n  - Notes:\n  - STAGE: @@@ Pending to be updated in code.\n  \n  True [\n    Note:\"\n    - Meaning: Yes, render (Default)\n    \"]\n    \n    False [\n    Note:\"\n    - Meaning:No, hide\n    \"]\n    \n    "
+                  },
+                  "Position": {
+                    "type": "string",
+                    "description": "Top [\n    Note:\"\n    - Meaning: Render on v-top h-center of the map (Default).\n    \"]\n    \n  Bottom [\n    Note:\"\n    - Meaning: Render on v-bottom h-center of the map.\n    \"]\n    \n  Left [\n    Note:\"\n    - Meaning: Render on v-center h-left of the map.\n    \"]\n    \n  Right [\n    Note:\"\n    - Meaning: Render on v-center h-Right of the map. \n    \"]",
+                    "enum": [
+                      "Top",
+                      "Bottom",
+                      "Left",
+                      "Right"
+                    ]
+                  },
+                  "ShowLastUpdate": {
+                    "type": "string",
+                    "description": "    True [\n    Note:\"\n    - Meaning: Yes, render (Default)\n    \"]\n    \n    False [\n    Note:\"\n    - Meaning:No, hide\n    \"]",
+                    "enum": [
+                      "True",
+                      "False"
+                    ]
                   }
                 }
               },
@@ -33308,18 +33381,42 @@
                 "type": "object",
                 "properties": {
                   "Show": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "  Note: \"\n  - Description: Controls whether the Play button is rendered.\n  - QS Parameter: PressPlayShow\n  - QS Implemented: NO\n  - QS Required: NO\n  - Notes: If StartDate = EndDate then PressPlayShow = False \n\n    True [\n    Note:\"\n    - Meaning: Yes, render (Default)\n    \"]\n    \n    False [\n    Note:\"\n    - Meaning:No, hide\n    \"]",
+                    "enum": [
+                      "True",
+                      "False"
+                    ]
                   },
                   "Behavior": {
-                    "type": "string"
+                    "type": "string",
+                    "description": " Note: \"\n  - Description: Controls the behavior of the animation.\n  - QS Parameter: PressPlayBehavior\n  - QS Implemented: NO\n  - QS Required: NO\n  - Notes: Defaut - \n\nForwardStop [\n    Note:\"\n    - Meaning: Animation plays forward in time and stops at end.\n    - Implemented: @@@ PENDING\n    \"]\n    \n    BackwardsStop [\n    Note:\"\n    - Meaning: Animation plays backward in time and stops at end.\n    - Implemented: @@@ IGNORE\n    \"]\n    \n    ForwardContinous [\n    Note:\"\n    - Meaning:  Animation plays forward in time, rewinds - repeat.\n    - Implemented: @@@ PENDING\n    \"]\n    \n    BackwardContinous [\n    Note:\"\n    - Meaning:  Animation plays backward in time, rewinds - repeat.\n    - Implemented: @@@ IGNORE\n    \"]\n    \n    Random [\n    Note:\"\n    - Meaning:  Animation randomly between dates in range, until all days shown.\n    - Implemented: @@@ IGNORE\n    \"]\n    \n    RandomContinous [\n    Note:\"\n    - Meaning:  Animation randomly between dates in range, until all days shown - repeat.\n    - Implemented: @@@ IGNORE\n    \"]\n    ",
+                    "enum": [
+                      "ForwardStop",
+                      "BackwardsStop",
+                      "ForwardContinous",
+                      "BackwardContinous",
+                      "Random",
+                      "RandomContinous"
+                    ]
                   },
                   "StartDelay": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "  Note: \"\n  - Description: \n  - QS Parameter: PressPlayStartDelay\n  - QS Implemented: NO\n  - QS Required: NO\n  - Notes: Default value is 3 (DSL loads - wait 3 seconds - start play)\n  \n  REALLLY? More likely 0s.\n  \n  - IMPORTANT: @@@ Maybe we should add a visual timer for this.",
+                    "default": "0",
+                    "format": "time"
                   },
                   "Step": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "  Note: \"\n  - Description: Indicates DSL days per second. \n  - QS Parameter: PressPlayStep\n  - QS Implemented: NO\n  - QS Required: NO\n  - Notes: Default value is 2 (2 days per each play second)"
                   }
-                }
+                },
+                "required": [
+                  "Show",
+                  "Behavior",
+                  "StartDelay",
+                  "Step"
+                ]
               },
               "UI": {
                 "type": "object",
@@ -33328,7 +33425,14 @@
                     "type": "string"
                   },
                   "Mode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "    Common [\n    Note:\"\n    - Meaning: Use project color palette (Default)\n    - IMPORTANT: @@@ Match with accessiblity Category.\n    \"]\n    \n    HighContrast [\n    Note:\"\n    - Meaning: Transform color palette into high contrast.\n    - IMPORTANT: @@@ Match with accessiblity Category.\n    \"]\n   \n   Audio [\n    Note:\"\n    - Meaning: Transform information to be .\n    - IMPORTANT: @@@ Match with accessiblity Category.\n    \"]\n    \n    Tactile [\n    Note:\"\n    - Meaning: Transform color palette into high contrast.\n    - IMPORTANT: @@@ Match with accessiblity Category.\n    \"]",
+                    "enum": [
+                      "Common",
+                      "Audio",
+                      "HighContrast",
+                      "Tactile"
+                    ]
                   },
                   "Watermark": {
                     "type": "string"
@@ -33400,7 +33504,11 @@
                   "$ref": "#/components/schemas/Stat"
                 }
               }
-            }
+            },
+            "required": [
+              "TabMenu",
+              "TimeSlider"
+            ]
           },
           "BO": {
             "type": "object",
@@ -33469,10 +33577,7 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        },
-        "x-tags": [
-          "Models"
-        ]
+        }
       },
       "Log": {
         "title": "🚧 Log",
