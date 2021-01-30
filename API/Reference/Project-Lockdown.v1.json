@@ -33301,7 +33301,14 @@
               },
               "StatsBox": {
                 "type": "object",
-                "description": "  Note: \"\n  - Description: Controls the behaviour of the StatsBox.\n  - Notes: \n  - STAGE: ",
+                "description": "  Note: \"\n  - Description: Controls the behaviour of the StatsBox.\n  - Notes: \n  - STAGE: \n  \n  The rendering of the SB is controlled by it layout field.\n  \n  ",
+                "required": [
+                  "Layout",
+                  "DefaultDP",
+                  "Show",
+                  "Position",
+                  "ShowLastUpdate"
+                ],
                 "properties": {
                   "Layout": {
                     "$ref": "#/components/schemas/Layout"
@@ -33344,6 +33351,14 @@
               "Map": {
                 "type": "object",
                 "description": "  Note: \"\n  - Description: Controls the configuration of the Map provider\n  - Notes: \n  - STAGE: ",
+                "required": [
+                  "Region",
+                  "Zoom",
+                  "Lat",
+                  "Lng",
+                  "DefaultDP",
+                  "DefaultSnapshotOrder"
+                ],
                 "properties": {
                   "Region": {
                     "type": "string",
@@ -33363,6 +33378,12 @@
                   },
                   "DefaultDP": {
                     "type": "object",
+                    "description": "Note: Unclear if we want to use a Child Object or direct params.\n\nIndicates the dafault DPs to be associated with the different Map geometries.",
+                    "required": [
+                      "Territory",
+                      "Border",
+                      "Location"
+                    ],
                     "properties": {
                       "Territory": {
                         "type": "string",
@@ -33380,6 +33401,7 @@
                   },
                   "DefaultSnapshotOrder": {
                     "type": "array",
+                    "description": "Indicates the order in which the Snapshot SurceTypes are to be rendered.",
                     "items": {
                       "type": "string"
                     }
@@ -33388,6 +33410,13 @@
               },
               "PressPlay": {
                 "type": "object",
+                "description": "Controls the rendering and behaviour of the PressPlay component & feature.",
+                "required": [
+                  "Show",
+                  "Behavior",
+                  "StartDelay",
+                  "Step"
+                ],
                 "properties": {
                   "Show": {
                     "type": "string",
@@ -33419,17 +33448,16 @@
                     "type": "string",
                     "description": "  Note: \"\n  - Description: Indicates DSL days per second. \n  - QS Parameter: PressPlayStep\n  - QS Implemented: NO\n  - QS Required: NO\n  - Notes: Default value is 2 (2 days per each play second)"
                   }
-                },
-                "required": [
-                  "Show",
-                  "Behavior",
-                  "StartDelay",
-                  "Step"
-                ]
+                }
               },
               "UI": {
                 "type": "object",
                 "description": "\n\n  Note: \"\n  - Description: Controls the final rendering type of the map.\n  - QS Parameter: UIMode\n  - QS Implemented: NO\n  - QS Required: NO\n  - Notes:",
+                "required": [
+                  "Locale",
+                  "Mode",
+                  "Watermark"
+                ],
                 "properties": {
                   "Locale": {
                     "type": "string",
@@ -33453,6 +33481,14 @@
               },
               "TerritoryDetailsOverlay": {
                 "type": "object",
+                "required": [
+                  "Show",
+                  "Position",
+                  "DefaultCategoryUID",
+                  "Behavior",
+                  "PLDCode",
+                  "Categories"
+                ],
                 "properties": {
                   "Show": {
                     "type": "string",
@@ -33520,7 +33556,17 @@
             },
             "required": [
               "TabMenu",
-              "TimeSlider"
+              "TimeSlider",
+              "StatsBox",
+              "Map",
+              "PressPlay",
+              "UI",
+              "TerritoryDetailsOverlay",
+              "ModuleUID",
+              "Name",
+              "Description",
+              "PLDCode",
+              "Stats"
             ]
           },
           "BO": {
@@ -33590,7 +33636,8 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "x-examples": {}
       },
       "Log": {
         "title": "🚧 Log",
