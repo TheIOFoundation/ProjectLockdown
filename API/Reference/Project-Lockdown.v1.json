@@ -33212,9 +33212,11 @@
         "x-tags": [
           "Models"
         ],
+        "x-examples": {},
         "properties": {
           "MAP": {
             "type": "object",
+            "description": "Manages appearance and behavior for all the components conforming MAP.",
             "properties": {
               "TabMenu": {
                 "type": "object",
@@ -33571,6 +33573,7 @@
           },
           "BO": {
             "type": "object",
+            "description": "Manages appearance and behavior for all the components conforming BO.",
             "properties": {
               "Stats": {
                 "type": "array",
@@ -33581,20 +33584,9 @@
               }
             }
           },
-          "DEI": {
-            "type": "object",
-            "properties": {
-              "Stats": {
-                "type": "array",
-                "description": "🚧\nStatistics related to this object.",
-                "items": {
-                  "$ref": ""
-                }
-              }
-            }
-          },
           "WEB": {
             "type": "object",
+            "description": "Manages appearance and behavior for all the components conforming WEB.",
             "properties": {
               "Stats": {
                 "type": "array",
@@ -33607,6 +33599,7 @@
           },
           "DB": {
             "type": "object",
+            "description": "Manages configuration for all elements in the DB.",
             "properties": {
               "Stats": {
                 "type": "array",
@@ -33619,6 +33612,7 @@
           },
           "API": {
             "type": "object",
+            "description": "Manages configuration for all elements in the DB.",
             "properties": {
               "Stats": {
                 "type": "array",
@@ -33636,8 +33630,7 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        },
-        "x-examples": {}
+        }
       },
       "Log": {
         "title": "🚧 Log",
