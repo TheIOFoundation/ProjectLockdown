@@ -14,7 +14,20 @@ const renderMenu = (
   currentDropdown,
   onDropDown,
   onLocateChange,
-  locale
+  locale = {
+    t: s => {
+      switch (s) {
+        case 'menu.userPreferenceSection.theme.action':
+          return 'Toggle ';
+        case 'menu.userPreferenceSection.theme.light':
+          return 'Light mode';
+        case 'menu.userPreferenceSection.theme.dark':
+          return 'Dark mode';
+        default:
+          return s;
+      }
+    },
+  }
 ) => {
   switch (menuItem) {
     case 'info':
@@ -263,7 +276,7 @@ export class TabMenu extends Component {
     this.switchContent = this.switchContent.bind(this);
     this.onDropDown = this.onDropDown.bind(this);
   }
-
+  
   componentDidMount() {
     let i = 0;
 

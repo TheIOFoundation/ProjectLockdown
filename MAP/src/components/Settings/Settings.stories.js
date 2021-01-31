@@ -18,7 +18,7 @@ Primary.args = {
         case 'menu.userPreferenceSection.theme.action':
           return 'Toggle ';
         case 'menu.userPreferenceSection.theme.light':
-          return 'Ligth mode';
+          return 'Light mode';
         case 'menu.userPreferenceSection.theme.dark':
           return 'Dark mode';
         default:

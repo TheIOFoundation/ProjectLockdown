@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import ThemeContext from '../../context/ThemeContext.js';
 import { addPwaUpdateListener } from '../../utils/addPwaUpdateListener.js';
 import { setFavIcon } from '../../utils/setFavIcon.js';
 import '../pwa-update-available';
@@ -6,8 +7,9 @@ import './Settings.scss';
 
 export function Settings({ onClose, locale }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
+  const { isDark: darkMode, setIsDark: setDarkMode } = useContext(ThemeContext);
+// const [darkMode, setDarkMode] = useState(false)
   function toggleDarkmode() {
     if (document.getElementsByTagName('html')[0].classList.contains('dark')) {
       document.getElementsByTagName('html')[0].classList.remove('dark');
@@ -34,7 +36,7 @@ export function Settings({ onClose, locale }) {
       setDarkMode(dark);
     }
     addListener();
-  }, []);
+  }, [setDarkMode]);
 
   return (
     <div className="settings">
