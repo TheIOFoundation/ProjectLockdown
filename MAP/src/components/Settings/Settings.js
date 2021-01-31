@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
-import ThemeContext from '../../context/ThemeContext.js';
+import { useState, useEffect } from 'react';
 import { addPwaUpdateListener } from '../../utils/addPwaUpdateListener.js';
 import { setFavIcon } from '../../utils/setFavIcon.js';
 import '../pwa-update-available';
@@ -12,7 +11,7 @@ export function Settings({
   setDarkMode 
 }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
-
+  
   // const { isDark: darkMode, setIsDark: setDarkMode } = useContext(ThemeContext); 
 
   function toggleDarkmode() {
