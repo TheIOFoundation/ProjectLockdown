@@ -11,6 +11,7 @@ import ThemeContext from './context/ThemeContext';
 import format from 'date-fns/format';
 import PlayButton from './components/PlayButton/PlayButton';
 import { addDays } from 'date-fns';
+import TimeSlider from './components/TimeSlider/TimeSlider';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
@@ -20,7 +21,7 @@ function toJsonString(date) {
   return format(date, 'yyyy-MM-dd');
 }
 
-const daysRange = 50;
+const daysRange = 70;
 
 const startingPoint = -300;
 
@@ -38,6 +39,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isDark, setIsDark] = useState(false);
   const [playerState, setPlayerState] = useState(PAUSED);
+  const days = [];
 
   // selectedDate -> the date for which the datapoints are being displayed. defaults to todays' date.
   // Currently using 4th April 2020 as a starting date, and end date 50 days away from it. This will be handled once the timeslider is done.
@@ -45,33 +47,47 @@ function App() {
     toJsonString(addDays(new Date(), startingPoint))
   );
 
-  const startDate = addDays(new Date(), startingPoint);
-  const endDate = addDays(new Date(), startingPoint + daysRange);
+  // const startDate = addDays(new Date(), startingPoint);
+  // const endDate = addDays(new Date(), startingPoint + daysRange);
 
   // For later, when we integrate the timeslider
-  // const [startDate, setStartDate] = useState(
-  //   addDays(new Date(), startingPoint)
-  // );
-  // const [endDate, setEndDate] = useState(
-  //   addDays(new Date(), startingPoint + daysRange)
-  // );
+  const [startDate, setStartDate] = useState(
+    addDays(new Date(), startingPoint)
+  );
+  const [endDate, setEndDate] = useState(
+    addDays(new Date(), startingPoint + daysRange)
+  );
 
   const toggleState = newState => {
     setPlayerState(newState);
   };
 
   useEffect(() => {
+    let date = startDate;
+
+    for (let i = 0; i <= daysRange; i++) {
+      days.push(format(date, 'yyyy-MM-dd'));
+      date = addDays(date, 1);
+    }
+  }, [startDate, endDate, days]);
+
+  useEffect(() => {
     const formattedSelectedDate = new Date(selectedDate);
 
-    console.log('End date', endDate);
-    console.log('Selected date v', formattedSelectedDate);
+    console.log('End date', format(endDate, 'yyyy-MM-dd'));
+    console.log('Selected date v', format(formattedSelectedDate, 'yyyy-MM-dd'));
 
-    if (formattedSelectedDate.getDate() === endDate.getDate()) {
-      alert('Ended');
-      setPlayerState(PAUSED);
-      setSelectedDate(format(startDate, 'yyyy-MM-dd'));
+    if (
+      format(endDate, 'yyyy-MM-dd') ===
+      format(formattedSelectedDate, 'yyyy-MM-dd')
+    ) {
+      if (playerState === PLAYING) {
+        alert('Ended');
+        setPlayerState(PAUSED);
+        setSelectedDate(format(startDate, 'yyyy-MM-dd'));
+      }
     }
-  }, [selectedDate, endDate, startDate]);
+  }, [selectedDate, endDate, startDate, playerState]);
 
   useEffect(() => {
     console.log('Selected date', selectedDate);
@@ -118,6 +134,9 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    console.log(startDate);
+  }, [startDate]);
   return (
     <div
       onKeyUp={e => {
@@ -143,6 +162,29 @@ function App() {
         <Legend dark={isDark} />
         <PlayButton state={playerState} toggleState={toggleState} />
         <LanguageSelector dark={isDark} />
+        {startDate && endDate && selectedDate && (
+          <TimeSlider
+            days={days}
+            i18n={{ locale: 'en, en-US' }}
+            onChange={(selectedDate, startDate, endDate) => {
+              console.log('date selected');
+              console.log('Selected date changed', selectedDate);
+              console.log(startDate);
+              console.log(endDate);
+              setSelectedDate(selectedDate);
+              // setSelectedDate(format(selectedDate, 'yyyy-MM-dd'))
+              // setStartDate(startDate)
+              // setEndDate(endDate)
+            }}
+            // currentSelectedDay={format(selectedDate, 'yyyy-MM-dd')}
+            currentSelectedDay={selectedDate}
+            setCurrentSelectedDay={setSelectedDate}
+            firstDay={format(new Date(startDate), 'yyyy-MM-dd')}
+            setFirstDay={setStartDate}
+            lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
+            setLastDay={setEndDate}
+          />
+        )}
       </ThemeContext.Provider>
     </div>
   );
