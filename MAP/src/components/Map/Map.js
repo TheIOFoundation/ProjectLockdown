@@ -15,6 +15,7 @@ import addDays from 'date-fns/addDays';
 import { getWorldData } from '../../services/map';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 
 /**
  * Primary UI component for user interaction
@@ -475,7 +476,7 @@ export class Map extends React.Component {
       }
     }
   }
-
+ 
   render() {
     return (
       <>
@@ -484,6 +485,18 @@ export class Map extends React.Component {
           id="map"
           className="map-container"
         ></div>
+        <CountriesSearcher
+          dark={this.props.dark}
+          i18n={{ locale: 'en, en-US' }}
+          map={{
+            flyTo: (center, maxDuration) => {
+              this.state.map.flyTo({
+                center: center,
+                essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+              });
+            },
+          }}
+        />
         <span id="mapBlank" style={{ display: 'none' }}></span>
       </>
     );
