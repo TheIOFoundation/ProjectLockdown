@@ -11,7 +11,6 @@ import ThemeContext from './context/ThemeContext';
 import format from 'date-fns/format';
 import PlayButton from './components/PlayButton/PlayButton';
 import { addDays } from 'date-fns';
-import CountriesSearcher from './components/CountriesSearcher/CountriesSearcher';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 

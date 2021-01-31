@@ -130,7 +130,7 @@ function useSearch(
           setParsedText('');
           setGeoResult()
           try {
-            map.flyTo({ center: geoResult.center, maxDuration: 500 });
+            map.flyTo(geoResult.center, 500 );
             // map.flyTo()
           } catch (error) {
             console.log('geoResult.center: ', geoResult.center);

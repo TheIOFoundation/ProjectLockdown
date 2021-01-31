@@ -1,5 +1,4 @@
 import { Component, createRef } from 'react';
-import PropTypes from 'prop-types';
 import './legend.css';
 import { list } from '../../assets/icons/icons.js';
 
@@ -115,25 +114,6 @@ export class Legend extends Component {
     );
   }
 }
-
-Legend.propTypes = {
-  /**
-   * Light mode or dark mode?
-   */
-  dark: PropTypes.bool,
-  /**
-   * How large should the button be?
-   */
-  // size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Horizontal dialog position?
-   */
-  x: PropTypes.oneOf(['right', 'left']),
-  /**
-   * Vertical dialog position?
-   */
-  y: PropTypes.oneOf(['top', 'bottom']),
-};
 
 Legend.defaultProps = {
   dark: false,

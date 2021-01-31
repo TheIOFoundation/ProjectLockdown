@@ -16,7 +16,6 @@ import { getWorldData } from '../../services/map';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
-import { textChangeRangeIsUnchanged } from 'typescript';
 
 /**
  * Primary UI component for user interaction
@@ -477,14 +476,7 @@ export class Map extends React.Component {
       }
     }
   }
-  componentWillUpdate(previousState) {
-    if (
-      previousState.lat !== this.state.lat ||
-      previousState.lat !== this.state.lat
-    ) {
-      return true;
-    }
-  }
+ 
   render() {
     return (
       <>
@@ -499,26 +491,9 @@ export class Map extends React.Component {
           map={{
             flyTo: (center, maxDuration) => {
               this.state.map.flyTo({
-                center: center.center,
+                center: center,
                 essential: true, // this animation is considered essential with respect to prefers-reduced-motion
               });
-              // this.setState({ lat: 23.43, lng: 82 })
-              // const newMap = new mapboxgl.Map({
-              //         accessToken: mapboxToken,
-              //         container: this.ref,
-              //         // style: 'mapbox://styles/jfqueralt/ck9hi7wl616pz1iugty1cpeiv?optimize=true',
-              //         style:
-              //           'mapbox://styles/jfqueralt/ckavedmnk253z1iphmsy39s3r?optimize=true',
-              //         center: [center[1], center[0]],
-              //         // center: [this.state.lng, this.state.lat],
-              //         zoom: this.state.zoom,
-              //         keyboard: false,
-              //         pitchWithRotate: false,
-              //         hash: true,
-              //       })
-              // this.setState({map : newMap})
-              // // this.setState({ lat: center[0], lng: center[1]})
-              // console.log('Map', this.state.map)
             },
           }}
         />
