@@ -436,10 +436,9 @@ const firstDayDefaultOffset = 7 * 5;
 // const desktopRange = 80;
 const mobileRange = 70;
 
-const widthSpaces = [7.5, 16, 24.5, 33, 41.5, 50, 58.5, 67, 75.5, 84, 94];
+// const widthSpaces = [7.5, 16, 24.5, 33, 41.5, 50, 58.5, 67, 75.5, 84, 94];
 let languages = false;
 const TimeSlider = props => {
-  console.log(props);
   const [currentDateValue, setCurrentDateValue] = useState(
     firstDayDefaultOffset
   );
@@ -453,16 +452,18 @@ const TimeSlider = props => {
     // setLastDay,
     days,
   } = props;
-  const [currentPosition, setCurrentPosition] = useState(24.5);
+  // const [currentPosition, setCurrentPosition] = useState(24.5);
   const [datePickerPosition, setDatePickerPosition] = useState('left');
   const [showDatePicker, setShowDatePicker] = useState(false);
   // const [currentSelectedDay, setCurrentSelectedDay] = useState("");
   // const [firstDay, setFirstDay] = useState("");
   // const [lastDay, setLastDay] = useState("");
   const [currentSliderRange, setCurrentSliderRange] = useState([]);
-  const [currentRange, setCurrentRange] = useState(mobileRange);
-  const [isMobile, setIsMobile] = useState(false);
-  const [daysRange, setDaysRange] = useState(70);
+  // const [currentRange, setCurrentRange] = useState(mobileRange);
+  // const [isMobile, setIsMobile] = useState(false);
+  // const [daysRange, setDaysRange] = useState(70);
+
+  const currentRange = mobileRange;
 
   const dateRef = useRef();
   const range = useRef();
@@ -523,43 +524,42 @@ const TimeSlider = props => {
     setCurrentSliderRange(days);
   }, [days]);
 
-  useEffect(() => {
-    return () => {
-      let width = window.innerWidth || window.clientWidth;
-      let isMobileWidth = false;
-      let daysRangeCount = 80;
-      if (width <= 960) {
-        isMobileWidth = true;
-        daysRangeCount = 70;
-      }
-      setIsMobile(isMobileWidth);
-      setDaysRange(daysRangeCount);
-    };
-  });
+  // useEffect(() => {
+  //   return () => {
+  //     let width = window.innerWidth || window.clientWidth;
+  //     // let isMobileWidth = false;
+  //     let daysRangeCount = 80;
+  //     if (width <= 960) {
+  //       // isMobileWidth = true;
+  //       daysRangeCount = 70;
+  //     }
+  //     // setIsMobile(isMobileWidth);
+  //     setDaysRange(daysRangeCount);
+  //   };
+  // });
 
-  const onPressKey = e => {
-    let inputRange = range.current;
-    switch (e.code) {
-      case 'ArrowLeft':
-        e.preventDefault();
-        if (range.current.value > 0) {
-          range.current.value = range.current.value - 1;
-          onSliderChange({ target: { value: range.current.value } });
-        }
-        break;
-      case 'ArrowRight':
-        e.preventDefault();
-        if (range.current.value < currentRange - 1) {
-          range.current.value = Number(range.current.value) + 1;
-          onSliderChange({ target: { value: range.current.value } });
-        }
-        break;
-      default:
-        break;
-    }
-  };
+  // const onPressKey = e => {
+  //   let inputRange = range.current;
+  //   switch (e.code) {
+  //     case 'ArrowLeft':
+  //       e.preventDefault();
+  //       if (range.current.value > 0) {
+  //         range.current.value = range.current.value - 1;
+  //         onSliderChange({ target: { value: range.current.value } });
+  //       }
+  //       break;
+  //     case 'ArrowRight':
+  //       e.preventDefault();
+  //       if (range.current.value < currentRange - 1) {
+  //         range.current.value = Number(range.current.value) + 1;
+  //         onSliderChange({ target: { value: range.current.value } });
+  //       }
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
   const onSliderChange = e => {
-    console.log('currentSliderRange', currentSliderRange);
     const sliderDOM = dateRef.current;
     const rangeDOM = range.current;
     const containerDOM = container.current;
@@ -567,13 +567,12 @@ const TimeSlider = props => {
     let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
     let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
     let stepsWidth = rangeDOM.offsetWidth / currentRange;
-    let newPosition = widthSpaces[newValue];
+    // let newPosition = widthSpaces[newValue];
     sliderDOM.style.left = `${finalWidth + stepsWidth * newValue + 112}px`;
     // sliderDOM.style.transform = `translate(${finalWidth + stepsWidth * (newValue+1)}px, 0)`;
     setCurrentDateValue(newValue);
-    console.log('New value', newValue);
     // setCurrentSelectedDay(newValue)
-    setCurrentPosition(newPosition);
+    // setCurrentPosition(newPosition);
     setCurrentSelectedDay(
       toSliderString(
         new Date(currentSliderRange[parseInt(newValue)]),
@@ -587,6 +586,8 @@ const TimeSlider = props => {
     setDatePickerPosition(range);
   };
   const onChooseDate = date => {
+    console.log('onChooseDate', date);
+
     const sliderDOM = dateRef.current;
     const rangeDOM = range.current;
     const containerDOM = container.current;
@@ -627,22 +628,22 @@ const TimeSlider = props => {
     // setFirstDay(toSliderStringShort(days[0], props.i18n.locale))
     // setLastDay(toSliderStringShort(days[days.length - 1], props.i18n.locale))
     setCurrentDateValue(datePickerPosition === 'left' ? 0 : currentRange - 1);
-    setCurrentPosition(24.5);
+    // setCurrentPosition(24.5);
     submitChanges();
   };
-  const updateDates = previousState => {
-    const { currentDateValue, currentSliderRange } = previousState;
-    setCurrentSelectedDay(
-      toSliderString(currentSliderRange[currentDateValue], props.i18n.locale)
-    );
-    // setFirstDay(toSliderStringShort(currentSliderRange[0], props.i18n.locale))
-    // setLastDay(
-    //   toSliderStringShort(
-    //     currentSliderRange[currentSliderRange.length - 1],
-    //     props.i18n.locale
-    //   )
-    // )
-  };
+  // const updateDates = previousState => {
+  //   const { currentDateValue, currentSliderRange } = previousState;
+  //   setCurrentSelectedDay(
+  //     toSliderString(currentSliderRange[currentDateValue], props.i18n.locale)
+  //   );
+  //   // setFirstDay(toSliderStringShort(currentSliderRange[0], props.i18n.locale))
+  //   // setLastDay(
+  //   //   toSliderStringShort(
+  //   //     currentSliderRange[currentSliderRange.length - 1],
+  //   //     props.i18n.locale
+  //   //   )
+  //   // )
+  // };
 
   const calendarWillClose = () => {
     setDatePickerPosition(datePickerPosition + ' hide');
@@ -679,6 +680,7 @@ const TimeSlider = props => {
         }`}
       >
         <DatePicker
+          startDate={new Date(firstDay)}
           close={calendarWillClose}
           onSelect={onChooseDate}
           show={showDatePicker}
@@ -692,7 +694,7 @@ const TimeSlider = props => {
           className={`first ${tooltipCss}`}
           onClick={e => onBtnClick('left')}
         >
-          <IconBtn /> {firstDay}
+          <IconBtn /> {toSliderStringShort(new Date(firstDay), 'en')}
         </span>
         <button
           onClick={e => onBtnClick('left')}
@@ -708,7 +710,7 @@ const TimeSlider = props => {
           value={currentDateValue}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
-          {lastDay}
+          {toSliderStringShort(new Date(lastDay), 'en')}
         </span>
       </div>
     </div>

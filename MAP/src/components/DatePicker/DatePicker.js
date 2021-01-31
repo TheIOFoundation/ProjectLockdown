@@ -157,11 +157,14 @@ const monthsNames = [
   'December',
 ];
 
+const currentYear = 2020;
+
 const DatePicker = props => {
+  const { startDate } = props;
+
   const [days, setDays] = useState([]);
-  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [currentMonth, setCurrentMonth] = useState(startDate.getMonth());
   const [lastSelection, setLastSelection] = useState(false);
-  const [currentYear, setCurrentYear] = useState(2020);
   const [allMonthsDate, setAllMonthsDate] = useState(new Array(12));
   const [enableArrows, setEnableArrows] = useState(false);
 
@@ -174,42 +177,39 @@ const DatePicker = props => {
     [props]
   );
 
-  const getMonthData = useCallback(
-    (firstDay, month) => {
-      let totalDays = month.getDate();
-      let numberOfDay = firstDay.getDay();
-      let completedWeek = 7 - (numberOfDay + 1);
-      let totalOfWeeks = totalDays + completedWeek;
-      let roundWeeks = totalOfWeeks / 7;
-      let excedentDays = 0;
-      if (totalOfWeeks % 7 > 0) {
-        excedentDays = 7 - (totalOfWeeks % 7);
-        totalOfWeeks += 7 - (totalOfWeeks % 7);
-        roundWeeks = totalOfWeeks / 7;
-      }
-      let monthDaysArray = [];
-      let days = 0;
-      for (let i = 0; i < roundWeeks; i++) {
-        monthDaysArray.push([]);
-        for (let e = 0; e < 7; e++) {
-          if (i === 0 && e < completedWeek) {
-            monthDaysArray[i].push({ day: null, label: daysOfTheWeek[e] });
-          } else if (
-            i === roundWeeks - 1 &&
-            excedentDays > 0 &&
-            e > 7 - excedentDays - 1
-          ) {
-            monthDaysArray[i].push({ day: null, label: daysOfTheWeek[e] });
-          } else {
-            days++;
-            monthDaysArray[i].push({ day: days, label: daysOfTheWeek[e] });
-          }
+  const getMonthData = useCallback((firstDay, month) => {
+    let totalDays = month.getDate();
+    let numberOfDay = firstDay.getDay();
+    let completedWeek = 7 - (numberOfDay + 1);
+    let totalOfWeeks = totalDays + completedWeek;
+    let roundWeeks = totalOfWeeks / 7;
+    let excedentDays = 0;
+    if (totalOfWeeks % 7 > 0) {
+      excedentDays = 7 - (totalOfWeeks % 7);
+      totalOfWeeks += 7 - (totalOfWeeks % 7);
+      roundWeeks = totalOfWeeks / 7;
+    }
+    let monthDaysArray = [];
+    let days = 0;
+    for (let i = 0; i < roundWeeks; i++) {
+      monthDaysArray.push([]);
+      for (let e = 0; e < 7; e++) {
+        if (i === 0 && e < completedWeek) {
+          monthDaysArray[i].push({ day: null, label: daysOfTheWeek[e] });
+        } else if (
+          i === roundWeeks - 1 &&
+          excedentDays > 0 &&
+          e > 7 - excedentDays - 1
+        ) {
+          monthDaysArray[i].push({ day: null, label: daysOfTheWeek[e] });
+        } else {
+          days++;
+          monthDaysArray[i].push({ day: days, label: daysOfTheWeek[e] });
         }
       }
-      return monthDaysArray;
-    },
-    [daysOfTheWeek]
-  );
+    }
+    return monthDaysArray;
+  }, []);
 
   const fillAllMonths = useCallback(() => {
     let prevMonths = allMonthsDate;
