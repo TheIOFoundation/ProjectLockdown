@@ -12,6 +12,7 @@ import format from 'date-fns/format';
 import PlayButton from './components/PlayButton/PlayButton';
 import { addDays } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
+import CountryInfo from './components/CountryInfo/CountryInfo';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
@@ -57,6 +58,8 @@ function App() {
   const [endDate, setEndDate] = useState(
     addDays(new Date(), startingPoint + daysRange)
   );
+
+  const currentLanguage = { t: text => text };
 
   const toggleState = newState => {
     setPlayerState(newState);
@@ -134,9 +137,14 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(startDate);
-  }, [startDate]);
+  const onTdoOpen = () => {
+    console.log('TDO opened');
+  };
+
+  const onTdoClose = () => {
+    console.log('TDO closed');
+  };
+
   return (
     <div
       onKeyUp={e => {
@@ -166,25 +174,27 @@ function App() {
           <TimeSlider
             days={days}
             i18n={{ locale: 'en, en-US' }}
-            onChange={(selectedDate, startDate, endDate) => {
-              console.log('date selected');
-              console.log('Selected date changed', selectedDate);
-              console.log(startDate);
-              console.log(endDate);
+            onChange={selectedDate => {
               setSelectedDate(selectedDate);
-              // setSelectedDate(format(selectedDate, 'yyyy-MM-dd'))
-              // setStartDate(startDate)
-              // setEndDate(endDate)
             }}
-            // currentSelectedDay={format(selectedDate, 'yyyy-MM-dd')}
             currentSelectedDay={selectedDate}
             setCurrentSelectedDay={setSelectedDate}
             firstDay={format(new Date(startDate), 'yyyy-MM-dd')}
-            setFirstDay={setStartDate}
             lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
-            setLastDay={setEndDate}
           />
         )}
+        <CountryInfo
+          country="India"
+          iso2="EN"
+          wikidata=""
+          date={new Date(selectedDate)}
+          i18n={currentLanguage}
+          startDate={startDate}
+          endDate={endDate}
+          daysRange={daysRange}
+          onClose={onTdoClose}
+          onOpen={onTdoOpen}
+        />
       </ThemeContext.Provider>
     </div>
   );
