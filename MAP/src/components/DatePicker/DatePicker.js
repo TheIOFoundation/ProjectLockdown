@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from 'react';
 import css from 'csz';
 import { arrowLeft, arrowRight } from '../../assets/icons/icons.js';
 
@@ -141,70 +141,77 @@ const overlay = css`
   }
 `;
 
-const DatePicker = (props) => {
+const daysOfTheWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+const monthsNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+const DatePicker = props => {
   const [days, setDays] = useState([]);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [lastSelection, setLastSelection] = useState(false);
-  const [currentYear, setCurrentYear] = useState(2021);
+  const [currentYear, setCurrentYear] = useState(2020);
   const [allMonthsDate, setAllMonthsDate] = useState(new Array(12));
   const [enableArrows, setEnableArrows] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("keydown", onPressKey);
-    let firstDay = new Date(2021, currentMonth, 1);
-    let month = new Date(2021, currentMonth + 1, 0);
-    let days = getMonthData(firstDay, month);
-    let prevMonths = allMonthsDate;
-    prevMonths[currentMonth] = days;
-    setDays(days);
-    setAllMonthsDate(prevMonths);
-    fillAllMonths();
+  const onPressKey = useCallback(
+    e => {
+      if (e.code === 'Escape' && props.show) {
+        props.close();
+      }
+    },
+    [props]
+  );
 
-    // setState({ days, allMonthsDate: prevMonths }, fillAllMonths);
-    return () => window.removeEventListener("keydown", onPressKey);
-  }, []);
-
-  const onPressKey = (e) => {
-    if (e.code === "Escape" && props.show) {
-      props.close();
-    }
-  };
-
- const getMonthData = (firstDay, month) => {
-    let totalDays = month.getDate();
-    let numberOfDay = firstDay.getDay();
-    let completedWeek = 7 - (numberOfDay + 1);
-    let totalOfWeeks = totalDays + completedWeek;
-    let roundWeeks = totalOfWeeks / 7;
-    let excedentDays = 0;
-    if (totalOfWeeks % 7 > 0) {
-      excedentDays = 7 - (totalOfWeeks % 7);
-      totalOfWeeks += 7 - (totalOfWeeks % 7);
-      roundWeeks = totalOfWeeks / 7;
-    }
-    let monthDaysArray = [];
-    let days = 0;
-    for (let i = 0; i < roundWeeks; i++) {
-      monthDaysArray.push([]);
-      for (let e = 0; e < 7; e++) {
-        if (i === 0 && e < completedWeek) {
-          monthDaysArray[i].push({ day: null, label: daysOfTheWeek[e] });
-        } else if (
-          i === roundWeeks - 1 &&
-          excedentDays > 0 &&
-          e > 7 - excedentDays - 1
-        ) {
-          monthDaysArray[i].push({ day: null, label: daysOfTheWeek[e] });
-        } else {
-          days++;
-          monthDaysArray[i].push({ day: days, label: daysOfTheWeek[e] });
+  const getMonthData = useCallback(
+    (firstDay, month) => {
+      let totalDays = month.getDate();
+      let numberOfDay = firstDay.getDay();
+      let completedWeek = 7 - (numberOfDay + 1);
+      let totalOfWeeks = totalDays + completedWeek;
+      let roundWeeks = totalOfWeeks / 7;
+      let excedentDays = 0;
+      if (totalOfWeeks % 7 > 0) {
+        excedentDays = 7 - (totalOfWeeks % 7);
+        totalOfWeeks += 7 - (totalOfWeeks % 7);
+        roundWeeks = totalOfWeeks / 7;
+      }
+      let monthDaysArray = [];
+      let days = 0;
+      for (let i = 0; i < roundWeeks; i++) {
+        monthDaysArray.push([]);
+        for (let e = 0; e < 7; e++) {
+          if (i === 0 && e < completedWeek) {
+            monthDaysArray[i].push({ day: null, label: daysOfTheWeek[e] });
+          } else if (
+            i === roundWeeks - 1 &&
+            excedentDays > 0 &&
+            e > 7 - excedentDays - 1
+          ) {
+            monthDaysArray[i].push({ day: null, label: daysOfTheWeek[e] });
+          } else {
+            days++;
+            monthDaysArray[i].push({ day: days, label: daysOfTheWeek[e] });
+          }
         }
       }
-    }
-    return monthDaysArray;
-  };
+      return monthDaysArray;
+    },
+    [daysOfTheWeek]
+  );
 
-  const fillAllMonths = () => {
+  const fillAllMonths = useCallback(() => {
     let prevMonths = allMonthsDate;
     let firstDay, month;
     for (let i = 0; i < 12; i++) {
@@ -217,7 +224,7 @@ const DatePicker = (props) => {
     }
     setAllMonthsDate(prevMonths);
     setEnableArrows(true);
-  };
+  }, [allMonthsDate, currentMonth, getMonthData]);
   const chooseDay = (dayData, week, day) => {
     let prevData = days;
     if (lastSelection !== false) {
@@ -229,7 +236,7 @@ const DatePicker = (props) => {
     setDays(prevData);
     setLastSelection([week, day]);
   };
-  const changeMonth = (plus) => {
+  const changeMonth = plus => {
     if (enableArrows) {
       let newDays, newMonth;
       if ((currentMonth > 0 || plus) && (currentMonth < 11 || !plus)) {
@@ -245,31 +252,30 @@ const DatePicker = (props) => {
       }
     }
   };
-  const daysOfTheWeek = ["S", "M", "T", "W", "T", "F", "S"];
-  const monthsNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
 
+  useEffect(() => {
+    window.addEventListener('keydown', onPressKey);
+    let firstDay = new Date(2021, currentMonth, 1);
+    let month = new Date(2021, currentMonth + 1, 0);
+    let days = getMonthData(firstDay, month);
+    let prevMonths = allMonthsDate;
+    prevMonths[currentMonth] = days;
+    setDays(days);
+    setAllMonthsDate(prevMonths);
+    fillAllMonths();
+
+    // setState({ days, allMonthsDate: prevMonths }, fillAllMonths);
+    return () => window.removeEventListener('keydown', onPressKey);
+  }, [allMonthsDate, currentMonth, fillAllMonths, getMonthData, onPressKey]);
   return (
     <>
       <div
-      // height: 600px;
-        className={`overlay ${overlay} ${props.show ? "shw" : ""}`}
+        // height: 600px;
+        className={`overlay ${overlay} ${props.show ? 'shw' : ''}`}
         onClick={props.close}
       ></div>
       <div
-        className={`calendar ${styles} ${props.show ? "show" : ""} ${
+        className={`calendar ${styles} ${props.show ? 'show' : ''} ${
           props.customClass
         }`}
       >
@@ -281,7 +287,7 @@ const DatePicker = (props) => {
           <span onClick={() => changeMonth(true)}> {arrowRight} </span>
         </div>
         <div class="calendar header">
-          {daysOfTheWeek.map((dayL) => (
+          {daysOfTheWeek.map(dayL => (
             <div class="header item">{dayL}</div>
           ))}
         </div>
@@ -291,8 +297,8 @@ const DatePicker = (props) => {
               {week.map((day, e) => (
                 <div
                   onClick={() => chooseDay(day, i, e)}
-                  class={`day ${day.day === null ? "empty" : ""} ${
-                    day.selected ? "selected" : ""
+                  class={`day ${day.day === null ? 'empty' : ''} ${
+                    day.selected ? 'selected' : ''
                   }`}
                 >
                   <span>{day.day}</span>

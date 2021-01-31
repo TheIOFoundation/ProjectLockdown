@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react'
-import css from 'csz'
-import DatePicker from '../DatePicker/DatePicker'
-import { calendar } from '../../assets/icons/icons.js'
-import format from 'date-fns/format'
-import addDays from 'date-fns/addDays'
-import { enUS } from 'date-fns/locale'
+import React, { useState, useRef, useEffect } from 'react';
+import css from 'csz';
+import DatePicker from '../DatePicker/DatePicker';
+import { calendar } from '../../assets/icons/icons.js';
+import format from 'date-fns/format';
+import { enUS } from 'date-fns/locale';
 
 const sliderWrapper = css`
   & {
@@ -51,7 +50,7 @@ const sliderWrapper = css`
       }
     }
   }
-`
+`;
 
 const selectStyles = css`
   @keyframes fadeOutLeft {
@@ -158,7 +157,7 @@ const selectStyles = css`
       }
     }
   }
-`
+`;
 const rangeStyles = css`
   input {
     background: transparent;
@@ -288,7 +287,7 @@ const rangeStyles = css`
   input[type='range']:focus::-ms-fill-upper {
     background: #d6d6d6;
   }
-`
+`;
 const tooltipCss = css`
   .dark & {
     color: white;
@@ -331,7 +330,7 @@ const tooltipCss = css`
       right: 57px;
     }
   }
-`
+`;
 const sliderSelector = css`
   .dark & span {
     color: white;
@@ -384,7 +383,7 @@ const sliderSelector = css`
       }
     }
   }
-`
+`;
 const popBtn = css`
   & {
     content: '';
@@ -431,209 +430,211 @@ const popBtn = css`
       outline: none;
     }
   }
-`
+`;
 
-const firstDayDefaultOffset = 7 * 5
-const desktopRange = 80
-const mobileRange = 70
+const firstDayDefaultOffset = 7 * 5;
+// const desktopRange = 80;
+const mobileRange = 70;
 
-const widthSpaces = [7.5, 16, 24.5, 33, 41.5, 50, 58.5, 67, 75.5, 84, 94]
-let languages = false
-const TimeSlider = (props) => {
-  console.log(props)
+const widthSpaces = [7.5, 16, 24.5, 33, 41.5, 50, 58.5, 67, 75.5, 84, 94];
+let languages = false;
+const TimeSlider = props => {
+  console.log(props);
   const [currentDateValue, setCurrentDateValue] = useState(
     firstDayDefaultOffset
-  )
+  );
 
   const {
     currentSelectedDay,
     setCurrentSelectedDay,
     firstDay,
-    setFirstDay,
+    // setFirstDay,
     lastDay,
-    setLastDay,
-    days
-  } = props
-  const [currentPosition, setCurrentPosition] = useState(24.5)
-  const [datePickerPosition, setDatePickerPosition] = useState('left')
-  const [showDatePicker, setShowDatePicker] = useState(false)
+    // setLastDay,
+    days,
+  } = props;
+  const [currentPosition, setCurrentPosition] = useState(24.5);
+  const [datePickerPosition, setDatePickerPosition] = useState('left');
+  const [showDatePicker, setShowDatePicker] = useState(false);
   // const [currentSelectedDay, setCurrentSelectedDay] = useState("");
   // const [firstDay, setFirstDay] = useState("");
   // const [lastDay, setLastDay] = useState("");
-  const [currentSliderRange, setCurrentSliderRange] = useState([])
-  const [currentRange, setCurrentRange] = useState(mobileRange)
-  const [isMobile, setIsMobile] = useState(false)
-  const [daysRange, setDaysRange] = useState(70)
+  const [currentSliderRange, setCurrentSliderRange] = useState([]);
+  const [currentRange, setCurrentRange] = useState(mobileRange);
+  const [isMobile, setIsMobile] = useState(false);
+  const [daysRange, setDaysRange] = useState(70);
 
-  const dateRef = useRef()
-  const range = useRef()
-  const container = useRef()
+  const dateRef = useRef();
+  const range = useRef();
+  const container = useRef();
 
   const toSliderStringShort = (date, currentLanguage) => {
-    let isoLanguage = currentLanguage
+    let isoLanguage = currentLanguage;
     if (currentLanguage !== undefined) {
-      isoLanguage = currentLanguage.replace('-', '')
-      if (isoLanguage === 'ar') isoLanguage = 'arSA'
-      if (isoLanguage === 'zhHK') isoLanguage = 'zhTW'
+      isoLanguage = currentLanguage.replace('-', '');
+      if (isoLanguage === 'ar') isoLanguage = 'arSA';
+      if (isoLanguage === 'zhHK') isoLanguage = 'zhTW';
       if (
         languages[isoLanguage] === undefined ||
         languages[isoLanguage] === null
       ) {
-        isoLanguage = currentLanguage.split('-')[0]
+        isoLanguage = currentLanguage.split('-')[0];
         if (
           languages[isoLanguage] === undefined ||
           languages[isoLanguage] === null
         ) {
-          isoLanguage = 'enUS'
+          isoLanguage = 'enUS';
         }
       }
     } else {
-      isoLanguage = 'enUS'
+      isoLanguage = 'enUS';
     }
     return format(date, 'dd MMM', {
       locale: languages ? languages[isoLanguage] : enUS,
-    })
-  }
+    });
+  };
   const toSliderString = (date, currentLanguage) => {
-    let isoLanguage = currentLanguage
+    let isoLanguage = currentLanguage;
     if (currentLanguage) {
-      isoLanguage = currentLanguage.replace('-', '')
-      if (isoLanguage === 'ar') isoLanguage = 'arSA'
-      if (isoLanguage === 'zhHK') isoLanguage = 'zhTW'
+      isoLanguage = currentLanguage.replace('-', '');
+      if (isoLanguage === 'ar') isoLanguage = 'arSA';
+      if (isoLanguage === 'zhHK') isoLanguage = 'zhTW';
       if (
         languages[isoLanguage] === undefined ||
         languages[isoLanguage] === null
       ) {
-        isoLanguage = currentLanguage.split('-')[0]
+        isoLanguage = currentLanguage.split('-')[0];
         if (
           languages[isoLanguage] === undefined ||
           languages[isoLanguage] === null
         ) {
-          isoLanguage = 'enUS'
+          isoLanguage = 'enUS';
         }
       }
     } else {
-      isoLanguage = 'enUS'
+      isoLanguage = 'enUS';
     }
     return format(date, 'dd-MMMM-yyyy', {
       locale: languages ? languages[isoLanguage] : enUS,
-    })
-  }
-
+    });
+  };
 
   useEffect(() => {
-    setCurrentSliderRange(days)
-  }, [days])
+    setCurrentSliderRange(days);
+  }, [days]);
 
   useEffect(() => {
     return () => {
-      let width = window.innerWidth || window.clientWidth
-      let isMobileWidth = false
-      let daysRangeCount = 80
+      let width = window.innerWidth || window.clientWidth;
+      let isMobileWidth = false;
+      let daysRangeCount = 80;
       if (width <= 960) {
-        isMobileWidth = true
-        daysRangeCount = 70
+        isMobileWidth = true;
+        daysRangeCount = 70;
       }
-      setIsMobile(isMobileWidth)
-      setDaysRange(daysRangeCount)
-    }
-  })
+      setIsMobile(isMobileWidth);
+      setDaysRange(daysRangeCount);
+    };
+  });
 
-  const onPressKey = (e) => {
-    let inputRange = range.current
+  const onPressKey = e => {
+    let inputRange = range.current;
     switch (e.code) {
       case 'ArrowLeft':
-        e.preventDefault()
+        e.preventDefault();
         if (range.current.value > 0) {
-          range.current.value = range.current.value - 1
-          onSliderChange({ target: { value: range.current.value } })
+          range.current.value = range.current.value - 1;
+          onSliderChange({ target: { value: range.current.value } });
         }
-        break
+        break;
       case 'ArrowRight':
-        e.preventDefault()
+        e.preventDefault();
         if (range.current.value < currentRange - 1) {
-          range.current.value = Number(range.current.value) + 1
-          onSliderChange({ target: { value: range.current.value } })
+          range.current.value = Number(range.current.value) + 1;
+          onSliderChange({ target: { value: range.current.value } });
         }
-        break
+        break;
       default:
-        break
+        break;
     }
-  }
-  const onSliderChange = (e) => {
-    console.log('currentSliderRange', currentSliderRange)
-    const sliderDOM = dateRef.current
-    const rangeDOM = range.current
-    const containerDOM = container.current
-    let newValue = e.target.value
-    let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth
-    let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4
-    let stepsWidth = rangeDOM.offsetWidth / currentRange
-    let newPosition = widthSpaces[newValue]
-    sliderDOM.style.left = `${finalWidth + stepsWidth * newValue + 112}px`
+  };
+  const onSliderChange = e => {
+    console.log('currentSliderRange', currentSliderRange);
+    const sliderDOM = dateRef.current;
+    const rangeDOM = range.current;
+    const containerDOM = container.current;
+    let newValue = e.target.value;
+    let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
+    let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
+    let stepsWidth = rangeDOM.offsetWidth / currentRange;
+    let newPosition = widthSpaces[newValue];
+    sliderDOM.style.left = `${finalWidth + stepsWidth * newValue + 112}px`;
     // sliderDOM.style.transform = `translate(${finalWidth + stepsWidth * (newValue+1)}px, 0)`;
-    setCurrentDateValue(newValue)
-    console.log('New value', newValue)
+    setCurrentDateValue(newValue);
+    console.log('New value', newValue);
     // setCurrentSelectedDay(newValue)
-    setCurrentPosition(newPosition)
+    setCurrentPosition(newPosition);
     setCurrentSelectedDay(
-      toSliderString(new Date(currentSliderRange[parseInt(newValue)]), props.i18n.locale)
-    )
-    submitChanges()
-  }
-  const onBtnClick = (range) => {
-    setShowDatePicker(true)
-    setDatePickerPosition(range)
-  }
-  const onChooseDate = (date) => {
-    const sliderDOM = dateRef.current
-    const rangeDOM = range.current
-    const containerDOM = container.current
-    let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth
-    let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4
-    let stepsWidth = rangeDOM.offsetWidth / currentRange
+      toSliderString(
+        new Date(currentSliderRange[parseInt(newValue)]),
+        props.i18n.locale
+      )
+    );
+    submitChanges();
+  };
+  const onBtnClick = range => {
+    setShowDatePicker(true);
+    setDatePickerPosition(range);
+  };
+  const onChooseDate = date => {
+    const sliderDOM = dateRef.current;
+    const rangeDOM = range.current;
+    const containerDOM = container.current;
+    let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
+    let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
+    let stepsWidth = rangeDOM.offsetWidth / currentRange;
     sliderDOM.style.left = `${
       finalWidth +
       112 +
       stepsWidth *
         ((datePickerPosition === 'left' ? 0 : currentRange - 1) + 0.5)
-    }px`
-    calendarWillClose()
-    
+    }px`;
+    calendarWillClose();
+
     if (datePickerPosition === 'left') {
-      let plusDays = 1
+      let plusDays = 1;
       for (let i = 1; i <= currentRange; i++) {
         if (i === 1) {
-          days.push(date)
+          days.push(date);
         } else {
-          days.push(rangePreProcces(date, plusDays))
-          plusDays++
+          days.push(rangePreProcces(date, plusDays));
+          plusDays++;
         }
       }
     } else {
-      let lessDays = currentRange - 1
+      let lessDays = currentRange - 1;
       for (let i = 1; i <= currentRange; i++) {
         if (i === currentRange) {
-          days.push(date)
+          days.push(date);
         } else {
-          days.push(rangePreProcces(date, -1 * lessDays))
-          lessDays--
+          days.push(rangePreProcces(date, -1 * lessDays));
+          lessDays--;
         }
       }
     }
-    setCurrentSliderRange(days)
-    setCurrentSelectedDay(toSliderString(date, props.i18n.locale))
+    setCurrentSliderRange(days);
+    setCurrentSelectedDay(toSliderString(date, props.i18n.locale));
     // setFirstDay(toSliderStringShort(days[0], props.i18n.locale))
     // setLastDay(toSliderStringShort(days[days.length - 1], props.i18n.locale))
-    setCurrentDateValue(datePickerPosition === 'left' ? 0 : currentRange - 1)
-    setCurrentPosition(24.5)
-    submitChanges()
-  }
-  const updateDates = (previousState) => {
-    const { currentDateValue, currentSliderRange } = previousState
+    setCurrentDateValue(datePickerPosition === 'left' ? 0 : currentRange - 1);
+    setCurrentPosition(24.5);
+    submitChanges();
+  };
+  const updateDates = previousState => {
+    const { currentDateValue, currentSliderRange } = previousState;
     setCurrentSelectedDay(
       toSliderString(currentSliderRange[currentDateValue], props.i18n.locale)
-    )
+    );
     // setFirstDay(toSliderStringShort(currentSliderRange[0], props.i18n.locale))
     // setLastDay(
     //   toSliderStringShort(
@@ -641,32 +642,32 @@ const TimeSlider = (props) => {
     //     props.i18n.locale
     //   )
     // )
-  }
+  };
 
   const calendarWillClose = () => {
-    setDatePickerPosition(datePickerPosition + ' hide')
-    return () => setTimeout(() => closeDatePicker(), 400)
-  }
+    setDatePickerPosition(datePickerPosition + ' hide');
+    return () => setTimeout(() => closeDatePicker(), 400);
+  };
   const closeDatePicker = () => {
-    setShowDatePicker(false)
-    setDatePickerPosition(datePickerPosition.replace(' hide', ''))
-  }
+    setShowDatePicker(false);
+    setDatePickerPosition(datePickerPosition.replace(' hide', ''));
+  };
 
   const rangePreProcces = (date, days) => {
-    let newDate = new Date(date)
-    newDate.setDate(date.getDate() + days)
-    return newDate
-  }
+    let newDate = new Date(date);
+    newDate.setDate(date.getDate() + days);
+    return newDate;
+  };
   const submitChanges = () => {
     props.onChange(
       currentSliderRange[currentDateValue],
       currentSliderRange[0],
       currentSliderRange[currentSliderRange.length - 1]
-    )
-  }
+    );
+  };
   return (
     <div
-      class={`sliderWrapper ${sliderWrapper} ${
+      className={`sliderWrapper ${sliderWrapper} ${
         props.children !== '' ? 'open' : ''
       }`}
       ref={container}
@@ -683,39 +684,39 @@ const TimeSlider = (props) => {
           show={showDatePicker}
           customClass={datePickerPosition}
         />
-        <div class={`${sliderSelector}`} ref={dateRef}>
+        <div className={`${sliderSelector}`} ref={dateRef}>
           <span>{currentSelectedDay.toString()}</span>
         </div>
         <span
-          title='Select Start Date'
+          title="Select Start Date"
           className={`first ${tooltipCss}`}
-          onClick={(e) => onBtnClick('left')}
+          onClick={e => onBtnClick('left')}
         >
           <IconBtn /> {firstDay}
         </span>
         <button
-          onClick={(e) => onBtnClick('left')}
+          onClick={e => onBtnClick('left')}
           className={`first ${popBtn}`}
         ></button>
         <input
           ref={range}
           onInput={onSliderChange}
-          type='range'
-          min='0'
-          max={currentRange - 1}
-          step='1'
+          type="range"
+          min="0"
+          max={currentRange}
+          step="1"
           value={currentDateValue}
         />
-        <span title='Select End Date' className={`last ${tooltipCss}`}>
+        <span title="Select End Date" className={`last ${tooltipCss}`}>
           {lastDay}
         </span>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const IconBtn = () => {
-  return <span>{calendar}</span>
-}
+  return <span>{calendar}</span>;
+};
 
-export default TimeSlider
+export default TimeSlider;
