@@ -117,10 +117,6 @@ function App() {
     }
   }, []);
 
-  const toggleState = newState => {
-    setPlayerState(newState);
-  };
-
   useEffect(() => {
     let date = startDate;
 
