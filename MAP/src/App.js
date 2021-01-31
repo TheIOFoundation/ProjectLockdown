@@ -39,7 +39,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isDark, setIsDark] = useState(false);
   const [playerState, setPlayerState] = useState(PAUSED);
-  const days = [];
+  const [days, setDays] = useState([]);
 
   // selectedDate -> the date for which the datapoints are being displayed. defaults to todays' date.
   // Currently using 4th April 2020 as a starting date, and end date 50 days away from it. This will be handled once the timeslider is done.
@@ -65,10 +65,14 @@ function App() {
   useEffect(() => {
     let date = startDate;
 
+    const newDays = [...days];
+
     for (let i = 0; i <= daysRange; i++) {
-      days.push(format(date, 'yyyy-MM-dd'));
+      newDays.push(format(date, 'yyyy-MM-dd'));
       date = addDays(date, 1);
     }
+
+    setDays(newDays)
   }, [startDate, endDate, days]);
 
   useEffect(() => {
