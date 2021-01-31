@@ -150,16 +150,18 @@ function App() {
       <ThemeContext.Provider value={{ isDark, setIsDark }}>
         <LoadingAnimation isLoading={isLoading} />
         <Map
+          dark={isDark}
           selectedDate={selectedDate}
           startDate={startDate}
           endDate={endDate}
           setIsLoading={setIsLoading}
           daysRange={daysRange}
         ></Map>
-        <TabMenu />
+        <TabMenu darkMode={isDark} setDarkMode={setIsDark} />
         <Header dark={isDark} />
         <Totals dark={isDark} />
         <Legend dark={isDark} />
+        {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
         <PlayButton state={playerState} toggleState={toggleState} />
         <LanguageSelector dark={isDark} />
         {startDate && endDate && selectedDate && (
