@@ -476,61 +476,6 @@ export class Map extends React.Component {
       }
     }
   }
-
-  async componentDidMount() {
-    console.log('Selected date', this.props.selectedDate);
-
-    const { daysRange } = this.props;
-
-    let { startDate, endDate } = this.props;
-    console.log(this.props);
-    startDate = startDate
-      ? format(startDate, 'yyyy-MM-dd')
-      : format(addDays(new Date(), -14), 'yyyy-MM-dd');
-    endDate = endDate
-      ? format(endDate, 'yyyy-MM-dd')
-      : format(addDays(new Date(), daysRange - 14), 'yyyy-MM-dd');
-    // the world map needs a large data source, lazily fetch them in parallel
-    const [mapData, lookupTable] = await Promise.all([
-      getWorldData(startDate, endDate),
-      fetch('./data/boundaries-adm0-v3.json').then(r => r.json()),
-    ]);
-
-    // we need to prepare a static country list not dynamically calculate them
-    const countries = Object.values[lookupTable];
-
-    this.setState(
-      {
-        countries,
-        mapData,
-        lookupTable,
-      },
-      () => {
-        console.log('STATE', this.state);
-      }
-    );
-
-    console.log('Lookup', lookupTable);
-
-    await this.initMap(mapData, lookupTable);
-  }
-
-  componentDidUpdate(previousProps, previousState, snapshot) {
-    if (previousProps.selectedDate !== this.props.selectedDate) {
-      console.log('Selected date didUpdate', this.props.selectedDate);
-
-      if (this.state.isMapReady) {
-        this.updateMap(
-          this.state.mapData,
-          this.state.lookupTable,
-          this.props.selectedDate
-        );
-        if (previousProps.currentLanguage !== this.props.currentLanguage) {
-          this.updateMapLanguage(this.props.currentLanguage);
-        }
-      }
-    }
-  }
  
   render() {
     return (
