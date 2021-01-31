@@ -132,6 +132,7 @@ function App() {
       <ThemeContext.Provider value={{ isDark, setIsDark }}>
         <LoadingAnimation isLoading={isLoading} />
         <Map
+          dark={isDark}
           selectedDate={selectedDate}
           startDate={startDate}
           endDate={endDate}
