@@ -11,6 +11,7 @@ import ThemeContext from './context/ThemeContext';
 import format from 'date-fns/format';
 import PlayButton from './components/PlayButton/PlayButton';
 import { addDays } from 'date-fns';
+import CountriesSearcher from './components/CountriesSearcher/CountriesSearcher';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
@@ -141,6 +142,7 @@ function App() {
         <Header dark={isDark} />
         <Totals dark={isDark} />
         <Legend dark={isDark} />
+        {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
         <PlayButton state={playerState} toggleState={toggleState} />
         <LanguageSelector dark={isDark} />
       </ThemeContext.Provider>
