@@ -271,7 +271,7 @@ const DatePicker = props => {
     <>
       <div
         // height: 600px;
-        className={`overlay ${overlay} ${props.show ? 'shw' : ''}`}
+        className={`overlay ${overlay} ${props.show ? 'sow' : ''}`}
         onClick={props.close}
       ></div>
       <div

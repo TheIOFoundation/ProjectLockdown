@@ -61,6 +61,7 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
 
 function useGeocoderHook(i18n, map, setGeocoder, setResults, setGeoResult) {
   useEffect(() => {
+    console.log(i18n, map, setGeocoder, setResults, setGeoResult, "countries Searcher")
     let geocoder = new MapboxGeocoder({
       accessToken: mapboxToken,
       language: i18n ? i18n.locale : 'en, en-US',
@@ -79,12 +80,12 @@ function useGeocoderHook(i18n, map, setGeocoder, setResults, setGeoResult) {
         let countryName = features[0].text.toUpperCase();
         setResults(countryName);
         setGeoResult(features[0]);
-      } else {
+      } else {  
         setResults('');
         setGeoResult({});
       }
     }
-  }, [i18n, map, setGeocoder, setResults, setGeoResult]);
+  }, []);
 }
 
 function useSearch(

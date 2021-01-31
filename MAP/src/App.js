@@ -1,24 +1,25 @@
-import { useEffect, useState } from 'react';
-import { Map } from './components/Map/Map';
-import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
-import { Legend } from './components/Legend/Legend';
-import Totals from './components/Totals/Totals';
-import Header from './components/Header/Header';
-import LanguageSelector from './components/LanguageSelector/LanguageSelector';
-import './App.scss';
-import { TabMenu } from './components/TabMenu/TabMenu';
-import ThemeContext from './context/ThemeContext';
-import format from 'date-fns/format';
-import PlayButton from './components/PlayButton/PlayButton';
-import { addDays } from 'date-fns';
-import TimeSlider from './components/TimeSlider/TimeSlider';
+import { useEffect, useState } from "react";
+import { Map } from "./components/Map/Map";
+import { LoadingAnimation } from "./components/LoadingAnimation/LoadingAnimation";
+import { Legend } from "./components/Legend/Legend";
+import Totals from "./components/Totals/Totals";
+import Header from "./components/Header/Header";
+import LanguageSelector from "./components/LanguageSelector/LanguageSelector";
+import "./App.scss";
+import { TabMenu } from "./components/TabMenu/TabMenu";
+import ThemeContext from "./context/ThemeContext";
+import format from "date-fns/format";
+import PlayButton from "./components/PlayButton/PlayButton";
+import { addDays } from "date-fns";
+import TimeSlider from "./components/TimeSlider/TimeSlider";
+import CountryInfo from "./components/CountryInfo/CountryInfo";
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
 // TODO: Reset selectedDate to startDate once endDate is reached.
 
 function toJsonString(date) {
-  return format(date, 'yyyy-MM-dd');
+  return format(date, "yyyy-MM-dd");
 }
 
 const daysRange = 70;
@@ -29,8 +30,8 @@ const playSpeed = 200;
 // i.e. delay between skipping to the next date (in ms)
 
 const playerStates = {
-  PLAYING: 'PLAYING',
-  PAUSED: 'PAUSED',
+  PLAYING: "PLAYING",
+  PAUSED: "PAUSED",
 };
 
 const { PLAYING, PAUSED } = playerStates;
@@ -40,6 +41,7 @@ function App() {
   const [isDark, setIsDark] = useState(false);
   const [playerState, setPlayerState] = useState(PAUSED);
   const [days, setDays] = useState([]);
+  const [currentLanguage, setCurrentLanguage] = useState({ t: (text) => text });
 
   // selectedDate -> the date for which the datapoints are being displayed. defaults to todays' date.
   // Currently using 4th April 2020 as a starting date, and end date 50 days away from it. This will be handled once the timeslider is done.
@@ -54,30 +56,34 @@ function App() {
   const [endDate, setEndDate] = useState(
     addDays(new Date(), startingPoint + daysRange)
   );
-
-  const toggleState = newState => {
+  const [dialog, setDialog] = useState({
+    opened: false,
+    template: "",
+    title: "",
+  });
+  const toggleState = (newState) => {
     setPlayerState(newState);
   };
 
   useEffect(() => {
     const formattedSelectedDate = new Date(selectedDate);
 
-    console.log('End date', endDate);
-    console.log('Selected date v', formattedSelectedDate);
+    console.log("End date", endDate);
+    console.log("Selected date v", formattedSelectedDate);
 
     if (formattedSelectedDate.getDate() === endDate.getDate()) {
-      alert('Ended');
+      alert("Ended");
       setPlayerState(PAUSED);
-      setSelectedDate(format(startDate, 'yyyy-MM-dd'));
+      setSelectedDate(format(startDate, "yyyy-MM-dd"));
     }
   }, [selectedDate, endDate, startDate]);
 
   useEffect(() => {
-    console.log('Selected date', selectedDate);
+    console.log("Selected date", selectedDate);
   }, [selectedDate]);
 
   useEffect(() => {
-    console.log('Player state', playerState);
+    console.log("Player state", playerState);
   }, [playerState]);
 
   useEffect(() => {
@@ -86,12 +92,12 @@ function App() {
     if (playerState === PLAYING) {
       var loop = setInterval(() => {
         if (playerState === PAUSED || formattedSelectedDate === endDate) {
-          console.log('Stopped');
+          console.log("Stopped");
           clearInterval(loop);
         } else {
-          console.log('Still looping');
+          console.log("Still looping");
           setSelectedDate(
-            format(addDays(formattedSelectedDate, 1), 'yyyy-MM-dd')
+            format(addDays(formattedSelectedDate, 1), "yyyy-MM-dd")
           );
         }
       }, playSpeed);
@@ -101,18 +107,18 @@ function App() {
   }, [playerState, selectedDate, endDate]);
 
   useEffect(() => {
-    const darkModePreference = window.localStorage.getItem('darkmode');
+    const darkModePreference = window.localStorage.getItem("darkmode");
 
     if (!darkModePreference) {
-      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
-      document.getElementsByTagName('html')[0].classList.add('dark');
-      window.localStorage.setItem('darkmode', 'true');
+      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      document.getElementsByTagName("html")[0].classList.add("dark");
+      window.localStorage.setItem("darkmode", "true");
     }
 
-    if (darkModePreference === 'true') {
-      document.getElementsByTagName('html')[0].classList.add('dark');
+    if (darkModePreference === "true") {
+      document.getElementsByTagName("html")[0].classList.add("dark");
       setIsDark(true);
-    } else if (darkModePreference === 'false') {
+    } else if (darkModePreference === "false") {
       setIsDark(false);
     }
   }, []);
@@ -123,37 +129,37 @@ function App() {
     const newDays = [...days];
 
     for (let i = 0; i <= daysRange; i++) {
-      newDays.push(format(date, 'yyyy-MM-dd'));
+      newDays.push(format(date, "yyyy-MM-dd"));
       date = addDays(date, 1);
     }
 
-    setDays(newDays)
+    setDays(newDays);
   }, [startDate, endDate, days]);
 
   useEffect(() => {
     const formattedSelectedDate = new Date(selectedDate);
 
-    console.log('End date', format(endDate, 'yyyy-MM-dd'));
-    console.log('Selected date v', format(formattedSelectedDate, 'yyyy-MM-dd'));
+    console.log("End date", format(endDate, "yyyy-MM-dd"));
+    console.log("Selected date v", format(formattedSelectedDate, "yyyy-MM-dd"));
 
     if (
-      format(endDate, 'yyyy-MM-dd') ===
-      format(formattedSelectedDate, 'yyyy-MM-dd')
+      format(endDate, "yyyy-MM-dd") ===
+      format(formattedSelectedDate, "yyyy-MM-dd")
     ) {
       if (playerState === PLAYING) {
-        alert('Ended');
+        alert("Ended");
         setPlayerState(PAUSED);
-        setSelectedDate(format(startDate, 'yyyy-MM-dd'));
+        setSelectedDate(format(startDate, "yyyy-MM-dd"));
       }
     }
   }, [selectedDate, endDate, startDate, playerState]);
 
   useEffect(() => {
-    console.log('Selected date', selectedDate);
+    console.log("Selected date", selectedDate);
   }, [selectedDate]);
 
   useEffect(() => {
-    console.log('Player state', playerState);
+    console.log("Player state", playerState);
   }, [playerState]);
 
   useEffect(() => {
@@ -162,12 +168,12 @@ function App() {
     if (playerState === PLAYING) {
       var loop = setInterval(() => {
         if (playerState === PAUSED || formattedSelectedDate === endDate) {
-          console.log('Stopped');
+          console.log("Stopped");
           clearInterval(loop);
         } else {
-          console.log('Still looping');
+          console.log("Still looping");
           setSelectedDate(
-            format(addDays(formattedSelectedDate, 1), 'yyyy-MM-dd')
+            format(addDays(formattedSelectedDate, 1), "yyyy-MM-dd")
           );
         }
       }, playSpeed);
@@ -177,29 +183,41 @@ function App() {
   }, [playerState, selectedDate, endDate]);
 
   useEffect(() => {
-    const darkModePreference = window.localStorage.getItem('darkmode');
+    const darkModePreference = window.localStorage.getItem("darkmode");
 
     if (!darkModePreference) {
-      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
-      document.getElementsByTagName('html')[0].classList.add('dark');
-      window.localStorage.setItem('darkmode', 'true');
+      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      document.getElementsByTagName("html")[0].classList.add("dark");
+      window.localStorage.setItem("darkmode", "true");
     }
 
-    if (darkModePreference === 'true') {
-      document.getElementsByTagName('html')[0].classList.add('dark');
+    if (darkModePreference === "true") {
+      document.getElementsByTagName("html")[0].classList.add("dark");
       setIsDark(true);
-    } else if (darkModePreference === 'false') {
+    } else if (darkModePreference === "false") {
       setIsDark(false);
     }
   }, []);
+
+  const closeDialog = () => {
+    setDialog({ opened: false, template: "", title: "" });
+    // debouncedCloseDialog();
+    // this.__closeCountryInfo();
+  };
+
+  const openDialog = () => {
+    setDialog({ opened: true, template: "", title: "" });
+    // debouncedCloseDialog();
+    // this.__closeCountryInfo();
+  };
 
   useEffect(() => {
     console.log(startDate);
   }, [startDate]);
   return (
     <div
-      onKeyUp={e => {
-        if (e.key === ' ') {
+      onKeyUp={(e) => {
+        if (e.key === " ") {
           const newState = playerState === PAUSED ? PLAYING : PAUSED;
 
           toggleState(newState);
@@ -213,6 +231,7 @@ function App() {
           selectedDate={selectedDate}
           startDate={startDate}
           endDate={endDate}
+          onOpen={openDialog}
           setIsLoading={setIsLoading}
           daysRange={daysRange}
         ></Map>
@@ -225,21 +244,40 @@ function App() {
         {startDate && endDate && selectedDate && (
           <TimeSlider
             days={days}
-            i18n={{ locale: 'en, en-US' }}
+            i18n={{ locale: "en, en-US" }}
             onChange={(selectedDate, startDate, endDate) => {
-              console.log('date selected');
-              console.log('Selected date changed', selectedDate);
+              console.log("date selected");
+              console.log("Selected date changed", selectedDate);
               console.log(startDate);
               console.log(endDate);
               setSelectedDate(selectedDate);
             }}
             currentSelectedDay={selectedDate}
+          // selectedDate={selectedDate}
+
             setCurrentSelectedDay={setSelectedDate}
-            firstDay={format(new Date(startDate), 'yyyy-MM-dd')}
+            firstDay={format(new Date(startDate), "yyyy-MM-dd")}
             setFirstDay={setStartDate}
-            lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
+            lastDay={format(new Date(endDate), "yyyy-MM-dd")}
             setLastDay={setEndDate}
-          />
+          >
+            {dialog.opened ? (
+              <CountryInfo
+                country="India"
+                iso2="EN"
+                wikidata=""
+                date={selectedDate || new Date()}
+                i18n={currentLanguage}
+                startDate={startDate}
+                endDate={endDate}
+                daysRange={daysRange}
+                onClose={closeDialog}
+                onOpen={openDialog}
+              />
+            ) : (
+              ""
+            )}
+          </TimeSlider>
         )}
       </ThemeContext.Provider>
     </div>
