@@ -12,8 +12,6 @@ export function Settings({
 }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
   
-  // const { isDark: darkMode, setIsDark: setDarkMode } = useContext(ThemeContext); 
-
   function toggleDarkmode() {
     if (document.getElementsByTagName('html')[0].classList.contains('dark')) {
       document.getElementsByTagName('html')[0].classList.remove('dark');

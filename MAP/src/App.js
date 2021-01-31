@@ -47,9 +47,6 @@ function App() {
     toJsonString(addDays(new Date(), startingPoint))
   );
 
-  // const startDate = addDays(new Date(), startingPoint);
-  // const endDate = addDays(new Date(), startingPoint + daysRange);
-
   // For later, when we integrate the timeslider
   const [startDate, setStartDate] = useState(
     addDays(new Date(), startingPoint)
@@ -57,6 +54,68 @@ function App() {
   const [endDate, setEndDate] = useState(
     addDays(new Date(), startingPoint + daysRange)
   );
+
+  const toggleState = newState => {
+    setPlayerState(newState);
+  };
+
+  useEffect(() => {
+    const formattedSelectedDate = new Date(selectedDate);
+
+    console.log('End date', endDate);
+    console.log('Selected date v', formattedSelectedDate);
+
+    if (formattedSelectedDate.getDate() === endDate.getDate()) {
+      alert('Ended');
+      setPlayerState(PAUSED);
+      setSelectedDate(format(startDate, 'yyyy-MM-dd'));
+    }
+  }, [selectedDate, endDate, startDate]);
+
+  useEffect(() => {
+    console.log('Selected date', selectedDate);
+  }, [selectedDate]);
+
+  useEffect(() => {
+    console.log('Player state', playerState);
+  }, [playerState]);
+
+  useEffect(() => {
+    const formattedSelectedDate = new Date(selectedDate);
+
+    if (playerState === PLAYING) {
+      var loop = setInterval(() => {
+        if (playerState === PAUSED || formattedSelectedDate === endDate) {
+          console.log('Stopped');
+          clearInterval(loop);
+        } else {
+          console.log('Still looping');
+          setSelectedDate(
+            format(addDays(formattedSelectedDate, 1), 'yyyy-MM-dd')
+          );
+        }
+      }, playSpeed);
+    }
+
+    return () => clearInterval(loop);
+  }, [playerState, selectedDate, endDate]);
+
+  useEffect(() => {
+    const darkModePreference = window.localStorage.getItem('darkmode');
+
+    if (!darkModePreference) {
+      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.getElementsByTagName('html')[0].classList.add('dark');
+      window.localStorage.setItem('darkmode', 'true');
+    }
+
+    if (darkModePreference === 'true') {
+      document.getElementsByTagName('html')[0].classList.add('dark');
+      setIsDark(true);
+    } else if (darkModePreference === 'false') {
+      setIsDark(false);
+    }
+  }, []);
 
   const toggleState = newState => {
     setPlayerState(newState);
@@ -165,7 +224,6 @@ function App() {
         <Header dark={isDark} />
         <Totals dark={isDark} />
         <Legend dark={isDark} />
-        {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
         <PlayButton state={playerState} toggleState={toggleState} />
         <LanguageSelector dark={isDark} />
         {startDate && endDate && selectedDate && (
@@ -178,11 +236,7 @@ function App() {
               console.log(startDate);
               console.log(endDate);
               setSelectedDate(selectedDate);
-              // setSelectedDate(format(selectedDate, 'yyyy-MM-dd'))
-              // setStartDate(startDate)
-              // setEndDate(endDate)
             }}
-            // currentSelectedDay={format(selectedDate, 'yyyy-MM-dd')}
             currentSelectedDay={selectedDate}
             setCurrentSelectedDay={setSelectedDate}
             firstDay={format(new Date(startDate), 'yyyy-MM-dd')}
