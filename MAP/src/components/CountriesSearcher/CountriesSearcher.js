@@ -151,7 +151,7 @@ function useSearch(
         }
       }
     }
-  }, []);
+  }, [map,  setResults, setGeoResult, geoResult, mouseHover, setParsedText, setShowSearchInput, showSearchInput]);
 }
 
 export default CountriesSearcher;
