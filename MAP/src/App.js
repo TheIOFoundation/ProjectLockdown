@@ -12,6 +12,7 @@ import format from 'date-fns/format';
 import PlayButton from './components/PlayButton/PlayButton';
 import { addDays } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
+import CountryInfo from './components/CountryInfo/CountryInfo';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
@@ -46,7 +47,23 @@ function App() {
   const [selectedDate, setSelectedDate] = useState(
     toJsonString(addDays(new Date(), startingPoint))
   );
+  const [dialog, setDialog] = useState({
+    opened: false,
+    template: "",
+    title: "",
+  });
+  const [currentLanguage, setCurrentLanguage] = useState({ t: (text) => text });
 
+  const openDialog = () => {
+    setDialog({ opened: true, template: "", title: "" });
+    // debouncedCloseDialog();
+    // this.__closeCountryInfo();
+  };
+  const closeDialog = () => {
+    setDialog({ opened: false, template: "", title: "" });
+    // debouncedCloseDialog();
+    // this.__closeCountryInfo();
+  };
   // const startDate = addDays(new Date(), startingPoint);
   // const endDate = addDays(new Date(), startingPoint + daysRange);
 
@@ -73,7 +90,6 @@ function App() {
 
   useEffect(() => {
     const formattedSelectedDate = new Date(selectedDate);
-
     console.log('End date', format(endDate, 'yyyy-MM-dd'));
     console.log('Selected date v', format(formattedSelectedDate, 'yyyy-MM-dd'));
 
@@ -154,6 +170,8 @@ function App() {
           selectedDate={selectedDate}
           startDate={startDate}
           endDate={endDate}
+          onClose={closeDialog}
+          onOpen={openDialog}
           setIsLoading={setIsLoading}
           daysRange={daysRange}
         ></Map>
@@ -185,7 +203,25 @@ function App() {
             setFirstDay={setStartDate}
             lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
             setLastDay={setEndDate}
-          />
+          >
+            {dialog.opened ? (
+                <CountryInfo
+                  country="India"
+                  iso2="EN"
+                  wikidata=""
+                  date={selectedDate || new Date()}
+                  i18n={currentLanguage}
+                  // firstDay={firstDay}
+                  // lastDay={lastDay}
+                  startDate={startDate}
+                  endDate={endDate}
+                  daysRange={daysRange}
+                  onClose={closeDialog}
+                />
+              ) : (
+                ""
+              )}
+          </TimeSlider>
         )}
       </ThemeContext.Provider>
     </div>

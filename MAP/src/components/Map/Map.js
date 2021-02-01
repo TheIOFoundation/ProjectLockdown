@@ -483,6 +483,7 @@ export class Map extends React.Component {
         <div
           ref={ref => (this.ref = ref)}
           id="map"
+          onClick={this.props.onOpen}
           className="map-container"
         ></div>
         <CountriesSearcher
