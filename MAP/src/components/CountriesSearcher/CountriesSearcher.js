@@ -151,7 +151,7 @@ function useSearch(
         }
       }
     }
-  });
+  }, []);
 }
 
 export default CountriesSearcher;
