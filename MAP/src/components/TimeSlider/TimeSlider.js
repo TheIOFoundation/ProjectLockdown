@@ -1,15 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
-import css from 'csz';
-import DatePicker from '../DatePicker/DatePicker';
-import { calendar } from '../../assets/icons/icons.js';
-import format from 'date-fns/format';
-import { enUS } from 'date-fns/locale';
+import React, { useState, useRef, useEffect } from "react";
+import css from "csz";
+import DatePicker from "../DatePicker/DatePicker";
+import { calendar } from "../../assets/icons/icons.js";
+import format from "date-fns/format";
+import addDays from "date-fns/addDays";
+import { enUS } from "date-fns/locale";
+
 
 const sliderWrapper = css`
   & {
     position: absolute;
     bottom: 30px;
-    left: 20px;
+    left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
@@ -26,6 +28,7 @@ const sliderWrapper = css`
     max-height: 70px;
     &.open {
       max-height: calc(100vh - 110px);
+      height: 600px;
       transition: max-height 0.25s ease-in;
       @media (max-width: 960px) {
         /*max-height: calc(100vh - 45px);*/
@@ -104,7 +107,7 @@ const selectStyles = css`
     border-radius: 25px;
     background-color: white;
     display: flex;
-    width: 100%;
+    // width: 100%;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -346,7 +349,7 @@ const sliderSelector = css`
       padding: 0;
     }
     top: -33px;
-    left: 50%;
+    left: 47%;
     z-index: 999;
     width: fit-content;
     transform: translate(-24.5%, 0);
@@ -364,7 +367,7 @@ const sliderSelector = css`
       font-weight: 600;
       box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         bottom: -6px;
@@ -431,7 +434,6 @@ const popBtn = css`
     }
   }
 `;
-
 const firstDayDefaultOffset = 7 * 5;
 // const desktopRange = 80;
 const mobileRange = 70;
@@ -568,7 +570,7 @@ const TimeSlider = props => {
     let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
     let stepsWidth = rangeDOM.offsetWidth / currentRange;
     // let newPosition = widthSpaces[newValue];
-    sliderDOM.style.left = `${finalWidth + stepsWidth * newValue + 112}px`;
+    sliderDOM.style.left = `${finalWidth + stepsWidth * newValue}px`;
     // sliderDOM.style.transform = `translate(${finalWidth + stepsWidth * (newValue+1)}px, 0)`;
     setCurrentDateValue(newValue);
     // setCurrentSelectedDay(newValue)
@@ -582,7 +584,7 @@ const TimeSlider = props => {
     submitChanges();
   };
   const onBtnClick = range => {
-    setShowDatePicker(true);
+    setShowDatePicker(prevState => !prevState);
     setDatePickerPosition(range);
   };
   const onChooseDate = date => {
@@ -596,7 +598,6 @@ const TimeSlider = props => {
     let stepsWidth = rangeDOM.offsetWidth / currentRange;
     sliderDOM.style.left = `${
       finalWidth +
-      112 +
       stepsWidth *
         ((datePickerPosition === 'left' ? 0 : currentRange - 1) + 0.5)
     }px`;
@@ -708,6 +709,7 @@ const TimeSlider = props => {
           max={currentRange}
           step="1"
           value={currentDateValue}
+          // defaultValue={35}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
           {toSliderStringShort(new Date(lastDay), 'en')}

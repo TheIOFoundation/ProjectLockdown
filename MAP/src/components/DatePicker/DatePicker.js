@@ -271,7 +271,7 @@ const DatePicker = props => {
     <>
       <div
         // height: 600px;
-        className={`overlay ${overlay} ${props.show ? 'shw' : ''}`}
+        className={`overlay ${overlay} ${props.show ? 'sow' : ''}`}
         onClick={props.close}
       ></div>
       <div
@@ -279,25 +279,26 @@ const DatePicker = props => {
           props.customClass
         }`}
       >
-        <div class="calendar actions">
+        <div className="calendar actions">
           <span onClick={() => changeMonth(false)}> {arrowLeft} </span>
           <h3>
             {monthsNames[currentMonth]} {currentYear}
           </h3>
           <span onClick={() => changeMonth(true)}> {arrowRight} </span>
         </div>
-        <div class="calendar header">
-          {daysOfTheWeek.map(dayL => (
-            <div class="header item">{dayL}</div>
+        <div className="calendar header">
+          {daysOfTheWeek.map((dayL, index) => (
+            <div key={index} className="header item">{dayL}</div>
           ))}
         </div>
-        <div class="calendar container">
+        <div className="calendar container">
           {days.map((week, i) => (
-            <div class="week">
+            <div key={i} className="week">
               {week.map((day, e) => (
                 <div
+                  key={e}
                   onClick={() => chooseDay(day, i, e)}
-                  class={`day ${day.day === null ? 'empty' : ''} ${
+                  className={`day ${day.day === null ? 'empty' : ''} ${
                     day.selected ? 'selected' : ''
                   }`}
                 >
