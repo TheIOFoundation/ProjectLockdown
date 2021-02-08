@@ -240,7 +240,7 @@ function App() {
         <Totals dark={isDark} />
         <Legend dark={isDark} />
         <PlayButton state={playerState} toggleState={toggleState} />
-        <LanguageSelector dark={isDark} />
+        <LanguageSelector languageChangeHandler={setCurrentLanguage} dark={isDark} />
         {startDate && endDate && selectedDate && (
           <TimeSlider
             dark={isDark}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { world } from '../../assets/icons/world';
 import * as classes from './LanguageSelector.module.css';
 
-const LanguageSelector = ({ dark }) => {
+const LanguageSelector = ({ dark, languageChangeHandler }) => {
   const [showLanguages, setShowLanguages] = useState(false);
 
   const [selectedLang, setSelectedLang] = useState('en');
@@ -34,7 +34,9 @@ const LanguageSelector = ({ dark }) => {
               className={`${classes.LangOpt} ${
                 language === selectedLang && classes.active
               } ${dark && classes.dark}`}
-              onClick={() => setSelectedLang(language.replace(/\s+/g, '-'))}
+              onClick={() => {
+                // languageChangeHandler(language.replace(/\s+/g, '-'))
+                setSelectedLang(language.replace(/\s+/g, '-'))}}
             >
               {language.toUpperCase().replace('-', '\n')}
             </div>

@@ -1,14 +1,14 @@
 import React from 'react';
-import format from "date-fns/format";
+// import format from "date-fns/format";
 import isSameDay from "date-fns/isSameDay";
-import css from "csz";
+// import css from "csz";
 import './CountryInfo.css';
 import {
   coronaTrackerService,
   // populationService,
-  countryDetailService,
+  // countryDetailService,
 } from "../../services/services";
-import _ from "lodash";
+// import _ from "lodash";
 
 import {
   home,
@@ -24,13 +24,13 @@ import {
   close as closeIcon,
 } from "../../assets/icons/icons.js";
 import {
-  offline,
-  loading,
+  // offline,
+  // loading,
   travelFlight,
   travelLand,
   travelSea,
 } from "../../assets/icons/icons.js";
-import { offlineStyles, loadingStyles } from "../../style/shared.styles.scss";
+// import { offlineStyles, loadingStyles } from "../../style/shared.styles.scss";
 import { countryInfoStyles, tabStyles, reports } from "./CountryInfo.styles.js";
 
 // ? Wrappers
@@ -39,7 +39,7 @@ import { countryInfoStyles, tabStyles, reports } from "./CountryInfo.styles.js";
 // TODO: Change the api to give us that data
 // import CountriesDataList from "../../data/territoriesData";
 import { useState } from "react";
-import { parseWithOptions } from "date-fns/fp";
+// import { parseWithOptions } from "date-fns/fp";
 
 const TRAVEL = {
   1: "YES",
@@ -173,17 +173,17 @@ const tabs = [
   },
 ];
 
-function createMeasures(apiMeasures) {
-  // return MEASURES.map((measure) => {
-  //   const apiData = apiMeasures?.find((m) => m.label === measure.id);
+// function createMeasures(apiMeasures) {
+//   return MEASURES.map((measure) => {
+//     const apiData = apiMeasures?.find((m) => m.label === measure.id);
+//     console.log("createMeasures function");
+//     return {
+//       ...measure,
+//       value: MEASURE_VALUES[apiData.value] ?? MEASURE_VALUES[4],
+//     };
 
-  //   return {
-  //     ...measure,
-  //     value: MEASURE_VALUES[apiData.value] ?? MEASURE_VALUES[4],
-  //   };
-  console.log("createMeasures function");
-  // });
-}
+//   });
+// }
 
 // flight: Array(8)
 // 0: {label: "local", value: null, name: "flight.local", #npi+num+flight+local: null}
