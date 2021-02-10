@@ -9,12 +9,27 @@ import Tabs from '../Tabs/Tabs';
 import { burger, close as closeIcon } from '../../assets/icons/icons.js';
 
 const renderMenu = (
+  isDark,
+  setDarkMode,
   menuItem,
   callback,
   currentDropdown,
   onDropDown,
   onLocateChange,
-  locale
+  locale = {
+    t: s => {
+      switch (s) {
+        case 'menu.userPreferenceSection.theme.action':
+          return 'Toggle ';
+        case 'menu.userPreferenceSection.theme.light':
+          return 'Light mode';
+        case 'menu.userPreferenceSection.theme.dark':
+          return 'Dark mode';
+        default:
+          return s;
+      }
+    },
+  }
 ) => {
   switch (menuItem) {
     case 'info':
@@ -186,6 +201,8 @@ const renderMenu = (
         title: 'settings',
         template: (
           <Settings
+            darkMode={isDark}
+            setDarkMode={setDarkMode}
             onClose={callback}
             onLocateChange={onLocateChange}
             locale={locale}
@@ -263,7 +280,7 @@ export class TabMenu extends Component {
     this.switchContent = this.switchContent.bind(this);
     this.onDropDown = this.onDropDown.bind(this);
   }
-
+  
   componentDidMount() {
     let i = 0;
 
@@ -278,7 +295,7 @@ export class TabMenu extends Component {
       }
     });
   }
-
+  
   showSideBar() {
     this.setState({
       showLateralMenu: true,
@@ -324,8 +341,11 @@ export class TabMenu extends Component {
     });
   }
 
+  
+
   render() {
     const { activeItem, currentDropdown } = this.state;
+    const {isDark, setDarkMode} = this.props;
     return this.state.showLateralMenu || this.props.isMobile === true ? (
       <>
         <div className="menu-overlay"></div>
@@ -354,6 +374,8 @@ export class TabMenu extends Component {
             </div>
             {
               renderMenu(
+                isDark,
+                setDarkMode,
                 activeItem,
                 this.closeNavbar,
                 currentDropdown,
