@@ -485,7 +485,7 @@ export class Map extends React.Component {
           id="map"
           onClick={this.props.onOpen}
           className="map-container"
-        ></div>
+          ></div>
         <CountriesSearcher
           dark={this.props.dark}
           i18n={{ locale: 'en, en-US' }}

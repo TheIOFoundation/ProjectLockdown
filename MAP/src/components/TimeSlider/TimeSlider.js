@@ -3,8 +3,9 @@ import css from "csz";
 import DatePicker from "../DatePicker/DatePicker";
 import { calendar } from "../../assets/icons/icons.js";
 import format from "date-fns/format";
-import addDays from "date-fns/addDays";
+// import addDays from "date-fns/addDays";
 import { enUS } from "date-fns/locale";
+
 
 const sliderWrapper = css`
   & {
@@ -348,7 +349,7 @@ const sliderSelector = css`
       padding: 0;
     }
     top: -33px;
-    left: 50%;
+    left: 47%;
     z-index: 999;
     width: fit-content;
     transform: translate(-24.5%, 0);
@@ -584,8 +585,8 @@ const TimeSlider = (props) => {
     );
     submitChanges();
   };
-  const onBtnClick = (range) => {
-    setShowDatePicker(true);
+  const onBtnClick = range => {
+    setShowDatePicker(prevState => !prevState);
     setDatePickerPosition(range);
   };
   const onChooseDate = (date) => {
@@ -714,6 +715,7 @@ const TimeSlider = (props) => {
           max={currentRange - 1}
           step="1"
           value={currentDateValue}
+          // defaultValue={35}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
           {toSliderStringShort(new Date(lastDay), "en")}

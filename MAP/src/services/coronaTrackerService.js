@@ -11,7 +11,9 @@ class CoronaTrackerService extends EventTargetShim {
   }
 
   async getCountry(opts) {
-    let { iso2, date } = opts;
+    let { iso2, 
+      // date 
+    } = opts;
     let startDate = opts.startDate;
     let endDate = opts.endDate;
     iso2 = encodeURI(iso2);

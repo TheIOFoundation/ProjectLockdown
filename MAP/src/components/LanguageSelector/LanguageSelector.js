@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { world } from '../../assets/icons/world';
 import * as classes from './LanguageSelector.module.css';
 
-const LanguageSelector = ({ dark }) => {
+const LanguageSelector = ({ dark, languageChangeHandler }) => {
   const [showLanguages, setShowLanguages] = useState(false);
 
   const [selectedLang, setSelectedLang] = useState('en');

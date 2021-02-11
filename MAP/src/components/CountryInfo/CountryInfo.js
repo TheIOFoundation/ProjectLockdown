@@ -1,13 +1,14 @@
-import format from "date-fns/format";
+import React from 'react';
+// import format from "date-fns/format";
 import isSameDay from "date-fns/isSameDay";
-import css from "csz";
-
+// import css from "csz";
+import './CountryInfo.css';
 import {
   coronaTrackerService,
   // populationService,
-  countryDetailService,
+  // countryDetailService,
 } from "../../services/services";
-import _ from "lodash";
+// import _ from "lodash";
 
 import {
   home,
@@ -23,13 +24,13 @@ import {
   close as closeIcon,
 } from "../../assets/icons/icons.js";
 import {
-  offline,
-  loading,
+  // offline,
+  // loading,
   travelFlight,
   travelLand,
   travelSea,
 } from "../../assets/icons/icons.js";
-import { offlineStyles, loadingStyles } from "../../style/shared.styles.scss";
+// import { offlineStyles, loadingStyles } from "../../style/shared.styles.scss";
 import { countryInfoStyles, tabStyles, reports } from "./CountryInfo.styles.js";
 
 // ? Wrappers
@@ -38,7 +39,7 @@ import { countryInfoStyles, tabStyles, reports } from "./CountryInfo.styles.js";
 // TODO: Change the api to give us that data
 // import CountriesDataList from "../../data/territoriesData";
 import { useState } from "react";
-import { parseWithOptions } from "date-fns/fp";
+// import { parseWithOptions } from "date-fns/fp";
 
 const TRAVEL = {
   1: "YES",
@@ -341,8 +342,8 @@ const CountryInfo = (props) => {
   /** On error & on succes, continue to render */
 
   return (
-    <>
-      <div className={tabStyles}>
+    <div className={`${props.dark ? 'dark' : ''} CountryInfo`}>
+      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333;' : '#e0e0e0'}`}} className={tabStyles}>
         {tabs.map((tab) => (
           <div
             onClick={() => changeTab(tab.id)}
@@ -356,9 +357,10 @@ const CountryInfo = (props) => {
         ))}
         <button onClick={props.onClose}>{closeIcon}</button>
       </div>
-      <div class={`countryInfo ${countryInfoStyles}`}>
+      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333!important;' : '#e0e0e0'}`}} class={`countryInfo ${countryInfoStyles} ${props.dark ? 'dark' : ''}`}>
         {currentTab === 1 ? (
           <CountryDetails
+            dark={props.dark}
             date={props.date}
             country={props.country}
             coronaData={coronaData.data?.find((corona) =>
@@ -369,10 +371,10 @@ const CountryInfo = (props) => {
             i18n={i18n}
           />
         ) : currentTab === 2 ? (
-          <TransportDetails i18n={i18n} countryDetails={countryDetails} />
+          <TransportDetails dark={props.dark} i18n={i18n} countryDetails={countryDetails} />
         ) : (
           <>
-            <Reports i18n={i18n} />
+            <Reports i18n={i18n} dark={props.dark} />
             <div class="link-container">
               <a
                 class="ld-link"
@@ -407,15 +409,15 @@ const CountryInfo = (props) => {
           </>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
 const CountryDetails = (props) => {
   let { i18n } = props;
-  let { coronaData, populationData, countryDetails, country, date } = props;
+  let { coronaData, populationData, countryDetails, country, date, dark } = props;
   return (
-    <>
+    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333!important' : '#e0e0e0'}`}} >
       <h2 class="ld-font-subheader">
         <span>India</span>
         <span>2020-04-06</span>
@@ -468,7 +470,7 @@ const CountryDetails = (props) => {
           </dd>
         </div>
       </dl>
-      <Legends i18n={i18n} tab="dailyLife" />
+      <Legends dark={props.dark} i18n={i18n} tab="dailyLife" />
       {/* {countryDetails.status === "success" ? ( */}
       <>
         <h2 class="ld-font-subheader last">
@@ -501,7 +503,7 @@ const CountryDetails = (props) => {
           Failed to get data for this country.
         </div>
       )} */}
-    </>
+    </div>
   );
 };
 const TransportDetails = (props) => {
@@ -513,7 +515,7 @@ const TransportDetails = (props) => {
       {/* <> */}
       <br />
       <br />
-      <Legends i18n={i18n} tab="mobility" />
+      <Legends dark={props.dark} i18n={i18n} tab="mobility" />
       <h2 class="ld-font-subheader last transport">
         {/* {i18n.t("tdo.tabs.mobility.subtitle")}
          */}
@@ -573,9 +575,9 @@ const TransportDetails = (props) => {
 
 const Legends = (props) => {
   // console.log(props);
-  let { i18n, tab } = props;
+  let { i18n, tab, dark } = props;
   return (
-    <div class="legend ld-font-legend">
+    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333;' : '#e0e0e0'}`}}  class="legend ld-font-legend">
       <dl>
         <div class="legend-item">
           <dt class="legend-green" aria-label="green"></dt>
@@ -601,7 +603,7 @@ const Legends = (props) => {
 const Reports = (props) => {
   // let { i18n } = _;
   return (
-    <div className={`${reports}`}>
+    <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333;' : '#e0e0e0'}`}}  className={`${reports}`}>
       <h3>{props.i18n.t(`Coming Soon `)}</h3>
       <div className="placeholder"></div>
     </div>
