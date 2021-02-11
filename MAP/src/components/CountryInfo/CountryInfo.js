@@ -3,6 +3,9 @@ import React from 'react';
 import isSameDay from "date-fns/isSameDay";
 // import css from "csz";
 import './CountryInfo.css';
+//import translations
+import { useTranslation } from 'react-i18next';
+
 import {
   coronaTrackerService,
   // populationService,
@@ -264,6 +267,8 @@ const CountryInfo = (props) => {
     }
     // })
   );
+
+  const { t } = useTranslation();
   // async componentDidUpdate(prevProps) {
   //     if (this.props.date !== prevProps.date) {
   //       const { startDate, endDate, daysRange } = this.props;
