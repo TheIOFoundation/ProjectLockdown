@@ -18,7 +18,7 @@ const LanguageSelector = ({ dark }) => {
 
   useEffect(() => {
     i18n.changeLanguage(selectedLang);
-  }, [selectedLang]);
+  }, [selectedLang, i18n]);
   return (
     <div
       className={`${classes.LangSelector} ${dark && classes.dark}`}
