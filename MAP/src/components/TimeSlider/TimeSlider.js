@@ -5,6 +5,7 @@ import { calendar } from "../../assets/icons/icons.js";
 import format from "date-fns/format";
 // import addDays from "date-fns/addDays";
 import { enUS } from "date-fns/locale";
+import { addDays } from "date-fns";
 
 
 const sliderWrapper = css`
@@ -443,15 +444,16 @@ let languages = false;
 const TimeSlider = props => {
   const [currentDateValue, setCurrentDateValue] = useState(
     firstDayDefaultOffset
+    // props.currentSelectedDay
   );
 
   const {
     currentSelectedDay,
     setCurrentSelectedDay,
     firstDay,
-    // setFirstDay,
+    setFirstDay,
     lastDay,
-    // setLastDay,
+    setLastDay,
     days,
   } = props;
   // const [currentPosition, setCurrentPosition] = useState(24.5);
@@ -588,8 +590,11 @@ const TimeSlider = props => {
     setDatePickerPosition(range);
   };
   const onChooseDate = date => {
-    console.log('onChooseDate', date);
+    console.log('onChooseDate', format(date, 'yyyy-MM-dd'));
+    props.setCurrentSelectedDay(date)
+    props.onChange(date)
 
+    props.setFirstDay(addDays(new Date(), -300))
     const sliderDOM = dateRef.current;
     const rangeDOM = range.current;
     const containerDOM = container.current;
@@ -626,7 +631,11 @@ const TimeSlider = props => {
     }
     setCurrentSliderRange(days);
     setCurrentSelectedDay(toSliderString(date, props.i18n.locale));
-    // setFirstDay(toSliderStringShort(days[0], props.i18n.locale))
+    submitChanges();
+    // setFirstDay(format(new Date(days[0]), 'yyyy-MM-dd'))
+    // setLastDay(format(new Date(days[days.length -1]), 'yyyy-MM-dd'))
+    // setFirstDay(days[0])
+    // setLastDay(days[days.length - 1])
     // setLastDay(toSliderStringShort(days[days.length - 1], props.i18n.locale))
     setCurrentDateValue(datePickerPosition === 'left' ? 0 : currentRange - 1);
     // setCurrentPosition(24.5);
@@ -695,12 +704,13 @@ const TimeSlider = props => {
           className={`first ${tooltipCss}`}
           onClick={e => onBtnClick('left')}
         >
-          <IconBtn /> {toSliderStringShort(new Date(firstDay), 'en')}
+          <IconBtn /> {toSliderStringShort(new Date(currentSelectedDay), 'en')}
         </span>
         <button
           onClick={e => onBtnClick('left')}
           className={`first ${popBtn}`}
         ></button>
+        {console.log('sliderValue' ,props.sliderValue)}
         <input
           ref={range}
           onInput={onSliderChange}
