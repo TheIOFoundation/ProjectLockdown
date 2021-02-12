@@ -28,7 +28,6 @@ const Totals = ({
         const { affected } = res
         res.affected = separateNumber(affected)
         setTotalsData(res)
-        console.log(res[Object.keys(res)[0]])
       })
       .catch((e) => console.log(e))
   }, [startDate, endDate, selectedDate, daysRange])

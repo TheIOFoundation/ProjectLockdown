@@ -63,27 +63,35 @@ const TRAVELTYPE = ["Land", "Flight", "Sea"];
 
 const TRANSLATIONS = {
   commerce: {
+    id: "commerce",
     text: "Commerce",
   },
   foreigners_inbound: {
+    id: "foreignersInbound",
     text: "Foreigners Inbound",
   },
   foreigners_outbound: {
+    id: "foreignersOutbound",
     text: "Foreigners Outbound",
   },
   local: {
+    id: "local",
     text: "Local",
   },
   nationals_inbound: {
+    id: "nationalsInbound",
     text: "Nationals Inbound",
   },
   nationals_outbound: {
+    id: "nationalsOutbound",
     text: "Nationals Outbound",
   },
   stopovers: {
+    id: "stopovers",
     text: "Stopovers",
   },
   cross_border_workers: {
+    id: "crossBorderWorkers",
     text: "Cross-border Workers",
   },
 };
@@ -269,6 +277,7 @@ const CountryInfo = (props) => {
   );
 
   const { t } = useTranslation();
+
   // async componentDidUpdate(prevProps) {
   //     if (this.props.date !== prevProps.date) {
   //       const { startDate, endDate, daysRange } = this.props;
@@ -348,9 +357,10 @@ const CountryInfo = (props) => {
 
   return (
     <div className={`${props.dark ? 'dark' : ''} CountryInfo`}>
-      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333;' : '#e0e0e0'}`}} className={tabStyles}>
+      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`}} className={tabStyles}>
         {tabs.map((tab) => (
           <div
+            key={tab.id}
             onClick={() => changeTab(tab.id)}
             class={`tab ${currentTab === tab.id ? "active" : ""}`}
           >
@@ -362,12 +372,13 @@ const CountryInfo = (props) => {
         ))}
         <button onClick={props.onClose}>{closeIcon}</button>
       </div>
-      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333!important;' : '#e0e0e0'}`}} class={`countryInfo ${countryInfoStyles} ${props.dark ? 'dark' : ''}`}>
+      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333!important' : '#e0e0e0'}`}} class={`countryInfo ${countryInfoStyles} ${props.dark ? 'dark' : ''}`}>
         {currentTab === 1 ? (
           <CountryDetails
             dark={props.dark}
             date={props.date}
             country={props.country}
+            t={t}
             coronaData={coronaData.data?.find((corona) =>
               isSameDay(new Date(corona.last_updated), props.date)
             )}
@@ -376,10 +387,10 @@ const CountryInfo = (props) => {
             i18n={i18n}
           />
         ) : currentTab === 2 ? (
-          <TransportDetails dark={props.dark} i18n={i18n} countryDetails={countryDetails} />
+          <TransportDetails t={t} dark={props.dark} i18n={i18n} countryDetails={countryDetails} />
         ) : (
           <>
-            <Reports i18n={i18n} dark={props.dark} />
+            <Reports t={t} i18n={i18n} dark={props.dark} />
             <div class="link-container">
               <a
                 class="ld-link"
@@ -405,7 +416,7 @@ const CountryInfo = (props) => {
                 }`}
                 target="_blank"
               >
-                {i18n.t(`tdo.contributionLinks.secondLink`)}
+                {t(`tdo.contributionLinks.secondLink`)}
               </a>
               {/* <!-- <a class="ld-link" target="_blank" rel="noopener noreferrer" href="#" target="_blank">
             ${_.i18n.t(`tdo.contributionLinks.thirdLink`)}
@@ -419,10 +430,11 @@ const CountryInfo = (props) => {
 };
 
 const CountryDetails = (props) => {
-  let { i18n } = props;
+  let { i18n, t } = props;
   let { coronaData, populationData, countryDetails, country, date, dark } = props;
+  
   return (
-    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333!important' : '#e0e0e0'}`}} >
+    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333 !important' : '#e0e0e0'}`}} >
       <h2 class="ld-font-subheader">
         <span>India</span>
         <span>2020-04-06</span>
@@ -431,7 +443,7 @@ const CountryDetails = (props) => {
       </h2>
       <dl class="data">
         <div class="data-entry is-half">
-          <dt>{i18n.t("Population")}</dt>
+          <dt>{t("tdo.tabs.dailyLife.stats.population")}</dt>
           <dd class="data-value">
             1,352,617,328
             {/* {!isNaN(Number(populationData?.Population))
@@ -440,7 +452,7 @@ const CountryDetails = (props) => {
           </dd>
         </div>
         <div class="data-entry is-half">
-          <dt>{i18n.t("Maximum assembly")}</dt>
+          <dt>{t("tdo.tabs.dailyLife.stats.max_assembly")}</dt>
           <dd class="data-value">
             N/A
             {/* {countryDetails?.max_gathering ??
@@ -448,7 +460,7 @@ const CountryDetails = (props) => {
           </dd>
         </div>
         <div class="data-entry is-third">
-          <dt>{i18n.t("Cases")}</dt>
+          <dt>{t("tdo.tabs.dailyLife.stats.cases")}</dt>
           <dd class="data-value">
             10,747,091
             {/* {coronaData?.total_confirmed
@@ -457,7 +469,7 @@ const CountryDetails = (props) => {
           </dd>
         </div>
         <div class="data-entry is-third">
-          <dt>{i18n.t("Recoveries")}</dt>
+          <dt>{t("tdo.tabs.dailyLife.stats.recoveries")}</dt>
           <dd class="data-value">
             10,423,125
             {/* {coronaData?.total_recovered
@@ -466,7 +478,7 @@ const CountryDetails = (props) => {
           </dd>
         </div>
         <div class="data-entry is-third">
-          <dt>{i18n.t("Deaths")}</dt>
+          <dt>{t("tdo.tabs.dailyLife.stats.deaths")}</dt>
           <dd class="data-value">
             154,312
             {/* {coronaData?.total_deaths
@@ -475,15 +487,16 @@ const CountryDetails = (props) => {
           </dd>
         </div>
       </dl>
-      <Legends dark={props.dark} i18n={i18n} tab="dailyLife" />
+      <Legends dark={props.dark} t={t} i18n={i18n} tab="dailyLife" />
       {/* {countryDetails.status === "success" ? ( */}
       <>
         <h2 class="ld-font-subheader last">
-          {i18n.t("Daily life (restrictions)")}
+          {t("tdo.tabs.dailyLife.subtitle")}
         </h2>
         <ul class="measures">
+          
           {MEASURES.map((m) => (
-            <li>
+            <li key={m.id}>
               <div class="measure-wrapper">
                 <div
                   aria-labelledby={`measure-label-${m.id}`}
@@ -495,7 +508,7 @@ const CountryDetails = (props) => {
                 <span id={`measure-label-${m.id}`} class="measure-label">
                   {/* {i18n.t(`tdo.tabs.dailyLife.measures.${m.translationKey}`)} */}
 
-                  {i18n.t(`${m.label}`)}
+                  {t(`tdo.tabs.dailyLife.measures.${m.translationKey}`)}
                 </span>
               </div>
             </li>
@@ -512,7 +525,7 @@ const CountryDetails = (props) => {
   );
 };
 const TransportDetails = (props) => {
-  let { countryDetails, i18n } = props;
+  let { countryDetails, t , i18n } = props;
   return (
     <>
       {/* hey  */}
@@ -520,11 +533,12 @@ const TransportDetails = (props) => {
       {/* <> */}
       <br />
       <br />
-      <Legends dark={props.dark} i18n={i18n} tab="mobility" />
+      <Legends dark={props.dark} t={t} i18n={i18n} tab="mobility" />
       <h2 class="ld-font-subheader last transport">
         {/* {i18n.t("tdo.tabs.mobility.subtitle")}
          */}
-        Transport Restrictions
+        {/* Transport Restrictions Text */}
+        {t("tdo.tabs.mobility.subtitle")}
       </h2>
       <dl>
         <div class="ld-travel">
@@ -535,21 +549,21 @@ const TransportDetails = (props) => {
             <dd class="ld-travel--val-icon">{travelSea}</dd>
           </div>
         </div>
-        {Object.keys(TRANSLATIONS).map((key, j) => {
-          console.log(key);
+        {Object.keys(TRANSLATIONS).map((key, index) => {
           return (
-            <div class="ld-travel">
+            <div class="ld-travel" key={index}>
               <dt>
-                {/* {i18n.t(
-                      `tdo.tabs.mobility.measures.${TRANSLATIONS[key].text}`
-                    )} */}
+                {t(
+                      `tdo.tabs.mobility.measures.${TRANSLATIONS[key].id}`
+                    )}
                 {/* {i18n.t( */}
-                {TRANSLATIONS[key].text}
+                {/* {TRANSLATIONS[key].text} */}
                 {/* )} */}
               </dt>
               <div class="ld-travel--values">
                 {Object.keys(TRANSLATIONS[key]).map((val, i) => (
                   <dd
+                    key={i}
                     aria-label={`${TRAVELTYPE[i]}: ${
                       TRAVEL[val]?.toLowerCase() ?? TRAVEL[4].toLowerCase()
                     }`}
@@ -580,25 +594,25 @@ const TransportDetails = (props) => {
 
 const Legends = (props) => {
   // console.log(props);
-  let { i18n, tab, dark } = props;
+  let { i18n, t , tab, dark } = props;
   return (
-    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333;' : '#e0e0e0'}`}}  class="legend ld-font-legend">
+    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`}}  class="legend ld-font-legend">
       <dl>
         <div class="legend-item">
           <dt class="legend-green" aria-label="green"></dt>
-          <dd>{i18n.t(MEASURE_VALUES[1])}</dd>
+          <dd>{t("tdo.tabs.dailyLife.measureValues.1")}</dd>
         </div>
         <div class="legend-item">
           <dt class="legend-yellow" aria-label="yellow"></dt>
-          <dd>{i18n.t(MEASURE_VALUES[2])}</dd>
+          <dd>{t("tdo.tabs.dailyLife.measureValues.2")}</dd>
         </div>
         <div class="legend-item">
           <dt class="legend-red" aria-label="red"></dt>
-          <dd>{i18n.t(MEASURE_VALUES[3])}</dd>
+          <dd>{t("tdo.tabs.dailyLife.measureValues.3")}</dd>
         </div>
         <div class="legend-item">
           <dt class="legend-gray" aria-label="gray"></dt>
-          <dd>{i18n.t(MEASURE_VALUES[4])}</dd>
+          <dd>{t("tdo.tabs.dailyLife.measureValues.4")}</dd>
         </div>
       </dl>
     </div>
@@ -607,9 +621,10 @@ const Legends = (props) => {
 
 const Reports = (props) => {
   // let { i18n } = _;
+  let { t } = props;
   return (
-    <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333;' : '#e0e0e0'}`}}  className={`${reports}`}>
-      <h3>{props.i18n.t(`Coming Soon `)}</h3>
+    <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`}}  className={`${reports}`}>
+      <h3>{t("tdo.tabs.reports.subtitle")}</h3>
       <div className="placeholder"></div>
     </div>
   );

@@ -32,7 +32,7 @@ export class Map extends React.Component {
     this.initMap = this.initMap.bind(this);
     this.updateMap = this.updateMap.bind(this);
     // this.updateMapLanguage = this.updateMapLanguage.bind(this);
-    // this.onMapClick = this.onMapClick.bind(this);
+    this.onMapClick = this.onMapClick.bind(this);
     this.onGetResult = this.onGetResult.bind(this);
 
     let coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
@@ -420,6 +420,20 @@ export class Map extends React.Component {
     //   // router.setSearchParam('country', this.state.lastCountry.country);
     //   // router.setSearchParam('iso2', this.state.lastCountry.iso2);
     // }
+  }
+
+  onMapClick(e) {
+    let { map, lookupTable } = this.state;
+    const features = map.queryRenderedFeatures(e.point, {
+      layers: ['admin-0-fill'],
+    });
+    this.state.geocoder.query(lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name);
+    this.setState({
+      lastCountry: {
+        country: lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
+        iso2: features[0].properties.iso_3166_1,
+      },
+    });
   }
 
   async componentDidMount() {
