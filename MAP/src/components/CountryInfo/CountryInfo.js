@@ -362,7 +362,7 @@ const CountryInfo = (props) => {
           <div
             key={tab.id}
             onClick={() => changeTab(tab.id)}
-            class={`tab ${currentTab === tab.id ? "active" : ""}`}
+            className={`tab ${currentTab === tab.id ? "active" : ""}`}
           >
             {/* tdo.tabs.{tab.name}.name */}
             {tab.name}
@@ -372,7 +372,7 @@ const CountryInfo = (props) => {
         ))}
         <button onClick={props.onClose}>{closeIcon}</button>
       </div>
-      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333!important' : '#e0e0e0'}`}} class={`countryInfo ${countryInfoStyles} ${props.dark ? 'dark' : ''}`}>
+      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333!important' : '#e0e0e0'}`}} className={`countryInfo ${countryInfoStyles} ${props.dark ? 'dark' : ''}`}>
         {currentTab === 1 ? (
           <CountryDetails
             dark={props.dark}
@@ -391,9 +391,9 @@ const CountryInfo = (props) => {
         ) : (
           <>
             <Reports t={t} i18n={i18n} dark={props.dark} />
-            <div class="link-container">
+            <div className="link-container">
               <a
-                class="ld-link"
+                className="ld-link"
                 target="_blank"
                 rel="noopener noreferrer"
                 href={
@@ -406,7 +406,7 @@ const CountryInfo = (props) => {
                 {/* {_.i18n.t(`tdo.contributionLinks.firstLink`)} */}
               </a>
               <a
-                class="ld-link"
+                className="ld-link"
                 target="_blank"
                 rel="noopener noreferrer"
                 href={`https://docs.google.com/forms/d/e/1FAIpQLSfDWe2qlzUnd3e-YYspMzT9adUswDEYIdJMb7jz7ule34-yiA/viewform?entry.333088473=${
@@ -418,7 +418,7 @@ const CountryInfo = (props) => {
               >
                 {t(`tdo.contributionLinks.secondLink`)}
               </a>
-              {/* <!-- <a class="ld-link" target="_blank" rel="noopener noreferrer" href="#" target="_blank">
+              {/* <!-- <a className="ld-link" target="_blank" rel="noopener noreferrer" href="#" target="_blank">
             ${_.i18n.t(`tdo.contributionLinks.thirdLink`)}
           </a> --> */}
             </div>
@@ -435,51 +435,51 @@ const CountryDetails = (props) => {
   
   return (
     <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333 !important' : '#e0e0e0'}`}} >
-      <h2 class="ld-font-subheader">
+      <h2 className="ld-font-subheader">
         <span>India</span>
         <span>2020-04-06</span>
 
         {/* <span>{format(date, "dd/MM/yyyy")}</span> */}
       </h2>
-      <dl class="data">
-        <div class="data-entry is-half">
+      <dl className="data">
+        <div className="data-entry is-half">
           <dt>{t("tdo.tabs.dailyLife.stats.population")}</dt>
-          <dd class="data-value">
+          <dd className="data-value">
             1,352,617,328
             {/* {!isNaN(Number(populationData?.Population))
               ? Number(populationData?.Population).toLocaleString() ?? "Error"
               : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
-        <div class="data-entry is-half">
+        <div className="data-entry is-half">
           <dt>{t("tdo.tabs.dailyLife.stats.max_assembly")}</dt>
-          <dd class="data-value">
+          <dd className="data-value">
             N/A
             {/* {countryDetails?.max_gathering ??
               i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
-        <div class="data-entry is-third">
+        <div className="data-entry is-third">
           <dt>{t("tdo.tabs.dailyLife.stats.cases")}</dt>
-          <dd class="data-value">
+          <dd className="data-value">
             10,747,091
             {/* {coronaData?.total_confirmed
               ? Number(coronaData?.total_confirmed).toLocaleString()
               : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
-        <div class="data-entry is-third">
+        <div className="data-entry is-third">
           <dt>{t("tdo.tabs.dailyLife.stats.recoveries")}</dt>
-          <dd class="data-value">
+          <dd className="data-value">
             10,423,125
             {/* {coronaData?.total_recovered
               ? Number(coronaData?.total_recovered).toLocaleString()
               : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
-        <div class="data-entry is-third">
+        <div className="data-entry is-third">
           <dt>{t("tdo.tabs.dailyLife.stats.deaths")}</dt>
-          <dd class="data-value">
+          <dd className="data-value">
             154,312
             {/* {coronaData?.total_deaths
               ? Number(coronaData?.total_deaths).toLocaleString()
@@ -490,22 +490,22 @@ const CountryDetails = (props) => {
       <Legends dark={props.dark} t={t} i18n={i18n} tab="dailyLife" />
       {/* {countryDetails.status === "success" ? ( */}
       <>
-        <h2 class="ld-font-subheader last">
+        <h2 className="ld-font-subheader last">
           {t("tdo.tabs.dailyLife.subtitle")}
         </h2>
-        <ul class="measures">
+        <ul className="measures">
           
           {MEASURES.map((m) => (
             <li key={m.id}>
-              <div class="measure-wrapper">
+              <div className="measure-wrapper">
                 <div
                   aria-labelledby={`measure-label-${m.id}`}
-                  class={`measure measure-${m.value ? m.value : null}`}
+                  className={`measure measure-${m.value ? m.value : null}`}
                   aria-label={`${m.value && m.value.toLowerCase()}`}
                 >
                   {m.icon}
                 </div>
-                <span id={`measure-label-${m.id}`} class="measure-label">
+                <span id={`measure-label-${m.id}`} className="measure-label">
                   {/* {i18n.t(`tdo.tabs.dailyLife.measures.${m.translationKey}`)} */}
 
                   {t(`tdo.tabs.dailyLife.measures.${m.translationKey}`)}
@@ -516,7 +516,7 @@ const CountryDetails = (props) => {
         </ul>
       </>
       {/* ) : (
-        <div class="dialog">
+        <div className="dialog">
           <h2>Measures</h2>
           Failed to get data for this country.
         </div>
@@ -534,24 +534,24 @@ const TransportDetails = (props) => {
       <br />
       <br />
       <Legends dark={props.dark} t={t} i18n={i18n} tab="mobility" />
-      <h2 class="ld-font-subheader last transport">
+      <h2 className="ld-font-subheader last transport">
         {/* {i18n.t("tdo.tabs.mobility.subtitle")}
          */}
         {/* Transport Restrictions Text */}
         {t("tdo.tabs.mobility.subtitle")}
       </h2>
       <dl>
-        <div class="ld-travel">
+        <div className="ld-travel">
           <dt></dt>
-          <div class="ld-travel--values">
-            <dd class="ld-travel--val-icon">{travelLand}</dd>
-            <dd class="ld-travel--val-icon">{travelFlight}</dd>
-            <dd class="ld-travel--val-icon">{travelSea}</dd>
+          <div className="ld-travel--values">
+            <dd className="ld-travel--val-icon">{travelLand}</dd>
+            <dd className="ld-travel--val-icon">{travelFlight}</dd>
+            <dd className="ld-travel--val-icon">{travelSea}</dd>
           </div>
         </div>
         {Object.keys(TRANSLATIONS).map((key, index) => {
           return (
-            <div class="ld-travel" key={index}>
+            <div className="ld-travel" key={index}>
               <dt>
                 {t(
                       `tdo.tabs.mobility.measures.${TRANSLATIONS[key].id}`
@@ -560,7 +560,7 @@ const TransportDetails = (props) => {
                 {/* {TRANSLATIONS[key].text} */}
                 {/* )} */}
               </dt>
-              <div class="ld-travel--values">
+              <div className="ld-travel--values">
                 {Object.keys(TRANSLATIONS[key]).map((val, i) => (
                   <dd
                     key={i}
@@ -582,7 +582,7 @@ const TransportDetails = (props) => {
       </dl>
       {/* </> */}
       {/* ) : ( */}
-      {/* <div class="dialog">
+      {/* <div className="dialog">
           <h2>Measures</h2>
           Failed to get data for this country.
         </div> */}
@@ -596,22 +596,22 @@ const Legends = (props) => {
   // console.log(props);
   let { i18n, t , tab, dark } = props;
   return (
-    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`}}  class="legend ld-font-legend">
+    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`}}  className="legend ld-font-legend">
       <dl>
-        <div class="legend-item">
-          <dt class="legend-green" aria-label="green"></dt>
+        <div className="legend-item">
+          <dt className="legend-green" aria-label="green"></dt>
           <dd>{t("tdo.tabs.dailyLife.measureValues.1")}</dd>
         </div>
-        <div class="legend-item">
-          <dt class="legend-yellow" aria-label="yellow"></dt>
+        <div className="legend-item">
+          <dt className="legend-yellow" aria-label="yellow"></dt>
           <dd>{t("tdo.tabs.dailyLife.measureValues.2")}</dd>
         </div>
-        <div class="legend-item">
-          <dt class="legend-red" aria-label="red"></dt>
+        <div className="legend-item">
+          <dt className="legend-red" aria-label="red"></dt>
           <dd>{t("tdo.tabs.dailyLife.measureValues.3")}</dd>
         </div>
-        <div class="legend-item">
-          <dt class="legend-gray" aria-label="gray"></dt>
+        <div className="legend-item">
+          <dt className="legend-gray" aria-label="gray"></dt>
           <dd>{t("tdo.tabs.dailyLife.measureValues.4")}</dd>
         </div>
       </dl>

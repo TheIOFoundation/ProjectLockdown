@@ -674,6 +674,7 @@ const TimeSlider = (props) => {
     newDate.setDate(date.getDate() + days);
     return newDate;
   };
+  
   const submitChanges = () => {
     console.log(currentDateValue, currentSliderRange[0],currentSliderRange.length,"currentDateValue, currentSliderRange, in submitChange")
     props.onChange(
