@@ -166,7 +166,7 @@ const rangeStyles = css`
   input {
     background: transparent;
   }
-  input[type='range'] {
+  input[type="range"] {
     position: relative;
     -webkit-appearance: none;
     width: 100%;
@@ -177,11 +177,11 @@ const rangeStyles = css`
       color: #4f4f4f;
     }
   }
-  input[type='range']:focus {
+  input[type="range"]:focus {
     outline: none;
     box-shadow: 0 0 0px 0px var(--ld-focus) !important;
   }
-  input[type='range']::-webkit-slider-runnable-track {
+  input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     height: 3px;
     cursor: pointer;
@@ -192,7 +192,7 @@ const rangeStyles = css`
     border-radius: 0px;
     border: 0px solid rgba(1, 1, 1, 0);
   }
-  input[type='range']::-webkit-slider-thumb {
+  input[type="range"]::-webkit-slider-thumb {
     -webkit-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
@@ -209,17 +209,17 @@ const rangeStyles = css`
       background: #ffffff;
     }
     &::before {
-      content: 'Say Cheese';
+      content: "Say Cheese";
       color: red;
     }
   }
-  input[type='range']:focus::-webkit-slider-runnable-track {
+  input[type="range"]:focus::-webkit-slider-runnable-track {
     background: #bdbdbd;
     .dark & {
       background: #828282;
     }
   }
-  input[type='range']::-moz-range-track {
+  input[type="range"]::-moz-range-track {
     width: 100%;
     height: 3px;
     cursor: pointer;
@@ -230,7 +230,7 @@ const rangeStyles = css`
     border-radius: 0px;
     border: 0px solid rgba(1, 1, 1, 0);
   }
-  input[type='range']::-moz-range-thumb {
+  input[type="range"]::-moz-range-thumb {
     -webkit-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
@@ -245,7 +245,7 @@ const rangeStyles = css`
     }
     cursor: pointer;
   }
-  input[type='range']::-ms-track {
+  input[type="range"]::-ms-track {
     width: 100%;
     height: 3px;
     cursor: pointer;
@@ -253,12 +253,12 @@ const rangeStyles = css`
     border-color: transparent;
     color: transparent;
   }
-  input[type='range']::-ms-fill-lower {
+  input[type="range"]::-ms-fill-lower {
     background: #bcbcbc;
     border: 0px solid rgba(1, 1, 1, 0);
     border-radius: 0px;
   }
-  input[type='range']::-ms-fill-upper {
+  input[type="range"]::-ms-fill-upper {
     background: #e0e0e0;
     .dark & {
       background: #4f4f4f;
@@ -266,7 +266,7 @@ const rangeStyles = css`
     border: 0px solid rgba(1, 1, 1, 0);
     border-radius: 0px;
   }
-  input[type='range']::-ms-thumb {
+  input[type="range"]::-ms-thumb {
     -webkit-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
@@ -282,13 +282,13 @@ const rangeStyles = css`
     cursor: pointer;
     height: 6.8px;
   }
-  input[type='range']:focus::-ms-fill-lower {
+  input[type="range"]:focus::-ms-fill-lower {
     background: #e0e0e0;
     .dark & {
       background: #4f4f4f;
     }
   }
-  input[type='range']:focus::-ms-fill-upper {
+  input[type="range"]:focus::-ms-fill-upper {
     background: #d6d6d6;
   }
 `;
@@ -441,7 +441,7 @@ const mobileRange = 70;
 
 // const widthSpaces = [7.5, 16, 24.5, 33, 41.5, 50, 58.5, 67, 75.5, 84, 94];
 let languages = false;
-const TimeSlider = props => {
+const TimeSlider = (props) => {
   const [currentDateValue, setCurrentDateValue] = useState(
     firstDayDefaultOffset
     // props.currentSelectedDay
@@ -457,7 +457,7 @@ const TimeSlider = props => {
     days,
   } = props;
   // const [currentPosition, setCurrentPosition] = useState(24.5);
-  const [datePickerPosition, setDatePickerPosition] = useState('left');
+  const [datePickerPosition, setDatePickerPosition] = useState("left");
   const [showDatePicker, setShowDatePicker] = useState(false);
   // const [currentSelectedDay, setCurrentSelectedDay] = useState("");
   // const [firstDay, setFirstDay] = useState("");
@@ -476,50 +476,50 @@ const TimeSlider = props => {
   const toSliderStringShort = (date, currentLanguage) => {
     let isoLanguage = currentLanguage;
     if (currentLanguage !== undefined) {
-      isoLanguage = currentLanguage.replace('-', '');
-      if (isoLanguage === 'ar') isoLanguage = 'arSA';
-      if (isoLanguage === 'zhHK') isoLanguage = 'zhTW';
+      isoLanguage = currentLanguage.replace("-", "");
+      if (isoLanguage === "ar") isoLanguage = "arSA";
+      if (isoLanguage === "zhHK") isoLanguage = "zhTW";
       if (
         languages[isoLanguage] === undefined ||
         languages[isoLanguage] === null
       ) {
-        isoLanguage = currentLanguage.split('-')[0];
+        isoLanguage = currentLanguage.split("-")[0];
         if (
           languages[isoLanguage] === undefined ||
           languages[isoLanguage] === null
         ) {
-          isoLanguage = 'enUS';
+          isoLanguage = "enUS";
         }
       }
     } else {
-      isoLanguage = 'enUS';
+      isoLanguage = "enUS";
     }
-    return format(date, 'dd MMM', {
+    return format(date, "dd MMM", {
       locale: languages ? languages[isoLanguage] : enUS,
     });
   };
   const toSliderString = (date, currentLanguage) => {
     let isoLanguage = currentLanguage;
     if (currentLanguage) {
-      isoLanguage = currentLanguage.replace('-', '');
-      if (isoLanguage === 'ar') isoLanguage = 'arSA';
-      if (isoLanguage === 'zhHK') isoLanguage = 'zhTW';
+      isoLanguage = currentLanguage.replace("-", "");
+      if (isoLanguage === "ar") isoLanguage = "arSA";
+      if (isoLanguage === "zhHK") isoLanguage = "zhTW";
       if (
         languages[isoLanguage] === undefined ||
         languages[isoLanguage] === null
       ) {
-        isoLanguage = currentLanguage.split('-')[0];
+        isoLanguage = currentLanguage.split("-")[0];
         if (
           languages[isoLanguage] === undefined ||
           languages[isoLanguage] === null
         ) {
-          isoLanguage = 'enUS';
+          isoLanguage = "enUS";
         }
       }
     } else {
-      isoLanguage = 'enUS';
+      isoLanguage = "enUS";
     }
-    return format(date, 'dd-MMMM-yyyy', {
+    return format(date, "dd-MMMM-yyyy", {
       locale: languages ? languages[isoLanguage] : enUS,
     });
   };
@@ -527,6 +527,7 @@ const TimeSlider = props => {
   useEffect(() => {
     setCurrentSliderRange(days);
   }, [days]);
+  // console.log(days, "day in useEffect TIMESLIDER")
 
   // useEffect(() => {
   //   return () => {
@@ -563,7 +564,7 @@ const TimeSlider = props => {
   //       break;
   //   }
   // };
-  const onSliderChange = e => {
+  const onSliderChange = (e) => {
     const sliderDOM = dateRef.current;
     const rangeDOM = range.current;
     const containerDOM = container.current;
@@ -577,6 +578,7 @@ const TimeSlider = props => {
     setCurrentDateValue(newValue);
     // setCurrentSelectedDay(newValue)
     // setCurrentPosition(newPosition);
+    console.log(newValue, "newValue in TIMESLIDER")
     setCurrentSelectedDay(
       toSliderString(
         new Date(currentSliderRange[parseInt(newValue)]),
@@ -596,6 +598,8 @@ const TimeSlider = props => {
 
     props.setFirstDay(addDays(new Date(), -300))
     const sliderDOM = dateRef.current;
+
+
     const rangeDOM = range.current;
     const containerDOM = container.current;
     let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
@@ -604,11 +608,11 @@ const TimeSlider = props => {
     sliderDOM.style.left = `${
       finalWidth +
       stepsWidth *
-        ((datePickerPosition === 'left' ? 0 : currentRange - 1) + 0.5)
+        ((datePickerPosition === "left" ? 0 : currentRange - 1) + 0.5)
     }px`;
     calendarWillClose();
 
-    if (datePickerPosition === 'left') {
+    if (datePickerPosition === "left") {
       let plusDays = 1;
       for (let i = 1; i <= currentRange; i++) {
         if (i === 1) {
@@ -629,6 +633,7 @@ const TimeSlider = props => {
         }
       }
     }
+    console.log(days,date, "days & date in TIMESLIDER ")
     setCurrentSliderRange(days);
     setCurrentSelectedDay(toSliderString(date, props.i18n.locale));
     submitChanges();
@@ -637,7 +642,7 @@ const TimeSlider = props => {
     // setFirstDay(days[0])
     // setLastDay(days[days.length - 1])
     // setLastDay(toSliderStringShort(days[days.length - 1], props.i18n.locale))
-    setCurrentDateValue(datePickerPosition === 'left' ? 0 : currentRange - 1);
+    setCurrentDateValue(datePickerPosition === "left" ? 0 : currentRange - 1);
     // setCurrentPosition(24.5);
     submitChanges();
   };
@@ -656,12 +661,12 @@ const TimeSlider = props => {
   // };
 
   const calendarWillClose = () => {
-    setDatePickerPosition(datePickerPosition + ' hide');
+    setDatePickerPosition(datePickerPosition + " hide");
     return () => setTimeout(() => closeDatePicker(), 400);
   };
   const closeDatePicker = () => {
     setShowDatePicker(false);
-    setDatePickerPosition(datePickerPosition.replace(' hide', ''));
+    setDatePickerPosition(datePickerPosition.replace(" hide", ""));
   };
 
   const rangePreProcces = (date, days) => {
@@ -670,6 +675,7 @@ const TimeSlider = props => {
     return newDate;
   };
   const submitChanges = () => {
+    console.log(currentDateValue, currentSliderRange[0],currentSliderRange.length,"currentDateValue, currentSliderRange, in submitChange")
     props.onChange(
       currentSliderRange[currentDateValue],
       currentSliderRange[0],
@@ -679,14 +685,14 @@ const TimeSlider = props => {
   return (
     <div
       className={`sliderWrapper ${sliderWrapper} ${
-        props.children !== '' ? 'open' : ''
+        props.children !== "" ? "open" : ""
       }`}
       ref={container}
     >
       {props.children}
       <div
         className={`${selectStyles} ${rangeStyles} ${
-          props.children !== '' ? 'open' : ''
+          props.children !== "" ? "open" : ""
         }`}
       >
         <DatePicker
@@ -702,12 +708,12 @@ const TimeSlider = props => {
         <span
           title="Select Start Date"
           className={`first ${tooltipCss}`}
-          onClick={e => onBtnClick('left')}
+          onClick={(e) => onBtnClick("left")}
         >
           <IconBtn /> {toSliderStringShort(new Date(currentSelectedDay), 'en')}
         </span>
         <button
-          onClick={e => onBtnClick('left')}
+          onClick={(e) => onBtnClick("left")}
           className={`first ${popBtn}`}
         ></button>
         {console.log('sliderValue' ,props.sliderValue)}
@@ -716,13 +722,13 @@ const TimeSlider = props => {
           onInput={onSliderChange}
           type="range"
           min="0"
-          max={currentRange}
+          max={currentRange - 1}
           step="1"
           value={currentDateValue}
           // defaultValue={35}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
-          {toSliderStringShort(new Date(lastDay), 'en')}
+          {toSliderStringShort(new Date(lastDay), "en")}
         </span>
       </div>
     </div>

@@ -252,6 +252,7 @@ function App() {
         <Header dark={isDark} />
         <Totals dark={isDark} />
         <Legend dark={isDark} />
+        {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
         <PlayButton state={playerState} toggleState={toggleState} />
         <LanguageSelector
           languageChangeHandler={setCurrentLanguage}

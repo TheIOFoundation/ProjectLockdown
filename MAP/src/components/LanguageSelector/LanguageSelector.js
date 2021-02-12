@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { world } from '../../assets/icons/world';
 import * as classes from './LanguageSelector.module.css';
 
@@ -7,11 +8,17 @@ const LanguageSelector = ({ dark, languageChangeHandler }) => {
 
   const [selectedLang, setSelectedLang] = useState('en');
 
-  const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh cn', 'zh hk'];
+  const { i18n } = useTranslation();
+
+  const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh CN', 'zh HK'];
 
   const toggleShowLanguages = () => {
     setShowLanguages(prevState => !prevState);
   };
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedLang);
+  }, [selectedLang, i18n]);
   return (
     <div
       className={`${classes.LangSelector} ${dark && classes.dark}`}
@@ -34,9 +41,7 @@ const LanguageSelector = ({ dark, languageChangeHandler }) => {
               className={`${classes.LangOpt} ${
                 language === selectedLang && classes.active
               } ${dark && classes.dark}`}
-              onClick={() => {
-                // languageChangeHandler(language.replace(/\s+/g, '-'))
-                setSelectedLang(language.replace(/\s+/g, '-'))}}
+              onClick={() => setSelectedLang(language.replace(/\s+/g, ''))}
             >
               {language.toUpperCase().replace('-', '\n')}
             </div>

@@ -1,4 +1,5 @@
 import { Component, createRef } from 'react';
+import { Translation } from 'react-i18next';
 import './legend.css';
 import { list } from '../../assets/icons/icons.js';
 
@@ -86,28 +87,44 @@ export class Legend extends Component {
             <span>
               <div className="color green" />
             </span>
-            <span> No Lockdown </span>
+            <Translation>
+              {
+                (t, { i18n }) => <span>{t('mapLegend.no')}</span>
+              }
+            </Translation>
           </div>
 
           <div>
             <span>
               <div className="color orange" />
             </span>
-            <span> Partial Lockdown </span>
+            <Translation>
+              {
+                (t, { i18n }) => <span>{t('mapLegend.partial')}</span>
+              }
+            </Translation>
           </div>
 
           <div>
             <span>
               <div className="color red" />
             </span>
-            <span> Full Lockdown </span>
+            <Translation>
+              {
+                (t, { i18n }) => <span>{t('mapLegend.full')}</span>
+              }
+            </Translation>
           </div>
 
           <div>
             <span>
               <div className="color gray" />
             </span>
-            <span> No Data </span>
+            <Translation>
+              {
+                (t, { i18n }) => <span>{t('mapLegend.noData')}</span>
+              }
+            </Translation>
           </div>
         </div>
       </legend>
