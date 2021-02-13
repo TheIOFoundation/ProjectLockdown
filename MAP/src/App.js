@@ -72,6 +72,8 @@ function App() {
     opened: false,
     template: '',
     title: '',
+    iso2: '',
+    country: ''
   })
   const toggleState = (newState) => {
     setPlayerState(newState)
@@ -222,7 +224,13 @@ function App() {
   }
 
   const openDialog = (props) => {
-    setDialog({ opened: true, template: "", title: "" , props});
+    setDialog({ 
+      opened: true, 
+      template: "",
+      title: "" ,
+      iso2: props.iso2,
+      country: props.country
+  });
     // debouncedCloseDialog();
     // this.__closeCountryInfo();
   }
@@ -289,8 +297,8 @@ function App() {
             {dialog.opened ? (
               <CountryInfo
                 dark={isDark}
-                country={dialog.props.country}
-                iso2={dialog.props.iso2}
+                country={dialog.country}
+                iso2={dialog.iso2}
                 wikidata=""
                 date={selectedDate || new Date()}
                 i18n={currentLanguage}
