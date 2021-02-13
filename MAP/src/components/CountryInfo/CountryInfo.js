@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import format from "date-fns/format";
 import isSameDay from "date-fns/isSameDay";
 // import css from "csz";
 import './CountryInfo.css';
+//import LocalStorage Functions
+import * as router from "../../router";
 //import translations
 import { useTranslation } from 'react-i18next';
 
 import {
   coronaTrackerService,
-  // populationService,
-  // countryDetailService,
+  populationService,
+  countryDetailService,
 } from "../../services/services";
 // import _ from "lodash";
 
@@ -249,21 +251,8 @@ function createMeasures(apiMeasures) {
 const CountryInfo = (props) => {
   const [currentTab, setCurrentTab] = useState(1);
   const { i18n } = props;
-  const [coronaData, setCoronaData] = useState(
-    coronaTrackerService.getCountry({
-      iso2: props.iso2,
-      date: props.date,
-      startDate: props.startDate,
-      endDate: props.endDate,
-    })
-  );
-  const [countryDetails, setCountryDetails] = useState({
-    iso2: props.iso2,
-    date: props.date,
-    startDate: props.date,
-    endDate: props.endDate,
-    daysRange: props.dayRange,
-  });
+  const [coronaData, setCoronaData] = useState();
+  const [countryDetails, setCountryDetails] = useState();
   const [populationData, setPopulationData] = useState(
     // countryDetailService.getDetails({
     {
@@ -299,6 +288,7 @@ const CountryInfo = (props) => {
   //     }
   //   }
 
+
   //   async componentWillMount() {
   //     const { startDate, endDate, daysRange } = this.props;
   //     this.setState({
@@ -318,6 +308,7 @@ const CountryInfo = (props) => {
   //       }),
   // });
   //   }
+  
 
   const changeTab = (newTab) => {
     setCurrentTab(newTab);
@@ -355,6 +346,52 @@ const CountryInfo = (props) => {
 
   /** On error & on succes, continue to render */
 
+  const fetchData = async (startDate, endDate) => {
+    await coronaTrackerService.getCountry({
+      iso2: props.iso2,
+      date: props.date,
+      startDate,
+      endDate,
+    }).then(result => result);
+  }
+
+  useEffect(() => {
+    const { startDate, endDate, daysRange } = props;
+
+    fetchData(startDate, endDate)
+    .then(result => {
+      console.log(result)
+      // setCoronaData(result.data);
+    })
+
+    // setCountryDetails(countryDetailService.getDetails({
+    //   iso2: props.iso2,
+    //   date: props.date,
+    //   startDate,
+    //   endDate,
+    //   daysRange,
+    // }));
+    // setPopulationData(populationService.getPopulation());
+    
+    // this.setState({
+    //   coronaData: coronaTrackerService.getCountry({
+    //     iso2: props.iso2,
+    //     date: props.date,
+    //     startDate,
+    //     endDate,
+    //   }),
+    //   populationData: populationService.getPopulation(),
+    //   countryDetails: countryDetailService.getDetails({
+    //     iso2: props.iso2,
+    //     date: props.date,
+    //     startDate,
+    //     endDate,
+    //     daysRange,
+    //   }),
+    // });
+    
+  }, [coronaData])
+
   return (
     <div className={`${props.dark ? 'dark' : ''} CountryInfo`}>
       <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`}} className={tabStyles}>
@@ -379,7 +416,7 @@ const CountryInfo = (props) => {
             date={props.date}
             country={props.country}
             t={t}
-            coronaData={coronaData.data?.find((corona) =>
+            coronaData={coronaData?.data?.find((corona) =>
               isSameDay(new Date(corona.last_updated), props.date)
             )}
             // populationData={populationData?.data[props.iso2]}
@@ -436,8 +473,8 @@ const CountryDetails = (props) => {
   return (
     <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333 !important' : '#e0e0e0'}`}} >
       <h2 class="ld-font-subheader">
-        <span>India</span>
-        <span>2020-04-06</span>
+        <span>{country}</span>
+        <span>{date}</span>
 
         {/* <span>{format(date, "dd/MM/yyyy")}</span> */}
       </h2>
@@ -480,7 +517,7 @@ const CountryDetails = (props) => {
         <div class="data-entry is-third">
           <dt>{t("tdo.tabs.dailyLife.stats.deaths")}</dt>
           <dd class="data-value">
-            154,312
+            {coronaData?.total_deaths}
             {/* {coronaData?.total_deaths
               ? Number(coronaData?.total_deaths).toLocaleString()
               : i18n.t("tdo.tabs.dailyLife.noResults")} */}

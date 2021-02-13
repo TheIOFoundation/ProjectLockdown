@@ -14,6 +14,9 @@ import { addDays } from "date-fns";
 import TimeSlider from "./components/TimeSlider/TimeSlider";
 import CountryInfo from "./components/CountryInfo/CountryInfo";
 
+//import LocalStorage Functions
+import * as router from "./router";
+
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
 // TODO: Reset selectedDate to startDate once endDate is reached.
@@ -205,11 +208,15 @@ function App() {
     // this.__closeCountryInfo();
   };
 
-  const openDialog = () => {
-    setDialog({ opened: true, template: "", title: "" });
+  const openDialog = (props) => {
+    setDialog({ opened: true, template: "", title: "" , props});
     // debouncedCloseDialog();
     // this.__closeCountryInfo();
   };
+
+  useEffect(() => {
+    router.resetLocalStorage();
+  }, []);
 
   useEffect(() => {
     console.log(startDate);
@@ -266,8 +273,8 @@ function App() {
             {dialog.opened ? (
               <CountryInfo
                 dark={isDark}
-                country="India"
-                iso2="EN"
+                country={dialog.props.country}
+                iso2={dialog.props.iso2}
                 wikidata=""
                 date={selectedDate || new Date()}
                 i18n={currentLanguage}

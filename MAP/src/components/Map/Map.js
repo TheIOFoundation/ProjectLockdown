@@ -17,6 +17,9 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 
+//import LocalStorage Functions
+import * as router from "../../router";
+
 /**
  * Primary UI component for user interaction
  */
@@ -409,17 +412,28 @@ export class Map extends React.Component {
   }
 
   onGetResult(results) {
-    // let { features } = results;
-    // if (features[0]) {
-    //   let countryName = features[0].text;
-    //   let wikidata = features[0].properties.wikidata;
-    //   // router.setSearchParam('wikidata', wikidata);
-    //   // router.setSearchParam('country', countryName);
-    //   // router.setSearchParam('iso2', this.state.lastCountry.iso2);
-    // } else {
-    //   // router.setSearchParam('country', this.state.lastCountry.country);
-    //   // router.setSearchParam('iso2', this.state.lastCountry.iso2);
-    // }
+    let { features } = results;
+
+    if (features[0]) {
+      let countryName = features[0].text;
+      let wikidata = features[0].properties.wikidata;
+
+      router.setLocalStorage({
+        iso2 : this.state.lastCountry.iso2,
+        country: countryName,
+        wikidata: wikidata,
+      });
+      // router.setSearchParam('wikidata', wikidata);
+      // router.setSearchParam('country', countryName);
+      // router.setSearchParam('iso2', this.state.lastCountry.iso2);
+    } else {
+      router.setLocalStorage({
+        iso2 : this.state.lastCountry.iso2,
+        country: this.state.lastCountry.name,
+      });
+      // router.setSearchParam('country', this.state.lastCountry.country);
+      // router.setSearchParam('iso2', this.state.lastCountry.iso2);
+    }
   }
 
   onMapClick(e) {
@@ -497,7 +511,7 @@ export class Map extends React.Component {
         <div
           ref={ref => (this.ref = ref)}
           id="map"
-          onClick={this.props.onOpen}
+          onClick={() => this.props.onOpen(this.state.lastCountry)}
           className="map-container"
           ></div>
         <CountriesSearcher
