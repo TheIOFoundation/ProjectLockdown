@@ -295,7 +295,7 @@ function App() {
             setLastDay={setEndDate}
           >
             {dialog.opened ? (
-              <CountryInfo
+              <CountryInfo 
                 dark={isDark}
                 country={dialog.country}
                 iso2={dialog.iso2}
