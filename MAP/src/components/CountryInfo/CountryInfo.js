@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 // import format from "date-fns/format";
-import isSameDay from "date-fns/isSameDay";
+import isSameDay from 'date-fns/isSameDay'
 // import css from "csz";
-import './CountryInfo.css';
+import './CountryInfo.css'
 //import LocalStorage Functions
-import * as router from "../../router";
+import * as router from '../../router'
 //import translations
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
 import {
   coronaTrackerService,
   populationService,
   countryDetailService,
-} from "../../services/services";
+} from '../../services/services'
 // import _ from "lodash";
 
 import {
@@ -27,164 +27,165 @@ import {
   water,
   internet,
   close as closeIcon,
-} from "../../assets/icons/icons.js";
+} from '../../assets/icons/icons.js'
 import {
   // offline,
   // loading,
   travelFlight,
   travelLand,
   travelSea,
-} from "../../assets/icons/icons.js";
+} from '../../assets/icons/icons.js'
 // import { offlineStyles, loadingStyles } from "../../style/shared.styles.scss";
-import { countryInfoStyles, tabStyles, reports } from "./CountryInfo.styles.js";
+import { countryInfoStyles, tabStyles, reports } from './CountryInfo.styles.js'
 
 // ? Wrappers
 
 // import "./tool-tip.js";
 // TODO: Change the api to give us that data
 // import CountriesDataList from "../../data/territoriesData";
-import { useState } from "react";
+import { useState } from 'react'
+import { getCoronaData, getCoronaDetailService } from '../../services/coronaTrackerService'
 // import { parseWithOptions } from "date-fns/fp";
 
 const TRAVEL = {
-  1: "YES",
-  2: "PARTIALLY",
-  3: "NO",
-  4: "UNCLEAR",
-  5: "NA",
-};
+  1: 'YES',
+  2: 'PARTIALLY',
+  3: 'NO',
+  4: 'UNCLEAR',
+  5: 'NA',
+}
 
 const MEASURE_VALUES = {
-  1: "YES",
-  2: "PARTIAL",
-  3: "NO",
-  4: "UNCLEAR",
-};
+  1: 'YES',
+  2: 'PARTIAL',
+  3: 'NO',
+  4: 'UNCLEAR',
+}
 
-const TRAVELTYPE = ["Land", "Flight", "Sea"];
+const TRAVELTYPE = ['Land', 'Flight', 'Sea']
 
 const TRANSLATIONS = {
   commerce: {
-    id: "commerce",
-    text: "Commerce",
+    id: 'commerce',
+    text: 'Commerce',
   },
   foreigners_inbound: {
-    id: "foreignersInbound",
-    text: "Foreigners Inbound",
+    id: 'foreignersInbound',
+    text: 'Foreigners Inbound',
   },
   foreigners_outbound: {
-    id: "foreignersOutbound",
-    text: "Foreigners Outbound",
+    id: 'foreignersOutbound',
+    text: 'Foreigners Outbound',
   },
   local: {
-    id: "local",
-    text: "Local",
+    id: 'local',
+    text: 'Local',
   },
   nationals_inbound: {
-    id: "nationalsInbound",
-    text: "Nationals Inbound",
+    id: 'nationalsInbound',
+    text: 'Nationals Inbound',
   },
   nationals_outbound: {
-    id: "nationalsOutbound",
-    text: "Nationals Outbound",
+    id: 'nationalsOutbound',
+    text: 'Nationals Outbound',
   },
   stopovers: {
-    id: "stopovers",
-    text: "Stopovers",
+    id: 'stopovers',
+    text: 'Stopovers',
   },
   cross_border_workers: {
-    id: "crossBorderWorkers",
-    text: "Cross-border Workers",
+    id: 'crossBorderWorkers',
+    text: 'Cross-border Workers',
   },
-};
+}
 
 const MEASURES = [
   {
-    id: "lockdown_status",
-    label: "Stay Home",
-    translationKey: "home",
+    id: 'lockdown_status',
+    label: 'Stay Home',
+    translationKey: 'home',
     icon: home,
-    value: "PARTIAL",
+    value: 'PARTIAL',
   },
   {
-    id: "going_to_shops",
-    label: "Shopping",
-    translationKey: "shopping",
+    id: 'going_to_shops',
+    label: 'Shopping',
+    translationKey: 'shopping',
     icon: shops,
-    value: "PARTIAL",
+    value: 'PARTIAL',
   },
   {
-    id: "city_movement_restriction",
-    label: "Outdoors",
-    translationKey: "outdoors",
+    id: 'city_movement_restriction',
+    label: 'Outdoors',
+    translationKey: 'outdoors',
     icon: citymovement,
-    value: "PARTIAL",
+    value: 'PARTIAL',
   },
   {
-    id: "military_not_deployed",
-    label: "Military",
-    translationKey: "military",
+    id: 'military_not_deployed',
+    label: 'Military',
+    translationKey: 'military',
     icon: military,
-    value: "UNCLEAR",
+    value: 'UNCLEAR',
   },
   {
-    id: "attending_religious_sites",
-    label: "Religious Sites",
-    translationKey: "religious",
+    id: 'attending_religious_sites',
+    label: 'Religious Sites',
+    translationKey: 'religious',
     icon: religion,
-    value: "UNCLEAR",
+    value: 'UNCLEAR',
   },
   {
-    id: "electricity_nominal",
-    label: "Electricity",
-    translationKey: "electricity",
+    id: 'electricity_nominal',
+    label: 'Electricity',
+    translationKey: 'electricity',
     icon: electricity,
-    value: "UNCLEAR",
+    value: 'UNCLEAR',
   },
   {
-    id: "going_to_work",
-    label: "Go to Work",
-    translationKey: "work",
+    id: 'going_to_work',
+    label: 'Go to Work',
+    translationKey: 'work',
     icon: work,
-    value: "PARTIAL",
+    value: 'PARTIAL',
   },
   {
-    id: "water_nominal",
-    label: "Water ensured",
-    translationKey: "water",
+    id: 'water_nominal',
+    label: 'Water ensured',
+    translationKey: 'water',
     icon: water,
-    value: "UNCLEAR",
+    value: 'UNCLEAR',
   },
   {
-    id: "academia_allowed",
-    label: "Go to Schools",
-    translationKey: "schools",
+    id: 'academia_allowed',
+    label: 'Go to Schools',
+    translationKey: 'schools',
     icon: academia,
-    value: "YES",
+    value: 'YES',
   },
   {
-    id: "internet_nominal",
-    label: "Telecom ensured",
-    translationKey: "internet",
+    id: 'internet_nominal',
+    label: 'Telecom ensured',
+    translationKey: 'internet',
     icon: internet,
-    value: "UNCLEAR",
+    value: 'UNCLEAR',
   },
-];
+]
 
 const tabs = [
   {
     id: 1,
-    name: "Daily Life",
+    name: 'Daily Life',
   },
   {
     id: 2,
-    name: "Mobility",
+    name: 'Mobility',
   },
   {
     id: 3,
-    name: "Reports",
+    name: 'Reports',
   },
-];
+]
 
 function createMeasures(apiMeasures) {
   // return MEASURES.map((measure) => {
@@ -194,7 +195,7 @@ function createMeasures(apiMeasures) {
   //     ...measure,
   //     value: MEASURE_VALUES[apiData.value] ?? MEASURE_VALUES[4],
   //   };
-  console.log("createMeasures function");
+  console.log('createMeasures function')
   // });
 }
 
@@ -249,10 +250,10 @@ function createMeasures(apiMeasures) {
 // 7: {label: "stopovers", value: null, name: "sea.stopovers", #npi+num+sea+stopovers: null}
 
 const CountryInfo = (props) => {
-  const [currentTab, setCurrentTab] = useState(1);
-  const { i18n } = props;
-  const [coronaData, setCoronaData] = useState();
-  const [countryDetails, setCountryDetails] = useState();
+  const [currentTab, setCurrentTab] = useState(1)
+  const { i18n } = props
+  const [coronaData, setCoronaData] = useState()
+  const [countryDetails, setCountryDetails] = useState()
   const [populationData, setPopulationData] = useState(
     // countryDetailService.getDetails({
     {
@@ -263,9 +264,9 @@ const CountryInfo = (props) => {
       daysRange: props.daysRange,
     }
     // })
-  );
+  )
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   // async componentDidUpdate(prevProps) {
   //     if (this.props.date !== prevProps.date) {
@@ -288,7 +289,6 @@ const CountryInfo = (props) => {
   //     }
   //   }
 
-
   //   async componentWillMount() {
   //     const { startDate, endDate, daysRange } = this.props;
   //     this.setState({
@@ -308,13 +308,12 @@ const CountryInfo = (props) => {
   //       }),
   // });
   //   }
-  
 
   const changeTab = (newTab) => {
-    setCurrentTab(newTab);
-  };
+    setCurrentTab(newTab)
+  }
 
-  let territoryData = "";
+  let territoryData = ''
   // CountriesDataList[props.wikidata];
   /** If the user is offline, and theres no response, or the response has failed */
   // if (!navigator.onLine) {
@@ -347,22 +346,31 @@ const CountryInfo = (props) => {
   /** On error & on succes, continue to render */
 
   const fetchData = async (startDate, endDate) => {
-    await coronaTrackerService.getCountry({
-      iso2: props.iso2,
-      date: props.date,
-      startDate,
-      endDate,
-    }).then(result => result);
+    await coronaTrackerService
+      .getCountry({
+        iso2: props.iso2,
+        date: props.date,
+        startDate,
+        endDate,
+      })
+      .then((result) => result)
   }
 
   useEffect(() => {
-    const { startDate, endDate, daysRange } = props;
+    const { startDate, endDate, daysRange } = props
 
-    fetchData(startDate, endDate)
-    .then(result => {
-      console.log(result)
-      // setCoronaData(result.data);
-    })
+    getCoronaData(props.iso2, startDate, endDate)
+      .then((response) => {console.log(response)
+      setCoronaData(response)})
+      .catch((e) => console.log(e))
+
+      getCoronaDetailService(props.iso2, startDate, endDate).then(response => response).catch(e => console.log(e))
+    // async function data() {await fetchData(startDate, endDate)
+    // .then(result => {
+    //   console.log('result from countryInfo.js', result)
+    //   // setCoronaData(result.data);
+    // })}
+    // data()
 
     // setCountryDetails(countryDetailService.getDetails({
     //   iso2: props.iso2,
@@ -372,7 +380,7 @@ const CountryInfo = (props) => {
     //   daysRange,
     // }));
     // setPopulationData(populationService.getPopulation());
-    
+
     // this.setState({
     //   coronaData: coronaTrackerService.getCountry({
     //     iso2: props.iso2,
@@ -389,17 +397,22 @@ const CountryInfo = (props) => {
     //     daysRange,
     //   }),
     // });
-    
-  }, [coronaData])
+  }, [props])
 
   return (
     <div className={`${props.dark ? 'dark' : ''} CountryInfo`}>
-      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`}} className={tabStyles}>
+      <div
+        style={{
+          color: `${props.dark ? 'white' : 'black'}`,
+          backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
+        }}
+        className={tabStyles}
+      >
         {tabs.map((tab) => (
           <div
             key={tab.id}
             onClick={() => changeTab(tab.id)}
-            className={`tab ${currentTab === tab.id ? "active" : ""}`}
+            className={`tab ${currentTab === tab.id ? 'active' : ''}`}
           >
             {/* tdo.tabs.{tab.name}.name */}
             {tab.name}
@@ -409,7 +422,15 @@ const CountryInfo = (props) => {
         ))}
         <button onClick={props.onClose}>{closeIcon}</button>
       </div>
-      <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333!important' : '#e0e0e0'}`}} className={`countryInfo ${countryInfoStyles} ${props.dark ? 'dark' : ''}`}>
+      <div
+        style={{
+          color: `${props.dark ? 'white' : 'black'}`,
+          backgroundColor: `${props.dark ? '#333333!important' : '#e0e0e0'}`,
+        }}
+        className={`countryInfo ${countryInfoStyles} ${
+          props.dark ? 'dark' : ''
+        }`}
+      >
         {currentTab === 1 ? (
           <CountryDetails
             dark={props.dark}
@@ -424,34 +445,39 @@ const CountryInfo = (props) => {
             i18n={i18n}
           />
         ) : currentTab === 2 ? (
-          <TransportDetails t={t} dark={props.dark} i18n={i18n} countryDetails={countryDetails} />
+          <TransportDetails
+            t={t}
+            dark={props.dark}
+            i18n={i18n}
+            countryDetails={countryDetails}
+          />
         ) : (
           <>
             <Reports t={t} i18n={i18n} dark={props.dark} />
-            <div className="link-container">
+            <div className='link-container'>
               <a
-                className="ld-link"
-                target="_blank"
-                rel="noopener noreferrer"
+                className='ld-link'
+                target='_blank'
+                rel='noopener noreferrer'
                 href={
                   territoryData
                     ? `https://docs.google.com/a/theiofoundation.org/spreadsheets/d/1mVyQxxLxAF3E1dw870WHXTOLgYzmumojvzIekpgvLV0/edit#gid=${territoryData.id}`
-                    : "tiof.click/LockdownData"
+                    : 'tiof.click/LockdownData'
                 }
-                target="_blank"
+                target='_blank'
               >
                 {/* {_.i18n.t(`tdo.contributionLinks.firstLink`)} */}
               </a>
               <a
-                className="ld-link"
-                target="_blank"
-                rel="noopener noreferrer"
+                className='ld-link'
+                target='_blank'
+                rel='noopener noreferrer'
                 href={`https://docs.google.com/forms/d/e/1FAIpQLSfDWe2qlzUnd3e-YYspMzT9adUswDEYIdJMb7jz7ule34-yiA/viewform?entry.333088473=${
-                  territoryData ? territoryData.region : "REGION"
+                  territoryData ? territoryData.region : 'REGION'
                 }&entry.1690056710=${
-                  territoryData ? territoryData.territory : "TERRITORY"
+                  territoryData ? territoryData.territory : 'TERRITORY'
                 }`}
-                target="_blank"
+                target='_blank'
               >
                 {t(`tdo.contributionLinks.secondLink`)}
               </a>
@@ -463,60 +489,72 @@ const CountryInfo = (props) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 const CountryDetails = (props) => {
-  let { i18n, t } = props;
-  let { coronaData, populationData, countryDetails, country, date, dark } = props;
-  
+  let { i18n, t } = props
+  let {
+    coronaData,
+    populationData,
+    countryDetails,
+    country,
+    date,
+    dark,
+  } = props
+
   return (
-    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333 !important' : '#e0e0e0'}`}} >
-      <h2 class="ld-font-subheader">
+    <div
+      style={{
+        color: `${dark ? 'white' : 'black'}`,
+        backgroundColor: `${dark ? '#333333 !important' : '#e0e0e0'}`,
+      }}
+    >
+      <h2 class='ld-font-subheader'>
         <span>{country}</span>
         <span>{date}</span>
 
         {/* <span>{format(date, "dd/MM/yyyy")}</span> */}
       </h2>
-      <dl className="data">
-        <div className="data-entry is-half">
-          <dt>{t("tdo.tabs.dailyLife.stats.population")}</dt>
-          <dd className="data-value">
+      <dl className='data'>
+        <div className='data-entry is-half'>
+          <dt>{t('tdo.tabs.dailyLife.stats.population')}</dt>
+          <dd className='data-value'>
             1,352,617,328
             {/* {!isNaN(Number(populationData?.Population))
               ? Number(populationData?.Population).toLocaleString() ?? "Error"
               : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
-        <div className="data-entry is-half">
-          <dt>{t("tdo.tabs.dailyLife.stats.max_assembly")}</dt>
-          <dd className="data-value">
+        <div className='data-entry is-half'>
+          <dt>{t('tdo.tabs.dailyLife.stats.max_assembly')}</dt>
+          <dd className='data-value'>
             N/A
             {/* {countryDetails?.max_gathering ??
               i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
-        <div className="data-entry is-third">
-          <dt>{t("tdo.tabs.dailyLife.stats.cases")}</dt>
-          <dd className="data-value">
+        <div className='data-entry is-third'>
+          <dt>{t('tdo.tabs.dailyLife.stats.cases')}</dt>
+          <dd className='data-value'>
             10,747,091
             {/* {coronaData?.total_confirmed
               ? Number(coronaData?.total_confirmed).toLocaleString()
               : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
-        <div className="data-entry is-third">
-          <dt>{t("tdo.tabs.dailyLife.stats.recoveries")}</dt>
-          <dd className="data-value">
+        <div className='data-entry is-third'>
+          <dt>{t('tdo.tabs.dailyLife.stats.recoveries')}</dt>
+          <dd className='data-value'>
             10,423,125
             {/* {coronaData?.total_recovered
               ? Number(coronaData?.total_recovered).toLocaleString()
               : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
-        <div className="data-entry is-third">
-          <dt>{t("tdo.tabs.dailyLife.stats.deaths")}</dt>
-          <dd class="data-value">
+        <div className='data-entry is-third'>
+          <dt>{t('tdo.tabs.dailyLife.stats.deaths')}</dt>
+          <dd class='data-value'>
             {coronaData?.total_deaths}
             {/* {coronaData?.total_deaths
               ? Number(coronaData?.total_deaths).toLocaleString()
@@ -524,17 +562,16 @@ const CountryDetails = (props) => {
           </dd>
         </div>
       </dl>
-      <Legends dark={props.dark} t={t} i18n={i18n} tab="dailyLife" />
+      <Legends dark={props.dark} t={t} i18n={i18n} tab='dailyLife' />
       {/* {countryDetails.status === "success" ? ( */}
       <>
-        <h2 className="ld-font-subheader last">
-          {t("tdo.tabs.dailyLife.subtitle")}
+        <h2 className='ld-font-subheader last'>
+          {t('tdo.tabs.dailyLife.subtitle')}
         </h2>
-        <ul className="measures">
-          
+        <ul className='measures'>
           {MEASURES.map((m) => (
             <li key={m.id}>
-              <div className="measure-wrapper">
+              <div className='measure-wrapper'>
                 <div
                   aria-labelledby={`measure-label-${m.id}`}
                   className={`measure measure-${m.value ? m.value : null}`}
@@ -542,7 +579,7 @@ const CountryDetails = (props) => {
                 >
                   {m.icon}
                 </div>
-                <span id={`measure-label-${m.id}`} className="measure-label">
+                <span id={`measure-label-${m.id}`} className='measure-label'>
                   {/* {i18n.t(`tdo.tabs.dailyLife.measures.${m.translationKey}`)} */}
 
                   {t(`tdo.tabs.dailyLife.measures.${m.translationKey}`)}
@@ -559,10 +596,10 @@ const CountryDetails = (props) => {
         </div>
       )} */}
     </div>
-  );
-};
+  )
+}
 const TransportDetails = (props) => {
-  let { countryDetails, t , i18n } = props;
+  let { countryDetails, t, i18n } = props
   return (
     <>
       {/* hey  */}
@@ -570,34 +607,32 @@ const TransportDetails = (props) => {
       {/* <> */}
       <br />
       <br />
-      <Legends dark={props.dark} t={t} i18n={i18n} tab="mobility" />
-      <h2 className="ld-font-subheader last transport">
+      <Legends dark={props.dark} t={t} i18n={i18n} tab='mobility' />
+      <h2 className='ld-font-subheader last transport'>
         {/* {i18n.t("tdo.tabs.mobility.subtitle")}
          */}
         {/* Transport Restrictions Text */}
-        {t("tdo.tabs.mobility.subtitle")}
+        {t('tdo.tabs.mobility.subtitle')}
       </h2>
       <dl>
-        <div className="ld-travel">
+        <div className='ld-travel'>
           <dt></dt>
-          <div className="ld-travel--values">
-            <dd className="ld-travel--val-icon">{travelLand}</dd>
-            <dd className="ld-travel--val-icon">{travelFlight}</dd>
-            <dd className="ld-travel--val-icon">{travelSea}</dd>
+          <div className='ld-travel--values'>
+            <dd className='ld-travel--val-icon'>{travelLand}</dd>
+            <dd className='ld-travel--val-icon'>{travelFlight}</dd>
+            <dd className='ld-travel--val-icon'>{travelSea}</dd>
           </div>
         </div>
         {Object.keys(TRANSLATIONS).map((key, index) => {
           return (
-            <div className="ld-travel" key={index}>
+            <div className='ld-travel' key={index}>
               <dt>
-                {t(
-                      `tdo.tabs.mobility.measures.${TRANSLATIONS[key].id}`
-                    )}
+                {t(`tdo.tabs.mobility.measures.${TRANSLATIONS[key].id}`)}
                 {/* {i18n.t( */}
                 {/* {TRANSLATIONS[key].text} */}
                 {/* )} */}
               </dt>
-              <div className="ld-travel--values">
+              <div className='ld-travel--values'>
                 {Object.keys(TRANSLATIONS[key]).map((val, i) => (
                   <dd
                     key={i}
@@ -614,7 +649,7 @@ const TransportDetails = (props) => {
                 ))}
               </div>
             </div>
-          );
+          )
         })}
       </dl>
       {/* </> */}
@@ -626,45 +661,57 @@ const TransportDetails = (props) => {
       {/* ) */}
       {/* } */}
     </>
-  );
-};
+  )
+}
 
 const Legends = (props) => {
   // console.log(props);
-  let { i18n, t , tab, dark } = props;
+  let { i18n, t, tab, dark } = props
   return (
-    <div style={{color: `${dark ? 'white' : 'black'}`, backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`}}  className="legend ld-font-legend">
+    <div
+      style={{
+        color: `${dark ? 'white' : 'black'}`,
+        backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`,
+      }}
+      className='legend ld-font-legend'
+    >
       <dl>
-        <div className="legend-item">
-          <dt className="legend-green" aria-label="green"></dt>
-          <dd>{t("tdo.tabs.dailyLife.measureValues.1")}</dd>
+        <div className='legend-item'>
+          <dt className='legend-green' aria-label='green'></dt>
+          <dd>{t('tdo.tabs.dailyLife.measureValues.1')}</dd>
         </div>
-        <div className="legend-item">
-          <dt className="legend-yellow" aria-label="yellow"></dt>
-          <dd>{t("tdo.tabs.dailyLife.measureValues.2")}</dd>
+        <div className='legend-item'>
+          <dt className='legend-yellow' aria-label='yellow'></dt>
+          <dd>{t('tdo.tabs.dailyLife.measureValues.2')}</dd>
         </div>
-        <div className="legend-item">
-          <dt className="legend-red" aria-label="red"></dt>
-          <dd>{t("tdo.tabs.dailyLife.measureValues.3")}</dd>
+        <div className='legend-item'>
+          <dt className='legend-red' aria-label='red'></dt>
+          <dd>{t('tdo.tabs.dailyLife.measureValues.3')}</dd>
         </div>
-        <div className="legend-item">
-          <dt className="legend-gray" aria-label="gray"></dt>
-          <dd>{t("tdo.tabs.dailyLife.measureValues.4")}</dd>
+        <div className='legend-item'>
+          <dt className='legend-gray' aria-label='gray'></dt>
+          <dd>{t('tdo.tabs.dailyLife.measureValues.4')}</dd>
         </div>
       </dl>
     </div>
-  );
-};
+  )
+}
 
 const Reports = (props) => {
   // let { i18n } = _;
-  let { t } = props;
+  let { t } = props
   return (
-    <div style={{color: `${props.dark ? 'white' : 'black'}`, backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`}}  className={`${reports}`}>
-      <h3>{t("tdo.tabs.reports.subtitle")}</h3>
-      <div className="placeholder"></div>
+    <div
+      style={{
+        color: `${props.dark ? 'white' : 'black'}`,
+        backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
+      }}
+      className={`${reports}`}
+    >
+      <h3>{t('tdo.tabs.reports.subtitle')}</h3>
+      <div className='placeholder'></div>
     </div>
-  );
-};
+  )
+}
 
-export default CountryInfo;
+export default CountryInfo
