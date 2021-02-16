@@ -2,8 +2,8 @@
 name: "[PROD] Graphics Design Request"
 about: Define or request a graphics deliverable for Project Lockdown.
 title: "[PROD] Design & create "
-labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, \U0001F3A8 Need: Design, \U0001F4A7
-  Priority: Medium, \U0001F3A8 Team: UXUI"
+labels: "Project: PLD, \U0001F3A8 Need: Design, \U0001F3A8 Team: UXUI, \U0001F4A7
+  Priority: Medium, \U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
@@ -36,10 +36,21 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 # Objectives
 
 
-# Proposed solution
+# Requested design
+
+
 
 
 # Extra information
+- Resolution/Size (e.g. A3, A4, ) 
+
+- Orientation
+Landscape
+Portrait
+
+- Due Date
+
+
 - Must have
  -- 
 
@@ -56,6 +67,25 @@ Once the Task is filled up PLEASE DELETE THIS INSTRUCTIONS BLOCK
 ## Usage documentation
 
 ## 📖 Technical documentation
+
+* Brand guidelines
+The brand font is "Montserrat" and the brand colors are; 
+
+- FFFFFF 
+- 333333 
+- 7AAEFF 
+- 6FCF97 
+- F2994A 
+- EB5757 
+- F2F2F2 
+- 4F4F4F 
+- 828282 
+- BDBDBD 
+- E0E0E0 
+
+>>> Put this on the Wiki + Document link (G Drive)
+
+
 * General considerations: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Dev-Guidelines)
 * Project Architecture: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Project-Architecture)
 * Data Lifecycle: [Project Wiki](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Data-Lifecycle)
