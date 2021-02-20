@@ -152,7 +152,7 @@ function App() {
     }
 
     setDays(newDays)
-  }, [startDate, endDate])
+  }, [startDate, days])
 
   useEffect(() => {
     const formattedSelectedDate = new Date(selectedDate)
