@@ -46185,35 +46185,13 @@
       },
       "parameters": [
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "DSLUID",
-          "required": true,
-          "in": "path",
-          "description": "The UID for the DSL to be returned"
+          "$ref": "#/components/parameters/DSLUID"
         },
         {
-          "schema": {
-            "type": "string",
-            "enum": [
-              "MAP",
-              "BO"
-            ]
-          },
-          "name": "Module",
-          "required": true,
-          "in": "path",
-          "description": "Enum BO, API or MAP. Defaults to MAP if not specified"
+          "$ref": "#/components/parameters/Module"
         },
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "EnvironmentUID",
-          "required": true,
-          "in": "path",
-          "description": "Sets a specific Environment  via its UID."
+          "$ref": "#/components/parameters/EnvironmentUID"
         }
       ]
     },
@@ -56869,7 +56847,7 @@
       }
     },
     "parameters": {
-      "Module": {
+      "ModuleDELETE": {
         "name": "ModuleDELETE",
         "in": "query",
         "schema": {
@@ -56882,7 +56860,7 @@
         },
         "required": true
       },
-      "DSLUID": {
+      "DSLUIDDELETE": {
         "name": "DSLUID",
         "in": "query",
         "required": true,
@@ -56921,6 +56899,46 @@
           ]
         },
         "description": "Used to set the format in which the data is to be obtained from the endpoint."
+      },
+      "Module": {
+        "name": "Module",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "BO",
+            "API",
+            "MAP",
+            "WEB",
+            "Funnel: IS",
+            "Funnel: CS",
+            "Funnel: ML",
+            "Funnel: DF",
+            "DB"
+          ]
+        },
+        "description": "Indicates the Module calling the Endpoint."
+      },
+      "DSLUID": {
+        "name": "DSLUID",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "default": "0"
+        },
+        "description": "Indicates the UID for the DSL to be returned."
+      },
+      "EnvironmentUID": {
+        "name": "EnvironmentUID",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "default": "0"
+        },
+        "description": "Sets a specific Environment to be loaded via its UID."
       }
     },
     "securitySchemes": {},
