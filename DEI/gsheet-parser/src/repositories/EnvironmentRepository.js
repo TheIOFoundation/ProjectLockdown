@@ -1,8 +1,8 @@
 import Entry from '../types/Entry';
 
-export default class SnapshotRepository {
+export default class EnvironmentRepository {
   constructor(db) {
-    this.model = db.collection('snapshots');
+    this.model = db.collection('environments');
   }
 
   /**
@@ -188,23 +188,23 @@ export default class SnapshotRepository {
 
   /**
    *
-   * @param {*} snapshot
+   * @param {*} environment
    */
-  insertOrUpdate(snapshot) {
-    return this.model.replaceOne( { SnapshotUID : snapshot.SnapshotUID }, snapshot, { upsert: true });
-  } 
+  insertOrUpdate(environment) {
+    return this.model.replaceOne( { EnvironmentUID : environment.EnvironmentUID }, environment, { upsert: true });
+  }
   
   /**
    *
-   * @param {[]} snapshot
+   * @param {[]} environment
    */
-  insertMany(snapshots) {
-    return this.model.insertMany(snapshots);
+  insertMany(environments) {
+    return this.model.insertMany(environments);
   }
 
   // referenece: https://docs.mongodb.com/manual/reference/method/db.collection.updateMany/
-  insertManyOrUpdate(snapshots) {
-    return snapshots.map((s) => {
+  insertManyOrUpdate(environments) {
+    return environments.map((s) => {
       return this.model.updateMany(
         {
           unique_id: s.unique_id,
@@ -223,7 +223,7 @@ export default class SnapshotRepository {
    * @param {string} iso3CountryCode
    * @returns {Promise}
    */
-  removeSnapshots(iso2CountryCode, iso3CountryCode) {
+  removeEnvironments(iso2CountryCode, iso3CountryCode) {
     // TODO: insert some default values, instead of clear all.
     // JFQueralt, "Clarification; Every territory tab in the Data Entry Interface (DEI) 
     // has a first empty Data Entry Set (DES - the collection of columns we use to codify 
