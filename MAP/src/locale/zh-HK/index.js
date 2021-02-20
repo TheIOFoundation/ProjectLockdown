@@ -111,7 +111,6 @@ const zhHK = {
           water: '水',
           waterShortVersion: '水',
           internetShortVersion: '電訊',
-          internetShortVersion: '電訊',
         },
       },
       mobility: {
