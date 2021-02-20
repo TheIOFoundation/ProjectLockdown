@@ -20,7 +20,9 @@ const Totals = ({
     affected: 0,
   })
 
-  const { t, i18n } = useTranslation();
+  const { t 
+    // ,i18n
+   } = useTranslation();
 
   useEffect(() => {
     fetchTotals(startDate, endDate, selectedDate, daysRange)

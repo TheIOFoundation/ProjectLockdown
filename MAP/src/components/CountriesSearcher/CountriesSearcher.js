@@ -85,7 +85,7 @@ function useGeocoderHook(i18n, map, setGeocoder, setResults, setGeoResult) {
         setGeoResult({});
       }
     }
-  }, []);
+  }, [i18n, map, setGeoResult, setGeocoder, setResults]);
 }
 
 function useSearch(

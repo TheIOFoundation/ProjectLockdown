@@ -3,9 +3,9 @@ import isSameDay from 'date-fns/isSameDay'
 import './CountryInfo.css'
 import { useTranslation } from 'react-i18next'
 
-import {
-  coronaTrackerService,
-} from '../../services/services'
+// import {
+//   coronaTrackerService,
+// } from '../../services/services'
 
 import {
   home,
@@ -176,18 +176,18 @@ const CountryInfo = (props) => {
   const [currentTab, setCurrentTab] = useState(1)
   const { i18n } = props
   const [coronaData, setCoronaData] = useState()
-  const [countryDetails, setCountryDetails] = useState()
-  const [populationData, setPopulationData] = useState(
-    // countryDetailService.getDetails({
-    {
-      iso2: props.iso2,
-      date: props.date,
-      startDate: props.startDate,
-      endDate: props.endDate,
-      daysRange: props.daysRange,
-    }
-    // })
-  )
+  const [countryDetails, 
+    // setCountryDetails
+  ] = useState()
+  // const [populationData, setPopulationData] = useState(
+  //   {
+  //     iso2: props.iso2,
+  //     date: props.date,
+  //     startDate: props.startDate,
+  //     endDate: props.endDate,
+  //     daysRange: props.daysRange,
+  //   }
+  // )
 
   const { t } = useTranslation()
 
@@ -403,7 +403,9 @@ const CountryDetails = (props) => {
   )
 }
 const TransportDetails = (props) => {
-  let { countryDetails, t, i18n } = props
+  let { 
+    // countryDetails,
+     t, i18n } = props
   return (
     <>
       {/* hey  */}
