@@ -47406,7 +47406,7 @@
         }
       ]
     },
-    "/DataPoints": {
+    "/DataPoints/{DSLUID}/{DataPointUID}": {
       "get": {
         "summary": "🚧 Datapoints",
         "tags": [
@@ -47420,7 +47420,15 @@
         },
         "operationId": "get-DataPoints",
         "description": "Handles PLD DataPoint objects."
-      }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/DSLUID"
+        },
+        {
+          "$ref": "#/components/parameters/DataPointUID"
+        }
+      ]
     },
     "/Rights": {
       "get": {
@@ -47515,7 +47523,7 @@
         ]
       }
     },
-    "/DataSetLayers": {
+    "/DataSetLayers/{DSLUID}": {
       "get": {
         "summary": "🚧 DataSetLayers",
         "tags": [
@@ -47525,9 +47533,13 @@
         "operationId": "get-DataSetLayers",
         "description": "Handles DataSet Layers\n\n\nGet\nParams\nDSLUID <> 0 \nReturns the DSL (DSEs only, never Snapshots) data\n\nDSLUID = 0\nReturns all the DSLs definition data (not DSEs)\n\nFormat\n\n\n"
       },
-      "parameters": []
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/DSLUID"
+        }
+      ]
     },
-    "/Origins": {
+    "/Origins/{PLDCode}": {
       "get": {
         "summary": "🚧 Origins",
         "tags": [
@@ -47536,9 +47548,19 @@
         "responses": {},
         "operationId": "get-Origins",
         "description": "Handles Origins\n\nParams\nTerritoryUID\nReturns all the Origins for a given Territory\n\nDSLUID\nReturns all the Origins used in a given DSL\n\n\n"
-      }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "PLDCode",
+          "in": "path",
+          "required": true
+        }
+      ]
     },
-    "/Sources": {
+    "/Sources/{OriginUID}": {
       "get": {
         "summary": "🚧 Sources",
         "tags": [
@@ -47547,9 +47569,14 @@
         "responses": {},
         "operationId": "get-Sources",
         "description": "Handles Sources\n\n\nParams\nOriginUID\nReturns all Sources obtained from a Source\n\nDSLUID\nReturns all Sources used in a given DSL\n\n\n\n\n\n"
-      }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/OriginUID"
+        }
+      ]
     },
-    "/DataSetEntries": {
+    "/DataSetEntries/{DSLUID}/{DateStart}/{DateEnd}/{PLDCode}": {
       "get": {
         "summary": "🚧 DataSetEntries",
         "tags": [
@@ -47558,7 +47585,21 @@
         "responses": {},
         "operationId": "get-DataSetEntries",
         "description": "Handles DataSetEntries\n(The actual encoding of a Source)\n\n\nParams\nSourceUID\nReturns the DSE for a specific SourceUID\n\nDSLUID\nReturns ALL the DSEs for a specific DSLUID\n\n\n"
-      }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/DSLUID"
+        },
+        {
+          "$ref": "#/components/parameters/DateStart"
+        },
+        {
+          "$ref": "#/components/parameters/DateEnd"
+        },
+        {
+          "$ref": "#/components/parameters/PLDCode"
+        }
+      ]
     },
     "/Snapshots/{SnapshotUID}/{Module}/{DateStart}/{DateEnd}/{DSLUID}": {
       "get": {
@@ -47583,6 +47624,91 @@
         },
         {
           "$ref": "#/components/parameters/DSLUID"
+        }
+      ]
+    },
+    "/Schemas/{Model}": {
+      "get": {
+        "summary": "🚧 Schemas",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-Schemas",
+        "description": ""
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/🚧-Model"
+        }
+      ]
+    },
+    "/Answers/{DSLUID}/{DateStart}/{DateEnd}/{PLDCode}/{DSEUID}/{DPUID}": {
+      "get": {
+        "summary": "🚧 Answers",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-Answers"
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "DSLUID",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "DateStart",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "DateEnd",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "PLDCode",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "DSEUID",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "DPUID",
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/Users/{UserUID}": {
+      "get": {
+        "summary": "🚧 Users",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-Users"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/UserUID"
         }
       ]
     }
@@ -52686,7 +52812,7 @@
         ]
       },
       "User": {
-        "title": "🚧 User",
+        "title": "🚧 Users",
         "type": "object",
         "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n",
         "properties": {
@@ -56948,6 +57074,48 @@
           "default": "0"
         },
         "description": "Indicates a specific Snapshot to be extracted via its UID."
+      },
+      "🚧-Model": {
+        "name": "🚧 Model",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "DataSetLayer",
+            "DataPoint",
+            "Territory"
+          ]
+        },
+        "description": "Indicates the Model for which to extract a schema."
+      },
+      "OriginUID": {
+        "name": "OriginUID",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "default": "0"
+        },
+        "description": "Indicates an Origin by its UID."
+      },
+      "UserUID": {
+        "name": "UserUID",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "DataPointUID": {
+        "name": "DataPointUID",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "default": "0"
+        },
+        "description": "Indicates a DataPoint by its UID."
       }
     },
     "securitySchemes": {},
