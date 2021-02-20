@@ -13,10 +13,16 @@ export class CustomGoogleSpreadsheet extends GoogleSpreadsheet {
     params.append('valueRenderOption', 'FORMATTED_VALUE');
     params.append('dateTimeRenderOption', 'FORMATTED_STRING');
     ranges.forEach(range => {
-      params.append('ranges', range);
+      if (!range)
+        params.append('ranges', range);
     });
-    
-    const result = await this.axios.get(`/values:batchGet?${params.toString()}`);
+    var result;
+    try {
+      result = await this.axios.get(`/values:batchGet?${params.toString()}`);
+    } catch (error) {
+      logger.log(`CustomGoogleSpreadsheet.batchGetGridRanges: can't fetch empty range`);
+      logger.error(error);
+    }
 
     return (result.data.valueRanges || []).map(d => d['values']);
   }
