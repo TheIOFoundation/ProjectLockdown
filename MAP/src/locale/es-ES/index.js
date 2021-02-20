@@ -1,4 +1,4 @@
-export default {
+const esEs = {
   translationBy: 'AherreDev',
   languageId: 'es-ES', // ? ISO 639-1:2002
   // ? For reference please see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes and for localized versions see https://en.wikipedia.org/wiki/Language_localisation
@@ -173,3 +173,6 @@ export default {
     cases: 'COVID-19 (Casos declarados)',
   },
 };
+
+
+export default esEs;

@@ -14,7 +14,9 @@ export function Settings({
 }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
   
-  const { t , i18n } = useTranslation();
+  const { t , 
+    // i18n
+   } = useTranslation();
 
   function toggleDarkmode() {
     if (document.getElementsByTagName('html')[0].classList.contains('dark')) {

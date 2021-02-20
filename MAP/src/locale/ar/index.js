@@ -1,4 +1,4 @@
-export default {
+const ar = {
   translationBy: 'Asma Qadah',
   languageId: 'ar', // ? ISO 639-1:2002
   // ? For reference please see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes and for localized versions see https://en.wikipedia.org/wiki/Language_localisation
@@ -160,3 +160,5 @@ export default {
     cases: 'كوفيد (مسجلة)',
   },
 };
+
+export default ar;

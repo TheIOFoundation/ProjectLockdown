@@ -451,9 +451,9 @@ const TimeSlider = (props) => {
     currentSelectedDay,
     setCurrentSelectedDay,
     firstDay,
-    setFirstDay,
+    // setFirstDay,
     lastDay,
-    setLastDay,
+    // setLastDay,
     days,
   } = props;
   // const [currentPosition, setCurrentPosition] = useState(24.5);
