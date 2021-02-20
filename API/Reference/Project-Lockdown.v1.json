@@ -56847,28 +56847,6 @@
       }
     },
     "parameters": {
-      "ModuleDELETE": {
-        "name": "ModuleDELETE",
-        "in": "query",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "BO",
-            "API",
-            "MAP"
-          ]
-        },
-        "required": true
-      },
-      "DSLUIDDELETE": {
-        "name": "DSLUID",
-        "in": "query",
-        "required": true,
-        "schema": {
-          "type": "string"
-        },
-        "description": "DSLID of the DSL to be loaded. 0== Default DSL / Other value == DSLUID"
-      },
       "PLDCode": {
         "name": "PLDCode",
         "required": true,
