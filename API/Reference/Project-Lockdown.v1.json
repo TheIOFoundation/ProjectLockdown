@@ -47560,7 +47560,7 @@
         "description": "Handles DataSetEntries\n(The actual encoding of a Source)\n\n\nParams\nSourceUID\nReturns the DSE for a specific SourceUID\n\nDSLUID\nReturns ALL the DSEs for a specific DSLUID\n\n\n"
       }
     },
-    "/Snapshots/{SnapshotUID}/{Module}": {
+    "/Snapshots/{SnapshotUID}/{Module}/{DateStart}/{DateEnd}/{DSLUID}": {
       "get": {
         "summary": "🚧 Snapshots",
         "tags": [],
@@ -47570,20 +47570,19 @@
       },
       "parameters": [
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "SnapshotUID",
-          "in": "path",
-          "required": true
+          "$ref": "#/components/parameters/SnapshotUID"
         },
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "Module",
-          "in": "path",
-          "required": true
+          "$ref": "#/components/parameters/Module"
+        },
+        {
+          "$ref": "#/components/parameters/DateStart"
+        },
+        {
+          "$ref": "#/components/parameters/DateEnd"
+        },
+        {
+          "$ref": "#/components/parameters/DSLUID"
         }
       ]
     }
@@ -56853,15 +56852,18 @@
         "in": "path",
         "schema": {
           "type": "string"
-        }
+        },
+        "description": "Indicates the PLDCode for the territory to be extracted."
       },
       "Depth": {
         "name": "Depth",
         "required": true,
         "in": "path",
         "schema": {
-          "type": "string"
-        }
+          "type": "string",
+          "default": "1"
+        },
+        "description": "Indicates how many territory sublevels are to be returned."
       },
       "Format": {
         "name": "Format",
@@ -56874,9 +56876,10 @@
             "CSV",
             "XLS",
             "HXL"
-          ]
+          ],
+          "default": "JSON"
         },
-        "description": "Used to set the format in which the data is to be obtained from the endpoint."
+        "description": "Indicates the format in which the data is to be obtained from the endpoint."
       },
       "Module": {
         "name": "Module",
@@ -56917,6 +56920,34 @@
           "default": "0"
         },
         "description": "Sets a specific Environment to be loaded via its UID."
+      },
+      "DateStart": {
+        "name": "DateStart",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Indicates the first date for a data extraction."
+      },
+      "DateEnd": {
+        "name": "DateEnd",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Indicates the last date for a data extraction."
+      },
+      "SnapshotUID": {
+        "name": "SnapshotUID",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "default": "0"
+        },
+        "description": "Indicates a specific Snapshot to be extracted via its UID."
       }
     },
     "securitySchemes": {},
