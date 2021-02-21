@@ -1,10 +1,7 @@
 openapi: 3.0.0
-servers: [
-  {
-    url: https://api.projectlockdown.world,
+servers: 
+  - url: https://api.projectlockdown.world
     description: Project Lockdown API server (Swagger / OpenAPI)
-    }
-  ]
 info:
   description: "Environment listing for territories"
   version: 1.0.0
