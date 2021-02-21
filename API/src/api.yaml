@@ -1,9 +1,18 @@
 openapi: 3.0.0
+servers: [
+  {
+    url: https://api.projectlockdown.world,
+    description: Project Lockdown API server (Swagger / OpenAPI)
+    }
+  ]
 info:
   description: "Environment listing for territories"
   version: 1.0.0
   title: Lockdown API
-  contact: Contact@projectlockdown.net
+  contact: 
+    name: Project Lockdown API Support
+    email: Contact@projectlockdown.net
+    url: https://projectlockdown.world
 tags:
   - name: Get Environment
     description: Get all environments
@@ -14,8 +23,9 @@ tags:
 paths:
   /environment/{dsluid}/{module}:
     get:
+      description: "Environment listing for territories"
       tags:
-        - Environment
+        name: Environment
       summary: Environment
       path:
         - dsluid: ID of DSL
