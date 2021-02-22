@@ -1,7 +1,14 @@
 openapi: 3.0.0
+servers: 
+  - url: https://api.projectlockdown.world
+    description: Project Lockdown API server (Swagger / OpenAPI)
 info:
   version: 1.0.0
   title: GSheet Parser, parse data and store them in CosmosDB (Azure's MongoDB)
+  contact: 
+    name: Project Lockdown API Support
+    email: Contact@projectlockdown.net
+    url: https://projectlockdown.world
 tags:
   - name: Data Set Layer
     description: Data Set Layer
