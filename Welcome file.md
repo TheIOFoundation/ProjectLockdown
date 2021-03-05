@@ -142,12 +142,12 @@ B --> D{Rhombus}
 C --> D
 ```
 
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
+|                |ASCII                          |HTML                         |ASCII                          |HTML                         |HTML                         |ASCII                          |HTML                         |
+|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
 |Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzODUzNjUzXX0=
+eyJoaXN0b3J5IjpbMTAzNTYxMTcyOF19
 -->
