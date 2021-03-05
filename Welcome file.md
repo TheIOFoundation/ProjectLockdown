@@ -149,9 +149,9 @@ C --> D
 |**R**| 137 | 78 | 102 | 80 | 247 |
 |**G**| 137 | 80 | 181 | 145 | 149 |
 |**B**| 142 | 86 | 197 | 158 | 82 |
-|**H**|  |  | LB | DB | O |
-|**S**|  |  | LB | DB | O |
-|**L**|  |  | LB | DB | O |
+|**H**| 240 | 225 | 190 | DB | O |
+|**S**| 2.2 | 4.9 | 45.0 | DB | O |
+|**L**| 54.7 | 32.2 | 58.6 | DB | O |
 |**Hex**| #89898E | #4E5056 | #66B5C5 | #50919F | #F79552 |
 
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
@@ -166,5 +166,5 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDcxODE5NzAsMTgyNDMzNzQ0XX0=
+eyJoaXN0b3J5IjpbLTE2MDAyNTg4MDcsMTgyNDMzNzQ0XX0=
 -->
