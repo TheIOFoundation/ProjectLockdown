@@ -142,7 +142,7 @@ B --> D{Rhombus}
 C --> D
 ```
 
-|        **Color**        |**Light gray**|**Dark gray**|**Light blue**|**Dark blue**|**Orange**|
+|        **Name**        |**Light gray**|**Dark gray**|**Light blue**|**Dark blue**|**Orange**|
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
 |  **Code**  | LG | DG | LB | DB | O |
 | **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Orange.png" width ="50px" /> |
@@ -166,6 +166,6 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzMDI5MTc4MSw1ODA4NjY4NTEsMTgyND
-MzNzQ0XX0=
+eyJoaXN0b3J5IjpbMTMyMDQzMTg0NywxMDMwMjkxNzgxLDU4MD
+g2Njg1MSwxODI0MzM3NDRdfQ==
 -->
