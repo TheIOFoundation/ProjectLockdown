@@ -152,6 +152,16 @@ C --> D
 | **Usage** | | | | |
 
 
+|  **Name**  | TIOF Hex Logo |  |  |  |
+|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|
+| **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20W%20T%20HiRes%20ENG%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20W%20T%20HiRes%20ENG%20v1.6.svg" width ="100px" /> | 
+| **Format** | PNG | SVG | PNG | SVG | 
+|  **Code**  |  |  |  |  |
+| **Features** | Hi Resolution / Full Color / Transparent Background / English | Hi Resolution / Full Color / Transparent Background / English | Hi Resolution / White / Transparent Background / English | Hi Resolution / White / Transparent Background / English |
+| **Usage** | | | | |
+
+
+
 
 
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
@@ -166,6 +176,6 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzI1ODA3OTUsMTAzMDI5MTc4MSw1OD
-A4NjY4NTEsMTgyNDMzNzQ0XX0=
+eyJoaXN0b3J5IjpbLTY1NDI5MTY2LDEwMzAyOTE3ODEsNTgwOD
+Y2ODUxLDE4MjQzMzc0NF19
 -->
