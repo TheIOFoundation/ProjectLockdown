@@ -145,14 +145,13 @@ C --> D
 |        **Color**        |**Light gray**|**Dark gray**|**Light blue**|**Dark blue**|**Orange**|
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
 |Code| LG | DG | LB | DB | O |
-|Sample| LG | DG | LB | DB | O |
+|Sample| LG | DG | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png" width ="50px" /> | O |
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
 |Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
 
-
-https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png
+<img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20Gray.png" width ="50px" />
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTQ5MDIzMjUsMTgyNDMzNzQ0XX0=
+eyJoaXN0b3J5IjpbNjAzNDE0ODExLDE4MjQzMzc0NF19
 -->
