@@ -146,12 +146,12 @@ C --> D
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
 |**Code**| LG | DG | LB | DB | O |
 |**Sample**| <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Orange.png" width ="50px" /> |
-|**R**| 137 | 78 | 102 | 80 | O |
-|**G**| LG | DG | LB | DB | O |
-|**B**| LG | DG | LB | DB | O |
-|**H**| LG | DG | LB | DB | O |
-|**S**| LG | DG | LB | DB | O |
-|**L**| LG | DG | LB | DB | O |
+|**R**| 137 | 78 | 102 | 80 | 247 |
+|**G**| 137 | 80 | 181 | 145 | 149 |
+|**B**| 142 | 86 | 197 | 158 | 82 |
+|**H**|  |  | LB | DB | O |
+|**S**|  |  | LB | DB | O |
+|**L**|  |  | LB | DB | O |
 |**Hex**| #89898E | #4E5056 | #66B5C5 | #50919F | #F79552 |
 
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
@@ -166,5 +166,5 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyMzIxNzczMSwxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbLTEzMDcxODE5NzAsMTgyNDMzNzQ0XX0=
 -->
