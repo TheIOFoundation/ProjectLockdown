@@ -142,16 +142,15 @@ B --> D{Rhombus}
 C --> D
 ```
 
-|        **Logo**        | |
-|----------------|----------------|
-|  **Name**  | Full Logo |
-|  **Code**  | LG |
-| **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> |
-| **Category** | TIOF Logo |
-| **Features** |  |
-| **Usage** |  |
+|        **Logo**        | | | | | 
+|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
+|  **Name**  | LG | DG | LB | DB | O |
+|  **Code**  | LG | DG | LB | DB | O |
+| **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Orange.png" width ="50px" /> |
+| **Category** | 137 | 78 | 102 | 80 | 247 |
+| **Usage** | 137 | 80 | 181 | 145 | 149 |
 
-https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.png
+
 
 
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
@@ -166,6 +165,6 @@ https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIO
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4OTc1MjYwNywxMDMwMjkxNzgxLDU4MD
-g2Njg1MSwxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbLTE2NjA3MTQzNjEsMTAzMDI5MTc4MSw1OD
+A4NjY4NTEsMTgyNDMzNzQ0XX0=
 -->
