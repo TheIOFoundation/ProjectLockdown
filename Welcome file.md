@@ -144,11 +144,12 @@ C --> D
 
 |        **Color**        |**Light gray**|**Dark gray**|**Light blue**|**Dark blue**|**Orange**|
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
-|Code| 
+|Code| LG | DG | LB | DB | O |
+|Sample| LG | DG | LB | DB | O |
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
 |Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc2NjExMTcwXX0=
+eyJoaXN0b3J5IjpbMTgyNDMzNzQ0XX0=
 -->
