@@ -144,15 +144,15 @@ C --> D
 
 |        **Color**        |**Light gray**|**Dark gray**|**Light blue**|**Dark blue**|**Orange**|
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
-|**Code**| LG | DG | LB | DB | O |
-|**Sample**| <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Orange.png" width ="50px" /> |
-|**R**| 137 | 78 | 102 | 80 | 247 |
-|**G**| 137 | 80 | 181 | 145 | 149 |
-|**B**| 142 | 86 | 197 | 158 | 82 |
-|**H**| 240 | 225 | 190 | 190 | 24 |
-|**S**| 2.2 | 4.9 | 45.0 | 32.8 | 91.2 |
-|**L**| 54.7 | 32.2 | 58.6 | 46.7 | 64.5 |
-|**Hex**| #89898E | #4E5056 | #66B5C5 | #50919F | #F79552 |
+|  **Code**  | LG | DG | LB | DB | O |
+| **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Orange.png" width ="50px" /> |
+| **R** | 137 | 78 | 102 | 80 | 247 |
+| **G** | 137 | 80 | 181 | 145 | 149 |
+| **B** | 142 | 86 | 197 | 158 | 82 |
+| **H** | 240 | 225 | 190 | 190 | 24 |
+| **S** | 2.2 | 4.9 | 45.0 | 32.8 | 91.2 |
+| **L** | 54.7 | 32.2 | 58.6 | 46.7 | 64.5 |
+| **Hex** | #89898E | #4E5056 | #66B5C5 | #50919F | #F79552 |
 
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
 |Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
@@ -166,5 +166,6 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgwODY2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbMTAzMDI5MTc4MSw1ODA4NjY4NTEsMTgyND
+MzNzQ0XX0=
 -->
