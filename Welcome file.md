@@ -149,7 +149,7 @@ C --> D
 | **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20W%20T%20HiRes%20ENG%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20W%20T%20HiRes%20ENG%20v1.6.svg" width ="100px" /> | 
 | **Category** | TIOF Full Logo | TIOF Full Logo | TIOF Full Logo | TIOF Full Logo |
 | **Format** | PNG | SVG | PNG | SVG | 
-| **Features** | Hi Resolution / Full Color / Transparent Background / English |  | 102 | Hi Resolution / White / Transparent Background / English |
+| **Features** | Hi Resolution / Full Color / Transparent Background / English | Hi Resolution / Full Color / Transparent Background / English | Hi Resolution / White / Transparent Background / English | Hi Resolution / White / Transparent Background / English |
 | **Usage** | 137 | 80 | 181 | 145 |
 
 
@@ -167,6 +167,6 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMyMDk4NzgxLDEwMzAyOTE3ODEsNTgwOD
-Y2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbMjAwMDk5NjMwNywxMDMwMjkxNzgxLDU4MD
+g2Njg1MSwxODI0MzM3NDRdfQ==
 -->
