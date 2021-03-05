@@ -146,7 +146,7 @@ C --> D
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
 |**Code**| LG | DG | LB | DB | O |
 |**Sample**| <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Orange.png" width ="50px" /> |
-|**R**| LG | DG | LB | DB | O |
+|**R**| 137 | 78 | LB | DB | O |
 |**G**| LG | DG | LB | DB | O |
 |**B**| LG | DG | LB | DB | O |
 |**H**| LG | DG | LB | DB | O |
@@ -166,5 +166,5 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1MDc4OTM4MiwxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbLTQ0NTQ0OTE3MCwxODI0MzM3NDRdfQ==
 -->
