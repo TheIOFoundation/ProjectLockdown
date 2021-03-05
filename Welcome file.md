@@ -143,11 +143,13 @@ C --> D
 ```
 
 |        **Logo**        | | | | | 
-|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
-|  **Name**  | LG | DG | LB | DB | O |
-|  **Code**  | LG | DG | LB | DB | O |
+|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|
+|  **Name**  | |  | | DB | O |
+|  **Code**  |  |  |  |  |  |
 | **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Light%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20blue.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Orange.png" width ="50px" /> |
 | **Category** | 137 | 78 | 102 | 80 | 247 |
+| **Format** | 137 | 78 | 102 | 80 | 247 |
+| **Features** | 137 | 78 | 102 | 80 | 247 |
 | **Usage** | 137 | 80 | 181 | 145 | 149 |
 
 
@@ -165,6 +167,6 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjA3MTQzNjEsMTAzMDI5MTc4MSw1OD
-A4NjY4NTEsMTgyNDMzNzQ0XX0=
+eyJoaXN0b3J5IjpbMjEzNzU5NjQwOSwxMDMwMjkxNzgxLDU4MD
+g2Njg1MSwxODI0MzM3NDRdfQ==
 -->
