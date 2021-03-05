@@ -147,9 +147,9 @@ C --> D
 |  **Name**  | Full Logo |
 |  **Code**  | LG |
 | **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Dark%20gray.png" width ="50px" /> |
-| **Category** | 137 | 78 | 102 | 80 | 247 |
-
-| **Usage** | 137 | 80 | 181 | 145 | 149 |
+| **Category** | TIOF Logo |
+| **Features** |  |
+| **Usage** |  |
 
 https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.png
 
@@ -166,6 +166,6 @@ https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIO
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIzMzcxMzc4LDEwMzAyOTE3ODEsNTgwOD
-Y2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbMTU4OTc1MjYwNywxMDMwMjkxNzgxLDU4MD
+g2Njg1MSwxODI0MzM3NDRdfQ==
 -->
