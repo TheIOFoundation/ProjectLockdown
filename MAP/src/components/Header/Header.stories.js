@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { Header } from './Header';
+import Header from './Header';
 
 export default {
-  title: 'Example/Header',
+  title: 'Component/Header',
   component: Header,
+  argTypes: {
+    dark: {control: 'boolean'},
+  }
 };
 
 const Template = (args) => <Header {...args} />;
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {},
+export const Primary = Template.bind({});
+Primary.args = {
+  dark: false
 };
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};

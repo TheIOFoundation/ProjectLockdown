@@ -1,0 +1,48 @@
+{
+    "LayoutUID": "1",
+    "Version": "0.01",
+    "PermalinkDocs": "https://TIOF.Click?DSL=1&type=doc",
+    "SchemaPermaURL": "https://TIOF.Click?DSL=1",
+    "LocaleName": "Afghanistan",
+    "LocaleCode": "AFG",
+    "Status": "Ready",
+    "PermalinkLayout": "https://TIOF.Click?DSL=1&type=layout",
+    "PermalinkDEI": "https://TIOF.Click?DSL=1&type=dei",
+    "Name": "Afghanistan Data Set Layer",
+    "Description": "Afghanistan Data Set Layer",
+
+    "PubllishedFirst": "2019-06-01T00:00Z",
+    "UpdatedLast": "2020-09-17T12:00Z",
+    "UpdatedNext": "2020-09-24T12:00Z",
+    "UpdatedFreq": "604800000", 
+    "Environments": [
+        {
+        "Default" : 
+        {
+            "PermalinkDocs": "https://TIOF.Click?Territory=1"
+        },
+        "Environment": 
+        {
+            "PermalinkDocs": "https://TIOF.Click?Territory=1",
+            "Type": "",
+            "Name": "AB123"
+
+        },
+        "Placeholders":
+        {
+            "PermalinkDocs": "https://TIOF.Click?Territory=1",
+            "Placeholder":{
+                "PermalinkDocs": "https://TIOF.Click?Territory=1",
+                "PlaceholderUID": "1",
+                "Type":"",
+                "Status": "Ready",
+                "PermUIAsset": "AB123",
+                "X": "",
+                "Y": "",
+                "Z": ""
+            }
+        }
+    }
+    
+    ]
+}

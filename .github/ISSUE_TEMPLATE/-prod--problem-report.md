@@ -2,8 +2,8 @@
 name: "[PROD] Problem report"
 about: Create a report to help us improve
 title: "[PROBLEM] "
-labels: "\U0001F6A7 Stage: Not Ready, ⚡ Priority: High, Project: PLD, ⌨ Need: Code,
-  \U0001F4A5 Type: Error, ⌨ Team: Devs"
+labels: "Project: PLD, ⌨ Need: Code, ⌨ Team: Devs, ⚡ Priority: High, \U0001F4A5 Type:
+  Error, \U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
@@ -13,6 +13,7 @@ assignees: ''
 # INSTRUCTIONS
 - Fill up this template (be as accurate as possible)
 - Review Labels. You should at least have the following:
+ -- Need: Code [MANDATORY]
  -- Stage: Assign the corresponding one [MANDATORY]
  -- Keyword: Assign the corresponding ones [OPTIONAL]
  -- Priority: Assign the corresponding one [MANDATORY] 

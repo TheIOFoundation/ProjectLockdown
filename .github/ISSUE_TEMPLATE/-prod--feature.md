@@ -2,8 +2,8 @@
 name: "[PROD] Feature"
 about: Define or request a Feature for Project Lockdown.
 title: "[PROD] "
-labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, ⌨ Need: Code, \U0001F4A7 Priority:
-  Medium, \U0001F4D1 Team: Docs, ⌨ Team: Devs"
+labels: "Project: PLD, ⌨ Need: Code, ⌨ Team: Devs, \U0001F4A7 Priority: Medium, \U0001F4D1
+  Team: Docs, \U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
@@ -13,6 +13,8 @@ assignees: ''
 # INSTRUCTIONS
 - Fill up this template (be as accurate as possible)
 - Review Labels. You should at least have the following:
+ -- Need: Code [MANDATORY]
+ -- Need: Design [OPTIONAL]
  -- Stage: Assign the corresponding one [MANDATORY]
  -- Keyword: Assign the corresponding ones [OPTIONAL]
  -- Priority: Assign the corresponding one [MANDATORY] 

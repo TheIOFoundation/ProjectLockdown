@@ -1,0 +1,71 @@
+{
+    "SnapshotUID": "1",
+    "Version": "0.01",
+    "PermalinkDocs": "https://TIOF.Click?DSL=1&type=doc",
+    "SnapshotType": "Thematic",
+    "SchemaPermaURL": "https://TIOF.Click?DSL=1",
+    "TerritoryPLDCode": "AB123",
+    "DSLUID": "AB123",
+    "Status": "Ready",
+    "PermalinkSnapshot": "2020-09-17T12:00Z",
+    "Description": "Afghanistan Data Set Layer",
+    "DatesFormat": "yyyy-MM-ddTHH:mmZ",
+    "PublishedFirst": "2019-06-01T00:00Z",
+    "UpdatedLast": "2020-09-17T12:00Z",
+    "UpdatedNext": "2020-09-24T12:00Z",
+    "UpdatedFreq": "604800000",
+    "PermalinkMethodology": "https://TIOF.Click?DSL=1&type=methodology",
+    "MethodologyCode": "AB1234", 
+    "FirstDay": "2019-06-01T00:00Z",
+    "LastDay": "2029-06-01T00:00Z",
+    "PermalinkAPIURL": "https://TIOF.Click?DSL=1&type=apiurl",
+    "PermalinkSchema": "https://TIOF.Click?DSL=1&type=schema",
+    "Count Data Points": 173,
+    "PermalinkQALog": "https://TIOF.Click?DSL=1&type=qalog",
+    "Ontology": "https://TIOF.Click?DSL=1&type=ontoloy",
+    "ResearchURL": "https://TIOF.Click?DSL=1&type=researchurl",
+    "LicenseCode": "MIT", 
+    "PermalinkCitingPolicy": "Lorem ipsem...",
+    "CitingPolicyCode": "AB123",
+    "Source Types": [
+        {
+            "PermalinkDocs": "https://TIOF.Click?Territory=1", 
+            "SourceTypeStats":
+            {
+                "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoriesStats",
+                "CountTotal": 1,
+                "CountTypeOfficial": 1,
+                "CountTypeMedia": 0,
+                "CountTypeFM": 0,
+                "CountTypeNGO": 0,
+                "CountOther": 0            
+            },
+            "SourceType":
+            {
+                "PermalinkDocs": "https://TIOF.Click?Territory=1", 
+                "SourceType": "",
+                "DefaultOrder":"",
+                "SnapDPs":
+                {
+                    "PermalinkDocs": "https://TIOF.Click?Territory=1", 
+                    "SnapDPUID": "AB123",
+                    "DPUID": "AB123",
+                    "TimeStamp": "2020-09-17T12:00Z",
+                    "Status": "Ready",
+                    "SourceType": "",
+                    "ProcessedBy": "",
+                    "Dates":
+                    {
+                        "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                        "Day":
+                        {
+                            "PermalinkDocs" : "https://TIOF.Click?DSL=1&type=territoryDatapointsDoc",
+                            "Date": "2020-09-17",
+                            "Value": "AB123",
+                            "Origin": "AB123"
+                        }
+                    }
+                }
+            }
+        }]
+}

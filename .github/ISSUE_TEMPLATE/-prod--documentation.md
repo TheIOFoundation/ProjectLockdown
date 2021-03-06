@@ -1,9 +1,9 @@
 ---
 name: "[PROD] Documentation"
 about: Documentation tasks for Project Lockdown.
-title: ''
-labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, \U0001F4D1 Need: Documentation,
-  \U0001F4A7 Priority: Medium, \U0001F4D1 Team: Docs"
+title: "[DOC] "
+labels: "Project: PLD, \U0001F4A7 Priority: Medium, \U0001F4D1 Need: Documentation,
+  \U0001F4D1 Team: Docs, \U0001F6A7 Stage: Not Ready"
 assignees: ''
 
 ---
@@ -13,6 +13,7 @@ assignees: ''
 # INSTRUCTIONS
 - Fill up this template (be as accurate as possible)
 - Review Labels. You should at least have the following:
+ -- Need: Documentation [MANDATORY]
  -- Stage: Assign the corresponding one [MANDATORY]
  -- Keyword: Assign the corresponding ones [OPTIONAL]
  -- Priority: Assign the corresponding one [MANDATORY] 

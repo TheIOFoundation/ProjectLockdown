@@ -188,18 +188,18 @@ export default class SnapshotRepository {
 
   /**
    *
-   * @param {*} snaphot
+   * @param {*} snapshot
    */
-  insert(snaphot) {
-    return this.model.insert(snaphot);
-  }
-
+  insertOrUpdate(snapshot) {
+    return this.model.replaceOne( { SnapshotUID : snapshot.SnapshotUID }, snapshot, { upsert: true });
+  } 
+  
   /**
    *
-   * @param {[]} snaphot
+   * @param {[]} snapshot
    */
-  insertMany(snaphots) {
-    return this.model.insertMany(snaphots);
+  insertMany(snapshots) {
+    return this.model.insertMany(snapshots);
   }
 
   // referenece: https://docs.mongodb.com/manual/reference/method/db.collection.updateMany/

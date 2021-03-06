@@ -1,0 +1,56 @@
+.ld-expandable {
+  width: 100%;
+  height: auto;
+  border-bottom: lightgrey solid 1px;
+  .dark & {
+    border-bottom: var(--ld-gray-2) solid 1px;
+  }
+}
+
+.ld-expandable a {
+  color: var(--ld-active);
+}
+
+.ld-expandable--icon {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.ld-expandable--toggle-content {
+  flex: 1;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.ld-expandable button {
+  color: var(--ld-text);
+  text-align: left;
+  width: 100%;
+  display: flex;
+
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+.ld-expandable--toggle {
+  height: 60px;
+}
+
+.ld-expandable--toggle:hover {
+  background-color: var(--ld-hover);
+}
+
+.ld-expandable--expanded {
+  display: block;
+  padding: 10px;
+}
+
+.ld-expandable--closed {
+  display: none;
+}

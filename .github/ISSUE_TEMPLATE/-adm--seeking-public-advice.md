@@ -2,11 +2,13 @@
 name: "[ADM] Seeking public advice"
 about: Define a request for public advice to improve some area of Project Lockdown.
 title: "[NEED] Seeking advice on: "
-labels: "\U0001F6A7 Stage: Not Ready, Project: PLD, \U0001F4AD Need: Advice, \U0001F4A7
-  Priority: Medium"
+labels: "Project: PLD, \U0001F4A7 Priority: Medium, \U0001F4AD Need: Advice, \U0001F6A7
+  Stage: Not Ready"
 assignees: ''
 
 ---
+
+![logo](https://user-images.githubusercontent.com/9198668/85232285-68543380-b430-11ea-8353-1aafb79baf78.png) 
 
 # INSTRUCTIONS
 - Fill up this template (be as accurate as possible)

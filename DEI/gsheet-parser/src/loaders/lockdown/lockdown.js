@@ -8,6 +8,7 @@ import { getSnapshots } from './snapshot/processor';
 import { connect } from '../../repositories';
 
 const fs = require('fs');
+const { v4: uuidv4 } = require('uuid');
 
 // Number of territories to query through batchGet at a time
 const BATCH_SIZE = 25;
@@ -21,10 +22,962 @@ const ENTRIES_TO_FETCH = 100;
  */
 export async function getGlobalData() {
   const sheet = await getWorksheetByTitle('Global');
-  const rows = await sheet.getCellsInRange('B5:F253');
-  const headers = ['status', 'jump', 'territory', 'iso2', 'iso3'];
+  //const rows = await sheet.getCellsInRange('B5:F253'); // only countries, not including areas, e.g. Beijing, Western Australia, etc
+  const rows = await sheet.getCellsInRange('B5:X432'); // including areas, e.g. Beijing, Western Australia, ISO 3166-2
+  const headers = ['status', 'jump', 'territory', 'iso2', 'iso3', 'lastTimeUpdated',
+    'territorySource', 'populationSource', 'covid-19Source', 'notes', 'url', 'region',
+    'boundariesLevel', 'featureID', 'wikidataID', 'iso3', 'unitCode', 'description', 'languages',
+    'research', 'encode', 'review', 'iso3166-2'];
   return transposeRows(headers, rows);
 }
+
+export async function insertTerritory(db, row) {
+  var territory = {
+    "TerritoryUID": row['iso3'],
+    "PLDInfo": {
+      "PLDInfoUID": "1",
+      "PLDCode": "AB123",
+      "PLDCodeParent": "AB12",
+      "Name": row['territory'],
+      "Region": {
+        "RegionUID": "RG1",
+        "Name": row['region'],
+        "Description": "string",
+        "Territories": [],
+        "TLD": ".africa",
+        "MAPInfo": {
+          "Mapbox": {
+            "Zoom": "1",
+            "Lat": "0",
+            "Lng": "0"
+          }
+        },
+        "PermalinkGraphs": "string"
+      },
+      "UnitCode": row['unitCode'],
+      "Notes": "string",
+      "Description": row['description'],
+    },
+    "ISOInfo": {
+      "ISO2": row['iso2'],
+      "ISO3": row['iso3'],
+      "Links": [
+        {
+          "LinkUID": "1",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "UNInfo": {
+      "LOCODE": "string",
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "NATOInfo": {
+      "STANAG": "string",
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "WikiMediaInfo": {
+      "WikidataID": row['wikidataID'],
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "MapboxInfo": {
+      "BoundaryLevel": row['boundariesLevel'],
+      "FeatureID": row['featureID'],
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "Territories": [],
+    "Status": row['status'],
+    "Origins": [
+      {
+        "OriginUID": "string",
+        "Name": row['research'],
+        "Contact": {
+          "UserUID": "string",
+          "Type": "Human"
+        },
+        "Type": "Gov Website",
+        "URLOrigin": {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      }
+    ],
+    "URLDEI": {
+      "LinkUID": "string",
+      "Type": "Source",
+      "Name": "string",
+      "Description": row['jump']
+    },
+    "URLDoc": {
+      "LinkUID": "string",
+      "Type": "Source",
+      "Name": "string",
+      "Description": row['url']
+    },
+    "DateLastUpdate": {
+      "DateUID": "string",
+      "Name": "string",
+      "Description": "string",
+      "Type": "string",
+      "Value": row['lastTimeUpdated'],
+      "ValueUTC": "string",
+      "GeneratedBy": "string",
+      "Highlights": "string",
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ],
+      "UI": {
+        "Tooltip": "string",
+        "Name": "string",
+        "Description": "string"
+      }
+    }
+  };
+
+  // insert territory into cosmosdb
+  try {
+    let insertResult = await db.territoryRepository.insertOrUpdate(territory);
+    // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
+    if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
+      logger.log(`Insert territory ${row['iso3']} succeeded`);
+    }
+  } catch (error) {
+    logger.log(`Error insert territory ${row['iso3']}`);
+    logger.error(error);
+  }
+
+  return row['iso3'];
+}
+
+/**
+ * Convert Global sheet data convert them into Environments JSON data https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/paths/~1Environments~1%7BDSLUID%7D~1%7BModule%7D~1%7BEnvironmentUID%7D/get 
+ * and store in CosmosDB
+ * @param {array} territories
+ */
+export async function insertEnvironment(db, territoryIds) {
+  // make the Environment one by one, and insert into the DB
+  var env = {
+    "EnvironmentUID": "1",
+    "DSL": [
+      {
+        "DSLUID": "1",
+        "Name": "Main Data Set Layer",
+        "Version": "1.0.0",
+        "Type": "Thematic",
+        "Status": "Ready",
+        "Description": "Main Data Set Layer (Test Sample)",
+        "Contact": {
+          "UserUID": "1",
+          "Type": "Human",
+          "Licenses": [
+            {
+              "LicenseUID": "1",
+              "DSLUID": "string",
+              "Modules": {
+                "API": {},
+                "MAP": {
+                  "Operations": {}
+                }
+              }
+            }
+          ],
+        },
+        "MaxBoundary": "string",
+        "SourceTypes": [
+          {
+            "SourceTypeUID": "string",
+            "Type": "NGO",
+            "UI": {
+              "Icon": "string"
+            }
+          }
+        ],
+        "Snapshots": [
+          {
+            "SnapshotUID": "string",
+            "SourceTypeUID": "string",
+            "DSLUID": "string",
+            "Type": "DataPoint",
+            "Frequency": "OnSpot",
+            "Answers": [
+              {
+                "AnswerUID": "string",
+                "Value": {
+                  "ResponseUID": "string",
+                  "GeneratedBy": "Funnel",
+                  "Highlights": "string",
+                  "Type": "string",
+                  "Value": "string"
+                },
+                "DateStart": {
+                  "DateUID": "string",
+                  "Name": "string",
+                  "Description": "string",
+                  "Type": "string",
+                  "Value": "string",
+                  "ValueUTC": "string",
+                  "GeneratedBy": "string",
+                  "Highlights": "string",
+                  "Links": [
+                    {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string"
+                    }
+                  ],
+                  "UI": {
+                    "Tooltip": "string",
+                    "Name": "string",
+                    "Description": "string"
+                  }
+                },
+                "DateEnd": {
+                  "DateUID": "string",
+                  "Name": "string",
+                  "Description": "string",
+                  "Type": "string",
+                  "Value": "string",
+                  "ValueUTC": "string",
+                  "GeneratedBy": "string",
+                  "Highlights": "string",
+                  "Links": [
+                    {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string"
+                    }
+                  ],
+                  "UI": {
+                    "Tooltip": "string",
+                    "Name": "string",
+                    "Description": "string"
+                  }
+                },
+                "DataPointUID": "string",
+                "Details": "string"
+              }
+            ]
+          }
+        ],
+        "Sources": [
+          {
+            "SourceUID": "string",
+            "Type": "Government",
+            "Title": "string",
+            "Territories": territoryIds,
+            "Categories": [
+              {
+                "CategoryUID": "string",
+                "DataPoints": [
+                  {
+                    "DataPointUID": "string",
+                    "Definition": {
+                      "NameShort": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "IconID": "string",
+                      "Inheritance": "string",
+                      "DPObjectType": "string",
+                      "Right": {
+                        "RightUID": "string",
+                        "OriginUID": "string",
+                        "Name": "string",
+                        "Stats": {
+                          "StatUID": "string",
+                          "Name": "string",
+                          "Description": "string",
+                          "Notes": "string",
+                          "Type": "SourcesPerTerritory",
+                          "Value": "string",
+                          "URLDoc": {
+                            "LinkUID": "string",
+                            "Type": "Source",
+                            "Name": "string",
+                            "Description": "string"
+                          },
+                          "Status": "string",
+                          "DateLastUpdate": {
+                            "DateUID": "string",
+                            "Name": "string",
+                            "Description": "string",
+                            "Type": "string",
+                            "Value": "string",
+                            "ValueUTC": "string",
+                            "GeneratedBy": "string",
+                            "Highlights": "string",
+                            "Links": [
+                              {
+                                "LinkUID": "string",
+                                "Type": "Source",
+                                "Name": "string",
+                                "Description": "string"
+                              }
+                            ],
+                            "UI": {
+                              "Tooltip": "string",
+                              "Name": "string",
+                              "Description": "string"
+                            }
+                          },
+                          "URLCode": [
+                            {
+                              "LinkUID": "string",
+                              "Type": "Source",
+                              "Name": "string",
+                              "Description": "string"
+                            }
+                          ]
+                        },
+                        "Description": "string"
+                      },
+                      "Tags": [
+                        {
+                          "TagUID": "string",
+                          "Name": "string",
+                          "Descrtiption": "string",
+                          "Dates": [
+                            {
+                              "DateUID": "string",
+                              "Name": "string",
+                              "Description": "string",
+                              "Type": "string",
+                              "Value": "string",
+                              "ValueUTC": "string",
+                              "GeneratedBy": "string",
+                              "Highlights": "string",
+                              "Links": [
+                                {
+                                  "LinkUID": "string",
+                                  "Type": "Source",
+                                  "Name": "string",
+                                  "Description": "string"
+                                }
+                              ],
+                              "UI": {
+                                "Tooltip": "string",
+                                "Name": "string",
+                                "Description": "string"
+                              }
+                            }
+                          ],
+                          "Stats": [
+                            {
+                              "StatUID": "string",
+                              "Name": "string",
+                              "Description": "string",
+                              "Notes": "string",
+                              "Type": "SourcesPerTerritory",
+                              "Value": "string",
+                              "URLDoc": {
+                                "LinkUID": "string",
+                                "Type": "Source",
+                                "Name": "string",
+                                "Description": "string"
+                              },
+                              "Status": "string",
+                              "DateLastUpdate": {
+                                "DateUID": "string",
+                                "Name": "string",
+                                "Description": "string",
+                                "Type": "string",
+                                "Value": "string",
+                                "ValueUTC": "string",
+                                "GeneratedBy": "string",
+                                "Highlights": "string",
+                                "Links": [
+                                  {
+                                    "LinkUID": "string",
+                                    "Type": "Source",
+                                    "Name": "string",
+                                    "Description": "string"
+                                  }
+                                ],
+                                "UI": {
+                                  "Tooltip": "string",
+                                  "Name": "string",
+                                  "Description": "string"
+                                }
+                              },
+                              "URLCode": [
+                                {
+                                  "LinkUID": "string",
+                                  "Type": "Source",
+                                  "Name": "string",
+                                  "Description": "string"
+                                }
+                              ]
+                            }
+                          ],
+                          "Links": [
+                            {
+                              "LinkUID": "string",
+                              "Type": "Source",
+                              "Name": "string",
+                              "Description": "string"
+                            }
+                          ],
+                          "Value": "string"
+                        }
+                      ],
+                      "Tooltip": "string",
+                      "Definition": "string",
+                      "Encoding": {
+                        "EncodingUID": "string",
+                        "Name": "string",
+                        "Description": "string",
+                        "URL for UI": "string",
+                        "Algorithm Details": "string",
+                        "Options": [
+                          {
+                            "Value": "string",
+                            "Type": "Image"
+                          }
+                        ],
+                        "Stats": [
+                          {
+                            "StatUID": "string",
+                            "Name": "string",
+                            "Description": "string",
+                            "Notes": "string",
+                            "Type": "SourcesPerTerritory",
+                            "Value": "string",
+                            "URLDoc": {
+                              "LinkUID": "string",
+                              "Type": "Source",
+                              "Name": "string",
+                              "Description": "string"
+                            },
+                            "Status": "string",
+                            "DateLastUpdate": {
+                              "DateUID": "string",
+                              "Name": "string",
+                              "Description": "string",
+                              "Type": "string",
+                              "Value": "string",
+                              "ValueUTC": "string",
+                              "GeneratedBy": "string",
+                              "Highlights": "string",
+                              "Links": [
+                                {
+                                  "LinkUID": "string",
+                                  "Type": "Source",
+                                  "Name": "string",
+                                  "Description": "string"
+                                }
+                              ],
+                              "UI": {
+                                "Tooltip": "string",
+                                "Name": "string",
+                                "Description": "string"
+                              }
+                            },
+                            "URLCode": [
+                              {
+                                "LinkUID": "string",
+                                "Type": "Source",
+                                "Name": "string",
+                                "Description": "string"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "Status": "string",
+                    "DateCreated": {
+                      "DateUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Type": "string",
+                      "Value": "string",
+                      "ValueUTC": "string",
+                      "GeneratedBy": "string",
+                      "Highlights": "string",
+                      "Links": [
+                        {
+                          "LinkUID": "string",
+                          "Type": "Source",
+                          "Name": "string",
+                          "Description": "string"
+                        }
+                      ],
+                      "UI": {
+                        "Tooltip": "string",
+                        "Name": "string",
+                        "Description": "string"
+                      }
+                    },
+                    "DateUpdated": {
+                      "DateUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Type": "string",
+                      "Value": "string",
+                      "ValueUTC": "string",
+                      "GeneratedBy": "string",
+                      "Highlights": "string",
+                      "Links": [
+                        {
+                          "LinkUID": "string",
+                          "Type": "Source",
+                          "Name": "string",
+                          "Description": "string"
+                        }
+                      ],
+                      "UI": {
+                        "Tooltip": "string",
+                        "Name": "string",
+                        "Description": "string"
+                      }
+                    },
+                    "Stats": [
+                      {
+                        "StatUID": "string",
+                        "Name": "string",
+                        "Description": "string",
+                        "Notes": "string",
+                        "Type": "SourcesPerTerritory",
+                        "Value": "string",
+                        "URLDoc": {
+                          "LinkUID": "string",
+                          "Type": "Source",
+                          "Name": "string",
+                          "Description": "string"
+                        },
+                        "Status": "string",
+                        "DateLastUpdate": {
+                          "DateUID": "string",
+                          "Name": "string",
+                          "Description": "string",
+                          "Type": "string",
+                          "Value": "string",
+                          "ValueUTC": "string",
+                          "GeneratedBy": "string",
+                          "Highlights": "string",
+                          "Links": [
+                            {
+                              "LinkUID": "string",
+                              "Type": "Source",
+                              "Name": "string",
+                              "Description": "string"
+                            }
+                          ],
+                          "UI": {
+                            "Tooltip": "string",
+                            "Name": "string",
+                            "Description": "string"
+                          }
+                        },
+                        "URLCode": [
+                          {
+                            "LinkUID": "string",
+                            "Type": "Source",
+                            "Name": "string",
+                            "Description": "string"
+                          }
+                        ]
+                      }
+                    ],
+                    "Answers": [
+                      {
+                        "AnswerUID": "string",
+                        "Value": {
+                          "ResponseUID": "string",
+                          "GeneratedBy": "Funnel",
+                          "Highlights": "string",
+                          "Type": "string",
+                          "Value": "string"
+                        },
+                        "DateStart": {
+                          "DateUID": "string",
+                          "Name": "string",
+                          "Description": "string",
+                          "Type": "string",
+                          "Value": "string",
+                          "ValueUTC": "string",
+                          "GeneratedBy": "string",
+                          "Highlights": "string",
+                          "Links": [
+                            {
+                              "LinkUID": "string",
+                              "Type": "Source",
+                              "Name": "string",
+                              "Description": "string"
+                            }
+                          ],
+                          "UI": {
+                            "Tooltip": "string",
+                            "Name": "string",
+                            "Description": "string"
+                          }
+                        },
+                        "DateEnd": {
+                          "DateUID": "string",
+                          "Name": "string",
+                          "Description": "string",
+                          "Type": "string",
+                          "Value": "string",
+                          "ValueUTC": "string",
+                          "GeneratedBy": "string",
+                          "Highlights": "string",
+                          "Links": [
+                            {
+                              "LinkUID": "string",
+                              "Type": "Source",
+                              "Name": "string",
+                              "Description": "string"
+                            }
+                          ],
+                          "UI": {
+                            "Tooltip": "string",
+                            "Name": "string",
+                            "Description": "string"
+                          }
+                        },
+                        "DataPointUID": "string",
+                        "Details": "string"
+                      }
+                    ],
+                    "URLDoc": {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string"
+                    },
+                    "URLEditorGuide": {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string",
+                      "Stats": [
+                        {
+                          "StatUID": "string",
+                          "Name": "string",
+                          "Description": "string",
+                          "Notes": "string",
+                          "Type": "SourcesPerTerritory",
+                          "Value": "string",
+                          "URLDoc": {},
+                          "Status": "string",
+                          "DateLastUpdate": {
+                            "DateUID": "string",
+                            "Name": "string",
+                            "Description": "string",
+                            "Type": "string",
+                            "Value": "string",
+                            "ValueUTC": "string",
+                            "GeneratedBy": "string",
+                            "Highlights": "string",
+                            "UI": {
+                              "Tooltip": "string",
+                              "Name": "string",
+                              "Description": "string"
+                            }
+                          },
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "PermalinkDocs": "string",
+                "Definition": {
+                  "Name": "string",
+                  "Description": "string",
+                  "Tags": "string",
+                  "Order": "string"
+                },
+                "CategoryStatus": "string",
+                "UI": {
+                  "TDOLayout": {
+                    "LayoutUID": "string",
+                    "Name": "string",
+                    "Description": "string",
+                    "URLCSS": {
+                      "LinkUID": "string",
+                      "Type": "Source",
+                      "Name": "string",
+                      "Description": "string"
+                    }
+                  },
+                  "TabMaxWidth": "string",
+                  "TabTitle": "string",
+                  "TabTooltip": "string"
+                }
+              }
+            ],
+            "DSE": {
+              "Funnel": "Insourcing",
+              "Status": "string",
+              "EntryUID": "string",
+              "Media": "string",
+              "Categories": [],
+              "DateTimestampEncoded ": {
+                "DateUID": "string",
+                "Name": "string",
+                "Description": "string",
+                "Type": "string",
+                "Value": "string",
+                "ValueUTC": "string",
+                "GeneratedBy": "string",
+                "Highlights": "string",
+                "Links": [
+                  {
+                    "LinkUID": "string",
+                    "Type": "Source",
+                    "Name": "string",
+                    "Description": "string",
+                    "Stats": [
+                      {
+                        "StatUID": "string",
+                        "Name": "string",
+                        "Description": "string",
+                        "Notes": "string",
+                        "Type": "SourcesPerTerritory",
+                        "Value": "string",
+                        "URLDoc": {},
+                        "Status": "string",
+                        "DateLastUpdate": {}
+                      }
+                    ]
+                  }
+                ],
+                "UI": {
+                  "Tooltip": "string",
+                  "Name": "string",
+                  "Description": "string"
+                }
+              }
+            },
+            "IssueUID": "string",
+            "TimeMachines": [
+              {
+                "TimeMachineUID": "string",
+                "Priority": "string",
+                "Name": "string",
+                "Description": "string",
+                "CreateURL": {
+                  "LinkUID": "string",
+                  "Type": "Source",
+                  "Name": "string",
+                  "Description": "string"
+                },
+                "ReadURL": {
+                  "LinkUID": "string",
+                  "Type": "Source",
+                  "Name": "string",
+                  "Description": "string",
+                },
+                "HelpURL": {
+                  "LinkUID": "string",
+                  "Type": "Source",
+                  "Name": "string",
+                  "Description": "string"
+                },
+                "DateFirstCreated": {
+                  "DateUID": "string",
+                  "Name": "string",
+                  "Description": "string",
+                  "Type": "string",
+                  "Value": "string",
+                  "ValueUTC": "string",
+                  "GeneratedBy": "string",
+                  "Highlights": "string",
+                  "UI": {
+                    "Tooltip": "string",
+                    "Name": "string",
+                    "Description": "string"
+                  }
+                }
+              }
+            ],
+            "URLSource": {
+              "LinkUID": "string",
+              "Type": "Source",
+              "Name": "string",
+              "Description": "string"
+            },
+            "URLGitHubIssue": {
+              "LinkUID": "string",
+              "Type": "Source",
+              "Name": "string",
+              "Description": "string"
+            },
+            "DateIssued": {
+              "DateUID": "string",
+              "Name": "string",
+              "Description": "string",
+              "Type": "string",
+              "Value": "string",
+              "ValueUTC": "string",
+              "GeneratedBy": "string",
+              "Highlights": "string",
+              "UI": {
+                "Tooltip": "string",
+                "Name": "string",
+                "Description": "string"
+              }
+            },
+            "DateStart": {
+              "DateUID": "string",
+              "Name": "string",
+              "Description": "string",
+              "Type": "string",
+              "Value": "string",
+              "ValueUTC": "string",
+              "GeneratedBy": "string",
+              "Highlights": "string",
+              "UI": {
+                "Tooltip": "string",
+                "Name": "string",
+                "Description": "string"
+              }
+            },
+            "DateEnd": {
+              "DateUID": "string",
+              "Name": "string",
+              "Description": "string",
+              "Type": "string",
+              "Value": "string",
+              "ValueUTC": "string",
+              "GeneratedBy": "string",
+              "Highlights": "string",
+              "UI": {
+                "Tooltip": "string",
+                "Name": "string",
+                "Description": "string"
+              }
+            },
+            "Stage": "BO: Triage",
+            "SourceInstances": [
+              {
+                "SourceInstanceUID": "string",
+                "Research": "string",
+                "Triage": "string",
+                "Encode": "string",
+                "Review": "string",
+                "Log": {
+                  "LogUID": "string",
+                  "Operation": "Encode",
+                  "UserUID": "string",
+                  "Notes": "string",
+                  "SourceUID": "string",
+                  "Dates": [
+                    {
+                      "DateUID": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Type": "string",
+                      "Value": "string",
+                      "ValueUTC": "string",
+                      "GeneratedBy": "string",
+                      "Highlights": "string",
+                      "Links": [
+                        {
+                          "LinkUID": "string",
+                          "Type": "Source",
+                          "Name": "string",
+                          "Description": "string",
+                          "Stats": [
+                            {
+                              "StatUID": "string",
+                              "Name": "string",
+                              "Description": "string",
+                              "Notes": "string",
+                              "Type": "SourcesPerTerritory",
+                              "Value": "string",
+                              "URLDoc": {},
+                              "Status": "string",
+                              "DateLastUpdate": {}
+                            }
+                          ]
+                        }
+                      ],
+                      "UI": {
+                        "Tooltip": "string",
+                        "Name": "string",
+                        "Description": "string"
+                      }
+                    }
+                  ],
+                  "Module": "string"
+                },
+                "Stage": "string"
+              }
+            ]
+          }
+        ],
+        "Territories": territoryIds
+      }
+    ],
+    "Project": {
+      "ProjectUID": "string",
+      "GlobalVars": {
+        "Locale": "string",
+        "URLSources": {
+          "LinkUID": "string",
+          "Type": "Source",
+          "URL": "https://TIOF.Click?DSLStats=1&type=urldoc"
+        },
+        "DefaultDSL": "string"
+      },
+      "Name": "string",
+      "Description": "string"
+    }
+  };
+  
+  // insert environment into cosmosdb
+  // TODO: maybe use insert or update??
+  try {
+    let insertResult = await db.environmentRepository.insertOrUpdate(env);
+    // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
+    if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
+      logger.log(`Insert environment successful.`);
+    }
+  } catch (error) {
+    logger.log(`Error insert environment`);
+    logger.error(error);
+  }
+}
+
 
 /**
  * Groups territories and request data from google API at batch size
@@ -41,17 +994,33 @@ export async function batchGetTerritoriesEntryData(territories) {
   var batch;
   var shouldResetApiCache = false;
 
+  var territoryIds = [];
   try {
+    territories.forEach(row => {
+      territoryIds.push(insertTerritory(database, row));
+    });
+
+  }
+  catch (error) {
+    throw new Error(`Error during processing territories: ${error}`);
+  }
+  try {
+
+
+    await insertEnvironment(database, territoryIds);
+
     while (batch = territories.splice(0, BATCH_SIZE)) {
       if (batch.length < 1) break;
-      // TODO: Uncomment the following when country tab sheets are ready with ISO3 naming
+
       let gridRanges = batch.map(territory => `${territory['iso3']}!${rangeToCache}`);
       logger.log(`[Lockdown:WorkSheet] ${batch.map(t => t['iso3']).join(' ')}`);
       let gridData = await doc.batchGetGridRanges(gridRanges);
 
       for (let i = 0; i < batch.length; i++) {
         try {
-          // TODO: Uncomment the following when country tab sheets are ready with ISO3 naming
+          // skip if empty
+          if (!batch[i]['iso3']) break;
+
           let workSheet = await getWorksheetByTitle(`${batch[i]['iso3']}`);
           let rowCount = workSheet['gridProperties']['rowCount'];
           let columnCount = workSheet['gridProperties']['columnCount'];
@@ -92,22 +1061,21 @@ export async function batchGetTerritoriesEntryData(territories) {
               if (!fs.existsSync('./out')) {
                 fs.mkdir('./out', { recursive: true }, (err) => {
                   logger.error(err);
-                });  
-              }            
+                });
+              }
               fs.writeFileSync('./out/' + s.iso3 + '.json', JSON.stringify(s));
             });
 
-            // TODO: insert into Cosmosdb when ready
-            // try {
-            //   let insertResult = await database.snapshotRepository.insertMany(snapshots);
-            //   // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
-            //   if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
-            //     shouldResetApiCache = true;
-            //   }
-            // } catch (error) {
-            //   logger.log(`Error insertMany for country ${batch[i]['iso2']} ${batch[i]['iso3']}...`);
-            //   logger.error(error);
-            // }
+            try {
+              let insertResult = await database.snapshotRepository.insertMany(snapshots);
+              // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
+              if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
+                shouldResetApiCache = true;
+              }
+            } catch (error) {
+              logger.log(`Error insertMany for country ${batch[i]['iso2']} ${batch[i]['iso3']}...`);
+              logger.error(error);
+            }
           }
 
           result.push({

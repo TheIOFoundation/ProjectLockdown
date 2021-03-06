@@ -1,26 +1,43 @@
-.wrapper {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
+.Header {
+  z-index: 2000;
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  height: 55px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12), 0 8px 8px 0 rgba(0, 0, 0, 0.24);
 }
 
-svg {
-  display: inline-block;
-  vertical-align: top;
+.Logo .dark{
+  margin: 2vh auto;
+  /* width: fit-content; */
+  /* color: white; */
+  --ld-text: #fff;
+  width: auto;
 }
 
-h1 {
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 1;
-  margin: 6px 0 6px 10px;
-  display: inline-block;
-  vertical-align: top;
+.Logo {
+  margin: 1vh auto;
+  width: fit-content;
 }
 
-button + button {
-  margin-left: 10px;
+.Header .dark {
+  position: relative;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 55px;
+  /* width: 100%; */
+  /* padding: 1vh 0; */
+  background-color: #333333;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12), 0 8px 8px 0 rgba(0, 0, 0, 0.24);
+  --ld-text: #fff;
 }
