@@ -191,8 +191,8 @@ C --> D
 
 
 |        **Color**        | | | | | | | | | | | | |
-|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
-|  **Code**  | LG | DG | LB | DB | O |
+|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|-------------------------------|-----------------------------|
+|  **Code**  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Light%20gray%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Dark%20gray%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Light%20blue%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Dark%20blue%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Orange%20XXX%20v1.0.png" width ="50px" /> |
 | **R** | 137 | 78 | 102 | 80 | 247 |
 | **G** | 137 | 80 | 181 | 145 | 149 |
@@ -203,7 +203,7 @@ C --> D
 | **Hex** | #89898E | #4E5056 | #66B5C5 | #50919F | #F79552 |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMjYzOTg5MSwtMTc0ODA0MDcwLC0zOT
-IyNjk3MjEsLTEyODIzMjE2OTksMTAzMDI5MTc4MSw1ODA4NjY4
-NTEsMTgyNDMzNzQ0XX0=
+eyJoaXN0b3J5IjpbMzQ2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5Mj
+I2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1
+MSwxODI0MzM3NDRdfQ==
 -->
