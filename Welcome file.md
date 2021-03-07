@@ -184,8 +184,26 @@ C --> D
 |----------------|-------------------------------|-----------------------------|-------------------------------|
 | <img src="https://github.com/TheIOFoundation/UDDR/raw/main/Project%20Identity/Logos/%5BTIOF%20UDDR%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/TechUp/raw/main/Project%20Identity/Logos/%5BTIOF%20TU%5D%20Comms%20%5BP%5D%20U%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/BiT/raw/main/Project%20Identity/Logos/%5BTIOF%20BiT%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | 
 | [Media Kit](https://github.com/TheIOFoundation/UDDR/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/TechUp/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Media-Kit) |  [Media Kit](https://github.com/TheIOFoundation/BiT/wiki/Media-Kit) | 
+
+
+
+
+
+
+|        **Color**        | | | | | | | | | | | | |
+|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|
+|  **Code**  | LG | DG | LB | DB | O |
+| **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Light%20gray%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Dark%20gray%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Light%20blue%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Dark%20blue%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Orange%20XXX%20v1.0.png" width ="50px" /> |
+| **R** | 137 | 78 | 102 | 80 | 247 |
+| **G** | 137 | 80 | 181 | 145 | 149 |
+| **B** | 142 | 86 | 197 | 158 | 82 |
+| **H** | 240 | 225 | 190 | 190 | 24 |
+| **S** | 2.2 | 4.9 | 45.0 | 32.8 | 91.2 |
+| **L** | 54.7 | 32.2 | 58.6 | 46.7 | 64.5 |
+| **Hex** | #89898E | #4E5056 | #66B5C5 | #50919F | #F79552 |
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMj
-gyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLDE4MjQzMzc0
-NF19
+eyJoaXN0b3J5IjpbLTkxMjYzOTg5MSwtMTc0ODA0MDcwLC0zOT
+IyNjk3MjEsLTEyODIzMjE2OTksMTAzMDI5MTc4MSw1ODA4NjY4
+NTEsMTgyNDMzNzQ0XX0=
 -->
