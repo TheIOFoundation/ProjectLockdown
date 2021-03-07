@@ -235,17 +235,16 @@ C --> D
 |        **Map and Infographics**        |  |  |  |  |  | 
 |----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
 |  **Code**  | B1 | M1 | O1 | R1 | G7 |
-| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%237AAEFF%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%236FCF97%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23F2994A%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23EB5757%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23F2F2F2%20XXX%20v1.0.png" width ="50px" /> | 
-| **R** | 79 | 130 | 189 | 224 | 242 |
-| **G** | 79 | 130 | 189 | 224 | 242 |
-| **B** | 79 | 130 |  189 | 224 | 242 |
-| **H** | 0 | 0 | 0 | 0 | 0 |
-| **S** | 0 | 0 | 0 | 0 | 0 |
-| **L** | 31 | 51 | 74 | 88 | 95 |
+| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%237AAEFF%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%236FCF97%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23F2994A%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23EB5757%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23CCCCCC%20XXX%20v1.0.png" width ="50px" /> | 
+| **R** | 122 | 111 | 189 | 224 | 242 |
+| **G** | 174 | 201 | 189 | 224 | 242 |
+| **B** | 255 | 151 |  189 | 224 | 242 |
+| **H** | 217 | 145 | 0 | 0 | 0 |
+| **S** | 100 | 50 | 0 | 0 | 0 |
+| **L** | 74 | 51 | 74 | 88 | 95 |
 | **Hex** | #7AAEFF| #6FCF97| #F2994A| #EB5757| #CCCCCC |
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDY2OTM2NTYsLTEzMDA5NzEwNjAsMz
-Q2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMy
-MTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ
-==
+eyJoaXN0b3J5IjpbMTk0NzU0OTAxNSwtMTMwMDk3MTA2MCwzND
+YwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIx
+Njk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLDE4MjQzMzc0NF19
 -->
