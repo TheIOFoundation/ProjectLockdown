@@ -213,13 +213,13 @@ C --> D
 | **R** | 51 | 255 |
 | **G** | 51 | 255 |
 | **B** | 51 | 255 | 
-| **H** |  |  |
-| **S** |  |  |
-| **L** |  |  |
+| **H** | 0 | 0 |
+| **S** | 0 | 0 |
+| **L** | 20 | 100 |
 | **Hex** | #333333 | #FFFFFF |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzczMDQ2MjcsMzQ2MDg4NzQzLC0xNz
+eyJoaXN0b3J5IjpbLTEzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNz
 Q4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkx
 NzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ==
 -->
