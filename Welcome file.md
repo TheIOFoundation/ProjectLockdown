@@ -177,8 +177,15 @@ C --> D
 |<img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/UDDR/raw/main/Project%20Identity/Logos/%5BTIOF%20UDDR%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/TechUp/raw/main/Project%20Identity/Logos/%5BTIOF%20TU%5D%20Comms%20%5BP%5D%20U%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/BiT/raw/main/Project%20Identity/Logos/%5BTIOF%20BiT%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | 
 |[Media Kit](https://github.com/TheIOFoundation/TIOF/wiki/Media-Kit)| [Media Kit](https://github.com/TheIOFoundation/UDDR/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/TechUp/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Media-Kit) |  [Media Kit](https://github.com/TheIOFoundation/BiT/wiki/Media-Kit) | 
 
+
+
+
+| UDDR | TechUp | Project Lockdown | BHR in Tech |
+|----------------|-------------------------------|-----------------------------|-------------------------------|
+| <img src="https://github.com/TheIOFoundation/UDDR/raw/main/Project%20Identity/Logos/%5BTIOF%20UDDR%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/TechUp/raw/main/Project%20Identity/Logos/%5BTIOF%20TU%5D%20Comms%20%5BP%5D%20U%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/BiT/raw/main/Project%20Identity/Logos/%5BTIOF%20BiT%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | 
+| [Media Kit](https://github.com/TheIOFoundation/UDDR/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/TechUp/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Media-Kit) |  [Media Kit](https://github.com/TheIOFoundation/BiT/wiki/Media-Kit) | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3MTQxODM0NiwtMzkyMjY5NzIxLC0xMj
+eyJoaXN0b3J5IjpbLTE3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMj
 gyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLDE4MjQzMzc0
 NF19
 -->
