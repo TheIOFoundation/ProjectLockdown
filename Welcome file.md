@@ -219,19 +219,19 @@ C --> D
 | **Hex** | #333333 | #FFFFFF |
 
 
-|        **Grey shades swatch**        | | | 
-|----------------|-------------------------------|-----------------------------|
-|  **Code**  | G2 | W | 
-| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23333333%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23FFFFFF%20XXX%20v1.0.png" width ="50px" /> | 
-| **R** | 51 | 255 |
-| **G** | 51 | 255 |
-| **B** | 51 | 255 | 
-| **H** | 0 | 0 |
-| **S** | 0 | 0 |
-| **L** | 20 | 100 |
-| **Hex** | #333333 | #FFFFFF |
+|        **Grey shades swatch**        |  |  |  |  |  | 
+|----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
+|  **Code**  | G2 | G3 | G4 | G5 | G6 |
+| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23333333%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23FFFFFF%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23FFFFFF%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23FFFFFF%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23FFFFFF%20XXX%20v1.0.png" width ="50px" /> | 
+| **R** | 51 | 255 | 255 | 255 | 255 |
+| **G** | 51 | 255 | 255 | 255 | 255 |
+| **B** | 51 | 255 |  255 | 255 | 255 |
+| **H** | 0 | 0 | 255 | 255 | 255 |
+| **S** | 0 | 0 | 255 | 255 | 255 | 255 |
+| **L** | 20 | 100 | 255 | 255 | 255 | 255 |
+| **Hex** | #333333 | #FFFFFF | 255 | 255 | 255 |
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyNzI2MDk1MCwtMTMwMDk3MTA2MCwzND
-YwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIx
-Njk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbLTIyMjQ0OTE5LC0xMzAwOTcxMDYwLDM0Nj
+A4ODc0MywtMTc0ODA0MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2
+OTksMTAzMDI5MTc4MSw1ODA4NjY4NTEsMTgyNDMzNzQ0XX0=
 -->
