@@ -174,11 +174,11 @@ C --> D
 
 | The IO Foundation | UDDR | TechUp | Project Lockdown | BHR in Tech |
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|
-|<img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20W%20T%20HiRes%20ENG%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20W%20T%20HiRes%20ENG%20v1.6.svg" width ="100px" /> | 
-|PNG | SVG | PNG | SVG | 
+|<img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20FC%20T%20HiRes%20ENG%20v1.6.svg" width ="75x" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20NoT%20HiRes%20XXX%20v1.0.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Full%20Logo%20TIOF%20W%20T%20HiRes%20ENG%20v1.6.svg" width ="75x" /> | 
+|PNG | SVG | PNG | SVG |  SVG | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxODQwMDI3NCwtMzkyMjY5NzIxLC0xMj
+eyJoaXN0b3J5IjpbLTU4NDQxNDA3OSwtMzkyMjY5NzIxLC0xMj
 gyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLDE4MjQzMzc0
 NF19
 -->
