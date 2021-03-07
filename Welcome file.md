@@ -210,16 +210,16 @@ C --> D
 |----------------|-------------------------------|-----------------------------|
 |  **Code**  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23333333%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23FFFFFF%20XXX%20v1.0.png" width ="50px" /> | 
-| **R** | 137 | 78 | 102 | 80 | 247 |
-| **G** | 137 | 80 | 181 | 145 | 149 |
-| **B** | 142 | 86 | 197 | 158 | 82 |
-| **H** | 240 | 225 | 190 | 190 | 24 |
-| **S** | 2.2 | 4.9 | 45.0 | 32.8 | 91.2 |
-| **L** | 54.7 | 32.2 | 58.6 | 46.7 | 64.5 |
-| **Hex** | #89898E | #4E5056 | #66B5C5 | #50919F | #F79552 |
+| **R** |  |  |
+| **G** |  |  |
+| **B** |  |  | 
+| **H** |  |  |
+| **S** |  |  |
+| **L** |  |  |
+| **Hex** | #333333 | #FFFFFF |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMTUwMDUsMzQ2MDg4NzQzLC0xNzQ4MD
-QwNzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNzgx
-LDU4MDg2Njg1MSwxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbLTE4NzY3NTk1MTYsMzQ2MDg4NzQzLC0xNz
+Q4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkx
+NzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ==
 -->
