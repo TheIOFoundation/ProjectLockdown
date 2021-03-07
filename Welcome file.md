@@ -208,18 +208,18 @@ C --> D
 
 |        **Theme Colors**        | | | 
 |----------------|-------------------------------|-----------------------------|
-|  **Code**  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  **Code**  | DG1 | W | 
 | **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23333333%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23FFFFFF%20XXX%20v1.0.png" width ="50px" /> | 
-| **R** |  |  |
-| **G** |  |  |
-| **B** |  |  | 
+| **R** | 51 | 255 |
+| **G** | 51 | 255 |
+| **B** | 51 | 255 | 
 | **H** |  |  |
 | **S** |  |  |
 | **L** |  |  |
 | **Hex** | #333333 | #FFFFFF |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzY3NTk1MTYsMzQ2MDg4NzQzLC0xNz
+eyJoaXN0b3J5IjpbLTEyNzczMDQ2MjcsMzQ2MDg4NzQzLC0xNz
 Q4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkx
 NzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ==
 -->
