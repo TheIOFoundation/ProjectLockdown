@@ -157,7 +157,7 @@ C --> D
 | **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20T%20HiRes%20XXX%20v1.0.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20T%20HiRes%20XXX%20v1.0.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20DM%20T%20HiRes%20XXX%20v1.0.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20DM%20T%20HiRes%20XXX%20v1.0.svg" width ="100px" /> | 
 | **Format** | PNG | SVG | PNG | SVG | 
 |  **Code**  |  |  |  |  |
-| **Features** | Hi Resolution / Light Mode / Transparent Background / English | Hi Resolution / Light Mode / Transparent Background | Hi Resolution / Dark Mode | Hi Resolution / White / Transparent Background / English |
+| **Features** | Hi Resolution / Light Mode / Transparent Background | Hi Resolution / Light Mode / Transparent Background | Hi Resolution / Dark Mode | Hi Resolution / Dark Mode
 | **Usage** | | | | |
 
 
@@ -244,8 +244,8 @@ C --> D
 | **L** | 74 | 62 | 62 | 63 | 80 |
 | **Hex** | #7AAEFF| #6FCF97| #F2994A| #EB5757| #CCCCCC |
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDU4MDMxNDksLTIwMzMzMDI4ODYsLT
-EzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2
-OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1MS
-wxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbMjAxMzYxNTExMCwtMjAzMzMwMjg4NiwtMT
+MwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5
+NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLD
+E4MjQzMzc0NF19
 -->
