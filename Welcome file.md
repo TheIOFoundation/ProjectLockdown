@@ -152,7 +152,7 @@ C --> D
 | **Usage** | | | | |
 
 
-|  **Name**  | TIOF Hex Logo |  |  |  |
+|  **Name**  | PLD Lock |  |  |  |
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|
 | **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20W%20NoT%20HiRes%20XXX%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20W%20T%20HiRes%20XXX%20v1.6.svg" width ="100px" /> | 
 | **Format** | PNG | SVG | PNG | SVG | 
@@ -244,8 +244,8 @@ C --> D
 | **L** | 74 | 62 | 62 | 63 | 80 |
 | **Hex** | #7AAEFF| #6FCF97| #F2994A| #EB5757| #CCCCCC |
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzMzMDI4ODYsLTEzMDA5NzEwNjAsMz
-Q2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMy
-MTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ
-==
+eyJoaXN0b3J5IjpbLTEwNDE4NjE2OSwtMjAzMzMwMjg4NiwtMT
+MwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5
+NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLD
+E4MjQzMzc0NF19
 -->
