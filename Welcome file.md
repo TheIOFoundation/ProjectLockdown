@@ -154,7 +154,7 @@ C --> D
 
 |  **Name**  | PLD Lock |  |  |  |
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|
-| **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20W%20NoT%20HiRes%20XXX%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20W%20T%20HiRes%20XXX%20v1.6.svg" width ="100px" /> | 
+| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20T%20HiRes%20XXX%20v1.0.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20T%20HiRes%20XXX%20v1.0.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20W%20NoT%20HiRes%20XXX%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20W%20T%20HiRes%20XXX%20v1.6.svg" width ="100px" /> | 
 | **Format** | PNG | SVG | PNG | SVG | 
 |  **Code**  |  |  |  |  |
 | **Features** | Hi Resolution / Full Color / Transparent Background / English | Hi Resolution / Full Color / Transparent Background / English | Hi Resolution / White / Transparent Background / English | Hi Resolution / White / Transparent Background / English |
@@ -244,7 +244,7 @@ C --> D
 | **L** | 74 | 62 | 62 | 63 | 80 |
 | **Hex** | #7AAEFF| #6FCF97| #F2994A| #EB5757| #CCCCCC |
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDE4NjE2OSwtMjAzMzMwMjg4NiwtMT
+eyJoaXN0b3J5IjpbLTU4MDgwODYxMSwtMjAzMzMwMjg4NiwtMT
 MwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5
 NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLD
 E4MjQzMzc0NF19
