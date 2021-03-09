@@ -301,13 +301,13 @@ C --> D
 
 |  **Platform**  | Events | Public Calendar | Live Events |  Events RSVP|
 |----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
-| **Short URL** | http://TIOF.Click/Events| http://TIOF.Click/EventsCal | https://TIOF.Click/EventsLive | http://tiof.click/TIOFInstagram |
-| **Status**  | Active | Active | Dormant | Dormant |
-| **Content**  | Updates on Advocacy + Events | PUpdates on Advocacy + Events / Comments not responded | None | None |
+| **Short URL** | http://TIOF.Click/Events| http://TIOF.Click/EventsCal | https://TIOF.Click/EventsLive | https://TIOF.Click/EventsRSVP |
+| **Status**  | Active | Active | Active | Active |
+| **Content**  | Events listing | Events calendar | None | None |
 | **Usage** | Postings - Comments not responded | Postings - Comments not responded | Impersonation protection | Impersonation protection | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwNzcxMzc5Niw1OTU4MDk5MSwtOTE0Mj
+eyJoaXN0b3J5IjpbLTUwNDgxMjU1NSw1OTU4MDk5MSwtOTE0Mj
 kzMTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAxMzk5LDE5MzE3MDE1
 NTgsLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkxNDMzMTI3MSwtNz
 Q0MDU4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4
