@@ -285,13 +285,10 @@ C --> D
 
 |  **Email**  | [Contact@TheIOFoundation.org](mailto://Contact@TheIOFoundation.org) | [Media@TheIOFoundation.org](mailto://Media@TheIOFoundation.org) | 
 |----------------|-------------------------------|-------------------------------|
-| **Alternative URLs** | None | None |
-| **Short URL** | None | None |
-| **Full URL** | None | None |
 | **Status**  | Active | Active |
-| **Usage** | Shorten URLs related to TIOF and its projects | Shorten URLs related to other organizations or projects that TIOF supports | 
+| **Usage** | Official communications | Media related communications | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2ODAzMDUyMiwxNTMxNjY5MzAsOTE0Mz
+eyJoaXN0b3J5IjpbLTMyMjcyNzQ1NywxNTMxNjY5MzAsOTE0Mz
 MxMjcxLC03NDQwNTg4MSwtOTM1MTUxNDA5LC01NjE4MTI0MzUs
 LTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMjAzMzMwMjg4NiwtMT
 MwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5
