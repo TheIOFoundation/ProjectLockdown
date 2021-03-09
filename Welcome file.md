@@ -309,20 +309,20 @@ C --> D
 
 |  **Platform**  | TIOF Donation Page | GitHub Sponsors | Open Collective |  Patreon |
 |----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
-| **Short URL** | https://TIOF.Click/Donate | http://TIOF.Click/TIOFGHSponsors | https://TIOF.Click/EventsLive | https://TIOF.Click/EventsRSVP |
-| **Full URL** | https://www.TheIOFoundation.org/Donate/ | https://github.com/TheIOFoundation/TIOF | https://twitter.com/TheIOFoundation | https://www.facebook.com/TheI0Foundation/ | https://www.instagram.com/theiofoundation/ |
-| **Status**  | Active | Active | Active | Active |
-| **Content**  | Events listing | Events calendar | Events access | TIOF Events RSVP |
+| **Short URL** | https://TIOF.Click/Donate | http://TIOF.Click/TIOFGHSponsors | http://TIOF.Click/TIOFOpenCollective | https://TIOF.Click/EventsRSVP |
+| **Full URL** | https://www.TheIOFoundation.org/Donate/ | https://GitHub.com/TheIOFoundation/TIOF | https://OpenCollective.com/TheIOFoundation | https://www.facebook.com/TheI0Foundation/ | 
+| **Status**  | Active | Active | WIP | WIP |
+| **Content**  | Fiat + Crupto | Events calendar | Events access | TIOF Events RSVP |
 | **Usage** | Communicate events from TIOF and those it participates in | Public events calendar that can be added | Access to the current running event | RSVP for TIOF events | 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1NjMzMjY1Nyw0OTE1Njc2ODAsLTgwOT
-A1MTQyMCwtNTA0ODEyNTU1LDU5NTgwOTkxLC05MTQyOTMxMjUs
-LTE1MzQ2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMT
-c5MTIyMDg5NywxNTMxNjY5MzAsOTE0MzMxMjcxLC03NDQwNTg4
-MSwtOTM1MTUxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMj
-AxMzYxNTExMCwtMjAzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYw
-ODg3NDNdfQ==
+eyJoaXN0b3J5IjpbMjA0MDQxMjE1NCwtNjU2MzMyNjU3LDQ5MT
+U2NzY4MCwtODA5MDUxNDIwLC01MDQ4MTI1NTUsNTk1ODA5OTEs
+LTkxNDI5MzEyNSwtMTUzNDY0NjAwNywtMTk1MDIwMTM5OSwxOT
+MxNzAxNTU4LC0xNzkxMjIwODk3LDE1MzE2NjkzMCw5MTQzMzEy
+NzEsLTc0NDA1ODgxLC05MzUxNTE0MDksLTU2MTgxMjQzNSwtMT
+AyMjAwODg1MCwyMDEzNjE1MTEwLC0yMDMzMzAyODg2LC0xMzAw
+OTcxMDYwXX0=
 -->
