@@ -309,8 +309,8 @@ C --> D
 
 |  **Platform**  | TIOF Donation Page | GitHub Sponsors | Open Collective |  Patreon |
 |----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
-| **Short URL** | https://TIOF.Click/Donate | http://TIOF.Click/TIOFGHSponsors | http://TIOF.Click/TIOFOpenCollective | https://TIOF.Click/EventsRSVP |
-| **Full URL** | https://www.TheIOFoundation.org/Donate/ | https://GitHub.com/TheIOFoundation/TIOF | https://OpenCollective.com/TheIOFoundation | https://www.facebook.com/TheI0Foundation/ | 
+| **Short URL** | https://TIOF.Click/Donate | http://TIOF.Click/TIOFGHSponsors | http://TIOF.Click/TIOFOpenCollective | http://TIOF.Click/TIOFPatreon |
+| **Full URL** | https://www.TheIOFoundation.org/Donate/ | https://GitHub.com/TheIOFoundation/TIOF | https://OpenCollective.com/TheIOFoundation | https://www.Patreon.com/TheIOFoundation | 
 | **Status**  | Active | Active | WIP | WIP |
 | **Content**  | General Donations | Goals | Goals | Goals |
 | **Usage** | Facilitate donations to TIOF global | List Goals for support | List Goals for support | List Goals for support | 
@@ -318,11 +318,11 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NjYxMDA0NCwtNjU2MzMyNjU3LDQ5MT
-U2NzY4MCwtODA5MDUxNDIwLC01MDQ4MTI1NTUsNTk1ODA5OTEs
-LTkxNDI5MzEyNSwtMTUzNDY0NjAwNywtMTk1MDIwMTM5OSwxOT
-MxNzAxNTU4LC0xNzkxMjIwODk3LDE1MzE2NjkzMCw5MTQzMzEy
-NzEsLTc0NDA1ODgxLC05MzUxNTE0MDksLTU2MTgxMjQzNSwtMT
-AyMjAwODg1MCwyMDEzNjE1MTEwLC0yMDMzMzAyODg2LC0xMzAw
-OTcxMDYwXX0=
+eyJoaXN0b3J5IjpbNzgxNjY5NDczLDE2OTY2MTAwNDQsLTY1Nj
+MzMjY1Nyw0OTE1Njc2ODAsLTgwOTA1MTQyMCwtNTA0ODEyNTU1
+LDU5NTgwOTkxLC05MTQyOTMxMjUsLTE1MzQ2NDYwMDcsLTE5NT
+AyMDEzOTksMTkzMTcwMTU1OCwtMTc5MTIyMDg5NywxNTMxNjY5
+MzAsOTE0MzMxMjcxLC03NDQwNTg4MSwtOTM1MTUxNDA5LC01Nj
+E4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMjAzMzMw
+Mjg4Nl19
 -->
