@@ -296,17 +296,17 @@ C --> D
 
 |  **Platform**  | LinkedIn | Twitter | Facebook |  Instagram |
 |----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
-| **Full URL** | https://github.com/TheIOFoundation/ | https://github.com/TheIOFoundation/TIOF |
-| **Short URL** | http://TIOF.Click/TIOFGitHub| http://TIOF.Click/TIOFRepo|
+| **Full URL** |  | https://github.com/TheIOFoundation/TIOF |
+| **Short URL** | http://TIOF.Click/TIOFLinkedIn| http://TIOF.Click/TIOFRepo|
 | **Status**  | Active | Active | Dormant | Dormant |
 | **Content**  | Official profile of TIOF in GitHub | Public repository showcasing TIOF's advocacy work |
 | **Usage** | Consolidation of all GH presence for TIOF | Project Management + Community Collaboration + Transparency platform  | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIxNDcyNTkzLDE5MzE3MDE1NTgsLTE3OT
-EyMjA4OTcsMTUzMTY2OTMwLDkxNDMzMTI3MSwtNzQ0MDU4ODEs
-LTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4ODUwLDIwMT
-M2MTUxMTAsLTIwMzMzMDI4ODYsLTEzMDA5NzEwNjAsMzQ2MDg4
-NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OS
-wxMDMwMjkxNzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMT
+c5MTIyMDg5NywxNTMxNjY5MzAsOTE0MzMxMjcxLC03NDQwNTg4
+MSwtOTM1MTUxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMj
+AxMzYxNTExMCwtMjAzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYw
+ODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNj
+k5LDEwMzAyOTE3ODEsNTgwODY2ODUxLDE4MjQzMzc0NF19
 -->
