@@ -294,7 +294,7 @@ C --> D
 
 
 
-|  **Type**  | [TIOF Profile on GH ](http://TIOF.Click/TIOFGitHub) | [TIOF Repository on GH ](http://TIOF.Click/TIOFRepo) | 
+|  **Platform**  | [TIOF Profile on GH ](http://TIOF.Click/TIOFGitHub) | [TIOF Repository on GH ](http://TIOF.Click/TIOFRepo) | 
 |----------------|-------------------------------|-------------------------------|
 | **Alternative URLs** | None | None |
 | **Short URL** | http://TIOF.Click/TIOFGitHub| http://TIOF.Click/TIOFRepo|
@@ -304,10 +304,10 @@ C --> D
 | **Usage** | Consolidation of all GH presence for TIOF | Project Management + Community Collaboration + Transparency platform  | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzMTcwMTU1OCwtMTc5MTIyMDg5NywxNT
-MxNjY5MzAsOTE0MzMxMjcxLC03NDQwNTg4MSwtOTM1MTUxNDA5
-LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMj
-AzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgw
-NDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3OD
-EsNTgwODY2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbMTU5NTUxNTM3NSwxOTMxNzAxNTU4LC0xNz
+kxMjIwODk3LDE1MzE2NjkzMCw5MTQzMzEyNzEsLTc0NDA1ODgx
+LC05MzUxNTE0MDksLTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMD
+EzNjE1MTEwLC0yMDMzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4
+ODc0MywtMTc0ODA0MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OT
+ksMTAzMDI5MTc4MSw1ODA4NjY4NTEsMTgyNDMzNzQ0XX0=
 -->
