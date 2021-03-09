@@ -257,12 +257,12 @@ C --> D
 
 |  **URL**  | [https://TheIOFoundation.org](https://TheIOFoundation.org) | 
 |----------------|-------------------------------|
-| **Alternative URLs** | [.com]() [.net]() [.eu]() [.asia]() |
-| **ShortURL** | https://TIOF.Click/ |
-|  **Status**  |  | 
+| **Alternative URLs** | [.com](https://TheIOFoundation.com) [.net](https://TheIOFoundation.net) [.eu](https://TheIOFoundation.eu) [.asia](https://TheIOFoundation.asia) |
+| **ShortURL** | https://TIOF.Click/TIOFWeb |
+|  **Status**  | Active | 
 | **Usage** |  | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyNzYzNDIyMywtMTAyMjAwODg1MCwyMD
+eyJoaXN0b3J5IjpbLTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMD
 EzNjE1MTEwLC0yMDMzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4
 ODc0MywtMTc0ODA0MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OT
 ksMTAzMDI5MTc4MSw1ODA4NjY4NTEsMTgyNDMzNzQ0XX0=
