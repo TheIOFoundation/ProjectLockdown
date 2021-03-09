@@ -278,9 +278,9 @@ C --> D
 |----------------|-------------------------------|
 | **Alternative Domains** | None |
 | **Status**  | Active | 
-| **Usage** | Official communications from TIOF members  | 
+| **Usage** | Official communications from TIOF members both internally and externally | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODc0NDU1MjU4LDkxNDMzMTI3MSwtNzQ0MD
+eyJoaXN0b3J5IjpbMTUzMTY2OTMwLDkxNDMzMTI3MSwtNzQ0MD
 U4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4ODUw
 LDIwMTM2MTUxMTAsLTIwMzMzMDI4ODYsLTEzMDA5NzEwNjAsMz
 Q2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMy
