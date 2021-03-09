@@ -278,11 +278,12 @@ C --> D
 |----------------|-------------------------------|
 | **Alternative Domains** | None |
 | **Status**  | Active | 
-| **Usage** |  | 
+| **Usage** | Official communications from TIOF members  | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE0MzMxMjcxLC03NDQwNTg4MSwtOTM1MT
-UxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYxNTEx
-MCwtMjAzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3NDMsLT
-E3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEwMzAy
-OTE3ODEsNTgwODY2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbODc0NDU1MjU4LDkxNDMzMTI3MSwtNzQ0MD
+U4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4ODUw
+LDIwMTM2MTUxMTAsLTIwMzMzMDI4ODYsLTEzMDA5NzEwNjAsMz
+Q2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMy
+MTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ
+==
 -->
