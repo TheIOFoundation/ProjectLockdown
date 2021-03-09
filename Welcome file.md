@@ -286,12 +286,12 @@ C --> D
 |  **Email**  | [Contact@TheIOFoundation.org](mailto://Contact@TheIOFoundation.org) | [Media@TheIOFoundation.org](mailto://Media@TheIOFoundation.org) | 
 |----------------|-------------------------------|-------------------------------|
 | **Status**  | Active | Active |
-| **Usage** | Official communications | Media related communications | 
+| **Usage** | Official communications and inquiries | Media related communications and inquiries | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyMjcyNzQ1NywxNTMxNjY5MzAsOTE0Mz
-MxMjcxLC03NDQwNTg4MSwtOTM1MTUxNDA5LC01NjE4MTI0MzUs
-LTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMjAzMzMwMjg4NiwtMT
-MwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5
-NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLD
-E4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkxND
+MzMTI3MSwtNzQ0MDU4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1
+LC0xMDIyMDA4ODUwLDIwMTM2MTUxMTAsLTIwMzMzMDI4ODYsLT
+EzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2
+OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1MS
+wxODI0MzM3NDRdfQ==
 -->
