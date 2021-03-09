@@ -271,14 +271,20 @@ C --> D
 | **Short URL** | None | None |
 | **Full URL** | None | None |
 | **Status**  | Active | Active |
-| **Usage** |  |  | 
+| **Usage** | Shorten URLs related to TIOF and its projects | Shorten URLs related to other organizations or projects that TIOF supports | 
 
 
-
+|  **Domains**  | @TheIOFoundation.org | 
+|----------------|-------------------------------|
+| **Alternative Domains** | None |
+| **Short URL** |  |
+| **Full URL** |  |
+| **Status**  |  | 
+| **Usage** |  | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMwODg0MjUxLC03NDQwNTg4MSwtOTM1MT
-UxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYxNTEx
-MCwtMjAzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3NDMsLT
-E3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEwMzAy
-OTE3ODEsNTgwODY2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbLTE1MzI2NTkyMzIsLTc0NDA1ODgxLC05Mz
+UxNTE0MDksLTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMDEzNjE1
+MTEwLC0yMDMzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4ODc0My
+wtMTc0ODA0MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OTksMTAz
+MDI5MTc4MSw1ODA4NjY4NTEsMTgyNDMzNzQ0XX0=
 -->
