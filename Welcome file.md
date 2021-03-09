@@ -248,16 +248,22 @@ C --> D
 
 
 
-|  **URL**  | PLD Lock | 
+|  **URL**  |  | 
 |----------------|-------------------------------|
-| **Alternative URLs** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20T%20HiRes%20XXX%20v1.0.png" width ="100px" /> |
-| **ShortURL** | PNG | SVG | PNG | SVG | 
-|  **Status**  |  |  |  |  |
+| **Alternative URLs** |  |
+| **ShortURL** |  |
+|  **Status**  |  | 
+| **Usage** |  | 
 
-| **Usage** | | 
+|  **URL**  | [https://TheIOFoundation.org](https://TheIOFoundation.org) | 
+|----------------|-------------------------------|
+| **Alternative URLs** | [.eu]()  |
+| **ShortURL** |  |
+|  **Status**  |  | 
+| **Usage** |  | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIwNjkzODMwLDIwMTM2MTUxMTAsLTIwMz
-MzMDI4ODYsLTEzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4MDQw
-NzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNzgxLD
-U4MDg2Njg1MSwxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbLTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMj
+AzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgw
+NDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3OD
+EsNTgwODY2ODUxLDE4MjQzMzc0NF19
 -->
