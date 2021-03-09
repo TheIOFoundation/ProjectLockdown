@@ -254,6 +254,7 @@ C --> D
 | **Short URL** |  |
 | **Full URL** |  |
 | **Status**  |  | 
+| **Content**  |  | 
 | **Usage** |  | 
 
 |  **URL**  | [https://TheIOFoundation.org](https://TheIOFoundation.org) | 
@@ -299,13 +300,14 @@ C --> D
 | **Short URL** | http://TIOF.Click/TIOFGitHub| http://TIOF.Click/TIOFRepo|
 | **Full URL** | https://github.com/TheIOFoundation/ | https://github.com/TheIOFoundation/TIOF |
 | **Status**  | Active | WIP |
-| **Usage** | Official profile of TIOF in GitHub | Public repos | 
+| **Content**  | Official profile of TIOF in GitHub | Public repository showcasing TIOF's advocacy work |
+| **Usage** | Consolidation of all GH presence for TIOF | Project Management & Transparency platform  | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY1MTUxMTk4LC0xNzkxMjIwODk3LDE1Mz
-E2NjkzMCw5MTQzMzEyNzEsLTc0NDA1ODgxLC05MzUxNTE0MDks
-LTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMDEzNjE1MTEwLC0yMD
-MzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4ODc0MywtMTc0ODA0
-MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OTksMTAzMDI5MTc4MS
-w1ODA4NjY4NTEsMTgyNDMzNzQ0XX0=
+eyJoaXN0b3J5IjpbMjA1NzQ0OTMzMiwtMTc5MTIyMDg5NywxNT
+MxNjY5MzAsOTE0MzMxMjcxLC03NDQwNTg4MSwtOTM1MTUxNDA5
+LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMj
+AzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgw
+NDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3OD
+EsNTgwODY2ODUxLDE4MjQzMzc0NF19
 -->
