@@ -299,15 +299,15 @@ C --> D
 | **Full URL** | https://www.linkedin.com/company/the-io-foundation | https://github.com/TheIOFoundation/TIOF | https://twitter.com/TheIOFoundation | https://www.facebook.com/TheI0Foundation/ | https://www.instagram.com/theiofoundation/ |
 | **Short URL** | http://TIOF.Click/TIOFLinkedIn| https://TIOF.Click/TIOFTwitter | http://tiof.click/TIOFFacebook | http://tiof.click/TIOFInstagram |
 | **Status**  | Active | Active | Dormant | Dormant |
-| **Content**  | Updates on Advocacy + Events | PUpdates on Advocacy + Events / Comments not responded | Impersonation protection | Impersonation protection |
-| **Usage** | Reach a broader audience / Comments not responded | Project Management + Community Collaboration + Transparency platform  | 
+| **Content**  | Updates on Advocacy + Events | PUpdates on Advocacy + Events / Comments not responded | None | None |
+| **Usage** | Postings - Comments not responded | Postings - Comments not responded | Impersonation protection | Impersonation protection | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0NjI2OTM2NywtOTE0MjkzMTI1LC0xNT
-M0NjQ2MDA3LC0xOTUwMjAxMzk5LDE5MzE3MDE1NTgsLTE3OTEy
-MjA4OTcsMTUzMTY2OTMwLDkxNDMzMTI3MSwtNzQ0MDU4ODEsLT
-kzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4ODUwLDIwMTM2
-MTUxMTAsLTIwMzMzMDI4ODYsLTEzMDA5NzEwNjAsMzQ2MDg4Nz
-QzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwx
-MDMwMjkxNzgxXX0=
+eyJoaXN0b3J5IjpbNjUxODIwMTI5LC05MTQyOTMxMjUsLTE1Mz
+Q2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMTc5MTIy
+MDg5NywxNTMxNjY5MzAsOTE0MzMxMjcxLC03NDQwNTg4MSwtOT
+M1MTUxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYx
+NTExMCwtMjAzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3ND
+MsLTE3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEw
+MzAyOTE3ODFdfQ==
 -->
