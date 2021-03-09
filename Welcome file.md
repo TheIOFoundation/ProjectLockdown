@@ -257,13 +257,13 @@ C --> D
 
 |  **URL**  | [https://TheIOFoundation.org](https://TheIOFoundation.org) | 
 |----------------|-------------------------------|
-| **Alternative URLs** | [.eu]()  |
-| **ShortURL** |  |
+| **Alternative URLs** | [.com]() [.net]() [.eu]() [.asia]() |
+| **ShortURL** | https://TIOF.Click/ |
 |  **Status**  |  | 
 | **Usage** |  | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMj
-AzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgw
-NDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3OD
-EsNTgwODY2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbMTcyNzYzNDIyMywtMTAyMjAwODg1MCwyMD
+EzNjE1MTEwLC0yMDMzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4
+ODc0MywtMTc0ODA0MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OT
+ksMTAzMDI5MTc4MSw1ODA4NjY4NTEsMTgyNDMzNzQ0XX0=
 -->
