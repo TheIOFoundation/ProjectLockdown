@@ -312,13 +312,13 @@ C --> D
 | **Short URL** | https://TIOF.Click/Donate | http://TIOF.Click/TIOFGHSponsors | http://TIOF.Click/TIOFOpenCollective | https://TIOF.Click/EventsRSVP |
 | **Full URL** | https://www.TheIOFoundation.org/Donate/ | https://GitHub.com/TheIOFoundation/TIOF | https://OpenCollective.com/TheIOFoundation | https://www.facebook.com/TheI0Foundation/ | 
 | **Status**  | Active | Active | WIP | WIP |
-| **Content**  | Fiat + Crupto | Events calendar | Events access | TIOF Events RSVP |
-| **Usage** | Communicate events from TIOF and those it participates in | Public events calendar that can be added | Access to the current running event | RSVP for TIOF events | 
+| **Content**  | General Donations | Goals | Goals | Goals |
+| **Usage** | Facilitate donations to TIOF global | List Goals for support | List Goals for support | List Goals for support | 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MDQxMjE1NCwtNjU2MzMyNjU3LDQ5MT
+eyJoaXN0b3J5IjpbMTY5NjYxMDA0NCwtNjU2MzMyNjU3LDQ5MT
 U2NzY4MCwtODA5MDUxNDIwLC01MDQ4MTI1NTUsNTk1ODA5OTEs
 LTkxNDI5MzEyNSwtMTUzNDY0NjAwNywtMTk1MDIwMTM5OSwxOT
 MxNzAxNTU4LC0xNzkxMjIwODk3LDE1MzE2NjkzMCw5MTQzMzEy
