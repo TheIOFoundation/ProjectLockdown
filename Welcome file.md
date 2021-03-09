@@ -294,7 +294,7 @@ C --> D
 
 
 
-|  **Platform**  | [TIOF Profile on GH ](http://TIOF.Click/TIOFGitHub) | [TIOF Repository on GH ](http://TIOF.Click/TIOFRepo) | 
+|  **Platform**  | LinkedIn | Twitter | Facebook | 
 |----------------|-------------------------------|-------------------------------|
 | **Alternative URLs** | None | None |
 | **Short URL** | http://TIOF.Click/TIOFGitHub| http://TIOF.Click/TIOFRepo|
@@ -304,7 +304,7 @@ C --> D
 | **Usage** | Consolidation of all GH presence for TIOF | Project Management + Community Collaboration + Transparency platform  | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NTUxNTM3NSwxOTMxNzAxNTU4LC0xNz
+eyJoaXN0b3J5IjpbMTc1NTYyMTcxOCwxOTMxNzAxNTU4LC0xNz
 kxMjIwODk3LDE1MzE2NjkzMCw5MTQzMzEyNzEsLTc0NDA1ODgx
 LC05MzUxNTE0MDksLTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMD
 EzNjE1MTEwLC0yMDMzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4
