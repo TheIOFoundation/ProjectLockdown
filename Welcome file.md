@@ -252,7 +252,8 @@ C --> D
 |----------------|-------------------------------|
 | **Alternative URLs** |  |
 | **Short URL** |  |
-|  **Status**  |  | 
+| **Full URL** |  |
+| **Status**  |  | 
 | **Usage** |  | 
 
 |  **URL**  | [https://TheIOFoundation.org](https://TheIOFoundation.org) | 
@@ -262,9 +263,9 @@ C --> D
 | **Status**  | Active | 
 | **Usage** |  | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5NjY5NzYzMSwtOTM1MTUxNDA5LC01Nj
-E4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMjAzMzMw
-Mjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgwNDA3MC
-wtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3ODEsNTgw
-ODY2ODUxLDE4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbLTc0NDA1ODgxLC05MzUxNTE0MDksLTU2MT
+gxMjQzNSwtMTAyMjAwODg1MCwyMDEzNjE1MTEwLC0yMDMzMzAy
+ODg2LC0xMzAwOTcxMDYwLDM0NjA4ODc0MywtMTc0ODA0MDcwLC
+0zOTIyNjk3MjEsLTEyODIzMjE2OTksMTAzMDI5MTc4MSw1ODA4
+NjY4NTEsMTgyNDMzNzQ0XX0=
 -->
