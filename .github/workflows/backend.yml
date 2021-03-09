@@ -1,9 +1,12 @@
-# This is a basic workflow to help deploy my app to Azure
+# This is a basic workflow to help deploy the backend code to Azure server
+# it triggers on push and pull request events to the master branch
+# it runs the jobs on the API/ directory and deploys using secret credentials
+# Update the secret credentials with details from the Azure web server.
+
 name: "CI/CD Pipeline for Azure webapp deployment"
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches:
       - master
@@ -16,7 +19,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: "." # azure app path
 
 jobs:
-  build-and-deploy:
+  build_and_deploy:
     name: Build test and Deploy Node App to Azure
     runs-on: ubuntu-latest
     if: >-
@@ -46,4 +49,4 @@ jobs:
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       - if: github.ref == 'refs/heads/master' && job.status == 'success'
         run: |
-         git push -u origin HEAD:master -f    
+          git push -u origin HEAD:master -f
