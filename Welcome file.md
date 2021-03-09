@@ -301,10 +301,10 @@ C --> D
 | **Full URL** | https://github.com/TheIOFoundation/ | https://github.com/TheIOFoundation/TIOF |
 | **Status**  | Active | WIP |
 | **Content**  | Official profile of TIOF in GitHub | Public repository showcasing TIOF's advocacy work |
-| **Usage** | Consolidation of all GH presence for TIOF | Project Management & Transparency platform  | 
+| **Usage** | Consolidation of all GH presence for TIOF | Project Management + Community Collaboration + Transparency platform  | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NzQ0OTMzMiwtMTc5MTIyMDg5NywxNT
+eyJoaXN0b3J5IjpbMTkzMTcwMTU1OCwtMTc5MTIyMDg5NywxNT
 MxNjY5MzAsOTE0MzMxMjcxLC03NDQwNTg4MSwtOTM1MTUxNDA5
 LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMj
 AzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgw
