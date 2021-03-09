@@ -287,11 +287,25 @@ C --> D
 |----------------|-------------------------------|-------------------------------|
 | **Status**  | Active | Active |
 | **Usage** | Official communications and inquiries | Media related communications and inquiries | 
+
+
+
+
+
+
+|  **Type**  | [TIOF Profile on GH ](http://TIOF.Click/TIOFGitHub) | [TIOF Repository on GH ](http://TIOF.Click/TIOFR) | 
+|----------------|-------------------------------|-------------------------------|
+| **Alternative URLs** | None | None |
+| **Short URL** | None | None |
+| **Full URL** | None | None |
+| **Status**  | Active | Active |
+| **Usage** | Shorten URLs related to TIOF and its projects | Shorten URLs related to other organizations or projects that TIOF supports | 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkxND
-MzMTI3MSwtNzQ0MDU4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1
-LC0xMDIyMDA4ODUwLDIwMTM2MTUxMTAsLTIwMzMzMDI4ODYsLT
-EzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2
-OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1MS
-wxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbLTEyNjg4ODM5NDksLTE3OTEyMjA4OTcsMT
+UzMTY2OTMwLDkxNDMzMTI3MSwtNzQ0MDU4ODEsLTkzNTE1MTQw
+OSwtNTYxODEyNDM1LC0xMDIyMDA4ODUwLDIwMTM2MTUxMTAsLT
+IwMzMzMDI4ODYsLTEzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4
+MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNz
+gxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ==
 -->
