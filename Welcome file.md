@@ -290,24 +290,21 @@ C --> D
 | **Usage** | Official communications and inquiries | Media related communications and inquiries | 
 
 
-
-
-
-
 |  **Platform**  | LinkedIn | Twitter | Facebook |  Instagram |
 |----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
-| **Full URL** | https://www.linkedin.com/company/the-io-foundation | https://github.com/TheIOFoundation/TIOF | https://twitter.com/TheIOFoundation | https://www.facebook.com/TheI0Foundation/ | https://www.instagram.com/theiofoundation/ |
 | **Short URL** | http://TIOF.Click/TIOFLinkedIn| https://TIOF.Click/TIOFTwitter | http://tiof.click/TIOFFacebook | http://tiof.click/TIOFInstagram |
+| **Full URL** | https://www.linkedin.com/company/the-io-foundation | https://github.com/TheIOFoundation/TIOF | https://twitter.com/TheIOFoundation | https://www.facebook.com/TheI0Foundation/ | https://www.instagram.com/theiofoundation/ |
 | **Status**  | Active | Active | Dormant | Dormant |
 | **Content**  | Updates on Advocacy + Events | PUpdates on Advocacy + Events / Comments not responded | None | None |
 | **Usage** | Postings - Comments not responded | Postings - Comments not responded | Impersonation protection | Impersonation protection | 
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUxODIwMTI5LC05MTQyOTMxMjUsLTE1Mz
-Q2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMTc5MTIy
-MDg5NywxNTMxNjY5MzAsOTE0MzMxMjcxLC03NDQwNTg4MSwtOT
-M1MTUxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYx
-NTExMCwtMjAzMzMwMjg4NiwtMTMwMDk3MTA2MCwzNDYwODg3ND
-MsLTE3NDgwNDA3MCwtMzkyMjY5NzIxLC0xMjgyMzIxNjk5LDEw
-MzAyOTE3ODFdfQ==
+eyJoaXN0b3J5IjpbNTk1ODA5OTEsLTkxNDI5MzEyNSwtMTUzND
+Y0NjAwNywtMTk1MDIwMTM5OSwxOTMxNzAxNTU4LC0xNzkxMjIw
+ODk3LDE1MzE2NjkzMCw5MTQzMzEyNzEsLTc0NDA1ODgxLC05Mz
+UxNTE0MDksLTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMDEzNjE1
+MTEwLC0yMDMzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4ODc0My
+wtMTc0ODA0MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OTksMTAz
+MDI5MTc4MV19
 -->
