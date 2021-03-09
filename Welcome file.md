@@ -303,15 +303,15 @@ C --> D
 |----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
 | **Short URL** | http://TIOF.Click/Events| http://TIOF.Click/EventsCal | https://TIOF.Click/EventsLive | https://TIOF.Click/EventsRSVP |
 | **Status**  | Active | Active | Active | Active |
-| **Content**  | Events listing | Events calendar | None | None |
-| **Usage** | Postings - Comments not responded | Postings - Comments not responded | Impersonation protection | Impersonation protection | 
+| **Content**  | Events listing | Events calendar | Access to the current running event | RSVP for TIOF events |
+| **Usage** | Communicate events from TIOF and those it participates in | Public events calendar that can be added | Impersonation protection | Impersonation protection | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwNDgxMjU1NSw1OTU4MDk5MSwtOTE0Mj
-kzMTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAxMzk5LDE5MzE3MDE1
-NTgsLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkxNDMzMTI3MSwtNz
-Q0MDU4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4
-ODUwLDIwMTM2MTUxMTAsLTIwMzMzMDI4ODYsLTEzMDA5NzEwNj
-AsMzQ2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4
-MjMyMTY5OV19
+eyJoaXN0b3J5IjpbLTEzMTA4MzA1MDUsLTUwNDgxMjU1NSw1OT
+U4MDk5MSwtOTE0MjkzMTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAx
+Mzk5LDE5MzE3MDE1NTgsLTE3OTEyMjA4OTcsMTUzMTY2OTMwLD
+kxNDMzMTI3MSwtNzQ0MDU4ODEsLTkzNTE1MTQwOSwtNTYxODEy
+NDM1LC0xMDIyMDA4ODUwLDIwMTM2MTUxMTAsLTIwMzMzMDI4OD
+YsLTEzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5
+MjI2OTcyMV19
 -->
