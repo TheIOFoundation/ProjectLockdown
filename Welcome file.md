@@ -299,12 +299,19 @@ C --> D
 | **Usage** | Postings - Comments not responded | Postings - Comments not responded | Impersonation protection | Impersonation protection | 
 
 
+|  **Platform**  | Events | Public Calendar | Live Events |  Events RSVP|
+|----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
+| **Short URL** | http://TIOF.Click/Events| http://TIOF.Click/EventsCal | https://TIOF.Click/EventsLive | http://tiof.click/TIOFInstagram |
+| **Status**  | Active | Active | Dormant | Dormant |
+| **Content**  | Updates on Advocacy + Events | PUpdates on Advocacy + Events / Comments not responded | None | None |
+| **Usage** | Postings - Comments not responded | Postings - Comments not responded | Impersonation protection | Impersonation protection | 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk1ODA5OTEsLTkxNDI5MzEyNSwtMTUzND
-Y0NjAwNywtMTk1MDIwMTM5OSwxOTMxNzAxNTU4LC0xNzkxMjIw
-ODk3LDE1MzE2NjkzMCw5MTQzMzEyNzEsLTc0NDA1ODgxLC05Mz
-UxNTE0MDksLTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMDEzNjE1
-MTEwLC0yMDMzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4ODc0My
-wtMTc0ODA0MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OTksMTAz
-MDI5MTc4MV19
+eyJoaXN0b3J5IjpbMTcwNzcxMzc5Niw1OTU4MDk5MSwtOTE0Mj
+kzMTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAxMzk5LDE5MzE3MDE1
+NTgsLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkxNDMzMTI3MSwtNz
+Q0MDU4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4
+ODUwLDIwMTM2MTUxMTAsLTIwMzMzMDI4ODYsLTEzMDA5NzEwNj
+AsMzQ2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4
+MjMyMTY5OV19
 -->
