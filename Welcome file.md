@@ -251,7 +251,7 @@ C --> D
 |  **URL**  |  | 
 |----------------|-------------------------------|
 | **Alternative URLs** |  |
-| **ShortURL** |  |
+| **Short URL** |  |
 |  **Status**  |  | 
 | **Usage** |  | 
 
@@ -262,8 +262,9 @@ C --> D
 |  **Status**  | Active | 
 | **Usage** |  | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMD
-EzNjE1MTEwLC0yMDMzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4
-ODc0MywtMTc0ODA0MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OT
-ksMTAzMDI5MTc4MSw1ODA4NjY4NTEsMTgyNDMzNzQ0XX0=
+eyJoaXN0b3J5IjpbLTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMD
+IyMDA4ODUwLDIwMTM2MTUxMTAsLTIwMzMzMDI4ODYsLTEzMDA5
+NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMS
+wtMTI4MjMyMTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1MSwxODI0
+MzM3NDRdfQ==
 -->
