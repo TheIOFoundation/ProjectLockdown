@@ -293,19 +293,19 @@ C --> D
 
 
 
-|  **Type**  | [TIOF Profile on GH ](http://TIOF.Click/TIOFGitHub) | [TIOF Repository on GH ](http://TIOF.Click/TIOFR) | 
+|  **Type**  | [TIOF Profile on GH ](http://TIOF.Click/TIOFGitHub) | [TIOF Repository on GH ](http://TIOF.Click/TIOFRepo) | 
 |----------------|-------------------------------|-------------------------------|
 | **Alternative URLs** | None | None |
-| **Short URL** | None | None |
-| **Full URL** | None | None |
-| **Status**  | Active | Active |
-| **Usage** | Shorten URLs related to TIOF and its projects | Shorten URLs related to other organizations or projects that TIOF supports | 
+| **Short URL** | http://TIOF.Click/TIOFGitHub| http://TIOF.Click/TIOFRepo|
+| **Full URL** | https://github.com/TheIOFoundation/ | https://github.com/TheIOFoundation/TIOF |
+| **Status**  | Active | WIP |
+| **Usage** | Official profile of TIOF in GitHub | Public repos | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjg4ODM5NDksLTE3OTEyMjA4OTcsMT
-UzMTY2OTMwLDkxNDMzMTI3MSwtNzQ0MDU4ODEsLTkzNTE1MTQw
-OSwtNTYxODEyNDM1LC0xMDIyMDA4ODUwLDIwMTM2MTUxMTAsLT
-IwMzMzMDI4ODYsLTEzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4
-MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNz
-gxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbNDY1MTUxMTk4LC0xNzkxMjIwODk3LDE1Mz
+E2NjkzMCw5MTQzMzEyNzEsLTc0NDA1ODgxLC05MzUxNTE0MDks
+LTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMDEzNjE1MTEwLC0yMD
+MzMzAyODg2LC0xMzAwOTcxMDYwLDM0NjA4ODc0MywtMTc0ODA0
+MDcwLC0zOTIyNjk3MjEsLTEyODIzMjE2OTksMTAzMDI5MTc4MS
+w1ODA4NjY4NTEsMTgyNDMzNzQ0XX0=
 -->
