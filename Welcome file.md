@@ -279,11 +279,22 @@ C --> D
 | **Alternative Domains** | None |
 | **Status**  | Active | 
 | **Usage** | Official communications from TIOF members both internally and externally | 
+
+
+
+
+|  **Email**  | [Contact@TheIOFoundation.org](mailto://Contact@TheIOFoundation.org) | [Media@TheIOFoundation.org](mailto://Media@TheIOFoundation.org) | 
+|----------------|-------------------------------|-------------------------------|
+| **Alternative URLs** | None | None |
+| **Short URL** | None | None |
+| **Full URL** | None | None |
+| **Status**  | Active | Active |
+| **Usage** | Shorten URLs related to TIOF and its projects | Shorten URLs related to other organizations or projects that TIOF supports | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMTY2OTMwLDkxNDMzMTI3MSwtNzQ0MD
-U4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4ODUw
-LDIwMTM2MTUxMTAsLTIwMzMzMDI4ODYsLTEzMDA5NzEwNjAsMz
-Q2MDg4NzQzLC0xNzQ4MDQwNzAsLTM5MjI2OTcyMSwtMTI4MjMy
-MTY5OSwxMDMwMjkxNzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ
-==
+eyJoaXN0b3J5IjpbMTY2ODAzMDUyMiwxNTMxNjY5MzAsOTE0Mz
+MxMjcxLC03NDQwNTg4MSwtOTM1MTUxNDA5LC01NjE4MTI0MzUs
+LTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMjAzMzMwMjg4NiwtMT
+MwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5
+NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLD
+E4MjQzMzc0NF19
 -->
