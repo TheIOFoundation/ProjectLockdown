@@ -243,9 +243,21 @@ C --> D
 | **S** | 100 | 50 | 87 | 79 | 0 |
 | **L** | 74 | 62 | 62 | 63 | 80 |
 | **Hex** | #7AAEFF| #6FCF97| #F2994A| #EB5757| #CCCCCC |
+
+
+
+
+
+|  **URL**  | PLD Lock | 
+|----------------|-------------------------------|
+| **Alternative URLs** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20T%20HiRes%20XXX%20v1.0.png" width ="100px" /> |
+| **ShortURL** | PNG | SVG | PNG | SVG | 
+|  **Status**  |  |  |  |  |
+
+| **Usage** | | 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMzYxNTExMCwtMjAzMzMwMjg4NiwtMT
-MwMDk3MTA2MCwzNDYwODg3NDMsLTE3NDgwNDA3MCwtMzkyMjY5
-NzIxLC0xMjgyMzIxNjk5LDEwMzAyOTE3ODEsNTgwODY2ODUxLD
-E4MjQzMzc0NF19
+eyJoaXN0b3J5IjpbOTIwNjkzODMwLDIwMTM2MTUxMTAsLTIwMz
+MzMDI4ODYsLTEzMDA5NzEwNjAsMzQ2MDg4NzQzLC0xNzQ4MDQw
+NzAsLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMDMwMjkxNzgxLD
+U4MDg2Njg1MSwxODI0MzM3NDRdfQ==
 -->
