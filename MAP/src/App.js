@@ -96,50 +96,7 @@ function App() {
     }
   }, [selectedDate, endDate, startDate])
 
-  useEffect(() => {
-    console.log('Selected date', selectedDate)
-  }, [selectedDate])
 
-  useEffect(() => {
-    console.log('Player state', playerState)
-  }, [playerState])
-
-  useEffect(() => {
-    const formattedSelectedDate = new Date(selectedDate)
-
-    if (playerState === PLAYING) {
-      var loop = setInterval(() => {
-        if (playerState === PAUSED || formattedSelectedDate === endDate) {
-          console.log('Stopped')
-          clearInterval(loop)
-        } else {
-          console.log('Still looping')
-          setSelectedDate(
-            format(addDays(formattedSelectedDate, 1), 'yyyy-MM-dd')
-          )
-        }
-      }, playSpeed)
-    }
-
-    return () => clearInterval(loop)
-  }, [playerState, selectedDate, endDate])
-
-  useEffect(() => {
-    const darkModePreference = window.localStorage.getItem('darkmode')
-
-    if (!darkModePreference) {
-      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches)
-      document.getElementsByTagName('html')[0].classList.add('dark')
-      window.localStorage.setItem('darkmode', 'true')
-    }
-
-    if (darkModePreference === 'true') {
-      document.getElementsByTagName('html')[0].classList.add('dark')
-      setIsDark(true)
-    } else if (darkModePreference === 'false') {
-      setIsDark(false)
-    }
-  }, [])
 
   useEffect(() => {
     let date = startDate
