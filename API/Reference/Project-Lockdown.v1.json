@@ -31,7 +31,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Environment"
+                  "items": {
+                    "$ref": "#/components/schemas/Environment"
+                  }
                 },
                 "examples": {
                   "example-environment": {
@@ -9906,7 +9908,7 @@
         }
       ]
     },
-    "/Territories/{PLDCode}/{Depth}": {
+    "/Territories/{PLDCode}/{Depth}/{Format}": {
       "get": {
         "summary": "🚧 Territories",
         "responses": {
@@ -11232,7 +11234,11 @@
         "tags": [
           "Endpoints"
         ],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
         "operationId": "get-DataSetLayers",
         "description": "Handles DataSet Layers\n\n\nGet\nParams\nDSLUID <> 0 \nReturns the DSL (DSEs only, never Snapshots) data\n\nDSLUID = 0\nReturns all the DSLs definition data (not DSEs)\n\n\n\n\n"
       }
@@ -11243,7 +11249,11 @@
         "tags": [
           "Endpoints"
         ],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
         "operationId": "get-Origins",
         "description": "Handles Origins\n\nParams\nTerritoryUID\nReturns all the Origins for a given Territory\n\nDSLUID\nReturns all the Origins used in a given DSL\n\n\n"
       }
@@ -11254,7 +11264,11 @@
         "tags": [
           "Endpoints"
         ],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
         "operationId": "get-Sources",
         "description": "Handles Sources\n\n\nParams\nOriginUID\nReturns all Sources obtained from a Source\n\nDSLUID\nReturns all Sources used in a given DSL\n\n\n\n\n\n"
       }
@@ -11265,7 +11279,11 @@
         "tags": [
           "Endpoints"
         ],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
         "operationId": "get-DataSetEntries",
         "description": "Handles DataSetEntries\n(The actual encoding of a Source)\n\n\nParams\nSourceUID\nReturns the DSE for a specific SourceUID\n\nDSLUID\nReturns ALL the DSEs for a specific DSLUID\n\n\n"
       }
@@ -17866,7 +17884,18 @@
         }
       }
     },
-    "securitySchemes": {},
+    "securitySchemes": {
+      "API Key - 1": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "query"
+      },
+      "API Key - 2": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "query"
+      }
+    },
     "responses": {
       "test": {
         "description": "Example response test",
