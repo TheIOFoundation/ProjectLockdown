@@ -2,12 +2,7 @@ export const checkLocalStorage = () => {
   const iso2 = localStorage.getItem("iso2");
   const country = localStorage.getItem("country");
   console.log("Checking localStrorage");
-  if(iso2 && country) {
-    return true;
-  }
-  else {
-    return false;
-  }
+  return iso2 && country;
 }
 
 
