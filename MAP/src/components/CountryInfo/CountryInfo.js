@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import isSameDay from 'date-fns/isSameDay'
 import './CountryInfo.css'
 import { useTranslation } from 'react-i18next'
@@ -27,7 +27,6 @@ import {
 } from '../../assets/icons/icons.js'
 import { countryInfoStyles, tabStyles, reports } from './CountryInfo.styles.js'
 
-import { useState } from 'react'
 import { getCoronaData, getCoronaDetailService } from '../../services/coronaTrackerService'
 
 
@@ -38,13 +37,6 @@ const TRAVEL = {
   4: 'UNCLEAR',
   5: 'NA',
 }
-
-// const MEASURE_VALUES = {
-//   1: 'YES',
-//   2: 'PARTIAL',
-//   3: 'NO',
-//   4: 'UNCLEAR',
-// }
 
 const TRAVELTYPE = ['Land', 'Flight', 'Sea']
 
