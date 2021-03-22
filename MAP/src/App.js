@@ -40,13 +40,7 @@ const playerStates = {
 const getDaysDiff = (date1, date2) => {
   var formattedDate1 = new Date(date1)
   var formattedDate2 = new Date(date2)
-
-  // To calculate the time difference of two dates
-  var Difference_In_Time = formattedDate2.getTime() - formattedDate1.getTime()
-
-  // To calculate the no. of days between two dates
-  var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24)
-  return Difference_In_Days
+  return (formattedDate2.getTime() - formattedDate1.getTime()) / (1000 * 3600 * 24)
 }
 const { PLAYING, PAUSED } = playerStates
 
