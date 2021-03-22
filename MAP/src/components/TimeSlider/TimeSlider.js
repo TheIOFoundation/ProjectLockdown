@@ -435,36 +435,24 @@ const popBtn = css`
   }
 `;
 const firstDayDefaultOffset = 7 * 5;
-// const desktopRange = 80;
 const mobileRange = 70;
 
-// const widthSpaces = [7.5, 16, 24.5, 33, 41.5, 50, 58.5, 67, 75.5, 84, 94];
 let languages = false;
 const TimeSlider = (props) => {
   const [currentDateValue, setCurrentDateValue] = useState(
     firstDayDefaultOffset
-    // props.currentSelectedDay
   );
 
   const {
     currentSelectedDay,
     setCurrentSelectedDay,
     firstDay,
-    // setFirstDay,
     lastDay,
-    // setLastDay,
     days,
   } = props;
-  // const [currentPosition, setCurrentPosition] = useState(24.5);
   const [datePickerPosition, setDatePickerPosition] = useState("left");
   const [showDatePicker, setShowDatePicker] = useState(false);
-  // const [currentSelectedDay, setCurrentSelectedDay] = useState("");
-  // const [firstDay, setFirstDay] = useState("");
-  // const [lastDay, setLastDay] = useState("");
   const [currentSliderRange, setCurrentSliderRange] = useState([]);
-  // const [currentRange, setCurrentRange] = useState(mobileRange);
-  // const [isMobile, setIsMobile] = useState(false);
-  // const [daysRange, setDaysRange] = useState(70);
 
   const currentRange = mobileRange;
 
@@ -526,43 +514,6 @@ const TimeSlider = (props) => {
   useEffect(() => {
     setCurrentSliderRange(days);
   }, [days]);
-  // console.log(days, "day in useEffect TIMESLIDER")
-
-  // useEffect(() => {
-  //   return () => {
-  //     let width = window.innerWidth || window.clientWidth;
-  //     // let isMobileWidth = false;
-  //     let daysRangeCount = 80;
-  //     if (width <= 960) {
-  //       // isMobileWidth = true;
-  //       daysRangeCount = 70;
-  //     }
-  //     // setIsMobile(isMobileWidth);
-  //     setDaysRange(daysRangeCount);
-  //   };
-  // });
-
-  // const onPressKey = e => {
-  //   let inputRange = range.current;
-  //   switch (e.code) {
-  //     case 'ArrowLeft':
-  //       e.preventDefault();
-  //       if (range.current.value > 0) {
-  //         range.current.value = range.current.value - 1;
-  //         onSliderChange({ target: { value: range.current.value } });
-  //       }
-  //       break;
-  //     case 'ArrowRight':
-  //       e.preventDefault();
-  //       if (range.current.value < currentRange - 1) {
-  //         range.current.value = Number(range.current.value) + 1;
-  //         onSliderChange({ target: { value: range.current.value } });
-  //       }
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
   const onSliderChange = (e) => {
     const sliderDOM = dateRef.current;
     const rangeDOM = range.current;
@@ -571,12 +522,8 @@ const TimeSlider = (props) => {
     let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
     let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
     let stepsWidth = rangeDOM.offsetWidth / currentRange;
-    // let newPosition = widthSpaces[newValue];
     sliderDOM.style.left = `${finalWidth + stepsWidth * newValue}px`;
-    // sliderDOM.style.transform = `translate(${finalWidth + stepsWidth * (newValue+1)}px, 0)`;
     setCurrentDateValue(newValue);
-    // setCurrentSelectedDay(newValue)
-    // setCurrentPosition(newPosition);
     console.log(newValue, "newValue in TIMESLIDER")
     setCurrentSelectedDay(
       toSliderString(
