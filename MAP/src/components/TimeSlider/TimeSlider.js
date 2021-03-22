@@ -460,31 +460,6 @@ const TimeSlider = (props) => {
   const range = useRef();
   const container = useRef();
 
-  const toSliderStringShort = (date, currentLanguage) => {
-    let isoLanguage = currentLanguage;
-    if (currentLanguage !== undefined) {
-      isoLanguage = currentLanguage.replace("-", "");
-      if (isoLanguage === "ar") isoLanguage = "arSA";
-      if (isoLanguage === "zhHK") isoLanguage = "zhTW";
-      if (
-        languages[isoLanguage] === undefined ||
-        languages[isoLanguage] === null
-      ) {
-        isoLanguage = currentLanguage.split("-")[0];
-        if (
-          languages[isoLanguage] === undefined ||
-          languages[isoLanguage] === null
-        ) {
-          isoLanguage = "enUS";
-        }
-      }
-    } else {
-      isoLanguage = "enUS";
-    }
-    return format(date, "dd MMM", {
-      locale: languages ? languages[isoLanguage] : enUS,
-    });
-  };
   const toSliderString = (date, currentLanguage) => {
     let isoLanguage = "enUS";
     if (currentLanguage) {
@@ -633,7 +608,7 @@ const TimeSlider = (props) => {
           className={`first ${tooltipCss}`}
           onClick={(e) => onBtnClick("left")}
         >
-          <IconBtn /> {toSliderStringShort(new Date(currentSelectedDay), 'en')}
+          <IconBtn /> {toSliderString(new Date(currentSelectedDay), 'en')}
         </span>
         <button
           onClick={(e) => onBtnClick("left")}
@@ -650,7 +625,7 @@ const TimeSlider = (props) => {
           value={currentDateValue}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
-          {toSliderStringShort(new Date(lastDay), "en")}
+          {toSliderString(new Date(lastDay), "en")}
         </span>
       </div>
     </div>
