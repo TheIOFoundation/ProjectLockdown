@@ -203,6 +203,12 @@ const CountryInfo = (props) => {
     
   }, [props])
 
+  let firstLink = territoryData
+      ? `https://docs.google.com/a/theiofoundation.org/spreadsheets/d/1mVyQxxLxAF3E1dw870WHXTOLgYzmumojvzIekpgvLV0/edit#gid=${territoryData.id}`
+      : 'tiof.click/LockdownData'
+  let region = territoryData ? territoryData.region : 'REGION'
+  let territory = territoryData ? territoryData.territory : 'TERRITORY'
+
   return (
     <div className={`${props.dark ? 'dark' : ''} CountryInfo`}>
       <div
@@ -263,11 +269,7 @@ const CountryInfo = (props) => {
                 className='ld-link'
                 target='_blank'
                 rel='noopener noreferrer'
-                href={
-                  territoryData
-                    ? `https://docs.google.com/a/theiofoundation.org/spreadsheets/d/1mVyQxxLxAF3E1dw870WHXTOLgYzmumojvzIekpgvLV0/edit#gid=${territoryData.id}`
-                    : 'tiof.click/LockdownData'
-                }
+                href={firstLink}
               >
                 {/* {_.i18n.t(`tdo.contributionLinks.firstLink`)} */}
               </a>
@@ -275,11 +277,7 @@ const CountryInfo = (props) => {
                 className='ld-link'
                 target='_blank'
                 rel='noopener noreferrer'
-                href={`https://docs.google.com/forms/d/e/1FAIpQLSfDWe2qlzUnd3e-YYspMzT9adUswDEYIdJMb7jz7ule34-yiA/viewform?entry.333088473=${
-                  territoryData ? territoryData.region : 'REGION'
-                }&entry.1690056710=${
-                  territoryData ? territoryData.territory : 'TERRITORY'
-                }`}
+                href={`https://docs.google.com/forms/d/e/1FAIpQLSfDWe2qlzUnd3e-YYspMzT9adUswDEYIdJMb7jz7ule34-yiA/viewform?entry.333088473=${region}&entry.1690056710=${territory}`}
               >
                 {t(`tdo.contributionLinks.secondLink`)}
               </a>
