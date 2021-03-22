@@ -3,7 +3,6 @@ import css from "csz";
 import DatePicker from "../DatePicker/DatePicker";
 import { calendar } from "../../assets/icons/icons.js";
 import format from "date-fns/format";
-// import addDays from "date-fns/addDays";
 import { enUS } from "date-fns/locale";
 import { addDays } from "date-fns";
 
@@ -637,28 +636,9 @@ const TimeSlider = (props) => {
     setCurrentSliderRange(days);
     setCurrentSelectedDay(toSliderString(date, props.i18n.locale));
     submitChanges();
-    // setFirstDay(format(new Date(days[0]), 'yyyy-MM-dd'))
-    // setLastDay(format(new Date(days[days.length -1]), 'yyyy-MM-dd'))
-    // setFirstDay(days[0])
-    // setLastDay(days[days.length - 1])
-    // setLastDay(toSliderStringShort(days[days.length - 1], props.i18n.locale))
     setCurrentDateValue(datePickerPosition === "left" ? 0 : currentRange - 1);
-    // setCurrentPosition(24.5);
     submitChanges();
   };
-  // const updateDates = previousState => {
-  //   const { currentDateValue, currentSliderRange } = previousState;
-  //   setCurrentSelectedDay(
-  //     toSliderString(currentSliderRange[currentDateValue], props.i18n.locale)
-  //   );
-  //   // setFirstDay(toSliderStringShort(currentSliderRange[0], props.i18n.locale))
-  //   // setLastDay(
-  //   //   toSliderStringShort(
-  //   //     currentSliderRange[currentSliderRange.length - 1],
-  //   //     props.i18n.locale
-  //   //   )
-  //   // )
-  // };
 
   const calendarWillClose = () => {
     setDatePickerPosition(datePickerPosition + " hide");
@@ -726,7 +706,6 @@ const TimeSlider = (props) => {
           max={currentRange - 1}
           step="1"
           value={currentDateValue}
-          // defaultValue={35}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
           {toSliderStringShort(new Date(lastDay), "en")}

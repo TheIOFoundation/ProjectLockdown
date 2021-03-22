@@ -25,10 +25,4 @@ Primary.args = {
   i18n: { locale: 'en, en-US' },
 }
 
-// export const Open = Template.bind({});
-// Open.args = {
-//   ...Primary.args,
-//   initialState: { showSearchInput: true },
-// };
-
 export default parameters

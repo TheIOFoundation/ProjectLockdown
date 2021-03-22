@@ -31,10 +31,8 @@ export const mapboxToken =
 export class Map extends React.Component {
   constructor() {
     super();
-    // this.__handleSelect = this.__handleSelect.bind(this);
     this.initMap = this.initMap.bind(this);
     this.updateMap = this.updateMap.bind(this);
-    // this.updateMapLanguage = this.updateMapLanguage.bind(this);
     this.onMapClick = this.onMapClick.bind(this);
     this.onGetResult = this.onGetResult.bind(this);
 
@@ -104,7 +102,6 @@ export class Map extends React.Component {
     let map = new mapboxgl.Map({
       accessToken: mapboxToken,
       container: this.ref,
-      // style: 'mapbox://styles/jfqueralt/ck9hi7wl616pz1iugty1cpeiv?optimize=true',
       style:
         'mapbox://styles/jfqueralt/ckavedmnk253z1iphmsy39s3r?optimize=true',
       center: [this.state.lng, this.state.lat],
@@ -124,10 +121,6 @@ export class Map extends React.Component {
     geocoder.on('results', this.onGetResult);
     geocoder.addTo('#mapBlank');
     window.map = map;
-    // we dont need to remap small mapData
-    // const localData = mapData.features.map((f) => {
-    //   return { ISO: f.properties.iso2, lockdown_status: f.properties.lockdown_status, name: f.properties.NAME };
-    // });
 
     const localData = mapData[this.props.selectedDate];
 
@@ -235,8 +228,6 @@ export class Map extends React.Component {
             'fill-color': [
               'case',
               ['!=', ['feature-state', 'kind'], null],
-              // ['to-color', ['get', ['feature-state', 'color']]],
-              // 'rgba(171,56,213,0.5)',
               [
                 'match',
                 ['feature-state', 'kind'],
@@ -423,16 +414,11 @@ export class Map extends React.Component {
         country: countryName,
         wikidata: wikidata,
       });
-      // router.setSearchParam('wikidata', wikidata);
-      // router.setSearchParam('country', countryName);
-      // router.setSearchParam('iso2', this.state.lastCountry.iso2);
     } else {
       router.setLocalStorage({
         iso2 : this.state.lastCountry.iso2,
         country: this.state.lastCountry.name,
       });
-      // router.setSearchParam('country', this.state.lastCountry.country);
-      // router.setSearchParam('iso2', this.state.lastCountry.iso2);
     }
   }
 
