@@ -486,25 +486,20 @@ const TimeSlider = (props) => {
     });
   };
   const toSliderString = (date, currentLanguage) => {
-    let isoLanguage = currentLanguage;
+    let isoLanguage = "enUS";
     if (currentLanguage) {
       isoLanguage = currentLanguage.replace("-", "");
-      if (isoLanguage === "ar") isoLanguage = "arSA";
-      if (isoLanguage === "zhHK") isoLanguage = "zhTW";
-      if (
-        languages[isoLanguage] === undefined ||
-        languages[isoLanguage] === null
-      ) {
-        isoLanguage = currentLanguage.split("-")[0];
-        if (
-          languages[isoLanguage] === undefined ||
-          languages[isoLanguage] === null
-        ) {
-          isoLanguage = "enUS";
-        }
+      if (isoLanguage === "ar"){
+        isoLanguage = "arSA";
+      } else if (isoLanguage === "zhHK") {
+        isoLanguage = "zhTW";
       }
-    } else {
-      isoLanguage = "enUS";
+    }
+    if (languages[isoLanguage] === undefined || languages[isoLanguage] === null) {
+      isoLanguage = currentLanguage.split("-")[0];
+      if (languages[isoLanguage] === undefined || languages[isoLanguage] === null) {
+        isoLanguage = "enUS";
+      }
     }
     return format(date, "dd-MMMM-yyyy", {
       locale: languages ? languages[isoLanguage] : enUS,
