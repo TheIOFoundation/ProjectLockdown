@@ -2,11 +2,6 @@ import React, { useEffect, useState } from 'react'
 import isSameDay from 'date-fns/isSameDay'
 import './CountryInfo.css'
 import { useTranslation } from 'react-i18next'
-
-// import {
-//   coronaTrackerService,
-// } from '../../services/services'
-
 import {
   home,
   citymovement,
@@ -171,16 +166,6 @@ const CountryInfo = (props) => {
   const [countryDetails, 
     // setCountryDetails
   ] = useState()
-  // const [populationData, setPopulationData] = useState(
-  //   {
-  //     iso2: props.iso2,
-  //     date: props.date,
-  //     startDate: props.startDate,
-  //     endDate: props.endDate,
-  //     daysRange: props.daysRange,
-  //   }
-  // )
-
   const { t } = useTranslation()
 
   
@@ -224,10 +209,7 @@ const CountryInfo = (props) => {
             onClick={() => changeTab(tab.id)}
             className={`tab ${currentTab === tab.id ? 'active' : ''}`}
           >
-            {/* tdo.tabs.{tab.name}.name */}
             {tab.name}
-
-            {/* {i18n.t(`tdo.tabs.${tab.name}.name`)} */}
           </div>
         ))}
         <button onClick={props.onClose}>{closeIcon}</button>
@@ -250,7 +232,6 @@ const CountryInfo = (props) => {
             coronaData={coronaData?.data?.find((corona) =>
               isSameDay(new Date(corona.last_updated), props.date)
             )}
-            // populationData={populationData?.data[props.iso2]}
             countryDetails={countryDetails}
             i18n={i18n}
           />
@@ -271,7 +252,6 @@ const CountryInfo = (props) => {
                 rel='noopener noreferrer'
                 href={firstLink}
               >
-                {/* {_.i18n.t(`tdo.contributionLinks.firstLink`)} */}
               </a>
               <a
                 className='ld-link'
@@ -281,9 +261,6 @@ const CountryInfo = (props) => {
               >
                 {t(`tdo.contributionLinks.secondLink`)}
               </a>
-              {/* <!-- <a className="ld-link" target="_blank" rel="noopener noreferrer" href="#" target="_blank">
-            ${_.i18n.t(`tdo.contributionLinks.thirdLink`)}
-          </a> --> */}
             </div>
           </>
         )}
@@ -294,14 +271,7 @@ const CountryInfo = (props) => {
 
 const CountryDetails = (props) => {
   let { i18n, t } = props
-  let {
-    coronaData,
-    // populationData,
-    // countryDetails,
-    country,
-    date,
-    dark,
-  } = props
+  let { coronaData, country, date, dark } = props
 
   return (
     <div
@@ -313,57 +283,40 @@ const CountryDetails = (props) => {
       <h2 class='ld-font-subheader'>
         <span>{country}</span>
         <span>{date}</span>
-
-        {/* <span>{format(date, "dd/MM/yyyy")}</span> */}
       </h2>
       <dl className='data'>
         <div className='data-entry is-half'>
           <dt>{t('tdo.tabs.dailyLife.stats.population')}</dt>
           <dd className='data-value'>
             1,352,617,328
-            {/* {!isNaN(Number(populationData?.Population))
-              ? Number(populationData?.Population).toLocaleString() ?? "Error"
-              : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
         <div className='data-entry is-half'>
           <dt>{t('tdo.tabs.dailyLife.stats.max_assembly')}</dt>
           <dd className='data-value'>
             N/A
-            {/* {countryDetails?.max_gathering ??
-              i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
         <div className='data-entry is-third'>
           <dt>{t('tdo.tabs.dailyLife.stats.cases')}</dt>
           <dd className='data-value'>
             10,747,091
-            {/* {coronaData?.total_confirmed
-              ? Number(coronaData?.total_confirmed).toLocaleString()
-              : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
         <div className='data-entry is-third'>
           <dt>{t('tdo.tabs.dailyLife.stats.recoveries')}</dt>
           <dd className='data-value'>
             10,423,125
-            {/* {coronaData?.total_recovered
-              ? Number(coronaData?.total_recovered).toLocaleString()
-              : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
         <div className='data-entry is-third'>
           <dt>{t('tdo.tabs.dailyLife.stats.deaths')}</dt>
           <dd class='data-value'>
             {coronaData?.total_deaths}
-            {/* {coronaData?.total_deaths
-              ? Number(coronaData?.total_deaths).toLocaleString()
-              : i18n.t("tdo.tabs.dailyLife.noResults")} */}
           </dd>
         </div>
       </dl>
       <Legends dark={props.dark} t={t} i18n={i18n} tab='dailyLife' />
-      {/* {countryDetails.status === "success" ? ( */}
       <>
         <h2 className='ld-font-subheader last'>
           {t('tdo.tabs.dailyLife.subtitle')}
@@ -380,8 +333,6 @@ const CountryDetails = (props) => {
                   {m.icon}
                 </div>
                 <span id={`measure-label-${m.id}`} className='measure-label'>
-                  {/* {i18n.t(`tdo.tabs.dailyLife.measures.${m.translationKey}`)} */}
-
                   {t(`tdo.tabs.dailyLife.measures.${m.translationKey}`)}
                 </span>
               </div>
@@ -393,20 +344,13 @@ const CountryDetails = (props) => {
   )
 }
 const TransportDetails = (props) => {
-  let { 
-    // countryDetails,
-     t, i18n } = props
+  let { t, i18n } = props
   return (
     <>
-      {/* hey  */}
-      {/* {countryDetails.status === "success" ? ( */}
-      {/* <> */}
       <br />
       <br />
       <Legends dark={props.dark} t={t} i18n={i18n} tab='mobility' />
       <h2 className='ld-font-subheader last transport'>
-        {/* {i18n.t("tdo.tabs.mobility.subtitle")}
-         */}
         {/* Transport Restrictions Text */}
         {t('tdo.tabs.mobility.subtitle')}
       </h2>
@@ -424,9 +368,6 @@ const TransportDetails = (props) => {
             <div className='ld-travel' key={index}>
               <dt>
                 {t(`tdo.tabs.mobility.measures.${TRANSLATIONS[key].id}`)}
-                {/* {i18n.t( */}
-                {/* {TRANSLATIONS[key].text} */}
-                {/* )} */}
               </dt>
               <div className='ld-travel--values'>
                 {Object.keys(TRANSLATIONS[key]).map((val, i) => (
@@ -453,12 +394,7 @@ const TransportDetails = (props) => {
 }
 
 const Legends = (props) => {
-  // console.log(props);
-  let { 
-    // i18n, 
-    t, 
-    // tab, 
-    dark } = props
+  let { t, dark } = props
   return (
     <div
       style={{
