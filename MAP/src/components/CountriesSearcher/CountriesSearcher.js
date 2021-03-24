@@ -85,7 +85,7 @@ function useGeocoderHook(i18n, map, setGeocoder, setResults, setGeoResult) {
         setGeoResult({});
       }
     }
-  }, []);
+  }, [i18n, map, setGeoResult, setGeocoder, setResults]);
 }
 
 function useSearch(
@@ -152,7 +152,7 @@ function useSearch(
         }
       }
     }
-  });
+  }, [geoResult, map, mouseHover, setResults, setGeoResult, setParsedText, setShowSearchInput, showSearchInput]);
 }
 
 export default CountriesSearcher;

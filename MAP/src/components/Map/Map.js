@@ -17,6 +17,9 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 
+//import LocalStorage Functions
+import * as router from "../../router";
+
 /**
  * Primary UI component for user interaction
  */
@@ -28,11 +31,9 @@ export const mapboxToken =
 export class Map extends React.Component {
   constructor() {
     super();
-    // this.__handleSelect = this.__handleSelect.bind(this);
     this.initMap = this.initMap.bind(this);
     this.updateMap = this.updateMap.bind(this);
-    // this.updateMapLanguage = this.updateMapLanguage.bind(this);
-    // this.onMapClick = this.onMapClick.bind(this);
+    this.onMapClick = this.onMapClick.bind(this);
     this.onGetResult = this.onGetResult.bind(this);
 
     let coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
@@ -101,7 +102,6 @@ export class Map extends React.Component {
     let map = new mapboxgl.Map({
       accessToken: mapboxToken,
       container: this.ref,
-      // style: 'mapbox://styles/jfqueralt/ck9hi7wl616pz1iugty1cpeiv?optimize=true',
       style:
         'mapbox://styles/jfqueralt/ckavedmnk253z1iphmsy39s3r?optimize=true',
       center: [this.state.lng, this.state.lat],
@@ -121,10 +121,6 @@ export class Map extends React.Component {
     geocoder.on('results', this.onGetResult);
     geocoder.addTo('#mapBlank');
     window.map = map;
-    // we dont need to remap small mapData
-    // const localData = mapData.features.map((f) => {
-    //   return { ISO: f.properties.iso2, lockdown_status: f.properties.lockdown_status, name: f.properties.NAME };
-    // });
 
     const localData = mapData[this.props.selectedDate];
 
@@ -232,8 +228,6 @@ export class Map extends React.Component {
             'fill-color': [
               'case',
               ['!=', ['feature-state', 'kind'], null],
-              // ['to-color', ['get', ['feature-state', 'color']]],
-              // 'rgba(171,56,213,0.5)',
               [
                 'match',
                 ['feature-state', 'kind'],
@@ -409,17 +403,37 @@ export class Map extends React.Component {
   }
 
   onGetResult(results) {
-    // let { features } = results;
-    // if (features[0]) {
-    //   let countryName = features[0].text;
-    //   let wikidata = features[0].properties.wikidata;
-    //   // router.setSearchParam('wikidata', wikidata);
-    //   // router.setSearchParam('country', countryName);
-    //   // router.setSearchParam('iso2', this.state.lastCountry.iso2);
-    // } else {
-    //   // router.setSearchParam('country', this.state.lastCountry.country);
-    //   // router.setSearchParam('iso2', this.state.lastCountry.iso2);
-    // }
+    let { features } = results;
+
+    if (features[0]) {
+      let countryName = features[0].text;
+      let wikidata = features[0].properties.wikidata;
+
+      router.setLocalStorage({
+        iso2 : this.state.lastCountry.iso2,
+        country: countryName,
+        wikidata: wikidata,
+      });
+    } else {
+      router.setLocalStorage({
+        iso2 : this.state.lastCountry.iso2,
+        country: this.state.lastCountry.name,
+      });
+    }
+  }
+
+  onMapClick(e) {
+    let { map, lookupTable } = this.state;
+    const features = map.queryRenderedFeatures(e.point, {
+      layers: ['admin-0-fill'],
+    });
+    this.state.geocoder.query(lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name);
+    this.setState({
+      lastCountry: {
+        country: lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
+        iso2: features[0].properties.iso_3166_1,
+      },
+    });
   }
 
   async componentDidMount() {
@@ -483,8 +497,8 @@ export class Map extends React.Component {
         <div
           ref={ref => (this.ref = ref)}
           id="map"
+          onClick={() => this.props.onOpen(this.state.lastCountry)}
           className="map-container"
-          onClick={this.props.onOpen}
           ></div>
         <CountriesSearcher
           dark={this.props.dark}
