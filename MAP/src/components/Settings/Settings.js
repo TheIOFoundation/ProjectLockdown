@@ -4,6 +4,8 @@ import { setFavIcon } from '../../utils/setFavIcon.js';
 import '../pwa-update-available';
 import './Settings.scss';
 
+import { useTranslation } from 'react-i18next';
+
 export function Settings({ 
   onClose, 
   locale, 
@@ -12,6 +14,10 @@ export function Settings({
 }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
   
+  const { t , 
+    // i18n
+   } = useTranslation();
+
   function toggleDarkmode() {
     if (document.getElementsByTagName('html')[0].classList.contains('dark')) {
       document.getElementsByTagName('html')[0].classList.remove('dark');
@@ -43,16 +49,16 @@ export function Settings({
   return (
     <div className="settings">
       <button onClick={toggleDarkmode} className="ld-button">
-        {locale.t('menu.userPreferenceSection.theme.action')}
+        {t('menu.userPreferenceSection.theme.action')}
         {darkMode
-          ? locale.t('menu.userPreferenceSection.theme.light')
-          : locale.t('menu.userPreferenceSection.theme.dark')}
+          ? t('menu.userPreferenceSection.theme.light')
+          : t('menu.userPreferenceSection.theme.dark')}
       </button>
 
       {pwaUpdateAvailable ? (
         <pwa-update-available>
           <button onClick={() => onClose()} className="ld-button">
-            {locale.t('menu.userPreferenceSection.app.update')}
+            {t('menu.userPreferenceSection.app.update')}
           </button>
         </pwa-update-available>
       ) : (

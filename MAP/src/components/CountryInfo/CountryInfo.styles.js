@@ -126,14 +126,14 @@ export const reports = css`
 `;
 export const countryInfoStyles = css`
   .countryInfo.loader {
-    background-color: #333333 !important;
+    // background-color: #333333 ;
     .dark & {
       background-color: var(--ld-bg) !important;
     }
   }
   & {
-    // background-color: var(--ld-bg);
-    background-color: #333333 !important;
+    background-color: var(--ld-bg);
+    // background-color: #333333 !important;
 
     color: var(--ld-text);
     padding: 20px 30px 30px 30px;
