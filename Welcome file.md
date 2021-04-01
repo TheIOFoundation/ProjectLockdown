@@ -325,15 +325,15 @@ C --> D
 
 The traditional understanding of data as separate entities from their users is anchored in past perceptions and the use of legacy technologies. The reality is much different: The data representing users (and of which they should have control of consent) is intimately and inextricably linked to them; it models them, creating an accurate representation that loses all value should that contextualization ever be severed.
 
-The direct consequence is that a user’s data IS the user itself.
+*The direct consequence is that a user’s data IS the user itself.*
 
-This proposition has severe consequences as the same duties of care that apply by constitutional laws to citizens should equally apply to the data representing them. In this sense, the necessary infrastructures that governments put in place to protect their citizens (hospitals, highways, the judiciary,...) should also be extended to the management and protection of their data with a national cloud system based on open standards and governed by a framework on Digital Rights.
+This understanding has severe consequences as the same duties of care that apply by constitutional laws to citizens should equally apply to the data representing them. In this sense, the necessary infrastructures that governments put in place to protect their citizens (hospitals, highways, the judiciary,...) should also be extended to the management and protection of their data with a national cloud system based on open standards and governed by a framework on Digital Rights.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTE3MjA0MTgsLTE3NzIxODQ2NzYsMT
-kyNTU1NDc3NSwtNTcwNjU0NDA4LC0yMDgxMDkzNDg1LC0xMDgy
-NTUxMjAzLC0yMDAxMDg4ODMxLDc4MTY2OTQ3MywxNjk2NjEwMD
-Q0LC02NTYzMzI2NTcsNDkxNTY3NjgwLC04MDkwNTE0MjAsLTUw
-NDgxMjU1NSw1OTU4MDk5MSwtOTE0MjkzMTI1LC0xNTM0NjQ2MD
-A3LC0xOTUwMjAxMzk5LDE5MzE3MDE1NTgsLTE3OTEyMjA4OTcs
-MTUzMTY2OTMwXX0=
+eyJoaXN0b3J5IjpbMTQ4MjU4NTg1MCwtMTc3MjE4NDY3NiwxOT
+I1NTU0Nzc1LC01NzA2NTQ0MDgsLTIwODEwOTM0ODUsLTEwODI1
+NTEyMDMsLTIwMDEwODg4MzEsNzgxNjY5NDczLDE2OTY2MTAwND
+QsLTY1NjMzMjY1Nyw0OTE1Njc2ODAsLTgwOTA1MTQyMCwtNTA0
+ODEyNTU1LDU5NTgwOTkxLC05MTQyOTMxMjUsLTE1MzQ2NDYwMD
+csLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMTc5MTIyMDg5Nywx
+NTMxNjY5MzBdfQ==
 -->
