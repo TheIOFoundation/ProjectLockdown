@@ -328,8 +328,17 @@ C --> D
 End Remedy represents the embodiment of the proactive planification, architecture and implementation of all necessary mechanisms, both in policy and technology, to avoid grievances to ever happen during the use of a product or a service, in turn minimizing the need for legal actions. In the context of Data Protection Laws, it implies the design of policies that protect Data Subjects and the implementation of such provisions in a transparent, trustworthy and safe manner where legal remedies, while defined, are employed as a safety net.
 
 A superior design is such that it minimizes grievances.
+
+No 
+
+Rights by Design is the approach of Policies and Tech being designed around the Rights of citizens to observe them in their planification, architecture and implementation, transparently for all stakeholders.
+
+It's the embodiment of all the above, somehow. It's the overarching idea, to design systems that are designed with Rights at their core.
+Incidentally, it's a concept that can be applied beyond tech.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIzNTgzODEyLC0yMDAxMDg4ODMxLDc4MT
+eyJoaXN0b3J5IjpbLTYzMTM0MDM1LC0yMDAxMDg4ODMxLDc4MT
 Y2OTQ3MywxNjk2NjEwMDQ0LC02NTYzMzI2NTcsNDkxNTY3Njgw
 LC04MDkwNTE0MjAsLTUwNDgxMjU1NSw1OTU4MDk5MSwtOTE0Mj
 kzMTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAxMzk5LDE5MzE3MDE1
