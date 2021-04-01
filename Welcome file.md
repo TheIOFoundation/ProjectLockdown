@@ -333,7 +333,8 @@ A superior design is such that it minimizes grievances.
 *"If it's policy, it's coded."*
 "No policy uncoded behind."
 
-Rights by Design responds to the need for policies and tech to be designed and implemented as one. 
+Rights by Design responds to the need for policies and tech to be designed and implemented as one: For former establishes what is to be respected and the latter makes ensures that the compliance is built in the infrastructure.
+
 
 being designed around the Rights of citizens to observe them in their planning, architecture and implementation in a way that is transparent for all stakeholders.
 
@@ -342,11 +343,11 @@ Incidentally, it's a concept that can be applied beyond tech.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyNTU1NDc3NSwtNTcwNjU0NDA4LC0yMD
-gxMDkzNDg1LC0xMDgyNTUxMjAzLC0yMDAxMDg4ODMxLDc4MTY2
-OTQ3MywxNjk2NjEwMDQ0LC02NTYzMzI2NTcsNDkxNTY3NjgwLC
-04MDkwNTE0MjAsLTUwNDgxMjU1NSw1OTU4MDk5MSwtOTE0Mjkz
-MTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAxMzk5LDE5MzE3MDE1NT
-gsLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkxNDMzMTI3MSwtNzQ0
-MDU4ODFdfQ==
+eyJoaXN0b3J5IjpbLTE2ODg4ODcyMjcsMTkyNTU1NDc3NSwtNT
+cwNjU0NDA4LC0yMDgxMDkzNDg1LC0xMDgyNTUxMjAzLC0yMDAx
+MDg4ODMxLDc4MTY2OTQ3MywxNjk2NjEwMDQ0LC02NTYzMzI2NT
+csNDkxNTY3NjgwLC04MDkwNTE0MjAsLTUwNDgxMjU1NSw1OTU4
+MDk5MSwtOTE0MjkzMTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAxMz
+k5LDE5MzE3MDE1NTgsLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkx
+NDMzMTI3MV19
 -->
