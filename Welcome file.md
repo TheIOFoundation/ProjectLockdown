@@ -331,14 +331,14 @@ A superior design is such that it minimizes grievances.
 
 "
 
-Rights by Design is the approach of Policies and Tech being designed around the Rights of citizens to observe them in their planification, architecture and implementation, transparently for all stakeholders.
+Rights by Design is the approach of Policies and Tech being designed around the Rights of citizens to observe them in their planificati, architecture and implementation, transparently for all stakeholders.
 
 It's the embodiment of all the above, somehow. It's the overarching idea, to design systems that are designed with Rights at their core.
 Incidentally, it's a concept that can be applied beyond tech.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMDU5NjY5MCwtMjAwMTA4ODgzMSw3OD
+eyJoaXN0b3J5IjpbMjEzNjg4MzYzNSwtMjAwMTA4ODgzMSw3OD
 E2Njk0NzMsMTY5NjYxMDA0NCwtNjU2MzMyNjU3LDQ5MTU2NzY4
 MCwtODA5MDUxNDIwLC01MDQ4MTI1NTUsNTk1ODA5OTEsLTkxND
 I5MzEyNSwtMTUzNDY0NjAwNywtMTk1MDIwMTM5OSwxOTMxNzAx
