@@ -329,20 +329,21 @@ End Remedy represents the embodiment of the proactive planification, architectur
 
 A superior design is such that it minimizes grievances.
 
-"
+"No policy is disconnected from its implementation"
+"Policies 
 
-Rights by Design is the approach of Policies and Tech being designed around the Rights of citizens to observe them in their planificati, architecture and implementation, transparently for all stakeholders.
+Rights by Design is the approach of Policies and Tech being designed around the Rights of citizens to observe them in their planning, architecture and implementation in a way that is transparent for all stakeholders.
 
 It's the embodiment of all the above, somehow. It's the overarching idea, to design systems that are designed with Rights at their core.
 Incidentally, it's a concept that can be applied beyond tech.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNjg4MzYzNSwtMjAwMTA4ODgzMSw3OD
-E2Njk0NzMsMTY5NjYxMDA0NCwtNjU2MzMyNjU3LDQ5MTU2NzY4
-MCwtODA5MDUxNDIwLC01MDQ4MTI1NTUsNTk1ODA5OTEsLTkxND
-I5MzEyNSwtMTUzNDY0NjAwNywtMTk1MDIwMTM5OSwxOTMxNzAx
-NTU4LC0xNzkxMjIwODk3LDE1MzE2NjkzMCw5MTQzMzEyNzEsLT
-c0NDA1ODgxLC05MzUxNTE0MDksLTU2MTgxMjQzNSwtMTAyMjAw
-ODg1MF19
+eyJoaXN0b3J5IjpbLTEwODI1NTEyMDMsLTIwMDEwODg4MzEsNz
+gxNjY5NDczLDE2OTY2MTAwNDQsLTY1NjMzMjY1Nyw0OTE1Njc2
+ODAsLTgwOTA1MTQyMCwtNTA0ODEyNTU1LDU5NTgwOTkxLC05MT
+QyOTMxMjUsLTE1MzQ2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcw
+MTU1OCwtMTc5MTIyMDg5NywxNTMxNjY5MzAsOTE0MzMxMjcxLC
+03NDQwNTg4MSwtOTM1MTUxNDA5LC01NjE4MTI0MzUsLTEwMjIw
+MDg4NTBdfQ==
 -->
