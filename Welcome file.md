@@ -317,12 +317,15 @@ C --> D
 
 
 
+
+
+Data-Centric Digital Rights (DCDR) is the advocacy of protecting users' Rights by transparently implementing the regulations that should protect them. As core stakeholders, technologists need to orient themselves through new design and implementation paradigms focused on protecting data. The DCDR Principles put forward by The IO Foundation are concepts that them navigate the intricacies of applying Human and Digital Rights in digital infrastructures, products and services.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzgxNjY5NDczLDE2OTY2MTAwNDQsLTY1Nj
-MzMjY1Nyw0OTE1Njc2ODAsLTgwOTA1MTQyMCwtNTA0ODEyNTU1
-LDU5NTgwOTkxLC05MTQyOTMxMjUsLTE1MzQ2NDYwMDcsLTE5NT
-AyMDEzOTksMTkzMTcwMTU1OCwtMTc5MTIyMDg5NywxNTMxNjY5
-MzAsOTE0MzMxMjcxLC03NDQwNTg4MSwtOTM1MTUxNDA5LC01Nj
-E4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYxNTExMCwtMjAzMzMw
-Mjg4Nl19
+eyJoaXN0b3J5IjpbLTY1NTIyMjMxMyw3ODE2Njk0NzMsMTY5Nj
+YxMDA0NCwtNjU2MzMyNjU3LDQ5MTU2NzY4MCwtODA5MDUxNDIw
+LC01MDQ4MTI1NTUsNTk1ODA5OTEsLTkxNDI5MzEyNSwtMTUzND
+Y0NjAwNywtMTk1MDIwMTM5OSwxOTMxNzAxNTU4LC0xNzkxMjIw
+ODk3LDE1MzE2NjkzMCw5MTQzMzEyNzEsLTc0NDA1ODgxLC05Mz
+UxNTE0MDksLTU2MTgxMjQzNSwtMTAyMjAwODg1MCwyMDEzNjE1
+MTEwXX0=
 -->
