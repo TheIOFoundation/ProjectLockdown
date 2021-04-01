@@ -322,19 +322,20 @@ C --> D
 **Data-Centric Digital Rights** (DCDR) is the advocacy of protecting users' Rights by transparently implementing the regulations that should protect them. As core stakeholders, technologists play a critical role as the next generation of Rights defenders and need to orient themselves through new design and implementation paradigms focused on protecting data. The **DCDR Principles** put forward by The IO Foundation are concepts that help them navigate the intricacies of applying Human and Digital Rights in digital infrastructures, products and services.
 
 
-
-
-The traditional understanding of data as separate entities from their users is anchored in past perceptions and the use of legacy technologies. The reality is much different: The data representing users (and of which they should have control of consent) is intimately and inextricably linked to them; it models them, creating an accurate representation that loses all value should that contextualization ever be severed.
+*"Treat their data as you'd want to be treated."*
+<br/>
+> The traditional understanding of data as separate entities from their users is anchored in past perceptions and the use of legacy technologies. The reality is much different: The data representing users (and of which they should have control of consent) is intimately and inextricably linked to them; it models them, creating an accurate representation that loses all value should that contextualization ever be severed.
 
 *The direct consequence is that a user’s data IS the user itself.*
-
+<br/><br/>
+Note:
 This understanding has crucial consequences as the same duties of care that apply by constitutional laws to citizens should equally apply to the data representing them. In this sense, the necessary infrastructures that governments put in place to protect their citizens (hospitals, highways, the judiciary,...) should also be extended to the management and protection of their data with a national cloud system based on open standards and governed by a framework on Digital Rights.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTIzMzI5NzUsNTM5MzcyMDMxLC0xNz
-cyMTg0Njc2LDE5MjU1NTQ3NzUsLTU3MDY1NDQwOCwtMjA4MTA5
-MzQ4NSwtMTA4MjU1MTIwMywtMjAwMTA4ODgzMSw3ODE2Njk0Nz
-MsMTY5NjYxMDA0NCwtNjU2MzMyNjU3LDQ5MTU2NzY4MCwtODA5
-MDUxNDIwLC01MDQ4MTI1NTUsNTk1ODA5OTEsLTkxNDI5MzEyNS
-wtMTUzNDY0NjAwNywtMTk1MDIwMTM5OSwxOTMxNzAxNTU4LC0x
-NzkxMjIwODk3XX0=
+eyJoaXN0b3J5IjpbNTMxNTczNTM5LDUzOTM3MjAzMSwtMTc3Mj
+E4NDY3NiwxOTI1NTU0Nzc1LC01NzA2NTQ0MDgsLTIwODEwOTM0
+ODUsLTEwODI1NTEyMDMsLTIwMDEwODg4MzEsNzgxNjY5NDczLD
+E2OTY2MTAwNDQsLTY1NjMzMjY1Nyw0OTE1Njc2ODAsLTgwOTA1
+MTQyMCwtNTA0ODEyNTU1LDU5NTgwOTkxLC05MTQyOTMxMjUsLT
+E1MzQ2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMTc5
+MTIyMDg5N119
 -->
