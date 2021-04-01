@@ -333,14 +333,16 @@ A superior design is such that it minimizes grievances.
 *"If it's policy, it's coded."*
 "No policy uncoded behind."
 
-Rights by Design responds to the  the approach of Policies and Tech being designed around the Rights of citizens to observe them in their planning, architecture and implementation in a way that is transparent for all stakeholders.
+Rights by Design responds to the need for policies and tech to be designed and implemented as one. 
+
+being designed around the Rights of citizens to observe them in their planning, architecture and implementation in a way that is transparent for all stakeholders.
 
 It's the embodiment of all the above, somehow. It's the overarching idea, to design systems that are designed with Rights at their core.
 Incidentally, it's a concept that can be applied beyond tech.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2NDk0NjcwNCwtNTcwNjU0NDA4LC0yMD
+eyJoaXN0b3J5IjpbMTkyNTU1NDc3NSwtNTcwNjU0NDA4LC0yMD
 gxMDkzNDg1LC0xMDgyNTUxMjAzLC0yMDAxMDg4ODMxLDc4MTY2
 OTQ3MywxNjk2NjEwMDQ0LC02NTYzMzI2NTcsNDkxNTY3NjgwLC
 04MDkwNTE0MjAsLTUwNDgxMjU1NSw1OTU4MDk5MSwtOTE0Mjkz
