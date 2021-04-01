@@ -331,8 +331,9 @@ A superior design is such that it minimizes grievances.
 
 "No policy is disconnected from its implementation"
 *"If it's policy, it's coded."*
-"No policy uncoded behind."
 
+
+*"No policy uncoded behind."*
 Rights by Design responds to the need for policies and tech to be designed and implemented as one: For former establishes what is to be respected and the latter makes ensures that the compliance is built in the infrastructure so that users are protected automatically and transparently.
 
 It's the embodiment of all the above, somehow. It's the overarching idea, to design systems that are designed with Rights at their core.
@@ -340,7 +341,7 @@ Incidentally, it's a concept that can be applied beyond tech.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxMTI3MDcwMiwxOTI1NTU0Nzc1LC01Nz
+eyJoaXN0b3J5IjpbLTI0NDQ5MDY3OCwxOTI1NTU0Nzc1LC01Nz
 A2NTQ0MDgsLTIwODEwOTM0ODUsLTEwODI1NTEyMDMsLTIwMDEw
 ODg4MzEsNzgxNjY5NDczLDE2OTY2MTAwNDQsLTY1NjMzMjY1Ny
 w0OTE1Njc2ODAsLTgwOTA1MTQyMCwtNTA0ODEyNTU1LDU5NTgw
