@@ -327,13 +327,13 @@ The traditional understanding of data as separate entities from their users is a
 
 *The direct consequence is that a user’s data IS the user itself.*
 
-This understanding has severe consequences as the same duties of care that apply by constitutional laws to citizens should equally apply to the data representing them. In this sense, the necessary infrastructures that governments put in place to protect their citizens (hospitals, highways, the judiciary,...) should also be extended to the management and protection of their data with a national cloud system based on open standards and governed by a framework on Digital Rights.
+This understanding has crucial consequences as the same duties of care that apply by constitutional laws to citizens should equally apply to the data representing them. In this sense, the necessary infrastructures that governments put in place to protect their citizens (hospitals, highways, the judiciary,...) should also be extended to the management and protection of their data with a national cloud system based on open standards and governed by a framework on Digital Rights.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MjU4NTg1MCwtMTc3MjE4NDY3NiwxOT
-I1NTU0Nzc1LC01NzA2NTQ0MDgsLTIwODEwOTM0ODUsLTEwODI1
-NTEyMDMsLTIwMDEwODg4MzEsNzgxNjY5NDczLDE2OTY2MTAwND
-QsLTY1NjMzMjY1Nyw0OTE1Njc2ODAsLTgwOTA1MTQyMCwtNTA0
-ODEyNTU1LDU5NTgwOTkxLC05MTQyOTMxMjUsLTE1MzQ2NDYwMD
-csLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMTc5MTIyMDg5Nywx
-NTMxNjY5MzBdfQ==
+eyJoaXN0b3J5IjpbNTM5MzcyMDMxLC0xNzcyMTg0Njc2LDE5Mj
+U1NTQ3NzUsLTU3MDY1NDQwOCwtMjA4MTA5MzQ4NSwtMTA4MjU1
+MTIwMywtMjAwMTA4ODgzMSw3ODE2Njk0NzMsMTY5NjYxMDA0NC
+wtNjU2MzMyNjU3LDQ5MTU2NzY4MCwtODA5MDUxNDIwLC01MDQ4
+MTI1NTUsNTk1ODA5OTEsLTkxNDI5MzEyNSwtMTUzNDY0NjAwNy
+wtMTk1MDIwMTM5OSwxOTMxNzAxNTU4LC0xNzkxMjIwODk3LDE1
+MzE2NjkzMF19
 -->
