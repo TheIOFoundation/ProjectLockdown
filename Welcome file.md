@@ -320,12 +320,18 @@ C --> D
 
 
 **Data-Centric Digital Rights** (DCDR) is the advocacy of protecting users' Rights by transparently implementing the regulations that should protect them. As core stakeholders, technologists play a critical role as the next generation of Rights defenders and need to orient themselves through new design and implementation paradigms focused on protecting data. The **DCDR Principles** put forward by The IO Foundation are concepts that help them navigate the intricacies of applying Human and Digital Rights in digital infrastructures, products and services.
+
+
+
+"Concentrate on the design that minimizes grievances."
+
+End Remedy represents the embodiment of the proactive planification, architecture and implementation of all necessary mechanisms, both in policy and technology, to avoid grievances to ever happen during the use of a product or a service, in turn minimizing the need for legal actions. In the context of PDPA, it implies the design of policies that protect Data Subjects and the implementation of such provisions in a transparent, trustworthy and safe manner where legal remedies, while defined, are employed as a safety net.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDEwODg4MzEsNzgxNjY5NDczLDE2OT
-Y2MTAwNDQsLTY1NjMzMjY1Nyw0OTE1Njc2ODAsLTgwOTA1MTQy
-MCwtNTA0ODEyNTU1LDU5NTgwOTkxLC05MTQyOTMxMjUsLTE1Mz
-Q2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMTc5MTIy
-MDg5NywxNTMxNjY5MzAsOTE0MzMxMjcxLC03NDQwNTg4MSwtOT
-M1MTUxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4NTAsMjAxMzYx
-NTExMF19
+eyJoaXN0b3J5IjpbNTE2MzczMjAsLTIwMDEwODg4MzEsNzgxNj
+Y5NDczLDE2OTY2MTAwNDQsLTY1NjMzMjY1Nyw0OTE1Njc2ODAs
+LTgwOTA1MTQyMCwtNTA0ODEyNTU1LDU5NTgwOTkxLC05MTQyOT
+MxMjUsLTE1MzQ2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcwMTU1
+OCwtMTc5MTIyMDg5NywxNTMxNjY5MzAsOTE0MzMxMjcxLC03ND
+QwNTg4MSwtOTM1MTUxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4
+NTBdfQ==
 -->
