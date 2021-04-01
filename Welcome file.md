@@ -323,29 +323,17 @@ C --> D
 
 
 
-*"Concentrate on the design that minimizes grievances."*
+The traditional understanding of data as separate entities from their users is anchored in past perceptions and the use of legacy technologies. The reality is much different: The data representing users (and of which they should have control of consent) is intimately and inextricably linked to them; it models them, creating an accurate representation that loses all value should that contextualization ever be severed.
 
-End Remedy represents the embodiment of the proactive planification, architecture and implementation of all necessary mechanisms, both in policy and technology, to avoid grievances to ever happen during the use of a product or a service, in turn minimizing the need for legal actions. In the context of Data Protection Laws, it implies the design of policies that protect Data Subjects and the implementation of such provisions in a transparent, trustworthy and safe manner where legal remedies, while defined, are employed as a safety net.
+The direct consequence is that a user’s data IS the user itself.
 
-A superior design is such that it minimizes grievances.
-
-"No policy is disconnected from its implementation"
-*"If it's policy, it's coded."*
-
-
-*"No policy uncoded behind."*
-<br/>
-> Rights by Design responds to the need for policies and tech to be designed and implemented as one: the former establishes what is to be respected and the latter ensures that the compliance is built in the infrastructure so that users are protected automatically and transparently.
-
-Do note that this is a concept is evidently applicable beyond the domain of technology.
-
-
+This proposition has severe consequences as the same duties of care that apply by constitutional laws to citizens should equally apply to the data representing them. In this sense, the necessary infrastructures that governments put in place to protect their citizens (hospitals, highways, the judiciary,...) should also be extended to the management and protection of their data with a national cloud system based on open standards and governed by a framework on Digital Rights.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzIxODQ2NzYsMTkyNTU1NDc3NSwtNT
-cwNjU0NDA4LC0yMDgxMDkzNDg1LC0xMDgyNTUxMjAzLC0yMDAx
-MDg4ODMxLDc4MTY2OTQ3MywxNjk2NjEwMDQ0LC02NTYzMzI2NT
-csNDkxNTY3NjgwLC04MDkwNTE0MjAsLTUwNDgxMjU1NSw1OTU4
-MDk5MSwtOTE0MjkzMTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAxMz
-k5LDE5MzE3MDE1NTgsLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkx
-NDMzMTI3MV19
+eyJoaXN0b3J5IjpbLTE4OTE3MjA0MTgsLTE3NzIxODQ2NzYsMT
+kyNTU1NDc3NSwtNTcwNjU0NDA4LC0yMDgxMDkzNDg1LC0xMDgy
+NTUxMjAzLC0yMDAxMDg4ODMxLDc4MTY2OTQ3MywxNjk2NjEwMD
+Q0LC02NTYzMzI2NTcsNDkxNTY3NjgwLC04MDkwNTE0MjAsLTUw
+NDgxMjU1NSw1OTU4MDk5MSwtOTE0MjkzMTI1LC0xNTM0NjQ2MD
+A3LC0xOTUwMjAxMzk5LDE5MzE3MDE1NTgsLTE3OTEyMjA4OTcs
+MTUzMTY2OTMwXX0=
 -->
