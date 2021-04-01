@@ -323,15 +323,17 @@ C --> D
 
 
 
-"Concentrate on the design that minimizes grievances."
+*"Concentrate on the design that minimizes grievances."*
 
-End Remedy represents the embodiment of the proactive planification, architecture and implementation of all necessary mechanisms, both in policy and technology, to avoid grievances to ever happen during the use of a product or a service, in turn minimizing the need for legal actions. In the context of PDPA, it implies the design of policies that protect Data Subjects and the implementation of such provisions in a transparent, trustworthy and safe manner where legal remedies, while defined, are employed as a safety net.
+End Remedy represents the embodiment of the proactive planification, architecture and implementation of all necessary mechanisms, both in policy and technology, to avoid grievances to ever happen during the use of a product or a service, in turn minimizing the need for legal actions. In the context of Data Protection Laws, it implies the design of policies that protect Data Subjects and the implementation of such provisions in a transparent, trustworthy and safe manner where legal remedies, while defined, are employed as a safety net.
+
+A superior design is such that it minimizes grievances.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE2MzczMjAsLTIwMDEwODg4MzEsNzgxNj
-Y5NDczLDE2OTY2MTAwNDQsLTY1NjMzMjY1Nyw0OTE1Njc2ODAs
-LTgwOTA1MTQyMCwtNTA0ODEyNTU1LDU5NTgwOTkxLC05MTQyOT
-MxMjUsLTE1MzQ2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcwMTU1
-OCwtMTc5MTIyMDg5NywxNTMxNjY5MzAsOTE0MzMxMjcxLC03ND
-QwNTg4MSwtOTM1MTUxNDA5LC01NjE4MTI0MzUsLTEwMjIwMDg4
-NTBdfQ==
+eyJoaXN0b3J5IjpbOTIzNTgzODEyLC0yMDAxMDg4ODMxLDc4MT
+Y2OTQ3MywxNjk2NjEwMDQ0LC02NTYzMzI2NTcsNDkxNTY3Njgw
+LC04MDkwNTE0MjAsLTUwNDgxMjU1NSw1OTU4MDk5MSwtOTE0Mj
+kzMTI1LC0xNTM0NjQ2MDA3LC0xOTUwMjAxMzk5LDE5MzE3MDE1
+NTgsLTE3OTEyMjA4OTcsMTUzMTY2OTMwLDkxNDMzMTI3MSwtNz
+Q0MDU4ODEsLTkzNTE1MTQwOSwtNTYxODEyNDM1LC0xMDIyMDA4
+ODUwXX0=
 -->
