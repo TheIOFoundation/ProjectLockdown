@@ -16,7 +16,7 @@
     },
     {
       "type": "item",
-      "title": "Project Lockdown",
+      "title": "Project Lockdown Version 1 API",
       "uri": "API/Reference/Project-Lockdown.v1.json"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "type": "item",
-      "title": "GSheet Parser, parse data and store them in CosmosDB (Azure's MongoDB)",
+      "title": "GSheet Parser",
       "uri": "DEI/gsheet-parser/api.yaml"
     }
   ]
