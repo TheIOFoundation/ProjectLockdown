@@ -1,23 +1,24 @@
 {
   "items": [
     {
+      "type": "divider",
+      "title": "Technical Documentation"
+    },
+    {
       "type": "item",
-      "title": "Introduction.",
+      "title": "Introduction",
       "uri": "docs/index.md"
     },
     {
-      "type": "divider",
-      "title": "APIS"
-    },
-    {
-      "type": "item",
-      "title": "Project Lockdown something",
-      "uri": "API/Reference/Project-Lockdown.v1.json"
-    },
-    {
-      "type": "item",
-      "title": "Lockdown API",
-      "uri": "API/src/api.yaml"
+      "type": "group",
+      "title": "API Documentation",
+      "items": [
+        {
+          "type": "item",
+          "title": "Version 1",
+          "uri": "API/Reference/Project-Lockdown.v1.json"
+        }
+      ]
     },
     {
       "type": "item",
