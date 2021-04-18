@@ -6,17 +6,12 @@
       "uri": "docs/index.md"
     },
     {
-      "type": "item",
-      "title": "Project Lockdown Website",
-      "url": "https://www.projectlockdown.world"
-    },
-    {
       "type": "divider",
       "title": "APIS"
     },
     {
       "type": "item",
-      "title": "Project Lockdown Version 1 API",
+      "title": "Project Lockdown",
       "uri": "API/Reference/Project-Lockdown.v1.json"
     },
     {
@@ -26,7 +21,7 @@
     },
     {
       "type": "item",
-      "title": "GSheet Parser",
+      "title": "GSheet Parser, parse data and store them in CosmosDB (Azure's MongoDB)",
       "uri": "DEI/gsheet-parser/api.yaml"
     }
   ]
