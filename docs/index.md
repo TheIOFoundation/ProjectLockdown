@@ -7,6 +7,7 @@ They serve
 - Mapping Platform (MAP)
 - Public Open Data
 
+## Icon definition:
 Source: https://www.w3schools.com/charsets/ref_emoji.asp
 - &#127744;
 - &#127919; (bullseye)
