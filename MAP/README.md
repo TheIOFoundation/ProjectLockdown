@@ -74,6 +74,36 @@ https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue
 
 <a href="#top">Back to top</a>
 
+## Running the app locally
+
+To get the MAP running locally, you will need to have [Node.js](https://nodejs.org/en/) installed.
+
+Clone the repository.
+
+`git clone https://github.com/TheIOFoundation/ProjectLockdown.git`
+
+Navigate to the MAP folder.
+
+`cd ProjectLockdown`
+
+`cd MAP`
+
+Install the required dependencies.
+
+`npm install`
+
+Run the app in development mode.
+
+`npm start`
+
+Open http://localhost:3000 to view the app in your browser.
+
+Alternatively, you can run the command
+
+`npm run storybook`
+
+to view individual components in [Storybook](https://storybook.js.org/).
+
 # More information
 For all the necessary information please refer to the technical documentation in the wiki:
 https://github.com/TheIOFoundation/ProjectLockdown/wiki/Mapping-Platform-(MAP)

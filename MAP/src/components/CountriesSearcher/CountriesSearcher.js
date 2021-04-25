@@ -61,6 +61,7 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
 
 function useGeocoderHook(i18n, map, setGeocoder, setResults, setGeoResult) {
   useEffect(() => {
+    console.log(i18n, map, setGeocoder, setResults, setGeoResult, "countries Searcher")
     let geocoder = new MapboxGeocoder({
       accessToken: mapboxToken,
       language: i18n ? i18n.locale : 'en, en-US',
@@ -72,19 +73,19 @@ function useGeocoderHook(i18n, map, setGeocoder, setResults, setGeoResult) {
     geocoder.addTo('#blank');
     geocoder.setLanguage(i18n.locale);
     setGeocoder(geocoder);
-  }, [i18n, map]);
 
-  function onGetResult(results) {
-    let { features } = results;
-    if (features[0]) {
-      let countryName = features[0].text.toUpperCase();
-      setResults(countryName);
-      setGeoResult(features[0]);
-    } else {
-      setResults('');
-      setGeoResult({});
+    function onGetResult(results) {
+      let { features } = results;
+      if (features[0]) {
+        let countryName = features[0].text.toUpperCase();
+        setResults(countryName);
+        setGeoResult(features[0]);
+      } else {  
+        setResults('');
+        setGeoResult({});
+      }
     }
-  }
+  }, [i18n, map, setGeoResult, setGeocoder, setResults]);
 }
 
 function useSearch(
@@ -128,9 +129,10 @@ function useSearch(
           setResults('');
           setGeoResult({});
           setParsedText('');
-
+          setGeoResult()
           try {
-            map.flyTo({ center: geoResult.center, maxDuration: 500 });
+            map.flyTo(geoResult.center, 500 );
+            // map.flyTo()
           } catch (error) {
             console.log('geoResult.center: ', geoResult.center);
             console.error(error);
@@ -150,7 +152,7 @@ function useSearch(
         }
       }
     }
-  });
+  }, [geoResult, map, mouseHover, setResults, setGeoResult, setParsedText, setShowSearchInput, showSearchInput]);
 }
 
 export default CountriesSearcher;

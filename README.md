@@ -51,12 +51,12 @@ A simple and very quick way to support us is Staring the repo if you like what w
 
 <table xwidth="100%">
   <tr align="center">
-    <td xwidth="18%"><sub><a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Stage%3A+Ready%22"><img src="https://user-images.githubusercontent.com/9198668/101088120-2558d780-35ee-11eb-8655-976efa675820.png" alt="Opened Issues" title="Opened Issues" xwidth="100" height="45" />
+    <td xwidth="18%"><sub><a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9C%94+Stage%3A+Ready%22"><img src="https://user-images.githubusercontent.com/9198668/101088120-2558d780-35ee-11eb-8655-976efa675820.png" alt="Opened Issues" title="Opened Issues" xwidth="100" height="45" />
 <br/>
 Opened Issues (Stage: Ready)</a>
 </td>  
     <td xwidth="18%"><sub>
-      <a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Stage%3A+Ready%22+label%3A%22Need%3A+Position%22"><img src="https://user-images.githubusercontent.com/9198668/101088123-268a0480-35ee-11eb-87df-e7b06a4e1196.png" alt="Database" title="Database" xwidth="100" height="50" />
+      <a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%96%96+Need%3A+Position%22"><img src="https://user-images.githubusercontent.com/9198668/101088123-268a0480-35ee-11eb-87df-e7b06a4e1196.png" alt="Database" title="Database" xwidth="100" height="50" />
 <br/>
 Position descriptions</a>
 </td>
@@ -67,8 +67,8 @@ Features under consideration (Stage: Not Ready)</a>
 </td>
   </tr>
   <tr valign="top">
-    <td>Want to contribute? We have tasks ranging from code to UX/UI or requests for advice. <a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Stage%3A+Ready%22">Review open Issues</a>.</td>
-   <td>Interested in joining the Project Lockdown community? <a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Stage%3A+Ready%22+label%3A%22Need%3A+Position%22">Explore the positions we have available</a>.</td>
+    <td>Want to contribute? We have tasks ranging from code to UX/UI or requests for advice. <a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9C%94+Stage%3A+Ready%22">Review open Issues</a>.</td>
+   <td>Interested in joining the Project Lockdown community? <a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%96%96+Need%3A+Position%22">Explore the positions we have available</a>.</td>
     <td>While we put in place a publicly accessible Roadmap, you can <a href="https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Stage%3A+Not+Ready%22">find out the ideas that are brewing</a>.</td>
 
   </tr>
