@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "type": "item",
+      "title": "Introduction.",
+      "uri": "docs/index.md"
+    },
+    {
+      "type": "divider",
+      "title": "APIS"
+    },
+    {
+      "type": "item",
+      "title": "Project Lockdown",
+      "uri": "API/Reference/Project-Lockdown.v1.json"
+    },
+    {
+      "type": "item",
+      "title": "Lockdown API",
+      "uri": "API/src/api.yaml"
+    },
+    {
+      "type": "item",
+      "title": "GSheet Parser, parse data and store them in CosmosDB (Azure's MongoDB)",
+      "uri": "DEI/gsheet-parser/api.yaml"
+    }
+  ]
+}
