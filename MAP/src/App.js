@@ -71,7 +71,6 @@ class App extends React.Component {
   componentDidMount(){
     this.setNewDays();
     router.resetLocalStorage();
-    // this.setIsDark();  //       
     this.pausePlayerState();
     this.setPlayerState();
   }
@@ -210,7 +209,6 @@ class App extends React.Component {
   }
 
    setCurrentLanguage = () =>{
-      // TODO: add setLanuage functionality
   }
   setIsLoading = (value) =>{
       this.setState({
