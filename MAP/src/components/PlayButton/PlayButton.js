@@ -10,24 +10,27 @@ const height = '40px';
 
 const { PLAYING, PAUSED } = states;
 
-function PlayButton({ state, toggleState }) {
-  return (
-    <div style={{ position: 'absolute', left: '2.5vw', bottom: '50px' }}>
-      {state === PLAYING ? (
-        <img
+const PlayButton = ({ state, toggleState }) =>{
+  const playing = () => (
+      <img
           style={{ height, cursor: 'pointer' }}
           src={pause}
           alt="Pause button"
           onClick={() => toggleState(PAUSED)}
         />
-      ) : (
-        <img
+  );
+
+  const paused = () => (
+      <img
           style={{ height, cursor: 'pointer' }}
           src={play}
           alt="Play button"
           onClick={() => toggleState(PLAYING)}
         />
-      )}
+  )
+  return (
+    <div style={{ position: 'absolute', left: '2.5vw', bottom: '50px' }}>
+      {state === PLAYING ? playing() : paused()}
     </div>
   );
 }

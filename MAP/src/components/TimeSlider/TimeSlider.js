@@ -494,7 +494,6 @@ const TimeSlider = (props) => {
     let stepsWidth = rangeDOM.offsetWidth / currentRange;
     sliderDOM.style.left = `${finalWidth + stepsWidth * newValue}px`;
     setCurrentDateValue(newValue);
-    console.log(newValue, "newValue in TIMESLIDER")
     setCurrentSelectedDay(
       toSliderString(
         new Date(currentSliderRange[parseInt(newValue)]),
@@ -508,14 +507,10 @@ const TimeSlider = (props) => {
     setDatePickerPosition(range);
   };
   const onChooseDate = date => {
-    console.log('onChooseDate', format(date, 'yyyy-MM-dd'));
     props.setCurrentSelectedDay(date)
     props.onChange(date)
-
     props.setFirstDay(addDays(new Date(), -300))
     const sliderDOM = dateRef.current;
-
-
     const rangeDOM = range.current;
     const containerDOM = container.current;
     let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
@@ -549,7 +544,6 @@ const TimeSlider = (props) => {
         }
       }
     }
-    console.log(days,date, "days & date in TIMESLIDER ")
     setCurrentSliderRange(days);
     setCurrentSelectedDay(toSliderString(date, props.i18n.locale));
     submitChanges();
@@ -573,7 +567,6 @@ const TimeSlider = (props) => {
   };
   
   const submitChanges = () => {
-    console.log(currentDateValue, currentSliderRange[0],currentSliderRange.length,"currentDateValue, currentSliderRange, in submitChange")
     props.onChange(
       currentSliderRange[currentDateValue],
       currentSliderRange[0],
@@ -614,7 +607,6 @@ const TimeSlider = (props) => {
           onClick={(e) => onBtnClick("left")}
           className={`first ${popBtn}`}
         ></button>
-        {console.log('sliderValue' ,props.sliderValue)}
         <input
           ref={range}
           onInput={onSliderChange}
