@@ -87,11 +87,12 @@ export class Map extends React.Component {
 
   async initMap(mapData, lookupTable) {
     if (!mapboxgl) {
-      console.log('check the map');
       await pause();
       await this.initMap(mapData, lookupTable);
     }
-    if (mapboxgl.getRTLTextPluginStatus() !== 'loaded') {
+    
+    const mapBoxglState = mapboxgl.getRTLTextPluginStatus();
+    if (mapBoxglState === 'unavailable' || mapBoxglState === 'error' ) {
       mapboxgl.setRTLTextPlugin(
         'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
         null,
@@ -368,11 +369,13 @@ export class Map extends React.Component {
         ? format(endDate, 'yyyy-MM-dd')
         : format(addDays(new Date(), daysRange - 14), 'yyyy-MM-dd');
       let newMapData = await getWorldData(startDate, endDate);
-      localData = newMapData[selectedDate];
-      mapData = newMapData;
-      this.setState({ mapData }, () =>
-        this.setMapState(this.state.map, localData, lookupData)
-      );
+      if(newMapData) {
+        localData = newMapData[selectedDate];
+        mapData = newMapData;
+        this.setState({ mapData }, () =>
+          this.setMapState(this.state.map, localData, lookupData)
+        );
+      }
     } else {
       this.setMapState(this.state.map, localData, lookupData);
     }
@@ -437,12 +440,9 @@ export class Map extends React.Component {
   }
 
   async componentDidMount() {
-    console.log('Selected date', this.props.selectedDate);
-
     const { daysRange } = this.props;
 
     let { startDate, endDate } = this.props;
-    console.log(this.props);
     startDate = startDate
       ? format(startDate, 'yyyy-MM-dd')
       : format(addDays(new Date(), -14), 'yyyy-MM-dd');
@@ -468,15 +468,12 @@ export class Map extends React.Component {
         console.log('STATE', this.state);
       }
     );
-
-    console.log('Lookup', lookupTable);
-
-    await this.initMap(mapData, lookupTable);
+    if(mapData && lookupTable)  await this.initMap(mapData, lookupTable);
+    
   }
 
   componentDidUpdate(previousProps, previousState, snapshot) {
     if (previousProps.selectedDate !== this.props.selectedDate) {
-      console.log('Selected date didUpdate', this.props.selectedDate);
 
       if (this.state.isMapReady) {
         this.updateMap(
