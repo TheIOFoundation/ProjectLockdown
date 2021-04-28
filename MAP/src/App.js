@@ -209,6 +209,7 @@ class App extends React.Component {
   }
 
    setCurrentLanguage = () =>{
+     console.log("TODO: to be addressed letter");
   }
   setIsLoading = (value) =>{
       this.setState({
