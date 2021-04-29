@@ -133,7 +133,7 @@ class App extends React.Component {
    toggleState = (newState) => {
     this.setState({
       ...this.state,
-      playerStates: newState
+      playerState: newState
     });
   }
 
