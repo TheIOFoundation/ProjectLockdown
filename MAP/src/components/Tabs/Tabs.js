@@ -23,9 +23,6 @@ export default class Tabs extends Component {
     };
 
     this.tabRefs = {};
-
-    this.__onFocusMove = this.__onFocusMove.bind(this);
-    this.__onTabClick = this.__onTabClick.bind(this);
   }
 
   componentDidMount() {
@@ -46,7 +43,7 @@ export default class Tabs extends Component {
     });
   }
 
-  updateIndex(i, type) {
+  updateIndex = (i, type) =>{
     if (type === 'settings' && this.state.updateAvailable) {
       this.setState({
         updateAvailable: false,
@@ -60,16 +57,16 @@ export default class Tabs extends Component {
     }
   }
 
-  __onTabClick(i, type) {
+  __onTabClick =(i, type) => {
     this.updateIndex(i, type);
     this.commit(type);
   }
 
-  commit(type) {
+  commit = (type)=> {
     this.props.switchContent(type.toLowerCase());
   }
 
-  __onFocusMove(e) {
+  __onFocusMove =(e) =>{
     const currIndex = this.state.index;
 
     switch (e.keyCode) {
