@@ -15,11 +15,11 @@ export class TabMenu extends Component {
       currentDropdown: 1,
     };
   }
-  
+
   componentDidMount() {
     let i = 0;
 
-    installMediaQueryWatcher(`(min-width: 960px)`, matches => {
+    installMediaQueryWatcher(`(min-width: 960px)`, (matches) => {
       this.setState({
         isMobile: !matches,
       });
@@ -30,14 +30,14 @@ export class TabMenu extends Component {
       }
     });
   }
-  
-  showSideBar =() => {
+
+  showSideBar = () => {
     this.setState({
       showLateralMenu: true,
       showMenu: true,
     });
-  }
-  switchContent = (val)=> {
+  };
+  switchContent = (val) => {
     if (val === 'settings' && this.state.updateAvailable) {
       this.setState({
         updateAvailable: false,
@@ -60,27 +60,25 @@ export class TabMenu extends Component {
       activeItem: val,
       showLateralMenu: val === this.state.activeItem ? false : true,
     });
-  }
+  };
 
-  closeNavbar = ()=> {
+  closeNavbar = () => {
     this.setState({
       showLateralMenu: false,
       showSideBar: false,
       activeItem: 'info',
     });
-  }
+  };
 
-  onDropDown =(id)=> {
+  onDropDown = (id) => {
     this.setState({
       currentDropdown: id,
     });
-  }
-
-  
+  };
 
   render() {
     const { activeItem, currentDropdown } = this.state;
-    const {isDark, setDarkMode} = this.props;
+    const { isDark, setDarkMode } = this.props;
     return this.state.showLateralMenu || this.props.isMobile === true ? (
       <>
         <div className="menu-overlay"></div>
@@ -116,7 +114,7 @@ export class TabMenu extends Component {
                 currentDropdown,
                 this.onDropDown,
                 this.props.onLocateChange,
-                this.props.locale
+                this.props.locale,
               ).template
             }
           </div>

@@ -1,4 +1,4 @@
-const esMx =  {
+const esMx = {
   translationBy: 'AherreDev',
   languageId: 'es-MX', // ? ISO 639-1:2002
   // ? For reference please see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes and for localized versions see https://en.wikipedia.org/wiki/Language_localisation
@@ -12,7 +12,8 @@ const esMx =  {
   },
   menu: {
     informationSection: {
-      banner: 'Project Lockdown se encuentra actualmente en fase BETA. No todos los datos se encuentran disponibles.',
+      banner:
+        'Project Lockdown se encuentra actualmente en fase BETA. No todos los datos se encuentran disponibles.',
       main: {
         name: 'Project Lockdown',
         text:
@@ -59,7 +60,8 @@ const esMx =  {
         title: 'Politica de Datos & Privacidad',
         paragraphs: {
           p1: 'No recolectamos datos de nuestros visitantes.',
-          p2: 'Toda información disponible de nuestros miembros es publicada bajo su consentimiento.',
+          p2:
+            'Toda información disponible de nuestros miembros es publicada bajo su consentimiento.',
         },
       },
     },

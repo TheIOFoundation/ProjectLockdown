@@ -5,7 +5,7 @@ const parameters = {
   component: Ticker,
 };
 
-const Template = args => <Ticker {...args} />;
+const Template = (args) => <Ticker {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

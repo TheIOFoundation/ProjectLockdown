@@ -1,23 +1,19 @@
-import { useState, useEffect ,useCallback} from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { addPwaUpdateListener } from '../../utils/addPwaUpdateListener.js';
 import { setFavIcon } from '../../utils/setFavIcon.js';
 import '../pwa-update-available';
 import './Settings.scss';
 import { useTranslation } from 'react-i18next';
 
-export function Settings({ 
-  onClose, 
-  locale, 
-  darkMode, 
-  setDarkMode 
-}) {
+export function Settings({ onClose, locale, darkMode, setDarkMode }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
-  
-  const { t , 
-    // i18n
-   } = useTranslation();
 
-  const toggleDarkmode =()=> {
+  const {
+    t,
+    // i18n
+  } = useTranslation();
+
+  const toggleDarkmode = () => {
     if (document.getElementsByTagName('html')[0].classList.contains('dark')) {
       document.getElementsByTagName('html')[0].classList.remove('dark');
       localStorage.setItem('darkmode', 'false');
@@ -31,21 +27,19 @@ export function Settings({
       setDarkMode(true);
       onClose();
     }
-  }
-  
-  const updatePwaAvailable = useCallback(
-    ()=>{
-      async function addListener() {
-        addPwaUpdateListener(updateAvailable => {
-          setPwaUpdateAvailable(updateAvailable);
-        });
-        let dark = localStorage.getItem('darkmode');
-        dark = dark !== 'false' && dark !== null;
-        setDarkMode(dark);
-      }
-      addListener();
-    },[setDarkMode]
-  )
+  };
+
+  const updatePwaAvailable = useCallback(() => {
+    async function addListener() {
+      addPwaUpdateListener((updateAvailable) => {
+        setPwaUpdateAvailable(updateAvailable);
+      });
+      let dark = localStorage.getItem('darkmode');
+      dark = dark !== 'false' && dark !== null;
+      setDarkMode(dark);
+    }
+    addListener();
+  }, [setDarkMode]);
 
   useEffect(() => {
     updatePwaAvailable();

@@ -17,9 +17,13 @@ class CountryDetailService extends EventTargetShim {
     let endDate = opts.endDate;
     iso2 = encodeURI(iso2);
 
-    console.log(opts)
-    startDate = startDate ? format(startDate, 'yyyy-MM-dd') : format(addDays(new Date(), -14), 'yyyy-MM-dd');
-    endDate = endDate ? format(endDate, 'yyyy-MM-dd') : format(addDays(new Date(), daysRange), 'yyyy-MM-dd');
+    console.log(opts);
+    startDate = startDate
+      ? format(startDate, 'yyyy-MM-dd')
+      : format(addDays(new Date(), -14), 'yyyy-MM-dd');
+    endDate = endDate
+      ? format(endDate, 'yyyy-MM-dd')
+      : format(addDays(new Date(), daysRange), 'yyyy-MM-dd');
 
     if (!/^[a-zA-Z]{2}$/.test(iso2)) {
       return;
@@ -27,10 +31,17 @@ class CountryDetailService extends EventTargetShim {
 
     let cacheKey = `${iso2}${startDate}${endDate}`;
 
-    if (opts.forceRefresh || this._shouldInvalidate() || this.cache[cacheKey]?.status === 'failed' || !this.cache[cacheKey]) {
+    if (
+      opts.forceRefresh ||
+      this._shouldInvalidate() ||
+      this.cache[cacheKey]?.status === 'failed' ||
+      !this.cache[cacheKey]
+    ) {
       try {
         this.cache[cacheKey] = {};
-        const res = await (await fetch(`${apiEndpoint}/status/${iso2}/${startDate}/${endDate}`)).json();
+        const res = await (
+          await fetch(`${apiEndpoint}/status/${iso2}/${startDate}/${endDate}`)
+        ).json();
         this.cache[cacheKey] = res;
       } catch (_) {
         this.cache[cacheKey] = {
@@ -48,7 +59,7 @@ class CountryDetailService extends EventTargetShim {
     var dateFormatted = format(date, 'yyyy-MM-dd');
 
     var res = data[dateFormatted];
-    console.log(res)
+    console.log(res);
     for (const type of ['land', 'flight', 'sea']) {
       for (const { label, value } of res.lockdown[type]) {
         if (Array.isArray(travel[label])) {
@@ -64,7 +75,9 @@ class CountryDetailService extends EventTargetShim {
       date: date,
       measures: res.lockdown.measure,
       travel,
-      max_gathering:  res.lockdown.max_gathering[0].value && res.lockdown.max_gathering[0].value,
+      max_gathering:
+        res.lockdown.max_gathering[0].value &&
+        res.lockdown.max_gathering[0].value,
     };
     this.__lastUpdate = Date.now();
     this.dispatchEvent(new Event('change'));

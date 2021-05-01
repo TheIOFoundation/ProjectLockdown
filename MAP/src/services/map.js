@@ -5,7 +5,6 @@ export const getWorldData = async (startDate, endDate) => {
     const res = await api.get(`/status/world/${startDate}/${endDate}`);
     return res.data;
   } catch (e) {
-    console.log(e);
     return null;
   }
 };

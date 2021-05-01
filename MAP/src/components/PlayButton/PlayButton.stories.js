@@ -4,7 +4,7 @@ const parameters = {
   title: 'Component/PlayButton',
   component: PlayButton,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ margin: '3em' }}>
         <Story />
       </div>
@@ -12,7 +12,7 @@ const parameters = {
   ],
 };
 
-const Template = args => <PlayButton />;
+const Template = (args) => <PlayButton />;
 
 export const Primary = Template.bind({});
 

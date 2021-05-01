@@ -2,7 +2,7 @@
  * Fires a callback when a PWA update is available
  * @param {(updateAvailable: Boolean) => void} callback
  */
-export function addPwaUpdateListener(callback) {
+export default function addPwaUpdateListener(callback) {
   let newWorker;
 
   if ('serviceWorker' in navigator) {
@@ -11,7 +11,10 @@ export function addPwaUpdateListener(callback) {
         reg.addEventListener('updatefound', () => {
           newWorker = reg.installing;
           newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            if (
+              newWorker.state === 'installed' &&
+              navigator.serviceWorker.controller
+            ) {
               callback(true);
             }
           });

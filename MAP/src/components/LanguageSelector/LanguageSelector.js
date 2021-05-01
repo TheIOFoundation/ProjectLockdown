@@ -13,7 +13,7 @@ const LanguageSelector = ({ dark, languageChangeHandler }) => {
   const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh CN', 'zh HK'];
 
   const toggleShowLanguages = () => {
-    setShowLanguages(prevState => !prevState);
+    setShowLanguages((prevState) => !prevState);
   };
 
   useEffect(() => {
@@ -33,20 +33,18 @@ const LanguageSelector = ({ dark, languageChangeHandler }) => {
       <div
         className={`${classes.LangOptions} ${showLanguages && classes.show}`}
       >
-        {languages.map((language, idx) => {
-          return (
-            <div
-              key={idx}
-              style={{ color: `${dark ? 'white' : '#333333'}` }}
-              className={`${classes.LangOpt} ${
-                language === selectedLang && classes.active
-              } ${dark && classes.dark}`}
-              onClick={() => setSelectedLang(language.replace(/\s+/g, ''))}
-            >
-              {language.toUpperCase().replace('-', '\n')}
-            </div>
-          );
-        })}
+        {languages.map((language, idx) => (
+          <div
+            key={idx}
+            style={{ color: `${dark ? 'white' : '#333333'}` }}
+            className={`${classes.LangOpt} ${
+              language === selectedLang && classes.active
+            } ${dark && classes.dark}`}
+            onClick={() => setSelectedLang(language.replace(/\s+/g, ''))}
+          >
+            {language.toUpperCase().replace('-', '\n')}
+          </div>
+        ))}
       </div>
     </div>
   );

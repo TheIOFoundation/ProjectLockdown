@@ -159,7 +159,7 @@ const monthsNames = [
 
 const currentYear = 2020;
 
-const DatePicker = props => {
+const DatePicker = (props) => {
   const { startDate } = props;
 
   const [days, setDays] = useState([]);
@@ -169,18 +169,18 @@ const DatePicker = props => {
   const [enableArrows, setEnableArrows] = useState(false);
 
   const onPressKey = useCallback(
-    e => {
+    (e) => {
       if (e.code === 'Escape' && props.show) {
         props.close();
       }
     },
-    [props]
+    [props],
   );
 
   const getMonthData = useCallback((firstDay, month) => {
-    let totalDays = month.getDate();
-    let numberOfDay = firstDay.getDay();
-    let completedWeek = 7 - (numberOfDay + 1);
+    const totalDays = month.getDate();
+    const numberOfDay = firstDay.getDay();
+    const completedWeek = 7 - (numberOfDay + 1);
     let totalOfWeeks = totalDays + completedWeek;
     let roundWeeks = totalOfWeeks / 7;
     let excedentDays = 0;
@@ -189,7 +189,7 @@ const DatePicker = props => {
       totalOfWeeks += 7 - (totalOfWeeks % 7);
       roundWeeks = totalOfWeeks / 7;
     }
-    let monthDaysArray = [];
+    const monthDaysArray = [];
     let days = 0;
     for (let i = 0; i < roundWeeks; i++) {
       monthDaysArray.push([]);
@@ -212,13 +212,14 @@ const DatePicker = props => {
   }, []);
 
   const fillAllMonths = useCallback(() => {
-    let prevMonths = allMonthsDate;
-    let firstDay, month;
+    const prevMonths = allMonthsDate;
+    let firstDay;
+    let month;
     for (let i = 0; i < 12; i++) {
       if (i !== currentMonth) {
         firstDay = new Date(2020, i, 1);
         month = new Date(2020, i + 1, 0);
-        let days = getMonthData(firstDay, month);
+        const days = getMonthData(firstDay, month);
         prevMonths[i] = days;
       }
     }
@@ -226,7 +227,7 @@ const DatePicker = props => {
     setEnableArrows(true);
   }, [allMonthsDate, currentMonth, getMonthData]);
   const chooseDay = (dayData, week, day) => {
-    let prevData = days;
+    const prevData = days;
     if (lastSelection !== false) {
       prevData[lastSelection[0]][lastSelection[1]].selected = false;
     }
@@ -236,9 +237,10 @@ const DatePicker = props => {
     setDays(prevData);
     setLastSelection([week, day]);
   };
-  const changeMonth = plus => {
+  const changeMonth = (plus) => {
     if (enableArrows) {
-      let newDays, newMonth;
+      let newDays;
+      let newMonth;
       if ((currentMonth > 0 || plus) && (currentMonth < 11 || !plus)) {
         if (plus) {
           newMonth = currentMonth + 1;
@@ -255,10 +257,10 @@ const DatePicker = props => {
 
   useEffect(() => {
     window.addEventListener('keydown', onPressKey);
-    let firstDay = new Date(2021, currentMonth, 1);
-    let month = new Date(2021, currentMonth + 1, 0);
-    let days = getMonthData(firstDay, month);
-    let prevMonths = allMonthsDate;
+    const firstDay = new Date(2021, currentMonth, 1);
+    const month = new Date(2021, currentMonth + 1, 0);
+    const days = getMonthData(firstDay, month);
+    const prevMonths = allMonthsDate;
     prevMonths[currentMonth] = days;
     setDays(days);
     setAllMonthsDate(prevMonths);
@@ -273,7 +275,7 @@ const DatePicker = props => {
         // height: 600px;
         className={`overlay ${overlay} ${props.show ? 'sow' : ''}`}
         onClick={props.close}
-      ></div>
+      />
       <div
         className={`calendar ${styles} ${props.show ? 'show' : ''} ${
           props.customClass
@@ -288,7 +290,9 @@ const DatePicker = props => {
         </div>
         <div className="calendar header">
           {daysOfTheWeek.map((dayL, index) => (
-            <div key={index} className="header item">{dayL}</div>
+            <div key={index} className="header item">
+              {dayL}
+            </div>
           ))}
         </div>
         <div className="calendar container">

@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import css from "csz";
-import DatePicker from "../DatePicker/DatePicker";
-import { calendar } from "../../assets/icons/icons.js";
-import format from "date-fns/format";
-import { enUS } from "date-fns/locale";
-import { addDays } from "date-fns";
-
+import React, { useState, useRef, useEffect } from 'react';
+import css from 'csz';
+import format from 'date-fns/format';
+import { enUS } from 'date-fns/locale';
+import { addDays } from 'date-fns';
+import { calendar } from '../../assets/icons/icons.js';
+import DatePicker from '../DatePicker/DatePicker';
 
 const sliderWrapper = css`
   & {
@@ -165,7 +164,7 @@ const rangeStyles = css`
   input {
     background: transparent;
   }
-  input[type="range"] {
+  input[type='range'] {
     position: relative;
     -webkit-appearance: none;
     width: 100%;
@@ -176,11 +175,11 @@ const rangeStyles = css`
       color: #4f4f4f;
     }
   }
-  input[type="range"]:focus {
+  input[type='range']:focus {
     outline: none;
     box-shadow: 0 0 0px 0px var(--ld-focus) !important;
   }
-  input[type="range"]::-webkit-slider-runnable-track {
+  input[type='range']::-webkit-slider-runnable-track {
     width: 100%;
     height: 3px;
     cursor: pointer;
@@ -191,7 +190,7 @@ const rangeStyles = css`
     border-radius: 0px;
     border: 0px solid rgba(1, 1, 1, 0);
   }
-  input[type="range"]::-webkit-slider-thumb {
+  input[type='range']::-webkit-slider-thumb {
     -webkit-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
@@ -208,17 +207,17 @@ const rangeStyles = css`
       background: #ffffff;
     }
     &::before {
-      content: "Say Cheese";
+      content: 'Say Cheese';
       color: red;
     }
   }
-  input[type="range"]:focus::-webkit-slider-runnable-track {
+  input[type='range']:focus::-webkit-slider-runnable-track {
     background: #bdbdbd;
     .dark & {
       background: #828282;
     }
   }
-  input[type="range"]::-moz-range-track {
+  input[type='range']::-moz-range-track {
     width: 100%;
     height: 3px;
     cursor: pointer;
@@ -229,7 +228,7 @@ const rangeStyles = css`
     border-radius: 0px;
     border: 0px solid rgba(1, 1, 1, 0);
   }
-  input[type="range"]::-moz-range-thumb {
+  input[type='range']::-moz-range-thumb {
     -webkit-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
@@ -244,7 +243,7 @@ const rangeStyles = css`
     }
     cursor: pointer;
   }
-  input[type="range"]::-ms-track {
+  input[type='range']::-ms-track {
     width: 100%;
     height: 3px;
     cursor: pointer;
@@ -252,12 +251,12 @@ const rangeStyles = css`
     border-color: transparent;
     color: transparent;
   }
-  input[type="range"]::-ms-fill-lower {
+  input[type='range']::-ms-fill-lower {
     background: #bcbcbc;
     border: 0px solid rgba(1, 1, 1, 0);
     border-radius: 0px;
   }
-  input[type="range"]::-ms-fill-upper {
+  input[type='range']::-ms-fill-upper {
     background: #e0e0e0;
     .dark & {
       background: #4f4f4f;
@@ -265,7 +264,7 @@ const rangeStyles = css`
     border: 0px solid rgba(1, 1, 1, 0);
     border-radius: 0px;
   }
-  input[type="range"]::-ms-thumb {
+  input[type='range']::-ms-thumb {
     -webkit-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
     box-shadow: 0px 1px 5px 2.5px rgba(0, 0, 0, 0.45);
@@ -281,13 +280,13 @@ const rangeStyles = css`
     cursor: pointer;
     height: 6.8px;
   }
-  input[type="range"]:focus::-ms-fill-lower {
+  input[type='range']:focus::-ms-fill-lower {
     background: #e0e0e0;
     .dark & {
       background: #4f4f4f;
     }
   }
-  input[type="range"]:focus::-ms-fill-upper {
+  input[type='range']:focus::-ms-fill-upper {
     background: #d6d6d6;
   }
 `;
@@ -367,7 +366,7 @@ const sliderSelector = css`
       font-weight: 600;
       box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);
       &::after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         bottom: -6px;
@@ -437,10 +436,10 @@ const popBtn = css`
 const firstDayDefaultOffset = 7 * 5;
 const mobileRange = 70;
 
-let languages = false;
+const languages = false;
 const TimeSlider = (props) => {
   const [currentDateValue, setCurrentDateValue] = useState(
-    firstDayDefaultOffset
+    firstDayDefaultOffset,
   );
 
   const {
@@ -450,7 +449,7 @@ const TimeSlider = (props) => {
     lastDay,
     days,
   } = props;
-  const [datePickerPosition, setDatePickerPosition] = useState("left");
+  const [datePickerPosition, setDatePickerPosition] = useState('left');
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [currentSliderRange, setCurrentSliderRange] = useState([]);
 
@@ -461,22 +460,28 @@ const TimeSlider = (props) => {
   const container = useRef();
 
   const toSliderString = (date, currentLanguage) => {
-    let isoLanguage = "enUS";
+    let isoLanguage = 'enUS';
     if (currentLanguage) {
-      isoLanguage = currentLanguage.replace("-", "");
-      if (isoLanguage === "ar"){
-        isoLanguage = "arSA";
-      } else if (isoLanguage === "zhHK") {
-        isoLanguage = "zhTW";
+      isoLanguage = currentLanguage.replace('-', '');
+      if (isoLanguage === 'ar') {
+        isoLanguage = 'arSA';
+      } else if (isoLanguage === 'zhHK') {
+        isoLanguage = 'zhTW';
       }
     }
-    if (languages[isoLanguage] === undefined || languages[isoLanguage] === null) {
-      isoLanguage = currentLanguage.split("-")[0];
-      if (languages[isoLanguage] === undefined || languages[isoLanguage] === null) {
-        isoLanguage = "enUS";
+    if (
+      languages[isoLanguage] === undefined ||
+      languages[isoLanguage] === null
+    ) {
+      isoLanguage = currentLanguage.split('-')[0];
+      if (
+        languages[isoLanguage] === undefined ||
+        languages[isoLanguage] === null
+      ) {
+        isoLanguage = 'enUS';
       }
     }
-    return format(date, "dd-MMMM-yyyy", {
+    return format(date, 'dd-MMMM-yyyy', {
       locale: languages ? languages[isoLanguage] : enUS,
     });
   };
@@ -488,42 +493,42 @@ const TimeSlider = (props) => {
     const sliderDOM = dateRef.current;
     const rangeDOM = range.current;
     const containerDOM = container.current;
-    let newValue = e.target.value;
-    let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
-    let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
-    let stepsWidth = rangeDOM.offsetWidth / currentRange;
+    const newValue = e.target.value;
+    const basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
+    const finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
+    const stepsWidth = rangeDOM.offsetWidth / currentRange;
     sliderDOM.style.left = `${finalWidth + stepsWidth * newValue}px`;
     setCurrentDateValue(newValue);
     setCurrentSelectedDay(
       toSliderString(
         new Date(currentSliderRange[parseInt(newValue)]),
-        props.i18n.locale
-      )
+        props.i18n.locale,
+      ),
     );
     submitChanges();
   };
-  const onBtnClick = range => {
-    setShowDatePicker(prevState => !prevState);
+  const onBtnClick = (range) => {
+    setShowDatePicker((prevState) => !prevState);
     setDatePickerPosition(range);
   };
-  const onChooseDate = date => {
-    props.setCurrentSelectedDay(date)
-    props.onChange(date)
-    props.setFirstDay(addDays(new Date(), -300))
+  const onChooseDate = (date) => {
+    props.setCurrentSelectedDay(date);
+    props.onChange(date);
+    props.setFirstDay(addDays(new Date(), -300));
     const sliderDOM = dateRef.current;
     const rangeDOM = range.current;
     const containerDOM = container.current;
-    let basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
-    let finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
-    let stepsWidth = rangeDOM.offsetWidth / currentRange;
+    const basicWidth = containerDOM.offsetWidth - rangeDOM.offsetWidth;
+    const finalWidth = basicWidth / 2 - sliderDOM.offsetWidth / 4;
+    const stepsWidth = rangeDOM.offsetWidth / currentRange;
     sliderDOM.style.left = `${
       finalWidth +
       stepsWidth *
-        ((datePickerPosition === "left" ? 0 : currentRange - 1) + 0.5)
+        ((datePickerPosition === 'left' ? 0 : currentRange - 1) + 0.5)
     }px`;
     calendarWillClose();
 
-    if (datePickerPosition === "left") {
+    if (datePickerPosition === 'left') {
       let plusDays = 1;
       for (let i = 1; i <= currentRange; i++) {
         if (i === 1) {
@@ -547,43 +552,43 @@ const TimeSlider = (props) => {
     setCurrentSliderRange(days);
     setCurrentSelectedDay(toSliderString(date, props.i18n.locale));
     submitChanges();
-    setCurrentDateValue(datePickerPosition === "left" ? 0 : currentRange - 1);
+    setCurrentDateValue(datePickerPosition === 'left' ? 0 : currentRange - 1);
     submitChanges();
   };
 
   const calendarWillClose = () => {
-    setDatePickerPosition(datePickerPosition + " hide");
+    setDatePickerPosition(`${datePickerPosition} hide`);
     return () => setTimeout(() => closeDatePicker(), 400);
   };
   const closeDatePicker = () => {
     setShowDatePicker(false);
-    setDatePickerPosition(datePickerPosition.replace(" hide", ""));
+    setDatePickerPosition(datePickerPosition.replace(' hide', ''));
   };
 
   const rangePreProcces = (date, days) => {
-    let newDate = new Date(date);
+    const newDate = new Date(date);
     newDate.setDate(date.getDate() + days);
     return newDate;
   };
-  
+
   const submitChanges = () => {
     props.onChange(
       currentSliderRange[currentDateValue],
       currentSliderRange[0],
-      currentSliderRange[currentSliderRange.length - 1]
+      currentSliderRange[currentSliderRange.length - 1],
     );
   };
   return (
     <div
       className={`sliderWrapper ${sliderWrapper} ${
-        props.children !== "" ? "open" : ""
+        props.children !== '' ? 'open' : ''
       }`}
       ref={container}
     >
       {props.children}
       <div
         className={`${selectStyles} ${rangeStyles} ${
-          props.children !== "" ? "open" : ""
+          props.children !== '' ? 'open' : ''
         }`}
       >
         <DatePicker
@@ -599,14 +604,14 @@ const TimeSlider = (props) => {
         <span
           title="Select Start Date"
           className={`first ${tooltipCss}`}
-          onClick={(e) => onBtnClick("left")}
+          onClick={(e) => onBtnClick('left')}
         >
           <IconBtn /> {toSliderString(new Date(currentSelectedDay), 'en')}
         </span>
         <button
-          onClick={(e) => onBtnClick("left")}
+          onClick={(e) => onBtnClick('left')}
           className={`first ${popBtn}`}
-        ></button>
+        />
         <input
           ref={range}
           onInput={onSliderChange}
@@ -617,15 +622,13 @@ const TimeSlider = (props) => {
           value={currentDateValue}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
-          {toSliderString(new Date(lastDay), "en")}
+          {toSliderString(new Date(lastDay), 'en')}
         </span>
       </div>
     </div>
   );
 };
 
-const IconBtn = () => {
-  return <span>{calendar}</span>;
-};
+const IconBtn = () => <span>{calendar}</span>;
 
 export default TimeSlider;
