@@ -1,11 +1,13 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { addPwaUpdateListener } from '../../utils/addPwaUpdateListener.js';
 import { setFavIcon } from '../../utils/setFavIcon.js';
 import '../pwa-update-available';
 import './Settings.scss';
+
 import { useTranslation } from 'react-i18next';
 
-export function Settings({ onClose, locale, darkMode, setDarkMode }) {
+// eslint-disable-next-line react/prop-types
+export function Settings({ onClose, darkMode, setDarkMode }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
 
   const {
@@ -29,7 +31,7 @@ export function Settings({ onClose, locale, darkMode, setDarkMode }) {
     }
   };
 
-  const updatePwaAvailable = useCallback(() => {
+  useEffect(() => {
     async function addListener() {
       addPwaUpdateListener((updateAvailable) => {
         setPwaUpdateAvailable(updateAvailable);
@@ -40,10 +42,6 @@ export function Settings({ onClose, locale, darkMode, setDarkMode }) {
     }
     addListener();
   }, [setDarkMode]);
-
-  useEffect(() => {
-    updatePwaAvailable();
-  }, [updatePwaAvailable]);
 
   return (
     <div className="settings">

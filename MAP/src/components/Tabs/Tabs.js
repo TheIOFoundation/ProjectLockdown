@@ -23,6 +23,9 @@ export default class Tabs extends Component {
     };
 
     this.tabRefs = {};
+
+    this.__onFocusMove = this.__onFocusMove.bind(this);
+    this.__onTabClick = this.__onTabClick.bind(this);
   }
 
   componentDidMount() {
