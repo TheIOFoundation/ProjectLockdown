@@ -2,7 +2,7 @@
  * Fires a callback when a PWA update is available
  * @param {(updateAvailable: Boolean) => void} callback
  */
-export default function addPwaUpdateListener(callback) {
+export function addPwaUpdateListener(callback) {
   let newWorker;
 
   if ('serviceWorker' in navigator) {
