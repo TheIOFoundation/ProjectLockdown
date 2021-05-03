@@ -219,8 +219,7 @@ const DatePicker = (props) => {
       if (i !== currentMonth) {
         firstDay = new Date(2020, i, 1);
         month = new Date(2020, i + 1, 0);
-        const days = getMonthData(firstDay, month);
-        prevMonths[i] = days;
+        prevMonths[i] = getMonthData(firstDay, month);
       }
     }
     setAllMonthsDate(prevMonths);
@@ -259,10 +258,10 @@ const DatePicker = (props) => {
     window.addEventListener('keydown', onPressKey);
     const firstDay = new Date(2021, currentMonth, 1);
     const month = new Date(2021, currentMonth + 1, 0);
-    const days = getMonthData(firstDay, month);
+    const prevDays = getMonthData(firstDay, month);
     const prevMonths = allMonthsDate;
-    prevMonths[currentMonth] = days;
-    setDays(days);
+    prevMonths[currentMonth] = prevDays;
+    setDays(prevDays);
     setAllMonthsDate(prevMonths);
     fillAllMonths();
 

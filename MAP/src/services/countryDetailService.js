@@ -39,10 +39,10 @@ class CountryDetailService extends EventTargetShim {
     ) {
       try {
         this.cache[cacheKey] = {};
-        const res = await (
+        const dateResponse = await (
           await fetch(`${apiEndpoint}/status/${iso2}/${startDate}/${endDate}`)
         ).json();
-        this.cache[cacheKey] = res;
+        this.cache[cacheKey] = dateResponse;
       } catch (_) {
         this.cache[cacheKey] = {
           status: 'failed',
@@ -76,8 +76,7 @@ class CountryDetailService extends EventTargetShim {
       measures: res.lockdown.measure,
       travel,
       max_gathering:
-        res.lockdown.max_gathering[0].value &&
-        res.lockdown.max_gathering[0].value,
+        res.lockdown.max_gathering[0].value || ""
     };
     this.__lastUpdate = Date.now();
     this.dispatchEvent(new Event('change'));

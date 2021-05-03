@@ -32,8 +32,8 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
     document.addEventListener('click', closeComponent);
     function closeComponent() {
       if (showSearchInput) setShowSearchInput(!showSearchInput);
+      
     }
-
     function onPressKey(e) {
       if (e.code === 'Enter' && showSearchInput) {
         e.preventDefault();

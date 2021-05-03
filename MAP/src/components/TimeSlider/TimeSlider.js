@@ -507,9 +507,9 @@ const TimeSlider = (props) => {
     );
     submitChanges();
   };
-  const onBtnClick = (range) => {
+  const onBtnClick = (newRange) => {
     setShowDatePicker((prevState) => !prevState);
-    setDatePickerPosition(range);
+    setDatePickerPosition(newRange);
   };
   const onChooseDate = (date) => {
     props.setCurrentSelectedDay(date);
