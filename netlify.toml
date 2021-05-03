@@ -1,5 +1,5 @@
 [build]
   base = "MAP/"
-  publish = "MAP/build"
+  publish = "build"
   command = "npm run build"
-  ignore = "git diff --quiet HEAD^ HEAD MAP/"  
+  ignore = "git diff --quiet HEAD^ HEAD ."  
