@@ -105,7 +105,9 @@ const CountryInfo = (props) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={firstLink}
-              />
+              >
+               {t(`tdo.contributionLinks.firstLink`)}</a>
+
               <a
                 className="ld-link"
                 target="_blank"
