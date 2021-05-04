@@ -3,13 +3,11 @@ import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
 import Totals from './components/Totals/Totals';
-import Header from './components/Header/Header';
 import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
 import ThemeContext from './context/ThemeContext';
 import format from 'date-fns/format';
-import PlayButton from './components/PlayButton/PlayButton';
 import { addDays } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
@@ -252,17 +250,17 @@ class App extends React.Component {
             daysRange={daysRange}
           />
           <TabMenu darkMode={isDark} setDarkMode={this.setIsDark} />
-          <Header dark={isDark} />
           <Totals dark={isDark} />
           <Legend dark={isDark} />
           {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
-          <PlayButton state={playerState} toggleState={this.toggleState} />
           <LanguageSelector
             languageChangeHandler={this.setCurrentLanguage}
             dark={isDark}
           />
           {startDate && endDate && selectedDate && (
             <TimeSlider
+              playerState={playerState}
+              onPlayerStateToggle={this.toggleState}
               dark={isDark}
               days={days}
               i18n={{ locale: 'en, en-US' }}

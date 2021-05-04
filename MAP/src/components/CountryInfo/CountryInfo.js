@@ -53,7 +53,7 @@ const CountryInfo = (props) => {
       <div
         style={{
           color: `${props.dark ? 'white' : 'black'}`,
-          backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
+          // backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
         }}
         className={tabStyles}
       >
