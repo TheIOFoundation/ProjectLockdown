@@ -1,6 +1,5 @@
-import ThemeContext from '../../context/ThemeContext'
-import { useContext } from 'react'
-import { Settings } from './Settings'
+import ThemeContext from '../../context/ThemeContext';
+import { Settings } from './Settings';
 
 const parameters = {
   title: 'Component/Settings',
@@ -10,9 +9,14 @@ const parameters = {
       <div>
         <ThemeContext.Consumer>
           {(value) => {
-            console.log(value)
-            console.log('Logging ThemeContext', ThemeContext.Consumer)
-            return <Story darkMode={ThemeContext.Consumer.isDark} setDarkMode={ThemeContext.Consumer.setDarkMode} />
+            console.log(value);
+            console.log('Logging ThemeContext', ThemeContext.Consumer);
+            return (
+              <Story
+                darkMode={ThemeContext.Consumer.isDark}
+                setDarkMode={ThemeContext.Consumer.setDarkMode}
+              />
+            );
           }}
         </ThemeContext.Consumer>
       </div>
@@ -22,29 +26,29 @@ const parameters = {
   argTypes: {
     dark: { control: 'boolean' },
   },
-}
+};
 
-const Template = (args) => <Settings {...args} />
+const Template = (args) => <Settings {...args} />;
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 Primary.args = {
   locale: {
     t: (s) => {
       switch (s) {
         case 'menu.userPreferenceSection.theme.action':
-          return 'Toggle '
+          return 'Toggle ';
         case 'menu.userPreferenceSection.theme.light':
           return 'Light mode';
         case 'menu.userPreferenceSection.theme.dark':
-          return 'Dark mode'
+          return 'Dark mode';
         default:
-          return s
+          return s;
       }
     },
   },
   onClose: () => {
-    console.log('onClose')
+    console.log('onClose');
   },
-}
+};
 
-export default parameters
+export default parameters;

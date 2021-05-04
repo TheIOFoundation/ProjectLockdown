@@ -4,15 +4,18 @@ import { setFavIcon } from '../../utils/setFavIcon.js';
 import '../pwa-update-available';
 import './Settings.scss';
 
-export function Settings({ 
-  onClose, 
-  locale, 
-  darkMode, 
-  setDarkMode 
-}) {
+import { useTranslation } from 'react-i18next';
+
+// eslint-disable-next-line react/prop-types
+export function Settings({ onClose, darkMode, setDarkMode }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
-  
-  function toggleDarkmode() {
+
+  const {
+    t,
+    // i18n
+  } = useTranslation();
+
+  const toggleDarkmode = () => {
     if (document.getElementsByTagName('html')[0].classList.contains('dark')) {
       document.getElementsByTagName('html')[0].classList.remove('dark');
       localStorage.setItem('darkmode', 'false');
@@ -26,11 +29,11 @@ export function Settings({
       setDarkMode(true);
       onClose();
     }
-  }
+  };
 
   useEffect(() => {
     async function addListener() {
-      addPwaUpdateListener(updateAvailable => {
+      addPwaUpdateListener((updateAvailable) => {
         setPwaUpdateAvailable(updateAvailable);
       });
       let dark = localStorage.getItem('darkmode');
@@ -43,16 +46,16 @@ export function Settings({
   return (
     <div className="settings">
       <button onClick={toggleDarkmode} className="ld-button">
-        {locale.t('menu.userPreferenceSection.theme.action')}
+        {t('menu.userPreferenceSection.theme.action')}
         {darkMode
-          ? locale.t('menu.userPreferenceSection.theme.light')
-          : locale.t('menu.userPreferenceSection.theme.dark')}
+          ? t('menu.userPreferenceSection.theme.light')
+          : t('menu.userPreferenceSection.theme.dark')}
       </button>
 
       {pwaUpdateAvailable ? (
         <pwa-update-available>
           <button onClick={() => onClose()} className="ld-button">
-            {locale.t('menu.userPreferenceSection.app.update')}
+            {t('menu.userPreferenceSection.app.update')}
           </button>
         </pwa-update-available>
       ) : (

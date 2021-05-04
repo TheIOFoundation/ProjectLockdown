@@ -1,4 +1,5 @@
 import { Component, createRef } from 'react';
+import { Translation } from 'react-i18next';
 import './legend.css';
 import { list } from '../../assets/icons/icons.js';
 
@@ -25,32 +26,33 @@ export class Legend extends Component {
 
   // Mobile
   onTouch(e) {
-    let touchLocation = e.targetTouches[0];
-    this.btn.style.left = touchLocation.pageX + 'px';
-    this.btn.style.top = touchLocation.pageY + 'px';
+    const touchLocation = e.targetTouches[0];
+    this.btn.style.left = `${touchLocation.pageX}px`;
+    this.btn.style.top = `${touchLocation.pageY}px`;
   }
-  onTouchEnd(e) {
+
+  onTouchEnd() {
     let side = this.state.x;
     let vertical = this.state.y;
-    let x = window.innerWidth || window.clientWidth;
-    let y = window.innerHeight || window.clientHeight;
-    let currentVertical = Number(this.btn.style.top.replace('px', ''));
-    let currentSide = Number(this.btn.style.left.replace('px', ''));
+    const x = window.innerWidth || window.clientWidth;
+    const y = window.innerHeight || window.clientHeight;
+    const currentVertical = Number(this.btn.style.top.replace('px', ''));
+    const currentSide = Number(this.btn.style.left.replace('px', ''));
 
     if (currentVertical > y / 2) {
       if (currentVertical >= y - 150) {
-        this.btn.style.top = y - 150 + 'px';
+        this.btn.style.top = `${y - 150}px`;
       }
       vertical = 'bottom';
     } else {
       if (currentVertical <= 160) {
-        this.btn.style.top = 160 + 'px';
+        this.btn.style.top = `${160}px`;
       }
       vertical = 'top';
     }
     if (currentSide > x / 2) {
       side = 'right';
-      this.btn.style.left = x - 70 + 'px';
+      this.btn.style.left = `${x - 70}px`;
     } else {
       side = 'left';
       this.btn.style.left = '10px';
@@ -86,28 +88,36 @@ export class Legend extends Component {
             <span>
               <div className="color green" />
             </span>
-            <span> No Lockdown </span>
+            <Translation>
+              {(t, { i18n }) => <span>{t('mapLegend.no')}</span>}
+            </Translation>
           </div>
 
           <div>
             <span>
               <div className="color orange" />
             </span>
-            <span> Partial Lockdown </span>
+            <Translation>
+              {(t, { i18n }) => <span>{t('mapLegend.partial')}</span>}
+            </Translation>
           </div>
 
           <div>
             <span>
               <div className="color red" />
             </span>
-            <span> Full Lockdown </span>
+            <Translation>
+              {(t, { i18n }) => <span>{t('mapLegend.full')}</span>}
+            </Translation>
           </div>
 
           <div>
             <span>
               <div className="color gray" />
             </span>
-            <span> No Data </span>
+            <Translation>
+              {(t, { i18n }) => <span>{t('mapLegend.noData')}</span>}
+            </Translation>
           </div>
         </div>
       </legend>
