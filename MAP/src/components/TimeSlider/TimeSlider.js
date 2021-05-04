@@ -5,6 +5,7 @@ import { enUS } from 'date-fns/locale';
 import { addDays } from 'date-fns';
 import { calendar } from '../../assets/icons/icons.js';
 import DatePicker from '../DatePicker/DatePicker';
+import PlayButton from '../PlayButton/PlayButton';
 
 const sliderWrapper = css`
   & {
@@ -99,7 +100,7 @@ const selectStyles = css`
   }
   & {
     height: 50px;
-    padding: 0px 110px;
+    padding: 0px 177px;
     @media (max-width: 960px) {
       padding: 0px 85px;
     }
@@ -326,10 +327,10 @@ const tooltipCss = css`
       }
     }
     &.first {
-      left: 40px;
+      left: 30px;
     }
     &.last {
-      right: 57px;
+      right: 50px;
     }
   }
 `;
@@ -448,6 +449,8 @@ const TimeSlider = (props) => {
     firstDay,
     lastDay,
     days,
+    playerState,
+    onPlayerStateToggle
   } = props;
   const [datePickerPosition, setDatePickerPosition] = useState('left');
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -585,6 +588,7 @@ const TimeSlider = (props) => {
       }`}
       ref={container}
     >
+      <PlayButton state={playerState} toggleState={onPlayerStateToggle} />
       {props.children}
       <div
         className={`${selectStyles} ${rangeStyles} ${

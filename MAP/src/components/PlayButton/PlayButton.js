@@ -29,7 +29,7 @@ const PlayButton = ({ state, toggleState }) => {
     />
   );
   return (
-    <div style={{ position: 'absolute', left: '2.5vw', bottom: '50px' }}>
+    <div style={{ position: 'inherit', left: '-5.5vw', bottom: '0' }}>
       {state === PLAYING ? playing() : paused()}
     </div>
   );
