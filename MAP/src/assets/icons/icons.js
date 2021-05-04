@@ -25,4 +25,15 @@ export { chevronUp } from './chevron-up.js';
 export { world } from './world.js';
 export { magnify } from './magnify.svg.js';
 
-export { home, citymovement, religion, work, military, academia, shops, electricity, water, internet } from './measures.svg.js';
+export {
+  home,
+  citymovement,
+  religion,
+  work,
+  military,
+  academia,
+  shops,
+  electricity,
+  water,
+  internet,
+} from './measures.svg.js';

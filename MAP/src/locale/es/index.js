@@ -12,7 +12,8 @@ const es = {
   },
   menu: {
     informationSection: {
-      banner: 'Project Lockdown se encuentra actualmente en fase BETA. No todos los datos se encuentran disponibles.',
+      banner:
+        'Project Lockdown se encuentra actualmente en fase BETA. No todos los datos se encuentran disponibles.',
       main: {
         name: 'Project Lockdown',
         text:
@@ -59,7 +60,8 @@ const es = {
         title: 'Politica de Datos & Privacidad',
         paragraphs: {
           p1: 'No recolectamos datos de nuestros visitantes.',
-          p2: 'Toda información disponible de nuestros miembros es publicada bajo su consentimiento.',
+          p2:
+            'Toda información disponible de nuestros miembros es publicada bajo su consentimiento.',
         },
       },
     },

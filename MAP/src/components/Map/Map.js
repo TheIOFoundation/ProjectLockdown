@@ -18,7 +18,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 
 //import LocalStorage Functions
-import * as router from "../../router";
+import * as router from '../../router';
 
 /**
  * Primary UI component for user interaction
@@ -67,8 +67,8 @@ export class Map extends React.Component {
 
   setMapState(map, localData = [], lookupData) {
     const localDataByIso = {};
-    localData.forEach(l => (localDataByIso[l.lockdown.iso] = l));
-    Object.keys(lookupData).forEach(key => {
+    localData.forEach((l) => (localDataByIso[l.lockdown.iso] = l));
+    Object.keys(lookupData).forEach((key) => {
       var lookup = lookupData[key];
       var countryInfo = localDataByIso[key];
       map.setFeatureState(
@@ -80,7 +80,7 @@ export class Map extends React.Component {
         {
           kind: countryInfo?.lockdown?.measure[0]?.value,
           name: key,
-        }
+        },
       );
     });
   }
@@ -90,13 +90,13 @@ export class Map extends React.Component {
       await pause();
       await this.initMap(mapData, lookupTable);
     }
-    
+
     const mapBoxglState = mapboxgl.getRTLTextPluginStatus();
-    if (mapBoxglState === 'unavailable' || mapBoxglState === 'error' ) {
+    if (mapBoxglState === 'unavailable' || mapBoxglState === 'error') {
       mapboxgl.setRTLTextPlugin(
         'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
         null,
-        true // Lazy load the plugin
+        true, // Lazy load the plugin
       );
     }
 
@@ -168,7 +168,7 @@ export class Map extends React.Component {
               },
               {
                 hover: false,
-              }
+              },
             );
           }
 
@@ -182,7 +182,7 @@ export class Map extends React.Component {
             },
             {
               hover: true,
-            }
+            },
           );
         }
       });
@@ -198,7 +198,7 @@ export class Map extends React.Component {
 
     this.props.setIsLoading(false);
 
-    const createViz = lookupTable => {
+    const createViz = (lookupTable) => {
       map.addSource('admin-0', {
         type: 'vector',
         url: 'mapbox://mapbox.boundaries-adm0-v3',
@@ -261,7 +261,7 @@ export class Map extends React.Component {
             ],
           },
         },
-        'admin-1-boundary-bg'
+        'admin-1-boundary-bg',
       );
 
       //
@@ -273,7 +273,7 @@ export class Map extends React.Component {
       map.setPaintProperty(
         'country-label',
         'text-halo-color',
-        'hsla(0, 0%, 100%,0.6)'
+        'hsla(0, 0%, 100%,0.6)',
       );
       map.setPaintProperty('country-label', 'text-halo-width', 1);
 
@@ -285,24 +285,24 @@ export class Map extends React.Component {
       map.setPaintProperty(
         'admin-0-boundary',
         'line-color',
-        'hsla(0, 0%, 90%, 0.8)'
+        'hsla(0, 0%, 90%, 0.8)',
       );
       map.setPaintProperty(
         'admin-0-boundary-disputed',
         'line-color',
-        'hsla(0, 0%, 90%, 0.5)'
+        'hsla(0, 0%, 90%, 0.5)',
       );
       map.setPaintProperty(
         'admin-0-boundary-bg',
         'line-color',
-        'hsla(0, 0%, 84%, 0.3)'
+        'hsla(0, 0%, 84%, 0.3)',
       );
 
       // Improve contrast of state lines
       map.setPaintProperty(
         'admin-1-boundary',
         'line-color',
-        'hsla(0, 0%, 90%, 0.6)'
+        'hsla(0, 0%, 90%, 0.6)',
       );
 
       // Improve contrast of city labels
@@ -312,7 +312,7 @@ export class Map extends React.Component {
       // Change water color
       map.setPaintProperty('water', 'fill-color', '#e0e0e0');
 
-      const setStates = e => {
+      const setStates = (e) => {
         localData.forEach(function (row) {
           map.setFeatureState(
             {
@@ -323,7 +323,7 @@ export class Map extends React.Component {
             {
               kind: row.lockdown.measure[0].value,
               name: row.lockdown.iso,
-            }
+            },
           );
         });
 
@@ -369,11 +369,11 @@ export class Map extends React.Component {
         ? format(endDate, 'yyyy-MM-dd')
         : format(addDays(new Date(), daysRange - 14), 'yyyy-MM-dd');
       let newMapData = await getWorldData(startDate, endDate);
-      if(newMapData) {
+      if (newMapData) {
         localData = newMapData[selectedDate];
         mapData = newMapData;
         this.setState({ mapData }, () =>
-          this.setMapState(this.state.map, localData, lookupData)
+          this.setMapState(this.state.map, localData, lookupData),
         );
       }
     } else {
@@ -413,13 +413,13 @@ export class Map extends React.Component {
       let wikidata = features[0].properties.wikidata;
 
       router.setLocalStorage({
-        iso2 : this.state.lastCountry.iso2,
+        iso2: this.state.lastCountry.iso2,
         country: countryName,
         wikidata: wikidata,
       });
     } else {
       router.setLocalStorage({
-        iso2 : this.state.lastCountry.iso2,
+        iso2: this.state.lastCountry.iso2,
         country: this.state.lastCountry.name,
       });
     }
@@ -430,10 +430,13 @@ export class Map extends React.Component {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['admin-0-fill'],
     });
-    this.state.geocoder.query(lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name);
+    this.state.geocoder.query(
+      lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
+    );
     this.setState({
       lastCountry: {
-        country: lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
+        country:
+          lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
         iso2: features[0].properties.iso_3166_1,
       },
     });
@@ -452,7 +455,7 @@ export class Map extends React.Component {
     // the world map needs a large data source, lazily fetch them in parallel
     const [mapData, lookupTable] = await Promise.all([
       getWorldData(startDate, endDate),
-      fetch('./data/boundaries-adm0-v3.json').then(r => r.json()),
+      fetch('./data/boundaries-adm0-v3.json').then((r) => r.json()),
     ]);
 
     // we need to prepare a static country list not dynamically calculate them
@@ -466,20 +469,18 @@ export class Map extends React.Component {
       },
       () => {
         console.log('STATE', this.state);
-      }
+      },
     );
-    if(mapData && lookupTable)  await this.initMap(mapData, lookupTable);
-    
+    if (mapData && lookupTable) await this.initMap(mapData, lookupTable);
   }
 
   componentDidUpdate(previousProps, previousState, snapshot) {
     if (previousProps.selectedDate !== this.props.selectedDate) {
-
       if (this.state.isMapReady) {
         this.updateMap(
           this.state.mapData,
           this.state.lookupTable,
-          this.props.selectedDate
+          this.props.selectedDate,
         );
         if (previousProps.currentLanguage !== this.props.currentLanguage) {
           this.updateMapLanguage(this.props.currentLanguage);
@@ -487,16 +488,16 @@ export class Map extends React.Component {
       }
     }
   }
- 
+
   render() {
     return (
       <>
         <div
-          ref={ref => (this.ref = ref)}
+          ref={(ref) => (this.ref = ref)}
           id="map"
           onClick={() => this.props.onOpen(this.state.lastCountry)}
           className="map-container"
-          ></div>
+        ></div>
         <CountriesSearcher
           dark={this.props.dark}
           i18n={{ locale: 'en, en-US' }}

@@ -26,7 +26,8 @@ const enUs = {
             'Lockdown, quarantine, and isolation measures have been implemented across the globe to reduce the spread of COVID-19 and reduce the strain on medical infrastructure. ',
           p2:
             '{Project Lockdown} empowers citizens, journalists, and human rights actors to easily analyze the social and political effects of these measures. Founded on the values of transparency and accountability, ',
-          p3: '{Project Lockdown} is committed to providing citizens of the world with the tools they need to stay safe and informed.',
+          p3:
+            '{Project Lockdown} is committed to providing citizens of the world with the tools they need to stay safe and informed.',
         },
       },
       sources: {
@@ -59,7 +60,8 @@ const enUs = {
         title: 'Data & Privacy',
         paragraphs: {
           p1: 'We do not collect any personal information from our visitors.',
-          p2: 'All information on project members is provided with their consent.',
+          p2:
+            'All information on project members is provided with their consent.',
         },
       },
     },

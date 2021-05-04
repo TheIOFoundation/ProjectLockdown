@@ -1,5 +1,5 @@
 const apiEndpoint = {
-    apiEndpoint: 'https://lockdownsnapshots.azurewebsites.net',
-  };
+  apiEndpoint: 'https://lockdownsnapshots.azurewebsites.net',
+};
 
 export default apiEndpoint;

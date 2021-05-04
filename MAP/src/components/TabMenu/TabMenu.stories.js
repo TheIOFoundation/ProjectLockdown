@@ -9,7 +9,7 @@ const parameters = {
   component: TabMenu,
 };
 
-const Template = args => <TabMenu {...args} />;
+const Template = (args) => <TabMenu {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -21,7 +21,7 @@ Primary.args = {
   close: () => {
     console.log('close');
   },
-  onLocateChange: a => {
+  onLocateChange: (a) => {
     console.log('onLocateChange arg:', a);
   },
   isMobile: false,

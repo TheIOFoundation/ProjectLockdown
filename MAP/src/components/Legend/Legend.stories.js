@@ -8,7 +8,7 @@ const parameters = {
   },
 };
 
-const Template = args => <Legend {...args} />;
+const Template = (args) => <Legend {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

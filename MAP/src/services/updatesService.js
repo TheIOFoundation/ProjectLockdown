@@ -21,15 +21,10 @@ const mockData = {
 class UpdatesService extends EventTargetShim {
   async getUpdates(forceRefresh) {
     if (forceRefresh || !this.updates) {
-      try {
-        // @fixme get actual dynamic data. import.meta.url is not recognised by the loader
-        // this.updates = await fetch(new URL('../../data/updates.json', import.meta.url)).then((r) => r.json());
-        this.updates = mockData;
-      } catch {
-        return {
-          status: 'failed',
-        };
-      }
+      this.updates = mockData;
+      return {
+        status: 'failed',
+      };
     }
     this.dispatchEvent(new Event('change'));
     return {

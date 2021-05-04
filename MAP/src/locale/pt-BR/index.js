@@ -12,7 +12,8 @@ const ptBr = {
   },
   menu: {
     informationSection: {
-      banner: 'O Project Lockdown está atualmente em versão Beta. Nem todos os dados estão disponíveis no momento.',
+      banner:
+        'O Project Lockdown está atualmente em versão Beta. Nem todos os dados estão disponíveis no momento.',
       main: {
         name: 'Project Lockdown',
         text:
@@ -59,7 +60,8 @@ const ptBr = {
         title: 'Dados & Privacidade',
         paragraphs: {
           p1: 'Não coletamos nenhum dado pessoal de nossos visitantes.',
-          p2: 'Qualquer informação sobre membros do projeto é provida mediante consentimento prévio.',
+          p2:
+            'Qualquer informação sobre membros do projeto é provida mediante consentimento prévio.',
         },
       },
     },

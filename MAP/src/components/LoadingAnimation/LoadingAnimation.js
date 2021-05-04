@@ -5,7 +5,7 @@ export function LoadingAnimation({ isLoading }) {
 
   return (
     <div className="spinner">
-      <div className="ball"></div>
+      <div className="ball" />
       <p>Loading map</p>
     </div>
   );

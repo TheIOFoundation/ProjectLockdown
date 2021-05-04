@@ -6,19 +6,16 @@ import './Settings.scss';
 
 import { useTranslation } from 'react-i18next';
 
-export function Settings({ 
-  onClose, 
-  locale, 
-  darkMode, 
-  setDarkMode 
-}) {
+// eslint-disable-next-line react/prop-types
+export function Settings({ onClose, darkMode, setDarkMode }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
-  
-  const { t , 
-    // i18n
-   } = useTranslation();
 
-  function toggleDarkmode() {
+  const {
+    t,
+    // i18n
+  } = useTranslation();
+
+  const toggleDarkmode = () => {
     if (document.getElementsByTagName('html')[0].classList.contains('dark')) {
       document.getElementsByTagName('html')[0].classList.remove('dark');
       localStorage.setItem('darkmode', 'false');
@@ -32,11 +29,11 @@ export function Settings({
       setDarkMode(true);
       onClose();
     }
-  }
+  };
 
   useEffect(() => {
     async function addListener() {
-      addPwaUpdateListener(updateAvailable => {
+      addPwaUpdateListener((updateAvailable) => {
         setPwaUpdateAvailable(updateAvailable);
       });
       let dark = localStorage.getItem('darkmode');

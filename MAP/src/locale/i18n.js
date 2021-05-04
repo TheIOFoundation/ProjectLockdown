@@ -1,6 +1,6 @@
-import i18n from "i18next";
-import Backend from "i18next-http-backend"
-import LanguageDetector from "i18next-browser-languagedetector"
+import i18n from 'i18next';
+import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 import translationEN from './en/index';
@@ -12,47 +12,48 @@ import translationRU from './ru/index';
 import translationZHCN from './zh-CN/index';
 import translationZHHK from './zh-HK/index';
 
-
-
 const resources = {
   en: {
-    translation: translationEN
+    translation: translationEN,
   },
   es: {
-    translation: translationES
+    translation: translationES,
   },
   ar: {
-    translation: translationAR
+    translation: translationAR,
   },
   it: {
-    translation: translationIT
+    translation: translationIT,
   },
   pt: {
-    translation: translationPT
+    translation: translationPT,
   },
   ru: {
-    translation: translationRU
+    translation: translationRU,
   },
   zhCN: {
-    translation: translationZHCN
+    translation: translationZHCN,
   },
   zhHK: {
-    translation: translationZHHK
+    translation: translationZHHK,
   },
 };
 
-
-i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
-  resources,
-  fallbackLng : 'en',
-  debug: true,
-  detection: {
-    order: ['queryString', 'cookie'],
-    cache: ['cookie']
-  },
-  interpolation: {
-    escapeValue: false
-  }
-})
+i18n
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'en',
+    debug: true,
+    detection: {
+      order: ['queryString', 'cookie'],
+      cache: ['cookie'],
+    },
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 export default i18n;

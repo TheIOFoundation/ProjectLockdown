@@ -12,7 +12,8 @@ const it = {
   },
   menu: {
     informationSection: {
-      banner: 'Project Lockdown è attualmente in beta. Non tutti i dati potrebbero essere disponibili.',
+      banner:
+        'Project Lockdown è attualmente in beta. Non tutti i dati potrebbero essere disponibili.',
       main: {
         name: 'Project Lockdown',
         text:
@@ -45,7 +46,8 @@ const it = {
           },
         },
         issues: {
-          text: 'Se trovate degli errori, vi preghiamo di aiutarci e di segnalarli ',
+          text:
+            'Se trovate degli errori, vi preghiamo di aiutarci e di segnalarli ',
           highlight: 'creando una segnalazione qui',
         },
       },
@@ -59,7 +61,8 @@ const it = {
         title: 'Dati & Privacy',
         paragraphs: {
           p1: 'Non raccogliamo informazioni personali dai nostri visitatori.',
-          p2: 'Tutte le informazioni sui membri del progetto vengono fornite con il loro consenso.',
+          p2:
+            'Tutte le informazioni sui membri del progetto vengono fornite con il loro consenso.',
         },
       },
     },

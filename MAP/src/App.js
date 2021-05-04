@@ -1,59 +1,61 @@
-import React from 'react'
-import { Map } from './components/Map/Map'
-import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation'
-import { Legend } from './components/Legend/Legend'
-import Totals from './components/Totals/Totals'
-import Header from './components/Header/Header'
-import LanguageSelector from './components/LanguageSelector/LanguageSelector'
-import './App.scss'
-import { TabMenu } from './components/TabMenu/TabMenu'
-import ThemeContext from './context/ThemeContext'
-import format from 'date-fns/format'
-import PlayButton from './components/PlayButton/PlayButton'
-import { addDays } from 'date-fns'
-import TimeSlider from './components/TimeSlider/TimeSlider'
-import CountryInfo from './components/CountryInfo/CountryInfo'
+import React from 'react';
+import { Map } from './components/Map/Map';
+import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
+import { Legend } from './components/Legend/Legend';
+import Totals from './components/Totals/Totals';
+import Header from './components/Header/Header';
+import LanguageSelector from './components/LanguageSelector/LanguageSelector';
+import './App.scss';
+import { TabMenu } from './components/TabMenu/TabMenu';
+import ThemeContext from './context/ThemeContext';
+import format from 'date-fns/format';
+import PlayButton from './components/PlayButton/PlayButton';
+import { addDays } from 'date-fns';
+import TimeSlider from './components/TimeSlider/TimeSlider';
+import CountryInfo from './components/CountryInfo/CountryInfo';
 
 //import LocalStorage Functions
-import * as router from "./router";
+import * as router from './router';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
 // TODO: Reset selectedDate to startDate once endDate is reached.
 
 function toJsonString(date) {
-  return format(date, 'yyyy-MM-dd')
+  return format(date, 'yyyy-MM-dd');
 }
 
-const daysRange = 70
+const daysRange = 70;
 
-const startingPoint = -300
+const startingPoint = -300;
 
-const playSpeed = 200
+const playSpeed = 200;
 // i.e. delay between skipping to the next date (in ms)
 
 const playerStates = {
   PLAYING: 'PLAYING',
   PAUSED: 'PAUSED',
-}
+};
 
 const getDaysDiff = (date1, date2) => {
-  var formattedDate1 = new Date(date1)
-  var formattedDate2 = new Date(date2)
-  return (formattedDate2.getTime() - formattedDate1.getTime()) / (1000 * 3600 * 24)
-}
-const { PLAYING, PAUSED } = playerStates
+  var formattedDate1 = new Date(date1);
+  var formattedDate2 = new Date(date2);
+  return (
+    (formattedDate2.getTime() - formattedDate1.getTime()) / (1000 * 3600 * 24)
+  );
+};
+const { PLAYING, PAUSED } = playerStates;
 
 class App extends React.Component {
   constructor(props) {
-    super(props) 
-    this.state ={
+    super(props);
+    this.state = {
       loading: false,
       isDark: 'false',
-      playerState:PAUSED,
+      playerState: PAUSED,
       days: [],
       currentLanguage: {
-        t: (text) => text
+        t: (text) => text,
       },
       selectedDate: toJsonString(addDays(new Date(), startingPoint)),
       startDate: addDays(new Date(), startingPoint),
@@ -63,57 +65,55 @@ class App extends React.Component {
         template: '',
         title: '',
         iso2: '',
-        country: ''
-      }
-    }
+        country: '',
+      },
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setNewDays();
     router.resetLocalStorage();
     this.pausePlayerState();
     this.setPlayerState();
   }
-    setNewDays = () => {
-      const {startDate,days} = this.state;
-      let date = startDate;
-      const newDays = [...days];
+  setNewDays = () => {
+    const { startDate, days } = this.state;
+    let date = startDate;
+    const newDays = [...days];
 
-      for (let i = 0; i <= daysRange; i++) {
-        newDays.push(format(date, 'yyyy-MM-dd'));
-        date = addDays(date,1);
-  
-      }
-      this.setState({
-        ...this.state,
-        days: newDays
-      });
-      
+    for (let i = 0; i <= daysRange; i++) {
+      newDays.push(format(date, 'yyyy-MM-dd'));
+      date = addDays(date, 1);
     }
-  
-  setSelectedDate = (newDate) =>{
     this.setState({
       ...this.state,
-      selectedDate: newDate
-    })
-  }
+      days: newDays,
+    });
+  };
 
-  setStartDate = (startDate) =>{
+  setSelectedDate = (newDate) => {
     this.setState({
       ...this.state,
-      startDate
-    })
-  }
+      selectedDate: newDate,
+    });
+  };
+
+  setStartDate = (startDate) => {
+    this.setState({
+      ...this.state,
+      startDate,
+    });
+  };
 
   setEndDate = (endDate) => {
     this.setState({
       ...this.state,
-      endDate
-    })
-  }
+      endDate,
+    });
+  };
 
-   pausePlayerState = () => {
-    const {endDate, selectedDate, startDate} = this.state;
+  pausePlayerState = () => {
+    const { endDate, selectedDate, startDate } = this.state;
     const formattedSelectedDate = new Date(selectedDate);
     if (
       formattedSelectedDate.getDate() === endDate.getDate() &&
@@ -124,112 +124,123 @@ class App extends React.Component {
       this.setState({
         ...this.state,
         playerStates: PAUSED,
-        selectedDate: format(startDate, 'yyyy-MM-dd')
+        selectedDate: format(startDate, 'yyyy-MM-dd'),
       });
     }
+  };
 
-  }
-
-   toggleState = (newState) => {
+  toggleState = (newState) => {
     this.setState({
       ...this.state,
-      playerStates: newState
+      playerState: newState,
     });
-  }
+  };
 
-   setPlayerState = () => {
-    const {selectedDate, endDate, playerState} = this.state;
+  setPlayerState = () => {
+    const { selectedDate, endDate, playerState } = this.state;
     const formattedSelectedDate = new Date(selectedDate);
     let loop = null;
     if (playerState === PLAYING) {
-       loop = setInterval(() => {
+      loop = setInterval(() => {
         if (playerState === PAUSED || formattedSelectedDate === endDate) {
-          console.log('Stopped')
-          clearInterval(loop)
+          console.log('Stopped');
+          clearInterval(loop);
         } else {
           console.log('Still looping');
           this.setState({
             ...this.state,
-            selectedDate: format(addDays(formattedSelectedDate, 1), 'yyyy-MM-dd')
+            selectedDate: format(
+              addDays(formattedSelectedDate, 1),
+              'yyyy-MM-dd',
+            ),
           });
         }
-      }, playSpeed)
+      }, playSpeed);
     }
 
     return () => clearInterval(loop);
+  };
 
-  }
- 
-   setIsDark = ()=>{
-    const darkModePreference = window.localStorage.getItem('darkmode')
+  setIsDark = () => {
+    const darkModePreference = window.localStorage.getItem('darkmode');
 
     if (!darkModePreference) {
       const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       this.setState({
         ...this.state,
-        isDark
+        isDark,
       });
       document.getElementsByTagName('html')[0].classList.add('dark');
       window.localStorage.setItem('darkmode', 'true');
     }
 
     if (darkModePreference === 'true') {
-      document.getElementsByTagName('html')[0].classList.add('dark')
+      document.getElementsByTagName('html')[0].classList.add('dark');
       this.setState({
         ...this.state,
-        isDark: true
-      })
+        isDark: true,
+      });
     } else if (darkModePreference === 'false') {
       this.setState({
         ...this.state,
-        isDark: false
-      })
-    }
-  }
-   closeDialog = () => {
-    const dialog = { opened: false, template: '', title: '' }
-    this.setState(prevState => ({              
-          ...prevState.dialog,    
-          dialog 
-    }));
-  }
-
-   openDialog = (props) => {
-    const dialog = { 
-      opened: true, 
-      template: "",
-      title: "" ,
-      iso2: props.iso2,
-      country: props.country
-    }
-    this.setState(prevState => ({
-          ...prevState,    
-          dialog
-    }));
-  }
-
-   setCurrentLanguage = () =>{
-     console.log("TODO: to be addressed letter");
-  }
-  setIsLoading = (value) =>{
-      this.setState({
-        ...this.state,
-        isLoading: value
+        isDark: false,
       });
-  } 
-  render () {
-    const {isDark, playerState, isLoading, selectedDate, startDate, endDate, days, dialog, currentLanguage} = this.state;
+    }
+  };
+  closeDialog = () => {
+    const dialog = { opened: false, template: '', title: '' };
+    this.setState((prevState) => ({
+      ...prevState.dialog,
+      dialog,
+    }));
+  };
+
+  openDialog = (props) => {
+    const dialog = {
+      opened: true,
+      template: '',
+      title: '',
+      iso2: props.iso2,
+      country: props.country,
+    };
+    this.setState((prevState) => ({
+      ...prevState,
+      dialog,
+    }));
+  };
+
+  setCurrentLanguage = () => {
+    console.log('TODO: to be addressed letter');
+  };
+  setIsLoading = (value) => {
+    this.setState({
+      ...this.state,
+      isLoading: value,
+    });
+  };
+  render() {
+    const {
+      isDark,
+      playerState,
+      isLoading,
+      selectedDate,
+      startDate,
+      endDate,
+      days,
+      dialog,
+      currentLanguage,
+    } = this.state;
     return (
       <div
         onKeyUp={(e) => {
           if (e.key === ' ') {
-            const newState = playerState === PAUSED ? PLAYING : PAUSED
-  
+            const newState = playerState === PAUSED ? PLAYING : PAUSED;
+
             this.toggleState(newState);
           }
         }}
       >
-        <ThemeContext.Provider value={{ isDark}}>
+        <ThemeContext.Provider value={{ isDark }}>
           <LoadingAnimation isLoading={isLoading} />
           <Map
             dark={isDark}
@@ -268,7 +279,7 @@ class App extends React.Component {
               setLastDay={this.setEndDate}
             >
               {dialog.opened ? (
-                <CountryInfo 
+                <CountryInfo
                   dark={isDark}
                   country={dialog.country}
                   iso2={dialog.iso2}
@@ -288,8 +299,8 @@ class App extends React.Component {
           )}
         </ThemeContext.Provider>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
