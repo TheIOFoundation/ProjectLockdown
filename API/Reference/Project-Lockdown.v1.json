@@ -47419,7 +47419,7 @@
           }
         },
         "operationId": "get-DataPoints",
-        "description": "Handles PLD DataPoint objects."
+        "description": "Handles PLD DataPoint objects.\n\n"
       },
       "parameters": [
         {
