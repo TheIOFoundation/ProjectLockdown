@@ -4,7 +4,7 @@ import { fetchTotals } from '../../services';
 import './Totals.css';
 
 const separateNumber = (number) => {
-  const nfObject = new Intl.NumberFormat('en-US');
+  const nfObject = new Intl.NumberFormat('es-ES');
   const output = nfObject.format(+number);
   return output;
 };
