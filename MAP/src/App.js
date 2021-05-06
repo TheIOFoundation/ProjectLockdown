@@ -31,6 +31,8 @@ const startingPoint = -300;
 const playSpeed = 200;
 // i.e. delay between skipping to the next date (in ms)
 
+const watermarkSize = 2;
+
 const playerStates = {
   PLAYING: 'PLAYING',
   PAUSED: 'PAUSED',
@@ -258,7 +260,7 @@ class App extends React.Component {
             languageChangeHandler={this.setCurrentLanguage}
             dark={isDark}
           />
-          <Watermark dark={isDark} />
+          <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && (
             <TimeSlider
               playerState={playerState}

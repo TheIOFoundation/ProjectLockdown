@@ -1,8 +1,13 @@
 import React from 'react';
 import './watermark.css';
 
-const Watermark = ({ dark }) => (
-    <div className={`Watermark`}>
+const Watermark = ({ dark, fontsize }) => (
+    <div
+        className={`Watermark`}
+        style={{
+            fontSize: `${fontsize}vw`,
+        }}
+    >
        PROJECT LOCKDOWN
     </div>
 );
