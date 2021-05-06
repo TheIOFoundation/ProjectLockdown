@@ -11,6 +11,7 @@ import format from 'date-fns/format';
 import { addDays } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
+import Watermark from './components/Watermark/Watermark'
 
 //import LocalStorage Functions
 import * as router from './router';
@@ -257,6 +258,7 @@ class App extends React.Component {
             languageChangeHandler={this.setCurrentLanguage}
             dark={isDark}
           />
+          <Watermark dark={isDark} />
           {startDate && endDate && selectedDate && (
             <TimeSlider
               playerState={playerState}
