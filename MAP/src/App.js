@@ -11,6 +11,7 @@ import format from 'date-fns/format';
 import { addDays } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
+import Watermark from './components/Watermark/Watermark'
 
 //import LocalStorage Functions
 import * as router from './router';
@@ -29,6 +30,8 @@ const startingPoint = -300;
 
 const playSpeed = 200;
 // i.e. delay between skipping to the next date (in ms)
+
+const watermarkSize = 2;
 
 const playerStates = {
   PLAYING: 'PLAYING',
@@ -257,6 +260,7 @@ class App extends React.Component {
             languageChangeHandler={this.setCurrentLanguage}
             dark={isDark}
           />
+          <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && (
             <TimeSlider
               playerState={playerState}
