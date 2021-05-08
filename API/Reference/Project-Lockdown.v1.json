@@ -3,7 +3,7 @@
   "info": {
     "title": "Project Lockdown",
     "version": "1.0",
-    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\n\n## How is this documentation structured\n\n\n\n🔶 All objects mentioned in the documentation link to their Model definition page.\nShould there be more information to observe, a link will be provided at the top of the Model's definition page.\n\n🔶 Icon representation for each documentation object:\n- 📦 Model\n- 💠 Endpoint\n\n\n\n## Documentation sections\n- 🌐 **Expanded information**: Links to the extendend documentation of this 📦 Model or 💠Endpoint.\n\n- ⚡ About \n- 📢 Used by\n- 🔗 URL fields\n- 📅 Date Fields\n- ⚙ Algorithm-related\n- 📊 Stats\n- 📝 Log\n\n\n\n## ❔ Legend:\n\n**Status:**\n- 🚧 Work in Progress\n- 👁️‍🗨️ Documentation is ready for review & QA\n- ✔ Documentation is ready\n\n- 🔶 Items in a list\n- ▶ Providing an code/data example\n- \n- ❗ Important\n- ⚠ Warning\n- ⛔ Prohibition\n- ❓ Attention needed: This information still requires a consensus/decision\n- 🚧 Work in Progress\n\n\n\n\n\n🔶 PLD Datapoint\n🔷 External Datapoint\n🚩 Red Flag\n\n\n✴\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n\n# Documentation Sections\n⚡ About\n🎯 Path Parameters\n📢 Consumed by\n📃 Responses\n\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n\n\n\n**Modules**\n- 🗺 MAP\n- ⌨ BO\n- 🌐 (Website)\n- 🗃 API\n-🗄 DEI\n- 🤖 ML Funnel\n- 👨‍💻 📁 ✋ Insourcing Funnel\n- 💫 📦 🌠 Direct Feed Funnel\n- ✨ ✨ 🤲 Crowdsourcinng\n\n\n----------\n>>> Possibly move this to a page in the Wiki\n# Basic Template for Documentation\n\n\n# Status: 🚧 👁️‍🗨️ ✔\n\n## ⚡ About\n\n## 🌐 Expanded information\n\n## [GENERIC HEADER]\n\n🔶 **Item** \n\n▶ **Sample for code/data**: \n\n```\nCODE/DATA CONTENTS\n```\n\n## ⚙ ALGORITHM/CODE HEADER\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- [MODULE]\n    - 💠 \n\n## 🔗 URL fields\n\n## 📅 Date Fields\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\n\n\n",
+    "description": "APIs corresponding to Project Lockdown.\nThey serve\n- Back Office (BO)\n- Mapping Platform (MAP)\n- Public Open Data\n\n\n\n## Loading sequence\n\n- Obtain QS\n- Call Environment Endpoint with DSLUID (if exists on QS)\n- Environment response >> Module config (MAP) + DSL config (RT Env)\n- Call Snapshot Endpoint DSLUID (+ extra params)\n- Snapshot response >> DATA on the Module (MAP)\nNote: All datapoints exist in the same snapshot, including those obtained from external API. Their ID starts somewhere around 100.X-200.X.\n\n\n\n## How is this documentation structured\n\n\n\n🔶 All objects mentioned in the documentation link to their Model definition page.\nShould there be more information to observe, a link will be provided at the top of the Model's definition page.\n\n🔶 Icon representation for each documentation object:\n- 📦 Model\n- 💠 Endpoint\n\n\n\n## Documentation sections\n- 🌐 **Expanded information**: Links to the extendend documentation of this 📦 Model or 💠Endpoint.\n\n- ⚡ About \n- 📢 Used by\n- 🔗 URL fields\n- 📅 Date Fields\n- ⚙ Algorithm-related\n- 📊 Stats\n- 📝 Log\n\n\n\n## ❔ Legend:\n\n**Status:**\n- 🚧 Work in Progress\n- 👁️‍🗨️ Documentation is ready for review & QA\n- ✔ Documentation is ready\n\n- 🔶 Items in a list\n- ▶ Providing an code/data example\n- \n- ❗ Important\n- ⚠ Warning\n- ⛔ Prohibition\n- ❓ Attention needed: This information still requires a consensus/decision\n- 🚧 Work in Progress\n\n\n\n\n\n🔶 PLD Datapoint\n🔷 External Datapoint\n🚩 Red Flag\n\n\n✴\n\n\nhttps://html-css-js.com/html/character-codes/\n\n💡 (Idea / Suggestion)\n💫\n📊 (Stats)\n🗃\n⚙ (Settings)\n🔋 (Used by - Powers up)\n✅ (Stage: Ready)\n‼ (Deprecated)\n🌐 (Website)\n🔥 (On fire!)\n⭐ (About)\n🔰 (Beginner)\n🗯 (Comments)\n💬 (Comments)\n\n☠ (Do not!)\n⛔ \n👁 ()\n📑 (TBC)\n\n🚧 (Work in Progress)\n👁️‍🗨️ (Ready for mockups/examples though documentation needs polishing)\n\n\n# Documentation Sections\n⚡ About\n🎯 Path Parameters\n📢 Consumed by\n📃 Responses\n\n\n🔥 (On fire!)\n🌀 Mandatory field\n🃏 Optional field\n\n\n\n**Modules**\n- 🗺 MAP\n- ⌨ BO\n- 🌐 (Website)\n- 🗃 API\n-🗄 DEI\n- 🤖 ML Funnel\n- 👨‍💻 📁 ✋ Insourcing Funnel\n- 💫 📦 🌠 Direct Feed Funnel\n- ✨ ✨ 🤲 Crowdsourcinng\n\n\n----------\n>>> Possibly move this to a page in the Wiki\n# Basic Template for Documentation\n\n\n# Status: 🚧 👁️‍🗨️ ✔\n\n## ⚡ About\n\n## 🌐 Expanded information\n\n## [GENERIC HEADER]\n\n🔶 **Item** \n\n▶ **Sample for code/data**: \n\n```\nCODE/DATA CONTENTS\n```\n\n## ⚙ ALGORITHM/CODE HEADER\n\n## 📢 Used by\nThis Model is used in the following modules through these Endpoints:\n- [MODULE]\n    - 💠 \n\n## 🔗 URL fields\n\n## 📅 Date Fields\n\n## 📊 Stats\n❓ PENDING\n\n## 📝 Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\n\n\n",
     "contact": {
       "name": "The IO Foundation",
       "email": "Contact@ProjectLockdown.net"
@@ -47532,10 +47532,9 @@
           "Endpoints"
         ],
         "responses": {
-            "200": {
-                "description": "ok"
-
-            }
+          "200": {
+            "description": "ok"
+          }
         },
         "operationId": "get-DataSetLayers",
         "description": "Handles DataSet Layers\n\n\nGet\nParams\nDSLUID <> 0 \nReturns the DSL (DSEs only, never Snapshots) data\n\nDSLUID = 0\nReturns all the DSLs definition data (not DSEs)\n\nFormat\n\n\n"
@@ -47553,9 +47552,9 @@
           "Endpoints"
         ],
         "responses": {
-            "200": {
-                "description": "OK"
-            }
+          "200": {
+            "description": "OK"
+          }
         },
         "operationId": "get-Origins",
         "description": "Handles Origins\n\nParams\nTerritoryUID\nReturns all the Origins for a given Territory\n\nDSLUID\nReturns all the Origins used in a given DSL\n\n\n"
@@ -47578,9 +47577,9 @@
           "Endpoints"
         ],
         "responses": {
-            "200": {
-                "description": "OK"
-            }
+          "200": {
+            "description": "OK"
+          }
         },
         "operationId": "get-Sources",
         "description": "Handles Sources\n\n\nParams\nOriginUID\nReturns all Sources obtained from a Source\n\nDSLUID\nReturns all Sources used in a given DSL\n\n\n\n\n\n"
@@ -47598,9 +47597,9 @@
           "Endpoints"
         ],
         "responses": {
-            "200" : {
-                "description": "OK"
-            }
+          "200": {
+            "description": "OK"
+          }
         },
         "operationId": "get-DataSetEntries",
         "description": "Handles DataSetEntries\n(The actual encoding of a Source)\n\n\nParams\nSourceUID\nReturns the DSE for a specific SourceUID\n\nDSLUID\nReturns ALL the DSEs for a specific DSLUID\n\n\n"
@@ -47623,11 +47622,13 @@
     "/Snapshots/{SnapshotUID}/{Module}/{DateStart}/{DateEnd}/{DSLUID}": {
       "get": {
         "summary": "🚧 Snapshots",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {
-            "200": {
-                "description": "OK"
-            }
+          "200": {
+            "description": "OK"
+          }
         },
         "operationId": "get-Snapshots",
         "description": "# Status: ✔\n\n## ⚡ About\nThis Endpoint exctracts all the necessary data for a Module to function.\n\nIt returns a Model of type [Environment](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Environment#status-).\n\nThe information is used to:\n- Set App Global Vars\n- Set the Module Vars\n- Get the necessary DSL information\n\n## 🎯 Path Parameters\n\n - 🃏 DSLUID\n   - 0 / Empty = Default DSL (taken from Project > GlobalVars > DLSDefault)\n   - Any other value = UID of the DSL to be loaded.\n \n - 🃏 MODULE\n   - MAP = Requesting environment info for [MAP Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n   - BO = Requesting environment info for [BO Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n   - API = Requesting environment info for [API Module](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n- 🃏 EnvironmenUID\n  - 0 = Default App configuration\n  - Any other value = Custom environment configurations, for instance custom environments for Users (User Preferences).\n\n\n## 📢 Consumed by\n- [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- 📑 [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- 📑 [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n\n\n\n## 📃 Responses\n\n- 200\nReturns an [Environment model] (https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Environment)\n\nUsed to return:\n* Application-wide settings (Project child object)\n* Module-specific settings (Module child object)\n* DSL metadata & UI (DSL child object)\n\nExample: \n"
@@ -47647,6 +47648,9 @@
         },
         {
           "$ref": "#/components/parameters/DSLUID"
+        },
+        {
+          "$ref": "#/components/parameters/PLDCode"
         }
       ]
     },
@@ -47655,9 +47659,9 @@
         "summary": "🚧 Schemas",
         "tags": [],
         "responses": {
-            "200": {
-                "description": "OK"
-            }
+          "200": {
+            "description": "OK"
+          }
         },
         "operationId": "get-Schemas",
         "description": ""
@@ -47673,9 +47677,9 @@
         "summary": "🚧 Answers",
         "tags": [],
         "responses": {
-            "200": {
-                "description": "OK"
-            }
+          "200": {
+            "description": "OK"
+          }
         },
         "operationId": "get-Answers"
       },
@@ -47735,9 +47739,9 @@
         "summary": "🚧 Users",
         "tags": [],
         "responses": {
-            "200": {
-                "description": "OK"
-            }
+          "200": {
+            "description": "OK"
+          }
         },
         "operationId": "get-Users"
       },
