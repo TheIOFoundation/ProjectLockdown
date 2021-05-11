@@ -8,7 +8,9 @@ Bob->Alice : foo
 Bob<--Alice : foo
 ```
 	
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MzI4NTYzOCw5MzY0MjM3MzMsLTE0OD
-U5NTA4NDMsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbMTM2ODg4ODU0NiwxODkzMjg1NjM4LDkzNj
+QyMzczMywtMTQ4NTk1MDg0MywyMDQwMjk3NjIyXX0=
 -->
