@@ -52,7 +52,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       loading: false,
-      isDark: 'false',
+      isDark: false,
       playerState: PAUSED,
       days: [],
       currentLanguage: {
