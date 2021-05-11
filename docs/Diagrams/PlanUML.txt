@@ -3,7 +3,7 @@
 This file is used by the TestProxy unit test. It contains 2 diagrams description.
 
 @startuml
-Bob -> Alice : hello
+Bob -> Alice : helloX
 @enduml
 
 @startuml
