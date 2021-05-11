@@ -3,14 +3,12 @@
 ***
 
 
-
-```
 ```uml
 Bob->Alice : foo
 Bob<--Alice : foo
 ```
-```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2NTcyMDE0NCwtMTQ4NTk1MDg0MywyMD
+eyJoaXN0b3J5IjpbLTU2ODQyNjMzOCwtMTQ4NTk1MDg0MywyMD
 QwMjk3NjIyXX0=
 -->
