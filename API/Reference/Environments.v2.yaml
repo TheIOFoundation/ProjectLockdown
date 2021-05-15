@@ -3,10 +3,13 @@ info:
   title: Environments.v2
   version: '1.0'
   description: Retrieve environments information via a GET request.
+  contact:
+    name: The IO Foundation.
+    email: Contact@ProjectLockdown.net
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /environment/:
+  /environment:
     parameters:
       - schema:
           type: integer
