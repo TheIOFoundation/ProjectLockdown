@@ -21,11 +21,11 @@ const renderMenu = (
     t: s => {
       switch (s) {
         case 'menu.userPreferenceSection.theme.action':
-          return 'Toggle ';
+          return 'Switch to ';
         case 'menu.userPreferenceSection.theme.light':
-          return 'Light mode';
-        case 'menu.userPreferenceSection.theme.dark':
           return 'Dark mode';
+        case 'menu.userPreferenceSection.theme.dark':
+          return 'Light mode';
         default:
           return s;
       }
@@ -44,7 +44,7 @@ const renderMenu = (
  }) => 
             <>
             <h1>Project Lockdown</h1>
-            <p className="ld-alpha">
+            <p className="ld-alpha banner">
               {t('menu.informationSection.banner')}
             </p>
             <p>
@@ -210,7 +210,7 @@ const renderMenu = (
         title: 'settings',
         template: (
           <Settings
-            darkMode={isDark}
+            isDark={isDark}
             setDarkMode={setDarkMode}
             onClose={callback}
             onLocateChange={onLocateChange}
