@@ -17,20 +17,7 @@ const renderMenu = (
   currentDropdown,
   onDropDown,
   onLocateChange,
-  locale = {
-    t: s => {
-      switch (s) {
-        case 'menu.userPreferenceSection.theme.action':
-          return 'Switch to ';
-        case 'menu.userPreferenceSection.theme.light':
-          return 'Dark mode';
-        case 'menu.userPreferenceSection.theme.dark':
-          return 'Light mode';
-        default:
-          return s;
-      }
-    },
-  }
+  locale
 ) => {
   switch (menuItem) {
     case 'info':
