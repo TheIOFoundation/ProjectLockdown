@@ -216,7 +216,7 @@ export const countryInfoStyles = css`
     font-variant-numeric: tabular-nums;
     margin-bottom: 7px;
     padding-bottom: 7px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #828282;
     width: 100%;
     .dark & {
       border-bottom: 1px solid #e0e0e0;

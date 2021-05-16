@@ -52,7 +52,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       loading: false,
-      isDark: 'false',
+      isDark: false,
       playerState: PAUSED,
       days: [],
       currentLanguage: {
@@ -252,7 +252,7 @@ class App extends React.Component {
             setIsLoading={this.setIsLoading}
             daysRange={daysRange}
           />
-          <TabMenu darkMode={isDark} setDarkMode={this.setIsDark} />
+          <TabMenu isDark={isDark} setDarkMode={this.setIsDark} />
           <Totals dark={isDark} />
           <Legend dark={isDark} />
           {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
