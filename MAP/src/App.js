@@ -76,6 +76,7 @@ class App extends React.Component {
     router.resetLocalStorage();
     this.pausePlayerState();
     this.setPlayerState();
+    this.setIsDark();
   }
   setNewDays = () => {
     const { startDate, days } = this.state;
