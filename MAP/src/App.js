@@ -66,7 +66,7 @@ const App = () => {
     super(props);
     this.state = {
       loading: false,
-      isDark: 'false',
+      isDark: false,
       playerState: PAUSED,
       days: [],
       currentLanguage: {

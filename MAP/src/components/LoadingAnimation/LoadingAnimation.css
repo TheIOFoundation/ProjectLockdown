@@ -23,7 +23,7 @@ body {
   animation: motion 3s ease-in-out infinite;
 }
 
-p {
+p.loading-text {
   color: black;
   margin-top: 5px;
   font-family: sans-serif;

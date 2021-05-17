@@ -7,7 +7,7 @@ import './Settings.scss';
 import { useTranslation } from 'react-i18next';
 
 // eslint-disable-next-line react/prop-types
-export function Settings({ onClose, darkMode, setDarkMode }) {
+export function Settings({ onClose, isDark, setDarkMode }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
 
   const {
@@ -37,7 +37,7 @@ export function Settings({ onClose, darkMode, setDarkMode }) {
         setPwaUpdateAvailable(updateAvailable);
       });
       let dark = localStorage.getItem('darkmode');
-      dark = dark !== 'false' && dark !== null;
+      dark = dark !== false && dark !== null;
       setDarkMode(dark);
     }
     addListener();
@@ -47,7 +47,7 @@ export function Settings({ onClose, darkMode, setDarkMode }) {
     <div className="settings">
       <button onClick={toggleDarkmode} className="ld-button">
         {t('menu.userPreferenceSection.theme.action')}
-        {darkMode
+        {isDark
           ? t('menu.userPreferenceSection.theme.light')
           : t('menu.userPreferenceSection.theme.dark')}
       </button>
