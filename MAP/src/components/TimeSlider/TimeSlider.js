@@ -603,14 +603,14 @@ const TimeSlider = (props) => {
           customClass={datePickerPosition}
         />
         <div className={`${sliderSelector}`} ref={dateRef}>
-          <span>{currentSelectedDay.toString()}</span>
+          <span>{currentSelectedDay?.toString()}</span>
         </div>
         <span
           title="Select Start Date"
           className={`first ${tooltipCss}`}
           onClick={(e) => onBtnClick('left')}
         >
-          <IconBtn /> {toSliderString(new Date(currentSelectedDay), 'en')}
+          <IconBtn /> {toSliderString(new Date(currentSelectedDay? currentSelectedDay : null), 'en')}
         </span>
         <button
           onClick={(e) => onBtnClick('left')}
@@ -626,7 +626,7 @@ const TimeSlider = (props) => {
           value={currentDateValue}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
-          {toSliderString(new Date(lastDay), 'en')}
+          {toSliderString(new Date(lastDay? lastDay : null), 'en')}
         </span>
       </div>
     </div>
