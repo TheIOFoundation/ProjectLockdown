@@ -9,7 +9,7 @@ const CountryDetails = (props) => {
     <div
       style={{
         color: `${dark ? 'white' : 'black'}`,
-        backgroundColor: `${dark ? '#333333 !important' : '#e0e0e0'}`,
+        backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`,
       }}
     >
       <h2 className="ld-font-subheader">

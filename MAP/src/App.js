@@ -76,6 +76,7 @@ class App extends React.Component {
     router.resetLocalStorage();
     this.pausePlayerState();
     this.setPlayerState();
+    this.setIsDark();
   }
   setNewDays = () => {
     const { startDate, days } = this.state;
@@ -163,16 +164,20 @@ class App extends React.Component {
   };
 
   setIsDark = () => {
-    const darkModePreference = window.localStorage.getItem('darkmode');
+    let darkModePreference = window.localStorage.getItem('darkmode');
 
     if (!darkModePreference) {
-      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
       this.setState({
         ...this.state,
-        isDark,
+        isDark: isDarkMode,
       });
-      document.getElementsByTagName('html')[0].classList.add('dark');
-      window.localStorage.setItem('darkmode', 'true');
+      if (isDarkMode) {
+        darkModePreference = 'true';
+        window.localStorage.setItem('darkmode', 'true');
+      } else {
+        darkModePreference = 'false';
+      }
     }
 
     if (darkModePreference === 'true') {
