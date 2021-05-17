@@ -1,0 +1,34 @@
+{
+    "Environment": {
+        "DSL": {
+            "ID": 1,
+            "status_map": [
+                {
+                    "title": "NO DATA",
+                    "style": "#333"
+                },
+                {
+                    "title": "NO LOCKDOWN",
+                    "style": "#93c47d"
+                },
+                {
+                    "title": "PARTIAL LOCKDOWN",
+                    "style": "#f6b26b"
+                }
+            ]
+        },
+        "overlay": {
+            "tabs": [
+                {
+                    "title": "Daily Life",
+                    "react_component": "....",
+                    "key_values": {
+                        "population": "Population",
+                        "maximum_assembly": "Maximum assembly",
+                        "daily_life": "Daily life (restrictions)"
+                    }
+                }
+            ]
+        }
+    }
+}

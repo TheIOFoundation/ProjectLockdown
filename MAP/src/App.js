@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
@@ -6,13 +6,14 @@ import Totals from './components/Totals/Totals';
 import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
-import ThemeContext from './context/ThemeContext';
+import ThemeContext from './contexts/ThemeContext';
+import AppContext from './contexts/AppContext';
 import format from 'date-fns/format';
 import { addDays } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
 import Watermark from './components/Watermark/Watermark'
-
+import { useEnvironments } from './hooks/Environments';
 //import LocalStorage Functions
 import * as router from './router';
 
@@ -46,9 +47,22 @@ const getDaysDiff = (date1, date2) => {
   );
 };
 const { PLAYING, PAUSED } = playerStates;
-
-class App extends React.Component {
-  constructor(props) {
+const appContextData = {
+  "Environment": {
+      "DSL": {
+          "ID": null,
+          "status_map": []
+      },
+      "overlay": {
+          "tabs": []
+      }
+  }
+}
+const App = () => {
+  
+ 
+  /**
+   * constructor(props) {
     super(props);
     this.state = {
       loading: false,
@@ -70,215 +84,238 @@ class App extends React.Component {
       },
     };
   }
+   */
+  const [environment, setEnvironment] = useState(appContextData);
+  const [loading, setIsLoading] = useState(false);
+  const [isDark, setIsDark] = useState("false");
+  const [playerState, setPlayerState] = useState(PAUSED);
+  const [days, setDays] = useState([]);
+  const [currentLanguage, setCurrentLanguage] = useState({t: (text) => text});
+  const [selectedDate, setSelectedDate] = useState(toJsonString(addDays(new Date(), startingPoint)));
+  const [startDate, setStartDate] = useState(addDays(new Date(), startingPoint));
+  const [endDate, setEndDate] = useState(addDays(new Date(), startingPoint + daysRange));
+  const [dialog, setDialog] = useState({
+    opened: false,
+    template: '',
+    title: '',
+    iso2: '',
+    country: '',
+  });
 
-  componentDidMount() {
-    this.setNewDays();
-    router.resetLocalStorage();
-    this.pausePlayerState();
-    this.setPlayerState();
+  const {data,error } =  useEnvironments();
+  if(data){
+    setEnvironment(data);
   }
-  setNewDays = () => {
-    const { startDate, days } = this.state;
-    let date = startDate;
-    const newDays = [...days];
+  if(error){
+    console.log("=error===",error);
+  }
 
-    for (let i = 0; i <= daysRange; i++) {
-      newDays.push(format(date, 'yyyy-MM-dd'));
-      date = addDays(date, 1);
-    }
-    this.setState({
-      ...this.state,
-      days: newDays,
-    });
-  };
+  const setNewDays = useCallback(
+    () => {
+        let date = startDate;
+        const newDays = [...days];
+        for (let i = 0; i <= daysRange; i++) {
+          newDays.push(format(date, 'yyyy-MM-dd'));
+          date = addDays(date, 1);
+        }
+        // console.log('----newDays---', newDays);
+        setDays((oldDays) => [...oldDays, newDays]);
+    },
+    [days,startDate],
+  ) 
 
-  setSelectedDate = (newDate) => {
-    this.setState({
-      ...this.state,
-      selectedDate: newDate,
-    });
-  };
 
-  setStartDate = (startDate) => {
-    this.setState({
-      ...this.state,
-      startDate,
-    });
-  };
-
-  setEndDate = (endDate) => {
-    this.setState({
-      ...this.state,
-      endDate,
-    });
-  };
-
-  pausePlayerState = () => {
-    const { endDate, selectedDate, startDate } = this.state;
-    const formattedSelectedDate = new Date(selectedDate);
-    if (
-      formattedSelectedDate.getDate() === endDate.getDate() &&
-      formattedSelectedDate.getMonth() === endDate.getMonth() &&
-      formattedSelectedDate.getFullYear() === endDate.getFullYear()
-    ) {
-      alert('Ended');
-      this.setState({
-        ...this.state,
-        playerStates: PAUSED,
-        selectedDate: format(startDate, 'yyyy-MM-dd'),
-      });
-    }
-  };
-
-  toggleState = (newState) => {
-    this.setState({
-      ...this.state,
-      playerState: newState,
-    });
-  };
-
-  setPlayerState = () => {
-    const { selectedDate, endDate, playerState } = this.state;
-    const formattedSelectedDate = new Date(selectedDate);
-    let loop = null;
-    if (playerState === PLAYING) {
-      loop = setInterval(() => {
-        if (playerState === PAUSED || formattedSelectedDate === endDate) {
-          console.log('Stopped');
-          clearInterval(loop);
-        } else {
-          console.log('Still looping');
+  /**
+   * 
+   * const setSelectedDate = useCallback(
+      () => {
+        (newDate) => {
           this.setState({
             ...this.state,
-            selectedDate: format(
-              addDays(formattedSelectedDate, 1),
-              'yyyy-MM-dd',
-            ),
+            selectedDate: newDate,
           });
+        };
+      },
+      [input],
+    ) 
+
+    const setStartDate =  useCallback(
+      () => {
+        (startDate) => {
+          this.setState({
+            ...this.state,
+            startDate,
+          });
+        };
+      },
+      [input],
+    ) 
+
+    const setEndDate = useCallback(
+      () => {
+        (endDate) => {
+          this.setState({
+            ...this.state,
+            endDate,
+          });
+        };
+      },
+      [input],
+    ) 
+   */
+  
+
+  const pausePlayerState =  useCallback(
+    () => {
+        const formattedSelectedDate = new Date(selectedDate);
+        if (
+          formattedSelectedDate.getDate() === endDate.getDate() &&
+          formattedSelectedDate.getMonth() === endDate.getMonth() &&
+          formattedSelectedDate.getFullYear() === endDate.getFullYear()
+        ) {
+          alert('Ended');
+          
+          setPlayerState(PAUSED);
+          setSelectedDate(format(startDate, 'yyyy-MM-dd'))
         }
-      }, playSpeed);
-    }
+    },
+    [endDate,selectedDate,startDate],
+  ) 
 
-    return () => clearInterval(loop);
-  };
+  const toggleState = useCallback(
+    (newState) => {
+        setPlayerState(newState)
+    },
+    [],
+  ) 
 
-  setIsDark = () => {
-    const darkModePreference = window.localStorage.getItem('darkmode');
+  const updatePlayerState = useCallback(
+    () => {
+        const formattedSelectedDate = new Date(selectedDate);
+        let loop = null;
+        if (playerState === PLAYING) {
+          loop = setInterval(() => {
+            if (playerState === PAUSED || formattedSelectedDate === endDate) {
+              console.log('Stopped');
+              clearInterval(loop);
+            } else {
+              console.log('Still looping');
+              setSelectedDate(format(
+                addDays(formattedSelectedDate, 1),
+                'yyyy-MM-dd',
+              ))
+            }
+          }, playSpeed);
+        }
+    
+        return () => clearInterval(loop);
+    },
+    [selectedDate,endDate,playerState],
+  ) 
 
-    if (!darkModePreference) {
-      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.setState({
-        ...this.state,
-        isDark,
-      });
-      document.getElementsByTagName('html')[0].classList.add('dark');
-      window.localStorage.setItem('darkmode', 'true');
-    }
+  const updateIsDark = useCallback(
+    () => {
+        const darkModePreference = window.localStorage.getItem('darkmode');
+    
+        if (!darkModePreference) {
+          const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          setIsDark(isDarkTheme.toString());
+          document.getElementsByTagName('html')[0].classList.add('dark');
+          window.localStorage.setItem('darkmode', 'true');
+        }
+        if (darkModePreference === 'true') {
+          document.getElementsByTagName('html')[0].classList.add('dark');
+          setIsDark("true");
+        } else if (darkModePreference === 'false') {
+          setIsDark("false");
+        }
+    },
+    [],
+  ) 
 
-    if (darkModePreference === 'true') {
-      document.getElementsByTagName('html')[0].classList.add('dark');
-      this.setState({
-        ...this.state,
-        isDark: true,
-      });
-    } else if (darkModePreference === 'false') {
-      this.setState({
-        ...this.state,
-        isDark: false,
-      });
-    }
-  };
-  closeDialog = () => {
-    const dialog = { opened: false, template: '', title: '' };
-    this.setState((prevState) => ({
-      ...prevState.dialog,
-      dialog,
-    }));
-  };
 
-  openDialog = (props) => {
-    const dialog = {
-      opened: true,
-      template: '',
-      title: '',
-      iso2: props.iso2,
-      country: props.country,
-    };
-    this.setState((prevState) => ({
-      ...prevState,
-      dialog,
-    }));
-  };
+  const closeDialog = useCallback(
+    () => {
+        setDialog(prevState => ({
+          ...prevState,
+          opened: false, template: '', title: '' 
+          }));
+    },
+    [],
+  ) 
 
-  setCurrentLanguage = () => {
-    console.log('TODO: to be addressed letter');
-  };
-  setIsLoading = (value) => {
-    this.setState({
-      ...this.state,
-      isLoading: value,
-    });
-  };
-  render() {
-    const {
-      isDark,
-      playerState,
-      isLoading,
-      selectedDate,
-      startDate,
-      endDate,
-      days,
-      dialog,
-      currentLanguage,
-    } = this.state;
+  const openDialog = useCallback(
+    (props) => {
+        setDialog(prevState => ({
+          ...prevState,
+          opened: true,
+          template: '',
+          title: '',
+          iso2: props.iso2,
+          country: props.country,
+        }
+      ));
+    },
+    [],
+  );
+
+  useEffect(() => {
+    setNewDays();
+    pausePlayerState();
+    router.resetLocalStorage();
+    updatePlayerState();
+
+  },[]);
+
     return (
       <div
         onKeyUp={(e) => {
           if (e.key === ' ') {
             const newState = playerState === PAUSED ? PLAYING : PAUSED;
 
-            this.toggleState(newState);
+            toggleState(newState);
           }
         }}
       >
+        <AppContext.Provider value={{environment, setEnvironment}} >
         <ThemeContext.Provider value={{ isDark }}>
-          <LoadingAnimation isLoading={isLoading} />
+          <LoadingAnimation isLoading={loading} />
           <Map
             dark={isDark}
             selectedDate={selectedDate}
             startDate={startDate}
             endDate={endDate}
-            onOpen={this.openDialog}
-            setIsLoading={this.setIsLoading}
+            onOpen={openDialog}
+            setIsLoading={setIsLoading}
             daysRange={daysRange}
           />
-          <TabMenu darkMode={isDark} setDarkMode={this.setIsDark} />
+          <TabMenu darkMode={isDark} setDarkMode={updateIsDark} />
           <Totals dark={isDark} />
           <Legend dark={isDark} />
           {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
           <LanguageSelector
-            languageChangeHandler={this.setCurrentLanguage}
+            languageChangeHandler={setCurrentLanguage}
             dark={isDark}
           />
           <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && (
             <TimeSlider
               playerState={playerState}
-              onPlayerStateToggle={this.toggleState}
+              onPlayerStateToggle={toggleState}
               dark={isDark}
               days={days}
               i18n={{ locale: 'en, en-US' }}
               onChange={(CurrentSelectedDate) => {
-                this.setSelectedDate(CurrentSelectedDate);
+                setSelectedDate(CurrentSelectedDate);
               }}
               currentSelectedDay={selectedDate}
               selectedDate={selectedDate}
               sliderValue={getDaysDiff(startDate, endDate)}
-              setCurrentSelectedDay={this.setSelectedDate}
+              setCurrentSelectedDay={setSelectedDate}
               firstDay={format(new Date(startDate), 'yyyy-MM-dd')}
-              setFirstDay={this.setStartDate}
+              setFirstDay={setStartDate}
               lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
-              setLastDay={this.setEndDate}
+              setLastDay={setEndDate}
             >
               {dialog.opened ? (
                 <CountryInfo
@@ -291,8 +328,8 @@ class App extends React.Component {
                   startDate={startDate}
                   endDate={endDate}
                   daysRange={daysRange}
-                  onClose={this.closeDialog}
-                  onOpen={this.openDialog}
+                  onClose={closeDialog}
+                  onOpen={openDialog}
                 />
               ) : (
                 ''
@@ -300,9 +337,9 @@ class App extends React.Component {
             </TimeSlider>
           )}
         </ThemeContext.Provider>
+        </AppContext.Provider>
       </div>
     );
-  }
 }
 
 export default App;

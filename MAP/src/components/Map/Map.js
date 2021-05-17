@@ -63,6 +63,7 @@ export class Map extends React.Component {
       geocoder: {},
       lastCountry: {},
     };
+    this.mapContainer = React.createRef();
   }
 
   setMapState(map, localData = [], lookupData) {
@@ -102,7 +103,7 @@ export class Map extends React.Component {
 
     let map = new mapboxgl.Map({
       accessToken: mapboxToken,
-      container: this.ref,
+      container: this.mapContainer.current,
       style:
         'mapbox://styles/jfqueralt/ckavedmnk253z1iphmsy39s3r?optimize=true',
       center: [this.state.lng, this.state.lat],
@@ -493,7 +494,7 @@ export class Map extends React.Component {
     return (
       <>
         <div
-          ref={(ref) => (this.ref = ref)}
+          ref = {this.mapContainer}
           id="map"
           onClick={() => this.props.onOpen(this.state.lastCountry)}
           className="map-container"

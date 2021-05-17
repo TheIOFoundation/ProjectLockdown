@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { QueryClient, QueryClientProvider } from 'react-query';
+import {ReactQueryDevtools} from 'react-query/devtools';
 import './locale/i18n';
+
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={<div>Loading...</div>}>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </Suspense>
   </React.StrictMode>,
   document.getElementById('root'),
