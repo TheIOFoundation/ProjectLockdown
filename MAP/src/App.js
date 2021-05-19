@@ -93,7 +93,6 @@ const App = () => {
           newDays.push(format(date, 'yyyy-MM-dd'));
           date = addDays(date, 1);
         }
-        // console.log('----newDays---', newDays);
         setDays((oldDays) => [...oldDays, newDays]);
     },
     [days,startDate],
