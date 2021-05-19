@@ -116,6 +116,7 @@ export class Map extends React.Component {
       pitchWithRotate: false,
       hash: true,
     });
+  
     let geocoder = new MapboxGeocoder({
       accessToken: mapboxToken,
       language: this.props.currentLanguage
@@ -193,28 +194,43 @@ export class Map extends React.Component {
       });
       map.on('click', 'admin-0-fill', this.onMapClick);
 
-      console.log('the style is loaded');
     });
 
-    map.on('load', function () {
-      console.log('map is loaded');
-      createViz(lookupTable);
+
+    map.on('load', () => {
+      console.log('map is loaded', map.isStyleLoaded());
+      const waiting = () => {
+        if (!map.isStyleLoaded()) {
+          setTimeout(waiting, 200);
+        } else {
+          createViz(lookupTable);
+        }
+      };
+      waiting();
     });
 
+  
     this.props.setIsLoading(false);
 
-    const createViz = (lookupTable) => {
+    const createViz =  async (lookupTable) => {
+      const noData = await this.setWorldStyle(mapStyleConstant.NO_DATA);
+      const noLockdown = await this.setWorldStyle(mapStyleConstant.NO_LOCK_DOWN);
+      const partialLockdown = await this.setWorldStyle(mapStyleConstant.PARTIAL_LOCK_DOWN);
+      const lockdown = await this.setWorldStyle(mapStyleConstant.LOCK_DOWN);
+      const defaultStyle = await this.setWorldStyle(mapStyleConstant.DEFAULT);
+      
       map.addSource('admin-0', {
         type: 'vector',
         url: 'mapbox://mapbox.boundaries-adm0-v3',
       });
-
+      
       const lookupData = filterLookupTable(lookupTable);
+
 
       // Filters the lookup table to features with the 'US' country code
       // and keys the table using the `unit_code` property that will be used for the join
 
-      map.addLayer(
+       map.addLayer(
         {
           id: 'admin-0-fill',
           type: 'fill',
@@ -238,18 +254,18 @@ export class Map extends React.Component {
                 'match',
                 ['feature-state', 'kind'],
                 '1',
-                this.setWorldStyle(mapStyleConstant.NO_DATA),
+                noData,
                 '2',
-                this.setWorldStyle(mapStyleConstant.NO_LOCK_DOWN),
+                noLockdown,
                 '3',
-                this.setWorldStyle(mapStyleConstant.PARTIAL_LOCK_DOWN),
+                partialLockdown,
                 '4',
-                this.setWorldStyle(mapStyleConstant.LOCK_DOWN),
-                this.setWorldStyle(mapStyleConstant.DEFAULT)
+                lockdown,
+                defaultStyle
               ],
               // No data
               ['==', ['feature-state', 'kind'], null],
-              this.setWorldStyle(mapStyleConstant.DEFAULT),
+              defaultStyle,
               [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -352,6 +368,10 @@ export class Map extends React.Component {
         map.on('sourcedata', setAfterLoad);
       }
     };
+
+    // if(!map.loaded()){
+    //   createViz(lookupTable);
+    // }
 
     this.setState({
       map,
@@ -501,7 +521,7 @@ export class Map extends React.Component {
     if (mapData && lookupTable) await this.initMap(mapData, lookupTable);
   }
 
-  componentDidUpdate(previousProps, previousState, snapshot) {
+  async componentDidUpdate(previousProps, previousState, snapshot) {
     if (previousProps.selectedDate !== this.props.selectedDate) {
       if (this.state.isMapReady) {
         this.updateMap(
