@@ -92,8 +92,8 @@ export class Map extends React.Component {
 
   async initMap(mapData, lookupTable) {
     if (!mapboxgl) {
-      await pause();
-      await this.initMap(mapData, lookupTable);
+       pause();
+      this.initMap(mapData, lookupTable);
     }
 
     const mapBoxglState = mapboxgl.getRTLTextPluginStatus();
@@ -212,7 +212,7 @@ export class Map extends React.Component {
   
     this.props.setIsLoading(false);
 
-    const createViz =  async (lookupTable) => {
+    const createViz =  async (lookupTableData) => {
       const noData = await this.setWorldStyle(mapStyleConstant.NO_DATA);
       const noLockdown = await this.setWorldStyle(mapStyleConstant.NO_LOCK_DOWN);
       const partialLockdown = await this.setWorldStyle(mapStyleConstant.PARTIAL_LOCK_DOWN);
@@ -224,7 +224,7 @@ export class Map extends React.Component {
         url: 'mapbox://mapbox.boundaries-adm0-v3',
       });
       
-      const lookupData = filterLookupTable(lookupTable);
+      const lookupData = filterLookupTable(lookupTableData);
 
 
       // Filters the lookup table to features with the 'US' country code
@@ -368,10 +368,6 @@ export class Map extends React.Component {
         map.on('sourcedata', setAfterLoad);
       }
     };
-
-    // if(!map.loaded()){
-    //   createViz(lookupTable);
-    // }
 
     this.setState({
       map,
