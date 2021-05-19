@@ -1,5 +1,5 @@
 {
-    "Environment": {
+    "environment": {
         "DSL": {
             "ID": 1,
             "status_map": [
@@ -14,6 +14,14 @@
                 {
                     "title": "PARTIAL LOCKDOWN",
                     "style": "#f6b26b"
+                },
+                {
+                    "title": "LOCKDOWN",
+                    "style": "#eb5757"
+                },
+                {
+                    "title": "DEFAULT",
+                    "style": "#ccc"
                 }
             ]
         },

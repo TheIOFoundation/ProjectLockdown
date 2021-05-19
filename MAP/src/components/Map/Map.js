@@ -5,10 +5,10 @@ import mapboxgl from 'mapbox-gl';
 import {
   filterLookupTable,
   selectedWorldview,
-  worldStyle,
   domainCoors,
   domainCoorsMobile,
   pause,
+  mapStyleConstant
 } from './util';
 import format from 'date-fns/format';
 import addDays from 'date-fns/addDays';
@@ -16,6 +16,7 @@ import { getWorldData } from '../../services/map';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
+import AppContext from '../../contexts/AppContext';
 
 //import LocalStorage Functions
 import * as router from '../../router';
@@ -29,6 +30,8 @@ export const mapboxToken =
   'pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw';
 
 export class Map extends React.Component {
+  static contextType = AppContext;
+
   constructor() {
     super();
     this.initMap = this.initMap.bind(this);
@@ -62,11 +65,12 @@ export class Map extends React.Component {
       isLocationSet: isLocationSet,
       geocoder: {},
       lastCountry: {},
+      mapStyle : []
     };
     this.mapContainer = React.createRef();
   }
 
-  setMapState(map, localData = [], lookupData) {
+  setMapState(map,lookupData, localData = []) {
     const localDataByIso = {};
     localData.forEach((l) => (localDataByIso[l.lockdown.iso] = l));
     Object.keys(lookupData).forEach((key) => {
@@ -234,18 +238,18 @@ export class Map extends React.Component {
                 'match',
                 ['feature-state', 'kind'],
                 '1',
-                worldStyle('1'),
+                this.setWorldStyle(mapStyleConstant.NO_DATA),
                 '2',
-                worldStyle('2'),
+                this.setWorldStyle(mapStyleConstant.NO_LOCK_DOWN),
                 '3',
-                worldStyle('3'),
+                this.setWorldStyle(mapStyleConstant.PARTIAL_LOCK_DOWN),
                 '4',
-                worldStyle('4'),
-                worldStyle('0'),
+                this.setWorldStyle(mapStyleConstant.LOCK_DOWN),
+                this.setWorldStyle(mapStyleConstant.DEFAULT)
               ],
               // No data
               ['==', ['feature-state', 'kind'], null],
-              worldStyle('0'),
+              this.setWorldStyle(mapStyleConstant.DEFAULT),
               [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -374,11 +378,11 @@ export class Map extends React.Component {
         localData = newMapData[selectedDate];
         mapData = newMapData;
         this.setState({ mapData }, () =>
-          this.setMapState(this.state.map, localData, lookupData),
+          this.setMapState(this.state.map,lookupData, localData),
         );
       }
     } else {
-      this.setMapState(this.state.map, localData, lookupData);
+      this.setMapState(this.state.map,lookupData, localData);
     }
   }
 
@@ -443,8 +447,30 @@ export class Map extends React.Component {
     });
   }
 
+  /**
+   * this method will return the color code based on the title 
+   * if that tilte is not found in out list it will  return the default color
+   * @param {string} title 
+   */
+  setWorldStyle = (title) => {
+    const {mapStyle} = this.state;
+    const result =mapStyle.filter(style => style.title === title);
+    if(result && result.length ===1){
+      return result[0].style;
+    }else{
+      return "#ccc";
+    }
+  }
   async componentDidMount() {
     const { daysRange } = this.props;
+    const {environment} = this.context.environment;
+    const {DSL} = environment;
+    const {status_map} = DSL;
+    this.setState(() =>({
+      mapStyle: [...status_map]
+    }));
+
+
 
     let { startDate, endDate } = this.props;
     startDate = startDate

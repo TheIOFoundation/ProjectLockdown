@@ -13,9 +13,9 @@ import { addDays } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
 import Watermark from './components/Watermark/Watermark'
-import { useEnvironments } from './hooks/Environments';
 //import LocalStorage Functions
 import * as router from './router';
+import { fetchEnvironments } from './api';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
@@ -48,7 +48,7 @@ const getDaysDiff = (date1, date2) => {
 };
 const { PLAYING, PAUSED } = playerStates;
 const appContextData = {
-  "Environment": {
+  "environment": {
       "DSL": {
           "ID": null,
           "status_map": []
@@ -60,31 +60,6 @@ const appContextData = {
 }
 const App = () => {
   
- 
-  /**
-   * constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-      isDark: false,
-      playerState: PAUSED,
-      days: [],
-      currentLanguage: {
-        t: (text) => text,
-      },
-      selectedDate: toJsonString(addDays(new Date(), startingPoint)),
-      startDate: addDays(new Date(), startingPoint),
-      endDate: addDays(new Date(), startingPoint + daysRange),
-      dialog: {
-        opened: false,
-        template: '',
-        title: '',
-        iso2: '',
-        country: '',
-      },
-    };
-  }
-   */
   const [environment, setEnvironment] = useState(appContextData);
   const [loading, setIsLoading] = useState(false);
   const [isDark, setIsDark] = useState("false");
@@ -102,13 +77,13 @@ const App = () => {
     country: '',
   });
 
-  const {data,error } =  useEnvironments();
-  if(data){
-    setEnvironment(data);
-  }
-  if(error){
-    console.log("=error===",error);
-  }
+   const getEnvData = useCallback( async () =>{
+        const data = await fetchEnvironments();
+        if(data) {
+          setEnvironment(data);
+        }
+
+   }, []);
 
   const setNewDays = useCallback(
     () => {
@@ -123,7 +98,6 @@ const App = () => {
     },
     [days,startDate],
   ) 
-
 
   /**
    * 
@@ -258,6 +232,11 @@ const App = () => {
     },
     [],
   );
+
+  useEffect(() =>{
+    getEnvData();
+   },[getEnvData])
+ 
 
   useEffect(() => {
     setNewDays();

@@ -38,16 +38,8 @@ export const getEnvironments = () => {
 });
 }
 
-export const fetchEnvironments = () =>{
-  return fetch("./mockAPIs/enviroment.response.json", {
-    "method": "GET",
-    "headers": {}
-  }).then(response => {
-    return response.json();
-  })
-  .catch(error => {
-    return {};
-  })
+export const fetchEnvironments = async () =>{
+   return fetch('./data/environment.response.json').then(r => r.json())
+  .catch(e => { throw new Error(e.toString())})
 }
-
 export default api;
