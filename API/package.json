@@ -1,10 +1,9 @@
 {
   "name": "lockdown-api",
-  "version": "0.0.1",
+  "version": "2.0",
   "description": "",
-  "author": "",
+  "author": "Project Lockdown",
   "private": true,
-  "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
