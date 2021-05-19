@@ -1,0 +1,2 @@
+// Entrypoint
+import './main';
