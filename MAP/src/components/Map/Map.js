@@ -213,7 +213,6 @@ export class Map extends React.Component {
     const createViz =  async (lookupTableData) => {
       const noData = await this.setWorldStyle(mapStyleConstant.NO_DATA);
       const noLockdown = await this.setWorldStyle(mapStyleConstant.NO_LOCK_DOWN);
-      const partialLockdown = await this.setWorldStyle(mapStyleConstant.PARTIAL_LOCK_DOWN);
       const lockdown = await this.setWorldStyle(mapStyleConstant.LOCK_DOWN);
       const defaultStyle = await this.setWorldStyle(mapStyleConstant.DEFAULT);
       
