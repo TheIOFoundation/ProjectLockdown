@@ -25,6 +25,22 @@
                 }
             ]
         },
+        "UI" : {
+            "components": [
+                {
+                    "name":"TimeSlider",
+                    "is_visible": true
+                },
+                {
+                    "name":"Legend",
+                    "is_visible": false
+                },
+                {
+                    "name":"CountriesSearcher",
+                    "is_visible": true
+                } 
+            ]
+        },
         "overlay": {
             "tabs": [
                 {

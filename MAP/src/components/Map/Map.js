@@ -65,7 +65,7 @@ export class Map extends React.Component {
       isLocationSet: isLocationSet,
       geocoder: {},
       lastCountry: {},
-      mapStyle : []
+      mapStyle : [],
     };
     this.mapContainer = React.createRef();
   }
@@ -95,6 +95,7 @@ export class Map extends React.Component {
        pause();
       this.initMap(mapData, lookupTable);
     }
+
 
     const mapBoxglState = mapboxgl.getRTLTextPluginStatus();
     if (mapBoxglState === 'unavailable' || mapBoxglState === 'error') {
@@ -196,9 +197,7 @@ export class Map extends React.Component {
 
     });
 
-
     map.on('load', () => {
-      console.log('map is loaded', map.isStyleLoaded());
       const waiting = () => {
         if (!map.isStyleLoaded()) {
           setTimeout(waiting, 200);
@@ -208,7 +207,6 @@ export class Map extends React.Component {
       };
       waiting();
     });
-
   
     this.props.setIsLoading(false);
 
@@ -223,9 +221,7 @@ export class Map extends React.Component {
         type: 'vector',
         url: 'mapbox://mapbox.boundaries-adm0-v3',
       });
-      
       const lookupData = filterLookupTable(lookupTableData);
-
 
       // Filters the lookup table to features with the 'US' country code
       // and keys the table using the `unit_code` property that will be used for the join
@@ -258,7 +254,7 @@ export class Map extends React.Component {
                 '2',
                 noLockdown,
                 '3',
-                partialLockdown,
+                '#f2994a',
                 '4',
                 lockdown,
                 defaultStyle
@@ -477,18 +473,10 @@ export class Map extends React.Component {
       return "#ccc";
     }
   }
-  async componentDidMount() {
-    const { daysRange } = this.props;
-    const {environment} = this.context.environment;
-    const {DSL} = environment;
-    const {status_map} = DSL;
-    this.setState(() =>({
-      mapStyle: [...status_map]
-    }));
-
-
-
-    let { startDate, endDate } = this.props;
+  
+  
+   initializeMapBox =  async () => {
+    let { startDate, endDate, daysRange } = this.props;
     startDate = startDate
       ? format(startDate, 'yyyy-MM-dd')
       : format(addDays(new Date(), -14), 'yyyy-MM-dd');
@@ -514,8 +502,17 @@ export class Map extends React.Component {
         console.log('STATE', this.state);
       },
     );
-    if (mapData && lookupTable) await this.initMap(mapData, lookupTable);
-  }
+      setTimeout(()=> {
+        if (mapData && lookupTable) this.initMap(mapData, lookupTable);
+      },2000)
+    };
+
+    async componentDidMount() {
+      const {environment} = this.context.environment;
+      const {DSL} = environment;
+      const {status_map} = DSL;
+      this.setState({mapStyle: [...status_map]}, this.initializeMapBox);
+    }
 
   async componentDidUpdate(previousProps, previousState, snapshot) {
     if (previousProps.selectedDate !== this.props.selectedDate) {
@@ -530,9 +527,12 @@ export class Map extends React.Component {
         }
       }
     }
+
   }
 
   render() {
+   const {isCountrySearchVisible} = this.props;
+    
     return (
       <>
         <div
@@ -541,7 +541,7 @@ export class Map extends React.Component {
           onClick={() => this.props.onOpen(this.state.lastCountry)}
           className="map-container"
         ></div>
-        <CountriesSearcher
+         { isCountrySearchVisible &&  <CountriesSearcher
           dark={this.props.dark}
           i18n={{ locale: 'en, en-US' }}
           map={{
@@ -552,7 +552,7 @@ export class Map extends React.Component {
               });
             },
           }}
-        />
+        /> }
         <span id="mapBlank" style={{ display: 'none' }}></span>
       </>
     );

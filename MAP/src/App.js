@@ -12,7 +12,8 @@ import format from 'date-fns/format';
 import { addDays } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
-import Watermark from './components/Watermark/Watermark'
+import Watermark from './components/Watermark/Watermark';
+import { UIComponent } from './utils/constant';
 //import LocalStorage Functions
 import * as router from './router';
 import { fetchEnvironments } from './api';
@@ -52,6 +53,9 @@ const appContextData = {
       "DSL": {
           "ID": null,
           "status_map": []
+      },
+      "UI": {
+        "components": []
       },
       "overlay": {
           "tabs": []
@@ -246,6 +250,13 @@ const App = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
+    const _find = (arr, param) => arr.find(value => value.name === param);
+    const env = environment['environment'];
+    const {components} = env['UI'];
+    const legend = _find(components,UIComponent.Legend);
+    const timeSlider = _find(components, UIComponent.TimeSlider);
+    const countriesSearch = _find(components, UIComponent.CountriesSearcher);
+    
     return (
       <div
         onKeyUp={(e) => {
@@ -267,17 +278,18 @@ const App = () => {
             onOpen={openDialog}
             setIsLoading={setIsLoading}
             daysRange={daysRange}
+            isCountrySearchVisible={countriesSearch ? countriesSearch.is_visible : false}
           />
           <TabMenu darkMode={isDark} setDarkMode={updateIsDark} />
           <Totals dark={isDark} />
-          <Legend dark={isDark} />
+          {legend && legend.is_visible && <Legend dark={isDark} />}
           {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
           <LanguageSelector
             languageChangeHandler={setCurrentLanguage}
             dark={isDark}
           />
           <Watermark dark={isDark} fontsize={watermarkSize} />
-          {startDate && endDate && selectedDate && (
+          {startDate && endDate && selectedDate && timeSlider && timeSlider.is_visible && (
             <TimeSlider
               playerState={playerState}
               onPlayerStateToggle={toggleState}
