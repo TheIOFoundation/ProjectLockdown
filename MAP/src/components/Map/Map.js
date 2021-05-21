@@ -8,7 +8,7 @@ import {
   domainCoors,
   domainCoorsMobile,
   pause,
-  mapStyleConstant
+  worldStyle,
 } from './util';
 import format from 'date-fns/format';
 import addDays from 'date-fns/addDays';
@@ -210,12 +210,7 @@ export class Map extends React.Component {
   
     this.props.setIsLoading(false);
 
-    const createViz =  async (lookupTableData) => {
-      const noData = await this.setWorldStyle(mapStyleConstant.NO_DATA);
-      const noLockdown = await this.setWorldStyle(mapStyleConstant.NO_LOCK_DOWN);
-      const lockdown = await this.setWorldStyle(mapStyleConstant.LOCK_DOWN);
-      const defaultStyle = await this.setWorldStyle(mapStyleConstant.DEFAULT);
-      
+    const createViz =  async (lookupTableData) => {    
       map.addSource('admin-0', {
         type: 'vector',
         url: 'mapbox://mapbox.boundaries-adm0-v3',
@@ -241,6 +236,7 @@ export class Map extends React.Component {
             ],
             ['!', ['has', 'dispute']],
           ],
+
           paint: {
             'fill-color': [
               'case',
@@ -249,18 +245,18 @@ export class Map extends React.Component {
                 'match',
                 ['feature-state', 'kind'],
                 '1',
-                noData,
+                worldStyle('1'),
                 '2',
-                noLockdown,
+                worldStyle('2'),
                 '3',
-                '#f2994a',
+                worldStyle('3'),
                 '4',
-                lockdown,
-                defaultStyle
+                worldStyle('4'),
+                worldStyle('0'),
               ],
               // No data
               ['==', ['feature-state', 'kind'], null],
-              defaultStyle,
+              worldStyle('0'),
               [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -507,10 +503,7 @@ export class Map extends React.Component {
     };
 
     async componentDidMount() {
-      const {environment} = this.context.environment;
-      const {DSL} = environment;
-      const {status_map} = DSL;
-      this.setState({mapStyle: [...status_map]}, this.initializeMapBox);
+        this.initializeMapBox();
     }
 
   async componentDidUpdate(previousProps, previousState, snapshot) {

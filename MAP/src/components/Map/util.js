@@ -19,6 +19,25 @@ export function worldStyle(lockdown_status) {
   return value;
 }
 
+export function worldStyleColor(lockdown_status) {
+  let value;
+  switch (lockdown_status) {
+    case '1':
+      value = 'red'; // yes
+      break;
+    case '2':
+      value = 'orange'; // partial
+      break;
+    case '3':
+      value = 'green'; // no
+      break;
+    default:
+      value = 'grey'; // undefined or no value
+  }
+
+  return value;
+}
+
 export function filterLookupTable(lookupTable) {
   const lookupData = {};
 
@@ -61,11 +80,3 @@ export const pause = (time = 100) =>
       resolve();
     }, time);
   });
-
-export const mapStyleConstant = {
-  NO_LOCK_DOWN: "NO LOCKDOWN",
-  PARTIAL_LOCK_DOWN: "PARTIAL LOCKDOWN",
-  NO_DATA: "NO DATA",
-  LOCK_DOWN: "LOCKDOWN",
-  DEFAULT: "DEFAULT"
-}

@@ -1,31 +1,7 @@
 {
     "environment": {
-        "DSL": {
-            "ID": 1,
-            "status_map": [
-                {
-                    "title": "NO DATA",
-                    "style": "#333"
-                },
-                {
-                    "title": "NO LOCKDOWN",
-                    "style": "#93c47d"
-                },
-                {
-                    "title": "PARTIAL LOCKDOWN",
-                    "style": "#f6b26b"
-                },
-                {
-                    "title": "LOCKDOWN",
-                    "style": "#eb5757"
-                },
-                {
-                    "title": "DEFAULT",
-                    "style": "#ccc"
-                }
-            ]
-        },
-        "UI" : {
+        "dsl": {
+            "id": 1,
             "components": [
                 {
                     "name":"TimeSlider",
@@ -33,26 +9,44 @@
                 },
                 {
                     "name":"Legend",
-                    "is_visible": false
+                    "is_visible": true,
+                    "data": [
+                        {
+                            "title": "mapLegend.no",
+                            "worldStyle": "2"
+                        },
+                        {
+                            "title": "mapLegend.partial",
+                            "worldStyle": "1"
+                        },
+                        {
+                            "title": "mapLegend.full",
+                            "worldStyle": "2"
+                        },
+                        {
+                            "title": "mapLegend.noData",
+                            "worldStyle": "3"
+                        }
+                    ]
                 },
                 {
                     "name":"CountriesSearcher",
                     "is_visible": true
                 } 
-            ]
-        },
-        "overlay": {
-            "tabs": [
-                {
-                    "title": "Daily Life",
-                    "react_component": "....",
-                    "key_values": {
-                        "population": "Population",
-                        "maximum_assembly": "Maximum assembly",
-                        "daily_life": "Daily life (restrictions)"
+            ],
+            "overlay": {
+                "tabs": [
+                    {
+                        "title": "Daily Life",
+                        "react_component": "....",
+                        "key_values": {
+                            "population": "Population",
+                            "maximum_assembly": "Maximum assembly",
+                            "daily_life": "Daily life (restrictions)"
+                        }
                     }
-                }
-            ]
+                ]
+            }
         }
     }
 }

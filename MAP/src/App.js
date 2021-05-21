@@ -48,23 +48,20 @@ const getDaysDiff = (date1, date2) => {
   );
 };
 const { PLAYING, PAUSED } = playerStates;
-const appContextData = {
-  "environment": {
-      "DSL": {
-          "ID": null,
-          "status_map": []
-      },
-      "UI": {
-        "components": []
-      },
-      "overlay": {
-          "tabs": []
-      }
-  }
-}
+
 const App = () => {
   
-  const [environment, setEnvironment] = useState(appContextData);
+  const [environment, setEnvironment] = useState({
+    environment: {
+        dsl: {
+            id: null,
+            components: [],
+            overlay: {
+              tabs: []
+            }
+        }
+    }
+  });
   const [loading, setIsLoading] = useState(false);
   const [isDark, setIsDark] = useState("false");
   const [playerState, setPlayerState] = useState(PAUSED);
@@ -83,10 +80,13 @@ const App = () => {
 
    const getEnvData = useCallback( async () =>{
         const data = await fetchEnvironments();
-        if(data) {
-          setEnvironment(data);
+        if(data && data.environment) {
+          const envt  = data.environment;
+          setEnvironment(prevState =>({
+            ...prevState,
+            envt,
+          }))
         }
-
    }, []);
 
   const setNewDays = useCallback(
@@ -252,7 +252,7 @@ const App = () => {
 
     const _find = (arr, param) => arr.find(value => value.name === param);
     const env = environment['environment'];
-    const {components} = env['UI'];
+    const {components} = env['dsl'];
     const legend = _find(components,UIComponent.Legend);
     const timeSlider = _find(components, UIComponent.TimeSlider);
     const countriesSearch = _find(components, UIComponent.CountriesSearcher);
