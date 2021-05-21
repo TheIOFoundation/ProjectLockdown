@@ -34,8 +34,8 @@ const CountryInfo = (props) => {
     const { startDate, endDate } = props;
 
     const {overlay} = environment['environment'];
-    const {tabs}=  overlay || []
-    const allTabs = tabs.map(tab => { 
+    const  allTab=  overlay.tabs || []
+    const allTabs = allTab.map(tab => { 
       return {
         id: tab.id,
         name: tab.title,
