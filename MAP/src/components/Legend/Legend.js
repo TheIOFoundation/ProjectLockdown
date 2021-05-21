@@ -74,12 +74,11 @@ export class Legend extends Component {
 
   render() {
     const mode = this.props.dark ? 'dark' : '';
-    const {environment} = this.context.environment;
-    const {components} = environment['dsl'];
+    const {environment} = this.context;
+    const {components = {}} = environment;
     const legend = components.find((component) => component.name === UIComponent.Legend);
     const {data} = legend;
 
-    
     return (
       <legend
         onClick={this.onClick}

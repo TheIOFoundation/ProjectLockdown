@@ -1,4 +1,13 @@
 import {createContext} from 'react';
-const AppContext = createContext(null);
+const defaultValue ={
+    "environment": {
+      "dsl_id": null,
+      "components": [],
+      "overlay": {
+          "tabs": []
+      }
+    }
+  }
+const AppContext = createContext(defaultValue);
 export default AppContext;
 

@@ -51,17 +51,7 @@ const { PLAYING, PAUSED } = playerStates;
 
 const App = () => {
   
-  const [environment, setEnvironment] = useState({
-    environment: {
-        dsl: {
-            id: null,
-            components: [],
-            overlay: {
-              tabs: []
-            }
-        }
-    }
-  });
+  const [environment, setEnvironment] = useState({});
   const [loading, setIsLoading] = useState(false);
   const [isDark, setIsDark] = useState("false");
   const [playerState, setPlayerState] = useState(PAUSED);
@@ -77,15 +67,19 @@ const App = () => {
     iso2: '',
     country: '',
   });
+  const [isLegendVisible, setIsLegendVisible] = useState(false);
+  const [isTimeSliderVisible, setIsTimeSliderVisible] = useState(false);
+  const [isCountrySearchVisible, setIsCountrySearchVisible] = useState(false);
 
    const getEnvData = useCallback( async () =>{
         const data = await fetchEnvironments();
         if(data && data.environment) {
           const envt  = data.environment;
-          setEnvironment(prevState =>({
-            ...prevState,
-            envt,
-          }))
+          const {components} = envt;
+          setEnvironment(envt)
+          setIsLegendVisible(_find(components,UIComponent.Legend).is_visible || false);
+          setIsTimeSliderVisible(_find(components, UIComponent.TimeSlider).is_visible || false);
+          setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false)
         }
    }, []);
 
@@ -251,11 +245,6 @@ const App = () => {
   },[]);
 
     const _find = (arr, param) => arr.find(value => value.name === param);
-    const env = environment['environment'];
-    const {components} = env['dsl'];
-    const legend = _find(components,UIComponent.Legend);
-    const timeSlider = _find(components, UIComponent.TimeSlider);
-    const countriesSearch = _find(components, UIComponent.CountriesSearcher);
     
     return (
       <div
@@ -278,18 +267,18 @@ const App = () => {
             onOpen={openDialog}
             setIsLoading={setIsLoading}
             daysRange={daysRange}
-            isCountrySearchVisible={countriesSearch ? countriesSearch.is_visible : false}
+            isCountrySearchVisible={isCountrySearchVisible}
           />
           <TabMenu darkMode={isDark} setDarkMode={updateIsDark} />
           <Totals dark={isDark} />
-          {legend && legend.is_visible && <Legend dark={isDark} />}
+          {isLegendVisible && <Legend dark={isDark} />}
           {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
           <LanguageSelector
             languageChangeHandler={setCurrentLanguage}
             dark={isDark}
           />
           <Watermark dark={isDark} fontsize={watermarkSize} />
-          {startDate && endDate && selectedDate && timeSlider && timeSlider.is_visible && (
+          {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider
               playerState={playerState}
               onPlayerStateToggle={toggleState}
