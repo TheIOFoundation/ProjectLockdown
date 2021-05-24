@@ -11,6 +11,7 @@ export class Legend extends Component {
     super();
     this.state = {
       showDialog: false,
+      data : []
     };
     this.btn = createRef();
     this.onClick = this.onClick.bind(this);
@@ -72,13 +73,21 @@ export class Legend extends Component {
     });
   }
 
-  render() {
-    const mode = this.props.dark ? 'dark' : '';
+  componentDidMount(){
     const {environment} = this.context;
     const {components = {}} = environment;
-    const legend = components.find((component) => component.name === UIComponent.Legend);
-    const {data} = legend;
+    if(components){
+      const legend = components.find((component) => component.name === UIComponent.Legend);
+      const {data} = legend;
+      this.setState({data: data});
+    }
+    
+  }
 
+  render() {
+    const mode = this.props.dark ? 'dark' : '';
+    const {data} = this.state;
+    
     return (
       <legend
         onClick={this.onClick}

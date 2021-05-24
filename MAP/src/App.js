@@ -17,6 +17,7 @@ import { UIComponent } from './utils/constant';
 //import LocalStorage Functions
 import * as router from './router';
 import { fetchEnvironments } from './api';
+import _ from 'lodash';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
@@ -49,7 +50,7 @@ const getDaysDiff = (date1, date2) => {
 };
 const { PLAYING, PAUSED } = playerStates;
 
-const App = () => {
+const App = (props) => {
   
   const [environment, setEnvironment] = useState({});
   const [loading, setIsLoading] = useState(false);
@@ -245,13 +246,49 @@ const App = () => {
   },[]);
 
     const _find = (arr, param) => arr.find(value => value.name === param);
+
+    const updateEnv = async (queryString, value) =>{
+      const toBool = string => string === 'true' ? true : false;
+      const data = await fetchEnvironments();
+      if(data && data.environment){
+        const componentName = _.last(queryString.split("."));
+        const index = _.findIndex(data['environment']['components'] ,(component) => component.name=componentName);
+        _.update(data,`environment.components[${index}]`, (obj)=> {
+          obj.is_visible = toBool(value);
+          switch(componentName){
+            case UIComponent.Legend:
+              setIsLegendVisible(toBool(value));
+              break;
+            case UIComponent.TimeSlider:
+              setIsTimeSliderVisible(toBool(value));
+              break;
+            case UIComponent.CountriesSearcher:
+              setIsCountrySearchVisible(toBool(value));
+              break;
+            default:
+              break
+          }
+          return obj
+       })
+       setEnvironment(data);
+      }
+  }
+    
+    useEffect(() =>{
+      const {search=""} = props.location;
+      const params = new URLSearchParams(search);
+      for (const [key, value] of params) {
+        updateEnv(key,value);
+      }
+      
+    },[props.location])
+
     
     return (
       <div
         onKeyUp={(e) => {
           if (e.key === ' ') {
             const newState = playerState === PAUSED ? PLAYING : PAUSED;
-
             toggleState(newState);
           }
         }}

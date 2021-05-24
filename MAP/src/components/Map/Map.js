@@ -115,7 +115,6 @@ export class Map extends React.Component {
       zoom: this.state.zoom,
       keyboard: false,
       pitchWithRotate: false,
-      hash: true,
     });
   
     let geocoder = new MapboxGeocoder({
@@ -129,7 +128,6 @@ export class Map extends React.Component {
     geocoder.on('results', this.onGetResult);
     geocoder.addTo('#mapBlank');
     window.map = map;
-
     const localData = mapData[this.props.selectedDate];
 
     map.on('style.load', () => {
