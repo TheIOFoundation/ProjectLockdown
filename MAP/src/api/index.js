@@ -38,6 +38,13 @@ export const getEnvironments = () => {
 });
 }
 
+
+/**
+ * this is a sample json mock api ,that we are using right now ,
+ * it just read from json and return as  json response , once we got the real api 
+ *  we can move to the upper method called @getEnvironments
+ * @returns environment data
+ */
 export const fetchEnvironments = async () =>{
    return fetch('./data/environment.response.json').then(r => r.json())
   .catch(e => { throw new Error(e.toString())})

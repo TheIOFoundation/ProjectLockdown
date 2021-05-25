@@ -33,7 +33,7 @@ const CountryInfo = (props) => {
   useEffect(() => {
     const { startDate, endDate } = props;
 
-    const {overlay} = environment['environment'];
+    const {overlay = {}} = environment['environment'];
     const  allTab=  overlay.tabs || []
     const allTabs = allTab.map(tab => { 
       return {

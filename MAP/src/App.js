@@ -96,45 +96,6 @@ const App = (props) => {
     },
     [days,startDate],
   ) 
-
-  /**
-   * 
-   * const setSelectedDate = useCallback(
-      () => {
-        (newDate) => {
-          this.setState({
-            ...this.state,
-            selectedDate: newDate,
-          });
-        };
-      },
-      [input],
-    ) 
-
-    const setStartDate =  useCallback(
-      () => {
-        (startDate) => {
-          this.setState({
-            ...this.state,
-            startDate,
-          });
-        };
-      },
-      [input],
-    ) 
-
-    const setEndDate = useCallback(
-      () => {
-        (endDate) => {
-          this.setState({
-            ...this.state,
-            endDate,
-          });
-        };
-      },
-      [input],
-    ) 
-   */
   
 
   const pausePlayerState =  useCallback(
@@ -217,7 +178,7 @@ const App = (props) => {
   ) 
 
   const openDialog = useCallback(
-    (props) => {
+    () => {
         setDialog(prevState => ({
           ...prevState,
           opened: true,
@@ -228,14 +189,13 @@ const App = (props) => {
         }
       ));
     },
-    [],
+    [props.country, props.iso2],
   );
 
   useEffect(() =>{
     getEnvData();
-   },[getEnvData])
+   },[getEnvData]);
  
-
   useEffect(() => {
     setNewDays();
     pausePlayerState();
@@ -269,8 +229,9 @@ const App = (props) => {
               break
           }
           return obj
-       })
-       setEnvironment(data);
+       });
+       const envt = data.environment;
+       setEnvironment(envt);
       }
   }
     
