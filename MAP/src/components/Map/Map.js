@@ -5,10 +5,10 @@ import mapboxgl from 'mapbox-gl';
 import {
   filterLookupTable,
   selectedWorldview,
-  worldStyle,
   domainCoors,
   domainCoorsMobile,
   pause,
+  worldStyle,
 } from './util';
 import format from 'date-fns/format';
 import addDays from 'date-fns/addDays';
@@ -16,6 +16,7 @@ import { getWorldData } from '../../services/map';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
+import AppContext from '../../contexts/AppContext';
 
 //import LocalStorage Functions
 import * as router from '../../router';
@@ -29,6 +30,8 @@ export const mapboxToken =
   'pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw';
 
 export class Map extends React.Component {
+  static contextType = AppContext;
+
   constructor() {
     super();
     this.initMap = this.initMap.bind(this);
@@ -62,10 +65,12 @@ export class Map extends React.Component {
       isLocationSet: isLocationSet,
       geocoder: {},
       lastCountry: {},
+      mapStyle : [],
     };
+    this.mapContainer = React.createRef();
   }
 
-  setMapState(map, localData = [], lookupData) {
+  setMapState(map,lookupData, localData = []) {
     const localDataByIso = {};
     localData.forEach((l) => (localDataByIso[l.lockdown.iso] = l));
     Object.keys(lookupData).forEach((key) => {
@@ -87,9 +92,10 @@ export class Map extends React.Component {
 
   async initMap(mapData, lookupTable) {
     if (!mapboxgl) {
-      await pause();
-      await this.initMap(mapData, lookupTable);
+       pause();
+      this.initMap(mapData, lookupTable);
     }
+
 
     const mapBoxglState = mapboxgl.getRTLTextPluginStatus();
     if (mapBoxglState === 'unavailable' || mapBoxglState === 'error') {
@@ -102,15 +108,15 @@ export class Map extends React.Component {
 
     let map = new mapboxgl.Map({
       accessToken: mapboxToken,
-      container: this.ref,
+      container: this.mapContainer.current,
       style:
         'mapbox://styles/jfqueralt/ckavedmnk253z1iphmsy39s3r?optimize=true',
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom,
       keyboard: false,
       pitchWithRotate: false,
-      hash: true,
     });
+  
     let geocoder = new MapboxGeocoder({
       accessToken: mapboxToken,
       language: this.props.currentLanguage
@@ -122,7 +128,6 @@ export class Map extends React.Component {
     geocoder.on('results', this.onGetResult);
     geocoder.addTo('#mapBlank');
     window.map = map;
-
     const localData = mapData[this.props.selectedDate];
 
     map.on('style.load', () => {
@@ -188,28 +193,32 @@ export class Map extends React.Component {
       });
       map.on('click', 'admin-0-fill', this.onMapClick);
 
-      console.log('the style is loaded');
     });
 
-    map.on('load', function () {
-      console.log('map is loaded');
-      createViz(lookupTable);
+    map.on('load', () => {
+      const waiting = () => {
+        if (!map.isStyleLoaded()) {
+          setTimeout(waiting, 200);
+        } else {
+          createViz(lookupTable);
+        }
+      };
+      waiting();
     });
-
+  
     this.props.setIsLoading(false);
 
-    const createViz = (lookupTable) => {
+    const createViz =  async (lookupTableData) => {    
       map.addSource('admin-0', {
         type: 'vector',
         url: 'mapbox://mapbox.boundaries-adm0-v3',
       });
-
-      const lookupData = filterLookupTable(lookupTable);
+      const lookupData = filterLookupTable(lookupTableData);
 
       // Filters the lookup table to features with the 'US' country code
       // and keys the table using the `unit_code` property that will be used for the join
 
-      map.addLayer(
+       map.addLayer(
         {
           id: 'admin-0-fill',
           type: 'fill',
@@ -225,6 +234,7 @@ export class Map extends React.Component {
             ],
             ['!', ['has', 'dispute']],
           ],
+
           paint: {
             'fill-color': [
               'case',
@@ -373,11 +383,11 @@ export class Map extends React.Component {
         localData = newMapData[selectedDate];
         mapData = newMapData;
         this.setState({ mapData }, () =>
-          this.setMapState(this.state.map, localData, lookupData),
+          this.setMapState(this.state.map,lookupData, localData),
         );
       }
     } else {
-      this.setMapState(this.state.map, localData, lookupData);
+      this.setMapState(this.state.map,lookupData, localData);
     }
   }
 
@@ -442,10 +452,24 @@ export class Map extends React.Component {
     });
   }
 
-  async componentDidMount() {
-    const { daysRange } = this.props;
-
-    let { startDate, endDate } = this.props;
+  /**
+   * this method will return the color code based on the title 
+   * if that tilte is not found in out list it will  return the default color
+   * @param {string} title 
+   */
+  setWorldStyle = (title) => {
+    const {mapStyle} = this.state;
+    const result =mapStyle.filter(style => style.title === title);
+    if(result && result.length ===1){
+      return result[0].style;
+    }else{
+      return "#ccc";
+    }
+  }
+  
+  
+   initializeMapBox =  async () => {
+    let { startDate, endDate, daysRange } = this.props;
     startDate = startDate
       ? format(startDate, 'yyyy-MM-dd')
       : format(addDays(new Date(), -14), 'yyyy-MM-dd');
@@ -471,10 +495,16 @@ export class Map extends React.Component {
         console.log('STATE', this.state);
       },
     );
-    if (mapData && lookupTable) await this.initMap(mapData, lookupTable);
-  }
+      setTimeout(()=> {
+        if (mapData && lookupTable) this.initMap(mapData, lookupTable);
+      },2000)
+    };
 
-  componentDidUpdate(previousProps, previousState, snapshot) {
+    async componentDidMount() {
+        this.initializeMapBox();
+    }
+
+  async componentDidUpdate(previousProps, previousState, snapshot) {
     if (previousProps.selectedDate !== this.props.selectedDate) {
       if (this.state.isMapReady) {
         this.updateMap(
@@ -487,18 +517,21 @@ export class Map extends React.Component {
         }
       }
     }
+
   }
 
   render() {
+   const {isCountrySearchVisible} = this.props;
+    
     return (
       <>
         <div
-          ref={(ref) => (this.ref = ref)}
+          ref = {this.mapContainer}
           id="map"
           onClick={() => this.props.onOpen(this.state.lastCountry)}
           className="map-container"
         ></div>
-        <CountriesSearcher
+         { isCountrySearchVisible &&  <CountriesSearcher
           dark={this.props.dark}
           i18n={{ locale: 'en, en-US' }}
           map={{
@@ -509,7 +542,7 @@ export class Map extends React.Component {
               });
             },
           }}
-        />
+        /> }
         <span id="mapBlank" style={{ display: 'none' }}></span>
       </>
     );

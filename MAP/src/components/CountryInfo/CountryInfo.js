@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState , useContext } from 'react';
 import isSameDay from 'date-fns/isSameDay';
 import './CountryInfo.css';
 import { useTranslation } from 'react-i18next';
@@ -11,11 +11,14 @@ import {
   getCoronaData,
   getCoronaDetailService,
 } from '../../services/coronaTrackerService';
-import { tabs } from './constant';
+import AppContext from '../../contexts/AppContext';
+
 const CountryInfo = (props) => {
+  const environment = useContext(AppContext)
   const [currentTab, setCurrentTab] = useState(1);
   const { i18n } = props;
   const [coronaData, setCoronaData] = useState();
+  const [tabs, setTabs] = useState([])
   const [
     countryDetails,
     // setCountryDetails
@@ -30,6 +33,18 @@ const CountryInfo = (props) => {
   useEffect(() => {
     const { startDate, endDate } = props;
 
+    const {overlay = {}} = environment['environment'];
+    const  allTab=  overlay.tabs || []
+    const allTabs = allTab.map(tab => { 
+      return {
+        id: tab.id,
+        name: tab.title,
+        isVisible: tab.is_visible || false
+      }
+    })
+    setTabs([...allTabs]);
+
+
     getCoronaData(props.iso2, startDate, endDate)
       .then((response) => {
         console.log(response);
@@ -40,7 +55,7 @@ const CountryInfo = (props) => {
     getCoronaDetailService(props.iso2, startDate, endDate)
       .then((response) => response)
       .catch((e) => console.log(e));
-  }, [props]);
+  }, [environment, props]);
 
   let firstLink = territoryData
     ? `https://docs.google.com/a/theiofoundation.org/spreadsheets/d/1mVyQxxLxAF3E1dw870WHXTOLgYzmumojvzIekpgvLV0/edit#gid=${territoryData.id}`
@@ -58,7 +73,7 @@ const CountryInfo = (props) => {
         className={tabStyles}
       >
         {tabs.map((tab) => (
-          <div
+          tab.isVisible && <div
             key={tab.id}
             onClick={() => changeTab(tab.id)}
             className={`tab ${currentTab === tab.id ? 'active' : ''}`}

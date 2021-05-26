@@ -2,12 +2,16 @@ import { Component, createRef } from 'react';
 import { Translation } from 'react-i18next';
 import './legend.css';
 import { list } from '../../assets/icons/icons.js';
-
+import AppContext from '../../contexts/AppContext';
+import { UIComponent } from '../../utils/constant';
+import { worldStyleColor } from '../Map/util';
 export class Legend extends Component {
+  static contextType = AppContext;
   constructor() {
     super();
     this.state = {
       showDialog: false,
+      data : []
     };
     this.btn = createRef();
     this.onClick = this.onClick.bind(this);
@@ -69,8 +73,21 @@ export class Legend extends Component {
     });
   }
 
+  componentDidMount(){
+    const {environment} = this.context;
+    const {components = {}} = environment;
+    if(components){
+      const legend = components.find((component) => component.name === UIComponent.Legend);
+      const {data} = legend;
+      this.setState({data: data});
+    }
+    
+  }
+
   render() {
     const mode = this.props.dark ? 'dark' : '';
+    const {data} = this.state;
+    
     return (
       <legend
         onClick={this.onClick}
@@ -84,41 +101,18 @@ export class Legend extends Component {
             this.props.y
           } ${this.props.x}`}
         >
-          <div>
-            <span>
-              <div className="color green" />
-            </span>
-            <Translation>
-              {(t, { i18n }) => <span>{t('mapLegend.no')}</span>}
-            </Translation>
-          </div>
-
-          <div>
-            <span>
-              <div className="color orange" />
-            </span>
-            <Translation>
-              {(t, { i18n }) => <span>{t('mapLegend.partial')}</span>}
-            </Translation>
-          </div>
-
-          <div>
-            <span>
-              <div className="color red" />
-            </span>
-            <Translation>
-              {(t, { i18n }) => <span>{t('mapLegend.full')}</span>}
-            </Translation>
-          </div>
-
-          <div>
-            <span>
-              <div className="color gray" />
-            </span>
-            <Translation>
-              {(t, { i18n }) => <span>{t('mapLegend.noData')}</span>}
-            </Translation>
-          </div>
+          {
+            data.map((legends, index) => (
+              <div key={index}>
+                <span>
+                  <div className={`color ${worldStyleColor(legends.worldStyle)}`} />
+                </span>
+                <Translation>
+                  {(t, { i18n }) => <span>{t(`${legends.title}`)}</span>}
+                </Translation>
+              </div>
+            ))
+          }
         </div>
       </legend>
     );
