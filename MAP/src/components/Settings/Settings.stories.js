@@ -1,4 +1,4 @@
-import ThemeContext from '../../context/ThemeContext';
+import ThemeContext from '../../contexts/ThemeContext';
 import { Settings } from './Settings';
 
 const parameters = {
