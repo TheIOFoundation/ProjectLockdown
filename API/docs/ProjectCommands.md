@@ -1,7 +1,15 @@
+# Description 
+- **Name**: ProjectCommands
+- **Target audience**: people who are looking for available commands.
+- **Content**:
+  - Overview
+  - Installation
+  - Runnig the app
+  - Test
+  
+# Content
 
-## Description
-
-This is API source code of project Lockdown.
+## Overview
 
 ## Installation
 
@@ -34,10 +42,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## License
-
-Nest is [MIT licensed](LICENSE).
-
-## Credit
-This source code is initialized by NestJS starter - [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
