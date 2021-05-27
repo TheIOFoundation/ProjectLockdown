@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { world } from '../../assets/icons/world';
+import { toBool } from '../../utils/utils';
 import * as classes from './LanguageSelector.module.css';
 
 const LanguageSelector = ({ dark, languageChangeHandler }) => {
+  dark = toBool(dark);
   const [showLanguages, setShowLanguages] = useState(false);
 
   const [selectedLang, setSelectedLang] = useState('en');

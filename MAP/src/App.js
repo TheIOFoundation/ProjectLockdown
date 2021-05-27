@@ -110,9 +110,7 @@ const App = (props) => {
           formattedSelectedDate.getDate() === endDate.getDate() &&
           formattedSelectedDate.getMonth() === endDate.getMonth() &&
           formattedSelectedDate.getFullYear() === endDate.getFullYear()
-        ) {
-          alert('Ended');
-          
+        ) {          
           setPlayerState(PAUSED);
           setSelectedDate(format(startDate, 'yyyy-MM-dd'))
         }
@@ -137,7 +135,6 @@ const App = (props) => {
               console.log('Stopped');
               clearInterval(loop);
             } else {
-              console.log('Still looping');
               setSelectedDate(format(
                 addDays(formattedSelectedDate, 1),
                 'yyyy-MM-dd',
@@ -200,13 +197,17 @@ const App = (props) => {
   useEffect(() =>{
     getEnvData();
    },[getEnvData]);
+
+   useEffect(() => {
+    updateIsDark();
+   },[updateIsDark]);
  
   useEffect(() => {
     setNewDays();
     pausePlayerState();
     router.resetLocalStorage();
     updatePlayerState();
-
+  
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
@@ -288,7 +289,7 @@ const App = (props) => {
             isCountrySearchVisible={isCountrySearchVisible}
             mapCord={mapCord}
           />
-          <TabMenu darkMode={isDark} setDarkMode={updateIsDark} />
+          <TabMenu isDark={isDark} setDarkMode={updateIsDark} />
           <Totals dark={isDark} />
           {isLegendVisible && <Legend dark={isDark} />}
           {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}

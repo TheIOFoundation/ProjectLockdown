@@ -5,6 +5,8 @@ import { list } from '../../assets/icons/icons.js';
 import AppContext from '../../contexts/AppContext';
 import { UIComponent } from '../../utils/constant';
 import { worldStyleColor } from '../Map/util';
+import { toBool } from '../../utils/utils';
+
 export class Legend extends Component {
   static contextType = AppContext;
   constructor(props) {
@@ -80,8 +82,8 @@ export class Legend extends Component {
       const legend = components.find((component) => component.name === UIComponent.Legend);
       if(legend && legend.data){
         const {data} = legend;
-        this.setState((prevState) =>({
-          data: [...prevState.data, data]
+        this.setState(() =>({
+          data: [...data]
         }));
       }
       
@@ -90,7 +92,7 @@ export class Legend extends Component {
   }
 
   render() {
-    const mode = this.props.dark ? 'dark' : '';
+    const mode = toBool(this.props.dark) ? 'dark' : '';
     const {data} = this.state;
     
     return (
