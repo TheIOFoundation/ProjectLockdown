@@ -7,8 +7,8 @@ import { UIComponent } from '../../utils/constant';
 import { worldStyleColor } from '../Map/util';
 export class Legend extends Component {
   static contextType = AppContext;
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showDialog: false,
       data : []
@@ -78,8 +78,13 @@ export class Legend extends Component {
     const {components = {}} = environment;
     if(components){
       const legend = components.find((component) => component.name === UIComponent.Legend);
-      const {data} = legend;
-      this.setState({data: data});
+      if(legend && legend.data){
+        const {data} = legend;
+        this.setState((prevState) =>({
+          data: [...prevState.data, data]
+        }));
+      }
+      
     }
     
   }

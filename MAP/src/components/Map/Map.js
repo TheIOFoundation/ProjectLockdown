@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
-import './map.css';
 import mapboxgl from 'mapbox-gl';
+import './map.css';
 import {
   filterLookupTable,
   selectedWorldview,
@@ -28,12 +28,11 @@ import * as router from '../../router';
 // @fixme This should not be committed to the repository
 export const mapboxToken =
   'pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw';
-
 export class Map extends React.Component {
   static contextType = AppContext;
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.initMap = this.initMap.bind(this);
     this.updateMap = this.updateMap.bind(this);
     this.onMapClick = this.onMapClick.bind(this);
@@ -55,9 +54,9 @@ export class Map extends React.Component {
       }
     }
     this.state = {
-      lng: coords.lng,
-      lat: coords.lat,
-      zoom: coords.zoom,
+      lng: this.props.mapCord.lng,
+      lat: this.props.mapCord.lat,
+      zoom: this.props.mapCord.zoom,
       countries: [],
       mapData: {},
       lookupTable: {},
@@ -69,6 +68,17 @@ export class Map extends React.Component {
     };
     this.mapContainer = React.createRef();
   }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.mapCord !== nextProps.mapCord){
+      this.setState((prevSate) => ({
+        ...prevSate,
+        lng: nextProps.mapCord.lng,
+        lat : nextProps.mapCord.lat,
+        zoom: nextProps.mapCord.zoom
+      }));
+    }
+}
 
   setMapState(map,lookupData, localData = []) {
     const localDataByIso = {};
@@ -90,6 +100,7 @@ export class Map extends React.Component {
     });
   }
 
+ 
   async initMap(mapData, lookupTable) {
     if (!mapboxgl) {
        pause();

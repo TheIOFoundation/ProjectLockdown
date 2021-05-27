@@ -8,8 +8,7 @@ import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
 import ThemeContext from './contexts/ThemeContext';
 import AppContext from './contexts/AppContext';
-import format from 'date-fns/format';
-import { addDays } from 'date-fns';
+import { addDays, format } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
 import Watermark from './components/Watermark/Watermark';
@@ -49,6 +48,7 @@ const getDaysDiff = (date1, date2) => {
   );
 };
 const { PLAYING, PAUSED } = playerStates;
+const  coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
 
 const App = (props) => {
   
@@ -71,6 +71,11 @@ const App = (props) => {
   const [isLegendVisible, setIsLegendVisible] = useState(false);
   const [isTimeSliderVisible, setIsTimeSliderVisible] = useState(false);
   const [isCountrySearchVisible, setIsCountrySearchVisible] = useState(false);
+  const [mapCord , setMapCord] = useState({
+      lng: coords.lng,
+      lat: coords.lat,
+      zoom: coords.zoom,
+  })
 
    const getEnvData = useCallback( async () =>{
         const data = await fetchEnvironments();
@@ -234,12 +239,27 @@ const App = (props) => {
        setEnvironment(envt);
       }
   }
+  const updateMapCord = (value) =>{
+    const cord = value.split("/");
+    if(cord.length === 3){
+      setMapCord((prevCord) => ({
+        ...prevCord,
+        lng: cord[0],
+        lat: cord[1],
+        zoom: cord[2]
+      }));
+    }
+  }
     
     useEffect(() =>{
       const {search=""} = props.location;
       const params = new URLSearchParams(search);
       for (const [key, value] of params) {
+        if(key === "map"){
+          updateMapCord(value);
+        }
         updateEnv(key,value);
+        
       }
       
     },[props.location])
@@ -266,6 +286,7 @@ const App = (props) => {
             setIsLoading={setIsLoading}
             daysRange={daysRange}
             isCountrySearchVisible={isCountrySearchVisible}
+            mapCord={mapCord}
           />
           <TabMenu darkMode={isDark} setDarkMode={updateIsDark} />
           <Totals dark={isDark} />
