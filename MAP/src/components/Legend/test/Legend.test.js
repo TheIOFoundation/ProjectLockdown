@@ -9,6 +9,6 @@ const props = {
     ii8n: (i) =>i 
 }
 it('renders correctly when there are no items', () => {
-    const tree = renderer.create(<Legend {...props} />).toJSON();
+    const tree = renderer.create(<Legend  {...props} />).toJSON();
     expect(tree).toMatchSnapshot();
   });

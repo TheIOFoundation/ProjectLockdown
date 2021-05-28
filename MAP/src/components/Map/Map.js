@@ -105,8 +105,6 @@ export class Map extends React.Component {
        pause();
       this.initMap(mapData, lookupTable);
     }
-
-
     const mapBoxglState = mapboxgl.getRTLTextPluginStatus();
     if (mapBoxglState === 'unavailable' || mapBoxglState === 'error') {
       mapboxgl.setRTLTextPlugin(

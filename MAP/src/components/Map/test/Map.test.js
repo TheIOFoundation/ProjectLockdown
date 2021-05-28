@@ -19,6 +19,11 @@ const props = {
     isCountrySearchVisible: false,
     mapCord: coords,
 }
+window.URL = window.URL || function() {
+  return {
+      createObjectURL: jest.fn(),
+  };
+};
 
 it('renders correctly when there are no items', () => {
     window.URL.createObjectURL = jest.fn();
