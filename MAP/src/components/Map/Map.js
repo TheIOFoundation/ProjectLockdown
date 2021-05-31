@@ -448,16 +448,17 @@ export class Map extends React.Component {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['admin-0-fill'],
     });
+    const name = lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name;
+    const iso = features[0].properties.iso_3166_1;
     this.state.geocoder.query(
-      lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
+      name,
     );
-    this.setState({
+    this.setState(() =>({
       lastCountry: {
-        country:
-          lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
-        iso2: features[0].properties.iso_3166_1,
+        country: name,
+        iso2: iso,
       },
-    });
+    }));
   }
 
   /**

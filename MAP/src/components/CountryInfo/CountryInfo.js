@@ -66,7 +66,7 @@ const CountryInfo = (props) => {
   let territory = territoryData ? territoryData.territory : 'TERRITORY';
 
   return (
-    <div className={`${dark ? 'dark' : ''} CountryInfo`}>
+    <div className={`container ${dark ? 'dark' : ''} CountryInfo`}>
       <div
         style={{
           color: `${dark ? 'white' : 'black'}`,

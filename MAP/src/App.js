@@ -15,7 +15,7 @@ import Watermark from './components/Watermark/Watermark';
 import { UIComponent } from './utils/constant';
 //import LocalStorage Functions
 import * as router from './router';
-import { fetchEnvironments } from './api';
+import { fetchEnvironments, fetchCountryISO } from './api';
 import _ from 'lodash';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
@@ -177,7 +177,7 @@ const App = (props) => {
           }));
     },
     [],
-  ) 
+  ); 
 
   const openDialog = useCallback(
     () => {
@@ -251,6 +251,23 @@ const App = (props) => {
       }));
     }
   }
+  const opeOverlay = async (value) => {
+      const countryIso  = await fetchCountryISO();
+      if(countryIso.length){
+        const selectedCountry =await _.find(countryIso, {"Iso": value});
+        if(selectedCountry){
+          setDialog(prevState => ({
+            ...prevState,
+            opened: true,
+            template: '',
+            title: '',
+            iso2: value,
+            country: selectedCountry.name,
+          }
+        ));
+        }
+      }
+  }
     
     useEffect(() =>{
       const {search=""} = props.location;
@@ -259,8 +276,10 @@ const App = (props) => {
         if(key === "map"){
           updateMapCord(value);
         }
+        else if(key==="PLD"){
+          opeOverlay(value);
+        }
         updateEnv(key,value);
-        
       }
       
     },[props.location])
@@ -316,8 +335,9 @@ const App = (props) => {
               setFirstDay={setStartDate}
               lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
               setLastDay={setEndDate}
-            >
-              {dialog.opened ? (
+            />
+          )}
+          {dialog.opened ? (
                 <CountryInfo
                   dark={isDark}
                   country={dialog.country}
@@ -334,8 +354,6 @@ const App = (props) => {
               ) : (
                 ''
               )}
-            </TimeSlider>
-          )}
         </ThemeContext.Provider>
         </AppContext.Provider>
       </div>
