@@ -27,7 +27,7 @@
 .dark .dialog.left::after {
   border-right-color: #333;
 }
-:hover {
+.btn :hover {
   cursor: pointer;
 }
 :active {
