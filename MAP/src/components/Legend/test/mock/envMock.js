@@ -1,4 +1,4 @@
-const envData  = 
+const envMock  = 
     {
         "environment": {
             "dsl_id": 1,
@@ -67,4 +67,4 @@ const envData  =
         }
     };
 
-export default envData;
+export default envMock;

@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import AppContext from '../../../contexts/AppContext';
-import envData from './mock/mockData';
+import envMock from './mock/envMock';
 
 import { Legend} from '../Legend';
 const props = {
@@ -17,7 +17,7 @@ it('renders correctly when there are no items',  () => {
 
 it('render Correctly with context data' , async () => {
     const tree =  renderer.create(
-        <AppContext.Provider value={envData}>
+        <AppContext.Provider value={envMock}>
             <Legend {...props} />
         </AppContext.Provider>
     );
