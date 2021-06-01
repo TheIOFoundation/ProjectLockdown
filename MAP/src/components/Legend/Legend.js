@@ -94,6 +94,7 @@ export class Legend extends Component {
         type="legend"
         className={['btn', mode].join(' ')}
         {...this.props}
+        style={{cursor: "pointer"}}
       >
         {list}
         <div
