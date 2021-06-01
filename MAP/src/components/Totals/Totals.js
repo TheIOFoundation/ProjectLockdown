@@ -5,8 +5,7 @@ import './Totals.css';
 
 const separateNumber = (number) => {
   const nfObject = new Intl.NumberFormat('es-ES');
-  const output = nfObject.format(+number);
-  return output;
+  return nfObject.format(+number);
 };
 const Totals = ({
   dark,

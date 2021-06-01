@@ -314,8 +314,6 @@ export class TabMenu extends Component {
       return;
     }
 
-    // this.props.changeRoute(renderMenu(val));
-
     this.prevVal = val;
     this.setState({
       activeItem: val,
