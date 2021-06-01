@@ -27,9 +27,6 @@
 .dark .dialog.left::after {
   border-right-color: #333;
 }
-.btn :hover {
-  cursor: pointer;
-}
 :active {
   cursor: grabbing;
   cursor: -moz-grabbing;
