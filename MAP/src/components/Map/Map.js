@@ -415,10 +415,6 @@ export class Map extends React.Component {
       'get',
       'name_' + iso,
     ]);
-    // let map = this.state.map.setLayoutProperty('country-label', 'text-field', [
-    //   'get',
-    //   'name_' + iso,
-    // ]);
   }
 
   onGetResult(results) {
