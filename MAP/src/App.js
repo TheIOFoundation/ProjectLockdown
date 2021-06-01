@@ -251,7 +251,7 @@ const App = (props) => {
       }));
     }
   }
-  const opeOverlay = async (value) => {
+  const openOverlay = async (value) => {
       const countryIso  = await fetchCountryISO();
       if(countryIso.length){
         const selectedCountry =await _.find(countryIso, {"Iso": value});
@@ -277,7 +277,7 @@ const App = (props) => {
           updateMapCord(value);
         }
         else if(key==="PLD"){
-          opeOverlay(value);
+          openOverlay(value);
         }
         updateEnv(key,value);
       }
