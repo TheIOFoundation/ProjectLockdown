@@ -37,7 +37,7 @@ export function Settings({ onClose, isDark, setDarkMode }) {
         setPwaUpdateAvailable(updateAvailable);
       });
       let dark = localStorage.getItem('darkmode');
-      dark = dark !== false && dark !== null;
+      dark = dark !== "false" && dark !== null;
       setDarkMode(dark);
     }
     addListener();

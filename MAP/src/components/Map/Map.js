@@ -40,7 +40,7 @@ export class Map extends React.Component {
     this.onGetResult = this.onGetResult.bind(this);
 
     let coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
-    let deviceCoords = coords;
+    let deviceCoords;
 
     // If it is a mobile device get the cooridnates for mobile (domainCoorsMobile), else get the desktop coordinates (domainCoors)
     if (screen.width <= 699) deviceCoords = domainCoorsMobile;
@@ -409,10 +409,6 @@ export class Map extends React.Component {
       'get',
       'name_' + iso,
     ]);
-    // let map = this.state.map.setLayoutProperty('country-label', 'text-field', [
-    //   'get',
-    //   'name_' + iso,
-    // ]);
   }
 
   onGetResult(results) {
