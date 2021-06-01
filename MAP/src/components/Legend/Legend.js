@@ -103,12 +103,15 @@ export class Legend extends Component {
         >
           {
             data.map((legends, index) => (
-              <div key={index}>
+              <div key={index} style={{cursor: "default"}}>
                 <span>
-                  <div className={`color ${worldStyleColor(legends.worldStyle)}`} />
+                  <div className={`color ${worldStyleColor(legends.worldStyle)}`}
+                       style={{cursor: "default"}}/>
                 </span>
                 <Translation>
-                  {(t, { i18n }) => <span>{t(`${legends.title}`)}</span>}
+                  {(t, { i18n }) => <span style={{cursor: "default"}}>
+                    {t(`${legends.title}`)}
+                  </span>}
                 </Translation>
               </div>
             ))
