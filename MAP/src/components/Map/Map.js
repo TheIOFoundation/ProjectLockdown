@@ -37,8 +37,7 @@ export class Map extends React.Component {
     this.onMapClick = this.onMapClick.bind(this);
     this.onGetResult = this.onGetResult.bind(this);
 
-    let coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
-    let deviceCoords = coords;
+    let deviceCoords =  { lng: 40.7, lat: 25, zoom: 1.06 };
 
     // If it is a mobile device get the cooridnates for mobile (domainCoorsMobile), else get the desktop coordinates (domainCoors)
     if (screen.width <= 699) deviceCoords = domainCoorsMobile;
@@ -48,7 +47,6 @@ export class Map extends React.Component {
     let isLocationSet = false;
     for (let country in deviceCoords) {
       if (url.indexOf('lockdown.' + country) !== -1) {
-        coords = deviceCoords[country];
         isLocationSet = true;
       }
     }

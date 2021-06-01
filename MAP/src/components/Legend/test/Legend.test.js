@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-/* import AppContext from '../../../contexts/AppContext';
-import { fetchEnvironments } from '../../../api'; */
+import AppContext from '../../../contexts/AppContext';
+import envData from './mock/mockData';
 
 import { Legend} from '../Legend';
 const props = {
@@ -15,15 +15,12 @@ it('renders correctly when there are no items',  () => {
     expect(tree).toMatchSnapshot();
   });
 
-/* it('render Correctly with context data' , async () => {
-    const data = await fetchEnvironments();
+it('render Correctly with context data' , async () => {
     const tree =  renderer.create(
-        <AppContext.Provider value={data}>
+        <AppContext.Provider value={envData}>
             <Legend {...props} />
         </AppContext.Provider>
     );
-    console.log('Tree ', data);
     expect(tree).toMatchSnapshot();
-
-}) */
+})
 

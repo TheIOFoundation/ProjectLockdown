@@ -44,7 +44,6 @@ export function Settings({ onClose, isDark, setDarkMode }) {
     addListener();
   }, [setDarkMode]);
 
-  console.log("isDark", isDark);
   return (
     <div className="settings">
       <button onClick={toggleDarkmode} className="ld-button">

@@ -3,7 +3,6 @@ import { MEASURES } from './constant';
 
 const CountryDetails = (props) => {
   let { i18n, t } = props;
-  console.log(')> props', props);
   let { coronaData, country, date, dark } = props;
 
   return (
