@@ -27,6 +27,9 @@ import * as router from '../../router';
 // @fixme This should not be committed to the repository
 export const mapboxToken =
   'pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw';
+
+let deviceCoords =  { lng: 40.7, lat: 25, zoom: 1.06 };
+
 export class Map extends React.Component {
   static contextType = AppContext;
 
@@ -37,7 +40,6 @@ export class Map extends React.Component {
     this.onMapClick = this.onMapClick.bind(this);
     this.onGetResult = this.onGetResult.bind(this);
 
-    let deviceCoords =  { lng: 40.7, lat: 25, zoom: 1.06 };
 
     // If it is a mobile device get the cooridnates for mobile (domainCoorsMobile), else get the desktop coordinates (domainCoors)
     if (screen.width <= 699) deviceCoords = domainCoorsMobile;
@@ -211,7 +213,6 @@ export class Map extends React.Component {
       };
       waiting();
     });
-  
     this.props.setIsLoading(false);
 
     const createViz =  async (lookupTableData) => {    
