@@ -1,1 +1,5 @@
- export const  toBool = string => typeof(string) == Boolean ?  string : string === 'true' ? true : false;
+ export const  toBool = (string) =>  {
+     if(typeof(string) == Boolean ) return string;
+     return string === 'true' ? true : false;
+ }
+
