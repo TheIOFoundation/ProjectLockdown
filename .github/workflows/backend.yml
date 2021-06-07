@@ -30,7 +30,7 @@ jobs:
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
         with:
-          node-version: "10.x, 11.x, 12.x, 13.x, 14.x"
+          node-version: "14.x"
       - name: npm install, build, and test
         run: |
           pwd
@@ -43,9 +43,9 @@ jobs:
       - name: "Deploy to Azure"
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          package: ${{ secrets.AZURE_WEBAPP_PACKAGE_PATH }}
       - if: github.ref == 'refs/heads/master' && job.status == 'success'
         run: |
           git push -u origin HEAD:master -f
