@@ -7,6 +7,7 @@ const Reports = (props) => {
       style={{
         color: `${props.dark ? 'white' : 'black'}`,
         backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
+        minHeight: 'inherit'
       }}
       className={`${reports}`}
     >

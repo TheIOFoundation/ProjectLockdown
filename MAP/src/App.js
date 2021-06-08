@@ -180,18 +180,18 @@ const App = (props) => {
   ); 
 
   const openDialog = useCallback(
-    () => {
+    (countryIfo) => {
         setDialog(prevState => ({
           ...prevState,
           opened: true,
           template: '',
           title: '',
-          iso2: props.iso2,
-          country: props.country,
+          iso2: countryIfo.iso2,
+          country: countryIfo.country,
         }
       ));
     },
-    [props.country, props.iso2],
+    [],
   );
 
   useEffect(() =>{
@@ -266,6 +266,17 @@ const App = (props) => {
           }
         ));
         }
+        //TODO: WE NEED THE ACTUAL COORDINATE WITH ZOOM VALUE THAN BOUNDING BOX
+        const [ minlon, minlat, maxlon, maxlat ] = selectedCountry.cord;
+        const avgLng =  (maxlon + minlon)/2;
+        const avgLat = (maxlat + minlat) /2;
+        setMapCord((prevCord) => ({
+          ...prevCord,
+          lng: avgLng,
+          lat: avgLat,
+          zoom: 4  //  need to be  parameterized 
+        }));
+        
       }
   }
     

@@ -12,13 +12,14 @@ import {
 } from './util';
 import format from 'date-fns/format';
 import addDays from 'date-fns/addDays';
-import { getWorldData } from '../../services/map';
+import {getSnapShotData } from '../../services/map';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 import AppContext from '../../contexts/AppContext';
 //import LocalStorage Functions
 import * as router from '../../router';
+import _ from 'lodash';
 
 /**
  * Primary UI component for user interaction
@@ -81,7 +82,7 @@ export class Map extends React.Component {
 
   setMapState(map,lookupData, localData = []) {
     const localDataByIso = {};
-    localData.forEach((l) => (localDataByIso[l.lockdown.iso] = l));
+    localData.forEach((l) => (localDataByIso[l.iso] = l));
     Object.keys(lookupData).forEach((key) => {
       var lookup = lookupData[key];
       var countryInfo = localDataByIso[key];
@@ -92,7 +93,7 @@ export class Map extends React.Component {
           id: lookup.feature_id,
         },
         {
-          kind: countryInfo?.lockdown?.measure[0]?.value,
+          kind: countryInfo?.value,
           name: key,
         },
       );
@@ -101,6 +102,7 @@ export class Map extends React.Component {
 
  
   async initMap(mapData, lookupTable) {
+    const {lng, lat, zoom} = this.state;
     if (!mapboxgl) {
        pause();
       this.initMap(mapData, lookupTable);
@@ -114,13 +116,14 @@ export class Map extends React.Component {
       );
     }
 
+
     let map = new mapboxgl.Map({
       accessToken: mapboxToken,
       container: this.mapContainer.current,
       style:
         'mapbox://styles/jfqueralt/ckavedmnk253z1iphmsy39s3r?optimize=true',
-      center: [this.state.lng, this.state.lat],
-      zoom: this.state.zoom,
+      center: [lng,lat],
+      zoom: zoom,
       keyboard: false,
       pitchWithRotate: false,
     });
@@ -137,7 +140,6 @@ export class Map extends React.Component {
     geocoder.addTo('#mapBlank');
     window.map = map;
     const localData = mapData[this.props.selectedDate];
-
     map.on('style.load', () => {
       let hoveredStateId = null;
       let iso = this.props.currentLanguage
@@ -330,23 +332,24 @@ export class Map extends React.Component {
       map.setPaintProperty('water', 'fill-color', '#e0e0e0');
 
       const setStates = (e) => {
-        localData.forEach(function (row) {
-          map.setFeatureState(
-            {
-              source: 'admin-0',
-              sourceLayer: 'boundaries_admin_0',
-              id: lookupData[row.lockdown.iso].feature_id,
-            },
-            {
-              kind: row.lockdown.measure[0].value,
-              name: row.lockdown.iso,
-            },
-          );
-        });
-
-        this.setState({
-          isMapReady: true,
-        });
+        if(!_.isEmpty(localData)){
+          localData.forEach(function (row) {
+            map.setFeatureState(
+              {
+                source: 'admin-0',
+                sourceLayer: 'boundaries_admin_0',
+                id: lookupData[row.iso].feature_id,
+              },
+              {
+                kind: row.value,
+                name: row.iso,
+              },
+            );
+          });
+          this.setState({
+            isMapReady: true,
+          });
+        }        
       };
 
       // Check if `statesData` source is loaded.
@@ -385,7 +388,8 @@ export class Map extends React.Component {
       endDate = endDate
         ? format(endDate, 'yyyy-MM-dd')
         : format(addDays(new Date(), daysRange - 14), 'yyyy-MM-dd');
-      let newMapData = await getWorldData(startDate, endDate);
+
+      let newMapData = await getSnapShotData(startDate, endDate);
       if (newMapData) {
         localData = newMapData[selectedDate];
         mapData = newMapData;
@@ -482,7 +486,7 @@ export class Map extends React.Component {
       : format(addDays(new Date(), daysRange - 14), 'yyyy-MM-dd');
     // the world map needs a large data source, lazily fetch them in parallel
     const [mapData, lookupTable] = await Promise.all([
-      getWorldData(startDate, endDate),
+      getSnapShotData(startDate, endDate),
       fetch('./data/boundaries-adm0-v3.json').then((r) => r.json()),
     ]);
 
@@ -500,7 +504,7 @@ export class Map extends React.Component {
       },
     );
       setTimeout(()=> {
-        if (mapData && lookupTable) this.initMap(mapData, lookupTable);
+        if (mapData && lookupTable) this.initMap(mapData.snapshot, lookupTable);
       },2000)
     };
 
@@ -526,6 +530,7 @@ export class Map extends React.Component {
 
   render() {
    const {isCountrySearchVisible} = this.props;
+   
     
     return (
       <>
