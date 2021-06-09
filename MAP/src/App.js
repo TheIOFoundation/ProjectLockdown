@@ -20,7 +20,6 @@ import _ from 'lodash';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
-// TODO: Reset selectedDate to startDate once endDate is reached.
 
 function toJsonString(date) {
   return format(date, 'yyyy-MM-dd');
