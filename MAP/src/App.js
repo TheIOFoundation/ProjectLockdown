@@ -54,7 +54,7 @@ const App = (props) => {
   
   const [environment, setEnvironment] = useState({});
   const [loading, setIsLoading] = useState(false);
-  const [isDark, setIsDark] = useState("false");
+  const [isDark, setIsDark] = useState(true);
   const [playerState, setPlayerState] = useState(PAUSED);
   const [days, setDays] = useState([]);
   const [currentLanguage, setCurrentLanguage] = useState({t: (text) => text});
