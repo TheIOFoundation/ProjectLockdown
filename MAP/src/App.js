@@ -8,15 +8,14 @@ import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
 import ThemeContext from './contexts/ThemeContext';
 import AppContext from './contexts/AppContext';
-import format from 'date-fns/format';
-import { addDays } from 'date-fns';
+import { addDays, format } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
 import Watermark from './components/Watermark/Watermark';
 import { UIComponent } from './utils/constant';
 //import LocalStorage Functions
 import * as router from './router';
-import { fetchEnvironments } from './api';
+import { fetchEnvironments, fetchCountryISO } from './api';
 import _ from 'lodash';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
@@ -49,6 +48,7 @@ const getDaysDiff = (date1, date2) => {
   );
 };
 const { PLAYING, PAUSED } = playerStates;
+const  coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
 
 const App = (props) => {
   
@@ -71,6 +71,11 @@ const App = (props) => {
   const [isLegendVisible, setIsLegendVisible] = useState(false);
   const [isTimeSliderVisible, setIsTimeSliderVisible] = useState(false);
   const [isCountrySearchVisible, setIsCountrySearchVisible] = useState(false);
+  const [mapCord , setMapCord] = useState({
+      lng: coords.lng,
+      lat: coords.lat,
+      zoom: coords.zoom,
+  })
 
    const getEnvData = useCallback( async () =>{
         const data = await fetchEnvironments();
@@ -105,9 +110,7 @@ const App = (props) => {
           formattedSelectedDate.getDate() === endDate.getDate() &&
           formattedSelectedDate.getMonth() === endDate.getMonth() &&
           formattedSelectedDate.getFullYear() === endDate.getFullYear()
-        ) {
-          alert('Ended');
-          
+        ) {          
           setPlayerState(PAUSED);
           setSelectedDate(format(startDate, 'yyyy-MM-dd'))
         }
@@ -132,7 +135,6 @@ const App = (props) => {
               console.log('Stopped');
               clearInterval(loop);
             } else {
-              console.log('Still looping');
               setSelectedDate(format(
                 addDays(formattedSelectedDate, 1),
                 'yyyy-MM-dd',
@@ -175,7 +177,7 @@ const App = (props) => {
           }));
     },
     [],
-  ) 
+  ); 
 
   const openDialog = useCallback(
     () => {
@@ -195,13 +197,17 @@ const App = (props) => {
   useEffect(() =>{
     getEnvData();
    },[getEnvData]);
+
+   useEffect(() => {
+    updateIsDark();
+   },[updateIsDark]);
  
   useEffect(() => {
     setNewDays();
     pausePlayerState();
     router.resetLocalStorage();
     updatePlayerState();
-
+  
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
@@ -234,11 +240,45 @@ const App = (props) => {
        setEnvironment(envt);
       }
   }
+  const updateMapCord = (value) =>{
+    const cord = value.split("/");
+    if(cord.length === 3){
+      setMapCord((prevCord) => ({
+        ...prevCord,
+        lng: cord[0],
+        lat: cord[1],
+        zoom: cord[2]
+      }));
+    }
+  }
+  const openOverlay = async (value) => {
+      const countryIso  = await fetchCountryISO();
+      if(countryIso.length){
+        const selectedCountry =await _.find(countryIso, {"Iso": value});
+        if(selectedCountry){
+          setDialog(prevState => ({
+            ...prevState,
+            opened: true,
+            template: '',
+            title: '',
+            iso2: value,
+            country: selectedCountry.name,
+          }
+        ));
+        }
+      }
+  }
     
     useEffect(() =>{
       const {search=""} = props.location;
       const params = new URLSearchParams(search);
       for (const [key, value] of params) {
+        if(key === "map"){
+          updateMapCord(value);
+        }
+        else if(key==="PLD"){
+          openOverlay(value);
+        }
         updateEnv(key,value);
       }
       
@@ -266,8 +306,9 @@ const App = (props) => {
             setIsLoading={setIsLoading}
             daysRange={daysRange}
             isCountrySearchVisible={isCountrySearchVisible}
+            mapCord={mapCord}
           />
-          <TabMenu darkMode={isDark} setDarkMode={updateIsDark} />
+          <TabMenu isDark={isDark} setDarkMode={updateIsDark} />
           <Totals dark={isDark} />
           {isLegendVisible && <Legend dark={isDark} />}
           {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
@@ -294,8 +335,9 @@ const App = (props) => {
               setFirstDay={setStartDate}
               lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
               setLastDay={setEndDate}
-            >
-              {dialog.opened ? (
+            />
+          )}
+          {dialog.opened ? (
                 <CountryInfo
                   dark={isDark}
                   country={dialog.country}
@@ -312,8 +354,6 @@ const App = (props) => {
               ) : (
                 ''
               )}
-            </TimeSlider>
-          )}
         </ThemeContext.Provider>
         </AppContext.Provider>
       </div>

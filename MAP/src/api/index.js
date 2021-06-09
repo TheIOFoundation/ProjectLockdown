@@ -49,4 +49,9 @@ export const fetchEnvironments = async () =>{
    return fetch('./data/environment.response.json').then(r => r.json())
   .catch(e => { throw new Error(e.toString())})
 }
+
+export const fetchCountryISO = async () => {
+   return fetch('./data/country-iso.json').then(r => r.json())
+  .catch(e => { throw new Error(e.toString())})
+}
 export default api;

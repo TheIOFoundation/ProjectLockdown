@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
-import './map.css';
 import mapboxgl from 'mapbox-gl';
+import './map.css';
 import {
   filterLookupTable,
   selectedWorldview,
@@ -17,7 +17,6 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 import AppContext from '../../contexts/AppContext';
-
 //import LocalStorage Functions
 import * as router from '../../router';
 
@@ -29,18 +28,18 @@ import * as router from '../../router';
 export const mapboxToken =
   'pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw';
 
+let deviceCoords =  { lng: 40.7, lat: 25, zoom: 1.06 };
+
 export class Map extends React.Component {
   static contextType = AppContext;
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.initMap = this.initMap.bind(this);
     this.updateMap = this.updateMap.bind(this);
     this.onMapClick = this.onMapClick.bind(this);
     this.onGetResult = this.onGetResult.bind(this);
 
-    let coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
-    let deviceCoords;
 
     // If it is a mobile device get the cooridnates for mobile (domainCoorsMobile), else get the desktop coordinates (domainCoors)
     if (screen.width <= 699) deviceCoords = domainCoorsMobile;
@@ -50,14 +49,13 @@ export class Map extends React.Component {
     let isLocationSet = false;
     for (let country in deviceCoords) {
       if (url.indexOf('lockdown.' + country) !== -1) {
-        coords = deviceCoords[country];
         isLocationSet = true;
       }
     }
     this.state = {
-      lng: coords.lng,
-      lat: coords.lat,
-      zoom: coords.zoom,
+      lng: this.props.mapCord.lng,
+      lat: this.props.mapCord.lat,
+      zoom: this.props.mapCord.zoom,
       countries: [],
       mapData: {},
       lookupTable: {},
@@ -69,6 +67,17 @@ export class Map extends React.Component {
     };
     this.mapContainer = React.createRef();
   }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.mapCord !== nextProps.mapCord){
+      this.setState((prevSate) => ({
+        ...prevSate,
+        lng: nextProps.mapCord.lng,
+        lat : nextProps.mapCord.lat,
+        zoom: nextProps.mapCord.zoom
+      }));
+    }
+}
 
   setMapState(map,lookupData, localData = []) {
     const localDataByIso = {};
@@ -90,13 +99,12 @@ export class Map extends React.Component {
     });
   }
 
+ 
   async initMap(mapData, lookupTable) {
     if (!mapboxgl) {
        pause();
       this.initMap(mapData, lookupTable);
     }
-
-
     const mapBoxglState = mapboxgl.getRTLTextPluginStatus();
     if (mapBoxglState === 'unavailable' || mapBoxglState === 'error') {
       mapboxgl.setRTLTextPlugin(
@@ -205,7 +213,6 @@ export class Map extends React.Component {
       };
       waiting();
     });
-  
     this.props.setIsLoading(false);
 
     const createViz =  async (lookupTableData) => {    
@@ -436,16 +443,17 @@ export class Map extends React.Component {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['admin-0-fill'],
     });
+    const name = lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name;
+    const iso = features[0].properties.iso_3166_1;
     this.state.geocoder.query(
-      lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
+      name,
     );
-    this.setState({
+    this.setState(() =>({
       lastCountry: {
-        country:
-          lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
-        iso2: features[0].properties.iso_3166_1,
+        country: name,
+        iso2: iso,
       },
-    });
+    }));
   }
 
   /**

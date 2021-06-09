@@ -5,10 +5,12 @@ import { list } from '../../assets/icons/icons.js';
 import AppContext from '../../contexts/AppContext';
 import { UIComponent } from '../../utils/constant';
 import { worldStyleColor } from '../Map/util';
+import { toBool } from '../../utils/utils';
+
 export class Legend extends Component {
   static contextType = AppContext;
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showDialog: false,
       data : []
@@ -78,14 +80,19 @@ export class Legend extends Component {
     const {components = {}} = environment;
     if(components){
       const legend = components.find((component) => component.name === UIComponent.Legend);
-      const {data} = legend;
-      this.setState({data: data});
+      if(legend && legend.data){
+        const {data} = legend;
+        this.setState(() =>({
+          data: [...data]
+        }));
+      }
+      
     }
     
   }
 
   render() {
-    const mode = this.props.dark ? 'dark' : '';
+    const mode = toBool(this.props.dark) ? 'dark' : '';
     const {data} = this.state;
     
     return (

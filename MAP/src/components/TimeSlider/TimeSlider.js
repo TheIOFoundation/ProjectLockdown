@@ -582,19 +582,12 @@ const TimeSlider = (props) => {
     );
   };
   return (
-    <div
-      className={`sliderWrapper ${sliderWrapper} ${
-        props.children !== '' ? 'open' : ''
-      }`}
-      ref={container}
-    >
+
+      <div className={`sliderWrapper ${sliderWrapper}`}>
+
       <PlayButton state={playerState} toggleState={onPlayerStateToggle} />
-      {props.children}
-      <div
-        className={`${selectStyles} ${rangeStyles} ${
-          props.children !== '' ? 'open' : ''
-        }`}
-      >
+      
+        <div className={`${selectStyles} ${rangeStyles} `}>
         <DatePicker
           startDate={new Date(firstDay)}
           close={calendarWillClose}
