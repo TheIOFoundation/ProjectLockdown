@@ -266,7 +266,6 @@ const App = (props) => {
           }
         ));
         }
-        //TODO: WE NEED THE ACTUAL COORDINATE WITH ZOOM VALUE THAN BOUNDING BOX
         const [ minlon, minlat, maxlon, maxlat ] = selectedCountry.cord;
         const avgLng =  (maxlon + minlon)/2;
         const avgLat = (maxlat + minlat) /2;
