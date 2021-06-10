@@ -583,7 +583,6 @@ const TimeSlider = (props) => {
       currentSliderRange[currentSliderRange.length - 1],
     );
   };
-  console.log('dark', dark);
   return (
 
       <div className={`sliderWrapper ${sliderWrapper} ${dark ? 'dark': ''}`}>
