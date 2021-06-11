@@ -17,10 +17,10 @@ import { UIComponent } from './utils/constant';
 import * as router from './router';
 import { fetchEnvironments, fetchCountryISO } from './api';
 import _ from 'lodash';
+import { toBool } from './utils/utils';
 
 // FIX: Selected date is formatted (yyyy-mm-dd) while start and end dates are in normal formats (new Date()).
 
-// TODO: Reset selectedDate to startDate once endDate is reached.
 
 function toJsonString(date) {
   return format(date, 'yyyy-MM-dd');
@@ -54,7 +54,7 @@ const App = (props) => {
   
   const [environment, setEnvironment] = useState({});
   const [loading, setIsLoading] = useState(false);
-  const [isDark, setIsDark] = useState("false");
+  const [isDark, setIsDark] = useState('true');
   const [playerState, setPlayerState] = useState(PAUSED);
   const [days, setDays] = useState([]);
   const [currentLanguage, setCurrentLanguage] = useState({t: (text) => text});
@@ -153,10 +153,10 @@ const App = (props) => {
         const darkModePreference = window.localStorage.getItem('darkmode');
     
         if (!darkModePreference) {
-          const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const isDarkTheme = !window.matchMedia('(prefers-color-scheme: dark)').matches;
           setIsDark(isDarkTheme.toString());
           document.getElementsByTagName('html')[0].classList.add('dark');
-          window.localStorage.setItem('darkmode', 'true');
+          window.localStorage.setItem('darkmode', isDarkTheme.toString());
         }
         if (darkModePreference === 'true') {
           document.getElementsByTagName('html')[0].classList.add('dark');
@@ -164,6 +164,7 @@ const App = (props) => {
         } else if (darkModePreference === 'false') {
           setIsDark("false");
         }
+
     },
     [],
   ) 
@@ -180,18 +181,18 @@ const App = (props) => {
   ); 
 
   const openDialog = useCallback(
-    () => {
+    (countryIfo) => {
         setDialog(prevState => ({
           ...prevState,
           opened: true,
           template: '',
           title: '',
-          iso2: props.iso2,
-          country: props.country,
+          iso2: countryIfo.iso2,
+          country: countryIfo.country,
         }
       ));
     },
-    [props.country, props.iso2],
+    [],
   );
 
   useEffect(() =>{
@@ -214,7 +215,6 @@ const App = (props) => {
     const _find = (arr, param) => arr.find(value => value.name === param);
 
     const updateEnv = async (queryString, value) =>{
-      const toBool = string => string === 'true' ? true : false;
       const data = await fetchEnvironments();
       if(data && data.environment){
         const componentName = _.last(queryString.split("."));
@@ -266,6 +266,16 @@ const App = (props) => {
           }
         ));
         }
+        const [ minlon, minlat, maxlon, maxlat ] = selectedCountry.cord;
+        const avgLng =  (maxlon + minlon)/2;
+        const avgLat = (maxlat + minlat) /2;
+        setMapCord((prevCord) => ({
+          ...prevCord,
+          lng: avgLng,
+          lat: avgLat,
+          zoom: 4  //  need to be  parameterized 
+        }));
+        
       }
   }
     

@@ -6,6 +6,7 @@ import { addDays } from 'date-fns';
 import { calendar } from '../../assets/icons/icons.js';
 import DatePicker from '../DatePicker/DatePicker';
 import PlayButton from '../PlayButton/PlayButton';
+import { toBool } from '../../utils/utils.js';
 
 const sliderWrapper = css`
   & {
@@ -439,6 +440,7 @@ const mobileRange = 70;
 
 const languages = false;
 const TimeSlider = (props) => {
+  const dark = toBool(props.dark);
   const [currentDateValue, setCurrentDateValue] = useState(
     firstDayDefaultOffset,
   );
@@ -583,11 +585,11 @@ const TimeSlider = (props) => {
   };
   return (
 
-      <div className={`sliderWrapper ${sliderWrapper}`}>
+      <div className={`sliderWrapper ${sliderWrapper} ${dark ? 'dark': ''}`}>
 
       <PlayButton state={playerState} toggleState={onPlayerStateToggle} />
       
-        <div className={`${selectStyles} ${rangeStyles} `}>
+        <div className={`${selectStyles} ${dark ? 'dark': ''} ${rangeStyles}`}>
         <DatePicker
           startDate={new Date(firstDay)}
           close={calendarWillClose}
@@ -595,7 +597,7 @@ const TimeSlider = (props) => {
           show={showDatePicker}
           customClass={datePickerPosition}
         />
-        <div className={`${sliderSelector}`} ref={dateRef}>
+        <div className={`${sliderSelector} ${dark ? 'dark': ''}`} ref={dateRef}>
           <span>{currentSelectedDay?.toString()}</span>
         </div>
         <span

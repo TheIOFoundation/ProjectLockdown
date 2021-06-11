@@ -89,6 +89,7 @@ const CountryInfo = (props) => {
         style={{
           color: `${dark ? 'white' : 'black'}`,
           backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`,
+          minHeight: 'inherit'
         }}
         className={`countryInfo ${countryInfoStyles} ${
           dark ? 'dark' : ''
