@@ -486,9 +486,11 @@ const TimeSlider = (props) => {
         isoLanguage = 'enUS';
       }
     }
-    return format(date, 'dd-MMMM-yyyy', {
+    const formattedDate = format(date, 'dd-MMMM-yyyy', {
       locale: languages ? languages[isoLanguage] : enUS,
     });
+    console.log('formattedData', formattedDate);
+    return formattedDate;
   };
 
   useEffect(() => {
@@ -504,9 +506,10 @@ const TimeSlider = (props) => {
     const stepsWidth = rangeDOM.offsetWidth / currentRange;
     sliderDOM.style.left = `${finalWidth + stepsWidth * newValue}px`;
     setCurrentDateValue(newValue);
+    const currentRangeDate =  new Date(currentSliderRange[0][parseInt(newValue)]);
     setCurrentSelectedDay(
       toSliderString(
-        new Date(currentSliderRange[parseInt(newValue)]),
+        currentRangeDate,
         props.i18n.locale,
       ),
     );
@@ -589,7 +592,7 @@ const TimeSlider = (props) => {
 
       <PlayButton state={playerState} toggleState={onPlayerStateToggle} />
       
-        <div className={`${selectStyles} ${dark ? 'dark': ''} ${rangeStyles}`}>
+        <div className={`${selectStyles} ${dark ? 'dark': ''} ${rangeStyles}`} ref={container}>
         <DatePicker
           startDate={new Date(firstDay)}
           close={calendarWillClose}

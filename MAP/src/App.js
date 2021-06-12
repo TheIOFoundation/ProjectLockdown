@@ -294,7 +294,9 @@ const App = (props) => {
       
     },[props.location])
 
-    
+    const onSetSelectedDate = (date) => {
+      setSelectedDate(date);
+    }
     return (
       <div
         onKeyUp={(e) => {
@@ -340,13 +342,14 @@ const App = (props) => {
               currentSelectedDay={selectedDate}
               selectedDate={selectedDate}
               sliderValue={getDaysDiff(startDate, endDate)}
-              setCurrentSelectedDay={setSelectedDate}
+              setCurrentSelectedDay={onSetSelectedDate}
               firstDay={format(new Date(startDate), 'yyyy-MM-dd')}
               setFirstDay={setStartDate}
               lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
               setLastDay={setEndDate}
             />
           )}
+          
           {dialog.opened ? (
                 <CountryInfo
                   dark={isDark}
