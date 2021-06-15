@@ -294,9 +294,11 @@ const App = (props) => {
       
     },[props.location])
 
-    const onSetSelectedDate = (date) => {
-      setSelectedDate(date);
-    }
+    const onSetSelectedDate =(date) => {
+      setSelectedDate(toJsonString(new Date(date)));      
+    };
+    
+
     return (
       <div
         onKeyUp={(e) => {
@@ -337,6 +339,7 @@ const App = (props) => {
               days={days}
               i18n={{ locale: 'en, en-US' }}
               onChange={(CurrentSelectedDate) => {
+                // console.log({CurrentSelectedDate});
                 setSelectedDate(CurrentSelectedDate);
               }}
               currentSelectedDay={selectedDate}

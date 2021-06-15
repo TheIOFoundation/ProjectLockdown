@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import css from 'csz';
-import format from 'date-fns/format';
 import { enUS } from 'date-fns/locale';
-import { addDays } from 'date-fns';
+import { addDays , format} from 'date-fns';
 import { calendar } from '../../assets/icons/icons.js';
 import DatePicker from '../DatePicker/DatePicker';
 import PlayButton from '../PlayButton/PlayButton';
@@ -486,12 +485,12 @@ const TimeSlider = (props) => {
         isoLanguage = 'enUS';
       }
     }
-    const formattedDate = format(date, 'dd-MMMM-yyyy', {
+      return format(date, 'yyyy-MM-dd', {
       locale: languages ? languages[isoLanguage] : enUS,
     });
-    console.log('formattedData', formattedDate);
-    return formattedDate;
   };
+
+  
 
   useEffect(() => {
     setCurrentSliderRange(days);
@@ -581,7 +580,7 @@ const TimeSlider = (props) => {
 
   const submitChanges = () => {
     props.onChange(
-      currentSliderRange[currentDateValue],
+      currentSliderRange[0][parseInt(currentDateValue, 10)],
       currentSliderRange[0],
       currentSliderRange[currentSliderRange.length - 1],
     );
