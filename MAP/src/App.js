@@ -339,7 +339,6 @@ const App = (props) => {
               days={days}
               i18n={{ locale: 'en, en-US' }}
               onChange={(CurrentSelectedDate) => {
-                // console.log({CurrentSelectedDate});
                 setSelectedDate(CurrentSelectedDate);
               }}
               currentSelectedDay={selectedDate}
