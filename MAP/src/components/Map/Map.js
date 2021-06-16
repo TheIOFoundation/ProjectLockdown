@@ -447,7 +447,16 @@ export class Map extends React.Component {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['admin-0-fill'],
     });
-    const name = lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name;
+    
+    let name = lookupTable.adm0.data.all[features[0].properties.iso_3166_1]?.name|| undefined;
+    // if the country doesn't exist on this  worldview type  check it from other  type
+    if(!name){
+      const wordViewList = ["CN", "IN", "JP", "US"]
+      for(const view of wordViewList){
+        name =lookupTable.adm0.data[view][features[0].properties.iso_3166_1]?.name || undefined; 
+        if(name) break;
+      }
+    }
     const iso = features[0].properties.iso_3166_1;
     this.state.geocoder.query(
       name,
