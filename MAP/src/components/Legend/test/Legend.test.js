@@ -20,7 +20,10 @@ it('render Correctly with context data' , async () => {
         <AppContext.Provider value={envMock}>
             <Legend {...props} />
         </AppContext.Provider>
-    );
-    expect(tree).toMatchSnapshot();
+    ).root;
+    // query for element
+    const element = tree.findByType("div");
+
+    expect(element.props.children.length).toEqual(4);
 })
 

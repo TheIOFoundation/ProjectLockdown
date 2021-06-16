@@ -392,7 +392,7 @@ export class Map extends React.Component {
       let newMapData = await getSnapShotData(startDate, endDate);
       if (newMapData) {
         localData = newMapData[selectedDate];
-        mapData = newMapData;
+        mapData = newMapData.snapshot;
         this.setState({ mapData }, () =>
           this.setMapState(this.state.map,lookupData, localData),
         );
@@ -458,6 +458,7 @@ export class Map extends React.Component {
         iso2: iso,
       },
     }));
+    this.props.onOpen(this.state.lastCountry)
   }
 
   /**
@@ -525,7 +526,6 @@ export class Map extends React.Component {
         }
       }
     }
-
   }
 
   render() {
@@ -537,7 +537,6 @@ export class Map extends React.Component {
         <div
           ref = {this.mapContainer}
           id="map"
-          onClick={() => this.props.onOpen(this.state.lastCountry)}
           className="map-container"
         ></div>
          { isCountrySearchVisible &&  <CountriesSearcher

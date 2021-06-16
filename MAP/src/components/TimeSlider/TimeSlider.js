@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import css from 'csz';
-import format from 'date-fns/format';
 import { enUS } from 'date-fns/locale';
-import { addDays } from 'date-fns';
+import { addDays , format} from 'date-fns';
 import { calendar } from '../../assets/icons/icons.js';
 import DatePicker from '../DatePicker/DatePicker';
 import PlayButton from '../PlayButton/PlayButton';
@@ -486,10 +485,12 @@ const TimeSlider = (props) => {
         isoLanguage = 'enUS';
       }
     }
-    return format(date, 'dd-MMMM-yyyy', {
+      return format(date, 'yyyy-MM-dd', {
       locale: languages ? languages[isoLanguage] : enUS,
     });
   };
+
+  
 
   useEffect(() => {
     setCurrentSliderRange(days);
@@ -504,9 +505,10 @@ const TimeSlider = (props) => {
     const stepsWidth = rangeDOM.offsetWidth / currentRange;
     sliderDOM.style.left = `${finalWidth + stepsWidth * newValue}px`;
     setCurrentDateValue(newValue);
+    const currentRangeDate =  new Date(currentSliderRange[0][parseInt(newValue)]);
     setCurrentSelectedDay(
       toSliderString(
-        new Date(currentSliderRange[parseInt(newValue)]),
+        currentRangeDate,
         props.i18n.locale,
       ),
     );
@@ -578,7 +580,7 @@ const TimeSlider = (props) => {
 
   const submitChanges = () => {
     props.onChange(
-      currentSliderRange[currentDateValue],
+      currentSliderRange[0][parseInt(currentDateValue, 10)],
       currentSliderRange[0],
       currentSliderRange[currentSliderRange.length - 1],
     );
@@ -589,7 +591,7 @@ const TimeSlider = (props) => {
 
       <PlayButton state={playerState} toggleState={onPlayerStateToggle} />
       
-        <div className={`${selectStyles} ${dark ? 'dark': ''} ${rangeStyles}`}>
+        <div className={`${selectStyles} ${dark ? 'dark': ''} ${rangeStyles}`} ref={container}>
         <DatePicker
           startDate={new Date(firstDay)}
           close={calendarWillClose}
