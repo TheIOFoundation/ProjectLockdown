@@ -5,6 +5,7 @@ import '../pwa-update-available';
 import './Settings.scss';
 
 import { useTranslation } from 'react-i18next';
+import { toBool } from '../../utils/utils.js';
 
 // eslint-disable-next-line react/prop-types
 export function Settings({ onClose, isDark, setDarkMode }) {
@@ -36,7 +37,7 @@ export function Settings({ onClose, isDark, setDarkMode }) {
       addPwaUpdateListener((updateAvailable) => {
         setPwaUpdateAvailable(updateAvailable);
       });
-      let dark = localStorage.getItem('darkmode');
+      let dark = toBool(localStorage.getItem('darkmode'));
       dark = dark !== false && dark !== null;
       setDarkMode(dark);
     }
@@ -47,7 +48,7 @@ export function Settings({ onClose, isDark, setDarkMode }) {
     <div className="settings">
       <button onClick={toggleDarkmode} className="ld-button">
         {t('menu.userPreferenceSection.theme.action')}
-        {isDark
+        {toBool(isDark)
           ? t('menu.userPreferenceSection.theme.light')
           : t('menu.userPreferenceSection.theme.dark')}
       </button>

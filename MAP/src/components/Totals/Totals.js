@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { fetchTotals } from '../../services';
 import './Totals.css';
+import { toBool } from '../../utils/utils';
 
 const separateNumber = (number) => {
   const nfObject = new Intl.NumberFormat('es-ES');
-  const output = nfObject.format(+number);
-  return output;
+  return nfObject.format(+number);
 };
 const Totals = ({
   dark,
@@ -19,6 +19,7 @@ const Totals = ({
     lockdown: 0,
     affected: 0,
   });
+  dark = toBool(dark)
 
   const {
     t,

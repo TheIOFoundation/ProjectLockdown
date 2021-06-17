@@ -12,8 +12,10 @@ import {
   getCoronaDetailService,
 } from '../../services/coronaTrackerService';
 import AppContext from '../../contexts/AppContext';
+import { toBool } from '../../utils/utils';
 
 const CountryInfo = (props) => {
+  const dark =  toBool(props.dark)  || false;
   const environment = useContext(AppContext)
   const [currentTab, setCurrentTab] = useState(1);
   const { i18n } = props;
@@ -64,10 +66,10 @@ const CountryInfo = (props) => {
   let territory = territoryData ? territoryData.territory : 'TERRITORY';
 
   return (
-    <div className={`${props.dark ? 'dark' : ''} CountryInfo`}>
+    <div className={`container ${dark ? 'dark' : ''} CountryInfo`}>
       <div
         style={{
-          color: `${props.dark ? 'white' : 'black'}`,
+          color: `${dark ? 'white' : 'black'}`,
           // backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
         }}
         className={tabStyles}
@@ -85,16 +87,17 @@ const CountryInfo = (props) => {
       </div>
       <div
         style={{
-          color: `${props.dark ? 'white' : 'black'}`,
-          backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
+          color: `${dark ? 'white' : 'black'}`,
+          backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`,
+          minHeight: 'inherit'
         }}
         className={`countryInfo ${countryInfoStyles} ${
-          props.dark ? 'dark' : ''
+          dark ? 'dark' : ''
         }`}
       >
         {currentTab === 1 ? (
           <CountryDetails
-            dark={props.dark}
+            dark={dark}
             date={props.date}
             country={props.country}
             t={t}
@@ -107,13 +110,13 @@ const CountryInfo = (props) => {
         ) : currentTab === 2 ? (
           <TransportDetails
             t={t}
-            dark={props.dark}
+            dark={dark}
             i18n={i18n}
             countryDetails={countryDetails}
           />
         ) : (
           <>
-            <Reports t={t} i18n={i18n} dark={props.dark} />
+            <Reports t={t} i18n={i18n} dark={dark} />
             <div className="link-container">
               <a
                 className="ld-link"

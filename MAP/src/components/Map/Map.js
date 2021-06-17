@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
-import './map.css';
 import mapboxgl from 'mapbox-gl';
+import './map.css';
 import {
   filterLookupTable,
   selectedWorldview,
@@ -12,14 +12,14 @@ import {
 } from './util';
 import format from 'date-fns/format';
 import addDays from 'date-fns/addDays';
-import { getWorldData } from '../../services/map';
+import {getSnapShotData } from '../../services/map';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 import AppContext from '../../contexts/AppContext';
-
 //import LocalStorage Functions
 import * as router from '../../router';
+import _ from 'lodash';
 
 /**
  * Primary UI component for user interaction
@@ -29,18 +29,18 @@ import * as router from '../../router';
 export const mapboxToken =
   'pk.eyJ1IjoiamZxdWVyYWx0IiwiYSI6ImNrODcwb29vajBjMDkzbWxqZHh6ZDU5aHUifQ.BjT63Mdh-P2myNvygIhSpw';
 
+let deviceCoords =  { lng: 40.7, lat: 25, zoom: 1.06 };
+
 export class Map extends React.Component {
   static contextType = AppContext;
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.initMap = this.initMap.bind(this);
     this.updateMap = this.updateMap.bind(this);
     this.onMapClick = this.onMapClick.bind(this);
     this.onGetResult = this.onGetResult.bind(this);
 
-    let coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
-    let deviceCoords = coords;
 
     // If it is a mobile device get the cooridnates for mobile (domainCoorsMobile), else get the desktop coordinates (domainCoors)
     if (screen.width <= 699) deviceCoords = domainCoorsMobile;
@@ -50,14 +50,13 @@ export class Map extends React.Component {
     let isLocationSet = false;
     for (let country in deviceCoords) {
       if (url.indexOf('lockdown.' + country) !== -1) {
-        coords = deviceCoords[country];
         isLocationSet = true;
       }
     }
     this.state = {
-      lng: coords.lng,
-      lat: coords.lat,
-      zoom: coords.zoom,
+      lng: this.props.mapCord.lng,
+      lat: this.props.mapCord.lat,
+      zoom: this.props.mapCord.zoom,
       countries: [],
       mapData: {},
       lookupTable: {},
@@ -70,9 +69,20 @@ export class Map extends React.Component {
     this.mapContainer = React.createRef();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(this.props.mapCord !== nextProps.mapCord){
+      this.setState((prevSate) => ({
+        ...prevSate,
+        lng: nextProps.mapCord.lng,
+        lat : nextProps.mapCord.lat,
+        zoom: nextProps.mapCord.zoom
+      }));
+    }
+}
+
   setMapState(map,lookupData, localData = []) {
     const localDataByIso = {};
-    localData.forEach((l) => (localDataByIso[l.lockdown.iso] = l));
+    localData.forEach((l) => (localDataByIso[l.iso] = l));
     Object.keys(lookupData).forEach((key) => {
       var lookup = lookupData[key];
       var countryInfo = localDataByIso[key];
@@ -83,20 +93,20 @@ export class Map extends React.Component {
           id: lookup.feature_id,
         },
         {
-          kind: countryInfo?.lockdown?.measure[0]?.value,
+          kind: countryInfo?.value,
           name: key,
         },
       );
     });
   }
 
+ 
   async initMap(mapData, lookupTable) {
+    const {lng, lat, zoom} = this.state;
     if (!mapboxgl) {
        pause();
       this.initMap(mapData, lookupTable);
     }
-
-
     const mapBoxglState = mapboxgl.getRTLTextPluginStatus();
     if (mapBoxglState === 'unavailable' || mapBoxglState === 'error') {
       mapboxgl.setRTLTextPlugin(
@@ -106,13 +116,14 @@ export class Map extends React.Component {
       );
     }
 
+
     let map = new mapboxgl.Map({
       accessToken: mapboxToken,
       container: this.mapContainer.current,
       style:
         'mapbox://styles/jfqueralt/ckavedmnk253z1iphmsy39s3r?optimize=true',
-      center: [this.state.lng, this.state.lat],
-      zoom: this.state.zoom,
+      center: [lng,lat],
+      zoom: zoom,
       keyboard: false,
       pitchWithRotate: false,
     });
@@ -129,7 +140,6 @@ export class Map extends React.Component {
     geocoder.addTo('#mapBlank');
     window.map = map;
     const localData = mapData[this.props.selectedDate];
-
     map.on('style.load', () => {
       let hoveredStateId = null;
       let iso = this.props.currentLanguage
@@ -205,7 +215,6 @@ export class Map extends React.Component {
       };
       waiting();
     });
-  
     this.props.setIsLoading(false);
 
     const createViz =  async (lookupTableData) => {    
@@ -323,23 +332,24 @@ export class Map extends React.Component {
       map.setPaintProperty('water', 'fill-color', '#e0e0e0');
 
       const setStates = (e) => {
-        localData.forEach(function (row) {
-          map.setFeatureState(
-            {
-              source: 'admin-0',
-              sourceLayer: 'boundaries_admin_0',
-              id: lookupData[row.lockdown.iso].feature_id,
-            },
-            {
-              kind: row.lockdown.measure[0].value,
-              name: row.lockdown.iso,
-            },
-          );
-        });
-
-        this.setState({
-          isMapReady: true,
-        });
+        if(!_.isEmpty(localData)){
+          localData.forEach(function (row) {
+            map.setFeatureState(
+              {
+                source: 'admin-0',
+                sourceLayer: 'boundaries_admin_0',
+                id: lookupData[row.iso].feature_id,
+              },
+              {
+                kind: row.value,
+                name: row.iso,
+              },
+            );
+          });
+          this.setState({
+            isMapReady: true,
+          });
+        }        
       };
 
       // Check if `statesData` source is loaded.
@@ -378,10 +388,11 @@ export class Map extends React.Component {
       endDate = endDate
         ? format(endDate, 'yyyy-MM-dd')
         : format(addDays(new Date(), daysRange - 14), 'yyyy-MM-dd');
-      let newMapData = await getWorldData(startDate, endDate);
+
+      let newMapData = await getSnapShotData(startDate, endDate);
       if (newMapData) {
         localData = newMapData[selectedDate];
-        mapData = newMapData;
+        mapData = newMapData.snapshot;
         this.setState({ mapData }, () =>
           this.setMapState(this.state.map,lookupData, localData),
         );
@@ -409,10 +420,6 @@ export class Map extends React.Component {
       'get',
       'name_' + iso,
     ]);
-    // let map = this.state.map.setLayoutProperty('country-label', 'text-field', [
-    //   'get',
-    //   'name_' + iso,
-    // ]);
   }
 
   onGetResult(results) {
@@ -440,16 +447,18 @@ export class Map extends React.Component {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['admin-0-fill'],
     });
+    const name = lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name;
+    const iso = features[0].properties.iso_3166_1;
     this.state.geocoder.query(
-      lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
+      name,
     );
-    this.setState({
+    this.setState(() =>({
       lastCountry: {
-        country:
-          lookupTable.adm0.data.all[features[0].properties.iso_3166_1].name,
-        iso2: features[0].properties.iso_3166_1,
+        country: name,
+        iso2: iso,
       },
-    });
+    }));
+    this.props.onOpen(this.state.lastCountry)
   }
 
   /**
@@ -478,7 +487,7 @@ export class Map extends React.Component {
       : format(addDays(new Date(), daysRange - 14), 'yyyy-MM-dd');
     // the world map needs a large data source, lazily fetch them in parallel
     const [mapData, lookupTable] = await Promise.all([
-      getWorldData(startDate, endDate),
+      getSnapShotData(startDate, endDate),
       fetch('./data/boundaries-adm0-v3.json').then((r) => r.json()),
     ]);
 
@@ -496,7 +505,7 @@ export class Map extends React.Component {
       },
     );
       setTimeout(()=> {
-        if (mapData && lookupTable) this.initMap(mapData, lookupTable);
+        if (mapData && lookupTable) this.initMap(mapData.snapshot, lookupTable);
       },2000)
     };
 
@@ -517,18 +526,17 @@ export class Map extends React.Component {
         }
       }
     }
-
   }
 
   render() {
    const {isCountrySearchVisible} = this.props;
+   
     
     return (
       <>
         <div
           ref = {this.mapContainer}
           id="map"
-          onClick={() => this.props.onOpen(this.state.lastCountry)}
           className="map-container"
         ></div>
          { isCountrySearchVisible &&  <CountriesSearcher

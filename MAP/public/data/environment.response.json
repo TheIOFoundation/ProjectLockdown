@@ -43,7 +43,30 @@
                         "population": "Population",
                         "maximum_assembly": "Maximum assembly",
                         "daily_life": "Daily life (restrictions)"
-                    }
+                    },
+                    "data":[
+                        {
+                            "id": "lockdown_status",
+                            "translationKey": "home",
+                            "icon": "faHome",
+                            "value": "PARTIAL"
+                          },
+                          {
+                            "id": "going_to_shops",
+                            "label": "Shopping",
+                            "translationKey": "shopping",
+                            "icon": "shops",
+                            "value": "PARTIAL"
+                          },
+                          {
+                            "id": "city_movement_restriction",
+                            "label": "Outdoors",
+                            "translationKey": "outdoors",
+                            "icon": "citymovement",
+                            "value": "PARTIAL"
+                          }
+                    ]
+
                 },
                 {
                     "id": 2,

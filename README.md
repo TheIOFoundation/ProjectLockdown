@@ -5,7 +5,7 @@
 
 <!-- ![screenshot](https://user-images.githubusercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
 
-## NOTE: This is the new repository for v2.0. Some information is still a work in progress. You can access the current runnning v1.0 repository <a href="https://github.com/Code-for-All/lockdown/">here</a> while we transition to the new version.
+## NOTE: This is the new repository for v2.0. Some information is still a work in progress. You can access the current running v1.0 repository <a href="https://github.com/Code-for-All/lockdown/">here</a> while we transition to the new version.
 
 <table>
 	<tr>
