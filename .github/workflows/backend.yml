@@ -33,7 +33,7 @@ jobs:
           echo Successful
       - if: github.ref == 'refs/heads/master' && job.status == 'success'
         run: |
-          git push -u origin HEAD:master
+          git push -u origin HEAD:master -f
 
       - name: "Deploy to Azure"
         uses: azure/webapps-deploy@v2
