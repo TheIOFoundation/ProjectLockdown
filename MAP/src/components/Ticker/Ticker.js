@@ -55,7 +55,7 @@ export function Ticker() {
   return (
     <div className="ld-ticker">
       <ul>
-        {updates?.data?.updates?.map(update => (
+        {updates?.data?.updates?.map((update) => (
           <li key={update.date}>
             <div className="ld-ticker--bar">
               <div className="ld-ticker--dot-container">

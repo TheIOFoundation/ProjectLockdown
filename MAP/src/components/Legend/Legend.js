@@ -1,12 +1,19 @@
 import { Component, createRef } from 'react';
+import { Translation } from 'react-i18next';
 import './legend.css';
 import { list } from '../../assets/icons/icons.js';
+import AppContext from '../../contexts/AppContext';
+import { UIComponent } from '../../utils/constant';
+import { worldStyleColor } from '../Map/util';
+import { toBool } from '../../utils/utils';
 
 export class Legend extends Component {
-  constructor() {
-    super();
+  static contextType = AppContext;
+  constructor(props) {
+    super(props);
     this.state = {
       showDialog: false,
+      data : []
     };
     this.btn = createRef();
     this.onClick = this.onClick.bind(this);
@@ -25,32 +32,33 @@ export class Legend extends Component {
 
   // Mobile
   onTouch(e) {
-    let touchLocation = e.targetTouches[0];
-    this.btn.style.left = touchLocation.pageX + 'px';
-    this.btn.style.top = touchLocation.pageY + 'px';
+    const touchLocation = e.targetTouches[0];
+    this.btn.style.left = `${touchLocation.pageX}px`;
+    this.btn.style.top = `${touchLocation.pageY}px`;
   }
-  onTouchEnd(e) {
+
+  onTouchEnd() {
     let side = this.state.x;
     let vertical = this.state.y;
-    let x = window.innerWidth || window.clientWidth;
-    let y = window.innerHeight || window.clientHeight;
-    let currentVertical = Number(this.btn.style.top.replace('px', ''));
-    let currentSide = Number(this.btn.style.left.replace('px', ''));
+    const x = window.innerWidth || window.clientWidth;
+    const y = window.innerHeight || window.clientHeight;
+    const currentVertical = Number(this.btn.style.top.replace('px', ''));
+    const currentSide = Number(this.btn.style.left.replace('px', ''));
 
     if (currentVertical > y / 2) {
       if (currentVertical >= y - 150) {
-        this.btn.style.top = y - 150 + 'px';
+        this.btn.style.top = `${y - 150}px`;
       }
       vertical = 'bottom';
     } else {
       if (currentVertical <= 160) {
-        this.btn.style.top = 160 + 'px';
+        this.btn.style.top = `${160}px`;
       }
       vertical = 'top';
     }
     if (currentSide > x / 2) {
       side = 'right';
-      this.btn.style.left = x - 70 + 'px';
+      this.btn.style.left = `${x - 70}px`;
     } else {
       side = 'left';
       this.btn.style.left = '10px';
@@ -67,14 +75,33 @@ export class Legend extends Component {
     });
   }
 
+  componentDidMount(){
+    const {environment} = this.context;
+    const {components = {}} = environment;
+    if(components){
+      const legend = components.find((component) => component.name === UIComponent.Legend);
+      if(legend && legend.data){
+        const {data} = legend;
+        this.setState(() =>({
+          data: [...data]
+        }));
+      }
+      
+    }
+    
+  }
+
   render() {
-    const mode = this.props.dark ? 'dark' : '';
+    const mode = toBool(this.props.dark) ? 'dark' : '';
+    const {data} = this.state;
+    
     return (
       <legend
         onClick={this.onClick}
         type="legend"
         className={['btn', mode].join(' ')}
         {...this.props}
+        style={{cursor: "pointer"}}
       >
         {list}
         <div
@@ -82,33 +109,21 @@ export class Legend extends Component {
             this.props.y
           } ${this.props.x}`}
         >
-          <div>
-            <span>
-              <div className="color green" />
-            </span>
-            <span> No Lockdown </span>
-          </div>
-
-          <div>
-            <span>
-              <div className="color orange" />
-            </span>
-            <span> Partial Lockdown </span>
-          </div>
-
-          <div>
-            <span>
-              <div className="color red" />
-            </span>
-            <span> Full Lockdown </span>
-          </div>
-
-          <div>
-            <span>
-              <div className="color gray" />
-            </span>
-            <span> No Data </span>
-          </div>
+          {
+            data.map((legends, index) => (
+              <div key={index} style={{cursor: "default"}}>
+                <span>
+                  <div className={`color ${worldStyleColor(legends.worldStyle)}`}
+                       style={{cursor: "default"}}/>
+                </span>
+                <Translation>
+                  {(t, { i18n }) => <span style={{cursor: "default"}}>
+                    {t(`${legends.title}`)}
+                  </span>}
+                </Translation>
+              </div>
+            ))
+          }
         </div>
       </legend>
     );

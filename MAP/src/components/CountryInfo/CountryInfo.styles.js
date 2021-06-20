@@ -105,41 +105,41 @@ export const reports = css`
     }
     & .placeholder {
       @media (max-width: 350px) {
-        background: url('https://github.com/Code-for-All/lockdown/blob/master/src/assets/images/pld-report-sm.png?raw=true') no-repeat;
+        background: url('./assets/images/pld-report-sm.png') no-repeat;
+          no-repeat;
         background-size: contain;
         background-position: center;
       }
       @media (max-width: 960px) {
-        background: url('https://github.com/Code-for-All/lockdown/blob/master/src/assets/images/pld-report-med.png?raw=true') no-repeat;
+        background: url('./assets/images/pld-report-med.png') no-repeat;
         background-size: contain;
         background-position: center;
       }
-      background: url('https://github.com/Code-for-All/lockdown/blob/master/src/assets/images/pld-report-lrg.png?raw=true');
+      background: url('./assets/images/pld-report-lrg.png');
       height: 100%;
       width: 100%;
       position: absolute;
       background-size: cover;
       opacity: 0.3;
-      z-index: -1;
     }
   }
 `;
 export const countryInfoStyles = css`
   .countryInfo.loader {
-    background-color: #333333 !important;
+    // background-color: #333333 ;
     .dark & {
       background-color: var(--ld-bg) !important;
     }
   }
   & {
-    // background-color: var(--ld-bg);
-    background-color: #333333 !important;
+    background-color: var(--ld-bg);
+    // background-color: #333333 !important;
 
     color: var(--ld-text);
     padding: 20px 30px 30px 30px;
-      @media (max-width: 960px) {
-        padding: 5px 15px 15px 15px !important;
-      }
+    @media (max-width: 960px) {
+      padding: 5px 15px 15px 15px !important;
+    }
     // width: 100%;
     overflow-y: auto;
     &::-webkit-scrollbar {
@@ -151,7 +151,7 @@ export const countryInfoStyles = css`
       border-radius: 7px;
       border: 4px solid white;
     }
-    & .link-container{
+    & .link-container {
       display: flex;
       justify-content: space-between;
       padding: 25px 0px;
@@ -197,8 +197,8 @@ export const countryInfoStyles = css`
       padding-top: 8px;
       border-top: 1px solid #e0e0e0;
       border-bottom: 0px;
-      margin-top:7px;
-      .dark &{
+      margin-top: 7px;
+      .dark & {
         border-top: 1px solid #e0e0e0;
       }
       &.transport {
@@ -214,10 +214,10 @@ export const countryInfoStyles = css`
     font-variant-numeric: tabular-nums;
     margin-bottom: 7px;
     padding-bottom: 7px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #828282;
     width: 100%;
-    .dark &{
-      border-bottom:1px solid #e0e0e0;
+    .dark & {
+      border-bottom: 1px solid #e0e0e0;
     }
     &.is-half {
       width: 50%;
@@ -227,7 +227,7 @@ export const countryInfoStyles = css`
     }
   }
   .data-entry dt {
-    text-align:left;
+    text-align: left;
     font-size: 12px;
     font-weight: 400;
   }
@@ -306,16 +306,16 @@ export const countryInfoStyles = css`
     pointer-events: none;
     transition: opacity 300ms ease-in-out;
     font-size: 12px;
-    font-weight:400;
+    font-weight: 400;
     .dark & {
       color: var(--ld-text);
     }
   }
   .measure {
-    margin-right:10px;
-      @media (max-width: 960px) {
-        margin-right:10px;
-      }
+    margin-right: 10px;
+    @media (max-width: 960px) {
+      margin-right: 10px;
+    }
   }
   .measure:hover ~ .measure-label {
     opacity: 1;
@@ -334,7 +334,7 @@ export const countryInfoStyles = css`
   }
   .ld-travel {
     display: flex;
-    text-align:left;
+    text-align: left;
     margin-bottom: 10px;
   }
   .ld-travel dt {

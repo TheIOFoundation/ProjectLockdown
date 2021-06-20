@@ -5,7 +5,7 @@ const parameters = {
   component: Expandable,
 };
 
-const Template = args => <Expandable {...args} />;
+const Template = (args) => <Expandable {...args} />;
 
 let currentDropdown = 1;
 export const Primary = Template.bind({});
@@ -23,7 +23,7 @@ Primary.args = {
     </p>
   ),
   currentDropdown,
-  onDropDown: id => (currentDropdown = id),
+  onDropDown: (id) => (currentDropdown = id),
 };
 
 export default parameters;

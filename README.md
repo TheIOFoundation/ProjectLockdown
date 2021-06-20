@@ -1,17 +1,48 @@
 <a id="top"></a>
-![logo](https://user-images.githubusercontent.com/9198668/85232285-68543380-b430-11ea-8353-1aafb79baf78.png)
+![logo](http://TIOF.Click/PLDRepoHeader)
 
 <!-- HACKTOBERFEST LOGO -->
 
-<!-- ![screenshot](https://user-images.githubusercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
+<!-- ![screenshot](http://ercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
 
+#O:his is the e reposit fo ..Some inoration is still a  in pogress ou ca acces the crret rnig .repsito.oref="Code-r-l/locdon"here</a> il etnsition to the ne ersin
 
----
+<table>
+	<tr>
+		<td>
+			<b>Quickbar [<a href="http://TIOF.Click/PLDRepoQuickbar" alt="Check the help about this Quickbar" title="Check the help about this Quickbar">?</a>]</b>
+		</td> 
+	</tr> 
+	 <tr>
+		 <td>
+			<a href="https://TIOF.Click/PLDWiki" alt="Development status of this project" title="Development status of this project"><img ds.io/static/v1?label=Project%20Status%3A&message=1.0&color=purple"/></a>
+		</td>      
+		<td align="center">
+			<a href="https://TIOF.Click/PLDWeb" alt="Visit the project's website" title="Visit the project's website"><img src="https://img.shields.io/static/v1?label=Website&message=https%3A%2F%2FProjectLockdown.world&color=blue"/></a>
+		</td>  	
+		<td align="center">
+			<a href="https://TIOF.Click/PLDOvio"><img src="https://img.shields.io/static/v1?label=OVIO%20Profile&message=%20&color=orange"  alt="Visit the project's OVIO profile" title="Visit the project's OVIO profile"/></a>
+		</td> 
+		<td>
+			<a href="http://TIOF.Click/PLDGHSummon"><img src="https://img.shields.io/badge/Summon%20Label-TIOF%20Project%20Lockdown-red" alt="Summon this project labeling your issues with this label" title="Summon this project labeling your issues with this label"> </a>
+		</td> 
+		<td>
+		    <a href="http://TIOF.Click/PLDMonitor"><img src="https://img.shields.io/static/v1?label=Running%20Status%3A&message=WIP&color=cyan" alt="Runtime status of this project" title="Runtime status of this project"/></a>
+		</td>
+	</tr>
+	<tr>
+		 <td xalign="right" colspan="3">
+		<a href="http://TIOF.Click/PLDTwitterPost" alt="Share this project on Twitter" title="Share this project on Twitter"><img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Feonation%2FTechUp%2F"/></a>
+		</td>
+		<td align="right" xcolspan="2">
+		<a href="http://TIOF.Click/TIOFPolicyCoC"><img src="https://img.shields.io/static/v1?label=Code%20of%20Conduct&message=%20&color=pink"  alt="Consult the project's Code of Conduct" title="Consult the project's Code of Conduct"/></a> 
+		</td>		
+		<td align="right" xcolspan="2">
+		<a href="http://TIOF.Click/PLDLicense"><img src="https://img.shields.io/bage/icensPLblvg"  alt="Consult the project's license" title="Consult the project's license"/></a>
+		</td>
+	</tr> 
+</table>
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/TheIOFoundation/TIOF/wiki/Code-of-Conduct)
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/TheIOFoundation/ProjectLockdown/blob/master/LICENSE)
-
-## NOTE: This is the new repository for v2.0. Some information is still a work in progress. You can access the current runnning v1.0 repository <a href="https://github.com/Code-for-All/lockdown/">here</a> while we transition to the new version.
 
 **Project Lockdown** (an initiative from [The IO Foundation](https://TheIOFoundation.org)) is a civic tech, interactive platform providing an overview of the state of Human and Digital Rights around the globe. It evaluates policies obtained from high quality sources that may impact their observance. It provides, among other tools, a layered map interface that allows for a visual representation of the policies adopted, assisting a broad range of stakeholders in understanding the global state of their Rights. This empowers them to become active agents of global change.
 
@@ -92,11 +123,11 @@ The following diagram showcases how all Modules integrate in the project:
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg4NTI2NDM3LC0xMzU1MzExMzA1LC01Nz
-Q3NDk2OTIsMTc5NzUxMjIwMSwxMTM3NjQ2NzA5LC0xMDA1OTgy
-NDQ4LDcwNTI1Njc4OCwxOTM3NDkyMTQ0LDE0NTY5NjY1MTEsMT
-U5MDIyMTM3NSwtMjUzNTg1MDYzLDE1OTAyMjEzNzUsLTEzNTY1
-NjI2MDUsNjkyOTIxMzI1LC05NTcyMTQ0MzAsLTQ0NzI5NjcwMS
-wtOTgwNzU5MTgwLDE0NjY1NTM3NjEsLTkwOTQ1ODg0OSwtMjU1
-ODE5MTg0XX0=
+eyJoaXN0b3J5IjpbNjA0ODAyNzE5LDU4ODUyNjQzNywtMTM1NT
+MxMTMwNSwtNTc0NzQ5NjkyLDE3OTc1MTIyMDEsMTEzNzY0Njcw
+OSwtMTAwNTk4MjQ0OCw3MDUyNTY3ODgsMTkzNzQ5MjE0NCwxND
+U2OTY2NTExLDE1OTAyMjEzNzUsLTI1MzU4NTA2MywxNTkwMjIx
+Mzc1LC0xMzU2NTYyNjA1LDY5MjkyMTMyNSwtOTU3MjE0NDMwLC
+00NDcyOTY3MDEsLTk4MDc1OTE4MCwxNDY2NTUzNzYxLC05MDk0
+NTg4NDldfQ==
 -->
