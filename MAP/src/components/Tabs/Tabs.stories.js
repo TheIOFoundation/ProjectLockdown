@@ -1,3 +1,4 @@
+import React from 'react';
 import Tabs from './Tabs';
 
 const parameters = {
@@ -6,7 +7,7 @@ const parameters = {
   argTypes: {},
 };
 
-const Template = args => <Tabs {...args} />;
+const Template = (args) => <Tabs {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -25,7 +26,7 @@ Primary.args = {
     </button>,
   ],
   close: () => console.log('onClose'),
-  switchContent: val => console.log('onSwitchContent', val),
+  switchContent: (val) => console.log('onSwitchContent', val),
 };
 
 export default parameters;

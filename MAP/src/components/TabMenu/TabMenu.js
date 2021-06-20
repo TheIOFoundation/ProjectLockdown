@@ -7,6 +7,7 @@ import { Settings } from '../Settings/Settings';
 import { installMediaQueryWatcher } from '../../utils/media-query';
 import Tabs from '../Tabs/Tabs';
 import { burger, close as closeIcon } from '../../assets/icons/icons.js';
+import { Translation } from 'react-i18next';
 
 const renderMenu = (
   isDark,
@@ -16,20 +17,7 @@ const renderMenu = (
   currentDropdown,
   onDropDown,
   onLocateChange,
-  locale = {
-    t: s => {
-      switch (s) {
-        case 'menu.userPreferenceSection.theme.action':
-          return 'Toggle ';
-        case 'menu.userPreferenceSection.theme.light':
-          return 'Light mode';
-        case 'menu.userPreferenceSection.theme.dark':
-          return 'Dark mode';
-        default:
-          return s;
-      }
-    },
-  }
+  locale
 ) => {
   switch (menuItem) {
     case 'info':
@@ -37,39 +25,44 @@ const renderMenu = (
         title: 'info',
         template: (
           <>
+          <Translation>
+{ (t, { 
+  i18n
+ }) => 
+            <>
             <h1>Project Lockdown</h1>
-            <p className="ld-alpha">
-              {locale.t('menu.informationSection.banner')}
+            <p className="ld-alpha banner">
+              {t('menu.informationSection.banner')}
             </p>
             <p>
-              <b>{locale.t('menu.informationSection.main.name')}</b>
-              {locale.t('menu.informationSection.main.text')}
+              <b>{t('menu.informationSection.main.name')}</b>
+              {t('menu.informationSection.main.text')}
             </p>
 
             <Expandable
-              toggle={locale.t('menu.informationSection.about.title')}
+              toggle={t('menu.informationSection.about.title')}
               currentDropdown={currentDropdown}
               onDropDown={onDropDown}
               detail={
                 <p>
-                  {locale.t('menu.informationSection.about.text.p1')}
-                  <b>{locale.t('menu.informationSection.main.name')}</b>
-                  {locale.t('menu.informationSection.about.text.p2')}
-                  <b>{locale.t('menu.informationSection.main.name')}</b>
-                  {locale.t('menu.informationSection.about.text.p3')}
+                  {t('menu.informationSection.about.text.p1')}
+                  <b>{t('menu.informationSection.main.name')}</b>
+                  {t('menu.informationSection.about.text.p2')}
+                  <b>{t('menu.informationSection.main.name')}</b>
+                  {t('menu.informationSection.about.text.p3')}
                 </p>
               }
             />
 
             <Expandable
-              toggle={locale.t('menu.informationSection.sources.title')}
+              toggle={t('menu.informationSection.sources.title')}
               currentDropdown={currentDropdown}
               onDropDown={onDropDown}
               detail={
                 <>
                   <p>
-                    <b>{locale.t('menu.informationSection.main.name')}</b>
-                    {locale.t('menu.informationSection.sources.subtitle')}
+                    <b>{t('menu.informationSection.main.name')}</b>
+                    {t('menu.informationSection.sources.subtitle')}
                   </p>
                   <ul className="ld-sources">
                     <li>
@@ -80,12 +73,12 @@ const renderMenu = (
                         href="https://TIOF.Click/LockdownData"
                       >
                         {' '}
-                        {locale.t(
+                        {t(
                           'menu.informationSection.sources.linksList.first.linkTitle'
                         )}
                       </a>
                       <br />
-                      {locale.t(
+                      {t(
                         'menu.informationSection.sources.linksList.first.text'
                       )}
                     </li>
@@ -96,12 +89,12 @@ const renderMenu = (
                         rel="noopener noreferrer"
                         href="https://covid19api.com/"
                       >
-                        {locale.t(
+                        {t(
                           'menu.informationSection.sources.linksList.second.linkTitle'
                         )}
                       </a>
                       <br />
-                      {locale.t(
+                      {t(
                         'menu.informationSection.sources.linksList.second.text'
                       )}{' '}
                       <a
@@ -109,7 +102,7 @@ const renderMenu = (
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        {locale.t(
+                        {t(
                           'menu.informationSection.sources.linksList.second.highlight'
                         )}
                       </a>
@@ -117,13 +110,13 @@ const renderMenu = (
                     </li>
                   </ul>
                   <p>
-                    {locale.t('menu.informationSection.sources.issues.text')}{' '}
+        {t('menu.informationSection.sources.issues.text')}{' '}
                     <a
                       rel="noopener noreferrer"
                       target="_blank"
                       href="https://github.com/Code-for-All/lockdown/issues"
                     >
-                      {locale.t(
+                      {t(
                         'menu.informationSection.sources.issues.highlight'
                       )}
                     </a>
@@ -136,7 +129,7 @@ const renderMenu = (
                       rel="noopener noreferrer"
                       href="https://tiof.click/LockdownData"
                     >
-                      {locale.t(
+                      {t(
                         `menu.contribution.contributionLinks.firstLink`
                       )}
                     </a>
@@ -146,7 +139,7 @@ const renderMenu = (
                       rel="noopener noreferrer"
                       href="https://tiof.click/pldpsf"
                     >
-                      {locale.t(
+                      {t(
                         `menu.contribution.contributionLinks.secondLink`
                       )}
                     </a>
@@ -155,19 +148,19 @@ const renderMenu = (
               }
             />
             <Expandable
-              toggle={locale.t('menu.informationSection.credits.title')}
+              toggle={t('menu.informationSection.credits.title')}
               currentDropdown={currentDropdown}
               onDropDown={onDropDown}
               detail={
                 <p>
-                  <b>{locale.t('menu.informationSection.main.name')}</b>
-                  {locale.t('menu.informationSection.credits.text')}
+                  <b>{t('menu.informationSection.main.name')}</b>
+                  {t('menu.informationSection.credits.text')}
                   <a
                     href="https://docs.google.com/spreadsheets/d/1mVyQxxLxAF3E1dw870WHXTOLgYzmumojvzIekpgvLV0/edit?ts=5e74ac83#gid=634415797"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {locale.t('menu.informationSection.credits.highlight')}
+                    {t('menu.informationSection.credits.highlight')}
                   </a>
                   .
                 </p>
@@ -175,24 +168,27 @@ const renderMenu = (
             />
 
             <Expandable
-              toggle={locale.t('menu.informationSection.dataPrivacity.title')}
+              toggle={t('menu.informationSection.dataPrivacity.title')}
               currentDropdown={currentDropdown}
               onDropDown={onDropDown}
               detail={
                 <>
                   <p>
-                    {locale.t(
+                    {t(
                       'menu.informationSection.dataPrivacity.paragraphs.p1'
                     )}
                   </p>
                   <p>
-                    {locale.t(
+                    {t(
                       'menu.informationSection.dataPrivacity.paragraphs.p2'
                     )}
                   </p>
                 </>
               }
             />
+            </>
+            }
+            </Translation>
           </>
         ),
       };
@@ -201,7 +197,7 @@ const renderMenu = (
         title: 'settings',
         template: (
           <Settings
-            darkMode={isDark}
+            isDark={isDark}
             setDarkMode={setDarkMode}
             onClose={callback}
             onLocateChange={onLocateChange}
@@ -280,11 +276,11 @@ export class TabMenu extends Component {
     this.switchContent = this.switchContent.bind(this);
     this.onDropDown = this.onDropDown.bind(this);
   }
-  
+
   componentDidMount() {
     let i = 0;
 
-    installMediaQueryWatcher(`(min-width: 960px)`, matches => {
+    installMediaQueryWatcher(`(min-width: 960px)`, (matches) => {
       this.setState({
         isMobile: !matches,
       });
@@ -295,14 +291,14 @@ export class TabMenu extends Component {
       }
     });
   }
-  
-  showSideBar() {
+
+  showSideBar = () => {
     this.setState({
       showLateralMenu: true,
       showMenu: true,
     });
-  }
-  switchContent(val) {
+  };
+  switchContent = (val) => {
     if (val === 'settings' && this.state.updateAvailable) {
       this.setState({
         updateAvailable: false,
@@ -318,34 +314,30 @@ export class TabMenu extends Component {
       return;
     }
 
-    // this.props.changeRoute(renderMenu(val));
-
     this.prevVal = val;
     this.setState({
       activeItem: val,
       showLateralMenu: val === this.state.activeItem ? false : true,
     });
-  }
+  };
 
-  closeNavbar() {
+  closeNavbar = () => {
     this.setState({
       showLateralMenu: false,
       showSideBar: false,
       activeItem: 'info',
     });
-  }
+  };
 
-  onDropDown(id) {
+  onDropDown = (id) => {
     this.setState({
       currentDropdown: id,
     });
-  }
-
-  
+  };
 
   render() {
     const { activeItem, currentDropdown } = this.state;
-    const {isDark, setDarkMode} = this.props;
+    const { isDark, setDarkMode } = this.props;
     return this.state.showLateralMenu || this.props.isMobile === true ? (
       <>
         <div className="menu-overlay"></div>
@@ -381,7 +373,7 @@ export class TabMenu extends Component {
                 currentDropdown,
                 this.onDropDown,
                 this.props.onLocateChange,
-                this.props.locale
+                this.props.locale,
               ).template
             }
           </div>

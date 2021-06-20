@@ -6,13 +6,13 @@ export default {
   title: 'Component/Header',
   component: Header,
   argTypes: {
-    dark: {control: 'boolean'},
-  }
+    dark: { control: 'boolean' },
+  },
 };
 
 const Template = (args) => <Header {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  dark: false
+  dark: false,
 };

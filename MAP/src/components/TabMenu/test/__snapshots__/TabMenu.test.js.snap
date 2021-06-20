@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when there are no items 1`] = `
+<button
+  className="menu-side-btn"
+  onClick={[Function]}
+>
+  <svg
+    fill="currentColor"
+    height="14"
+    stroke="currentColor"
+    viewBox="0 0 22 14"
+    width="22"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      clipRule="evenodd"
+      d="M0.5 2.33333V0H21.5V2.33333H0.5ZM0.5 8.16667H21.5V5.83333H0.5V8.16667ZM0.5 14H21.5V11.6667H0.5V14Z"
+      fill="currentColor"
+      fillOpacity="1"
+      fillRule="evenodd"
+    />
+  </svg>
+</button>
+`;

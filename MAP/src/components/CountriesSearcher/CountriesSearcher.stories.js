@@ -8,15 +8,13 @@ const parameters = {
   },
 };
 
-const Template = args => {
-  return <CountriesSearcher {...args} />;
-};
+const Template = (args) => <CountriesSearcher {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   i18n: { locale: 'en, en-US' },
   map: {
-    flyTo: function () {
+    flyTo() {
       console.log(...arguments);
     },
   },

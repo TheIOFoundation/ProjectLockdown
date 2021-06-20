@@ -17,6 +17,7 @@
   --ld-bg: white;
   --ld-hover: rgb(247, 247, 247);
   --ld-active: blue;
+  --ld-banner: #6FCF97;
   --ld-focus: rgba(0, 0, 255, 0.5);
   --ld-icon-strokeWidth: 1.5;
   --ld-button-text: black;
@@ -89,6 +90,7 @@
   --ld-bg: #333333;
   --ld-hover: rgb(38, 39, 43);
   --ld-active: rgb(131, 251, 195);
+  --ld-banner: #F2994A;
   --ld-focus: rgba(131, 251, 195, 1);
   --ld-icon-strokeWidth: 1.2;
   --ld-button-text: white;
@@ -364,6 +366,11 @@ a:visited {
   color: var(--ld-active);
   font-style: italic;
   margin-bottom: 20px;
+}
+
+.banner {
+  color: var(--ld-banner);
+  border-left: solid 3px var(--ld-banner);
 }
 
 @media (max-width: 960px) {

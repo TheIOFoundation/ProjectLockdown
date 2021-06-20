@@ -7,7 +7,7 @@ export const calendar = (
     x="0px"
     y="0px"
     viewBox="0 0 32 32"
-    style={{ 'enable-background': 'new 0 0 32 32' }}
+    style={{ enableBackground: 'new 0 0 32 32' }}
   >
     <path
       className="st0"
