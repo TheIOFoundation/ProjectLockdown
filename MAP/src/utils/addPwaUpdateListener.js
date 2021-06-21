@@ -11,7 +11,10 @@ export function addPwaUpdateListener(callback) {
         reg.addEventListener('updatefound', () => {
           newWorker = reg.installing;
           newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            if (
+              newWorker.state === 'installed' &&
+              navigator.serviceWorker.controller
+            ) {
               callback(true);
             }
           });

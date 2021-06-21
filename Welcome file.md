@@ -152,12 +152,12 @@ C --> D
 | **Usage** | | | | |
 
 
-|  **Name**  | TIOF Hex Logo |  |  |  |
+|  **Name**  | PLD Lock |  |  |  |
 |----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|
-| **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20W%20NoT%20HiRes%20XXX%20v1.6.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20W%20T%20HiRes%20XXX%20v1.6.svg" width ="100px" /> | 
+| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20T%20HiRes%20XXX%20v1.0.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20T%20HiRes%20XXX%20v1.0.svg" width ="100px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20DM%20T%20HiRes%20XXX%20v1.0.png" width ="100px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20DM%20T%20HiRes%20XXX%20v1.0.svg" width ="100px" /> | 
 | **Format** | PNG | SVG | PNG | SVG | 
 |  **Code**  |  |  |  |  |
-| **Features** | Hi Resolution / Full Color / Transparent Background / English | Hi Resolution / Full Color / Transparent Background / English | Hi Resolution / White / Transparent Background / English | Hi Resolution / White / Transparent Background / English |
+| **Features** | Hi Resolution / Light Mode / Transparent Background | Hi Resolution / Light Mode / Transparent Background | Hi Resolution / Dark Mode | Hi Resolution / Dark Mode
 | **Usage** | | | | |
 
 
@@ -172,10 +172,170 @@ C --> D
 
 
 
-<img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Colors/Orange.png" width ="50px" />
+| The IO Foundation | UDDR | TechUp | Project Lockdown | BHR in Tech |
+|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|
+|<img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Logos/%5BTIOF%5D%20Comms%20%5BP%5D%20Hex%20Logo%20TIOF%20FC%20T%20HiRes%20XXX%20v1.6.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/UDDR/raw/main/Project%20Identity/Logos/%5BTIOF%20UDDR%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/TechUp/raw/main/Project%20Identity/Logos/%5BTIOF%20TU%5D%20Comms%20%5BP%5D%20U%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/BiT/raw/main/Project%20Identity/Logos/%5BTIOF%20BiT%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | 
+|[Media Kit](https://github.com/TheIOFoundation/TIOF/wiki/Media-Kit)| [Media Kit](https://github.com/TheIOFoundation/UDDR/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/TechUp/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Media-Kit) |  [Media Kit](https://github.com/TheIOFoundation/BiT/wiki/Media-Kit) | 
 
 
+
+
+| UDDR | TechUp | Project Lockdown | BHR in Tech |
+|----------------|-------------------------------|-----------------------------|-------------------------------|
+| <img src="https://github.com/TheIOFoundation/UDDR/raw/main/Project%20Identity/Logos/%5BTIOF%20UDDR%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/TechUp/raw/main/Project%20Identity/Logos/%5BTIOF%20TU%5D%20Comms%20%5BP%5D%20U%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Logos/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Lock%20Logo%20LM%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | <img src="https://github.com/TheIOFoundation/BiT/raw/main/Project%20Identity/Logos/%5BTIOF%20BiT%5D%20Comms%20%5BP%5D%20Logo%20FC%20NoT%20HiRes%20XXX%20v1.0.png" width ="75x" /> | 
+| [Media Kit](https://github.com/TheIOFoundation/UDDR/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/TechUp/wiki/Media-Kit) | [Media Kit](https://github.com/TheIOFoundation/ProjectLockdown/wiki/Media-Kit) |  [Media Kit](https://github.com/TheIOFoundation/BiT/wiki/Media-Kit) | 
+
+
+
+
+
+
+|        **Color**        | | | | | | | | | | | | |
+|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-------------------------------|-------------------------------|-----------------------------|
+|  **Code**  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **Sample** | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Light%20gray%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Dark%20gray%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Light%20blue%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Dark%20blue%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/TIOF/raw/main/Project%20Identity/Color%20Palette/%5BTIOF%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20Orange%20XXX%20v1.0.png" width ="50px" /> |
+| **R** | 137 | 78 | 102 | 80 | 247 |
+| **G** | 137 | 80 | 181 | 145 | 149 |
+| **B** | 142 | 86 | 197 | 158 | 82 |
+| **H** | 240 | 225 | 190 | 190 | 24 |
+| **S** | 2.2 | 4.9 | 45.0 | 32.8 | 91.2 |
+| **L** | 54.7 | 32.2 | 58.6 | 46.7 | 64.5 |
+| **Hex** | #89898E | #4E5056 | #66B5C5 | #50919F | #F79552 |
+
+
+
+
+
+|        **Theme Colors**        | | | 
+|----------------|-------------------------------|-----------------------------|
+|  **Code**  | G1 | W | 
+| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23333333%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23FFFFFF%20XXX%20v1.0.png" width ="50px" /> | 
+| **R** | 51 | 255 |
+| **G** | 51 | 255 |
+| **B** | 51 | 255 | 
+| **H** | 0 | 0 |
+| **S** | 0 | 0 |
+| **L** | 20 | 100 |
+| **Hex** | #333333 | #FFFFFF |
+
+
+|        **Grey shades swatch**        |  |  |  |  |  | 
+|----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
+|  **Code**  | G2 | G3 | G4 | G5 | G6 |
+| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%234F4F4F%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23828282%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23BDBDBD%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23E0E0E0%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23F2F2F2%20XXX%20v1.0.png" width ="50px" /> | 
+| **R** | 79 | 130 | 189 | 224 | 242 |
+| **G** | 79 | 130 | 189 | 224 | 242 |
+| **B** | 79 | 130 |  189 | 224 | 242 |
+| **H** | 0 | 0 | 0 | 0 | 0 |
+| **S** | 0 | 0 | 0 | 0 | 0 |
+| **L** | 31 | 51 | 74 | 88 | 95|
+| **Hex** | #4F4F4F | #828282 | #BDBDBD | #E0E0E0 | #F2F2F2|
+
+
+|        **Map and Infographics**        |  |  |  |  |  | 
+|----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
+|  **Code**  | B1 | M1 | O1 | R1 | G7 |
+| **Sample** | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%237AAEFF%20XXX%20v1.0.png" width ="50px" /> | <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%236FCF97%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23F2994A%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23EB5757%20XXX%20v1.0.png" width ="50px" /> |  <img src="https://github.com/TheIOFoundation/ProjectLockdown/raw/master/Project%20Identity/Color%20Palette/%5BTIOF%20PLD%5D%20Comms%20%5BP%5D%20Color%20Palette%20-%20%23CCCCCC%20XXX%20v1.0.png" width ="50px" /> | 
+| **R** | 122 | 111 | 242 | 235| 204 |
+| **G** | 174 | 201 | 153 | 87 | 204 |
+| **B** | 255 | 151 |  74 | 87 | 204 |
+| **H** | 217 | 145 | 28 | 0 | 0 |
+| **S** | 100 | 50 | 87 | 79 | 0 |
+| **L** | 74 | 62 | 62 | 63 | 80 |
+| **Hex** | #7AAEFF| #6FCF97| #F2994A| #EB5757| #CCCCCC |
+
+
+
+
+
+|  **URL**  |  | 
+|----------------|-------------------------------|
+| **Alternative URLs** |  |
+| **Short URL** |  |
+| **Full URL** |  |
+| **Status**  |  | 
+| **Content**  |  | 
+| **Usage** |  | 
+
+|  **URL**  | [https://TheIOFoundation.org](https://TheIOFoundation.org) | 
+|----------------|-------------------------------|
+| **Alternative URLs** | [.com](https://TheIOFoundation.com) [.net](https://TheIOFoundation.net) [.eu](https://TheIOFoundation.eu) [.asia](https://TheIOFoundation.asia) |
+| **ShortURL** | https://TIOF.Click/TIOFWeb |
+| **Status**  | Active | 
+| **Usage** |  | 
+
+
+
+|  **URL**  | [http://TIOF.Click](http://TIOF.Click) | [http://DoThe.Click](http://DoThe.Click) | 
+|----------------|-------------------------------|-------------------------------|
+| **Alternative URLs** | None | None |
+| **Short URL** | None | None |
+| **Full URL** | None | None |
+| **Status**  | Active | Active |
+| **Usage** | Shorten URLs related to TIOF and its projects | Shorten URLs related to other organizations or projects that TIOF supports | 
+
+
+|  **Domains**  | @TheIOFoundation.org | 
+|----------------|-------------------------------|
+| **Alternative Domains** | None |
+| **Status**  | Active | 
+| **Usage** | Official communications from TIOF members both internally and externally | 
+
+
+
+
+|  **Email**  | [Contact@TheIOFoundation.org](mailto://Contact@TheIOFoundation.org) | [Media@TheIOFoundation.org](mailto://Media@TheIOFoundation.org) | 
+|----------------|-------------------------------|-------------------------------|
+| **Status**  | Active | Active |
+| **Usage** | Official communications and inquiries | Media related communications and inquiries | 
+
+
+|  **Platform**  | LinkedIn | Twitter | Facebook |  Instagram |
+|----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
+| **Short URL** | http://TIOF.Click/TIOFLinkedIn| https://TIOF.Click/TIOFTwitter | http://tiof.click/TIOFFacebook | http://tiof.click/TIOFInstagram |
+| **Full URL** | https://www.linkedin.com/company/the-io-foundation | https://github.com/TheIOFoundation/TIOF | https://twitter.com/TheIOFoundation | https://www.facebook.com/TheI0Foundation/ | https://www.instagram.com/theiofoundation/ |
+| **Status**  | Active | Active | Dormant | Dormant |
+| **Content**  | Updates on Advocacy + Events | PUpdates on Advocacy + Events / Comments not responded | None | None |
+| **Usage** | Postings - Comments not responded | Postings - Comments not responded | Impersonation protection | Impersonation protection | 
+
+
+|  **Platform**  | Events | Public Calendar | Live Events |  Events RSVP|
+|----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
+| **Short URL** | http://TIOF.Click/Events| http://TIOF.Click/EventsCal | https://TIOF.Click/EventsLive | https://TIOF.Click/EventsRSVP |
+| **Status**  | Active | Active | Active | Active |
+| **Content**  | Events listing | Events calendar | Events access | TIOF Events RSVP |
+| **Usage** | Communicate events from TIOF and those it participates in | Public events calendar that can be added | Access to the current running event | RSVP for TIOF events | 
+
+
+|  **Platform**  | TIOF Donation Page | GitHub Sponsors | Open Collective |  Patreon |
+|----------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
+| **Short URL** | https://TIOF.Click/Donate | http://TIOF.Click/TIOFGHSponsors | http://TIOF.Click/TIOFOpenCollective | http://TIOF.Click/TIOFPatreon |
+| **Full URL** | https://www.TheIOFoundation.org/Donate/ | https://GitHub.com/TheIOFoundation/TIOF | https://OpenCollective.com/TheIOFoundation | https://www.Patreon.com/TheIOFoundation | 
+| **Status**  | Active | Active | WIP | WIP |
+| **Content**  | General Donations | Goals | Goals | Goals |
+| **Usage** | Facilitate donations to TIOF global | List Goals for support | List Goals for support | List Goals for support | 
+
+
+
+
+
+**Data-Centric Digital Rights** (DCDR) is the advocacy of protecting users' Rights by transparently implementing the regulations that should protect them. As core stakeholders, technologists play a critical role as the next generation of Rights defenders and need to orient themselves through new design and implementation paradigms focused on protecting data. The **DCDR Principles** put forward by The IO Foundation are concepts that help them navigate the intricacies of applying Human and Digital Rights in digital infrastructures, products and services.
+
+
+*"Treat their data as you'd want to be treated."*
+<br/>
+> The traditional understanding of data as separate entities from their users is anchored in past perceptions and the use of legacy technologies. The reality is much different: The data representing users (and of which they should have control of consent) is intimately and inextricably linked to them; it models them, creating an accurate representation that loses all value should that contextualization ever be severed.
+
+*The direct consequence is that a user’s data IS the user itself.*
+<br/><br/>
+Note:
+This understanding has crucial consequences as the same duties of care that apply by constitutional laws to citizens should equally apply to the data representing them. In this sense, the necessary infrastructures that governments put in place to protect their citizens (hospitals, highways, the judiciary,...) should also be extended to the management and protection of their data with a national cloud system based on open standards and governed by a framework on Digital Rights.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MjI2OTcyMSwtMTI4MjMyMTY5OSwxMD
-MwMjkxNzgxLDU4MDg2Njg1MSwxODI0MzM3NDRdfQ==
+eyJoaXN0b3J5IjpbNTMxNTczNTM5LDUzOTM3MjAzMSwtMTc3Mj
+E4NDY3NiwxOTI1NTU0Nzc1LC01NzA2NTQ0MDgsLTIwODEwOTM0
+ODUsLTEwODI1NTEyMDMsLTIwMDEwODg4MzEsNzgxNjY5NDczLD
+E2OTY2MTAwNDQsLTY1NjMzMjY1Nyw0OTE1Njc2ODAsLTgwOTA1
+MTQyMCwtNTA0ODEyNTU1LDU5NTgwOTkxLC05MTQyOTMxMjUsLT
+E1MzQ2NDYwMDcsLTE5NTAyMDEzOTksMTkzMTcwMTU1OCwtMTc5
+MTIyMDg5N119
 -->

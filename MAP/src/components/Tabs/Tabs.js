@@ -29,24 +29,24 @@ export default class Tabs extends Component {
   }
 
   componentDidMount() {
-    installMediaQueryWatcher(`(min-width: 960px)`, matches => {
+    installMediaQueryWatcher(`(min-width: 960px)`, (matches) => {
       this.setState({ isMobile: !matches });
     });
 
-    dialogService.addEventListener('close', e => {
+    dialogService.addEventListener('close', (e) => {
       if (e.detail.menuDialogClosed) {
         this.tabRefs[`tab${this.state.index}`].focus();
       }
     });
 
-    addPwaUpdateListener(updateAvailable => {
+    addPwaUpdateListener((updateAvailable) => {
       this.setState({
         updateAvailable,
       });
     });
   }
 
-  updateIndex(i, type) {
+  updateIndex = (i, type) => {
     if (type === 'settings' && this.state.updateAvailable) {
       this.setState({
         updateAvailable: false,
@@ -58,18 +58,18 @@ export default class Tabs extends Component {
     if (!this.state.isMobile) {
       this.commit(type);
     }
-  }
+  };
 
-  __onTabClick(i, type) {
+  __onTabClick = (i, type) => {
     this.updateIndex(i, type);
     this.commit(type);
-  }
+  };
 
-  commit(type) {
+  commit = (type) => {
     this.props.switchContent(type.toLowerCase());
-  }
+  };
 
-  __onFocusMove(e) {
+  __onFocusMove = (e) => {
     const currIndex = this.state.index;
 
     switch (e.keyCode) {
@@ -79,7 +79,7 @@ export default class Tabs extends Component {
             currIndex - 1,
             this.tabRefs[`tab${currIndex - 1}`]
               .getAttribute('data-label')
-              .toLowerCase()
+              .toLowerCase(),
           );
         }
         break;
@@ -89,14 +89,14 @@ export default class Tabs extends Component {
             currIndex + 1,
             this.tabRefs[`tab${currIndex + 1}`]
               .getAttribute('data-label')
-              .toLowerCase()
+              .toLowerCase(),
           );
         }
         break;
       default:
         return;
     }
-  }
+  };
 
   render() {
     const { index } = this.state;
@@ -107,7 +107,7 @@ export default class Tabs extends Component {
             <li role="presentation" key={i} className={i > 1 ? 'hide' : ''}>
               <button
                 role="tab"
-                ref={ref => (this.tabRefs['tab' + i] = ref)}
+                ref={(ref) => (this.tabRefs['tab' + i] = ref)}
                 tabIndex={index === i ? '0' : '-1'}
                 aria-selected={index === i ? 'true' : 'false'}
                 className={index === i ? 'ld-menu--active' : ''}

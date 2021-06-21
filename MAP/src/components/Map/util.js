@@ -1,34 +1,53 @@
 export const selectedWorldview = 'US';
 
-export function worldStyle(lockdown_status) {
+export function worldStyle(style_selector) {
   let value;
-  switch (lockdown_status) {
+  switch (style_selector) {
     case '1':
-      value = '#eb5757'; //yes
+      value = '#eb5757'; // yes
       break;
     case '2':
-      value = '#f2994a'; //partial
+      value = '#f2994a'; // partial
       break;
     case '3':
-      value = '#6fcf97'; //no
+      value = '#6fcf97'; // no
       break;
     default:
-      value = '#ccc'; //undefined or no value
+      value = '#ccc'; // undefined or no value
+  }
+
+  return value;
+}
+
+export function worldStyleColor(style_selector) {
+  let value;
+  switch (style_selector) {
+    case '1':
+      value = 'red'; // yes
+      break;
+    case '2':
+      value = 'orange'; // partial
+      break;
+    case '3':
+      value = 'green'; // no
+      break;
+    default:
+      value = 'grey'; // undefined or no value
   }
 
   return value;
 }
 
 export function filterLookupTable(lookupTable) {
-  let lookupData = {};
+  const lookupData = {};
 
-  for (let layer in lookupTable)
-    for (let worldview in lookupTable[layer].data)
-      for (let feature in lookupTable[layer].data[worldview]) {
-        let featureData = lookupTable[layer].data[worldview][feature];
+  for (const layer in lookupTable)
+    for (const worldview in lookupTable[layer].data)
+      for (const feature in lookupTable[layer].data[worldview]) {
+        const featureData = lookupTable[layer].data[worldview][feature];
 
         if (worldview === 'all' || worldview === selectedWorldview) {
-          lookupData[featureData['unit_code']] = featureData;
+          lookupData[featureData.unit_code] = featureData;
         }
       }
   return lookupData;
@@ -55,10 +74,9 @@ export const domainCoorsMobile = {
   me: { lng: 53.4, lat: 22, zoom: 1.08 }, // Middle East - https://projectlockdown.me/#1.08/22/53.4
 };
 
-export const pause = (time = 100) => {
-  return new Promise(resolve => {
+export const pause = (time = 100) =>
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve();
     }, time);
   });
-};

@@ -4,7 +4,7 @@ export const fetchTotals = async (
   startDate,
   endDate,
   selectedDate,
-  daysRange
+  daysRange,
 ) => {
   if (!startDate) {
     startDate = new Date(selectedDate).toISOString();

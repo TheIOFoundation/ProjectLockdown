@@ -26,6 +26,7 @@
   }
   padding: 0 16px;
   margin: 5px 0;
+  cursor: default;
 }
 
 .Totals .dark {
