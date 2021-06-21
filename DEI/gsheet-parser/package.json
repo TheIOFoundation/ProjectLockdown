@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "start:job": "npm run build && node dist/index.js",
+    "start:job": "tsc && npm run build && node dist/index.js",
     "build": "babel src -d dist --copy-files",
     "dev": "babel-node src/index.js",
     "test": "jest ./tests",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@babel/node": "^7.12.10",
+    "@types/mongoose": "^5.10.3",
     "axios": "^0.21.1",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
@@ -21,18 +22,21 @@
     "moment-range": "^4.0.2",
     "moment-timezone": "^0.5.32",
     "mongodb": "^3.6.3",
+    "mongoose": "^5.11.17",
     "node-cache": "^5.1.2",
     "swagger-ui-express": "^4.1.5",
     "uuid": "^8.3.2",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
+    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.10",
+    "@types/node": "^15.12.4",
     "babel-jest": "^25.5.1",
     "dotenv": "^8.2.0",
     "jest": "^25.5.4",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "typescript": "^4.3.4"
   }
 }
