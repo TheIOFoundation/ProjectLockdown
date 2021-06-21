@@ -1,9 +1,4 @@
-import {
-    getEnvVariable,
-    NoEnvVariableError,
-    dbConnection,
-    appConfig,
-} from './config';
+import Config, { getEnvVariable, NoEnvVariableError } from './config';
 
 describe('Testing function getEnvVariable', () => {
     describe('Retrieving existent variable', () => {
@@ -26,6 +21,7 @@ describe('Testing function getEnvVariable', () => {
 describe('Testing config fields', () => {
     describe('Testing required fields for dbConnection', () => {
         it('Should contain: database, host, port, userName, password', () => {
+            const dbConnection = Config.getDbConnection();
             expect('database' in dbConnection).toBe(true);
             expect('host' in dbConnection).toBe(true);
             expect('port' in dbConnection).toBe(true);
@@ -35,7 +31,9 @@ describe('Testing config fields', () => {
     });
     describe('Testing required fields for appConfig', () => {
         it('Should contain: port', () => {
+            const appConfig = Config.getAppConfig();
             expect('port' in appConfig).toBe(true);
+            expect(typeof appConfig.port == 'number').toBe(true);
         });
     });
 });
