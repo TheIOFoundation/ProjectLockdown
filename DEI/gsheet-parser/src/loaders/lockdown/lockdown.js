@@ -7,9 +7,6 @@ import { ENTRY_COLUMN_LENGTH, parseEntry } from './parsers/lockdownParser';
 import { getSnapshots } from './snapshot/processor';
 import { connect } from '../../repositories';
 
-import * as TiofRegions from '../../services/regions.services';
-import * as TiofTerritories from '../../services/territories.services';
-
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
@@ -29,35 +26,163 @@ export async function getGlobalData() {
   const rows = await sheet.getCellsInRange('B5:X432'); // including areas, e.g. Beijing, Western Australia, ISO 3166-2
   const headers = ['status', 'jump', 'territory', 'iso2', 'iso3', 'lastTimeUpdated',
     'territorySource', 'populationSource', 'covid-19Source', 'notes', 'url', 'region',
-    'boundariesLevel', 'featureID', 'wikidataID', 'iso3_2', 'unitCode', 'description', 'languages',
+    'boundariesLevel', 'featureID', 'wikidataID', 'iso3', 'unitCode', 'description', 'languages',
     'research', 'encode', 'review', 'iso3166-2'];
   return transposeRows(headers, rows);
 }
 
 export async function insertTerritory(db, row) {
-  let region = null;
-  if (row['region'].trim() != '') {
-    region = await TiofRegions.findOneOrCreate(row['region']); 
+  var territory = {
+    "TerritoryUID": row['iso3'],
+    "PLDInfo": {
+      "PLDInfoUID": "1",
+      "PLDCode": "AB123",
+      "PLDCodeParent": "AB12",
+      "Name": row['territory'],
+      "Region": {
+        "RegionUID": "RG1",
+        "Name": row['region'],
+        "Description": "string",
+        "Territories": [],
+        "TLD": ".africa",
+        "MAPInfo": {
+          "Mapbox": {
+            "Zoom": "1",
+            "Lat": "0",
+            "Lng": "0"
+          }
+        },
+        "PermalinkGraphs": "string"
+      },
+      "UnitCode": row['unitCode'],
+      "Notes": "string",
+      "Description": row['description'],
+    },
+    "ISOInfo": {
+      "ISO2": row['iso2'],
+      "ISO3": row['iso3'],
+      "Links": [
+        {
+          "LinkUID": "1",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "UNInfo": {
+      "LOCODE": "string",
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "NATOInfo": {
+      "STANAG": "string",
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "WikiMediaInfo": {
+      "WikidataID": row['wikidataID'],
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "MapboxInfo": {
+      "BoundaryLevel": row['boundariesLevel'],
+      "FeatureID": row['featureID'],
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ]
+    },
+    "Territories": [],
+    "Status": row['status'],
+    "Origins": [
+      {
+        "OriginUID": "string",
+        "Name": row['research'],
+        "Contact": {
+          "UserUID": "string",
+          "Type": "Human"
+        },
+        "Type": "Gov Website",
+        "URLOrigin": {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      }
+    ],
+    "URLDEI": {
+      "LinkUID": "string",
+      "Type": "Source",
+      "Name": "string",
+      "Description": row['jump']
+    },
+    "URLDoc": {
+      "LinkUID": "string",
+      "Type": "Source",
+      "Name": "string",
+      "Description": row['url']
+    },
+    "DateLastUpdate": {
+      "DateUID": "string",
+      "Name": "string",
+      "Description": "string",
+      "Type": "string",
+      "Value": row['lastTimeUpdated'],
+      "ValueUTC": "string",
+      "GeneratedBy": "string",
+      "Highlights": "string",
+      "Links": [
+        {
+          "LinkUID": "string",
+          "Type": "Source",
+          "Name": "string",
+          "Description": "string"
+        }
+      ],
+      "UI": {
+        "Tooltip": "string",
+        "Name": "string",
+        "Description": "string"
+      }
+    }
+  };
+
+  // insert territory into cosmosdb
+  try {
+    let insertResult = await db.territoryRepository.insertOrUpdate(territory);
+    // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
+    if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
+      logger.log(`Insert territory ${row['iso3']} succeeded`);
+    }
+  } catch (error) {
+    logger.log(`Error insert territory ${row['iso3']}`);
+    logger.error(error);
   }
 
-  var territory = {
-    PLD_Code: row['iso3'],
-    Name: row['territory'],
-    Notes: row['notes'],
-    Description: row['description'],
-    ISO2: row['iso2'],
-    ISO3: row['iso3'],
-    UN_Code: row['unitCode'],
-    NATO_Code: row['unitCode'],
-    Wikidata_ID: row['wikidataID'],
-    Researcher: row['research'],
-    Encoder: row['encode'],
-    Editor: row['review'],
-    Region: (region ? region._id: ''),
-    BoundaryLevel: row['boundariesLevel'],
-    SubTerritories: []
-  };
-  await TiofTerritories.findOneOrCreate(territory);
   return row['iso3'];
 }
 
