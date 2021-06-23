@@ -3,6 +3,10 @@
   "version": "2.0.0",
   "description": "<a id=\"top\"></a>\r ![logo](http://TIOF.Click/PLDRepoHeader)",
   "main": "index.js",
+  "engines": {
+    "node": ">10.0.0",
+    "npm": ">4.2.0"
+  },
   "directories": {
     "doc": "docs"
   },
