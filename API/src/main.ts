@@ -7,7 +7,7 @@ import { INestApplication } from '@nestjs/common';
 import { AppModule } from './app/app.module';
 
 const API_DEFAULT_PORT = 4000;
-const API_DEFAULT_PREFIX = '/api/v2/';
+const API_DEFAULT_PREFIX = '/api/v2';
 
 const SWAGGER_TITLE = 'Project LockDown API';
 const SWAGGER_DESCRIPTION = 'ProjectLockDown APi';
