@@ -13,6 +13,6 @@ export class CategoryController {
         summary: 'Get  All Category',
     })
     async getCategories(): Promise<Category[]> {
-        return await this.categoryService.findAll();
+        return this.categoryService.findAll();
     }
 }

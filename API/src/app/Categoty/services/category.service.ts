@@ -7,10 +7,10 @@ export class CategoryService {
     constructor(private repository: CategoryRepository) {}
 
     async findAll(): Promise<Category[]> {
-        return await this.repository.find();
+        return this.repository.find();
     }
 
     async findById(id: number): Promise<Category> {
-        return await this.repository.getById(id);
+        return this.repository.getById(id);
     }
 }
