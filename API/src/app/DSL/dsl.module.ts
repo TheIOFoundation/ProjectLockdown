@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DSLController } from './controllers/dsl.controller';
-import { DSLEntity } from './entities/dsl.entity';
+import { DSL } from './entities/dsl.entity';
 import { DSLService } from './services/dsl.service';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([DSLEntity])],
+    imports: [TypeOrmModule.forFeature([DSL])],
     providers: [DSLService],
     controllers: [DSLController],
 })
