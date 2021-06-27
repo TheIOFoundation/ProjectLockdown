@@ -4,7 +4,7 @@ import { DataSetEntry } from './datasetEntry.models';
 import { DataSetEntryService } from './datasetEntry.service';
 
 @Controller('datasetEntry')
-class DataSetEntryController {
+export class DataSetEntryController {
     constructor(private dataSetEntryService: DataSetEntryService) {}
 
     @Get(':DSLUID/:DateStart/:DateEnd/:PLDCODE')
@@ -20,5 +20,3 @@ class DataSetEntryController {
         return res.status(HttpStatus.OK).json(result);
     }
 }
-
-export default DataSetEntryController;
