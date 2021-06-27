@@ -1,4 +1,4 @@
-export class DataSetEntriesAPI {
+export class DataSetEntry {
     constructor(
         public dslUid: string,
         public startDate: string,
