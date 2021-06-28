@@ -7,10 +7,10 @@ import {
     UpdateDateColumn,
     OneToMany,
 } from 'typeorm';
-import { Category } from '../../Categoty/entities/category.entity';
+import { Category } from '../../Category/entities/category.entity';
 
 @Entity()
-export class DSL {
+export class DataSetLayer {
     @PrimaryGeneratedColumn() id: ObjectID;
     @Column() name: string;
     @Column() version: string;

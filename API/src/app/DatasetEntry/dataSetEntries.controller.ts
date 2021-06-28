@@ -1,11 +1,11 @@
 import { Controller, Get, Res, HttpStatus, Param } from '@nestjs/common';
 import { Response } from 'express';
-import { DataSetEntry } from './datasetEntry.models';
-import { DataSetEntryService } from './datasetEntry.service';
+import { DataSetEntries } from './dataSetEntries.models';
+import { DataSetEntriesService } from './dataSetEntries.service';
 
 @Controller('datasetEntry')
 export class DataSetEntryController {
-    constructor(private dataSetEntryService: DataSetEntryService) {}
+    constructor(private dataSetEntryService: DataSetEntriesService) {}
 
     @Get(':DSLUID/:DateStart/:DateEnd/:PLDCODE')
     getDataSetEntry(
@@ -15,7 +15,12 @@ export class DataSetEntryController {
         @Param('PLDCODE') pldCode: string,
         @Res() res: Response,
     ) {
-        const apiQuerry = new DataSetEntry(dslUid, startDate, endDate, pldCode);
+        const apiQuerry = new DataSetEntries(
+            dslUid,
+            startDate,
+            endDate,
+            pldCode,
+        );
         const result = this.dataSetEntryService.getData(apiQuerry);
         return res.status(HttpStatus.OK).json(result);
     }

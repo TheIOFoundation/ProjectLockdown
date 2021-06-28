@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseType, getMetadataArgsStorage } from 'typeorm';
-import { CategoryModule } from './Categoty';
+import { CategoryModule } from './Category';
 import { DataPointModule } from './DataPoint/dataPoint.module';
-import { DSLModule } from './DSL/DSL.module';
+import { DSLModule } from './DataSetLayer/DSL.module';
 const mongodbConnection: DatabaseType = 'mongodb';
 @Module({
     imports: [

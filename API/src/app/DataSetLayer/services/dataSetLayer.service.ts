@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { DSL } from '../entities/dsl.entity';
+import { DataSetLayer } from '../entities/dataSetLayer.entity';
 
 @Injectable()
 export class DSLService {
     constructor(
-        @InjectRepository(DSL)
-        private readonly dslRepository: Repository<DSL>,
+        @InjectRepository(DataSetLayer)
+        private readonly dslRepository: Repository<DataSetLayer>,
     ) {}
 
-    async findAll(): Promise<DSL[]> {
+    async findAll(): Promise<DataSetLayer[]> {
         return this.dslRepository.find();
     }
 }

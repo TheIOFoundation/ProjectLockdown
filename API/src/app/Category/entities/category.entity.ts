@@ -8,7 +8,7 @@ import {
     UpdateDateColumn,
 } from 'typeorm';
 import { DataPoint } from '../../DataPoint/entities/dataPoint.entity';
-import { DSL } from '../../DSL/entities/dsl.entity';
+import { DataSetLayer } from '../../DataSetLayer/entities/dataSetLayer.entity';
 
 @Entity('Category')
 export class Category {
@@ -32,6 +32,6 @@ export class Category {
     updatedAt: Date;
     @OneToMany(() => DataPoint, (dataPoint) => dataPoint.category)
     dataPoints: DataPoint[];
-    @ManyToOne(() => DSL, (dsl) => dsl.categories)
-    dsl: DSL;
+    @ManyToOne(() => DataSetLayer, (dsl) => dsl.categories)
+    dsl: DataSetLayer;
 }

@@ -1,12 +1,12 @@
 import { Controller, Get, HttpStatus } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { SwaggerBaseApiResponse } from '../../shared/dtos/base-api-response.dto';
-import { DSL } from '../entities/dsl.entity';
-import { DSLService } from '../services/dsl.service';
+import { DataSetLayer } from '../entities/dataSetLayer.entity';
+import { DSLService } from '../services/dataSetLayer.service';
 
 @ApiTags('DSL')
 @Controller('DSL')
-export class DSLController {
+export class DataSetLayerController {
     constructor(private readonly dslService: DSLService) {}
 
     @Get()
@@ -15,9 +15,9 @@ export class DSLController {
     })
     @ApiResponse({
         status: HttpStatus.OK,
-        type: SwaggerBaseApiResponse(DSL),
+        type: SwaggerBaseApiResponse(DataSetLayer),
     })
-    getCategories(): Promise<DSL[]> {
+    getCategories(): Promise<DataSetLayer[]> {
         return this.dslService.findAll();
     }
 }
