@@ -71,6 +71,8 @@ const App = (props) => {
   const [isLegendVisible, setIsLegendVisible] = useState(false);
   const [isTimeSliderVisible, setIsTimeSliderVisible] = useState(false);
   const [isCountrySearchVisible, setIsCountrySearchVisible] = useState(false);
+  const [isTotalsVisible, setIsTotalsVisible] = useState(false);
+  const [isTabMenuVisible, setIsTabMenuVisible] = useState(false);
   const [mapCord , setMapCord] = useState({
       lng: coords.lng,
       lat: coords.lat,
@@ -85,7 +87,9 @@ const App = (props) => {
           setEnvironment(envt)
           setIsLegendVisible(_find(components,UIComponent.Legend).is_visible || false);
           setIsTimeSliderVisible(_find(components, UIComponent.TimeSlider).is_visible || false);
-          setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false)
+          setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false);
+          setIsTotalsVisible(_find(components,UIComponent.Totals).is_visible || false);
+          setIsTabMenuVisible(_find(components,UIComponent.TabMenu).is_visible || false);
         }
    }, []);
 
@@ -231,6 +235,12 @@ const App = (props) => {
             case UIComponent.CountriesSearcher:
               setIsCountrySearchVisible(toBool(value));
               break;
+            case UIComponent.Totals:
+              setIsTotalsVisible(toBool(value));
+              break;
+            case UIComponent.TabMenu:
+              setIsTabMenuVisible(toBool(value));
+              break;
             default:
               break
           }
@@ -318,8 +328,8 @@ const App = (props) => {
             isCountrySearchVisible={isCountrySearchVisible}
             mapCord={mapCord}
           />
-          <TabMenu isDark={isDark} setDarkMode={updateIsDark} />
-          <Totals dark={isDark} />
+          {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
+          {isTotalsVisible && <Totals dark={isDark} />}
           {isLegendVisible && <Legend dark={isDark} />}
           {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
           <LanguageSelector

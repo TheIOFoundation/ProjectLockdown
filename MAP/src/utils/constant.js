@@ -1,5 +1,7 @@
 export const UIComponent = {
     TimeSlider: "TimeSlider",
     Legend: "Legend",
-    CountriesSearcher: "CountriesSearcher"
+    CountriesSearcher: "CountriesSearcher",
+    Totals: "Totals",
+    TabMenu: "TabMenu"
 }
