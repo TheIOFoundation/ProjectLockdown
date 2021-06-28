@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import DataSetEntriesController from './datasetEntry.controller';
+import { DataSetEntryController } from './datasetEntry.controller';
 import { DataSetEntryService } from './datasetEntry.service';
 
 @Module({
     imports: [],
-    controllers: [DataSetEntriesController],
+    controllers: [DataSetEntryController],
     providers: [DataSetEntryService],
 })
 export class DataSetEntriesModule {}
