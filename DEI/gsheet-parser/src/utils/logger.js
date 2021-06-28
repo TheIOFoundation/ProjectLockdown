@@ -4,6 +4,10 @@ class logger {
     console.log(string);
   }
 
+  static debug(string) {
+    console.log(string);
+  }
+
   static error(exception) {
     console.dir(exception);
   }
