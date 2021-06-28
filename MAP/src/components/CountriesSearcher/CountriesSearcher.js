@@ -31,11 +31,6 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
 
   const searchHook = useCallback(() => {
     window.addEventListener('keydown', onPressKey);
-    document.addEventListener('click', closeComponent);
-    function closeComponent() {
-      // if (showSearchInput) setShowSearchInput(!showSearchInput);
-      
-    }
     function onPressKey(e) {
       if (e.code === 'Enter' && showSearchInput) {
         e.preventDefault();
@@ -54,7 +49,6 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
           setGeoResult();
           try {
             map.flyTo(geoResult.center, 500);
-            // map.flyTo()
           } catch (error) {
             console.log('geoResult.center: ', geoResult.center);
             console.error(error);
@@ -64,7 +58,6 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
     }
     return () => {
       window.removeEventListener('keydown', onPressKey);
-      document.removeEventListener('click', closeComponent);
     };
   }, [geoResult.center, map, showSearchInput]);
   const geocoderHook = useCallback(() => {
