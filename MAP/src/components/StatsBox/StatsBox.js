@@ -4,8 +4,8 @@ import { fetchTotals } from '../../services';
 import './StatsBox.css';
 import { toBool } from '../../utils/utils';
 
-const separateNumber = (number) => {
-  const nfObject = new Intl.NumberFormat('es-ES');
+const separateNumber = (number, format) => {
+  const nfObject = new Intl.NumberFormat(format);
   return nfObject.format(+number);
 };
 const StatsBox = ({
@@ -14,6 +14,7 @@ const StatsBox = ({
   endDate,
   selectedDate = '2021-01-01',
   daysRange = 10,
+  locale = 'en-US'
 }) => {
   const [totalsData, setTotalsData] = useState({
     lockdown: 0,
@@ -30,11 +31,11 @@ const StatsBox = ({
     fetchTotals(startDate, endDate, selectedDate, daysRange)
       .then((res) => {
         const { affected } = res;
-        res.affected = separateNumber(affected);
+        res.affected = separateNumber(affected, locale);
         setTotalsData(res);
       })
       .catch((e) => console.log(e));
-  }, [startDate, endDate, selectedDate, daysRange]);
+  }, [startDate, endDate, selectedDate, daysRange, locale]);
   return (
     <div
       style={{
