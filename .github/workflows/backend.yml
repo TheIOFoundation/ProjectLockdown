@@ -1,0 +1,41 @@
+# This is a basic workflow to help deploy the backend code to Azure server
+# it triggers on push and pull request events to the master branch
+# it runs the jobs on the API/ directory and deploys using secret credentials
+# Update the secret credentials with details from the Azure web server.
+
+name: "Pipeline for Azure webapp deployment"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
+jobs:
+  build_and_deploy:
+    name: Build test and Deploy Node App to Azure
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: npm install, build, and test
+        run: |
+          cd API/
+          npm install
+          npm run build --if-present
+          npm run test --passWithNoTests
+          echo Successful
+
+      - name: "Deploy to Azure"
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ secrets.AZURE_WEBAPP_PACKAGE_PATH }}
+        if: github.ref == 'refs/heads/master' && job.status == 'success'
