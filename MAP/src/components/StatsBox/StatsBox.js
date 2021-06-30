@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { fetchTotals } from '../../services';
-import './Totals.css';
+import './StatsBox.css';
 import { toBool } from '../../utils/utils';
 
 const separateNumber = (number) => {
   const nfObject = new Intl.NumberFormat('es-ES');
   return nfObject.format(+number);
 };
-const Totals = ({
+const StatsBox = ({
   dark,
   startDate,
   endDate,
@@ -57,4 +57,4 @@ const Totals = ({
   );
 };
 
-export default Totals;
+export default StatsBox;

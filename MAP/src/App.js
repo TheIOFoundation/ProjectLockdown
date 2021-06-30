@@ -2,7 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react';
 import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
-import Totals from './components/Totals/Totals';
+import StatsBox from './components/StatsBox/StatsBox';
 import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
@@ -329,9 +329,8 @@ const App = (props) => {
             mapCord={mapCord}
           />
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
-          {isTotalsVisible && <Totals dark={isDark} />}
+          {isTotalsVisible && <StatsBox dark={isDark} />}
           {isLegendVisible && <Legend dark={isDark} />}
-          {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
           <LanguageSelector
             languageChangeHandler={setCurrentLanguage}
             dark={isDark}
