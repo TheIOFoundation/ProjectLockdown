@@ -13,8 +13,7 @@ const StatsBox = ({
   startDate,
   endDate,
   selectedDate = '2021-01-01',
-  daysRange = 10,
-  locale = 'en-US'
+  daysRange = 10
 }) => {
   const [totalsData, setTotalsData] = useState({
     lockdown: 0,
@@ -30,12 +29,10 @@ const StatsBox = ({
   useEffect(() => {
     fetchTotals(startDate, endDate, selectedDate, daysRange)
       .then((res) => {
-        const { affected } = res;
-        res.affected = separateNumber(affected, locale);
         setTotalsData(res);
       })
       .catch((e) => console.log(e));
-  }, [startDate, endDate, selectedDate, daysRange, locale]);
+  }, [startDate, endDate, selectedDate, daysRange]);
   return (
     <div
       style={{
@@ -47,12 +44,12 @@ const StatsBox = ({
       <div className="LeftDiv">
         <div className="label">{t('header.totals.territoriesLockdown')}</div>
         {/* <div className='data'>{totalsData[Object.keys(totalsData)[0]].lockdown}</div> */}
-        <div className="data">{totalsData.lockdown}</div>
+        <div className="data">{separateNumber(totalsData.lockdown, t('languageId'))}</div>
       </div>
       <div>
         <div className="label">{t('header.totals.peopleAffected')}</div>
         {/* <div className='data'>{totalsData[Object.keys(totalsData)[0]].affected}</div> */}
-        <div className="data">{totalsData.affected}</div>
+        <div className="data">{separateNumber(totalsData.affected, t('languageId'))}</div>
       </div>
     </div>
   );

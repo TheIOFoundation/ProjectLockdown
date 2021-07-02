@@ -329,7 +329,7 @@ const App = (props) => {
             mapCord={mapCord}
           />
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
-          {isStatsBoxVisible && <StatsBox dark={isDark} locale={currentLanguage} />}
+          {isStatsBoxVisible && <StatsBox dark={isDark} />}
           {isLegendVisible && <Legend dark={isDark} />}
           <LanguageSelector
             languageChangeHandler={setCurrentLanguage}
