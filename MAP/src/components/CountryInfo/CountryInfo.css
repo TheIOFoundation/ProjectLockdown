@@ -21,11 +21,12 @@
 }
 
 .CountryInfo {
-  background-color: #e0e0e0;
+  background-color: #ffffff;
   color: #333333;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
 }
 .countryInfo{
   border: 1px solid;
+  border-color: grey;
 }
