@@ -42,7 +42,7 @@ const StatsBox = ({
         backgroundColor: `${dark ? '#333333' : 'white'}`,
         marginTop: '3vh',
       }}
-      className={`Totals ${dark && 'dark'}`}
+      className={`StatsBox ${dark && 'dark'}`}
     >
       <div className="LeftDiv">
         <div className="label">{t('header.totals.territoriesLockdown')}</div>

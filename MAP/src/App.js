@@ -88,7 +88,7 @@ const App = (props) => {
           setIsLegendVisible(_find(components,UIComponent.Legend).is_visible || false);
           setIsTimeSliderVisible(_find(components, UIComponent.TimeSlider).is_visible || false);
           setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false);
-          setIsStatsBoxVisible(_find(components,UIComponent.Totals).is_visible || false);
+          setIsStatsBoxVisible(_find(components,UIComponent.StatsBox).is_visible || false);
           setIsTabMenuVisible(_find(components,UIComponent.TabMenu).is_visible || false);
         }
    }, []);
@@ -235,7 +235,7 @@ const App = (props) => {
             case UIComponent.CountriesSearcher:
               setIsCountrySearchVisible(toBool(value));
               break;
-            case UIComponent.Totals:
+            case UIComponent.StatsBox:
               setIsStatsBoxVisible(toBool(value));
               break;
             case UIComponent.TabMenu:
