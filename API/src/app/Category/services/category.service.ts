@@ -13,4 +13,8 @@ export class CategoryService {
     async findById(id: number): Promise<Category> {
         return this.repository.getById(id);
     }
+
+    async create(input: Category): Promise<Category> {
+        return this.repository.save(input);
+    }
 }

@@ -10,8 +10,8 @@ import { Category } from '../../Category/entities/category.entity';
 
 @Entity('DataPoint')
 export class DataPoint {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
     @Column()
     nameShort: string;
     @Column()
