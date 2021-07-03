@@ -55,6 +55,35 @@ The following diagram showcases the general design of the API module:
 [WIP]
 
 <a href="#top">Back to top</a>
+## Running the app locally
+
+To get the MAP running locally, you will need to have
+ [Node.js](https://nodejs.org/en/) installed.
+
+Clone the repository.
+
+`git clone https://github.com/TheIOFoundation/ProjectLockdown.git`
+
+Navigate to the MAP folder.
+
+`cd ProjectLockdown`
+
+`cd API`
+
+Install the required dependencies.
+
+`npm install`
+
+Create a `.env` file from the template `.env.example` file.
+
+Run the app in development mode.
+
+`npm start`
+
+
+
+
+Runs the app in the development mode on Open http://localhost:4000/api/v2/ to view it in your browser.
 
 # Accessing the module
 To access the API, please visit
