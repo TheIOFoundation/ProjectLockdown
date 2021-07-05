@@ -1,14 +1,14 @@
-import Totals from './Totals';
+import StatsBox from './StatsBox';
 
 export default {
-  title: 'Component/Totals',
-  component: Totals,
+  title: 'Component/StatsBox',
+  component: StatsBox,
   argTypes: {
     dark: { control: 'boolean' },
   },
 };
 
-const Template = (args) => <Totals {...args} />;
+const Template = (args) => <StatsBox {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

@@ -31,7 +31,15 @@
             {
                 "name":"CountriesSearcher",
                 "is_visible": true
-            } 
+            },
+            {
+                "name":"StatsBox",
+                "is_visible": true
+            },
+            {
+                "name":"TabMenu",
+                "is_visible": true
+            }
         ],
         "overlay": {
             "tabs": [

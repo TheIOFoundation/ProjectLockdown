@@ -1,4 +1,4 @@
-.Totals {
+.StatsBox {
   z-index: 1000;
   display: flex;
   position: relative;
@@ -15,7 +15,7 @@
   background-color: white;
 }
 
-.Totals div {
+.StatsBox div {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
   cursor: default;
 }
 
-.Totals .dark {
+.StatsBox .dark {
   background-color: #333333 !important;
   color: white;
 }

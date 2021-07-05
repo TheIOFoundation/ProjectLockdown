@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { fetchTotals } from '../../services';
-import './Totals.css';
+import './StatsBox.css';
 import { toBool } from '../../utils/utils';
 
-const separateNumber = (number) => {
-  const nfObject = new Intl.NumberFormat('es-ES');
+const separateNumber = (number, format) => {
+  const nfObject = new Intl.NumberFormat(format);
   return nfObject.format(+number);
 };
-const Totals = ({
+const StatsBox = ({
   dark,
   startDate,
   endDate,
   selectedDate = '2021-01-01',
-  daysRange = 10,
+  daysRange = 10
 }) => {
   const [totalsData, setTotalsData] = useState({
     lockdown: 0,
@@ -29,8 +29,6 @@ const Totals = ({
   useEffect(() => {
     fetchTotals(startDate, endDate, selectedDate, daysRange)
       .then((res) => {
-        const { affected } = res;
-        res.affected = separateNumber(affected);
         setTotalsData(res);
       })
       .catch((e) => console.log(e));
@@ -41,20 +39,20 @@ const Totals = ({
         backgroundColor: `${dark ? '#333333' : 'white'}`,
         marginTop: '3vh',
       }}
-      className={`Totals ${dark && 'dark'}`}
+      className={`StatsBox ${dark && 'dark'}`}
     >
       <div className="LeftDiv">
         <div className="label">{t('header.totals.territoriesLockdown')}</div>
         {/* <div className='data'>{totalsData[Object.keys(totalsData)[0]].lockdown}</div> */}
-        <div className="data">{totalsData.lockdown}</div>
+        <div className="data">{separateNumber(totalsData.lockdown, t('languageId'))}</div>
       </div>
       <div>
         <div className="label">{t('header.totals.peopleAffected')}</div>
         {/* <div className='data'>{totalsData[Object.keys(totalsData)[0]].affected}</div> */}
-        <div className="data">{totalsData.affected}</div>
+        <div className="data">{separateNumber(totalsData.affected, t('languageId'))}</div>
       </div>
     </div>
   );
 };
 
-export default Totals;
+export default StatsBox;
