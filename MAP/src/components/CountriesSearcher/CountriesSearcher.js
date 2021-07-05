@@ -20,7 +20,7 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
   const [parsedText, setParsedText] = useState('');
 
   const onClick = () => {
-    setShowSearchInput((searchInput) => !searchInput);
+    setShowSearchInput(!showSearchInput);
   };
 
   const onSearch = (e) => {
@@ -31,11 +31,6 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
 
   const searchHook = useCallback(() => {
     window.addEventListener('keydown', onPressKey);
-    document.addEventListener('click', closeComponent);
-    function closeComponent() {
-      if (showSearchInput) setShowSearchInput(!showSearchInput);
-      
-    }
     function onPressKey(e) {
       if (e.code === 'Enter' && showSearchInput) {
         e.preventDefault();
@@ -54,7 +49,6 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
           setGeoResult();
           try {
             map.flyTo(geoResult.center, 500);
-            // map.flyTo()
           } catch (error) {
             console.log('geoResult.center: ', geoResult.center);
             console.error(error);
@@ -64,7 +58,6 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
     }
     return () => {
       window.removeEventListener('keydown', onPressKey);
-      document.removeEventListener('click', closeComponent);
     };
   }, [geoResult.center, map, showSearchInput]);
   const geocoderHook = useCallback(() => {
@@ -100,12 +93,15 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
 
   return (
     <div
-      onClick={onClick}
       className={`countriesSearcher 
       ${showSearchInput ? 'show' : ''}
       ${dark ? 'dark' : ''}`}
     >
-      <span className="icon-provider"> {magnify} </span>
+      <span
+          className="icon-provider"
+          onClick={onClick}>
+        {magnify}
+      </span>
       <div>
         <input className="placeholder" value={results} disabled />
         <input className="countryInput" onInput={onSearch} value={parsedText} />
