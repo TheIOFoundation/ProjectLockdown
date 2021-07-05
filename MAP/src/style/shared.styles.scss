@@ -16,11 +16,11 @@
   circle {
     stroke-dasharray: 85, 200;
     /* 0px is requires for edge 15 and lower */
-    stroke-dashoffset: 0px;
+    stroke-dashoffset: 0;
     animation: dash 2000ms ease-in-out infinite;
-    strokelinecap: round;
-    strokewidth: var(--spinner-strokeWidth, 4px);
-    strokemiterlimit: 10;
+    stroke-linecap: round;
+    stroke-width: var(--spinner-strokeWidth, 4px);
+    stroke-miterlimit: 10;
     fill: none;
     stroke: #828282;
   }
@@ -35,7 +35,7 @@
     0% {
       stroke-dasharray: 1, 200;
       /* 0px is requires for edge 15 and lower */
-      stroke-dashoffset: 0px;
+      stroke-dashoffset: 0;
     }
     50% {
       stroke-dasharray: 89, 200;
@@ -54,7 +54,7 @@
     }
 
     circle {
-      strokelinecap: square;
+      stroke-linecap: square;
     }
   }
 
