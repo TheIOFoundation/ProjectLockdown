@@ -1,8 +1,8 @@
 export const selectedWorldview = 'US';
 
-export function worldStyle(lockdown_status) {
+export function worldStyle(style_selector) {
   let value;
-  switch (lockdown_status) {
+  switch (style_selector) {
     case '1':
       value = '#eb5757'; // yes
       break;
@@ -14,6 +14,25 @@ export function worldStyle(lockdown_status) {
       break;
     default:
       value = '#ccc'; // undefined or no value
+  }
+
+  return value;
+}
+
+export function worldStyleColor(style_selector) {
+  let value;
+  switch (style_selector) {
+    case '1':
+      value = 'red'; // yes
+      break;
+    case '2':
+      value = 'orange'; // partial
+      break;
+    case '3':
+      value = 'green'; // no
+      break;
+    default:
+      value = 'grey'; // undefined or no value
   }
 
   return value;

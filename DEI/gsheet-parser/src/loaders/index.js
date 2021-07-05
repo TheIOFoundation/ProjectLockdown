@@ -5,6 +5,23 @@ import totalsLoader from './totals/totals';
 import updatesLoader from './lockdown/updates';
 import logger from '../utils/logger';
 
+import dotenv from 'dotenv';
+import fs from 'fs';
+import connect from '../connect';
+
+
+
+// load .env
+if (fs.existsSync('.env')) {
+  logger.debug('Using .env file to supply config environment variables');
+  dotenv.config({ path: '.env' });
+}
+
+const db = `mongodb://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB}:${process.env.MONGO_PORT}/project-lockdown?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@${process.env.MONGO_DB_USER}@`;
+
+connect({db});
+
+
 /**
  * Execute all loaders
  */

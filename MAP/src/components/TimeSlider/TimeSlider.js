@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import css from 'csz';
-import format from 'date-fns/format';
 import { enUS } from 'date-fns/locale';
-import { addDays } from 'date-fns';
+import { addDays , format} from 'date-fns';
 import { calendar } from '../../assets/icons/icons.js';
 import DatePicker from '../DatePicker/DatePicker';
 import PlayButton from '../PlayButton/PlayButton';
+import { toBool } from '../../utils/utils.js';
 
 const sliderWrapper = css`
   & {
@@ -439,6 +439,7 @@ const mobileRange = 70;
 
 const languages = false;
 const TimeSlider = (props) => {
+  const dark = toBool(props.dark);
   const [currentDateValue, setCurrentDateValue] = useState(
     firstDayDefaultOffset,
   );
@@ -484,10 +485,12 @@ const TimeSlider = (props) => {
         isoLanguage = 'enUS';
       }
     }
-    return format(date, 'dd-MMMM-yyyy', {
+      return format(date, 'yyyy-MM-dd', {
       locale: languages ? languages[isoLanguage] : enUS,
     });
   };
+
+  
 
   useEffect(() => {
     setCurrentSliderRange(days);
@@ -502,9 +505,10 @@ const TimeSlider = (props) => {
     const stepsWidth = rangeDOM.offsetWidth / currentRange;
     sliderDOM.style.left = `${finalWidth + stepsWidth * newValue}px`;
     setCurrentDateValue(newValue);
+    const currentRangeDate =  new Date(currentSliderRange[0][parseInt(newValue)]);
     setCurrentSelectedDay(
       toSliderString(
-        new Date(currentSliderRange[parseInt(newValue)]),
+        currentRangeDate,
         props.i18n.locale,
       ),
     );
@@ -576,25 +580,18 @@ const TimeSlider = (props) => {
 
   const submitChanges = () => {
     props.onChange(
-      currentSliderRange[currentDateValue],
+      currentSliderRange[0][parseInt(currentDateValue, 10)],
       currentSliderRange[0],
       currentSliderRange[currentSliderRange.length - 1],
     );
   };
   return (
-    <div
-      className={`sliderWrapper ${sliderWrapper} ${
-        props.children !== '' ? 'open' : ''
-      }`}
-      ref={container}
-    >
+
+      <div className={`sliderWrapper ${sliderWrapper} ${dark ? 'dark': ''}`}>
+
       <PlayButton state={playerState} toggleState={onPlayerStateToggle} />
-      {props.children}
-      <div
-        className={`${selectStyles} ${rangeStyles} ${
-          props.children !== '' ? 'open' : ''
-        }`}
-      >
+      
+        <div className={`${selectStyles} ${dark ? 'dark': ''} ${rangeStyles}`} ref={container}>
         <DatePicker
           startDate={new Date(firstDay)}
           close={calendarWillClose}
@@ -602,15 +599,15 @@ const TimeSlider = (props) => {
           show={showDatePicker}
           customClass={datePickerPosition}
         />
-        <div className={`${sliderSelector}`} ref={dateRef}>
-          <span>{currentSelectedDay.toString()}</span>
+        <div className={`${sliderSelector} ${dark ? 'dark': ''}`} ref={dateRef}>
+          <span>{currentSelectedDay?.toString()}</span>
         </div>
         <span
           title="Select Start Date"
           className={`first ${tooltipCss}`}
           onClick={(e) => onBtnClick('left')}
         >
-          <IconBtn /> {toSliderString(new Date(currentSelectedDay), 'en')}
+          <IconBtn /> {toSliderString(new Date(currentSelectedDay? currentSelectedDay : null), 'en')}
         </span>
         <button
           onClick={(e) => onBtnClick('left')}
@@ -626,7 +623,7 @@ const TimeSlider = (props) => {
           value={currentDateValue}
         />
         <span title="Select End Date" className={`last ${tooltipCss}`}>
-          {toSliderString(new Date(lastDay), 'en')}
+          {toSliderString(new Date(lastDay? lastDay : null), 'en')}
         </span>
       </div>
     </div>

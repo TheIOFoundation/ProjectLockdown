@@ -17,20 +17,7 @@ const renderMenu = (
   currentDropdown,
   onDropDown,
   onLocateChange,
-  locale = {
-    t: s => {
-      switch (s) {
-        case 'menu.userPreferenceSection.theme.action':
-          return 'Toggle ';
-        case 'menu.userPreferenceSection.theme.light':
-          return 'Light mode';
-        case 'menu.userPreferenceSection.theme.dark':
-          return 'Dark mode';
-        default:
-          return s;
-      }
-    },
-  }
+  locale
 ) => {
   switch (menuItem) {
     case 'info':
@@ -44,7 +31,7 @@ const renderMenu = (
  }) => 
             <>
             <h1>Project Lockdown</h1>
-            <p className="ld-alpha">
+            <p className="ld-alpha banner">
               {t('menu.informationSection.banner')}
             </p>
             <p>
@@ -210,7 +197,7 @@ const renderMenu = (
         title: 'settings',
         template: (
           <Settings
-            darkMode={isDark}
+            isDark={isDark}
             setDarkMode={setDarkMode}
             onClose={callback}
             onLocateChange={onLocateChange}
@@ -326,8 +313,6 @@ export class TabMenu extends Component {
       this.prevVal = '';
       return;
     }
-
-    // this.props.changeRoute(renderMenu(val));
 
     this.prevVal = val;
     this.setState({

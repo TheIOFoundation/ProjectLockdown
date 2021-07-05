@@ -67,7 +67,7 @@ const en = {
     },
     userPreferenceSection: {
       theme: {
-        action: 'Toggle ',
+        action: 'Switch to ',
         dark: 'Dark mode',
         light: 'Light mode',
       },

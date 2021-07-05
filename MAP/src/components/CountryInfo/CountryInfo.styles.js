@@ -105,24 +105,22 @@ export const reports = css`
     }
     & .placeholder {
       @media (max-width: 350px) {
-        background: url('https://github.com/Code-for-All/lockdown/blob/master/src/assets/images/pld-report-sm.png?raw=true')
+        background: url('./assets/images/pld-report-sm.png') no-repeat;
           no-repeat;
         background-size: contain;
         background-position: center;
       }
       @media (max-width: 960px) {
-        background: url('https://github.com/Code-for-All/lockdown/blob/master/src/assets/images/pld-report-med.png?raw=true')
-          no-repeat;
+        background: url('./assets/images/pld-report-med.png') no-repeat;
         background-size: contain;
         background-position: center;
       }
-      background: url('https://github.com/Code-for-All/lockdown/blob/master/src/assets/images/pld-report-lrg.png?raw=true');
+      background: url('./assets/images/pld-report-lrg.png');
       height: 100%;
       width: 100%;
       position: absolute;
       background-size: cover;
       opacity: 0.3;
-      z-index: -1;
     }
   }
 `;
@@ -216,7 +214,7 @@ export const countryInfoStyles = css`
     font-variant-numeric: tabular-nums;
     margin-bottom: 7px;
     padding-bottom: 7px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #828282;
     width: 100%;
     .dark & {
       border-bottom: 1px solid #e0e0e0;
