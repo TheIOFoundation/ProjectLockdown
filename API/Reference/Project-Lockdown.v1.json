@@ -47737,7 +47737,9 @@
     "/Users/{UserUID}": {
       "get": {
         "summary": "🚧 Users",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -57007,7 +57009,10 @@
               "$ref": "#/components/schemas/Stat"
             }
           }
-        }
+        },
+        "x-tags": [
+          "Models"
+        ]
       }
     },
     "parameters": {
