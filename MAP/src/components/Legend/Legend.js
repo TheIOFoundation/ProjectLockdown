@@ -38,8 +38,8 @@ export class Legend extends Component {
   }
 
   onTouchEnd() {
-    let side = this.state.x;
-    let vertical = this.state.y;
+    let side;
+    let vertical;
     const x = window.innerWidth || window.clientWidth;
     const y = window.innerHeight || window.clientHeight;
     const currentVertical = Number(this.btn.style.top.replace('px', ''));
@@ -117,7 +117,7 @@ export class Legend extends Component {
                        style={{cursor: "default"}}/>
                 </span>
                 <Translation>
-                  {(t, { i18n }) => <span style={{cursor: "default"}}>
+                  {(t) => <span style={{cursor: "default"}}>
                     {t(`${legends.title}`)}
                   </span>}
                 </Translation>
