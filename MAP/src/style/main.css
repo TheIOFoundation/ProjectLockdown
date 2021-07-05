@@ -268,6 +268,7 @@ a:visited {
   overflow: visible;
   background: transparent;
   font-weight: 700;
+  position: relative;
 }
 
 .ld-menu-nav button:hover {
@@ -335,10 +336,6 @@ a:visited {
 
 .mb-only {
   display: none;
-}
-
-.ld-menu-nav button {
-  position: relative;
 }
 
 .ld-menu--notification {
