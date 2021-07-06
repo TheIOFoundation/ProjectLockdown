@@ -69,8 +69,7 @@ const CountryInfo = (props) => {
     <div className={`container ${dark ? 'dark' : ''} CountryInfo`}>
       <div
         style={{
-          color: `${dark ? 'white' : 'black'}`,
-          // backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
+          color: `${dark ? 'white' : 'black'}`
         }}
         className={tabStyles}
       >
@@ -86,11 +85,7 @@ const CountryInfo = (props) => {
         <button onClick={props.onClose}>{closeIcon}</button>
       </div>
       <div
-        style={{
-          color: `${dark ? 'white' : 'black'}`,
-          backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`,
-          minHeight: 'inherit'
-        }}
+        style={{minHeight: 'inherit'}}
         className={`countryInfo ${countryInfoStyles} ${
           dark ? 'dark' : ''
         }`}
