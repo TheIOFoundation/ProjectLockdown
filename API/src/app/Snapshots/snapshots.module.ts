@@ -3,6 +3,7 @@ import { SnapshotsController } from './snapshots.controller';
 import { SnapshotsService } from './snapshots.service';
 
 @Module({
+    imports: [],
     controllers: [SnapshotsController],
     providers: [SnapshotsService],
 })
