@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import data from '../../../../MAP/public/data/snapshot.json';
+import * as data from '../../../../MAP/public/data/snapshot.json';
 
 interface IsoValue {
     iso: string;
