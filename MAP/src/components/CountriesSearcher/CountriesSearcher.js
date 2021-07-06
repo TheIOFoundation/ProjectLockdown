@@ -3,7 +3,6 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import './countriesSearcher.css';
 import { toBool } from '../../utils/utils';
-
 import { magnify } from '../../assets/icons/icons.js';
 // @fixme uncomment after implementing router
 // import { router } from "../router.js";
@@ -46,7 +45,6 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
           setResults('');
           setGeoResult({});
           setParsedText('');
-          setGeoResult();
           try {
             map.flyTo(geoResult.center, 500);
           } catch (error) {
@@ -73,7 +71,7 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
     mapGeocoder.setLanguage(i18n.locale);
     setGeocoder(mapGeocoder);
 
-    function onGetResult() {
+    function onGetResult(results) {
       const { features } = results;
       if (features[0]) {
         const countryName = features[0].text.toUpperCase();
@@ -84,7 +82,7 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
         setGeoResult({});
       }
     }
-  }, [i18n, results]);
+  }, [i18n]);
 
   useEffect(() => {
     geocoderHook();
