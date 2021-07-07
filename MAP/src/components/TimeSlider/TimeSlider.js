@@ -537,24 +537,18 @@ const TimeSlider = (props) => {
 
     if (datePickerPosition === 'left') {
       let plusDays = 1;
-      for (let i = 1; i <= currentRange; i++) {
-        if (i === 1) {
-          days.push(date);
-        } else {
-          days.push(rangePreProcces(date, plusDays));
-          plusDays++;
-        }
+      days.push(date);
+      for (let i = 2; i <= currentRange; i++) {
+        days.push(rangePreProcces(date, plusDays));
+        plusDays++;
       }
     } else {
       let lessDays = currentRange - 1;
-      for (let i = 1; i <= currentRange; i++) {
-        if (i === currentRange) {
-          days.push(date);
-        } else {
-          days.push(rangePreProcces(date, -1 * lessDays));
-          lessDays--;
-        }
+      for (let i = 1; i < currentRange; i++) {
+        days.push(rangePreProcces(date, -1 * lessDays));
+        lessDays--;
       }
+      days.push(date);
     }
     setCurrentSliderRange(days);
     setCurrentSelectedDay(toSliderString(date, props.i18n.locale));
@@ -572,9 +566,9 @@ const TimeSlider = (props) => {
     setDatePickerPosition(datePickerPosition.replace(' hide', ''));
   };
 
-  const rangePreProcces = (date, days) => {
+  const rangePreProcces = (date, numDays) => {
     const newDate = new Date(date);
-    newDate.setDate(date.getDate() + days);
+    newDate.setDate(date.getDate() + numDays);
     return newDate;
   };
 
