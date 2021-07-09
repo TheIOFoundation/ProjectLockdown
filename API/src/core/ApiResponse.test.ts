@@ -11,7 +11,8 @@ describe('Test API response class with different content type', () => {
             eventEmitter: events.EventEmitter,
         });
         const data = {
-            text: 'Hello world!',
+            meta: { path: 'some random' },
+            data: { text: 'Hello world!' },
         };
 
         res.on('end', () => {
@@ -36,7 +37,8 @@ describe('Test API response class with different content type', () => {
             eventEmitter: events.EventEmitter,
         });
         const data = {
-            text: 'Hello world!',
+            meta: { path: 'some random' },
+            data: { text: 'Hello world!' },
         };
 
         res.on('end', () => {
@@ -62,7 +64,8 @@ describe('Test API response class with different content type', () => {
             eventEmitter: events.EventEmitter,
         });
         const data = {
-            text: 'Hello world!',
+            meta: { path: 'some random' },
+            data: { text: 'Hello world!' },
         };
 
         const apiResponse = new SuccessResponse('Test suceeded', data);

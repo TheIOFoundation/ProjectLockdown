@@ -5,7 +5,7 @@ import {
     ResponseFormater,
     jsonFormater,
 } from './ResponseFormater';
-
+import { BaseApiResponse } from '../app/shared/dtos/base-api-response.dto';
 enum ResponseStatus {
     SUCCESS = 200,
     BAD_REQUEST = 400,
@@ -133,7 +133,7 @@ export abstract class ApiResponse {
 export class SuccessResponse<T> extends ApiResponse {
     constructor(
         message: string,
-        private data: T,
+        private data: BaseApiResponse<T>,
         formaterQueue = [defaultFormater],
     ) {
         super(ResponseStatus.SUCCESS, message, formaterQueue);
