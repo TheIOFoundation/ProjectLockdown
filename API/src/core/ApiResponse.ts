@@ -5,7 +5,11 @@ import {
     ResponseFormater,
     jsonFormater,
 } from './ResponseFormater';
-import { BaseApiResponse } from '../app/shared/dtos/base-api-response.dto';
+import {
+    BaseApiErrorObject,
+    BaseApiErrorResponse,
+    BaseApiResponse,
+} from '../app/shared/dtos/base-api-response.dto';
 enum ResponseStatus {
     SUCCESS = 200,
     BAD_REQUEST = 400,
@@ -122,6 +126,7 @@ export abstract class ApiResponse {
         //Remove unneeded fields
         delete clone.status;
         delete clone.formaterQueue;
+
         for (const i in clone) {
             if (typeof clone[i] === 'undefined') delete clone[i];
         }
@@ -144,16 +149,43 @@ export class SuccessResponse<T> extends ApiResponse {
     }
 }
 
-export class InternalErrorResponse extends ApiResponse {
-    constructor(message = 'Internal Error', formaterQueue = [defaultFormater]) {
-        super(ResponseStatus.INTERNAL_ERROR, message, formaterQueue);
+export abstract class ErrorResponse
+    extends ApiResponse
+    implements BaseApiErrorResponse
+{
+    constructor(
+        statusCode: ResponseStatus,
+        message = 'Bad Request',
+        public error: BaseApiErrorObject,
+        formaterQueue = [defaultFormater],
+    ) {
+        super(statusCode, message, formaterQueue);
+    }
+
+    send(res: Response): Response {
+        return super.prepare<ErrorResponse>(res, this);
     }
 }
 
-export class NotFoundResponse extends ApiResponse {
+export class InternalErrorResponse extends ErrorResponse {
+    constructor(
+        message = 'Internal Error',
+        error: BaseApiErrorObject,
+        formaterQueue = [defaultFormater],
+    ) {
+        super(ResponseStatus.INTERNAL_ERROR, message, error, formaterQueue);
+    }
+}
+
+export class NotFoundResponse extends ErrorResponse {
     private url: string | undefined;
-    constructor(message = 'Not Found', formaterQueue = [defaultFormater]) {
-        super(ResponseStatus.NOT_FOUND, message, formaterQueue);
+
+    constructor(
+        message = 'Not Found',
+        error: BaseApiErrorObject,
+        formaterQueue = [defaultFormater],
+    ) {
+        super(ResponseStatus.NOT_FOUND, message, error, formaterQueue);
     }
 
     send(res: Response) {
@@ -162,23 +194,32 @@ export class NotFoundResponse extends ApiResponse {
     }
 }
 
-export class AuthFailureResponse extends ApiResponse {
+export class AuthFailureResponse extends ErrorResponse {
     constructor(
         message = 'Authentication Failure',
+        error: BaseApiErrorObject,
         formaterQueue = [defaultFormater],
     ) {
-        super(ResponseStatus.UNAUTHORIZED, message, formaterQueue);
+        super(ResponseStatus.UNAUTHORIZED, message, error, formaterQueue);
     }
 }
 
-export class ForbiddenReponse extends ApiResponse {
-    constructor(message = 'Forbidden', formaterQueue = [defaultFormater]) {
-        super(ResponseStatus.FORBIDDEN, message, formaterQueue);
+export class ForbiddenReponse extends ErrorResponse {
+    constructor(
+        message = 'Forbidden',
+        error: BaseApiErrorObject,
+        formaterQueue = [defaultFormater],
+    ) {
+        super(ResponseStatus.FORBIDDEN, message, error, formaterQueue);
     }
 }
 
-export class BadRequestResponse extends ApiResponse {
-    constructor(message = 'Bad Request') {
-        super(ResponseStatus.BAD_REQUEST, message);
+export class BadRequestResponse extends ErrorResponse {
+    constructor(
+        message = 'Bad Request',
+        error: BaseApiErrorObject,
+        formaterQueue = [defaultFormater],
+    ) {
+        super(ResponseStatus.BAD_REQUEST, message, error, formaterQueue);
     }
 }
