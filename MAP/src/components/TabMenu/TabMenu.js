@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import '../../style/main.css';
 import './TabMenu.scss';
 import { Expandable } from '../Expandable/Expandable';
@@ -6,7 +6,7 @@ import { Ticker } from '../Ticker/Ticker';
 import { Settings } from '../Settings/Settings';
 import { installMediaQueryWatcher } from '../../utils/media-query';
 import Tabs from '../Tabs/Tabs';
-import { burger, close as closeIcon, info, settings } from '../../assets/icons/icons.js';
+import { close as closeIcon, info, settings } from '../../assets/icons/icons.js';
 import { Translation } from 'react-i18next';
 
 const renderMenu = (
@@ -380,14 +380,14 @@ export class TabMenu extends Component {
         </main>
       </>
     ) : (
-      <>
+      <React.Fragment>
         <button onClick={this.showSideBar} className="menu-info-btn">
           {info}
         </button>
         <div onClick={this.showSideBar} className="menu-settings-btn">
           {settings}
         </div>
-      </>
+      </React.Fragment>
     );
   }
 }
