@@ -6,7 +6,7 @@ import { Ticker } from '../Ticker/Ticker';
 import { Settings } from '../Settings/Settings';
 import { installMediaQueryWatcher } from '../../utils/media-query';
 import Tabs from '../Tabs/Tabs';
-import { burger, close as closeIcon } from '../../assets/icons/icons.js';
+import { burger, close as closeIcon, info } from '../../assets/icons/icons.js';
 import { Translation } from 'react-i18next';
 
 const renderMenu = (
@@ -381,7 +381,7 @@ export class TabMenu extends Component {
       </>
     ) : (
       <button onClick={this.showSideBar} className="menu-side-btn">
-        {burger}
+        {info}
       </button>
     );
   }
