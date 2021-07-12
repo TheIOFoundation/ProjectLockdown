@@ -1,14 +1,17 @@
 import React from 'react';
 import './watermark.css';
+import { logo } from '../../assets/icons/icons.js';
 
-const Watermark = ({ dark, fontsize }) => (
+const Watermark = ({ fontsize }) => (
     <div
         className={`Watermark`}
         style={{
-            fontSize: `${fontsize}vw`,
+            transform: `scale(${fontsize})`,
+            top: `${10 * fontsize}px`,
+            left: `${15 + 80 * (fontsize - 1)}px`,
         }}
     >
-       PROJECT LOCKDOWN
+        {logo}
     </div>
 );
 
