@@ -78,14 +78,10 @@
 }
 
 .dark .menu-settings-btn {
-  background-color: transparent;
+  background-color: #333333;
   color: white;
-  background-image: url(../../assets/icons/menu/black.svg);
   & svg {
     color: white;
-  }
-  &:hover {
-    cursor: pointer;
   }
 }
 
