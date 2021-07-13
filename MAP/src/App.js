@@ -2,7 +2,6 @@ import React, {useState, useEffect, useCallback} from 'react';
 import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
-import StatsBox from './components/StatsBox/StatsBox';
 import StatsBar from './components/StatsBar/StatsBar';
 import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import './App.scss';
@@ -72,7 +71,7 @@ const App = (props) => {
   const [isLegendVisible, setIsLegendVisible] = useState(false);
   const [isTimeSliderVisible, setIsTimeSliderVisible] = useState(false);
   const [isCountrySearchVisible, setIsCountrySearchVisible] = useState(false);
-  const [isStatsBoxVisible, setIsStatsBoxVisible] = useState(false);
+  const [isStatsBarVisible, setIsStatsBarVisible] = useState(false);
   const [isTabMenuVisible, setIsTabMenuVisible] = useState(false);
   const [mapCord , setMapCord] = useState({
       lng: coords.lng,
@@ -89,7 +88,7 @@ const App = (props) => {
           setIsLegendVisible(_find(components,UIComponent.Legend).is_visible || false);
           setIsTimeSliderVisible(_find(components, UIComponent.TimeSlider).is_visible || false);
           setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false);
-          setIsStatsBoxVisible(_find(components,UIComponent.StatsBox).is_visible || false);
+          setIsStatsBarVisible(_find(components,UIComponent.StatsBar).is_visible || false);
           setIsTabMenuVisible(_find(components,UIComponent.TabMenu).is_visible || false);
         }
    }, []);
@@ -236,8 +235,8 @@ const App = (props) => {
             case UIComponent.CountriesSearcher:
               setIsCountrySearchVisible(toBool(value));
               break;
-            case UIComponent.StatsBox:
-              setIsStatsBoxVisible(toBool(value));
+            case UIComponent.StatsBar:
+              setIsStatsBarVisible(toBool(value));
               break;
             case UIComponent.TabMenu:
               setIsTabMenuVisible(toBool(value));
@@ -334,7 +333,7 @@ const App = (props) => {
             mapCord={mapCord}
           />
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
-          {isStatsBoxVisible && <StatsBar dark={isDark} />}
+          {isStatsBarVisible && <StatsBar dark={isDark} />}
           {isLegendVisible && <Legend dark={isDark} />}
           <LanguageSelector
             languageChangeHandler={setCurrentLanguage}
