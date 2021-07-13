@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./StatsBar.module.scss";
 import { logoSimple, triangleArrow } from "../../assets/icons/icons.js";
 import { toBool } from "../../utils/utils";
-import { useTranslation } from "react-i18next/src";
+import { useTranslation } from "react-i18next";
 import { fetchTotals } from "../../services";
 
 const separateNumber = (number, format) => {
@@ -22,7 +22,7 @@ const StatsBar = ({
         affected: 0,
     });
     dark = toBool(dark);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         fetchTotals(startDate, endDate, selectedDate, daysRange)
@@ -43,15 +43,13 @@ const StatsBar = ({
                 <p className={styles.territoriesInLockdown}>
                     {t('header.totals.territoriesLockdown')}
                 </p>
-                <p className={styles.num056}>
-                    {totalsData.lockdown}
-                    {/*{separateNumber(totalsData.lockdown, t('languageId'))}*/}
+                <p className={styles.numLockdown}>
+                    {separateNumber(totalsData.lockdown, t('languageId'))}
                 </p>
             </div>
             <div className={styles.relativeWrapperTwo}>
-                <p className={styles.num4700000000}>
-                    {totalsData.affected}
-                    {/*{separateNumber(totalsData.affected, t('languageId'))}*/}
+                <p className={styles.numAffected}>
+                    {separateNumber(totalsData.affected, t('languageId'))}
                 </p>
                 <p className={styles.territoriesInLockdown}>
                     {t('header.totals.peopleAffected')}
