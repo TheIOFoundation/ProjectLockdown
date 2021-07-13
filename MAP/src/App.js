@@ -3,6 +3,7 @@ import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
 import StatsBox from './components/StatsBox/StatsBox';
+import StatsBar from './components/StatsBar/StatsBar';
 import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
@@ -333,7 +334,7 @@ const App = (props) => {
             mapCord={mapCord}
           />
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
-          {isStatsBoxVisible && <StatsBox dark={isDark} />}
+          {isStatsBoxVisible && <StatsBar dark={isDark} />}
           {isLegendVisible && <Legend dark={isDark} />}
           <LanguageSelector
             languageChangeHandler={setCurrentLanguage}

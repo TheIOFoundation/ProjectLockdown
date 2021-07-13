@@ -9,16 +9,17 @@ $white-smoke: rgb(242, 242, 242);
   box-shadow: 0 4px 4px 0 $transparent-black;
   display: flex;
   align-items: flex-start;
+  position: relative;
 }
 .lockdownLogo {
-  width: 3.38%;
-  height: 44.64%;
+  width: 3%;
+  height: 40%;
   margin-top: 13.39px;
   margin-right: 23.21px;
 }
 .relativeWrapperOne {
-  width: 32.37%;
-  height: 48%;
+  width: 30%;
+  height: 50%;
   margin-top: 17px;
   margin-right: 38px;
   position: relative;
