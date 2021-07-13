@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "./StatsBar.module.scss";
+import { logoSimple, triangleArrow } from "../../assets/icons/icons.js";
 
 const StatsBar = () => {
     return (
         <div className={styles.statsBar}>
-            <img
-                alt=""
+            <div
                 className={styles.lockdownLogo}
-                src="https://static.overlay-tech.com/assets/adc4b570-4848-4d7b-bc31-47c82f61d9df.svg"
-            />
+            >
+                {logoSimple}
+            </div>
             <div className={styles.relativeWrapperOne}>
                 <p className={styles.territoriesInLockdown}>
                     Territories in Lockdown
@@ -24,11 +25,11 @@ const StatsBar = () => {
                 </p>
             </div>
             <div className={styles.flexWrapperOne}>
-                <img
-                    alt=""
+                <div
                     className={styles.vector}
-                    src="https://static.overlay-tech.com/assets/bd11c467-2866-4f7b-bac5-e85946ad774d.svg"
-                />
+                >
+                    {triangleArrow}
+                </div>
             </div>
         </div>
     );
