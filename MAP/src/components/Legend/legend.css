@@ -1,7 +1,7 @@
 .btn {
   position: absolute;
   bottom: 200px;
-  left: 2.5vw;
+  right: 2vw;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -66,7 +66,7 @@
   margin-left: -20px;
 }
 .dialog.right {
-  left: -205px;
+  left: -260px;
 }
 .dialog.right::after {
   right: 0;

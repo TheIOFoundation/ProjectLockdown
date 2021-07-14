@@ -132,7 +132,6 @@ export class Legend extends Component {
 
 Legend.defaultProps = {
   dark: false,
-  // size: 'medium',
-  x: 'left',
+  x: 'right',
   y: 'bottom',
 };
