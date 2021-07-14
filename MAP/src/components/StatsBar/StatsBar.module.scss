@@ -5,7 +5,7 @@ $white-smoke: rgb(242, 242, 242);
 
 .statsBar {
   background-color: $white;
-  padding: 0 0 0 11px;
+  padding: 0 0 0 10px;
   box-shadow: 0 4px 4px 0 $transparent-black;
   display: flex;
   align-items: flex-start;
@@ -14,13 +14,14 @@ $white-smoke: rgb(242, 242, 242);
 .lockdownLogo {
   width: 3%;
   height: 40%;
-  margin-top: 13.39px;
-  margin-right: 23.21px;
+  transform: scale(1.5);
+  margin-top: 1.25em;
+  margin-right: 2em;
 }
 .relativeWrapperOne {
   width: 30%;
   height: 50%;
-  margin-top: 17px;
+  margin-top: 10px;
   margin-right: 38px;
   position: relative;
 }
@@ -30,10 +31,10 @@ $white-smoke: rgb(242, 242, 242);
   color: $dark-slate-gray;
   display: flex;
   position: relative;
-  //@include montserrat-12-semi-bold;
+  font-weight: bold;
 }
 .numLockdown {
-  height: 79.17%;
+  height: 80%;
   width: 20%;
   color: $dark-slate-gray;
   display: flex;
@@ -41,31 +42,36 @@ $white-smoke: rgb(242, 242, 242);
   position: absolute;
   right: -14px;
   top: -3px;
-  //@include montserrat-18-semi-bold;
+  font-weight: bold;
+  font-size: 18px;
 }
 .relativeWrapperTwo {
-  width: 24.28%;
-  height: 48%;
-  margin-top: 17px;
+  width: 30%;
+  height: 50%;
+  margin-top: 10px;
   margin-right: 141px;
   position: relative;
 }
 .numAffected {
-  height: 79.17%;
-  width: 95.56%;
+  height: 80%;
+  width: 80%;
   color: $dark-slate-gray;
   display: flex;
   text-align: center;
   position: absolute;
   right: -109px;
   top: -3px;
-  //@include montserrat-17-semi-bold;
+  font-weight: bold;
+  font-size: 18px;
 }
 .flexWrapperOne {
   background-color: $white-smoke;
-  padding: 19.54px 5.97px 19.05px 7px;
+  padding: 20px 7px 20px 7px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
 }
 .vector {
   flex: 1;
