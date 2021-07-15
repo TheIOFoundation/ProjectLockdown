@@ -3,7 +3,6 @@ import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
 import StatsBox from './components/StatsBox/StatsBox';
-import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
 import ThemeContext from './contexts/ThemeContext';
@@ -335,10 +334,6 @@ const App = (props) => {
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
           {isStatsBoxVisible && <StatsBox dark={isDark} />}
           {isLegendVisible && <Legend dark={isDark} />}
-          <LanguageSelector
-            languageChangeHandler={setCurrentLanguage}
-            dark={isDark}
-          />
           <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider
