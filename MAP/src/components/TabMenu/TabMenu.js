@@ -335,6 +335,11 @@ export class TabMenu extends Component {
     });
   };
 
+  openSettings = () => {
+    this.showSideBar();
+    this.switchContent("settings");
+  }
+
   render() {
     const { activeItem, currentDropdown } = this.state;
     const { isDark, setDarkMode } = this.props;
@@ -384,7 +389,7 @@ export class TabMenu extends Component {
         <button onClick={this.showSideBar} className="menu-info-btn">
           {info}
         </button>
-        <div onClick={this.showSideBar} className="menu-settings-btn">
+        <div onClick={this.openSettings} className="menu-settings-btn">
           {settings}
         </div>
       </React.Fragment>
