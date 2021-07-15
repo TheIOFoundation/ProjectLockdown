@@ -3,7 +3,7 @@ import Legends from './Legends';
 import AppContext from '../../contexts/AppContext';
 
 const CountryDetails = (props) => {
-  let { i18n, t } = props;
+  let { t } = props;
   let { coronaData, country, date, dark } = props;
   const[measures, setMeasures] = useState([]);
   const {environment} = useContext(AppContext);
