@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./StatsBar.module.scss";
 import { logoSimple, triangleArrow } from "../../assets/icons/icons.js";
-import { toBool } from "../../utils/utils";
 import { useTranslation } from "react-i18next";
 import { fetchTotals } from "../../services";
 
@@ -11,7 +10,6 @@ const separateNumber = (number, format) => {
 };
 
 const StatsBar = ({
-                      dark,
                       startDate,
                       endDate,
                       selectedDate = '2021-01-01',
@@ -21,7 +19,6 @@ const StatsBar = ({
         lockdown: 0,
         affected: 0,
     });
-    dark = toBool(dark);
     const { t } = useTranslation();
 
     useEffect(() => {
