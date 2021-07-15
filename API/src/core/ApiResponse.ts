@@ -1,4 +1,4 @@
-import { BadRequestException } from '@nestjs/common';
+import { HttpStatus } from '@nestjs/common';
 import { Response } from 'express';
 import {
     getResponseFormater,
@@ -10,20 +10,13 @@ import {
     BaseApiErrorResponse,
     BaseApiResponse,
 } from '../app/shared/dtos/base-api-response.dto';
-enum ResponseStatus {
-    SUCCESS = 200,
-    BAD_REQUEST = 400,
-    UNAUTHORIZED = 401,
-    FORBIDDEN = 403,
-    NOT_FOUND = 404,
-    INTERNAL_ERROR = 500,
-}
+import { BadRequestError } from './ApiError';
 
 const defaultFormater: ResponseFormater = jsonFormater;
 
 export abstract class ApiResponse {
     constructor(
-        protected status: ResponseStatus,
+        protected status: HttpStatus,
         protected message: string,
         protected formaterQueue = [defaultFormater],
     ) {}
@@ -104,8 +97,14 @@ export abstract class ApiResponse {
         });
 
         formatCallbacks['default'] = () => {
-            throw new BadRequestException(
+            const path = res.locals.originalUrl || 'unknown';
+            const requestId = res.locals.requestId || 'unknown'; //TODO: update this when there is middleware to add uuid for each request
+            const detail = `Available format for this endpoint: ${formaterQueue.toString()}`;
+            throw new BadRequestError(
                 'Accept-type does not match any available response content type',
+                path,
+                requestId,
+                detail,
             );
         };
         return formatCallbacks;
@@ -141,7 +140,7 @@ export class SuccessResponse<T> extends ApiResponse {
         private data: BaseApiResponse<T>,
         formaterQueue = [defaultFormater],
     ) {
-        super(ResponseStatus.SUCCESS, message, formaterQueue);
+        super(HttpStatus.OK, message, formaterQueue);
     }
 
     send(res: Response): Response {
@@ -154,7 +153,7 @@ export abstract class ErrorResponse
     implements BaseApiErrorResponse
 {
     constructor(
-        statusCode: ResponseStatus,
+        statusCode: HttpStatus,
         message = 'Bad Request',
         public error: BaseApiErrorObject,
         formaterQueue = [defaultFormater],
@@ -173,7 +172,7 @@ export class InternalErrorResponse extends ErrorResponse {
         error: BaseApiErrorObject,
         formaterQueue = [defaultFormater],
     ) {
-        super(ResponseStatus.INTERNAL_ERROR, message, error, formaterQueue);
+        super(HttpStatus.INTERNAL_SERVER_ERROR, message, error, formaterQueue);
     }
 }
 
@@ -185,7 +184,7 @@ export class NotFoundResponse extends ErrorResponse {
         error: BaseApiErrorObject,
         formaterQueue = [defaultFormater],
     ) {
-        super(ResponseStatus.NOT_FOUND, message, error, formaterQueue);
+        super(HttpStatus.NOT_FOUND, message, error, formaterQueue);
     }
 
     send(res: Response) {
@@ -200,7 +199,7 @@ export class AuthFailureResponse extends ErrorResponse {
         error: BaseApiErrorObject,
         formaterQueue = [defaultFormater],
     ) {
-        super(ResponseStatus.UNAUTHORIZED, message, error, formaterQueue);
+        super(HttpStatus.UNAUTHORIZED, message, error, formaterQueue);
     }
 }
 
@@ -210,7 +209,7 @@ export class ForbiddenReponse extends ErrorResponse {
         error: BaseApiErrorObject,
         formaterQueue = [defaultFormater],
     ) {
-        super(ResponseStatus.FORBIDDEN, message, error, formaterQueue);
+        super(HttpStatus.FORBIDDEN, message, error, formaterQueue);
     }
 }
 
@@ -220,6 +219,6 @@ export class BadRequestResponse extends ErrorResponse {
         error: BaseApiErrorObject,
         formaterQueue = [defaultFormater],
     ) {
-        super(ResponseStatus.BAD_REQUEST, message, error, formaterQueue);
+        super(HttpStatus.BAD_REQUEST, message, error, formaterQueue);
     }
 }
