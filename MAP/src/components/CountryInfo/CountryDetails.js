@@ -60,7 +60,7 @@ const CountryDetails = (props) => {
           <dd className="data-value">{coronaData?.total_deaths}</dd>
         </div>
       </dl>
-      <Legends dark={props.dark} t={t} i18n={i18n} tab="dailyLife" />
+      <Legends dark={props.dark} t={t} tab="dailyLife" />
       <>
         <h2 className="ld-font-subheader last">
           {t('tdo.tabs.dailyLife.subtitle')}

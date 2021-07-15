@@ -56,7 +56,6 @@ const App = (props) => {
   const [isDark, setIsDark] = useState('true');
   const [playerState, setPlayerState] = useState(PAUSED);
   const [days, setDays] = useState([]);
-  const [currentLanguage, setCurrentLanguage] = useState({t: (text) => text});
   const [selectedDate, setSelectedDate] = useState(toJsonString(addDays(new Date(), startingPoint)));
   const [startDate, setStartDate] = useState(addDays(new Date(), startingPoint));
   const [endDate, setEndDate] = useState(addDays(new Date(), startingPoint + daysRange));
@@ -363,7 +362,6 @@ const App = (props) => {
                   iso2={dialog.iso2}
                   wikidata=""
                   date={selectedDate || new Date()}
-                  i18n={currentLanguage}
                   startDate={startDate}
                   endDate={endDate}
                   daysRange={daysRange}
