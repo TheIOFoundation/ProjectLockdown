@@ -1,20 +1,15 @@
 import { Response } from 'express';
 import { BaseApiErrorObject } from '../app/shared/dtos/base-api-response.dto';
 import {
-    ApiResponse,
     AuthFailureResponse,
     BadRequestResponse,
-    ErrorResponse,
     ForbiddenReponse,
     InternalErrorResponse,
     NotFoundResponse,
 } from './ApiResponse';
 
 enum ErrorType {
-    BAD_TOKEN = 'BadTokenError',
-    TOKEN_EXPIRED = 'TokenExpiredError',
     UNAUTHORIZED = 'AuthFailureError',
-    ACCESS_TOKEN = 'AccessTokenError',
     INTERNAL = 'InternalError',
     NOT_FOUND = 'NotFoundError',
     NO_ENTRY = 'NoEntryError',
@@ -54,44 +49,6 @@ abstract class ApiError extends Error implements BaseApiErrorObject {
     }
 
     abstract handle(res: Response): Response;
-    }
-}
-
-export class BadTokenError extends ApiError {
-    constructor(message = 'Token is not valid', path, requestId, details) {
-        super(
-            ErrorType.BAD_TOKEN,
-            message,
-            ErrorCode.BAD_TOKEN,
-            path,
-            requestId,
-            details,
-        );
-    }
-
-    handle(res: Response): Response {
-        const response = new AuthFailureResponse(this.message, this);
-        return response.send(res);
-    }
-    
-}
-
-export class TokenExpiredError extends ApiError {
-    constructor(message = 'Token is expired', path, requestId, details) {
-        super(
-            ErrorType.TOKEN_EXPIRED,
-            message,
-            ErrorCode.BAD_TOKEN,
-            path,
-            requestId,
-            details,
-        );
-    }
-
-    handle(res: Response): Response {
-        const response = new AuthFailureResponse(this.message, this);
-        return response.send(res);
-    }
 }
 
 export class AuthFailureError extends ApiError {
@@ -192,23 +149,6 @@ export class BadRequestError extends ApiError {
     }
     handle(res: Response): Response {
         const response = new BadRequestResponse(this.message, this);
-        return response.send(res);
-    }
-}
-
-export class AccessTokenError extends ApiError {
-    constructor(message = 'Invalid access token', path, requestId, details) {
-        super(
-            ErrorType.ACCESS_TOKEN,
-            message,
-            ErrorCode.BAD_TOKEN,
-            path,
-            requestId,
-            details,
-        );
-    }
-    handle(res: Response): Response {
-        const response = new AuthFailureResponse(this.message, this);
         return response.send(res);
     }
 }
