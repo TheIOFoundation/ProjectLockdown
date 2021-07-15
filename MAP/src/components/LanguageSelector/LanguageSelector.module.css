@@ -5,8 +5,8 @@
 
 .SelectedLang {
   position: absolute;
-  top: 25vh;
-  right: 2.5vw;
+  top: 25%;
+  right: 45%;
   height: 30px;
   min-width: 30px;
   width: fit-content;
@@ -56,8 +56,8 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: calc(25vh + 37px);
-  right: 5vw;
+  top: 30%;
+  right: 25%;
   max-width: 0px;
   overflow: hidden;
   transition: 0.5s;
