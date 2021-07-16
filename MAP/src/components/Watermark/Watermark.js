@@ -7,7 +7,7 @@ const Watermark = ({ fontsize }) => (
         className={`Watermark`}
         style={{
             transform: `scale(${fontsize})`,
-            top: `${10 * fontsize}px`,
+            bottom: `${10 * fontsize}px`,
             left: `${15 + 80 * (fontsize - 1)}px`,
         }}
     >
