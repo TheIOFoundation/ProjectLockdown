@@ -26,9 +26,7 @@ const renderMenu = (
         template: (
           <>
           <Translation>
-{ (t, { 
-  i18n
- }) => 
+{ (t) =>
             <>
             <h1>Project Lockdown</h1>
             <p className="ld-alpha banner">
@@ -318,7 +316,7 @@ export class TabMenu extends Component {
     this.prevVal = val;
     this.setState({
       activeItem: val,
-      showLateralMenu: val === this.state.activeItem ? false : true,
+      showLateralMenu: val !== this.state.activeItem,
     });
   };
 
