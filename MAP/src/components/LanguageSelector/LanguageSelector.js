@@ -7,9 +7,9 @@ import * as classes from './LanguageSelector.module.css';
 const LanguageSelector = ({ dark }) => {
   dark = toBool(dark);
 
-  const [selectedLang, setSelectedLang] = useState('en');
+  const { t, i18n } = useTranslation();
 
-  const { i18n } = useTranslation();
+  const [selectedLang, setSelectedLang] = useState(t('languageId'));
 
   const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh CN', 'zh HK'];
 
