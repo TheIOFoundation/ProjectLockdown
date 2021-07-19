@@ -47529,7 +47529,8 @@
       "get": {
         "summary": "🚧 DataSetLayers",
         "tags": [
-          "Endpoints"
+          "Endpoints",
+          "DataSet"
         ],
         "responses": {
           "200": {
@@ -47594,7 +47595,8 @@
       "get": {
         "summary": "🚧 DataSetEntries",
         "tags": [
-          "Endpoints"
+          "Endpoints",
+          "DataSet"
         ],
         "responses": {
           "200": {
@@ -47657,7 +47659,9 @@
     "/Schemas/{Model}": {
       "get": {
         "summary": "🚧 Schemas",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -47675,7 +47679,9 @@
     "/Answers/{DSLUID}/{DateStart}/{DateEnd}/{PLDCode}/{DSEUID}/{DPUID}": {
       "get": {
         "summary": "🚧 Answers",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -47737,7 +47743,9 @@
     "/Users/{UserUID}": {
       "get": {
         "summary": "🚧 Users",
-        "tags": [],
+        "tags": [
+          "Endpoints"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -57169,22 +57177,7 @@
         "in": "query"
       }
     },
-    "responses": {
-      "test": {
-        "description": "Example response test",
-        "content": {
-          "application/json": {
-            "schema": {
-              "properties": {
-                "id": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    "responses": {}
   },
   "tags": [
     {
