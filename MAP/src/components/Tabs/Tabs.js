@@ -15,11 +15,11 @@ const KEYCODE_LEFT = 37;
 const KEYCODE_RIGHT = 39;
 
 export default class Tabs extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       updateAvailable: false,
-      index: 0,
+      index: this.props.index,
     };
 
     this.tabRefs = {};

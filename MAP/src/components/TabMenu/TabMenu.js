@@ -270,6 +270,7 @@ export class TabMenu extends Component {
       showLateralMenu: false,
       showMenu: false,
       currentDropdown: 1,
+      index: 0,
     };
     this.showSideBar = this.showSideBar.bind(this);
     this.closeNavbar = this.closeNavbar.bind(this);
@@ -326,6 +327,7 @@ export class TabMenu extends Component {
       showLateralMenu: false,
       showSideBar: false,
       activeItem: 'info',
+      index: 0,
     });
   };
 
@@ -338,6 +340,9 @@ export class TabMenu extends Component {
   openSettings = () => {
     this.showSideBar();
     this.switchContent("settings");
+    this.setState({
+      index: 1,
+    });
   }
 
   render() {
@@ -355,6 +360,7 @@ export class TabMenu extends Component {
               <Tabs
                 onClose={this.closeNavbar}
                 switchContent={this.switchContent}
+                index={this.state.index}
               >
                 <button id="info">info</button>
                 <button id="settings">settings</button>
