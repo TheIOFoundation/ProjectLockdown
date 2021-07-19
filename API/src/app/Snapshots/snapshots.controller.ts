@@ -12,7 +12,7 @@ export class SnapshotsController {
         @Res() res: Response,
     ) {
         if (dslId == '2') {
-            return res.status(502).end();
+            return res.status(502).send('Invalid DSL id');
         } else if (dslId == '1') {
             const snapshotsService = new SnapshotsService();
             const selectedSnapshots = snapshotsService.selectSnapshotsByDate(
