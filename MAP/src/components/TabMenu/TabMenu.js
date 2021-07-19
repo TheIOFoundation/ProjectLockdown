@@ -304,19 +304,9 @@ export class TabMenu extends Component {
       });
     }
 
-    if (this.state.isMobile && this.props.opened && val === this.prevVal) {
-      this.props.close();
-      this.setState({
-        activeItem: this.prevVal,
-      });
-      this.prevVal = '';
-      return;
-    }
-
     this.prevVal = val;
     this.setState({
       activeItem: val,
-      showLateralMenu: val !== this.state.activeItem,
     });
   };
 
