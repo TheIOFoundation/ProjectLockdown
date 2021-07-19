@@ -9,7 +9,7 @@ const LanguageSelector = ({ dark }) => {
 
   const { t, i18n } = useTranslation();
 
-  const [selectedLang, setSelectedLang] = useState(t('languageId'));
+  const [selectedLang, setSelectedLang] = useState(t('languageId').replace('-',''));
 
   const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh CN', 'zh HK'];
 
