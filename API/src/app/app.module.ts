@@ -16,8 +16,8 @@ const mongodbConnection: DatabaseType = 'mongodb';
         SnapshotsModule,
         TypeOrmModule.forRoot({
             type: mongodbConnection as any,
-            url: 'mongodb+srv://Steven:StevenHans@cluster0.s52wk.mongodb.net/ProjectLockdown?retryWrites=true&w=majority',
-            database: 'ProjectLockdown',
+            host: process.env.DB_HOST,
+            database: process.env.DB_DATABASE,
             entities: getMetadataArgsStorage().tables.map((tbl) => tbl.target),
             synchronize: true,
             useUnifiedTopology: true,
