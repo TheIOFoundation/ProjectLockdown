@@ -13,11 +13,12 @@
 }
 
 .lockdownLogo {
-  width: 3%;
+  width: 2em;
   height: 40%;
   transform: scale(1.5);
   margin-top: 1.25em;
   margin-right: 2em;
+  position: absolute;
   svg {
     path {
       fill: var(--ld-text);
