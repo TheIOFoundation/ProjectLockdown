@@ -26,9 +26,7 @@ const renderMenu = (
         template: (
           <>
           <Translation>
-{ (t, { 
-  i18n
- }) => 
+{ (t) =>
             <>
             <h1>Project Lockdown</h1>
             <p className="ld-alpha banner">
@@ -270,6 +268,7 @@ export class TabMenu extends Component {
       showLateralMenu: false,
       showMenu: false,
       currentDropdown: 1,
+      index: 0,
     };
     this.showSideBar = this.showSideBar.bind(this);
     this.closeNavbar = this.closeNavbar.bind(this);
@@ -305,19 +304,9 @@ export class TabMenu extends Component {
       });
     }
 
-    if (this.state.isMobile && this.props.opened && val === this.prevVal) {
-      this.props.close();
-      this.setState({
-        activeItem: this.prevVal,
-      });
-      this.prevVal = '';
-      return;
-    }
-
     this.prevVal = val;
     this.setState({
       activeItem: val,
-      showLateralMenu: val === this.state.activeItem ? false : true,
     });
   };
 
@@ -326,6 +315,7 @@ export class TabMenu extends Component {
       showLateralMenu: false,
       showSideBar: false,
       activeItem: 'info',
+      index: 0,
     });
   };
 
@@ -334,6 +324,14 @@ export class TabMenu extends Component {
       currentDropdown: id,
     });
   };
+
+  openSettings = () => {
+    this.showSideBar();
+    this.switchContent("settings");
+    this.setState({
+      index: 1,
+    });
+  }
 
   render() {
     const { activeItem, currentDropdown } = this.state;
@@ -350,6 +348,7 @@ export class TabMenu extends Component {
               <Tabs
                 onClose={this.closeNavbar}
                 switchContent={this.switchContent}
+                index={this.state.index}
               >
                 <button id="info">info</button>
                 <button id="settings">settings</button>
@@ -384,7 +383,7 @@ export class TabMenu extends Component {
         <button onClick={this.showSideBar} className="menu-info-btn">
           {info}
         </button>
-        <div onClick={this.showSideBar} className="menu-settings-btn">
+        <div onClick={this.openSettings} className="menu-settings-btn">
           {settings}
         </div>
       </React.Fragment>

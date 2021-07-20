@@ -7,12 +7,12 @@ import {
 import { TRAVEL, TRAVELTYPE, TRANSLATIONS } from './constant';
 import Legends from './Legends';
 const TransportDetails = (props) => {
-  let { t, i18n } = props;
+  let { t } = props;
   return (
     <>
       <br />
       <br />
-      <Legends dark={props.dark} t={t} i18n={i18n} tab="mobility" />
+      <Legends dark={props.dark} t={t} tab="mobility" />
       <h2 className="ld-font-subheader last transport">
         {/* Transport Restrictions Text */}
         {t('tdo.tabs.mobility.subtitle')}
