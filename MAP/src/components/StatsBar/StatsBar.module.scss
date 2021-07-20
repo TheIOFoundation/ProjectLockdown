@@ -5,6 +5,11 @@
   display: flex;
   align-items: flex-start;
   position: relative;
+  height: 3.5em;
+}
+
+.closed {
+  width: 4em;
 }
 
 .lockdownLogo {
@@ -75,7 +80,7 @@
 .flexWrapperOne {
   background-color: var(--ld-hover);
   height: 100%;
-  width: 2%;
+  width: 1em;
   padding-top: 1.25em;
   display: flex;
   align-items: center;
@@ -92,5 +97,11 @@
     path {
       fill: var(--ld-text);
     }
+  }
+}
+
+.flip {
+  svg {
+    transform: rotate(180deg);
   }
 }

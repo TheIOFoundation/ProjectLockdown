@@ -19,7 +19,12 @@ const StatsBar = ({
         lockdown: 0,
         affected: 0,
     });
+    const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
+
+    const toggleStatsBar = () => {
+        setIsOpen(!isOpen);
+    };
 
     useEffect(() => {
         fetchTotals(startDate, endDate, selectedDate, daysRange)
@@ -30,31 +35,33 @@ const StatsBar = ({
     }, [startDate, endDate, selectedDate, daysRange]);
 
     return (
-        <div className={styles.statsBar}>
+        <div className={`${isOpen ? null : styles.closed} ${styles.statsBar}`}>
             <div
                 className={styles.lockdownLogo}
             >
                 {logoSimple}
             </div>
-            <div className={styles.relativeWrapperOne}>
-                <p className={styles.territoriesInLockdown}>
-                    {t('header.totals.territoriesLockdown')}
-                </p>
-                <p className={styles.numLockdown}>
-                    {separateNumber(totalsData.lockdown, t('languageId'))}
-                </p>
-            </div>
-            <div className={styles.relativeWrapperTwo}>
-                <p className={styles.numAffected}>
-                    {separateNumber(totalsData.affected, t('languageId'))}
-                </p>
-                <p className={styles.territoriesInLockdown}>
-                    {t('header.totals.peopleAffected')}
-                </p>
-            </div>
-            <div className={styles.flexWrapperOne}>
+            {isOpen && <div className={styles.relativeWrapperOne}>
+                    <p className={styles.territoriesInLockdown}>
+                        {t('header.totals.territoriesLockdown')}
+                    </p>
+                    <p className={styles.numLockdown}>
+                        {separateNumber(totalsData.lockdown, t('languageId'))}
+                    </p>
+                </div>}
+            {isOpen && <div className={styles.relativeWrapperTwo}>
+                    <p className={styles.numAffected}>
+                        {separateNumber(totalsData.affected, t('languageId'))}
+                    </p>
+                    <p className={styles.territoriesInLockdown}>
+                        {t('header.totals.peopleAffected')}
+                    </p>
+                </div>}
+            <div
+                className={styles.flexWrapperOne}
+                onClick={toggleStatsBar}>
                 <div
-                    className={styles.vector}
+                    className={`${isOpen ? null : styles.flip} ${styles.vector}`}
                 >
                     {triangleArrow}
                 </div>
