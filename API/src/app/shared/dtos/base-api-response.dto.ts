@@ -3,24 +3,24 @@ export class BaseApiResponse<T> {
 
     public meta: any;
 }
-export class BaseApiErrorObject {
-    public statusCode: number;
+export interface BaseApiErrorObject {
+    statusCode: number;
 
-    public message: string;
+    message: string;
 
-    public localizedMessage: string;
+    localizedMessage: string;
 
-    public errorName: string;
+    errorName: string;
 
-    public details: unknown;
+    details: unknown;
 
-    public path: string;
+    path: string;
 
-    public requestId: string;
+    requestId: string;
 
-    public timestamp: string;
+    timestamp: string;
 }
 
-export class BaseApiErrorResponse {
-    public error: BaseApiErrorObject;
+export interface BaseApiErrorResponse {
+    error: BaseApiErrorObject;
 }
