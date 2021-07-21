@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./StatsBar.module.scss";
 import { logoSimple, triangleArrow } from "../../assets/icons/icons.js";
-import { useTranslation } from "react-i18next";
 import { fetchTotals } from "../../services";
-
-const separateNumber = (number, format) => {
-    const nfObject = new Intl.NumberFormat(format);
-    return nfObject.format(+number);
-};
+import DataDisplay from "./DataDisplay.js";
 
 const StatsBar = ({
                       startDate,
@@ -20,7 +15,6 @@ const StatsBar = ({
         affected: 0,
     });
     const [isOpen, setIsOpen] = useState(false);
-    const { t } = useTranslation();
 
     const toggleStatsBar = () => {
         setIsOpen(!isOpen);
@@ -41,20 +35,7 @@ const StatsBar = ({
             >
                 {logoSimple}
             </div>
-            {isOpen && <div className={styles.relativeWrapper}>
-                <p className={styles.territoriesInLockdown}>
-                    {t('header.totals.territoriesLockdown')}
-                </p>
-                <p className={styles.numLockdown}>
-                    {separateNumber(totalsData.lockdown, t('languageId'))}
-                </p>
-                <p className={styles.peopleAffected}>
-                    {t('header.totals.peopleAffected')}
-                </p>
-                <p className={styles.numAffected}>
-                    {separateNumber(totalsData.affected, t('languageId'))}
-                </p>
-            </div>}
+            {isOpen && <DataDisplay totalsData={totalsData}/>}
             <div
                 className={styles.flexWrapperOne}
                 onClick={toggleStatsBar}>
