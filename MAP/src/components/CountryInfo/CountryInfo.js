@@ -18,7 +18,6 @@ const CountryInfo = (props) => {
   const dark =  toBool(props.dark)  || false;
   const environment = useContext(AppContext)
   const [currentTab, setCurrentTab] = useState(1);
-  const { i18n } = props;
   const [coronaData, setCoronaData] = useState();
   const [tabs, setTabs] = useState([])
   const [
@@ -100,18 +99,16 @@ const CountryInfo = (props) => {
               isSameDay(new Date(corona.last_updated), props.date),
             )}
             countryDetails={countryDetails}
-            i18n={i18n}
           />
         ) : currentTab === 2 ? (
           <TransportDetails
             t={t}
             dark={dark}
-            i18n={i18n}
             countryDetails={countryDetails}
           />
         ) : (
           <>
-            <Reports t={t} i18n={i18n} dark={dark} />
+            <Reports t={t} dark={dark} />
             <div className="link-container">
               <a
                 className="ld-link"

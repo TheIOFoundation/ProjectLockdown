@@ -3,7 +3,6 @@ import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
 import StatsBar from './components/StatsBar/StatsBar';
-import LanguageSelector from './components/LanguageSelector/LanguageSelector';
 import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
 import ThemeContext from './contexts/ThemeContext';
@@ -57,7 +56,6 @@ const App = (props) => {
   const [isDark, setIsDark] = useState('true');
   const [playerState, setPlayerState] = useState(PAUSED);
   const [days, setDays] = useState([]);
-  const [currentLanguage, setCurrentLanguage] = useState({t: (text) => text});
   const [selectedDate, setSelectedDate] = useState(toJsonString(addDays(new Date(), startingPoint)));
   const [startDate, setStartDate] = useState(addDays(new Date(), startingPoint));
   const [endDate, setEndDate] = useState(addDays(new Date(), startingPoint + daysRange));
@@ -335,10 +333,6 @@ const App = (props) => {
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
           {isStatsBarVisible && <StatsBar />}
           {isLegendVisible && <Legend dark={isDark} />}
-          <LanguageSelector
-            languageChangeHandler={setCurrentLanguage}
-            dark={isDark}
-          />
           <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider
@@ -368,7 +362,6 @@ const App = (props) => {
                   iso2={dialog.iso2}
                   wikidata=""
                   date={selectedDate || new Date()}
-                  i18n={currentLanguage}
                   startDate={startDate}
                   endDate={endDate}
                   daysRange={daysRange}
