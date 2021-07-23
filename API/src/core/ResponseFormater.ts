@@ -15,7 +15,7 @@ export const getResponseFormater = (
 ): ResponseFormater => {
     let returnFormater: ResponseFormater;
     availableFormaters.map((formater) => {
-        if (contentType === formater.getContentType()) {
+        if (contentType.includes(formater.getContentType())) {
             returnFormater = formater;
         }
     });
