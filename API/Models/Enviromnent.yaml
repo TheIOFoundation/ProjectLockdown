@@ -1,0 +1,6 @@
+title: Enviromnent
+type: object
+properties:
+  id:
+    type: string
+description: "# Status: ✔\n\n## ⚡ About\nAn Environment object represents the collection of data that is necessary for a Module to function.\n\nIt is composed by 2 main objects:\n- [Project](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Project) global variables\n- [DataSet Layer](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataSetLayer) to be rendered in the Module\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n\U0001F4D1 Listing of Stats & their definitions\n\n## \U0001F4E2 Used by\n- \U0001F4A0 [Environments](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/paths/~1Environments~1%7BDSLUID%7D~1%7BModule%7D~1%7BEnvironmentUID%7D/get)\n\n\n\n## Suggestions\nUse EnvironmentUID to discriminate the type of envionrment\n9xxx: Sample Environments for testing purposes\n\n5xxx: User generated\n\n1xxx: Project generated\n\n**Alternatively we can use a Type field. What would be best?**"
