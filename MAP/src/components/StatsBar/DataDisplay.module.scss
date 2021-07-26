@@ -1,0 +1,49 @@
+.relativeWrapper {
+  width: 100%;
+  height: 50%;
+  margin-top: 10px;
+  margin-right: 38px;
+  margin-left: 10%;
+  position: relative;
+}
+
+.territoriesInLockdown {
+  height: 100%;
+  color: var(--ld-text);
+  display: flex;
+  position: absolute;
+  font-weight: bold;
+}
+
+.peopleAffected {
+  height: 100%;
+  left: 40vw;
+  color: var(--ld-text);
+  display: flex;
+  position: absolute;
+  font-weight: bold;
+}
+
+.numLockdown {
+  height: 80%;
+  left: 25vw;
+  color: var(--ld-text);
+  display: flex;
+  text-align: center;
+  position: absolute;
+  top: -2vh;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.numAffected {
+  height: 80%;
+  left: 60vw;
+  color: var(--ld-text);
+  display: flex;
+  text-align: center;
+  position: absolute;
+  top: -2vh;
+  font-weight: bold;
+  font-size: 150%;
+}

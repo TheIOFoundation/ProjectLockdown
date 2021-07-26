@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./StatsBar.module.scss";
 import { logoSimple, triangleArrow } from "../../assets/icons/icons.js";
-import { useTranslation } from "react-i18next";
 import { fetchTotals } from "../../services";
-
-const separateNumber = (number, format) => {
-    const nfObject = new Intl.NumberFormat(format);
-    return nfObject.format(+number);
-};
+import DataDisplay from "./DataDisplay.js";
 
 const StatsBar = ({
                       startDate,
@@ -19,7 +14,11 @@ const StatsBar = ({
         lockdown: 0,
         affected: 0,
     });
-    const { t } = useTranslation();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleStatsBar = () => {
+        setIsOpen(!isOpen);
+    };
 
     useEffect(() => {
         fetchTotals(startDate, endDate, selectedDate, daysRange)
@@ -30,31 +29,18 @@ const StatsBar = ({
     }, [startDate, endDate, selectedDate, daysRange]);
 
     return (
-        <div className={styles.statsBar}>
+        <div className={`${isOpen ? null : styles.closed} ${styles.statsBar}`}>
             <div
                 className={styles.lockdownLogo}
             >
                 {logoSimple}
             </div>
-            <div className={styles.relativeWrapperOne}>
-                <p className={styles.territoriesInLockdown}>
-                    {t('header.totals.territoriesLockdown')}
-                </p>
-                <p className={styles.numLockdown}>
-                    {separateNumber(totalsData.lockdown, t('languageId'))}
-                </p>
-            </div>
-            <div className={styles.relativeWrapperTwo}>
-                <p className={styles.numAffected}>
-                    {separateNumber(totalsData.affected, t('languageId'))}
-                </p>
-                <p className={styles.territoriesInLockdown}>
-                    {t('header.totals.peopleAffected')}
-                </p>
-            </div>
-            <div className={styles.flexWrapperOne}>
+            {isOpen && <DataDisplay totalsData={totalsData}/>}
+            <div
+                className={styles.flexWrapperOne}
+                onClick={toggleStatsBar}>
                 <div
-                    className={styles.vector}
+                    className={`${isOpen ? null : styles.flip} ${styles.vector}`}
                 >
                     {triangleArrow}
                 </div>

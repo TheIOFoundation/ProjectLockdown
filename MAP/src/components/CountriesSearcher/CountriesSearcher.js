@@ -4,8 +4,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import './countriesSearcher.css';
 import { toBool } from '../../utils/utils';
 import { magnify } from '../../assets/icons/icons.js';
-// @fixme uncomment after implementing router
-// import { router } from "../router.js";
 import { mapboxToken } from '../Map/Map';
 
 function CountriesSearcher({ i18n, map, dark, initialState }) {
@@ -71,8 +69,8 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
     mapGeocoder.setLanguage(i18n.locale);
     setGeocoder(mapGeocoder);
 
-    function onGetResult(results) {
-      const { features } = results;
+    function onGetResult(result) {
+      const { features } = result;
       if (features[0]) {
         const countryName = features[0].text.toUpperCase();
         setResults(countryName);
