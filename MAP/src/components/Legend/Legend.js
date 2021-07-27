@@ -1,7 +1,7 @@
 import { Component, createRef } from 'react';
 import { Translation } from 'react-i18next';
 import './legend.css';
-import { list } from '../../assets/icons/icons.js';
+import { colorKey } from '../../assets/icons/icons.js';
 import AppContext from '../../contexts/AppContext';
 import { UIComponent } from '../../utils/constant';
 import { worldStyleColor } from '../Map/util';
@@ -103,7 +103,7 @@ export class Legend extends Component {
         {...this.props}
         style={{cursor: "pointer"}}
       >
-        {list}
+        {colorKey}
         <div
           className={`dialog ${this.state.showDialog ? 'show' : ''} ${
             this.props.y

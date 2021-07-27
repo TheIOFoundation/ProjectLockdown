@@ -3,6 +3,7 @@ export { settings } from './settings.svg.js';
 export { refresh } from './ticker.svg.js';
 export { add } from './contribute.svg.js';
 export { close } from './x.svg.js';
+export { colorKey } from './color-key.svg.js';
 export { trues } from './true.svg.js';
 export { logo } from './logo.svg.js';
 export { logoSimple } from './logo-simple.svg.js';

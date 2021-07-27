@@ -337,8 +337,11 @@ export class TabMenu extends Component {
     const { activeItem, currentDropdown } = this.state;
     const { isDark, setDarkMode } = this.props;
     return this.state.showLateralMenu || this.props.isMobile === true ? (
-      <>
-        <div className="menu-overlay"></div>
+      <React.Fragment>
+        <div
+          className="menu-overlay"
+          onClick={this.closeNavbar}
+        />
         <main id="main" className="ld-menu">
           <div className="ld-menu-nav">
             <button className="menu-close-btn" onClick={this.closeNavbar}>
@@ -377,7 +380,7 @@ export class TabMenu extends Component {
             }
           </div>
         </main>
-      </>
+      </React.Fragment>
     ) : (
       <React.Fragment>
         <button onClick={this.showSideBar} className="menu-info-btn">
