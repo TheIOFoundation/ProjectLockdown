@@ -1,23 +1,26 @@
 .mapControl {
-  background-color: $white;
+  background-color: var(--ld-bg);
   border-radius: 30px;
   padding: 19px 0 30.94px;
-  box-shadow: 0 4px 4px 0 $transparent-black;
+  box-shadow: 0 4px 4px 0 var(--ld-gray-2);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .zoomIn {
   width: 36.67%;
   height: 32.91%;
   margin-bottom: 17.89px;
 }
+
 .zoomDividerLm {
   height: 1.5%;
-  background-color: $gainsboro;
+  background-color: var(--ld-gray-3);
   margin-bottom: 21.25px;
   align-self: stretch;
 }
+
 .zoomOut {
   width: 36.67%;
   height: 7.05%;
