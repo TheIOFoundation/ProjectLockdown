@@ -1,28 +1,34 @@
 .zoom {
   background-color: var(--ld-bg);
-  border-radius: 30px;
-  padding: 19px 0 30.94px;
+  width: 50px;
+  border-radius: 25px;
   box-shadow: 0 4px 4px 0 var(--ld-gray-2);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
+  right: 2vw;
+  bottom: 1vw;
 }
 
 .zoomIn {
-  width: 36.67%;
-  height: 32.91%;
-  margin-bottom: 17.89px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.zoomButton {
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
 }
 
 .zoomDividerLm {
-  height: 1.5%;
-  background-color: var(--ld-gray-3);
-  margin-bottom: 21.25px;
+  height: 1px;
+  background-color: var(--ld-gray-4);
   align-self: stretch;
 }
 
 .zoomOut {
-  width: 36.67%;
-  height: 7.05%;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
 }
