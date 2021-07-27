@@ -3,7 +3,7 @@ import styles from "./Zoom.module.scss";
 
 const MapControl = () => {
     return (
-        <div className={styles.mapControl}>
+        <div className={styles.zoom}>
             <img
                 alt=""
                 className={styles.zoomIn}

@@ -11,6 +11,7 @@ import { addDays, format } from 'date-fns';
 import TimeSlider from './components/TimeSlider/TimeSlider';
 import CountryInfo from './components/CountryInfo/CountryInfo';
 import Watermark from './components/Watermark/Watermark';
+import Zoom from './components/Zoom/Zoom';
 import { UIComponent } from './utils/constant';
 //import LocalStorage Functions
 import * as router from './router';
@@ -333,6 +334,7 @@ const App = (props) => {
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
           {isStatsBarVisible && <StatsBar />}
           {isLegendVisible && <Legend dark={isDark} />}
+          <Zoom />
           <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider
