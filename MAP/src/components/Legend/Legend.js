@@ -1,7 +1,7 @@
 import { Component, createRef } from 'react';
 import { Translation } from 'react-i18next';
 import './legend.css';
-import { list } from '../../assets/icons/icons.js';
+import { colorKey } from '../../assets/icons/icons.js';
 import AppContext from '../../contexts/AppContext';
 import { UIComponent } from '../../utils/constant';
 import { worldStyleColor } from '../Map/util';
@@ -38,8 +38,8 @@ export class Legend extends Component {
   }
 
   onTouchEnd() {
-    let side = this.state.x;
-    let vertical = this.state.y;
+    let side;
+    let vertical;
     const x = window.innerWidth || window.clientWidth;
     const y = window.innerHeight || window.clientHeight;
     const currentVertical = Number(this.btn.style.top.replace('px', ''));
@@ -103,7 +103,7 @@ export class Legend extends Component {
         {...this.props}
         style={{cursor: "pointer"}}
       >
-        {list}
+        {colorKey}
         <div
           className={`dialog ${this.state.showDialog ? 'show' : ''} ${
             this.props.y
@@ -117,7 +117,7 @@ export class Legend extends Component {
                        style={{cursor: "default"}}/>
                 </span>
                 <Translation>
-                  {(t, { i18n }) => <span style={{cursor: "default"}}>
+                  {(t) => <span style={{cursor: "default"}}>
                     {t(`${legends.title}`)}
                   </span>}
                 </Translation>
@@ -132,7 +132,6 @@ export class Legend extends Component {
 
 Legend.defaultProps = {
   dark: false,
-  // size: 'medium',
-  x: 'left',
+  x: 'right',
   y: 'bottom',
 };

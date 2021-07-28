@@ -23,7 +23,7 @@ export class DSLService {
         return this.dslRepository.save(dataSetLayer);
     }
 
-    async findById(_id: string){
-        return this.dslRepository.find(_id);
+    async findById(id: string){
+        return this.dslRepository.find(id);
     }
 }

@@ -2,8 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react';
 import { Map } from './components/Map/Map';
 import { LoadingAnimation } from './components/LoadingAnimation/LoadingAnimation';
 import { Legend } from './components/Legend/Legend';
-import Totals from './components/Totals/Totals';
-import LanguageSelector from './components/LanguageSelector/LanguageSelector';
+import StatsBar from './components/StatsBar/StatsBar';
 import './App.scss';
 import { TabMenu } from './components/TabMenu/TabMenu';
 import ThemeContext from './contexts/ThemeContext';
@@ -33,7 +32,7 @@ const startingPoint = -300;
 const playSpeed = 200;
 // i.e. delay between skipping to the next date (in ms)
 
-const watermarkSize = 2;
+const watermarkSize = 2.5;
 
 const playerStates = {
   PLAYING: 'PLAYING',
@@ -57,7 +56,6 @@ const App = (props) => {
   const [isDark, setIsDark] = useState('true');
   const [playerState, setPlayerState] = useState(PAUSED);
   const [days, setDays] = useState([]);
-  const [currentLanguage, setCurrentLanguage] = useState({t: (text) => text});
   const [selectedDate, setSelectedDate] = useState(toJsonString(addDays(new Date(), startingPoint)));
   const [startDate, setStartDate] = useState(addDays(new Date(), startingPoint));
   const [endDate, setEndDate] = useState(addDays(new Date(), startingPoint + daysRange));
@@ -71,6 +69,8 @@ const App = (props) => {
   const [isLegendVisible, setIsLegendVisible] = useState(false);
   const [isTimeSliderVisible, setIsTimeSliderVisible] = useState(false);
   const [isCountrySearchVisible, setIsCountrySearchVisible] = useState(false);
+  const [isStatsBarVisible, setIsStatsBarVisible] = useState(false);
+  const [isTabMenuVisible, setIsTabMenuVisible] = useState(false);
   const [mapCord , setMapCord] = useState({
       lng: coords.lng,
       lat: coords.lat,
@@ -85,7 +85,9 @@ const App = (props) => {
           setEnvironment(envt)
           setIsLegendVisible(_find(components,UIComponent.Legend).is_visible || false);
           setIsTimeSliderVisible(_find(components, UIComponent.TimeSlider).is_visible || false);
-          setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false)
+          setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false);
+          setIsStatsBarVisible(_find(components,UIComponent.StatsBar).is_visible || false);
+          setIsTabMenuVisible(_find(components,UIComponent.TabMenu).is_visible || false);
         }
    }, []);
 
@@ -231,6 +233,12 @@ const App = (props) => {
             case UIComponent.CountriesSearcher:
               setIsCountrySearchVisible(toBool(value));
               break;
+            case UIComponent.StatsBar:
+              setIsStatsBarVisible(toBool(value));
+              break;
+            case UIComponent.TabMenu:
+              setIsTabMenuVisible(toBool(value));
+              break;
             default:
               break
           }
@@ -322,14 +330,9 @@ const App = (props) => {
             isCountrySearchVisible={isCountrySearchVisible}
             mapCord={mapCord}
           />
-          <TabMenu isDark={isDark} setDarkMode={updateIsDark} />
-          <Totals dark={isDark} />
+          {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
+          {isStatsBarVisible && <StatsBar />}
           {isLegendVisible && <Legend dark={isDark} />}
-          {/* <CountriesSearcher i18n={{ locale: 'en, en-US' }} /> */}
-          <LanguageSelector
-            languageChangeHandler={setCurrentLanguage}
-            dark={isDark}
-          />
           <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider
@@ -359,7 +362,6 @@ const App = (props) => {
                   iso2={dialog.iso2}
                   wikidata=""
                   date={selectedDate || new Date()}
-                  i18n={currentLanguage}
                   startDate={startDate}
                   endDate={endDate}
                   daysRange={daysRange}

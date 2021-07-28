@@ -18,7 +18,6 @@ const CountryInfo = (props) => {
   const dark =  toBool(props.dark)  || false;
   const environment = useContext(AppContext)
   const [currentTab, setCurrentTab] = useState(1);
-  const { i18n } = props;
   const [coronaData, setCoronaData] = useState();
   const [tabs, setTabs] = useState([])
   const [
@@ -69,8 +68,7 @@ const CountryInfo = (props) => {
     <div className={`container ${dark ? 'dark' : ''} CountryInfo`}>
       <div
         style={{
-          color: `${dark ? 'white' : 'black'}`,
-          // backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
+          color: `${dark ? 'white' : 'black'}`
         }}
         className={tabStyles}
       >
@@ -86,11 +84,7 @@ const CountryInfo = (props) => {
         <button onClick={props.onClose}>{closeIcon}</button>
       </div>
       <div
-        style={{
-          color: `${dark ? 'white' : 'black'}`,
-          backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`,
-          minHeight: 'inherit'
-        }}
+        style={{minHeight: 'inherit'}}
         className={`countryInfo ${countryInfoStyles} ${
           dark ? 'dark' : ''
         }`}
@@ -105,18 +99,16 @@ const CountryInfo = (props) => {
               isSameDay(new Date(corona.last_updated), props.date),
             )}
             countryDetails={countryDetails}
-            i18n={i18n}
           />
         ) : currentTab === 2 ? (
           <TransportDetails
             t={t}
             dark={dark}
-            i18n={i18n}
             countryDetails={countryDetails}
           />
         ) : (
           <>
-            <Reports t={t} i18n={i18n} dark={dark} />
+            <Reports t={t} dark={dark} />
             <div className="link-container">
               <a
                 className="ld-link"

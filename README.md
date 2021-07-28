@@ -5,8 +5,6 @@
 
 <!-- ![screenshot](http://ercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
 
-#O:his is the e reposit fo ..Some inoration is still a  in pogress ou ca acces the crret rnig .repsito.oref="Code-r-l/locdon"here</a> il etnsition to the ne ersin
-
 <table>
 	<tr>
 		<td>
