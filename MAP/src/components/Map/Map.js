@@ -17,6 +17,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 import AppContext from '../../contexts/AppContext';
+import Zoom from '../../components/Zoom/Zoom';
 //import LocalStorage Functions
 import * as router from '../../router';
 import _ from 'lodash';
