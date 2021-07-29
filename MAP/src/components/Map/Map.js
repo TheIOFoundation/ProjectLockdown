@@ -564,14 +564,12 @@ export class Map extends React.Component {
         <Zoom
             map={{
               zoomIn: () => {
-                console.log(this.state.map.getZoom());
                 this.state.map.flyTo({
                   zoom: this.state.map.getZoom() + 1,
                   essential: true,
                 });
               },
               zoomOut: () => {
-                console.log(this.state.map.getZoom());
                 this.state.map.flyTo({
                   zoom: this.state.map.getZoom() - Math.min(1, this.state.map.getZoom() - 0.68),
                   essential: true,
