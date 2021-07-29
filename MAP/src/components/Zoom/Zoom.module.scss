@@ -1,0 +1,39 @@
+.zoom {
+  background-color: var(--ld-bg);
+  width: 50px;
+  border-radius: 25px;
+  box-shadow: 0 4px 4px 0 var(--ld-gray-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 2vw;
+  bottom: 40px;
+}
+
+.zoomIn {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.zoomButton {
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+  svg {
+    path {
+      fill: var(--ld-text);
+    }
+  }
+}
+
+.zoomDividerLm {
+  height: 1px;
+  background-color: var(--ld-gray-4);
+  align-self: stretch;
+}
+
+.zoomOut {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
