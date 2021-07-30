@@ -1,1 +1,168 @@
-{}
+{
+    "translationBy": "",
+    "languageId": "",
+    "header": {
+        "totals": {
+            "territoriesLockdown": "",
+            "peopleAffected": "",
+            "cases": "",
+            "deaths": ""
+        }
+    },
+    "menu": {
+        "informationSection": {
+            "banner": "",
+            "main": {
+                "name": "",
+                "text": ""
+            },
+            "about": {
+                "title": "",
+                "text": {
+                    "p1": "",
+                    "p2": "",
+                    "p3": ""
+                }
+            },
+            "sources": {
+                "title": "",
+                "subtitle": "",
+                "linksList": {
+                    "first": {
+                        "linkTitle": "",
+                        "text": ""
+                    },
+                    "second": {
+                        "linkTitle": "",
+                        "text": "",
+                        "highlight": ""
+                    }
+                },
+                "issues": {
+                    "text": "",
+                    "highlight": ""
+                }
+            },
+            "credits": {
+                "title": "",
+                "text": "",
+                "highlight": ""
+            },
+            "dataPrivacity": {
+                "title": "",
+                "paragraphs": {
+                    "p1": "",
+                    "p2": ""
+                }
+            }
+        },
+        "userPreferenceSection": {
+            "theme": {
+                "action": "",
+                "dark": "",
+                "light": ""
+            },
+            "geolocation": "",
+            "app": {
+                "install": "",
+                "update": ""
+            }
+        },
+        "contribution": {
+            "contributionLinks": {
+                "firstLink": "",
+                "secondLink": "",
+                "thirdLink": ""
+            }
+        }
+    },
+    "tdo": {
+        "contributionLinks": {
+            "firstLink": "",
+            "secondLink": "",
+            "thirdLink": ""
+        },
+        "tabs": {
+            "dailyLife": {
+                "name": "",
+                "subtitle": "",
+                "noResults": "",
+                "stats": {
+                    "population": "",
+                    "max_assembly": "",
+                    "max_assemblyShortVersion": "",
+                    "cases": "",
+                    "recoveries": "",
+                    "deaths": ""
+                },
+                "measureValues": {
+                    "1": "",
+                    "2": "",
+                    "3": "",
+                    "4": ""
+                },
+                "measures": {
+                    "home": "",
+                    "homeShortVersion": "",
+                    "outdoors": "",
+                    "outdoorsShortVersion": "",
+                    "shopping": "",
+                    "shoppingShortVersion": "",
+                    "military": "",
+                    "militaryShortVersion": "",
+                    "religious": "",
+                    "religiousShortVersion": "",
+                    "work": "",
+                    "workShortVersion": "",
+                    "schools": "",
+                    "schoolsShortVersion": "",
+                    "electricity": "",
+                    "electricityShortVersion": "",
+                    "water": "",
+                    "waterShortVersion": "",
+                    "internet": "",
+                    "internetShortVersion": ""
+                }
+            },
+            "mobility": {
+                "name": "",
+                "subtitle": "",
+                "measureValues": {
+                    "1": "",
+                    "2": "",
+                    "3": "",
+                    "4": ""
+                },
+                "measures": {
+                    "foreignersInbound": "",
+                    "foreignersInboundShortVersion": "",
+                    "foreignersOutbound": "",
+                    "foreignersOutboundShortVersion": "",
+                    "local": "",
+                    "localShortVersion": "",
+                    "nationalsInbound": "",
+                    "nationalsInboundShortVersion": "",
+                    "nationalsOutbound": "",
+                    "nationalsOutboundShortVersion": "",
+                    "stopovers": "",
+                    "stopoversShortVersion": "",
+                    "crossBorderWorkers": "",
+                    "crossBorderWorkersShortVersion": "",
+                    "commerce": "",
+                    "commerceShortVersion": ""
+                }
+            },
+            "reports": {
+                "name": "",
+                "subtitle": ""
+            }
+        }
+    },
+    "mapLegend": {
+        "no": "",
+        "partial": "",
+        "full": "",
+        "noData": "",
+        "cases": ""
+    }
+}
