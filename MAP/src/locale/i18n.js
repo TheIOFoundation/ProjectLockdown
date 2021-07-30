@@ -3,7 +3,7 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
-import translationEN from './en/index';
+// import translationEN from './en/index';
 import translationAR from './ar/index';
 import translationES from './es/index';
 import translationIT from './it/index';
@@ -11,6 +11,7 @@ import translationPT from './pt/index';
 import translationRU from './ru/index';
 import translationZHCN from './zh-CN/index';
 import translationZHHK from './zh-HK/index';
+const translationEN = require('./en/en.json');
 
 const resources = {
   en: {
