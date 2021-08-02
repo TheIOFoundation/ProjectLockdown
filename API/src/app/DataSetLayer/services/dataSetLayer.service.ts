@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { plainToClass } from 'class-transformer';
 import { Repository } from 'typeorm';
-import { DataSetLayerDTOInput } from '../dto/dataSetLayer.dto';
+import { DataSetLayerDTOInput } from '../dtos/dataSetLayer.dto';
 import { DataSetLayer } from '../entities/dataSetLayer.entity';
 
 @Injectable()

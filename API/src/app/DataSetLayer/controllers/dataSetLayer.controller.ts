@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { DataSetLayerDTOInput } from '../dto/dataSetLayer.dto';
+import { DataSetLayerDTOInput } from '../dtos/dataSetLayer.dto';
 import { DataSetLayer } from '../entities/dataSetLayer.entity';
 import { DSLService } from '../services/dataSetLayer.service';
 

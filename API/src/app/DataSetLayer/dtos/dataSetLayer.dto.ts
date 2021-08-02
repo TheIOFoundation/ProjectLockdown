@@ -42,7 +42,7 @@ export class DataSetLayerDTOOutput {
     categories: string[];
 
     @Expose()
-    createAt: string;
+    createdAt: string;
 
     @Expose()
     updatedAt: string;
