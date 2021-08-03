@@ -7,18 +7,20 @@ const separateNumber = (number, format) => {
     return nfObject.format(+number);
 };
 
-const DataDisplay = ({ totalsData }) => {
+const DataDisplay = ({ totalsData, width }) => {
     const { t } = useTranslation();
 
     return (
         <div className={styles.relativeWrapper}>
-            <p className={styles.territoriesInLockdown}>
+            <p className={styles.territoriesInLockdown}
+               style={{fontSize: width > 780 ? '100%' : '70%'}}>
                 {t('header.totals.territoriesLockdown')}
             </p>
             <p className={styles.nums}>
                 {separateNumber(totalsData.lockdown, t('languageId'))}
             </p>
-            <p className={styles.peopleAffected}>
+            <p className={styles.peopleAffected}
+               style={{fontSize: width > 780 ? '100%' : '70%'}}>
                 {t('header.totals.peopleAffected')}
             </p>
             <p className={styles.nums}>

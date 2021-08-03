@@ -333,7 +333,6 @@ const App = (props) => {
           }
         }}
       >
-        {console.log(windowDimensions.width)}
         <AppContext.Provider value={{environment, setEnvironment}} >
         <ThemeContext.Provider value={{ isDark }}>
           <LoadingAnimation isLoading={loading} />
@@ -349,7 +348,7 @@ const App = (props) => {
             mapCord={mapCord}
           />
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
-          {isStatsBarVisible && <StatsBar />}
+          {isStatsBarVisible && <StatsBar width={windowDimensions.width} />}
           {isLegendVisible && <Legend dark={isDark} />}
           <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (

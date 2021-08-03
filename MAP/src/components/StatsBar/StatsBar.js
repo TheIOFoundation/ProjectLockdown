@@ -8,7 +8,8 @@ const StatsBar = ({
                       startDate,
                       endDate,
                       selectedDate = '2021-01-01',
-                      daysRange = 10
+                      daysRange = 10,
+                      width
                   }) => {
     const [totalsData, setTotalsData] = useState({
         lockdown: 0,
@@ -35,7 +36,7 @@ const StatsBar = ({
             >
                 {logoSimple}
             </div>
-            {isOpen && <DataDisplay totalsData={totalsData}/>}
+            {isOpen && <DataDisplay totalsData={totalsData} width={width}/>}
             <div
                 className={styles.flexWrapperOne}
                 onClick={toggleStatsBar}>
