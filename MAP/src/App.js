@@ -25,6 +25,14 @@ function toJsonString(date) {
   return format(date, 'yyyy-MM-dd');
 }
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
 const daysRange = 70;
 
 const startingPoint = -300;
@@ -76,6 +84,7 @@ const App = (props) => {
       lat: coords.lat,
       zoom: coords.zoom,
   })
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
    const getEnvData = useCallback( async () =>{
         const data = await fetchEnvironments();
@@ -102,8 +111,8 @@ const App = (props) => {
         setDays((oldDays) => [...oldDays, newDays]);
     },
     [days,startDate],
-  ) 
-  
+  )
+
 
   const pausePlayerState =  useCallback(
     () => {
@@ -305,7 +314,15 @@ const App = (props) => {
     const onSetSelectedDate =(date) => {
       setSelectedDate(toJsonString(new Date(date)));      
     };
-    
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
     return (
       <div
@@ -316,6 +333,7 @@ const App = (props) => {
           }
         }}
       >
+        {console.log(windowDimensions.width)}
         <AppContext.Provider value={{environment, setEnvironment}} >
         <ThemeContext.Provider value={{ isDark }}>
           <LoadingAnimation isLoading={loading} />
