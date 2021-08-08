@@ -81,6 +81,7 @@ const App = (props) => {
   const [isCountrySearchVisible, setIsCountrySearchVisible] = useState(false);
   const [isStatsBarVisible, setIsStatsBarVisible] = useState(false);
   const [isTabMenuVisible, setIsTabMenuVisible] = useState(false);
+  const [isZoomVisible, setIsZoomVisible] = useState(false);
   const [mapCord , setMapCord] = useState({
       lng: coords.lng,
       lat: coords.lat,
@@ -99,6 +100,7 @@ const App = (props) => {
           setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false);
           setIsStatsBarVisible(_find(components,UIComponent.StatsBar).is_visible || false);
           setIsTabMenuVisible(_find(components,UIComponent.TabMenu).is_visible || false);
+          setIsZoomVisible(_find(components,UIComponent.Zoom).is_visible || false);
         }
    }, []);
 
@@ -250,6 +252,9 @@ const App = (props) => {
             case UIComponent.TabMenu:
               setIsTabMenuVisible(toBool(value));
               break;
+            case UIComponent.Zoom:
+              setIsZoomVisible(toBool(value));
+              break;
             default:
               break
           }
@@ -347,6 +352,7 @@ const App = (props) => {
             setIsLoading={setIsLoading}
             daysRange={daysRange}
             isCountrySearchVisible={isCountrySearchVisible}
+            isZoomVisible={isZoomVisible}
             mapCord={mapCord}
             width={windowDimensions.width}
             mobileWidth={fullTimeSliderWidth}
