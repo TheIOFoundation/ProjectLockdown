@@ -17,13 +17,13 @@ const DataDisplay = ({ totalsData, width }) => {
             fullTotals = fullTotals.replace(' ','.')
                 .replace(',','.');
             const cutoffDigit = fullTotals.indexOf('.') + 2;
-            fullTotals = fullTotals.substring(0, cutoffDigit);
+            fullTotals = fullTotals.substring(0, cutoffDigit) + " ";
             if (totalsData.affected >= 1000000000) {
-                fullTotals += " B";
+                fullTotals += t('header.totals.mobileAbbreviations.billion');
             } else if (totalsData.affected >= 1000000) {
-                fullTotals += " M";
+                fullTotals += t('header.totals.mobileAbbreviations.million');
             } else if (totalsData.affected >= 1000) {
-                fullTotals += " K";
+                fullTotals += t('header.totals.mobileAbbreviations.thousand');
             }
         }
         setTotals(() => fullTotals);
