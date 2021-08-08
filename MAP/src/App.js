@@ -42,6 +42,8 @@ const playSpeed = 200;
 
 const watermarkSize = 2.5;
 
+const fullTimeSliderWidth = 700;
+
 const playerStates = {
   PLAYING: 'PLAYING',
   PAUSED: 'PAUSED',
@@ -346,10 +348,17 @@ const App = (props) => {
             daysRange={daysRange}
             isCountrySearchVisible={isCountrySearchVisible}
             mapCord={mapCord}
+            width={windowDimensions.width}
+            mobileWidth={fullTimeSliderWidth}
           />
-          {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
+          {isTabMenuVisible && <TabMenu isDark={isDark}
+                                        setDarkMode={updateIsDark}
+                                        width={windowDimensions.width}
+                                        mobilewidth={fullTimeSliderWidth} />}
           {isStatsBarVisible && <StatsBar width={windowDimensions.width} />}
-          {isLegendVisible && <Legend dark={isDark} />}
+          {isLegendVisible && <Legend dark={isDark}
+                                      width={windowDimensions.width}
+                                      mobilewidth={fullTimeSliderWidth} />}
           <Watermark dark={isDark} fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider

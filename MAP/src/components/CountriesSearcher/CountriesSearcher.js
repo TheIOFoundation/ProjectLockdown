@@ -6,7 +6,7 @@ import { toBool } from '../../utils/utils';
 import { magnify } from '../../assets/icons/icons.js';
 import { mapboxToken } from '../Map/Map';
 
-function CountriesSearcher({ i18n, map, dark, initialState }) {
+function CountriesSearcher({ i18n, map, dark, initialState, width, mobileWidth }) {
   dark  = toBool(dark);
   const [showSearchInput, setShowSearchInput] = useState(
     (initialState && initialState.showSearchInput) || false,
@@ -92,6 +92,7 @@ function CountriesSearcher({ i18n, map, dark, initialState }) {
       className={`countriesSearcher 
       ${showSearchInput ? 'show' : ''}
       ${dark ? 'dark' : ''}`}
+      style={{bottom: width > mobileWidth ? '160px' : '240px'}}
     >
       <span
           className="icon-provider"

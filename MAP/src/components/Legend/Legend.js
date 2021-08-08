@@ -101,7 +101,7 @@ export class Legend extends Component {
         type="legend"
         className={['btn', mode].join(' ')}
         {...this.props}
-        style={{cursor: "pointer"}}
+        style={{bottom: this.props.width > this.props.mobilewidth ? '220px' : '300px'}}
       >
         {colorKey}
         <div

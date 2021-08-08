@@ -560,6 +560,8 @@ export class Map extends React.Component {
               });
             },
           }}
+          width={this.props.width}
+          mobileWidth={this.props.mobileWidth}
         /> }
         <Zoom
             map={{
@@ -576,6 +578,8 @@ export class Map extends React.Component {
                 });
               },
             }}
+            width={this.props.width}
+            mobileWidth={this.props.mobileWidth}
         />
         <span id="mapBlank" style={{ display: 'none' }}></span>
       </>
