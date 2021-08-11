@@ -47762,36 +47762,6 @@
   },
   "components": {
     "schemas": {
-      "Layout": {
-        "title": "🚧 Layout",
-        "type": "object",
-        "description": "# Status: 🚧\n\n## ⚡ About\n\n\n## 📢 Used by\n- 💠 \n\n\n\n@@@MISSING\nHow to correlate the DPUIs with the layout placeholders.\nThis will depend on the implementation model.",
-        "properties": {
-          "LayoutUID": {
-            "type": "string",
-            "description": "Universal ID\n🚧 Document how it is generated"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "Stats": {
-            "type": "array",
-            "description": "🚧\nStatistics related to this object.",
-            "items": {
-              "$ref": "#/components/schemas/Stat"
-            }
-          },
-          "URLCSS": {
-            "$ref": "#/components/schemas/Link"
-          }
-        },
-        "x-tags": [
-          "Models"
-        ]
-      },
       "User": {
         "title": "🚧 Users",
         "type": "object",
