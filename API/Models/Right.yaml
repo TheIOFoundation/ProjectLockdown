@@ -1,0 +1,57 @@
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n## \U0001F4E2 Used by\n- \U0001F4A0 "
+type: object
+x-examples:
+  example-1:
+    RightUID:
+      type: string
+      description: "Universal ID\n\U0001F6A7 Document how it is generated"
+    OriginUID:
+      type: string
+    Name:
+      type: string
+    Stats:
+      type: array
+      description: "\U0001F6A7\nStatistics related to this object."
+      items:
+        $ref: '#/components/schemas/Stat'
+    Description:
+      type: string
+    Type:
+      type: string
+      description: |-
+        Positive [
+            Note:"
+            - Meaning: This Right requires of a specific intervention to be implemented.
+            - Notes: 
+            - IMPORTANT: 
+            "]
+            
+            Negative [
+            Note:"
+            - Meaning: This Right is implemented by not performing any intervention.
+            - Notes: 
+            - IMPORTANT: 
+            "]
+title: "\U0001F6A7Right"
+properties:
+  RightUID:
+    type: string
+  OriginUID:
+    type: string
+  Name:
+    type: string
+  Stats:
+    type: array
+    items:
+      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+  Description:
+    type: string
+  Type:
+    type: string
+required:
+  - RightUID
+  - OriginUID
+  - Name
+  - Stats
+  - Description
+  - Type
