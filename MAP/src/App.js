@@ -56,6 +56,7 @@ const getDaysDiff = (date1, date2) => {
     (formattedDate2.getTime() - formattedDate1.getTime()) / (1000 * 3600 * 24)
   );
 };
+
 const { PLAYING, PAUSED } = playerStates;
 const  coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
 
