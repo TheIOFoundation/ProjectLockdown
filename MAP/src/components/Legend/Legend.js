@@ -5,7 +5,6 @@ import { colorKey } from '../../assets/icons/icons.js';
 import AppContext from '../../contexts/AppContext';
 import { UIComponent } from '../../utils/constant';
 import { worldStyleColor } from '../Map/util';
-import { toBool } from '../../utils/utils';
 
 export class Legend extends Component {
   static contextType = AppContext;
@@ -92,16 +91,14 @@ export class Legend extends Component {
   }
 
   render() {
-    const mode = toBool(this.props.dark) ? 'dark' : '';
     const {data} = this.state;
     
     return (
       <legend
         onClick={this.onClick}
         type="legend"
-        className={['btn', mode].join(' ')}
+        className="btn"
         {...this.props}
-        style={{cursor: "pointer"}}
       >
         {colorKey}
         <div
@@ -131,7 +128,6 @@ export class Legend extends Component {
 }
 
 Legend.defaultProps = {
-  dark: false,
   x: 'right',
   y: 'bottom',
 };

@@ -3,9 +3,7 @@ import { Legend } from './Legend';
 const parameters = {
   title: 'Component/Legend',
   component: Legend,
-  argTypes: {
-    dark: { control: 'boolean' },
-  },
+  argTypes: {},
 };
 
 const Template = (args) => <Legend {...args} />;
