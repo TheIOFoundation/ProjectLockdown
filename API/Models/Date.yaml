@@ -1,0 +1,37 @@
+title: "\U0001F441️‍\U0001F5E8️Date"
+type: object
+description: "# Status: \U0001F441️‍\U0001F5E8️\n\n## ⚡ About\nAn Date object represents the collection of data that is necessary to establish a _date & time_ and to describe its function.\n\nDates can be generated though one of the several [Funnels](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/Funnels) and according to transparent algorithms (see \U0001F4D1 documentation).\n\n\U0001F525 The actual Date value is stored in \U0001F4D1 XXX format in 2 different fields:\n- Value: As entered via [Funnel](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/Funnels)\n- valueUTC: Converted to UTC (GMT+0), which enables a properly referenced timeline of events.\n\nThe Type field indicates what kind of information the Link points to:\n\n\U0001F4D1 \n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n\U0001F4D1 Listing of Stats & their definitions\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n## ❓ DUBIOUS FIELDS\nHighlights: Where the text is from where the Date may have been extracted.\nLinks: Is this necessary? (Documentation?, Codebase?)"
+properties:
+  DateUID:
+    type: string
+  Name:
+    type: string
+  Description:
+    type: string
+  Type:
+    type: string
+  Value:
+    type: string
+  ValueUTC:
+    type: string
+  GeneratedBy:
+    type: string
+  "\U0001F4D1Highlights":
+    type: string
+  "\U0001F4D1Links":
+    type: array
+    items:
+      $ref: ./Link.yaml
+  UI:
+    type: object
+    properties:
+      Tooltip:
+        type: string
+      Name:
+        type: string
+      Description:
+        type: string
+  Stats:
+    type: array
+    items:
+      $ref: ./Stat.yaml

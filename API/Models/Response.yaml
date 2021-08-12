@@ -1,0 +1,14 @@
+title: "\U0001F6A7Response"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n## \U0001F4E2 Used by\n- \U0001F4A0 "
+properties:
+  ResponseUID:
+    type: string
+  GeneratedBy:
+    type: string
+  '???Highlights':
+    type: string
+  Type:
+    type: string
+  Value:
+    type: string
