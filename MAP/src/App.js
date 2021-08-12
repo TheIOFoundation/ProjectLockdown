@@ -332,7 +332,7 @@ const App = (props) => {
           />
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
           {isStatsBarVisible && <StatsBar />}
-          {isLegendVisible && <Legend dark={isDark} />}
+          {isLegendVisible && <Legend />}
           <Watermark fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider
