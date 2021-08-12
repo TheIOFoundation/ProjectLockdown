@@ -2015,6 +2015,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   Note: "
                   - Description: Controls the behaviour of the TabMenu.
                   - Notes: 
@@ -2029,6 +2059,36 @@ x-examples:
                 Show:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2189,6 +2249,36 @@ x-examples:
                 Position:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2485,6 +2575,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   Note: "
                   - Description: Indicates where is this Initialization object coming from.
                   - Notes: 
@@ -2507,6 +2627,36 @@ x-examples:
                     - Left
                     - Right
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2802,6 +2952,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Note: "
                       - Description: Date in format DD/MM/YYYY - UTC+0 referenced 
                       - QS Parameter: TimeSliderStartDate
@@ -2817,6 +2997,36 @@ x-examples:
                   type: string
                   format: date
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3093,6 +3303,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Note: "
                       - Description: Selects the date use for the 10 weeks date range.
                       - QS Parameter: TimeSliderCenterDate
@@ -3104,6 +3344,36 @@ x-examples:
                 Show:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3392,6 +3662,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   Note: "
                   - Description: Controls the behaviour of the StatsBox.
                   - Notes: 
@@ -3412,6 +3712,36 @@ x-examples:
                 DefaultDP:
                   type: array
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3696,6 +4026,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Note: "
                       - Description: Controls if the StatsBox is to be rendered with this DSL.
                       - QS Parameter: StatsBox -> StatsBoxShow
@@ -3718,6 +4078,36 @@ x-examples:
                 Position:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4017,6 +4407,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                      Note: "
                       - Description: Controls whether the Last Updated info is shown in the StatsBox.
                       - QS Parameter: N/A
@@ -4040,6 +4460,36 @@ x-examples:
             Map:
               type: object
               description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4319,6 +4769,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Note: "
                       Description: Controls the Region to center on map.
                       QS Parameter: MapRegion
@@ -4330,6 +4810,36 @@ x-examples:
                 Zoom:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4603,6 +5113,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Note: "
                       Description: Controls the Latitude for the map's center point.
                       QS Parameter: MapLat
@@ -4612,6 +5152,36 @@ x-examples:
                 Lng:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4896,6 +5466,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                           Note: "
                           Description: Controls the DEFAULT Datapoint to be rendered in the map for Territory (Surface).
                           QS Parameter: MapTerritoryDefaultDP
@@ -5037,6 +5637,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                           Note: "
                           Description: Controls the DEFAULT Datapoint to be rendered in the map for Borders (Line).
                           QS Parameter: MapBorderDefaultDP
@@ -5046,6 +5676,36 @@ x-examples:
                     Location:
                       type: string
                       description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5333,6 +5993,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Note: "
                       - Description: Controls whether the Play button is rendered.
                       - QS Parameter: PressPlayShow
@@ -5355,6 +6045,36 @@ x-examples:
                 Behavior:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5672,6 +6392,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Note: "
                       - Description: 
                       - QS Parameter: PressPlayStartDelay
@@ -5819,6 +6569,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Note: "
                       - Description: Indicates DSL days per second. 
                       - QS Parameter: PressPlayStep
@@ -5828,6 +6608,36 @@ x-examples:
             UI:
               type: object
               description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6108,6 +6918,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       - Description: Controls the language that will be used on the map.
                       - QS Parameter:
                       - QS Implemented: @@@ VERIFY
@@ -6116,6 +6956,36 @@ x-examples:
                 Mode:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6279,6 +7149,36 @@ x-examples:
                 Watermark:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6579,6 +7479,36 @@ x-examples:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       Description: Controls the behavior of the Territory Details Overlay (TDO).
                       QS Parameter: MapTDOBehavior
                       QS Implemented: @@@ VERIFY
@@ -6608,6 +7538,36 @@ x-examples:
                 PLDCode:
                   type: string
                   description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6952,6 +7912,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Note: "
             - Description: Controls the behaviour of the TabMenu.
             - Notes: 
@@ -6962,6 +7952,36 @@ properties:
           Show:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7223,6 +8243,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 - Description: Indicates in which position the menu is to be rendered.
                 - QS Parameter: TabMenuPosition
                 - QS Implemented: @@@ VERIFY
@@ -7246,6 +8296,36 @@ properties:
       TimeSlider:
         type: object
         description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7505,6 +8585,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 Note: "
                 - Description: Date in format DD/MM/YYYY - UTC+0 referenced 
                 - QS Parameter: TimeSliderStartDate
@@ -7516,6 +8626,36 @@ properties:
           DateEnd:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7740,6 +8880,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 Note: "
                 - Description: Selects the date use for the 10 weeks date range.
                 - QS Parameter: TimeSliderCenterDate
@@ -7751,6 +8921,36 @@ properties:
           Show:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7971,6 +9171,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                Note: "
                 - Description: Array of DPUIDs that are to be used in the StatsBox when rendering this DSL.
                 - QS Parameter: N/A
@@ -7985,6 +9215,36 @@ properties:
           Show:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8095,6 +9355,36 @@ properties:
           Position:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8302,6 +9592,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                Note: "
                 - Description: Controls whether the Last Updated info is shown in the StatsBox.
                 - QS Parameter: N/A
@@ -8322,6 +9642,36 @@ properties:
       Map:
         type: object
         description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8495,6 +9845,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 Note: "
                 Description: Controls the Region to center on map.
                 QS Parameter: MapRegion
@@ -8504,6 +9884,36 @@ properties:
           Zoom:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8674,6 +10084,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 Note: "
                 Description: Controls the Latitude for the map's center point.
                 QS Parameter: MapLat
@@ -8683,6 +10123,36 @@ properties:
           Lng:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8850,6 +10320,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     Note: "
                     Description: Controls the DEFAULT Datapoint to be rendered in the map for Territory (Surface).
                     QS Parameter: MapTerritoryDefaultDP
@@ -8859,6 +10359,36 @@ properties:
               Border:
                 type: string
                 description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9009,6 +10539,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     Note: "
                     Description: Controls the DEFAULT Datapoint to be rendered in the Map for Location (Point).
                     QS Parameter: MapLocationDefaultDP
@@ -9027,6 +10587,36 @@ properties:
           Show:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9105,6 +10695,36 @@ properties:
           Behavior:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9266,6 +10886,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 Note: "
                 - Description: 
                 - QS Parameter: PressPlayStartDelay
@@ -9279,6 +10929,36 @@ properties:
           Step:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9396,6 +11076,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Note: "
             - Description: Controls the final rendering type of the map.
             - QS Parameter: UIMode
@@ -9456,6 +11166,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 - Description: Controls the language that will be used on the map.
                 - QS Parameter:
                 - QS Implemented: @@@ VERIFY
@@ -9464,6 +11204,36 @@ properties:
           Mode:
             type: string
             description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9587,6 +11357,36 @@ properties:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 - Description: Controls the rendering of the PLD watermark on the map.
                 - QS Parameter: UIWatermark
                 - QS Implemented: NO
@@ -9608,35 +11408,47 @@ properties:
             type: array
             items:
               $ref: ./Category.yaml
-      BO:
-        type: object
-        properties:
-          Stats:
-            type: array
-            items:
-              $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
-      WEB:
-        type: object
-        properties:
-          Stats:
-            type: array
-            items:
-              $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
-      DB:
-        type: object
-        properties:
-          Stats:
-            type: array
-            items:
-              $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
-      API:
-        type: object
-        properties:
-          Stats:
-            type: array
-            items:
-              $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+      '???ModuleUID':
+        type: string
+      Name:
+        type: string
+      Description:
+        type: string
+      PLDCode:
+        type: string
       Stats:
         type: array
         items:
           $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+  BO:
+    type: object
+    properties:
+      Stats:
+        type: array
+        items:
+          $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+  WEB:
+    type: object
+    properties:
+      Stats:
+        type: array
+        items:
+          $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+  DB:
+    type: object
+    properties:
+      Stats:
+        type: array
+        items:
+          $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+  API:
+    type: object
+    properties:
+      Stats:
+        type: array
+        items:
+          $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+  Stats:
+    type: array
+    items:
+      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
