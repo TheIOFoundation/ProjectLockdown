@@ -320,7 +320,6 @@ const App = (props) => {
         <ThemeContext.Provider value={{ isDark }}>
           <LoadingAnimation isLoading={loading} />
           <Map
-            dark={isDark}
             selectedDate={selectedDate}
             startDate={startDate}
             endDate={endDate}
