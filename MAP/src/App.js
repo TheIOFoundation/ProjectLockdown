@@ -320,7 +320,6 @@ const App = (props) => {
         <ThemeContext.Provider value={{ isDark }}>
           <LoadingAnimation isLoading={loading} />
           <Map
-            dark={isDark}
             selectedDate={selectedDate}
             startDate={startDate}
             endDate={endDate}
@@ -332,8 +331,8 @@ const App = (props) => {
           />
           {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
           {isStatsBarVisible && <StatsBar />}
-          {isLegendVisible && <Legend dark={isDark} />}
-          <Watermark dark={isDark} fontsize={watermarkSize} />
+          {isLegendVisible && <Legend />}
+          <Watermark fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider
               playerState={playerState}
