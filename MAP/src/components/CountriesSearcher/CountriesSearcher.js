@@ -2,12 +2,10 @@ import { useState, useEffect, useCallback } from 'react';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import './countriesSearcher.css';
-import { toBool } from '../../utils/utils';
 import { magnify } from '../../assets/icons/icons.js';
 import { mapboxToken } from '../Map/Map';
 
-function CountriesSearcher({ i18n, map, dark, initialState, width, mobileWidth }) {
-  dark  = toBool(dark);
+function CountriesSearcher({ i18n, map, initialState, width, mobileWidth }) {
   const [showSearchInput, setShowSearchInput] = useState(
     (initialState && initialState.showSearchInput) || false,
   );
@@ -89,9 +87,7 @@ function CountriesSearcher({ i18n, map, dark, initialState, width, mobileWidth }
 
   return (
     <div
-      className={`countriesSearcher 
-      ${showSearchInput ? 'show' : ''}
-      ${dark ? 'dark' : ''}`}
+      className={`countriesSearcher ${showSearchInput ? 'show' : ''}`}
       style={{bottom: width > mobileWidth ? '160px' : '240px'}}
     >
       <span

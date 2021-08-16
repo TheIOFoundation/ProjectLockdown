@@ -345,7 +345,6 @@ const App = (props) => {
         <ThemeContext.Provider value={{ isDark }}>
           <LoadingAnimation isLoading={loading} />
           <Map
-            dark={isDark}
             selectedDate={selectedDate}
             startDate={startDate}
             endDate={endDate}
@@ -363,10 +362,9 @@ const App = (props) => {
                                         width={windowDimensions.width}
                                         mobilewidth={fullTimeSliderWidth} />}
           {isStatsBarVisible && <StatsBar width={windowDimensions.width} />}
-          {isLegendVisible && <Legend dark={isDark}
-                                      width={windowDimensions.width}
+          {isLegendVisible && <Legend width={windowDimensions.width}
                                       mobilewidth={fullTimeSliderWidth} />}
-          <Watermark dark={isDark} fontsize={watermarkSize} />
+          <Watermark fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider
               playerState={playerState}

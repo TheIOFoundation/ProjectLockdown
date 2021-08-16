@@ -549,7 +549,6 @@ export class Map extends React.Component {
           className="map-container"
         ></div>
          {isCountrySearchVisible &&  <CountriesSearcher
-          dark={this.props.dark}
           i18n={{ locale: 'en, en-US' }}
           map={{
             flyTo: (center, maxDuration) => {
