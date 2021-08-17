@@ -4,11 +4,6 @@ const Reports = (props) => {
   const { t } = props;
   return (
     <div
-      style={{
-        color: `${props.dark ? 'white' : 'black'}`,
-        backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
-        minHeight: 'inherit'
-      }}
       className={`${reports}`}
     >
       <h3>{t('tdo.tabs.reports.subtitle')}</h3>

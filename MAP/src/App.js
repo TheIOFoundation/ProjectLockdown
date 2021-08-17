@@ -356,7 +356,6 @@ const App = (props) => {
           
           {dialog.opened ? (
                 <CountryInfo
-                  dark={isDark}
                   country={dialog.country}
                   iso2={dialog.iso2}
                   wikidata=""

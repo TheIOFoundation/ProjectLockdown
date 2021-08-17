@@ -5,40 +5,25 @@ export const tabStyles = css`
     width: 100%;
     display: flex;
     position: relative;
-    & > button{
-      & {
-        position: absolute !important;
-        color: var(--ld-gray-3);
-        background-color: transparent;
-        padding: 0px !important;
-        top: 10px;
-        width: 30px !important;
-        height: 30px !important;
-        right: 5px;
-        border: 0px;
-        border-radius: 50% !important;
-        &:hover {
-          cursor: pointer;
-        }
-        
-      }
-      .dark & {
-        position: absolute !important;
-        color: gray;
-        background-color: transparent;
-        padding: 0px;
-        top: 10px;
-        width: 30px;
-        right: 5px;
-        border-radius: 50%;
-        &:hover {
-          cursor: pointer;
-        }
+    color: var(--ld-text);
+    & > button {
+      position: absolute !important;
+      color: var(--ld-text);
+      background-color: transparent;
+      padding: 0px !important;
+      top: 10px;
+      width: 30px !important;
+      height: 30px !important;
+      right: 5px;
+      border: 0px;
+      border-radius: 50% !important;
+      &:hover {
+        cursor: pointer;
       }
     }
     & .tab{
       width: 35%;
-      background-color: var(--ld-gray-6);
+      background-color: var(--ld-hover);
       font-family: Montserrat;
       font-style: normal;
       font-weight: 500;
@@ -47,7 +32,7 @@ export const tabStyles = css`
       text-align: center;
       padding: 5px;
       color: var(--ld-gray-3);
-      border: gray 1px solid;
+      border: var(--ld-gray-3) 1px solid;
       border-top: 0px;
       transition: 0.5s;
       display: flex;
@@ -56,23 +41,14 @@ export const tabStyles = css`
       align-items: center;
       min-height: 50px;
       letter-spacing:.5px;
-      .dark & {
-        background-color: var(--ld-gray-2);
-        color: gray;
-        border: var(--ld-gray-3) 1px solid;
-      }
       &:hover{
         cursor: pointer;
       }
       &.active{
         border-bottom: 0px;
-        background-color: #FFF 
+        background-color: var(--ld-bg); 
         border: 0px;
-        color: var(--ld-gray-1);
-        .dark &{
-          background-color: var(--ld-bg);
-          color: white;
-        }
+        color: var(--ld-text);
       }
       &:first-child{
         border-top-left-radius: 19px;
@@ -98,6 +74,9 @@ export const reports = css`
     justify-content: center;
     align-items: center;
     position: relative;
+    color: var(--ld-text);
+    background-color: var(--ld-hover);
+    min-height: inherit;
     & > h3 {
       background-color: rgba(231, 231, 231, 0.227);
       padding: 0.5rem 0.4rem;
@@ -126,21 +105,15 @@ export const reports = css`
 `;
 export const countryInfoStyles = css`
   .countryInfo.loader {
-    // background-color: #333333 ;
-    .dark & {
-      background-color: var(--ld-bg) !important;
-    }
+    background-color: var(--ld-bg);
   }
   & {
     background-color: var(--ld-bg);
-    // background-color: #333333 !important;
-
     color: var(--ld-text);
     padding: 20px 30px 30px 30px;
     @media (max-width: 960px) {
       padding: 5px 15px 15px 15px !important;
     }
-    // width: 100%;
     overflow-y: auto;
     &::-webkit-scrollbar {
       padding-left: 1.5%;
@@ -195,12 +168,9 @@ export const countryInfoStyles = css`
     &.last {
       padding: 0px;
       padding-top: 8px;
-      border-top: 1px solid #e0e0e0;
+      border-top: 1px solid var(--ld-gray-5);
       border-bottom: 0px;
       margin-top: 7px;
-      .dark & {
-        border-top: 1px solid #e0e0e0;
-      }
       &.transport {
         margin-bottom: -20px;
       }
@@ -214,11 +184,8 @@ export const countryInfoStyles = css`
     font-variant-numeric: tabular-nums;
     margin-bottom: 7px;
     padding-bottom: 7px;
-    border-bottom: 1px solid #828282;
+    border-bottom: 1px solid var(--ld-gray-4);
     width: 100%;
-    .dark & {
-      border-bottom: 1px solid #e0e0e0;
-    }
     &.is-half {
       width: 50%;
     }
@@ -257,9 +224,7 @@ export const countryInfoStyles = css`
     letter-spacing: 0.02em;
     margin-inline-start: 0;
     margin-right: 8px;
-    .dark & {
-      color: var(--ld-text);
-    }
+    color: var(--ld-text);
   }
   .legend-green {
     background-color: #93c47d;
@@ -302,14 +267,11 @@ export const countryInfoStyles = css`
   .measure-label {
     padding: 6px;
     border-radius: 20px;
-    color: var(--ld-gray-1);
+    color: var(--ld-text);
     pointer-events: none;
     transition: opacity 300ms ease-in-out;
     font-size: 12px;
     font-weight: 400;
-    .dark & {
-      color: var(--ld-text);
-    }
   }
   .measure {
     margin-right: 10px;
@@ -345,9 +307,7 @@ export const countryInfoStyles = css`
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
-    .dark & {
-      color: var(--ld-text);
-    }
+    color: var(--ld-text);
   }
   .ld-travel dd {
     margin-left: 0;

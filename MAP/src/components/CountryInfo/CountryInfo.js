@@ -12,10 +12,8 @@ import {
   getCoronaDetailService,
 } from '../../services/coronaTrackerService';
 import AppContext from '../../contexts/AppContext';
-import { toBool } from '../../utils/utils';
 
 const CountryInfo = (props) => {
-  const dark =  toBool(props.dark)  || false;
   const environment = useContext(AppContext)
   const [currentTab, setCurrentTab] = useState(1);
   const [coronaData, setCoronaData] = useState();
@@ -33,9 +31,8 @@ const CountryInfo = (props) => {
 
   useEffect(() => {
     const { startDate, endDate } = props;
-
     const {overlay = {}} = environment['environment'];
-    const  allTab=  overlay.tabs || []
+    const allTab =  overlay.tabs || []
     const allTabs = allTab.map(tab => { 
       return {
         id: tab.id,
@@ -44,7 +41,6 @@ const CountryInfo = (props) => {
       }
     })
     setTabs([...allTabs]);
-
 
     getCoronaData(props.iso2, startDate, endDate)
       .then((response) => {
@@ -65,11 +61,8 @@ const CountryInfo = (props) => {
   let territory = territoryData ? territoryData.territory : 'TERRITORY';
 
   return (
-    <div className={`container ${dark ? 'dark' : ''} CountryInfo`}>
+    <div className={`container CountryInfo`}>
       <div
-        style={{
-          color: `${dark ? 'white' : 'black'}`
-        }}
         className={tabStyles}
       >
         {tabs.map((tab) => (
@@ -85,13 +78,10 @@ const CountryInfo = (props) => {
       </div>
       <div
         style={{minHeight: 'inherit'}}
-        className={`countryInfo ${countryInfoStyles} ${
-          dark ? 'dark' : ''
-        }`}
+        className={`countryInfo ${countryInfoStyles}`}
       >
         {currentTab === 1 ? (
           <CountryDetails
-            dark={dark}
             date={props.date}
             country={props.country}
             t={t}
@@ -103,12 +93,11 @@ const CountryInfo = (props) => {
         ) : currentTab === 2 ? (
           <TransportDetails
             t={t}
-            dark={dark}
             countryDetails={countryDetails}
           />
         ) : (
           <>
-            <Reports t={t} dark={dark} />
+            <Reports t={t} />
             <div className="link-container">
               <a
                 className="ld-link"

@@ -4,7 +4,7 @@ import AppContext from '../../contexts/AppContext';
 
 const CountryDetails = (props) => {
   let { t } = props;
-  let { coronaData, country, date, dark } = props;
+  let { coronaData, country, date } = props;
   const[measures, setMeasures] = useState([]);
   const {environment} = useContext(AppContext);
 
@@ -31,7 +31,7 @@ const CountryDetails = (props) => {
   return (
     <div
       style={{
-        color: `${dark ? 'white' : 'black'}`
+        color: `var(--ld-text)`
       }}
     >
       <h2 className="ld-font-subheader">
@@ -60,7 +60,7 @@ const CountryDetails = (props) => {
           <dd className="data-value">{coronaData?.total_deaths}</dd>
         </div>
       </dl>
-      <Legends dark={props.dark} t={t} tab="dailyLife" />
+      <Legends t={t} tab="dailyLife" />
       <>
         <h2 className="ld-font-subheader last">
           {t('tdo.tabs.dailyLife.subtitle')}

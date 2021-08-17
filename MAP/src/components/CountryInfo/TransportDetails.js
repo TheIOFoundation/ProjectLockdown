@@ -12,7 +12,7 @@ const TransportDetails = (props) => {
     <>
       <br />
       <br />
-      <Legends dark={props.dark} t={t} tab="mobility" />
+      <Legends t={t} tab="mobility" />
       <h2 className="ld-font-subheader last transport">
         {/* Transport Restrictions Text */}
         {t('tdo.tabs.mobility.subtitle')}
