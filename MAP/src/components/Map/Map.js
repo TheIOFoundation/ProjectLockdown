@@ -539,8 +539,7 @@ export class Map extends React.Component {
   }
 
   render() {
-   const {isCountrySearchVisible} = this.props;
-   const {isZoomVisible} = this.props;
+   const {isCountrySearchVisible, isZoomVisible} = this.props;
     return (
       <>
         <div
