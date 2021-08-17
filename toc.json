@@ -2,44 +2,21 @@
   "items": [
     {
       "type": "item",
-      "title": "Introduction.",
+      "title": "Project Lockdown API Documentation Introduction.",
       "uri": "docs/index.md"
     },
     {
       "type": "divider",
-      "title": "Diagrams"
+      "title": "API Documents"
     },
     {
       "type": "item",
-      "title": "Readme",
-      "uri": "docs/Diagrams/Readme.md"
-    },
-    {
-      "type": "divider",
-      "title": "minimal Dataedo sample"
-    },
-    {
-      "type": "item",
-      "title": "Index",
-      "uri": "docs/minimal Dataedo sample/index.md"
-    },
-    {
-      "type": "divider",
-      "title": "APIS"
-    },
-    {
-      "type": "item",
-      "title": "Project Lockdown",
+      "title": "Project Lockdown API paths and Parameters",
       "uri": "API/Reference/Project-Lockdown.v2.json"
     },
     {
       "type": "item",
-      "title": "api.yaml",
-      "uri": "API/src/api.yaml"
-    },
-    {
-      "type": "item",
-      "title": "api.yaml",
+      "title": "Google Sheet Parser API",
       "uri": "DEI/gsheet-parser/api.yaml"
     },
     {
