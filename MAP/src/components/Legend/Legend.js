@@ -99,6 +99,7 @@ export class Legend extends Component {
         type="legend"
         className="btn"
         {...this.props}
+        style={{bottom: this.props.width > this.props.mobilewidth ? '220px' : '300px'}}
       >
         {colorKey}
         <div

@@ -25,6 +25,14 @@ function toJsonString(date) {
   return format(date, 'yyyy-MM-dd');
 }
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
 const daysRange = 70;
 
 const startingPoint = -300;
@@ -33,6 +41,8 @@ const playSpeed = 200;
 // i.e. delay between skipping to the next date (in ms)
 
 const watermarkSize = 2.5;
+
+const fullTimeSliderWidth = 700;
 
 const playerStates = {
   PLAYING: 'PLAYING',
@@ -46,6 +56,7 @@ const getDaysDiff = (date1, date2) => {
     (formattedDate2.getTime() - formattedDate1.getTime()) / (1000 * 3600 * 24)
   );
 };
+
 const { PLAYING, PAUSED } = playerStates;
 const  coords = { lng: 40.7, lat: 25, zoom: 1.06 }; //default coordinates
 
@@ -71,11 +82,13 @@ const App = (props) => {
   const [isCountrySearchVisible, setIsCountrySearchVisible] = useState(false);
   const [isStatsBarVisible, setIsStatsBarVisible] = useState(false);
   const [isTabMenuVisible, setIsTabMenuVisible] = useState(false);
+  const [isZoomVisible, setIsZoomVisible] = useState(false);
   const [mapCord , setMapCord] = useState({
       lng: coords.lng,
       lat: coords.lat,
       zoom: coords.zoom,
   })
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
    const getEnvData = useCallback( async () =>{
         const data = await fetchEnvironments();
@@ -88,6 +101,7 @@ const App = (props) => {
           setIsCountrySearchVisible(_find(components, UIComponent.CountriesSearcher).is_visible || false);
           setIsStatsBarVisible(_find(components,UIComponent.StatsBar).is_visible || false);
           setIsTabMenuVisible(_find(components,UIComponent.TabMenu).is_visible || false);
+          setIsZoomVisible(_find(components,UIComponent.Zoom).is_visible || false);
         }
    }, []);
 
@@ -102,8 +116,8 @@ const App = (props) => {
         setDays((oldDays) => [...oldDays, newDays]);
     },
     [days,startDate],
-  ) 
-  
+  )
+
 
   const pausePlayerState =  useCallback(
     () => {
@@ -239,6 +253,9 @@ const App = (props) => {
             case UIComponent.TabMenu:
               setIsTabMenuVisible(toBool(value));
               break;
+            case UIComponent.Zoom:
+              setIsZoomVisible(toBool(value));
+              break;
             default:
               break
           }
@@ -305,7 +322,15 @@ const App = (props) => {
     const onSetSelectedDate =(date) => {
       setSelectedDate(toJsonString(new Date(date)));      
     };
-    
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
     return (
       <div
@@ -327,11 +352,18 @@ const App = (props) => {
             setIsLoading={setIsLoading}
             daysRange={daysRange}
             isCountrySearchVisible={isCountrySearchVisible}
+            isZoomVisible={isZoomVisible}
             mapCord={mapCord}
+            width={windowDimensions.width}
+            mobileWidth={fullTimeSliderWidth}
           />
-          {isTabMenuVisible && <TabMenu isDark={isDark} setDarkMode={updateIsDark} />}
-          {isStatsBarVisible && <StatsBar />}
-          {isLegendVisible && <Legend />}
+          {isTabMenuVisible && <TabMenu isDark={isDark}
+                                        setDarkMode={updateIsDark}
+                                        width={windowDimensions.width}
+                                        mobilewidth={fullTimeSliderWidth} />}
+          {isStatsBarVisible && <StatsBar width={windowDimensions.width} />}
+          {isLegendVisible && <Legend width={windowDimensions.width}
+                                      mobilewidth={fullTimeSliderWidth} />}
           <Watermark fontsize={watermarkSize} />
           {startDate && endDate && selectedDate && isTimeSliderVisible && (
             <TimeSlider

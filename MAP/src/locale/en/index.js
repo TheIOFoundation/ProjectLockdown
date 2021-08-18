@@ -4,10 +4,15 @@ const en = {
   // ? For reference please see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes and for localized versions see https://en.wikipedia.org/wiki/Language_localisation
   header: {
     totals: {
-      territoriesLockdown: 'TERRITORIES IN LOCKDOWN',
-      peopleAffected: 'PEOPLE AFFECTED',
-      cases: 'REPORTED CASES',
-      deaths: 'REPORTED DEATHS',
+      territoriesLockdown: 'Territories in Lockdown',
+      peopleAffected: 'People Affected',
+      cases: 'Reported Cases',
+      deaths: 'Reported Deaths',
+      mobileAbbreviations: {
+        thousand: 'K',
+        million: 'M',
+        billion: 'B'
+      }
     },
   },
   menu: {

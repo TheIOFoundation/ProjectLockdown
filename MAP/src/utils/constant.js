@@ -3,5 +3,6 @@ export const UIComponent = {
     Legend: "Legend",
     CountriesSearcher: "CountriesSearcher",
     StatsBar: "StatsBar",
-    TabMenu: "TabMenu"
+    TabMenu: "TabMenu",
+    Zoom: "Zoom"
 }

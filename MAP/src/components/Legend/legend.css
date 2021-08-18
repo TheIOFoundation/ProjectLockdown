@@ -1,12 +1,11 @@
 .btn {
   position: absolute;
-  bottom: 240px;
   right: 2vw;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: var(--ld-bg);
-  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.1);
   display: flex;
   color: var(--ld-text);
   justify-content: center;
@@ -29,13 +28,13 @@
   background-color: var(--ld-bg);
   flex-direction: column;
   color: var(--ld-text);
-  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   cursor: default;
 }
 
 .dialog.top {
-  top: 0%;
+  top: 0;
 }
 
 .dialog.top::after {
@@ -89,8 +88,8 @@
   display: flex;
   font-weight: 500;
   align-items: center;
-  padding: 9px 0px;
-  padding-bottom: 0px;
+  padding: 9px 0;
+  padding-bottom: 0;
 }
 
 .dialog > div:nth-child(4) {
@@ -106,7 +105,7 @@
 }
 
 .dialog > div > span {
-  margin: 0px 8px;
+  margin: 0 8px;
 }
 
 .dialog > div > span svg {

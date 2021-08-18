@@ -539,9 +539,7 @@ export class Map extends React.Component {
   }
 
   render() {
-   const {isCountrySearchVisible} = this.props;
-   
-    
+   const {isCountrySearchVisible, isZoomVisible} = this.props;
     return (
       <>
         <div
@@ -549,7 +547,7 @@ export class Map extends React.Component {
           id="map"
           className="map-container"
         ></div>
-         { isCountrySearchVisible &&  <CountriesSearcher
+         {isCountrySearchVisible &&  <CountriesSearcher
           i18n={{ locale: 'en, en-US' }}
           map={{
             flyTo: (center, maxDuration) => {
@@ -559,8 +557,10 @@ export class Map extends React.Component {
               });
             },
           }}
+          width={this.props.width}
+          mobileWidth={this.props.mobileWidth}
         /> }
-        <Zoom
+        {isZoomVisible && <Zoom
             map={{
               zoomIn: () => {
                 this.state.map.flyTo({
@@ -575,7 +575,9 @@ export class Map extends React.Component {
                 });
               },
             }}
-        />
+            width={this.props.width}
+            mobileWidth={this.props.mobileWidth}
+        />}
         <span id="mapBlank" style={{ display: 'none' }}></span>
       </>
     );

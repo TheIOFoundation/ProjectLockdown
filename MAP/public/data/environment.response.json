@@ -39,6 +39,10 @@
             {
                 "name":"TabMenu",
                 "is_visible": true
+            },
+            {
+                "name": "Zoom",
+                "is_visible": true
             }
         ],
         "overlay": {

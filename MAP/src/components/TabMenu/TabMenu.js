@@ -386,7 +386,10 @@ export class TabMenu extends Component {
         <button onClick={this.showSideBar} className="menu-info-btn">
           {info}
         </button>
-        <div onClick={this.openSettings} className="menu-settings-btn">
+        <div onClick={this.openSettings}
+             className="menu-settings-btn"
+             style={{bottom: this.props.width > this.props.mobilewidth ? '280px' : '360px'}}
+        >
           {settings}
         </div>
       </React.Fragment>

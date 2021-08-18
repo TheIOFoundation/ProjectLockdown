@@ -5,7 +5,7 @@ import './countriesSearcher.css';
 import { magnify } from '../../assets/icons/icons.js';
 import { mapboxToken } from '../Map/Map';
 
-function CountriesSearcher({ i18n, map, initialState }) {
+function CountriesSearcher({ i18n, map, initialState, width, mobileWidth }) {
   const [showSearchInput, setShowSearchInput] = useState(
     (initialState && initialState.showSearchInput) || false,
   );
@@ -87,8 +87,8 @@ function CountriesSearcher({ i18n, map, initialState }) {
 
   return (
     <div
-      className={`countriesSearcher 
-      ${showSearchInput ? 'show' : ''}`}
+      className={`countriesSearcher ${showSearchInput ? 'show' : ''}`}
+      style={{bottom: width > mobileWidth ? '160px' : '240px'}}
     >
       <span
           className="icon-provider"
