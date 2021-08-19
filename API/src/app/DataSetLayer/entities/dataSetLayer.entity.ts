@@ -15,6 +15,7 @@ export class DataSetLayer {
     @Column() name: string;
     @Column() version: string;
     @Column() status: string;
+    @Column() type: string;
     @Column() description?: string;
     @CreateDateColumn({ name: 'createdAt' })
     createdAt: Date;

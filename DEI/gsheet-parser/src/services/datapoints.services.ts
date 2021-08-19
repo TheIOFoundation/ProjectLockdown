@@ -1,10 +1,11 @@
 /**
  * Data Model Interfaces
  */
- import DataPoint, { IDataPoint } from "../models/datapoint.model";
- import * as Common from "./common.services";
+ import { CreateQuery } from "mongoose";
+import { IDataPoint } from "../models/datapoint.model";
+import { insertData } from "./apiservice";
+
  
- import { CreateQuery } from 'mongoose';
   
  
  /**
@@ -13,14 +14,13 @@
 
  // first store answer into database, get the answer ID and push into DataPoint.answers[], then save DataPoint into DB
   
- export const create = async (newDataPoint: CreateQuery<IDataPoint>): Promise<IDataPoint> => {
+ export const create = async (newDataPoint: CreateQuery<IDataPoint>) => {
    
-   return DataPoint.create(newDataPoint)
-     .then((data: IDataPoint) => {
-       return data;
-     })
-     .catch((error: Error) => {
-       throw error;
-     });
+     try {
+        return await insertData('DataPoint', newDataPoint);
+     } catch (error) {
+      throw error;
+     }
+    
  };
  
