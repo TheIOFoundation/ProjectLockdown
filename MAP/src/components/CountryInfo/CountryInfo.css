@@ -1,4 +1,4 @@
-.container{
+.container {
     position: absolute;
     bottom: 90px;
     left: 0;
@@ -13,20 +13,13 @@
     flex-direction: column;
 }
 
-.dark.CountryInfo {
-  color: #e0e0e0;
-  background-color: #333333;
+.CountryInfo {
+  background-color: var(--ld-bg);
+  color: var(--ld-text);
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
 }
 
-.CountryInfo {
-  background-color: #ffffff;
-  color: #333333;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
-}
 .countryInfo{
-  border: 1px solid;
-  border-color: grey;
+  border: 1px solid var(--ld-hover);
 }
