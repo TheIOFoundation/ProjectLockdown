@@ -1,0 +1,67 @@
+.timeSlider {
+  background-color: $white;
+  border-radius: 30px;
+  padding: 0 19px 0 0;
+  box-shadow: 0 4px 4px 0 $transparent-black;
+  display: flex;
+  align-items: flex-start;
+}
+
+.flexWrapperOne {
+  background-color: $white-smoke;
+  margin-right: 10px;
+  border-radius: 20px;
+  padding: 10px 11px;
+  display: flex;
+  align-items: center;
+}
+
+.datePickerIcon {
+  width: 18.37%;
+  align-self: stretch;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.date {
+  width: 73.47%;
+  height: 65%;
+  color: $transparent-dark-slate-gray;
+  @include montserrat-11-semi-bold;
+}
+
+.dateEmphasis1 {
+  color: $transparent-dark-slate-gray;
+  @include montserrat-5-semi-bold;
+}
+
+.playButton {
+  width: 4.36%;
+  height: 35%;
+  margin-top: 13px;
+  margin-right: 11.75px;
+}
+
+.relativeWrapperOne {
+  width: 45.2%;
+  height: 7.5%;
+  margin-top: 20px;
+  position: relative;
+}
+
+.timeline {
+  width: 100%;
+  height: 100%;
+  background-color: $transparent-dark-slate-gray;
+  position: relative;
+}
+
+.sliderButton {
+  width: 11.81%;
+  height: 500%;
+  background-color: $sandy-brown;
+  border-radius: 50%;
+  position: absolute;
+  left: 51px;
+  top: -8px;
+}
