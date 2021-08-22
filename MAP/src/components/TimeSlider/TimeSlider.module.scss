@@ -1,14 +1,15 @@
 .timeSlider {
-  background-color: $white;
+  background-color: var(--ld-bg);
   border-radius: 30px;
   padding: 0 19px 0 0;
-  box-shadow: 0 4px 4px 0 $transparent-black;
+  box-shadow: 0 4px 4px 0 var(--ld-gray-2);
   display: flex;
   align-items: flex-start;
+  position: relative;
 }
 
 .flexWrapperOne {
-  background-color: $white-smoke;
+  background-color: var(--ld-hover);
   margin-right: 10px;
   border-radius: 20px;
   padding: 10px 11px;
@@ -26,13 +27,11 @@
 .date {
   width: 73.47%;
   height: 65%;
-  color: $transparent-dark-slate-gray;
-  @include montserrat-11-semi-bold;
+  color: var(--ld-gray-2);
 }
 
 .dateEmphasis1 {
-  color: $transparent-dark-slate-gray;
-  @include montserrat-5-semi-bold;
+  color: var(--ld-gray-2);
 }
 
 .playButton {
@@ -52,14 +51,14 @@
 .timeline {
   width: 100%;
   height: 100%;
-  background-color: $transparent-dark-slate-gray;
+  background-color: var(--ld-gray-2);
   position: relative;
 }
 
 .sliderButton {
   width: 11.81%;
-  height: 500%;
-  background-color: $sandy-brown;
+  height: 100%;
+  background-color: var(--ld-yellow-1);
   border-radius: 50%;
   position: absolute;
   left: 51px;
