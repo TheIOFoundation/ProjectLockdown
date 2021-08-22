@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TimeSlider.module.scss";
-import { calendarBoxes } from "../../assets/icons/icons.js"
+import { calendarBoxes, pause, play } from "../../assets/icons/icons.js"
 
 const TimeSlider = () => {
     return (
@@ -11,11 +11,9 @@ const TimeSlider = () => {
                 </div>
                 <p className={styles.date}>22, Dec, 2020</p>
             </div>
-            <img
-                alt=""
-                className={styles.playButton}
-                src="https://static.overlay-tech.com/assets/5d72df22-8c92-4b4f-aa56-8bd61ba293cc.svg"
-            />
+            <div className={styles.playButton}>
+                {pause}
+            </div>
             <div className={styles.relativeWrapperOne}>
                 <div className={styles.timeline} />
                 <div className={styles.sliderButton} />

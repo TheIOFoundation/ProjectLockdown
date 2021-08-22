@@ -9,6 +9,8 @@ export { logo } from './logo.svg.js';
 export { logoSimple } from './logo-simple.svg.js';
 export { minus } from './minus.svg.js';
 export { offline } from './offline.svg.js';
+export { pause } from './pause.svg.js';
+export { play } from './play.svg.js';
 export { plus } from './plus.svg.js';
 export { loading } from './loading.svg.js';
 export { travelLand } from './travel-land.svg.js';
