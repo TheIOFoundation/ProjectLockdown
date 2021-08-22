@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "./TimeSlider.module.scss";
+import { calendarBoxes } from "../../assets/icons/icons.js"
 
 const TimeSlider = () => {
     return (
         <div className={styles.timeSlider}>
             <div className={styles.flexWrapperOne}>
-                <img
-                    alt=""
-                    className={styles.datePickerIcon}
-                    src="https://static.overlay-tech.com/assets/53d9e98d-ce49-4b5c-84a2-5614cdf3bb77.svg"
-                />
+                <div className={styles.datePickerIcon}>
+                    {calendarBoxes}
+                </div>
                 <p className={styles.date}>22, Dec, 2020</p>
             </div>
             <img
