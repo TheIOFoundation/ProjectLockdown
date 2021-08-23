@@ -12,7 +12,7 @@ const TimeSlider = () => {
                 <p className={styles.date}>22, Dec, 2020</p>
             </div>
             <div className={styles.playButton}>
-                {pause}
+                {play}
             </div>
             <div className={styles.relativeWrapperOne}>
                 <div className={styles.timeline} />
