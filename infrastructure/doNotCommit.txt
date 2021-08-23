@@ -1,0 +1,2 @@
+az login
+az storage container create --name thisisatest2 --account-name automationpld --auth-mode login
