@@ -29,7 +29,7 @@ properties:
     items:
       $ref: ''
   URLCSS:
-    $ref: ../Reference/Project-Lockdown.v1.json#/components/schemas/Link
+    $ref: ./Link.yaml
 required:
   - LayoutUID
   - Name

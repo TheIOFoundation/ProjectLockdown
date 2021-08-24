@@ -28,7 +28,7 @@ properties:
     type: array
     description: "\U0001F6A7\nStatistics related to this object."
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+      $ref: ./Stat.yaml
   UI:
     type: object
     properties:

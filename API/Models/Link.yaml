@@ -13,7 +13,7 @@ properties:
   Stats:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+      $ref: ./Stat.yaml
   Help:
     type: string
   URL:

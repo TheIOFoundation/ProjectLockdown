@@ -12,17 +12,17 @@ properties:
   Status:
     type: string
   Contact:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/User
+    $ref: ./User.yaml
   Stats:
     type: array
     description: Statistics related to this origin
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+      $ref: ./Stat.yaml
   Type:
     type: string
   Log:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Log
+      $ref: ./Log.yaml
   URLOrigin:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
