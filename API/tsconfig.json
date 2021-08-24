@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES2020",
+    "sourceMap": true,
+    "allowJs": true,
+    "outDir": "./dist",
+    "strictNullChecks": true,
+    "noUnusedLocals": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

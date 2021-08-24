@@ -1,84 +1,80 @@
 .btn {
   position: absolute;
-  bottom: 200px;
-  left: 2.5vw;
+  right: 2vw;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: white;
-  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.1);
+  background-color: var(--ld-bg);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.1);
   display: flex;
-  color: #333;
+  color: var(--ld-text);
   justify-content: center;
   align-items: center;
   padding: 12px;
-}
-.dark {
-  background-color: #333;
-  color: white;
-}
-.dark .dialog {
-  background-color: #333;
-  color: white;
-}
-.dark .dialog.right::after {
-  border-left-color: #333;
-}
-.dark .dialog.left::after {
-  border-right-color: #333;
-}
-:hover {
   cursor: pointer;
 }
+
 :active {
   cursor: grabbing;
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
 }
+
 .dialog {
   display: none;
   transition: 0.2s;
   position: absolute;
   padding: 5px 7px;
-  background-color: #fff;
+  background-color: var(--ld-bg);
   flex-direction: column;
-  color: #333;
-  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+  color: var(--ld-text);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
+  cursor: default;
 }
+
 .dialog.top {
-  top: 0%;
+  top: 0;
 }
+
 .dialog.top::after {
   top: 30%;
 }
+
 .dialog.bottom {
   bottom: -30%;
 }
+
 .dialog.bottom::after {
   top: 71%;
 }
+
 .dialog.left {
   right: -230px;
 }
+
 .dialog.left::after {
   left: 0;
-  border-right-color: #fff;
+  border-right-color: var(--ld-bg);
   border-left: 0;
   margin-left: -20px;
 }
+
 .dialog.right {
-  left: -205px;
+  left: -260px;
 }
+
 .dialog.right::after {
   right: 0;
-  border-left-color: #fff;
+  border-left-color: var(--ld-bg);
   border-right: 0;
   margin-right: -20px;
 }
+
 .dialog.show {
   display: flex;
 }
+
 .dialog::after {
   content: '';
   position: absolute;
@@ -87,46 +83,58 @@
   border: 20px solid transparent;
   margin-top: -20px;
 }
+
 .dialog > div {
   display: flex;
   font-weight: 500;
   align-items: center;
-  padding: 9px 0px;
-  padding-bottom: 0px;
+  padding: 9px 0;
+  padding-bottom: 0;
 }
+
 .dialog > div:nth-child(4) {
   padding-bottom: 7.06px;
 }
+
 .dialog > div:last-child {
   padding-bottom: 9px;
 }
+
 .dialog > div:last-child > span:last-child {
   margin-right: auto;
 }
+
 .dialog > div > span {
-  margin: 0px 8px;
+  margin: 0 8px;
 }
+
 .dialog > div > span svg {
   height: 20px;
   width: 20px;
 }
+
 .dialog > div > span .color {
   height: 20px;
   width: 20px;
   border-radius: 50%;
 }
+
 .dialog > div > span .color.red {
-  background-color: #eb5757;
+  background-color: var(--ld-red-1);
 }
+
 .dialog > div > span .color.orange {
-  background-color: #f2994a;
+  background-color: var(--ld-yellow-1);
 }
+
 .dialog > div > span .color.green {
-  background-color: #6fcf97;
+  background-color: var(--ld-green-1);
 }
+
 .dialog > div > span .color.blue {
-  background-color: #78aefc;
+  background-color: var(--ld-blue-1);
 }
+
 .dialog > div > span .color.gray {
-  background-color: #ccc;
+  background-color: var(--ld-gray-4);
 }

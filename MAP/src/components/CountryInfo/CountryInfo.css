@@ -1,15 +1,25 @@
-.dark.CountryInfo {
-  color: #e0e0e0 !important;
-  background-color: #333333 !important;
-  height: 100%;
+.container {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+    min-height: 410px;
+    z-index: 1000;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.CountryInfo {
+  background-color: var(--ld-bg);
+  color: var(--ld-text);
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
 }
 
-.CountryInfo {
-  background-color: #e0e0e0;
-  color: #333333;
-  height: 100%;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
+.countryInfo{
+  border: 1px solid var(--ld-hover);
 }

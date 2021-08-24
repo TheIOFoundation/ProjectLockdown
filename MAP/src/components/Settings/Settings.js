@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { addPwaUpdateListener } from '../../utils/addPwaUpdateListener.js';
 import { setFavIcon } from '../../utils/setFavIcon.js';
 import '../pwa-update-available';
 import './Settings.scss';
 
 import { useTranslation } from 'react-i18next';
+import { toBool } from '../../utils/utils.js';
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 // eslint-disable-next-line react/prop-types
-export function Settings({ onClose, darkMode, setDarkMode }) {
+export function Settings({ onClose, isDark, setDarkMode }) {
   const [pwaUpdateAvailable, setPwaUpdateAvailable] = useState(false);
 
   const {
@@ -36,8 +38,8 @@ export function Settings({ onClose, darkMode, setDarkMode }) {
       addPwaUpdateListener((updateAvailable) => {
         setPwaUpdateAvailable(updateAvailable);
       });
-      let dark = localStorage.getItem('darkmode');
-      dark = dark !== 'false' && dark !== null;
+      let dark = toBool(localStorage.getItem('darkmode'));
+      dark = dark !== false && dark !== null;
       setDarkMode(dark);
     }
     addListener();
@@ -47,10 +49,12 @@ export function Settings({ onClose, darkMode, setDarkMode }) {
     <div className="settings">
       <button onClick={toggleDarkmode} className="ld-button">
         {t('menu.userPreferenceSection.theme.action')}
-        {darkMode
+        {toBool(isDark)
           ? t('menu.userPreferenceSection.theme.light')
           : t('menu.userPreferenceSection.theme.dark')}
       </button>
+
+      <LanguageSelector dark={isDark} />
 
       {pwaUpdateAvailable ? (
         <pwa-update-available>

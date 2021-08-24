@@ -1,0 +1,35 @@
+.relativeWrapper {
+  width: 100%;
+  margin-top: 10px;
+  margin-right: 38px;
+  margin-left: 10%;
+  position: relative;
+  display: flex;
+}
+
+.territoriesInLockdown {
+  width: 40%;
+  color: var(--ld-text);
+  display: flex;
+  position: relative;
+  font-weight: bold;
+}
+
+.peopleAffected {
+  width: 25%;
+  color: var(--ld-text);
+  display: flex;
+  position: relative;
+  font-weight: bold;
+}
+
+.nums {
+  width: 10%;
+  color: var(--ld-text);
+  display: flex;
+  position: relative;
+  top: -2vh;
+  font-weight: bold;
+  font-size: 150%;
+  white-space: nowrap;
+}

@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import '../../style/main.css';
 import './TabMenu.scss';
 import { Expandable } from '../Expandable/Expandable';
@@ -6,7 +6,7 @@ import { Ticker } from '../Ticker/Ticker';
 import { Settings } from '../Settings/Settings';
 import { installMediaQueryWatcher } from '../../utils/media-query';
 import Tabs from '../Tabs/Tabs';
-import { burger, close as closeIcon } from '../../assets/icons/icons.js';
+import { close as closeIcon, info, settings } from '../../assets/icons/icons.js';
 import { Translation } from 'react-i18next';
 
 const renderMenu = (
@@ -17,20 +17,7 @@ const renderMenu = (
   currentDropdown,
   onDropDown,
   onLocateChange,
-  locale = {
-    t: s => {
-      switch (s) {
-        case 'menu.userPreferenceSection.theme.action':
-          return 'Toggle ';
-        case 'menu.userPreferenceSection.theme.light':
-          return 'Light mode';
-        case 'menu.userPreferenceSection.theme.dark':
-          return 'Dark mode';
-        default:
-          return s;
-      }
-    },
-  }
+  locale
 ) => {
   switch (menuItem) {
     case 'info':
@@ -39,12 +26,10 @@ const renderMenu = (
         template: (
           <>
           <Translation>
-{ (t, { 
-  i18n
- }) => 
+{ (t) =>
             <>
             <h1>Project Lockdown</h1>
-            <p className="ld-alpha">
+            <p className="ld-alpha banner">
               {t('menu.informationSection.banner')}
             </p>
             <p>
@@ -210,7 +195,7 @@ const renderMenu = (
         title: 'settings',
         template: (
           <Settings
-            darkMode={isDark}
+            isDark={isDark}
             setDarkMode={setDarkMode}
             onClose={callback}
             onLocateChange={onLocateChange}
@@ -283,6 +268,7 @@ export class TabMenu extends Component {
       showLateralMenu: false,
       showMenu: false,
       currentDropdown: 1,
+      index: 0,
     };
     this.showSideBar = this.showSideBar.bind(this);
     this.closeNavbar = this.closeNavbar.bind(this);
@@ -318,21 +304,9 @@ export class TabMenu extends Component {
       });
     }
 
-    if (this.state.isMobile && this.props.opened && val === this.prevVal) {
-      this.props.close();
-      this.setState({
-        activeItem: this.prevVal,
-      });
-      this.prevVal = '';
-      return;
-    }
-
-    // this.props.changeRoute(renderMenu(val));
-
     this.prevVal = val;
     this.setState({
       activeItem: val,
-      showLateralMenu: val === this.state.activeItem ? false : true,
     });
   };
 
@@ -341,6 +315,7 @@ export class TabMenu extends Component {
       showLateralMenu: false,
       showSideBar: false,
       activeItem: 'info',
+      index: 0,
     });
   };
 
@@ -350,12 +325,23 @@ export class TabMenu extends Component {
     });
   };
 
+  openSettings = () => {
+    this.showSideBar();
+    this.switchContent("settings");
+    this.setState({
+      index: 1,
+    });
+  }
+
   render() {
     const { activeItem, currentDropdown } = this.state;
     const { isDark, setDarkMode } = this.props;
     return this.state.showLateralMenu || this.props.isMobile === true ? (
-      <>
-        <div className="menu-overlay"></div>
+      <React.Fragment>
+        <div
+          className="menu-overlay"
+          onClick={this.closeNavbar}
+        />
         <main id="main" className="ld-menu">
           <div className="ld-menu-nav">
             <button className="menu-close-btn" onClick={this.closeNavbar}>
@@ -365,6 +351,7 @@ export class TabMenu extends Component {
               <Tabs
                 onClose={this.closeNavbar}
                 switchContent={this.switchContent}
+                index={this.state.index}
               >
                 <button id="info">info</button>
                 <button id="settings">settings</button>
@@ -393,11 +380,19 @@ export class TabMenu extends Component {
             }
           </div>
         </main>
-      </>
+      </React.Fragment>
     ) : (
-      <button onClick={this.showSideBar} className="menu-side-btn">
-        {burger}
-      </button>
+      <React.Fragment>
+        <button onClick={this.showSideBar} className="menu-info-btn">
+          {info}
+        </button>
+        <div onClick={this.openSettings}
+             className="menu-settings-btn"
+             style={{bottom: this.props.width > this.props.mobilewidth ? '280px' : '360px'}}
+        >
+          {settings}
+        </div>
+      </React.Fragment>
     );
   }
 }

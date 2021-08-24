@@ -1,13 +1,18 @@
 import { Component, createRef } from 'react';
 import { Translation } from 'react-i18next';
 import './legend.css';
-import { list } from '../../assets/icons/icons.js';
+import { colorKey } from '../../assets/icons/icons.js';
+import AppContext from '../../contexts/AppContext';
+import { UIComponent } from '../../utils/constant';
+import { worldStyleColor } from '../Map/util';
 
 export class Legend extends Component {
-  constructor() {
-    super();
+  static contextType = AppContext;
+  constructor(props) {
+    super(props);
     this.state = {
       showDialog: false,
+      data : []
     };
     this.btn = createRef();
     this.onClick = this.onClick.bind(this);
@@ -32,8 +37,8 @@ export class Legend extends Component {
   }
 
   onTouchEnd() {
-    let side = this.state.x;
-    let vertical = this.state.y;
+    let side;
+    let vertical;
     const x = window.innerWidth || window.clientWidth;
     const y = window.innerHeight || window.clientHeight;
     const currentVertical = Number(this.btn.style.top.replace('px', ''));
@@ -69,56 +74,54 @@ export class Legend extends Component {
     });
   }
 
+  componentDidMount(){
+    const {environment} = this.context;
+    const {components = {}} = environment;
+    if(components){
+      const legend = components.find((component) => component.name === UIComponent.Legend);
+      if(legend && legend.data){
+        const {data} = legend;
+        this.setState(() =>({
+          data: [...data]
+        }));
+      }
+      
+    }
+    
+  }
+
   render() {
-    const mode = this.props.dark ? 'dark' : '';
+    const {data} = this.state;
+    
     return (
       <legend
         onClick={this.onClick}
         type="legend"
-        className={['btn', mode].join(' ')}
+        className="btn"
         {...this.props}
+        style={{bottom: this.props.width > this.props.mobilewidth ? '220px' : '300px'}}
       >
-        {list}
+        {colorKey}
         <div
           className={`dialog ${this.state.showDialog ? 'show' : ''} ${
             this.props.y
           } ${this.props.x}`}
         >
-          <div>
-            <span>
-              <div className="color green" />
-            </span>
-            <Translation>
-              {(t, { i18n }) => <span>{t('mapLegend.no')}</span>}
-            </Translation>
-          </div>
-
-          <div>
-            <span>
-              <div className="color orange" />
-            </span>
-            <Translation>
-              {(t, { i18n }) => <span>{t('mapLegend.partial')}</span>}
-            </Translation>
-          </div>
-
-          <div>
-            <span>
-              <div className="color red" />
-            </span>
-            <Translation>
-              {(t, { i18n }) => <span>{t('mapLegend.full')}</span>}
-            </Translation>
-          </div>
-
-          <div>
-            <span>
-              <div className="color gray" />
-            </span>
-            <Translation>
-              {(t, { i18n }) => <span>{t('mapLegend.noData')}</span>}
-            </Translation>
-          </div>
+          {
+            data.map((legends, index) => (
+              <div key={index} style={{cursor: "default"}}>
+                <span>
+                  <div className={`color ${worldStyleColor(legends.worldStyle)}`}
+                       style={{cursor: "default"}}/>
+                </span>
+                <Translation>
+                  {(t) => <span style={{cursor: "default"}}>
+                    {t(`${legends.title}`)}
+                  </span>}
+                </Translation>
+              </div>
+            ))
+          }
         </div>
       </legend>
     );
@@ -126,8 +129,6 @@ export class Legend extends Component {
 }
 
 Legend.defaultProps = {
-  dark: false,
-  // size: 'medium',
-  x: 'left',
+  x: 'right',
   y: 'bottom',
 };

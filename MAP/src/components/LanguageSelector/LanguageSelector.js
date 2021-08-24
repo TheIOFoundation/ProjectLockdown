@@ -1,28 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { world } from '../../assets/icons/world';
+import { toBool } from '../../utils/utils';
 import * as classes from './LanguageSelector.module.css';
 
-const LanguageSelector = ({ dark, languageChangeHandler }) => {
-  const [showLanguages, setShowLanguages] = useState(false);
+const LanguageSelector = ({ dark }) => {
+  dark = toBool(dark);
 
-  const [selectedLang, setSelectedLang] = useState('en');
+  const { t, i18n } = useTranslation();
 
-  const { i18n } = useTranslation();
+  const [selectedLang, setSelectedLang] = useState(t('languageId').replace('-',''));
 
   const languages = ['ar', 'en', 'es', 'it', 'pt', 'ru', 'zh CN', 'zh HK'];
-
-  const toggleShowLanguages = () => {
-    setShowLanguages((prevState) => !prevState);
-  };
 
   useEffect(() => {
     i18n.changeLanguage(selectedLang);
   }, [selectedLang, i18n]);
+
   return (
     <div
       className={`${classes.LangSelector} ${dark && classes.dark}`}
-      onClick={toggleShowLanguages}
     >
       <div className={`${classes.SelectedLang} ${dark && classes.dark}`}>
         {selectedLang.toUpperCase()}
@@ -31,7 +28,7 @@ const LanguageSelector = ({ dark, languageChangeHandler }) => {
         </div>
       </div>
       <div
-        className={`${classes.LangOptions} ${showLanguages && classes.show}`}
+        className={`${classes.LangOptions} ${classes.show}`}
       >
         {languages.map((language, idx) => (
           <div

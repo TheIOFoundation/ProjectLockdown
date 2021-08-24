@@ -3,7 +3,7 @@
 
 ---***
 
-## DOCUMENTATION STAGE: WIP - This documentation page is still a work in progress.
+## DOCUMENTATION STAGE: WIP - This documentation page is still a work in progress
 
 # Project Lockdown: Mapping Platform module
 
@@ -21,7 +21,7 @@
 # About this module
 
 The Mapping Platform (MAP) module offers an accessible representation of the
- data in Project Lockdown. 
+ data in Project Lockdown.
 It provides:
 
 - An interactive map where DataSet Layers (DSL) are presented
@@ -55,9 +55,9 @@ The following diagram showcases the general design of the MAP module:
 
 # Accessing the module
 
-To access the MAP, please visit 
-https://ProjectLockdown.earth (Status:
- DEPLOYED - To be converted into https://map.ProjectLockdown.world)
+To access the MAP, please visit
+<https://ProjectLockdown.earth> (Status:
+ DEPLOYED - To be converted into <https://map.ProjectLockdown.world>)
 
 The MAP offers the possibility of using regional TLDs in order to customize the
  landing area in an easy, intuitive manner according to Project Lockdown's
@@ -71,7 +71,7 @@ The MAP offers the possibility of using regional TLDs in order to customize the
 - [North America](https://ProjectLockdown.us)
 - Pacific (Note: currently no TLD has been identified. Should you have a
   suggestion, please let us know
-  https://github.com/TheIOFoundation/ProjectLockdown/issues/57)
+  <https://github.com/TheIOFoundation/ProjectLockdown/issues/57>)
 
 <a href="#top">Back to top</a>
 
@@ -80,13 +80,13 @@ The MAP offers the possibility of using regional TLDs in order to customize the
 The open GitHub Issues can be found here:
 
 Pending tasks (Labels: Module: MAP + Stage: Ready)
-https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Stage%3A+Ready%22+label%3A%22Module%3A+MAP%22
+<https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Stage%3A+Ready%22+label%3A%22Module%3A+MAP%22>
 
 Tasks in progress (Labels: Module: MAP + Stage: In Progress)
-https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+MAP%22+label%3A%22Stage%3A+In+Progress%22
+<https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+MAP%22+label%3A%22Stage%3A+In+Progress%22>
 
 Upcoming tasks that are being prepared (Labels: Module: MAP + Stage: Not Ready)
-https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+MAP%22+label%3A%22Stage%3A+Not+Ready%22
+<https://github.com/TheIOFoundation/ProjectLockdown/issues?q=is%3Aopen+is%3Aissue+label%3A%22Module%3A+MAP%22+label%3A%22Stage%3A+Not+Ready%22>
 
 <a href="#top">Back to top</a>
 
@@ -113,7 +113,7 @@ Run the app in development mode.
 
 `npm start`
 
-Open http://localhost:3000 to view the app in your browser.
+Open <http://localhost:3000> to view the app in your browser.
 
 Alternatively, you can run the command
 
@@ -125,13 +125,18 @@ to view individual components in [Storybook](https://storybook.js.org/).
 
 For all the necessary information please refer to the technical documentation in
  the wiki:
-https://github.com/TheIOFoundation/ProjectLockdown/wiki/Mapping-Platform-(MAP)
+<https://github.com/TheIOFoundation/ProjectLockdown/wiki/Mapping-Platform-(MAP>)
 
 For UXUI technical information as well as other diagrams, please refer to this
  Figma board:
 [MAP](https://www.figma.com/file/aqMv7PnA2WXUabC5mT1Vvs/PROD-MAP-v2?node-id=0%3A1)
 
+# Query String Parameters
 
+- here is how to play around on UI component through query strings  :
+  <http://localhost:3000/?enronment.components.Legend=false&environemnt.components.TimeSlider=false>
+- you can also specify the map lng/lat/zoom  as follows :
+  <http://localhost:3000/?enronment.components.Legend=false&environemnt.components.TimeSlider=false&map={lng}/{lat}/{zoom>}
 
 <a href="#top">Back to top</a>
 

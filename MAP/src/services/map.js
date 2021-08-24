@@ -8,3 +8,8 @@ export const getWorldData = async (startDate, endDate) => {
     return null;
   }
 };
+
+export const getSnapShotData = async(startData,endData) => {
+  return fetch('./data/snapshot.json').then(r => r.json())
+  .catch(e => { throw new Error(e.toString())}) 
+}

@@ -1,0 +1,58 @@
+.statsBar {
+  background-color: var(--ld-bg);
+  padding: 0 0 0 10px;
+  box-shadow: 0 4px 4px 0 var(--ld-gray-2);
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  height: 3.5em;
+  width: 100%;
+  max-width: 55em;
+}
+
+.closed {
+  width: 4em;
+}
+
+.lockdownLogo {
+  width: 2em;
+  height: 40%;
+  transform: scale(1.5);
+  margin-top: 1.25em;
+  margin-right: 2em;
+  position: absolute;
+  svg {
+    path {
+      fill: var(--ld-text);
+    }
+  }
+}
+
+.flexWrapperOne {
+  background-color: var(--ld-hover);
+  height: 100%;
+  width: 1em;
+  padding-top: 1.25em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+.vector {
+  flex: 1;
+  align-self: stretch;
+  object-fit: cover;
+  svg {
+    path {
+      fill: var(--ld-text);
+    }
+  }
+}
+
+.flip {
+  svg {
+    transform: rotate(180deg);
+  }
+}

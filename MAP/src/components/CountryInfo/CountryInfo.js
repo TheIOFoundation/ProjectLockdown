@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState , useContext } from 'react';
 import isSameDay from 'date-fns/isSameDay';
 import './CountryInfo.css';
 import { useTranslation } from 'react-i18next';
@@ -11,11 +11,13 @@ import {
   getCoronaData,
   getCoronaDetailService,
 } from '../../services/coronaTrackerService';
-import { tabs } from './constant';
+import AppContext from '../../contexts/AppContext';
+
 const CountryInfo = (props) => {
+  const environment = useContext(AppContext)
   const [currentTab, setCurrentTab] = useState(1);
-  const { i18n } = props;
   const [coronaData, setCoronaData] = useState();
+  const [tabs, setTabs] = useState([])
   const [
     countryDetails,
     // setCountryDetails
@@ -29,6 +31,16 @@ const CountryInfo = (props) => {
 
   useEffect(() => {
     const { startDate, endDate } = props;
+    const {overlay = {}} = environment['environment'];
+    const allTab =  overlay.tabs || []
+    const allTabs = allTab.map(tab => { 
+      return {
+        id: tab.id,
+        name: tab.title,
+        isVisible: tab.is_visible || false
+      }
+    })
+    setTabs([...allTabs]);
 
     getCoronaData(props.iso2, startDate, endDate)
       .then((response) => {
@@ -40,7 +52,7 @@ const CountryInfo = (props) => {
     getCoronaDetailService(props.iso2, startDate, endDate)
       .then((response) => response)
       .catch((e) => console.log(e));
-  }, [props]);
+  }, [environment, props]);
 
   let firstLink = territoryData
     ? `https://docs.google.com/a/theiofoundation.org/spreadsheets/d/1mVyQxxLxAF3E1dw870WHXTOLgYzmumojvzIekpgvLV0/edit#gid=${territoryData.id}`
@@ -49,16 +61,12 @@ const CountryInfo = (props) => {
   let territory = territoryData ? territoryData.territory : 'TERRITORY';
 
   return (
-    <div className={`${props.dark ? 'dark' : ''} CountryInfo`}>
+    <div className={`container CountryInfo`}>
       <div
-        style={{
-          color: `${props.dark ? 'white' : 'black'}`,
-          // backgroundColor: `${props.dark ? '#333333' : '#e0e0e0'}`,
-        }}
         className={tabStyles}
       >
         {tabs.map((tab) => (
-          <div
+          tab.isVisible && <div
             key={tab.id}
             onClick={() => changeTab(tab.id)}
             className={`tab ${currentTab === tab.id ? 'active' : ''}`}
@@ -69,17 +77,11 @@ const CountryInfo = (props) => {
         <button onClick={props.onClose}>{closeIcon}</button>
       </div>
       <div
-        style={{
-          color: `${props.dark ? 'white' : 'black'}`,
-          backgroundColor: `${props.dark ? '#333333!important' : '#e0e0e0'}`,
-        }}
-        className={`countryInfo ${countryInfoStyles} ${
-          props.dark ? 'dark' : ''
-        }`}
+        style={{minHeight: 'inherit'}}
+        className={`countryInfo ${countryInfoStyles}`}
       >
         {currentTab === 1 ? (
           <CountryDetails
-            dark={props.dark}
             date={props.date}
             country={props.country}
             t={t}
@@ -87,18 +89,15 @@ const CountryInfo = (props) => {
               isSameDay(new Date(corona.last_updated), props.date),
             )}
             countryDetails={countryDetails}
-            i18n={i18n}
           />
         ) : currentTab === 2 ? (
           <TransportDetails
             t={t}
-            dark={props.dark}
-            i18n={i18n}
             countryDetails={countryDetails}
           />
         ) : (
           <>
-            <Reports t={t} i18n={i18n} dark={props.dark} />
+            <Reports t={t} />
             <div className="link-container">
               <a
                 className="ld-link"

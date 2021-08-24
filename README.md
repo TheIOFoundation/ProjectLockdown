@@ -3,9 +3,7 @@
 
 <!-- HACKTOBERFEST LOGO -->
 
-<!-- ![screenshot](https://user-images.githubusercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
-
-## NOTE: This is the new repository for v2.0. Some information is still a work in progress. You can access the current runnning v1.0 repository <a href="https://github.com/Code-for-All/lockdown/">here</a> while we transition to the new version.
+<!-- ![screenshot](http://ercontent.com/9198668/94893112-f96b8980-04b8-11eb-984f-ad13b882a35a.png) -->
 
 <table>
 	<tr>
@@ -15,7 +13,7 @@
 	</tr> 
 	 <tr>
 		 <td>
-			<a href="https://TIOF.Click/PLDWiki" alt="Development status of this project" title="Development status of this project"><img src="https://img.shields.io/static/v1?label=Project%20Status%3A&message=1.0&color=purple"/></a>
+			<a href="https://TIOF.Click/PLDWiki" alt="Development status of this project" title="Development status of this project"><img ds.io/static/v1?label=Project%20Status%3A&message=1.0&color=purple"/></a>
 		</td>      
 		<td align="center">
 			<a href="https://TIOF.Click/PLDWeb" alt="Visit the project's website" title="Visit the project's website"><img src="https://img.shields.io/static/v1?label=Website&message=https%3A%2F%2FProjectLockdown.world&color=blue"/></a>
@@ -32,13 +30,13 @@
 	</tr>
 	<tr>
 		 <td xalign="right" colspan="3">
-		<a href="http://TIOF.Click/PLDTwitterPost" alt="Share this project on Twitter" title="Share this project on Twitter"><img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FTheIOFoundation%2FTechUp%2F"/></a>
+		<a href="http://TIOF.Click/PLDTwitterPost" alt="Share this project on Twitter" title="Share this project on Twitter"><img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Feonation%2FTechUp%2F"/></a>
 		</td>
 		<td align="right" xcolspan="2">
 		<a href="http://TIOF.Click/TIOFPolicyCoC"><img src="https://img.shields.io/static/v1?label=Code%20of%20Conduct&message=%20&color=pink"  alt="Consult the project's Code of Conduct" title="Consult the project's Code of Conduct"/></a> 
 		</td>		
 		<td align="right" xcolspan="2">
-		<a href="http://TIOF.Click/PLDLicense"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg"  alt="Consult the project's license" title="Consult the project's license"/></a>
+		<a href="http://TIOF.Click/PLDLicense"><img src="https://img.shields.io/bage/icensPLblvg"  alt="Consult the project's license" title="Consult the project's license"/></a>
 		</td>
 	</tr> 
 </table>
@@ -123,11 +121,11 @@ The following diagram showcases how all Modules integrate in the project:
 <img src="https://github.com/TheIOFoundation/ProjectLockdown/blob/master/docs/Diagrams/%5BTIOF%20PLD%5D%20Docs%20%5BP%5D%20General%20Modules%20Diagram%20ENG%20v1.0.png" alt="Project Diagram" title="Project Diagram"/>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg4NTI2NDM3LC0xMzU1MzExMzA1LC01Nz
-Q3NDk2OTIsMTc5NzUxMjIwMSwxMTM3NjQ2NzA5LC0xMDA1OTgy
-NDQ4LDcwNTI1Njc4OCwxOTM3NDkyMTQ0LDE0NTY5NjY1MTEsMT
-U5MDIyMTM3NSwtMjUzNTg1MDYzLDE1OTAyMjEzNzUsLTEzNTY1
-NjI2MDUsNjkyOTIxMzI1LC05NTcyMTQ0MzAsLTQ0NzI5NjcwMS
-wtOTgwNzU5MTgwLDE0NjY1NTM3NjEsLTkwOTQ1ODg0OSwtMjU1
-ODE5MTg0XX0=
+eyJoaXN0b3J5IjpbNjA0ODAyNzE5LDU4ODUyNjQzNywtMTM1NT
+MxMTMwNSwtNTc0NzQ5NjkyLDE3OTc1MTIyMDEsMTEzNzY0Njcw
+OSwtMTAwNTk4MjQ0OCw3MDUyNTY3ODgsMTkzNzQ5MjE0NCwxND
+U2OTY2NTExLDE1OTAyMjEzNzUsLTI1MzU4NTA2MywxNTkwMjIx
+Mzc1LC0xMzU2NTYyNjA1LDY5MjkyMTMyNSwtOTU3MjE0NDMwLC
+00NDcyOTY3MDEsLTk4MDc1OTE4MCwxNDY2NTUzNzYxLC05MDk0
+NTg4NDldfQ==
 -->

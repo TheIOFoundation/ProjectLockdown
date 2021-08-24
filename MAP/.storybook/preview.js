@@ -1,4 +1,4 @@
-import ThemeContext from '../src/context/ThemeContext';
+import ThemeContext from '../src/contexts/ThemeContext';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

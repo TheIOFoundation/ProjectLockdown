@@ -1,12 +1,11 @@
 import './CountryInfo.css';
 
 const Legends = (props) => {
-  const { t, dark } = props;
+  const { t } = props;
   return (
     <div
       style={{
-        color: `${dark ? 'white' : 'black'}`,
-        backgroundColor: `${dark ? '#333333' : '#e0e0e0'}`,
+        color: `var(--ld-text)`
       }}
       className="legend ld-font-legend"
     >

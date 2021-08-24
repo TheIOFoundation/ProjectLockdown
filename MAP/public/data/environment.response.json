@@ -1,0 +1,102 @@
+{
+    "environment": {
+        "dsl_id": 1,
+        "components": [
+            {
+                "name":"TimeSlider",
+                "is_visible": true
+            },
+            {
+                "name":"Legend",
+                "is_visible": true,
+                "data": [
+                    {
+                        "title": "mapLegend.no",
+                        "worldStyle": "2"
+                    },
+                    {
+                        "title": "mapLegend.partial",
+                        "worldStyle": "1"
+                    },
+                    {
+                        "title": "mapLegend.full",
+                        "worldStyle": "2"
+                    },
+                    {
+                        "title": "mapLegend.noData",
+                        "worldStyle": "3"
+                    }
+                ]
+            },
+            {
+                "name":"CountriesSearcher",
+                "is_visible": true
+            },
+            {
+                "name":"StatsBar",
+                "is_visible": true
+            },
+            {
+                "name":"TabMenu",
+                "is_visible": true
+            },
+            {
+                "name": "Zoom",
+                "is_visible": true
+            }
+        ],
+        "overlay": {
+            "tabs": [
+                {
+                    "id": 1,
+                    "title": "Daily Life",
+                    "is_visible": true,
+                    "key_values": {
+                        "population": "Population",
+                        "maximum_assembly": "Maximum assembly",
+                        "daily_life": "Daily life (restrictions)"
+                    },
+                    "data":[
+                        {
+                            "id": "lockdown_status",
+                            "translationKey": "home",
+                            "icon": "faHome",
+                            "value": "PARTIAL"
+                          },
+                          {
+                            "id": "going_to_shops",
+                            "label": "Shopping",
+                            "translationKey": "shopping",
+                            "icon": "shops",
+                            "value": "PARTIAL"
+                          },
+                          {
+                            "id": "city_movement_restriction",
+                            "label": "Outdoors",
+                            "translationKey": "outdoors",
+                            "icon": "citymovement",
+                            "value": "PARTIAL"
+                          }
+                    ]
+
+                },
+                {
+                    "id": 2,
+                    "title": "Mobility",
+                    "is_visible": true,
+                    "key_values": {
+                        
+                    }
+                },
+                {
+                    "id": 3,
+                    "title": "Reports",
+                    "is_visible": true,
+                    "key_values": {
+                        
+                    }
+                }
+            ]
+        }
+    }
+}

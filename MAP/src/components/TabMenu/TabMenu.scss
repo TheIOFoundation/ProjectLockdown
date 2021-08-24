@@ -60,31 +60,44 @@
     border-radius: 0px;
   }
 }
-.dark .menu-side-btn {
+
+.menu-info-btn {
+  position: absolute;
+  z-index: 2000;
+  top: 80px;
+  left: 0.5vw;
+  border: 0;
   background-color: transparent;
-  color: white;
-  background-image: url(../../assets/icons/menu/black.svg);
   & svg {
-    color: white;
+    color: #333333;
+    opacity: 0.6;
   }
   &:hover {
     cursor: pointer;
   }
 }
-.menu-side-btn {
+
+.dark .menu-settings-btn {
+  background-color: #333333;
+  color: white;
+  & svg {
+    color: white;
+  }
+}
+
+.menu-settings-btn {
   position: absolute;
-  height: 108px;
+  height: 50px;
   width: 50px;
   z-index: 2000;
-  bottom: 150px;
-  right: -5px;
-  border-radius: 100% 0% 0% 100% / 21% 0% 0% 21%;
+  right: 2vw;
+  border-radius: 50%;
   border: 0px;
-  background-color: transparent;
-  background-image: url(../../assets/icons/menu/white.svg);
-  &:focus:not(.leaflet-container) {
-    box-shadow: none !important;
-  }
+  background-color: white;
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   & svg {
     color: #333333;
   }
@@ -193,10 +206,8 @@
               z-index: -1;
               content: ' ';
               border-radius: 0% 100% 100% 69% / 0% 50% 51% 0%;
-              border: 0px;
               /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
               background-color: transparent;
-              z-index: 2000;
               border-width: 10px 0 10px 10px;
               border-style: solid;
               border-color: transparent transparent transparent #ffffff;
