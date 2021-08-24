@@ -1,5 +1,7 @@
 .Watermark {
     position: absolute;
     opacity: 0.6;
-    fill: #828282;
+    fill: var(--ld-gray-1);
+    bottom: 10px;
+    left: 120px;
 }

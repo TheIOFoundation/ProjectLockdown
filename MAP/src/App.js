@@ -40,7 +40,7 @@ const startingPoint = -300;
 const playSpeed = 200;
 // i.e. delay between skipping to the next date (in ms)
 
-const watermarkSize = 2.5;
+const watermarkSize = 1;
 
 const fullTimeSliderWidth = 700;
 
