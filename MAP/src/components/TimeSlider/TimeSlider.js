@@ -6,8 +6,8 @@ const TimeSlider = (props) => {
     return (
         <div className={styles.timeSlider}
              style={{maxWidth: `${props.mobileWidth - 140}px`}}>
-            <div className={styles.flexWrapperOne}>
-                <div className={styles.datePickerIcon}>
+            <div className={styles.dateWrapper}>
+                <div className={styles.datePicker}>
                     {calendarBoxes}
                 </div>
                 <p className={styles.date}>22, Dec, 2020</p>
@@ -15,9 +15,9 @@ const TimeSlider = (props) => {
             <div className={styles.playButton}>
                 {play}
             </div>
-            <div className={styles.relativeWrapperOne}>
+            <div className={styles.timelineWrapper}>
                 <div className={styles.timeline} />
-                <div className={styles.sliderButton} />
+                <div className={styles.slider} />
             </div>
         </div>
     );

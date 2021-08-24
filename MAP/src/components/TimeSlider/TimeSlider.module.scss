@@ -12,7 +12,7 @@
   left: 20px;
 }
 
-.flexWrapperOne {
+.dateWrapper {
   background-color: var(--ld-hover);
   margin-right: 10px;
   border-radius: 25px;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.datePickerIcon {
+.datePicker {
   margin-right: 8px;
   cursor: pointer;
 }
@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 
-.relativeWrapperOne {
+.timelineWrapper {
   width: 80%;
   height: 2px;
   margin-top: 24px;
@@ -56,7 +56,7 @@
   position: relative;
 }
 
-.sliderButton {
+.slider {
   width: 20px;
   height: 20px;
   background-color: var(--ld-yellow-1);
