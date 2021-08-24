@@ -1,0 +1,72 @@
+title: "\U0001F6A7DataPoint"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\nDescribes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. \n\n###Date fields\nDateCreated\n\nDateUpdated"
+properties:
+  DataPointUID:
+    type: string
+    description: "Universal ID\n\U0001F6A7 Document how it is generated"
+  Definition:
+    type: object
+    properties:
+      NameShort:
+        type: string
+      Name:
+        type: string
+      Description:
+        type: string
+      IconID:
+        type: string
+      '@@@Inheritance':
+        type: string
+      '@@@DPObjectType':
+        type: string
+      Right:
+        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Right
+      Tags:
+        type:
+          - string
+          - array
+        items:
+          $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Tag
+      Tooltip:
+        type: string
+      Definition:
+        type: string
+      Encoding:
+        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Encoding
+  Status:
+    type: string
+  DateCreated:
+    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Date
+  DateUpdated:
+    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Date
+  Stats:
+    type:
+      - string
+      - array
+    items:
+      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+  Answers:
+    type:
+      - string
+      - array
+    items:
+      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Answer
+  URLDoc:
+    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+  URLEditorGuide:
+    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+  DSLUID:
+    type: string
+  Log:
+    type:
+      - string
+      - array
+    items:
+      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Log
+  SnapshotUID:
+    type:
+      - string
+      - array
+    items:
+      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Snapshot

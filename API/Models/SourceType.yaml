@@ -1,0 +1,36 @@
+title: "\U0001F6A7 SourceType"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\nMAYBE THESE ARE ACTUALLY ORIGINS\n\n@@@\nDefines the types of sources from where Sources are extracted and/or generated. This applies to all data, from the one generated for PLD to external providers."
+properties:
+  SourceTypeUID:
+    type: string
+    description: "Universal ID\n\U0001F6A7 Document how it is generated"
+  Type:
+    type: string
+    description: |-
+      @@@
+
+      The type of Source.
+
+      Options:
+      - Government
+      - Media
+      - NGO
+      - Foreign Mission
+      - Other
+
+      Also to be used used for APIs and other external providers.
+  Name:
+    type: string
+  Description:
+    type: string
+  Stats:
+    type: array
+    description: "\U0001F6A7\nStatistics related to this object."
+    items:
+      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+  UI:
+    type: object
+    properties:
+      Icon:
+        type: string

@@ -1,0 +1,58 @@
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n###User\nCreated\nBanned\nSuspended\nAddLicense\nRemoveLicense\n\nServiceRequest\nKeeps track of the usage of the platform. For instance, allows to track how many API requestes in 24h have been made."
+type: object
+x-examples:
+  example-1:
+    LogUID:
+      type: string
+      description: "Universal ID\n\U0001F6A7 Document how it is generated"
+    Operation:
+      type: string
+      enum:
+        - Encode
+        - Review
+        - Approve
+        - Flag
+        - Initiate Deliberation
+        - Close Deliberation
+        - 'Assign: Triage'
+        - 'Assigne: Encode'
+        - 'Assign: Review'
+    UserUID:
+      type: string
+    Notes:
+      type: string
+    SourceUID:
+      type: string
+    Dates:
+      type: array
+      items:
+        $ref: '#/components/schemas/Date'
+    Module:
+      type: string
+title: "\U0001F6A7Log"
+properties:
+  LogUID:
+    description: "Universal ID\n\U0001F6A7 Document how it is generated"
+    type: string
+  Operation:
+    type: string
+  UserUID:
+    type: string
+  Notes:
+    type: string
+  SourceUID:
+    type: string
+  Dates:
+    type: array
+    items:
+      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Date
+  Module:
+    type: string
+required:
+  - LogUID
+  - Operation
+  - UserUID
+  - Notes
+  - SourceUID
+  - Dates
+  - Module

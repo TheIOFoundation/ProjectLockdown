@@ -1,0 +1,38 @@
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n@@@MISSING\nHow to correlate the DPUIs with the layout placeholders.\nThis will depend on the implementation model."
+type: object
+x-examples:
+  example-1:
+    LayoutUID:
+      type: string
+      description: "Universal ID\n\U0001F6A7 Document how it is generated"
+    Name:
+      type: string
+    Description:
+      type: string
+    Stats:
+      type: array
+      description: "\U0001F6A7\nStatistics related to this object."
+      items:
+        $ref: '#/components/schemas/Stat'
+    URLCSS:
+      $ref: '#/components/schemas/Link'
+title: "\U0001F6A7Layout"
+properties:
+  LayoutUID:
+    type: string
+  Name:
+    type: string
+  Description:
+    type: string
+  Stats:
+    type: array
+    items:
+      $ref: ''
+  URLCSS:
+    $ref: ../Reference/Project-Lockdown.v1.json#/components/schemas/Link
+required:
+  - LayoutUID
+  - Name
+  - Description
+  - Stats
+  - URLCSS

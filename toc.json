@@ -1,29 +1,162 @@
 {
   "items": [
     {
-      "type": "divider",
-      "title": "Technical Documentation"
-    },
-    {
       "type": "item",
-      "title": "Introduction",
+      "title": "Project Lockdown API Documentation Introduction.",
       "uri": "docs/index.md"
     },
     {
-      "type": "group",
-      "title": "API Documentation",
-      "items": [
-        {
-          "type": "item",
-          "title": "Version 1",
-          "uri": "API/Reference/Project-Lockdown.v1.json"
-        }
-      ]
+      "type": "divider",
+      "title": "API Documents"
     },
     {
       "type": "item",
-      "title": "GSheet Parser, parse data and store them in CosmosDB (Azure's MongoDB)",
+      "title": "Project Lockdown API paths and Parameters",
+      "uri": "API/Reference/Project-Lockdown.v2.json"
+    },
+    {
+      "type": "item",
+      "title": "Google Sheet Parser API",
       "uri": "DEI/gsheet-parser/api.yaml"
+    },
+    {
+      "type": "divider",
+      "title": "Models"
+    },
+    {
+      "type": "item",
+      "title": "DataSet Layer (DSL)",
+      "uri": "API/Models/DataSetLayer.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Snapshot",
+      "uri": "API/Models/Snapshot.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Source",
+      "uri": "API/Models/Source.yaml"
+    },
+    {
+      "type": "item",
+      "title": "✔Environment",
+      "uri": "API/Models/Environment.yaml"
+    },
+    {
+      "type": "item",
+      "title": "👁️‍🗨️Date",
+      "uri": "API/Models/Date.yaml"
+    },
+    {
+      "type": "item",
+      "title": "👁️‍🗨️Link",
+      "uri": "API/Models/Link.yaml"
+    },
+    {
+      "type": "item",
+      "title": "👁️‍🗨️Project",
+      "uri": "API/Models/Project.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧 Encoding",
+      "uri": "API/Models/Encoding.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧 SourceType",
+      "uri": "API/Models/SourceType.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧 TimeMachine",
+      "uri": "API/Models/TimeMachine.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Answer",
+      "uri": "API/Models/Answer.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Audience",
+      "uri": "API/Models/Audience.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Category",
+      "uri": "API/Models/Category.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧DataPoint",
+      "uri": "API/Models/DataPoint.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧DataSetEntry",
+      "uri": "API/Models/DataSetEntry.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Layout",
+      "uri": "API/Models/Layout.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧License",
+      "uri": "API/Models/License.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Log",
+      "uri": "API/Models/Log.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Module",
+      "uri": "API/Models/Module.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Origin",
+      "uri": "API/Models/Origin.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Region",
+      "uri": "API/Models/Region.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Response",
+      "uri": "API/Models/Response.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Right",
+      "uri": "API/Models/Right.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Stat",
+      "uri": "API/Models/Stat.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Tag",
+      "uri": "API/Models/Tag.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Territory",
+      "uri": "API/Models/Territory.yaml"
+    },
+    {
+      "type": "item",
+      "title": "🚧Users",
+      "uri": "API/Models/User.yaml"
     }
   ]
 }

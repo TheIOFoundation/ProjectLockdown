@@ -1,0 +1,30 @@
+title: "\U0001F6A7Answer"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\nAnswers are the objects storing the values of PLD datapoints, both in RAW and as Snapshots.\n\nNote:\nFor RAW\nDateStart and DateEnd typially different\n\nFor Snapshots\nDateStart = DateEnd (Can even ignore DateEnd)\n\n## \U0001F310 Expanded information\nFor more information about this model, visit \n\n## Snapshot generation\n\n\U0001F536 **Item** \n\n▶ **Sample for code/data**: \n\n```\nCODE/DATA CONTENTS\n```\n## [GENERIC HEADER]\n\n## ⚙ ALGORITHM/CODE HEADER\n\n## \U0001F4E2 Used by\nThis Model is used in the following modules through these Endpoints:\n- [MODULE]\n    - \U0001F4A0 \n\n## \U0001F517 URL fields\n-URLCodebase: Permalink to the piece of code that has generated this Anwer object.\n\n## \U0001F4C5 Date Fields\n\n## \U0001F4CA Stats\n❓ PENDING\n\n## \U0001F4DD Log\n❓ PENDING\n\n## ❓ DUBIOUS FIELDS\n\n# Status: \U0001F6A7\n\n## ⚡ About\n\nTypes:\nRAW\nData obtained through some of the Funnels.\n\nSnapshot\nData is generated out of processing RAW data.\n\n## \U0001F4E2 Used by\n- \U0001F4A0 "
+properties:
+  AnswerUID:
+    type: string
+  Value:
+    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Response
+  DateStart:
+    $ref: ./Date.yaml
+  DateEnd:
+    $ref: ./Date.yaml
+  DataPointUID:
+    type: string
+  Details:
+    type: string
+  DSEUID:
+    type: string
+  Type:
+    type: string
+  URLCodebase:
+    $ref: ./Link.yaml
+  URLCodebaseBookmarkID:
+    type: string
+  Log:
+    type: array
+    items:
+      $ref: ./Log.yaml
+  TerritoryUID:
+    type: string
