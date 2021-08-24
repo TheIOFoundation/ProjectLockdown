@@ -2,9 +2,10 @@ import React from "react";
 import styles from "./TimeSlider.module.scss";
 import { calendarBoxes, pause, play } from "../../assets/icons/icons.js"
 
-const TimeSlider = () => {
+const TimeSlider = (props) => {
     return (
-        <div className={styles.timeSlider}>
+        <div className={styles.timeSlider}
+             style={{maxWidth: `${props.mobileWidth - 140}px`}}>
             <div className={styles.flexWrapperOne}>
                 <div className={styles.datePickerIcon}>
                     {calendarBoxes}

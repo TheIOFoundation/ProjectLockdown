@@ -383,6 +383,7 @@ const App = (props) => {
               setFirstDay={setStartDate}
               lastDay={format(new Date(endDate), 'yyyy-MM-dd')}
               setLastDay={setEndDate}
+              mobileWidth={fullTimeSliderWidth}
             />
           )}
           

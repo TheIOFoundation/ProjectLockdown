@@ -7,17 +7,16 @@
   height: 50px;
   align-items: flex-start;
   position: absolute;
-  width: 100%;
-  max-width: 60vw;
+  width: 90%;
   bottom: 40px;
-  left: 40px;
+  left: 20px;
 }
 
 .flexWrapperOne {
   background-color: var(--ld-hover);
   margin-right: 10px;
   border-radius: 25px;
-  width: 20vw;
+  width: 175px;
   height: 50px;
   padding: 0 10px;
   display: flex;
@@ -30,21 +29,19 @@
 
 .date {
   color: var(--ld-gray-2);
-}
-
-.dateEmphasis1 {
-  color: var(--ld-gray-2);
+  font-weight: bolder;
+  font-size: 14px;
 }
 
 .playButton {
-  width: 4.36%;
+  width: 30px;
   height: 35%;
-  margin-top: 13px;
-  margin-right: 11.75px;
+  margin-top: 12px;
+  margin-right: 12px;
 }
 
 .relativeWrapperOne {
-  width: 40vw;
+  width: 80%;
   height: 2px;
   margin-top: 24px;
   position: relative;
