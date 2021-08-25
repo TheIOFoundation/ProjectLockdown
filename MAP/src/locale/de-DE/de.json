@@ -4,7 +4,7 @@
     "header": {
         "totals": {
             "territoriesLockdown": "Land Im Lockdown",
-            "peopleAffected": "",
+            "peopleAffected": "Wolk affektieren",
             "cases": "",
             "deaths": ""
         }
