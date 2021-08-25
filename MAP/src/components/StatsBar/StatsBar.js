@@ -15,7 +15,7 @@ const StatsBar = ({
         lockdown: 0,
         affected: 0,
     });
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     const toggleStatsBar = () => {
         setIsOpen(!isOpen);
