@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { snapshot } from '../../../../MAP/public/data/snapshot.json';
+// import { snapshot } from '../../../../MAP/public/data/snapshot.json';
 
+const snapshot = [];
 // Returned data inside the date has to contain only ISO and Value
 interface IsoValue {
     iso: string;

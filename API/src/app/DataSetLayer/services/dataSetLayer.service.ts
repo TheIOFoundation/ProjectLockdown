@@ -24,6 +24,6 @@ export class DSLService {
     }
 
     async findById(id: string){
-        return this.dslRepository.find(id);
+        return this.dslRepository.findOne(id);
     }
 }
