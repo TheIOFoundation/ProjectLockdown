@@ -11,7 +11,9 @@ import translationPT from './pt/index';
 import translationRU from './ru/index';
 import translationZHCN from './zh-CN/index';
 import translationZHHK from './zh-HK/index';
-const translationEN = require('./en/en.json');
+let translationEN = require('./en/en.json');
+
+translationEN = { ...translationEN, ...require('./en/covid19.json') }
 
 const resources = {
   en: {
