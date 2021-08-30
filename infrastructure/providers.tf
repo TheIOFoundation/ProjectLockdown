@@ -6,6 +6,13 @@ terraform {
     }
   }
 
+  backend "remote" {
+    organization = "TheIOFoundation"
+    workspaces {
+      name = "Development"
+    }
+  }
+
   required_version = ">= v1.0.3"
 }
 
@@ -13,9 +20,4 @@ provider "azurerm" {
   features {}
 }
 
-backend "remote" {
-  organization = "TheIOFoundation"
-  workspaces {
-    name = "Development"
-  }
-}
+
