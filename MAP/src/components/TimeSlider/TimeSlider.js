@@ -150,6 +150,14 @@ const TimeSlider = (props) => {
         );
     };
 
+    const switchPlayState = () => {
+        if(playerState === 'PLAYING') {
+            onPlayerStateToggle('PAUSED');
+        } else {
+            onPlayerStateToggle('PLAYING');
+        }
+    }
+
     return (
         <div className={styles.timeSlider}
              style={{maxWidth: `${props.mobileWidth - 140}px`}}>
@@ -159,8 +167,9 @@ const TimeSlider = (props) => {
                 </div>
                 <p className={styles.date}>22, Dec, 2020</p>
             </div>
-            <div className={styles.playButton}>
-                {play}
+            <div className={styles.playButton}
+                 onClick={switchPlayState}>
+                {playerState === 'PLAYING' ? pause : play}
             </div>
             <div className={styles.timelineWrapper}>
                 <div className={styles.timeline} />
