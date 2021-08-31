@@ -19,7 +19,7 @@ properties:
   Status:
     type: string
   DateLastUpdate:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Date
+    $ref: ./Date.yaml
   URLCode:
     type: array
     items:

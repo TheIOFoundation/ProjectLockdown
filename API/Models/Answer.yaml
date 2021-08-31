@@ -5,7 +5,7 @@ properties:
   AnswerUID:
     type: string
   Value:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Response
+    $ref: ./Response.yaml
   DateStart:
     $ref: ./Date.yaml
   DateEnd:
