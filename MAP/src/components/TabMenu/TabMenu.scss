@@ -2,8 +2,8 @@
 
 .menu-overlay {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   z-index: 1100;
   background-color: rgba(40, 40, 40, 0.8);
   width: 100%;
@@ -12,11 +12,12 @@
     display: none;
   }
 }
+
 .menu-close-btn {
   position: absolute !important;
   color: white;
   background-color: transparent;
-  padding: 0px !important;
+  padding: 0 !important;
   top: 90px;
   width: 39px !important;
   height: 39px !important;
@@ -25,7 +26,6 @@
   margin-right: auto !important;
   margin-left: auto !important;
   border-radius: 50% !important;
-  /*box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,14 +35,15 @@
   @media (max-width: 960px) {
     background: transparent !important;
     box-shadow: none;
-    border-radius: 0px;
+    border-radius: 0;
   }
 }
+
 .dark .menu-close-btn {
   position: absolute !important;
   color: white;
   background-color: transparent;
-  padding: 0px;
+  padding: 0;
   top: 10%;
   width: 39px;
   right: 0;
@@ -50,14 +51,13 @@
   margin-right: auto;
   margin-left: auto;
   border-radius: 50%;
-  /*box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);*/
   &:hover {
     cursor: pointer;
   }
   @media (max-width: 960px) {
     background: transparent !important;
     box-shadow: none;
-    border-radius: 0px;
+    border-radius: 0;
   }
 }
 
@@ -92,9 +92,9 @@
   z-index: 2000;
   right: 2vw;
   border-radius: 50%;
-  border: 0px;
+  border: 0;
   background-color: white;
-  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 var(--ld-gray-4);
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -109,7 +109,7 @@
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    width: 0%;
+    width: 0;
   }
 
   to {
@@ -117,10 +117,11 @@
     width: 8%;
   }
 }
+
 @keyframes fadeInRightM {
   from {
     opacity: 0;
-    width: 0%;
+    width: 0;
   }
 
   to {
@@ -128,10 +129,11 @@
     width: 23%;
   }
 }
+
 .ld-menu {
   @media (max-width: 960px) {
     width: 56px;
-    top: 0px;
+    top: 0;
     height: 100%;
     animation: fadeInRightM 1s;
   }
@@ -145,7 +147,7 @@
   max-width: 56px;
   position: absolute;
   padding: 0;
-  right: 0px;
+  right: 0;
   background-color: #f2f2f2;
   z-index: 1100;
   .dark & {
@@ -154,7 +156,7 @@
   & .link-container {
     display: flex;
     justify-content: space-between;
-    padding: 25px 0px;
+    padding: 25px 0;
   }
   & .ld-menu-nav {
     display: flex;
@@ -162,7 +164,7 @@
     width: 100%;
     & nav {
       width: 100%;
-      padding: 10px 0px 10px 0px;
+      padding: 10px 0 10px 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -205,8 +207,7 @@
               width: 10px;
               z-index: -1;
               content: ' ';
-              border-radius: 0% 100% 100% 69% / 0% 50% 51% 0%;
-              /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+              border-radius: 0 100% 100% 69% / 0% 50% 51% 0%;
               background-color: transparent;
               border-width: 10px 0 10px 10px;
               border-style: solid;
@@ -231,19 +232,19 @@
 
 .ld-menu--content {
   display: block;
-  top: 0px;
+  top: 0;
   right: 100%;
   height: 100%;
   position: absolute;
   background-color: white;
   width: 700px;
-  border-radius: 0px 0px 0px 0px;
-  -moz-border-radius: 0px 0px 0px 0px;
-  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0 0 0 0;
+  -moz-border-radius: 0 0 0 0;
+  -webkit-border-radius: 0 0 0 0;
   overflow: auto;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 8px 0 var(--ld-gray-4);
   @media (max-width: 960px) {
-    border-radius: 0px;
+    border-radius: 0;
     width: calc(100vw - 100%);
     left: calc(100% - 100vw);
   }
