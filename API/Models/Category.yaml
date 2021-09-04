@@ -28,7 +28,7 @@ properties:
     type: object
     properties:
       TDOLayout:
-        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Layout
+        $ref: ./Layout.yaml
       TabMaxWidth:
         type: string
       TabTitle:

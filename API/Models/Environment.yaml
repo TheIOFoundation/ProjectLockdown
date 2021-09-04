@@ -5,12 +5,12 @@ properties:
   EnvironmentUID:
     type: string
   DSL:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/DataSetLayer
+    $ref: ./DataSetLayer.yaml
   Project:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Project
+    $ref: ./Project.yaml
   Stats:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+    $ref: ./Stat.yaml
   Log:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Log
+    $ref: ./Log.yaml
   Module:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Module
+    $ref: ./Module.yaml

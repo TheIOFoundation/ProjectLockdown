@@ -22,7 +22,7 @@ properties:
       Description:
         type: string
       Region:
-        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Region
+        $ref: ./Region.yaml
       Notes:
         type: string
   ISOInfo:
@@ -35,7 +35,7 @@ properties:
       ISO3:
         type: string
       Links:
-        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+        $ref: ./Link.yaml
   UNInfo:
     type:
       - string
@@ -44,7 +44,7 @@ properties:
       LOCODE:
         type: string
       Links:
-        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+        $ref: ./Link.yaml
   NATOInfo:
     type:
       - string
@@ -53,4 +53,4 @@ properties:
       STANAG:
         type: string
       Links:
-        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+        $ref: ./Link.yaml

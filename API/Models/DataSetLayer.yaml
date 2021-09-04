@@ -15,76 +15,76 @@ properties:
   Description:
     type: string
   Contact:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/User
+    $ref: ./User.yaml
   Audiences:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Audience
+      $ref: ./Audience.yaml
   MaxBoundary:
     type: string
   SourceTypes:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/SourceType
+      $ref: ./SourceType.yaml
   Tags:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Tag
+      $ref: ./Tag.yaml
   Snapshots:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Snapshot
+      $ref: ./Snapshot.yaml
   Sources:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Source
+      $ref: ./Source.yaml
   Stats:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Stat
+      $ref: ./Stat.yaml
   Territories:
     type: array
     items:
       $ref: ./Territory.yaml
   URLDocs:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   URLDSL:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   URLDEI:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   URLMethodology:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   '???URLAPI':
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   URLSchema:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   URLQALog:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   URLLicense:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   URLCitingPolicy:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Link
+    $ref: ./Link.yaml
   DateFirstPublished:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Date
+    $ref: ./Date.yaml
   DateUpdatedNext:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Date
+    $ref: ./Date.yaml
   DateFirstDay:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Date
+    $ref: ./Date.yaml
   DateLastDay:
-    $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Date
+    $ref: ./Date.yaml
   ModuleConfigs:
     type: object
     properties:
       MAP:
-        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Module
+        $ref: ./Module.yaml
       BO:
-        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Module
+        $ref: ./Module.yaml
       API:
-        $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Module
+        $ref: ./Module.yaml
   Log:
     type: array
     items:
-      $ref: ../Reference/Project-Lockdown.v2.json#/components/schemas/Log
+      $ref: ./Log.yaml
   Categories:
     type: array
     items:
