@@ -1,23 +1,31 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DatabaseType, getMetadataArgsStorage } from 'typeorm';
+import { getMetadataArgsStorage } from 'typeorm';
 import { CategoryModule } from './Category';
 import { DataPointModule } from './DataPoint/dataPoint.module';
 import { DSLModule } from './DataSetLayer/DSL.module';
-const mongodbConnection: DatabaseType = 'mongodb';
+import * as dotenv from 'dotenv';
+
+// load .env
+dotenv.config({ path: '.env' });
+
 @Module({
     imports: [
         DSLModule,
         DataPointModule,
         CategoryModule,
         TypeOrmModule.forRoot({
-            type: mongodbConnection as any,
+            type: 'mongodb',
             host: process.env.DB_HOST,
+            port: parseInt(`${process.env.DB_PORT}`),
+            username: process.env.DB_USERNAME,
+            password: process.env.DB_PASSWORD,
             database: process.env.DB_DATABASE,
             entities: getMetadataArgsStorage().tables.map((tbl) => tbl.target),
             synchronize: true,
-            useUnifiedTopology: true,
+            ssl: true,
             useNewUrlParser: true,
+            useUnifiedTopology: true,
         }),
     ],
 })

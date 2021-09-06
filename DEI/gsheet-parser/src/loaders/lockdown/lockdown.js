@@ -915,6 +915,7 @@ export async function batchGetTerritoriesEntryData(territories) {
 
           let snapshots = getSnapshots(entries);
 
+
           try {
             // country sheet where entries are blank - we need to delete snapshots for the country in the db
             // 21/6/2020 NPIs also have the same issue - delete country entries first before inserting.
@@ -993,6 +994,6 @@ export async function batchGetTerritoriesEntryData(territories) {
 }
 
 export default async function loadData() {
-  const territories = await getGlobalData();
-  return await batchGetTerritoriesEntryData(territories);
+  const territories = getGlobalData();
+  return  batchGetTerritoriesEntryData(territories);
 }
