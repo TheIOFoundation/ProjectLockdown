@@ -1,17 +1,17 @@
 import {
     Entity,
-    ObjectID,
     Column,
-    PrimaryGeneratedColumn,
     CreateDateColumn,
     UpdateDateColumn,
-    OneToMany,
+    ObjectID,
+    ObjectIdColumn,
 } from 'typeorm';
-import { Category } from '../../Category/entities/category.entity';
+import { Category } from '../Category';
 
-@Entity()
-export class DataSetLayer {
-    @PrimaryGeneratedColumn() id: ObjectID;
+@Entity('DataSetLayer')
+export default class DataSetLayer {
+    @ObjectIdColumn()
+    id: ObjectID;
     @Column() name: string;
     @Column() version: string;
     @Column() status: string;
@@ -21,6 +21,6 @@ export class DataSetLayer {
     createdAt: Date;
     @UpdateDateColumn({ name: 'updatedAt' })
     updatedAt: Date;
-    @OneToMany(() => Category, (category) => category.dsl)
+    @Column((_type) => Category)
     categories: Category[];
 }

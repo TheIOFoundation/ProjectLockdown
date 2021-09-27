@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { plainToClass } from 'class-transformer';
-import { Repository } from 'typeorm';
-import { DataSetLayerDTOInput } from '../dtos/dataSetLayer.dto';
-import { DataSetLayer } from '../entities/dataSetLayer.entity';
+import { ObjectID, Repository } from 'typeorm';
+import { DataSetLayerDTOInput } from './dataSetLayer.dto';
+import DataSetLayer from './dataSetLayer.entity';
 
 @Injectable()
-export class DSLService {
+export default class DSLService {
     constructor(
         @InjectRepository(DataSetLayer)
         private readonly dslRepository: Repository<DataSetLayer>,
@@ -23,7 +23,7 @@ export class DSLService {
         return this.dslRepository.save(dataSetLayer);
     }
 
-    async findById(id: string){
+    async findById(id: ObjectID) {
         return this.dslRepository.findOne(id);
     }
 }

@@ -1,5 +1,4 @@
-export * from './controllers/dataSetLayer.controller';
-export * from './entities/dataSetLayer.entity';
-export * from './repositeries/dataSetLayer.repository';
-export * from './services/dataSetLayer.service';
-export * from './dsl.module';
+export { default as DataSetEntryController } from './dataSetLayer.controller';
+export { default as DataSetLayer } from './dataSetLayer.entity';
+export { default as DSLService } from './dataSetLayer.service';
+export { default as DSLModule } from './dsl.module';

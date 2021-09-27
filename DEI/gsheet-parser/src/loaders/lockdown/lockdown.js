@@ -10,11 +10,9 @@ import { connect } from '../../repositories';
 import * as TiofRegions from '../../services/regions.services';
 import * as TiofTerritories from '../../services/territories.services';
 
-const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
 // Number of territories to query through batchGet at a time
-const BATCH_SIZE = 25;
 
 // Number of entries to batchGet from google sheet
 const ENTRIES_TO_FETCH = 100;
@@ -27,6 +25,7 @@ export async function getGlobalData() {
   const sheet = await getWorksheetByTitle('Global');
   //const rows = await sheet.getCellsInRange('B5:F253'); // only countries, not including areas, e.g. Beijing, Western Australia, etc
   const rows = await sheet.getCellsInRange('B5:X432'); // including areas, e.g. Beijing, Western Australia, ISO 3166-2
+
   const headers = ['status', 'jump', 'territory', 'iso2', 'iso3', 'lastTimeUpdated',
     'territorySource', 'populationSource', 'covid-19Source', 'notes', 'url', 'region',
     'boundariesLevel', 'featureID', 'wikidataID', 'iso3_2', 'unitCode', 'description', 'languages',
@@ -34,30 +33,38 @@ export async function getGlobalData() {
   return transposeRows(headers, rows);
 }
 
-export async function insertTerritory(db, row) {
-  let region = null;
-  if (row['region'].trim() != '') {
-    region = await TiofRegions.findOneOrCreate(row['region']); 
-  }
-
-  var territory = {
-    PLD_Code: row['iso3'],
-    Name: row['territory'],
-    Notes: row['notes'],
-    Description: row['description'],
-    ISO2: row['iso2'],
-    ISO3: row['iso3'],
-    UN_Code: row['unitCode'],
-    NATO_Code: row['unitCode'],
-    Wikidata_ID: row['wikidataID'],
-    Researcher: row['research'],
-    Encoder: row['encode'],
-    Editor: row['review'],
-    Region: (region ? region._id: ''),
-    BoundaryLevel: row['boundariesLevel'],
-    SubTerritories: []
-  };
-  await TiofTerritories.findOneOrCreate(territory);
+export async function insertTerritory(row) {
+  
+  if (row['region']?.trim() != '') 
+      try {
+       const region = row['region']?.trim();
+        const regionData = await TiofRegions.findOneOrCreate(region);   
+       const territory = {
+          pldCode: row['iso3'],
+          name: row['territory'],
+          notes: row['notes'],
+          description: row['description'],
+          is02: row['iso2'],
+          is03: row['iso3'],
+          unCode: row['unitCode'],
+          natoCode: row['unitCode'],
+          wikidataId: row['wikidataID'],
+          researcher: row['research'],
+          encoder: row['encode'],
+          editor: row['review'],
+          region: (regionData._id?? null),
+          boundaryLevel: row['boundariesLevel'],
+          subTerritories: []
+        };
+        try {
+          await TiofTerritories.findOneOrCreate(territory);
+        } catch (error) {
+          logger.error(error);
+        }
+      } catch (error) {
+        logger.log(error)
+      }
+    
   return row['iso3'];
 }
 
@@ -859,30 +866,23 @@ export async function insertEnvironment(db, territoryIds) {
  * @param {array} territories 
  */
 export async function batchGetTerritoriesEntryData(territories) {
-  const database = await connect();
-  const doc = await getDocument();
+  // const database = await connect();
   const startCacheColumn = 'H';
   const startCacheColumnIndex = letterToColumn(startCacheColumn);
-  const endCacheColumn = columnToLetter(startCacheColumnIndex + (ENTRIES_TO_FETCH * ENTRY_COLUMN_LENGTH));
-  const rangeToCache = `${startCacheColumn}1:${endCacheColumn}65`;
   const result = [];
-  var batch;
-  var shouldResetApiCache = false;
 
   var territoryIds = [];
   try {
-    territories.forEach(row => {
-      territoryIds.push(insertTerritory(database, row));
+    territories.forEach( row => {
+       territoryIds.push(insertTerritory(row));
     });
-
   }
   catch (error) {
     throw new Error(`Error during processing territories: ${error}`);
   }
-  try {
-
-
-    await insertEnvironment(database, territoryIds);
+  
+/*   try {
+    // await insertEnvironment(database, territoryIds);
 
     while (batch = territories.splice(0, BATCH_SIZE)) {
       if (batch.length < 1) break;
@@ -912,7 +912,7 @@ export async function batchGetTerritoriesEntryData(territories) {
               entries.push(entryData);
             }
           }
-
+          
           let snapshots = getSnapshots(entries);
 
 
@@ -987,13 +987,13 @@ export async function batchGetTerritoriesEntryData(territories) {
   catch (error) {
     database.close();
     throw error;
-  }
+  } */
 
-  database.close()
+  // database.close()
   return result;
 }
 
 export default async function loadData() {
-  const territories = getGlobalData();
+  const territories = await  getGlobalData();
   return  batchGetTerritoriesEntryData(territories);
 }

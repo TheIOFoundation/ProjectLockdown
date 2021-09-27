@@ -1,5 +1,4 @@
-export * from './controllers/category.controller';
-export * from './entities/category.entity';
-export * from './repositories/category.repository';
-export * from './services/category.service';
-export * from './category.module';
+export { default as CategoryController } from './category.controller';
+export { default as Category } from './category.entity';
+export { default as CategoryService } from './category.service';
+export { default as CategoryModule } from './category.module';

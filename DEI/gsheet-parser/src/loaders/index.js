@@ -17,9 +17,9 @@ if (fs.existsSync('.env')) {
   dotenv.config({ path: '.env' });
 }
 
-const db = `mongodb://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB}:${process.env.MONGO_PORT}/project-lockdown?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@${process.env.MONGO_DB_USER}@`;
+// const db = `mongodb://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB}:${process.env.MONGO_PORT}/project-lockdown?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@${process.env.MONGO_DB_USER}@`;
 
-connect({db});
+// connect({db});
 
 
 /**

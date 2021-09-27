@@ -4,24 +4,32 @@
  import Territory, { ITerritory } from "../models/territory.model";
  
  import { CreateQuery } from 'mongoose';
+ import { insertData, getTerritoryByPLDCode } from "./apiservice";
+import logger from "../utils/logger";
   
  
  /**
   * Service Methods
   */
   
- export const create = async (newTerritory: CreateQuery<ITerritory>): Promise<ITerritory> => {
-   return Territory.create(newTerritory)
-     .then((data: ITerritory) => {
-       return data;
-     })
-     .catch((error: Error) => {
-       throw error;
-     });
+ export const create = async (newTerritory: CreateQuery<ITerritory>) => {
+     try {
+      return await insertData('Territory', newTerritory);
+    } catch (error) {
+    throw error;
+   }
  };
    
- export const findOneOrCreate = async (territory: CreateQuery<ITerritory>): Promise<ITerritory> => {
-   const found = await Territory.findOne({ PLD_Code: territory.PLD_Code });
-   return found || create(territory) as any;
+ export const findOneOrCreate = async (territory: CreateQuery<ITerritory>) => {
+  try {
+    const found = await getTerritoryByPLDCode(territory.pldCode);
+    const {status, data} = found;
+    if (!(status === 200 && data)){
+     return await create(territory) as any 
+    }
+    return null;
+  } catch (error) {
+    console.log({error});
+  }
+
  };
- 

@@ -1,10 +1,11 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { DataSetLayerDTOInput } from '../dtos/dataSetLayer.dto';
-import { DataSetLayer } from '../entities/dataSetLayer.entity';
-import { DSLService } from '../services/dataSetLayer.service';
+import { ObjectID } from 'typeorm';
+import { DataSetLayerDTOInput } from './dataSetLayer.dto';
+import DataSetLayer from './dataSetLayer.entity';
+import DSLService from './dataSetLayer.service';
 
 @Controller('DSL')
-export class DataSetLayerController {
+export default class DataSetLayerController {
     constructor(private readonly dslService: DSLService) {}
 
     @Post()
@@ -18,7 +19,7 @@ export class DataSetLayerController {
     }
 
     @Get(':id')
-    getById(@Param('id') id: string) {
+    getById(@Param('id') id: ObjectID) {
         return this.dslService.findById(id);
     }
 }

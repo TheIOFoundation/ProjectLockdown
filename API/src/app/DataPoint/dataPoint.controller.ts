@@ -8,11 +8,12 @@ import {
     Post,
     Query,
 } from '@nestjs/common';
-import { DataPoint } from '../entities/dataPoint.entity';
-import { DataPointService } from '../services/dataPoint.service';
+import { ObjectID } from 'typeorm';
+import DataPoint from './dataPoint.entity';
+import DataPointService from './dataPoint.service';
 
 @Controller('DataPoint')
-export class DataPointController {
+export default class DataPointController {
     constructor(private readonly service: DataPointService) {}
 
     @Get()
@@ -26,7 +27,7 @@ export class DataPointController {
     }
 
     @Get('/:id')
-    async getById(@Param('id') id: string): Promise<DataPoint> {
+    async getById(@Param('id') id: ObjectID): Promise<DataPoint> {
         return this.service.getOne(id);
     }
 
@@ -42,7 +43,7 @@ export class DataPointController {
 
     @Delete('/delete/:id')
     async deleteDataPoint(
-        @Param('id') id: string,
+        @Param('id') id: ObjectID,
     ): Promise<{ deleted: boolean }> {
         return this.service.deleteOne(id);
     }

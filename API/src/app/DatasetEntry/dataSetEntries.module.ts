@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
-import { DataSetEntryController } from './dataSetEntries.controller';
-import { DataSetEntriesService } from './dataSetEntries.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import DataSetEntryController from './dataSetEntries.controller';
+import DataSetEntries from './dataSetEntries.entity';
+import DataSetEntriesService from './dataSetEntries.service';
 
 @Module({
-    imports: [],
+    imports: [TypeOrmModule.forFeature([DataSetEntries])],
     controllers: [DataSetEntryController],
     providers: [DataSetEntriesService],
 })
-export class DataSetEntriesModule {}
+export default class DataSetEntriesModule {}

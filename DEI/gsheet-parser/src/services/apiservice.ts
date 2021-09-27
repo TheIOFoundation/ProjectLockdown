@@ -8,9 +8,24 @@ if (fs.existsSync('.env')) {
   dotenv.config({ path: '.env' });
 }
 
-const BASEURL = process.env.BASE_URL;
+// const BASEURL = process.env.BASE_URL;
+
+const BASEURL = "http://localhost:4000/api/v2"
 
 export const insertData = (endPoint: String, data: any) => {
     const url = `${BASEURL}/${endPoint}`;
     return axios.post(url, data);
 }
+
+export const getTerritoryByPLDCode =(code: string) => {
+  const url = `${BASEURL}/Territory/getByPLD?code=${code}`;
+  return axios.get(url); 
+}
+
+export const getRegionByName = (name: string) => {
+    const url = `${BASEURL}/Region/getByName?name=${name}`;
+    return axios.get(url);
+ 
+}
+
+

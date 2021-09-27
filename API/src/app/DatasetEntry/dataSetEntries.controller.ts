@@ -1,27 +1,46 @@
-import { Controller, Get, Res, HttpStatus, Param } from '@nestjs/common';
-import { Response } from 'express';
-import { DataSetEntries } from './dataSetEntries.models';
-import { DataSetEntriesService } from './dataSetEntries.service';
+import {
+    Controller,
+    Get,
+    Param,
+    Body,
+    Delete,
+    Patch,
+    Post,
+} from '@nestjs/common';
+import { ObjectID } from 'typeorm';
+import DataSetEntries from './dataSetEntries.entity';
+import DataSetEntriesService from './dataSetEntries.service';
 
-@Controller('datasetEntry')
-export class DataSetEntryController {
-    constructor(private dataSetEntryService: DataSetEntriesService) {}
+@Controller('DataSetEntryController')
+export default class DataSetEntryController {
+    constructor(private readonly service: DataSetEntriesService) {}
 
-    @Get(':DSLUID/:DateStart/:DateEnd/:PLDCODE')
-    getDataSetEntry(
-        @Param('DSLUID') dslUid: string,
-        @Param('DateStart') startDate: string,
-        @Param('DateEnd') endDate: string,
-        @Param('PLDCODE') pldCode: string,
-        @Res() res: Response,
-    ) {
-        const apiQuerry = new DataSetEntries(
-            dslUid,
-            startDate,
-            endDate,
-            pldCode,
-        );
-        const result = this.dataSetEntryService.getData(apiQuerry);
-        return res.status(HttpStatus.OK).json(result);
+    @Get()
+    async getDataPoints(): Promise<DataSetEntries[]> {
+        return this.service.getAll();
+    }
+
+    @Get('/:id')
+    async getById(@Param('id') id: ObjectID): Promise<DataSetEntries> {
+        return this.service.getOne(id);
+    }
+
+    @Post('/new')
+    async newDataPoint(@Body() input: DataSetEntries): Promise<DataSetEntries> {
+        return this.service.insertOne(input);
+    }
+
+    @Patch('/update')
+    async updateDataPoint(
+        @Body() input: DataSetEntries,
+    ): Promise<DataSetEntries> {
+        return this.service.updateOne(input);
+    }
+
+    @Delete('/delete/:id')
+    async deleteDataPoint(
+        @Param('id') id: ObjectID,
+    ): Promise<{ deleted: boolean }> {
+        return this.service.deleteOne(id);
     }
 }

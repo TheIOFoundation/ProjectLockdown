@@ -1,4 +1,4 @@
-export * from './controllers/dataPoint.controller';
-export * from './entities/dataPoint.entity';
-export * from './repositories/dataPoint.repository';
-export * from './services/dataPoint.service';
+export { default as DataPointController } from './dataPoint.controller';
+export { default as DataPoint } from './dataPoint.entity';
+export { default as DataPointService } from './dataPoint.service';
+export { default as DataPointModule } from './dataPoint.module';

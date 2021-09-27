@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { DataPoint } from '../entities/dataPoint.entity';
+import { ObjectID, Repository } from 'typeorm';
+import DataPoint from './dataPoint.entity';
 
 @Injectable()
-export class DataPointService {
+export default class DataPointService {
     constructor(
         @InjectRepository(DataPoint)
         private readonly repository: Repository<DataPoint>,
@@ -14,7 +14,7 @@ export class DataPointService {
         return this.repository.find();
     }
 
-    async getOne(id: string): Promise<DataPoint> {
+    async getOne(id: ObjectID): Promise<DataPoint> {
         return this.repository.findOneOrFail(id);
     }
 
@@ -35,7 +35,7 @@ export class DataPointService {
     }
 
     async deleteOne(
-        id: string,
+        id: ObjectID,
     ): Promise<{ deleted: boolean; message?: string }> {
         try {
             await this.repository.delete(id);
