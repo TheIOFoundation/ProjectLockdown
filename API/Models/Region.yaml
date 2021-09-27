@@ -1,0 +1,38 @@
+title: "\U0001F6A7Region"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\nPLD regions\n\nUID   Name   (Notes)\n0 - World (.earth)\n1 - Africa (.africa)\n2 - Asia (.asia)\n3 - Americas (.lat + .us)\n4 - Europe (.eu)\n5 - Middle East (.me)\n6 - Pacific (NONE >> See GH Issue XXXX)\nMissing: Pacific - No assigned TLD seems to be available\n\nSee documentation on how to use the TLDs for localization."
+properties:
+  RegionUID:
+    type: string
+    description: Universal ID
+  Name:
+    type: string
+  Description:
+    type: string
+  Territories:
+    type: array
+    items:
+      $ref: ./Territory.yaml
+  TLD:
+    type: string
+  MAPInfo:
+    type: object
+    description: Stores all specs for that region per mapping provider.
+    properties:
+      Mapbox:
+        type: object
+        description: Specs for Mapbox
+        properties:
+          Zoom:
+            type: string
+          Lat:
+            type: string
+          Long:
+            type: string
+  PermalinkGraphs:
+    type: string
+    description: Image for this region
+  Stats:
+    type: array
+    items:
+      $ref: ./Stat.yaml

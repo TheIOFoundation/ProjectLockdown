@@ -1,0 +1,11814 @@
+description: "# Status: \U0001F6A7\n\n## ⚡ About\nA Module object represents the collection of data that is necessary to define and configure a PLD Module.\n\nThe object itself is divided in as many subobjects as Modules in Project Lockdown:\nModules\n- \U0001F5FA Mapping platform [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- ⌨ Back Office [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- \U0001F5C3 Backend Endpoints [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n- \U0001F310 Official Website [WEB]()\n- \U0001F5C4 Data Entry Interface [DEI](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DEI)\n- \U0001F4BE Database [DB](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DB)\n- ✋ Insourcing Funnel [IS]()\n- \U0001F932 Crowdsourcing [CS]()\n- \U0001F916 ML Funnel [ML]()\n- \U0001F4E6 Direct Feed Funnel [DF]()\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n\n###Accessed by\nMAP\nBO\nAPI"
+type: object
+x-examples:
+  example-1:
+    Module:
+      title: "\U0001F6A7 Module"
+      type: object
+      description: "# Status: \U0001F6A7\n\n## ⚡ About\nA Module object represents the collection of data that is necessary to define and configure a PLD Module.\n\nThe object itself is divided in as many subobjects as Modules in Project Lockdown:\nModules\n- \U0001F5FA Mapping platform [MAP](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/MAP)\n- ⌨ Back Office [BO](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/BO)\n- \U0001F5C3 Backend Endpoints [API](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/API)\n- \U0001F310 Official Website [WEB]()\n- \U0001F5C4 Data Entry Interface [DEI](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DEI)\n- \U0001F4BE Database [DB](https://github.com/TheIOFoundation/ProjectLockdown/tree/master/DB)\n- ✋ Insourcing Funnel [IS]()\n- \U0001F932 Crowdsourcing [CS]()\n- \U0001F916 ML Funnel [ML]()\n- \U0001F4E6 Direct Feed Funnel [DF]()\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n\n###Accessed by\nMAP\nBO\nAPI"
+      x-tags:
+        - Models
+      x-examples:
+        MAP:
+          MAP:
+            TabMenu:
+              Show: 'True'
+              Position: Left
+              Page: DataSetInfo
+            TimeSlider:
+              Position: Top
+              DateStart: '2019-08-24'
+              DateEnd: '2019-08-24'
+              DateView: '2019-08-24'
+              Show: 'True'
+            StatsBox:
+              Layout:
+                LayoutUID: string
+                Name: string
+                Description: string
+                Stats:
+                  - StatUID: string
+                    Name: string
+                    Description: string
+                    Notes: string
+                    Type: SourcesPerTerritory
+                    Value: string
+                    URLDoc:
+                      LinkUID: string
+                      Type: Source
+                      Name: string
+                      Description: string
+                      Stats:
+                        - {}
+                      Help: string
+                      URL: string
+                    Status: string
+                    DateLastUpdate:
+                      DateUID: string
+                      Name: string
+                      Description: string
+                      Type: string
+                      Value: string
+                      ValueUTC: string
+                      GeneratedBy: Human
+                      "\U0001F4D1 Highlights": string
+                      "\U0001F4D1 Links":
+                        - LinkUID: string
+                          Type: Source
+                          Name: string
+                          Description: string
+                          Stats:
+                            - {}
+                          Help: string
+                          URL: string
+                      UI:
+                        Tooltip: string
+                        Name: string
+                        Description: string
+                      Stats:
+                        - {}
+                    URLCode:
+                      - LinkUID: string
+                        Type: Source
+                        Name: string
+                        Description: string
+                        Stats:
+                          - {}
+                        Help: string
+                        URL: string
+                URLCSS:
+                  LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - StatUID: string
+                      Name: string
+                      Description: string
+                      Notes: string
+                      Type: SourcesPerTerritory
+                      Value: string
+                      URLDoc: {}
+                      Status: string
+                      DateLastUpdate:
+                        DateUID: string
+                        Name: string
+                        Description: string
+                        Type: string
+                        Value: string
+                        ValueUTC: string
+                        GeneratedBy: Human
+                        "\U0001F4D1 Highlights": string
+                        "\U0001F4D1 Links":
+                          - {}
+                        UI:
+                          Tooltip: string
+                          Name: string
+                          Description: string
+                        Stats:
+                          - {}
+                      URLCode:
+                        - {}
+                  Help: string
+                  URL: string
+              DefaultDP:
+                - SnapshotUID: string
+                  SourceTypeUID: string
+                  DSLUID: string
+                  Type: DEDUCED
+                  XXXFrequency: OnSpot
+                  Stats:
+                    - StatUID: string
+                      Name: string
+                      Description: string
+                      Notes: string
+                      Type: SourcesPerTerritory
+                      Value: string
+                      URLDoc:
+                        LinkUID: string
+                        Type: Source
+                        Name: string
+                        Description: string
+                        Stats:
+                          - {}
+                        Help: string
+                        URL: string
+                      Status: string
+                      DateLastUpdate:
+                        DateUID: string
+                        Name: string
+                        Description: string
+                        Type: string
+                        Value: string
+                        ValueUTC: string
+                        GeneratedBy: Human
+                        "\U0001F4D1 Highlights": string
+                        "\U0001F4D1 Links":
+                          - LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - {}
+                            Help: string
+                            URL: string
+                        UI:
+                          Tooltip: string
+                          Name: string
+                          Description: string
+                        Stats:
+                          - {}
+                      URLCode:
+                        - LinkUID: string
+                          Type: Source
+                          Name: string
+                          Description: string
+                          Stats:
+                            - {}
+                          Help: string
+                          URL: string
+                  Answers:
+                    - AnswerUID: string
+                      Value:
+                        ResponseUID: string
+                        GeneratedBy: 'Funnel: IS'
+                        '???Highlights': string
+                        Type: string
+                        Value: string
+                      DateStart:
+                        DateUID: string
+                        Name: string
+                        Description: string
+                        Type: string
+                        Value: string
+                        ValueUTC: string
+                        GeneratedBy: Human
+                        "\U0001F4D1 Highlights": string
+                        "\U0001F4D1 Links":
+                          - LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - StatUID: string
+                                Name: string
+                                Description: string
+                                Notes: string
+                                Type: SourcesPerTerritory
+                                Value: string
+                                URLDoc: {}
+                                Status: string
+                                DateLastUpdate: {}
+                                URLCode:
+                                  - {}
+                            Help: string
+                            URL: string
+                        UI:
+                          Tooltip: string
+                          Name: string
+                          Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc:
+                              LinkUID: string
+                              Type: Source
+                              Name: string
+                              Description: string
+                              Stats:
+                                - {}
+                              Help: string
+                              URL: string
+                            Status: string
+                            DateLastUpdate: {}
+                            URLCode:
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                      DateEnd:
+                        DateUID: string
+                        Name: string
+                        Description: string
+                        Type: string
+                        Value: string
+                        ValueUTC: string
+                        GeneratedBy: Human
+                        "\U0001F4D1 Highlights": string
+                        "\U0001F4D1 Links":
+                          - LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - StatUID: string
+                                Name: string
+                                Description: string
+                                Notes: string
+                                Type: SourcesPerTerritory
+                                Value: string
+                                URLDoc: {}
+                                Status: string
+                                DateLastUpdate: {}
+                                URLCode:
+                                  - {}
+                            Help: string
+                            URL: string
+                        UI:
+                          Tooltip: string
+                          Name: string
+                          Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc:
+                              LinkUID: string
+                              Type: Source
+                              Name: string
+                              Description: string
+                              Stats:
+                                - {}
+                              Help: string
+                              URL: string
+                            Status: string
+                            DateLastUpdate: {}
+                            URLCode:
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                      DataPointUID: string
+                      Details: string
+                      DSEUID: string
+                      Type: RAW
+                      URLCodebase:
+                        LinkUID: string
+                        Type: Source
+                        Name: string
+                        Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc: {}
+                            Status: string
+                            DateLastUpdate:
+                              DateUID: string
+                              Name: string
+                              Description: string
+                              Type: string
+                              Value: string
+                              ValueUTC: string
+                              GeneratedBy: Human
+                              "\U0001F4D1 Highlights": string
+                              "\U0001F4D1 Links":
+                                - {}
+                              UI:
+                                Tooltip: string
+                                Name: string
+                                Description: string
+                              Stats:
+                                - {}
+                            URLCode:
+                              - {}
+                        Help: string
+                        URL: string
+                      URLCodebaseBookmarkID: string
+                      Log:
+                        - LogUID: string
+                          Operation: Encode
+                          UserUID: string
+                          Notes: string
+                          SourceUID: string
+                          Dates:
+                            - DateUID: string
+                              Name: string
+                              Description: string
+                              Type: string
+                              Value: string
+                              ValueUTC: string
+                              GeneratedBy: Human
+                              "\U0001F4D1 Highlights": string
+                              "\U0001F4D1 Links":
+                                - LinkUID: string
+                                  Type: Source
+                                  Name: string
+                                  Description: string
+                                  Stats:
+                                    - StatUID: string
+                                      Name: string
+                                      Description: string
+                                      Notes: string
+                                      Type: SourcesPerTerritory
+                                      Value: string
+                                      URLDoc: {}
+                                      Status: string
+                                      DateLastUpdate: {}
+                                      URLCode:
+                                        - {}
+                                  Help: string
+                                  URL: string
+                              UI:
+                                Tooltip: string
+                                Name: string
+                                Description: string
+                              Stats:
+                                - StatUID: string
+                                  Name: string
+                                  Description: string
+                                  Notes: string
+                                  Type: SourcesPerTerritory
+                                  Value: string
+                                  URLDoc:
+                                    LinkUID: string
+                                    Type: Source
+                                    Name: string
+                                    Description: string
+                                    Stats:
+                                      - {}
+                                    Help: string
+                                    URL: string
+                                  Status: string
+                                  DateLastUpdate: {}
+                                  URLCode:
+                                    - LinkUID: string
+                                      Type: Source
+                                      Name: string
+                                      Description: string
+                                      Stats:
+                                        - {}
+                                      Help: string
+                                      URL: string
+                          Module: string
+                      TerritoryUID: string
+                  URLCodebase:
+                    LinkUID: string
+                    Type: Source
+                    Name: string
+                    Description: string
+                    Stats:
+                      - StatUID: string
+                        Name: string
+                        Description: string
+                        Notes: string
+                        Type: SourcesPerTerritory
+                        Value: string
+                        URLDoc: {}
+                        Status: string
+                        DateLastUpdate:
+                          DateUID: string
+                          Name: string
+                          Description: string
+                          Type: string
+                          Value: string
+                          ValueUTC: string
+                          GeneratedBy: Human
+                          "\U0001F4D1 Highlights": string
+                          "\U0001F4D1 Links":
+                            - {}
+                          UI:
+                            Tooltip: string
+                            Name: string
+                            Description: string
+                          Stats:
+                            - {}
+                        URLCode:
+                          - {}
+                    Help: string
+                    URL: string
+                  DateLastUpdated:
+                    DateUID: string
+                    Name: string
+                    Description: string
+                    Type: string
+                    Value: string
+                    ValueUTC: string
+                    GeneratedBy: Human
+                    "\U0001F4D1 Highlights": string
+                    "\U0001F4D1 Links":
+                      - LinkUID: string
+                        Type: Source
+                        Name: string
+                        Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc: {}
+                            Status: string
+                            DateLastUpdate: {}
+                            URLCode:
+                              - {}
+                        Help: string
+                        URL: string
+                    UI:
+                      Tooltip: string
+                      Name: string
+                      Description: string
+                    Stats:
+                      - StatUID: string
+                        Name: string
+                        Description: string
+                        Notes: string
+                        Type: SourcesPerTerritory
+                        Value: string
+                        URLDoc:
+                          LinkUID: string
+                          Type: Source
+                          Name: string
+                          Description: string
+                          Stats:
+                            - {}
+                          Help: string
+                          URL: string
+                        Status: string
+                        DateLastUpdate: {}
+                        URLCode:
+                          - LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - {}
+                            Help: string
+                            URL: string
+                  DateFirstCreated:
+                    DateUID: string
+                    Name: string
+                    Description: string
+                    Type: string
+                    Value: string
+                    ValueUTC: string
+                    GeneratedBy: Human
+                    "\U0001F4D1 Highlights": string
+                    "\U0001F4D1 Links":
+                      - LinkUID: string
+                        Type: Source
+                        Name: string
+                        Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc: {}
+                            Status: string
+                            DateLastUpdate: {}
+                            URLCode:
+                              - {}
+                        Help: string
+                        URL: string
+                    UI:
+                      Tooltip: string
+                      Name: string
+                      Description: string
+                    Stats:
+                      - StatUID: string
+                        Name: string
+                        Description: string
+                        Notes: string
+                        Type: SourcesPerTerritory
+                        Value: string
+                        URLDoc:
+                          LinkUID: string
+                          Type: Source
+                          Name: string
+                          Description: string
+                          Stats:
+                            - {}
+                          Help: string
+                          URL: string
+                        Status: string
+                        DateLastUpdate: {}
+                        URLCode:
+                          - LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - {}
+                            Help: string
+                            URL: string
+                  URLCodebaseBookmarkID: string
+                  Log:
+                    - LogUID: string
+                      Operation: Encode
+                      UserUID: string
+                      Notes: string
+                      SourceUID: string
+                      Dates:
+                        - DateUID: string
+                          Name: string
+                          Description: string
+                          Type: string
+                          Value: string
+                          ValueUTC: string
+                          GeneratedBy: Human
+                          "\U0001F4D1 Highlights": string
+                          "\U0001F4D1 Links":
+                            - LinkUID: string
+                              Type: Source
+                              Name: string
+                              Description: string
+                              Stats:
+                                - StatUID: string
+                                  Name: string
+                                  Description: string
+                                  Notes: string
+                                  Type: SourcesPerTerritory
+                                  Value: string
+                                  URLDoc: {}
+                                  Status: string
+                                  DateLastUpdate: {}
+                                  URLCode:
+                                    - {}
+                              Help: string
+                              URL: string
+                          UI:
+                            Tooltip: string
+                            Name: string
+                            Description: string
+                          Stats:
+                            - StatUID: string
+                              Name: string
+                              Description: string
+                              Notes: string
+                              Type: SourcesPerTerritory
+                              Value: string
+                              URLDoc:
+                                LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                              Status: string
+                              DateLastUpdate: {}
+                              URLCode:
+                                - LinkUID: string
+                                  Type: Source
+                                  Name: string
+                                  Description: string
+                                  Stats:
+                                    - {}
+                                  Help: string
+                                  URL: string
+                      Module: string
+              Show: 'True'
+              Position: Top
+              ShowLastUpdate: 'True'
+            Map:
+              Region: string
+              Zoom: string
+              Lat: string
+              Lng: string
+              DefaultDP:
+                Territory: string
+                Border: string
+                Location: string
+              DefaultSnapshotOrder:
+                - string
+            PressPlay:
+              Show: 'True'
+              Behavior: ForwardStop
+              StartDelay: '0'
+              Step: string
+            UI:
+              Locale: string
+              Mode: Common
+              Watermark: string
+            TerritoryDetailsOverlay:
+              Show: 'True'
+              Position: Top
+              DefaultCategoryUID: string
+              Behavior: OnTap
+              PLDCode: string
+              Categories:
+                - CategoryUID: string
+                  DataPoints:
+                    - DataPointUID: string
+                      Definition:
+                        NameShort: string
+                        Name: string
+                        Description: string
+                        IconID: string
+                        '@@@Inheritance': string
+                        '@@@DPObjectType': string
+                        Right:
+                          RightUID: string
+                          OriginUID: string
+                          Name: string
+                          Stats:
+                            - StatUID: string
+                              Name: string
+                              Description: string
+                              Notes: string
+                              Type: SourcesPerTerritory
+                              Value: string
+                              URLDoc:
+                                LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                              Status: string
+                              DateLastUpdate:
+                                DateUID: string
+                                Name: string
+                                Description: string
+                                Type: string
+                                Value: string
+                                ValueUTC: string
+                                GeneratedBy: Human
+                                "\U0001F4D1 Highlights": string
+                                "\U0001F4D1 Links":
+                                  - LinkUID: string
+                                    Type: Source
+                                    Name: string
+                                    Description: string
+                                    Stats:
+                                      - {}
+                                    Help: string
+                                    URL: string
+                                UI:
+                                  Tooltip: string
+                                  Name: string
+                                  Description: string
+                                Stats:
+                                  - {}
+                              URLCode:
+                                - LinkUID: string
+                                  Type: Source
+                                  Name: string
+                                  Description: string
+                                  Stats:
+                                    - {}
+                                  Help: string
+                                  URL: string
+                          Description: string
+                        Tags:
+                          - TagUID: string
+                            Name: string
+                            Descrtiption: string
+                            Synonyms:
+                              - {}
+                            Dates:
+                              - DateUID: string
+                                Name: string
+                                Description: string
+                                Type: string
+                                Value: string
+                                ValueUTC: string
+                                GeneratedBy: Human
+                                "\U0001F4D1 Highlights": string
+                                "\U0001F4D1 Links":
+                                  - LinkUID: string
+                                    Type: Source
+                                    Name: string
+                                    Description: string
+                                    Stats:
+                                      - StatUID: string
+                                        Name: string
+                                        Description: string
+                                        Notes: string
+                                        Type: SourcesPerTerritory
+                                        Value: string
+                                        URLDoc: {}
+                                        Status: string
+                                        DateLastUpdate: {}
+                                        URLCode:
+                                          - {}
+                                    Help: string
+                                    URL: string
+                                UI:
+                                  Tooltip: string
+                                  Name: string
+                                  Description: string
+                                Stats:
+                                  - StatUID: string
+                                    Name: string
+                                    Description: string
+                                    Notes: string
+                                    Type: SourcesPerTerritory
+                                    Value: string
+                                    URLDoc:
+                                      LinkUID: string
+                                      Type: Source
+                                      Name: string
+                                      Description: string
+                                      Stats:
+                                        - {}
+                                      Help: string
+                                      URL: string
+                                    Status: string
+                                    DateLastUpdate: {}
+                                    URLCode:
+                                      - LinkUID: string
+                                        Type: Source
+                                        Name: string
+                                        Description: string
+                                        Stats:
+                                          - {}
+                                        Help: string
+                                        URL: string
+                            Stats:
+                              - StatUID: string
+                                Name: string
+                                Description: string
+                                Notes: string
+                                Type: SourcesPerTerritory
+                                Value: string
+                                URLDoc:
+                                  LinkUID: string
+                                  Type: Source
+                                  Name: string
+                                  Description: string
+                                  Stats:
+                                    - {}
+                                  Help: string
+                                  URL: string
+                                Status: string
+                                DateLastUpdate:
+                                  DateUID: string
+                                  Name: string
+                                  Description: string
+                                  Type: string
+                                  Value: string
+                                  ValueUTC: string
+                                  GeneratedBy: Human
+                                  "\U0001F4D1 Highlights": string
+                                  "\U0001F4D1 Links":
+                                    - LinkUID: string
+                                      Type: Source
+                                      Name: string
+                                      Description: string
+                                      Stats:
+                                        - {}
+                                      Help: string
+                                      URL: string
+                                  UI:
+                                    Tooltip: string
+                                    Name: string
+                                    Description: string
+                                  Stats:
+                                    - {}
+                                URLCode:
+                                  - LinkUID: string
+                                    Type: Source
+                                    Name: string
+                                    Description: string
+                                    Stats:
+                                      - {}
+                                    Help: string
+                                    URL: string
+                            Links:
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - StatUID: string
+                                    Name: string
+                                    Description: string
+                                    Notes: string
+                                    Type: SourcesPerTerritory
+                                    Value: string
+                                    URLDoc: {}
+                                    Status: string
+                                    DateLastUpdate:
+                                      DateUID: string
+                                      Name: string
+                                      Description: string
+                                      Type: string
+                                      Value: string
+                                      ValueUTC: string
+                                      GeneratedBy: Human
+                                      "\U0001F4D1 Highlights": string
+                                      "\U0001F4D1 Links":
+                                        - {}
+                                      UI:
+                                        Tooltip: string
+                                        Name: string
+                                        Description: string
+                                      Stats:
+                                        - {}
+                                    URLCode:
+                                      - {}
+                                Help: string
+                                URL: string
+                            Value: string
+                        Tooltip: string
+                        Definition: string
+                        Encoding:
+                          Name: string
+                          Description: string
+                          URL for UI: string
+                          Algorithm Details: string
+                          Options:
+                            - Value: string
+                              Type: Image
+                          Stats:
+                            - StatUID: string
+                              Name: string
+                              Description: string
+                              Notes: string
+                              Type: SourcesPerTerritory
+                              Value: string
+                              URLDoc:
+                                LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                              Status: string
+                              DateLastUpdate:
+                                DateUID: string
+                                Name: string
+                                Description: string
+                                Type: string
+                                Value: string
+                                ValueUTC: string
+                                GeneratedBy: Human
+                                "\U0001F4D1 Highlights": string
+                                "\U0001F4D1 Links":
+                                  - LinkUID: string
+                                    Type: Source
+                                    Name: string
+                                    Description: string
+                                    Stats:
+                                      - {}
+                                    Help: string
+                                    URL: string
+                                UI:
+                                  Tooltip: string
+                                  Name: string
+                                  Description: string
+                                Stats:
+                                  - {}
+                              URLCode:
+                                - LinkUID: string
+                                  Type: Source
+                                  Name: string
+                                  Description: string
+                                  Stats:
+                                    - {}
+                                  Help: string
+                                  URL: string
+                          EncodingUID: string
+                      Status: string
+                      DateCreated:
+                        DateUID: string
+                        Name: string
+                        Description: string
+                        Type: string
+                        Value: string
+                        ValueUTC: string
+                        GeneratedBy: Human
+                        "\U0001F4D1 Highlights": string
+                        "\U0001F4D1 Links":
+                          - LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - StatUID: string
+                                Name: string
+                                Description: string
+                                Notes: string
+                                Type: SourcesPerTerritory
+                                Value: string
+                                URLDoc: {}
+                                Status: string
+                                DateLastUpdate: {}
+                                URLCode:
+                                  - {}
+                            Help: string
+                            URL: string
+                        UI:
+                          Tooltip: string
+                          Name: string
+                          Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc:
+                              LinkUID: string
+                              Type: Source
+                              Name: string
+                              Description: string
+                              Stats:
+                                - {}
+                              Help: string
+                              URL: string
+                            Status: string
+                            DateLastUpdate: {}
+                            URLCode:
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                      DateUpdated:
+                        DateUID: string
+                        Name: string
+                        Description: string
+                        Type: string
+                        Value: string
+                        ValueUTC: string
+                        GeneratedBy: Human
+                        "\U0001F4D1 Highlights": string
+                        "\U0001F4D1 Links":
+                          - LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - StatUID: string
+                                Name: string
+                                Description: string
+                                Notes: string
+                                Type: SourcesPerTerritory
+                                Value: string
+                                URLDoc: {}
+                                Status: string
+                                DateLastUpdate: {}
+                                URLCode:
+                                  - {}
+                            Help: string
+                            URL: string
+                        UI:
+                          Tooltip: string
+                          Name: string
+                          Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc:
+                              LinkUID: string
+                              Type: Source
+                              Name: string
+                              Description: string
+                              Stats:
+                                - {}
+                              Help: string
+                              URL: string
+                            Status: string
+                            DateLastUpdate: {}
+                            URLCode:
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                      Stats:
+                        - StatUID: string
+                          Name: string
+                          Description: string
+                          Notes: string
+                          Type: SourcesPerTerritory
+                          Value: string
+                          URLDoc:
+                            LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - {}
+                            Help: string
+                            URL: string
+                          Status: string
+                          DateLastUpdate:
+                            DateUID: string
+                            Name: string
+                            Description: string
+                            Type: string
+                            Value: string
+                            ValueUTC: string
+                            GeneratedBy: Human
+                            "\U0001F4D1 Highlights": string
+                            "\U0001F4D1 Links":
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                            UI:
+                              Tooltip: string
+                              Name: string
+                              Description: string
+                            Stats:
+                              - {}
+                          URLCode:
+                            - LinkUID: string
+                              Type: Source
+                              Name: string
+                              Description: string
+                              Stats:
+                                - {}
+                              Help: string
+                              URL: string
+                      Answers:
+                        - AnswerUID: string
+                          Value:
+                            ResponseUID: string
+                            GeneratedBy: 'Funnel: IS'
+                            '???Highlights': string
+                            Type: string
+                            Value: string
+                          DateStart:
+                            DateUID: string
+                            Name: string
+                            Description: string
+                            Type: string
+                            Value: string
+                            ValueUTC: string
+                            GeneratedBy: Human
+                            "\U0001F4D1 Highlights": string
+                            "\U0001F4D1 Links":
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - StatUID: string
+                                    Name: string
+                                    Description: string
+                                    Notes: string
+                                    Type: SourcesPerTerritory
+                                    Value: string
+                                    URLDoc: {}
+                                    Status: string
+                                    DateLastUpdate: {}
+                                    URLCode:
+                                      - {}
+                                Help: string
+                                URL: string
+                            UI:
+                              Tooltip: string
+                              Name: string
+                              Description: string
+                            Stats:
+                              - StatUID: string
+                                Name: string
+                                Description: string
+                                Notes: string
+                                Type: SourcesPerTerritory
+                                Value: string
+                                URLDoc:
+                                  LinkUID: string
+                                  Type: Source
+                                  Name: string
+                                  Description: string
+                                  Stats:
+                                    - {}
+                                  Help: string
+                                  URL: string
+                                Status: string
+                                DateLastUpdate: {}
+                                URLCode:
+                                  - LinkUID: string
+                                    Type: Source
+                                    Name: string
+                                    Description: string
+                                    Stats:
+                                      - {}
+                                    Help: string
+                                    URL: string
+                          DateEnd:
+                            DateUID: string
+                            Name: string
+                            Description: string
+                            Type: string
+                            Value: string
+                            ValueUTC: string
+                            GeneratedBy: Human
+                            "\U0001F4D1 Highlights": string
+                            "\U0001F4D1 Links":
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - StatUID: string
+                                    Name: string
+                                    Description: string
+                                    Notes: string
+                                    Type: SourcesPerTerritory
+                                    Value: string
+                                    URLDoc: {}
+                                    Status: string
+                                    DateLastUpdate: {}
+                                    URLCode:
+                                      - {}
+                                Help: string
+                                URL: string
+                            UI:
+                              Tooltip: string
+                              Name: string
+                              Description: string
+                            Stats:
+                              - StatUID: string
+                                Name: string
+                                Description: string
+                                Notes: string
+                                Type: SourcesPerTerritory
+                                Value: string
+                                URLDoc:
+                                  LinkUID: string
+                                  Type: Source
+                                  Name: string
+                                  Description: string
+                                  Stats:
+                                    - {}
+                                  Help: string
+                                  URL: string
+                                Status: string
+                                DateLastUpdate: {}
+                                URLCode:
+                                  - LinkUID: string
+                                    Type: Source
+                                    Name: string
+                                    Description: string
+                                    Stats:
+                                      - {}
+                                    Help: string
+                                    URL: string
+                          DataPointUID: string
+                          Details: string
+                          DSEUID: string
+                          Type: RAW
+                          URLCodebase:
+                            LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - StatUID: string
+                                Name: string
+                                Description: string
+                                Notes: string
+                                Type: SourcesPerTerritory
+                                Value: string
+                                URLDoc: {}
+                                Status: string
+                                DateLastUpdate:
+                                  DateUID: string
+                                  Name: string
+                                  Description: string
+                                  Type: string
+                                  Value: string
+                                  ValueUTC: string
+                                  GeneratedBy: Human
+                                  "\U0001F4D1 Highlights": string
+                                  "\U0001F4D1 Links":
+                                    - {}
+                                  UI:
+                                    Tooltip: string
+                                    Name: string
+                                    Description: string
+                                  Stats:
+                                    - {}
+                                URLCode:
+                                  - {}
+                            Help: string
+                            URL: string
+                          URLCodebaseBookmarkID: string
+                          Log:
+                            - LogUID: string
+                              Operation: Encode
+                              UserUID: string
+                              Notes: string
+                              SourceUID: string
+                              Dates:
+                                - DateUID: string
+                                  Name: string
+                                  Description: string
+                                  Type: string
+                                  Value: string
+                                  ValueUTC: string
+                                  GeneratedBy: Human
+                                  "\U0001F4D1 Highlights": string
+                                  "\U0001F4D1 Links":
+                                    - LinkUID: string
+                                      Type: Source
+                                      Name: string
+                                      Description: string
+                                      Stats:
+                                        - StatUID: string
+                                          Name: string
+                                          Description: string
+                                          Notes: string
+                                          Type: SourcesPerTerritory
+                                          Value: string
+                                          URLDoc: {}
+                                          Status: string
+                                          DateLastUpdate: {}
+                                          URLCode:
+                                            - {}
+                                      Help: string
+                                      URL: string
+                                  UI:
+                                    Tooltip: string
+                                    Name: string
+                                    Description: string
+                                  Stats:
+                                    - StatUID: string
+                                      Name: string
+                                      Description: string
+                                      Notes: string
+                                      Type: SourcesPerTerritory
+                                      Value: string
+                                      URLDoc:
+                                        LinkUID: string
+                                        Type: Source
+                                        Name: string
+                                        Description: string
+                                        Stats:
+                                          - {}
+                                        Help: string
+                                        URL: string
+                                      Status: string
+                                      DateLastUpdate: {}
+                                      URLCode:
+                                        - LinkUID: string
+                                          Type: Source
+                                          Name: string
+                                          Description: string
+                                          Stats:
+                                            - {}
+                                          Help: string
+                                          URL: string
+                              Module: string
+                          TerritoryUID: string
+                      URLDoc:
+                        LinkUID: string
+                        Type: Source
+                        Name: string
+                        Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc: {}
+                            Status: string
+                            DateLastUpdate:
+                              DateUID: string
+                              Name: string
+                              Description: string
+                              Type: string
+                              Value: string
+                              ValueUTC: string
+                              GeneratedBy: Human
+                              "\U0001F4D1 Highlights": string
+                              "\U0001F4D1 Links":
+                                - {}
+                              UI:
+                                Tooltip: string
+                                Name: string
+                                Description: string
+                              Stats:
+                                - {}
+                            URLCode:
+                              - {}
+                        Help: string
+                        URL: string
+                      URLEditorGuide:
+                        LinkUID: string
+                        Type: Source
+                        Name: string
+                        Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc: {}
+                            Status: string
+                            DateLastUpdate:
+                              DateUID: string
+                              Name: string
+                              Description: string
+                              Type: string
+                              Value: string
+                              ValueUTC: string
+                              GeneratedBy: Human
+                              "\U0001F4D1 Highlights": string
+                              "\U0001F4D1 Links":
+                                - {}
+                              UI:
+                                Tooltip: string
+                                Name: string
+                                Description: string
+                              Stats:
+                                - {}
+                            URLCode:
+                              - {}
+                        Help: string
+                        URL: string
+                      DSLUID: string
+                      Log:
+                        - LogUID: string
+                          Operation: Encode
+                          UserUID: string
+                          Notes: string
+                          SourceUID: string
+                          Dates:
+                            - DateUID: string
+                              Name: string
+                              Description: string
+                              Type: string
+                              Value: string
+                              ValueUTC: string
+                              GeneratedBy: Human
+                              "\U0001F4D1 Highlights": string
+                              "\U0001F4D1 Links":
+                                - LinkUID: string
+                                  Type: Source
+                                  Name: string
+                                  Description: string
+                                  Stats:
+                                    - StatUID: string
+                                      Name: string
+                                      Description: string
+                                      Notes: string
+                                      Type: SourcesPerTerritory
+                                      Value: string
+                                      URLDoc: {}
+                                      Status: string
+                                      DateLastUpdate: {}
+                                      URLCode:
+                                        - {}
+                                  Help: string
+                                  URL: string
+                              UI:
+                                Tooltip: string
+                                Name: string
+                                Description: string
+                              Stats:
+                                - StatUID: string
+                                  Name: string
+                                  Description: string
+                                  Notes: string
+                                  Type: SourcesPerTerritory
+                                  Value: string
+                                  URLDoc:
+                                    LinkUID: string
+                                    Type: Source
+                                    Name: string
+                                    Description: string
+                                    Stats:
+                                      - {}
+                                    Help: string
+                                    URL: string
+                                  Status: string
+                                  DateLastUpdate: {}
+                                  URLCode:
+                                    - LinkUID: string
+                                      Type: Source
+                                      Name: string
+                                      Description: string
+                                      Stats:
+                                        - {}
+                                      Help: string
+                                      URL: string
+                          Module: string
+                  PermalinkDocs: string
+                  Definition:
+                    Name: string
+                    Description: string
+                    Tags: string
+                    Order: string
+                  CategoryStatus: string
+                  UI:
+                    TDOLayout:
+                      LayoutUID: string
+                      Name: string
+                      Description: string
+                      Stats:
+                        - StatUID: string
+                          Name: string
+                          Description: string
+                          Notes: string
+                          Type: SourcesPerTerritory
+                          Value: string
+                          URLDoc:
+                            LinkUID: string
+                            Type: Source
+                            Name: string
+                            Description: string
+                            Stats:
+                              - {}
+                            Help: string
+                            URL: string
+                          Status: string
+                          DateLastUpdate:
+                            DateUID: string
+                            Name: string
+                            Description: string
+                            Type: string
+                            Value: string
+                            ValueUTC: string
+                            GeneratedBy: Human
+                            "\U0001F4D1 Highlights": string
+                            "\U0001F4D1 Links":
+                              - LinkUID: string
+                                Type: Source
+                                Name: string
+                                Description: string
+                                Stats:
+                                  - {}
+                                Help: string
+                                URL: string
+                            UI:
+                              Tooltip: string
+                              Name: string
+                              Description: string
+                            Stats:
+                              - {}
+                          URLCode:
+                            - LinkUID: string
+                              Type: Source
+                              Name: string
+                              Description: string
+                              Stats:
+                                - {}
+                              Help: string
+                              URL: string
+                      URLCSS:
+                        LinkUID: string
+                        Type: Source
+                        Name: string
+                        Description: string
+                        Stats:
+                          - StatUID: string
+                            Name: string
+                            Description: string
+                            Notes: string
+                            Type: SourcesPerTerritory
+                            Value: string
+                            URLDoc: {}
+                            Status: string
+                            DateLastUpdate:
+                              DateUID: string
+                              Name: string
+                              Description: string
+                              Type: string
+                              Value: string
+                              ValueUTC: string
+                              GeneratedBy: Human
+                              "\U0001F4D1 Highlights": string
+                              "\U0001F4D1 Links":
+                                - {}
+                              UI:
+                                Tooltip: string
+                                Name: string
+                                Description: string
+                              Stats:
+                                - {}
+                            URLCode:
+                              - {}
+                        Help: string
+                        URL: string
+                    TabMaxWidth: string
+                    TabTitle: string
+                    TabTooltip: string
+                  DSLUID: string
+            ModuleUID: string
+            Name: string
+            Description: string
+            PLDCode: MAP
+            Stats:
+              - StatUID: string
+                Name: string
+                Description: string
+                Notes: string
+                Type: SourcesPerTerritory
+                Value: string
+                URLDoc:
+                  LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - {}
+                  Help: string
+                  URL: string
+                Status: string
+                DateLastUpdate:
+                  DateUID: string
+                  Name: string
+                  Description: string
+                  Type: string
+                  Value: string
+                  ValueUTC: string
+                  GeneratedBy: Human
+                  "\U0001F4D1 Highlights": string
+                  "\U0001F4D1 Links":
+                    - LinkUID: string
+                      Type: Source
+                      Name: string
+                      Description: string
+                      Stats:
+                        - {}
+                      Help: string
+                      URL: string
+                  UI:
+                    Tooltip: string
+                    Name: string
+                    Description: string
+                  Stats:
+                    - {}
+                URLCode:
+                  - LinkUID: string
+                    Type: Source
+                    Name: string
+                    Description: string
+                    Stats:
+                      - {}
+                    Help: string
+                    URL: string
+          BO:
+            Stats:
+              - StatUID: string
+                Name: string
+                Description: string
+                Notes: string
+                Type: SourcesPerTerritory
+                Value: string
+                URLDoc:
+                  LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - {}
+                  Help: string
+                  URL: string
+                Status: string
+                DateLastUpdate:
+                  DateUID: string
+                  Name: string
+                  Description: string
+                  Type: string
+                  Value: string
+                  ValueUTC: string
+                  GeneratedBy: Human
+                  "\U0001F4D1 Highlights": string
+                  "\U0001F4D1 Links":
+                    - LinkUID: string
+                      Type: Source
+                      Name: string
+                      Description: string
+                      Stats:
+                        - {}
+                      Help: string
+                      URL: string
+                  UI:
+                    Tooltip: string
+                    Name: string
+                    Description: string
+                  Stats:
+                    - {}
+                URLCode:
+                  - LinkUID: string
+                    Type: Source
+                    Name: string
+                    Description: string
+                    Stats:
+                      - {}
+                    Help: string
+                    URL: string
+          WEB:
+            Stats:
+              - StatUID: string
+                Name: string
+                Description: string
+                Notes: string
+                Type: SourcesPerTerritory
+                Value: string
+                URLDoc:
+                  LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - {}
+                  Help: string
+                  URL: string
+                Status: string
+                DateLastUpdate:
+                  DateUID: string
+                  Name: string
+                  Description: string
+                  Type: string
+                  Value: string
+                  ValueUTC: string
+                  GeneratedBy: Human
+                  "\U0001F4D1 Highlights": string
+                  "\U0001F4D1 Links":
+                    - LinkUID: string
+                      Type: Source
+                      Name: string
+                      Description: string
+                      Stats:
+                        - {}
+                      Help: string
+                      URL: string
+                  UI:
+                    Tooltip: string
+                    Name: string
+                    Description: string
+                  Stats:
+                    - {}
+                URLCode:
+                  - LinkUID: string
+                    Type: Source
+                    Name: string
+                    Description: string
+                    Stats:
+                      - {}
+                    Help: string
+                    URL: string
+          DB:
+            Stats:
+              - StatUID: string
+                Name: string
+                Description: string
+                Notes: string
+                Type: SourcesPerTerritory
+                Value: string
+                URLDoc:
+                  LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - {}
+                  Help: string
+                  URL: string
+                Status: string
+                DateLastUpdate:
+                  DateUID: string
+                  Name: string
+                  Description: string
+                  Type: string
+                  Value: string
+                  ValueUTC: string
+                  GeneratedBy: Human
+                  "\U0001F4D1 Highlights": string
+                  "\U0001F4D1 Links":
+                    - LinkUID: string
+                      Type: Source
+                      Name: string
+                      Description: string
+                      Stats:
+                        - {}
+                      Help: string
+                      URL: string
+                  UI:
+                    Tooltip: string
+                    Name: string
+                    Description: string
+                  Stats:
+                    - {}
+                URLCode:
+                  - LinkUID: string
+                    Type: Source
+                    Name: string
+                    Description: string
+                    Stats:
+                      - {}
+                    Help: string
+                    URL: string
+          API:
+            Stats:
+              - StatUID: string
+                Name: string
+                Description: string
+                Notes: string
+                Type: SourcesPerTerritory
+                Value: string
+                URLDoc:
+                  LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - {}
+                  Help: string
+                  URL: string
+                Status: string
+                DateLastUpdate:
+                  DateUID: string
+                  Name: string
+                  Description: string
+                  Type: string
+                  Value: string
+                  ValueUTC: string
+                  GeneratedBy: Human
+                  "\U0001F4D1 Highlights": string
+                  "\U0001F4D1 Links":
+                    - LinkUID: string
+                      Type: Source
+                      Name: string
+                      Description: string
+                      Stats:
+                        - {}
+                      Help: string
+                      URL: string
+                  UI:
+                    Tooltip: string
+                    Name: string
+                    Description: string
+                  Stats:
+                    - {}
+                URLCode:
+                  - LinkUID: string
+                    Type: Source
+                    Name: string
+                    Description: string
+                    Stats:
+                      - {}
+                    Help: string
+                    URL: string
+          Stats:
+            - StatUID: string
+              Name: string
+              Description: string
+              Notes: string
+              Type: SourcesPerTerritory
+              Value: string
+              URLDoc:
+                LinkUID: string
+                Type: Source
+                Name: string
+                Description: string
+                Stats:
+                  - {}
+                Help: string
+                URL: string
+              Status: string
+              DateLastUpdate:
+                DateUID: string
+                Name: string
+                Description: string
+                Type: string
+                Value: string
+                ValueUTC: string
+                GeneratedBy: Human
+                "\U0001F4D1 Highlights": string
+                "\U0001F4D1 Links":
+                  - LinkUID: string
+                    Type: Source
+                    Name: string
+                    Description: string
+                    Stats:
+                      - {}
+                    Help: string
+                    URL: string
+                UI:
+                  Tooltip: string
+                  Name: string
+                  Description: string
+                Stats:
+                  - {}
+              URLCode:
+                - LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - {}
+                  Help: string
+                  URL: string
+      properties:
+        MAP:
+          type: object
+          description: Manages appearance and behavior for all the components conforming MAP.
+          properties:
+            TabMenu:
+              type: object
+              description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  Note: "
+                  - Description: Controls the behaviour of the TabMenu.
+                  - Notes: 
+                  - STAGE: 
+
+                Describes the features and behavior of the Tab Menu (TB) in MAP.
+              required:
+                - Show
+                - Position
+                - Page
+              properties:
+                Show:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      - Description: Controls if the TabMenu is shown.
+                      - QS Parameter:  
+                      - QS Implemented:  
+                      - QS Required:  
+                      - Notes:  
+                      
+                      
+                      True [
+                        Note:"
+                        - Meaning: Yes, render (Default)
+                        "]
+                        
+                       False [
+                        Note:"
+                        - Meaning:No, hide
+                        - IMPORTANT: Implies WATERMARK.
+                        "]
+                        
+                        
+                        Forced
+                        The MAP will load with the TabMenu forcedly open to the page indicated in Page param.
+                  enum:
+                    - 'True'
+                    - 'False'
+                    - Forced
+                Position:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      - Description: Indicates in which position the menu is to be rendered.
+                      - QS Parameter: TabMenuPosition
+                      - QS Implemented: @@@ VERIFY
+                      - QS Required: NO
+                      - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)
+                      
+                      
+                      
+                    Left [
+                        Note:"
+                        - Meaning: Render on v-2/3 h-left of the map.
+                        "]
+                        
+                    Right [
+                        Note:"
+                        - Meaning: Render on v-2/3 h-Right of the map (Default).
+                        "]
+                        
+                  enum:
+                    - Left
+                    - Right
+                Page:
+                  type: string
+                  enum:
+                    - DataSetInfo
+                    - Settings
+                    - Updates
+                  description: |
+                    Indicates in which TabMenu page will this UI Component open be default.
+            TimeSlider:
+              type: object
+              description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  Note: "
+                  - Description: Indicates where is this Initialization object coming from.
+                  - Notes: 
+                  - STAGE: 
+
+
+                Defines the features and behavior of the Time Slider (TS) in MAP.
+              required:
+                - Position
+                - DateStart
+                - DateEnd
+                - DateView
+                - Show
+              properties:
+                Position:
+                  type: string
+                  enum:
+                    - Top
+                    - Bottom
+                    - Left
+                    - Right
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Controls where in the map is the Time Slider (TS) to be rendered.
+                      - QS Parameter: TimeSliderPosition
+                      - QS Implemented: @@@ VERIFY
+                      - QS Required: NO
+                      - Notes: Only for scalability purposes. There are not plans to render this anywhere else than Bottom.
+                      "]
+                      
+                          Top [
+                        Note:"
+                        - Meaning: Render on v-top h-center of the map.
+                        "]
+                        
+                        Bottom [
+                        Note:"
+                        - Meaning: Render on v-bottom h-center of the map (Default).
+                        "]
+                        
+                        Left [
+                        Note:"
+                        - Meaning: Render on v-center h-left of the map.
+                        "]
+                        
+                        Right [
+                        Note:"
+                        - Meaning: Render on v-center h-Right of the map. 
+                        "]
+                DateStart:
+                  type: string
+                  format: date
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Date in format DD/MM/YYYY - UTC+0 referenced 
+                      - QS Parameter: TimeSliderStartDate
+                      - QS Implemented: @@@ VERIFY
+                      - QS Required: NO
+                      - Notes:
+                      - IMPORTANT: If StartDate <> EndDate then TimeSliderShow = True
+                      "]
+                      
+                      
+                      
+                DateEnd:
+                  type: string
+                  format: date
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Date in format DD/MM/YYYY - UTC+0 referenced
+                      - QS Parameter: TimeSliderEndDate
+                      - QS Implemented: @@@ VERIFY
+                      - QS Required: NO
+                      - Notes:
+                      - IMPORTANT: If StartDate <> EndDate then TimeSliderShow = True 
+                      "]
+                DateView:
+                  type: string
+                  format: date
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Selects the date use for the 10 weeks date range.
+                      - QS Parameter: TimeSliderCenterDate
+                      - QS Implemented: NO
+                      - QS Required: NO
+                      - Notes:
+                      - IMPORTANT: Currently follows the rule [2 weeks - CenterDate - 8 weeks]
+                      "]
+                Show:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      - Description: Controls if the TimeSlider (TS) is to be rendered.
+                      - QS Parameter: TimeSlider -> TimeSliderShow
+                      - QS Implemented: YES
+                      - QS Required: NO
+                      - Notes: @@@ PENDING UPDATE
+                      
+                      True [
+                        Note:"
+                        - Meaning: Yes, render (Default)
+                        "]
+                        
+                       False [
+                        Note:"
+                        - Meaning:No, hide
+                          "]
+                      
+                      
+                      
+                  enum:
+                    - 'True'
+                    - 'False'
+            StatsBox:
+              type: object
+              description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  Note: "
+                  - Description: Controls the behaviour of the StatsBox.
+                  - Notes: 
+                  - STAGE: 
+                  
+                  The rendering of the SB is controlled by it layout field.
+                  
+                  
+              required:
+                - Layout
+                - DefaultDP
+                - Show
+                - Position
+                - ShowLastUpdate
+              properties:
+                Layout:
+                  $ref: '#/components/schemas/Layout'
+                DefaultDP:
+                  type: array
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     Note: "
+                      - Description: Array of DPUIDs that are to be used in the StatsBox when rendering this DSL.
+                      - QS Parameter: N/A
+                      - QS Implemented: N/A
+                      - QS Required: N/A
+                      - Notes: Data Points are rendered in the SB according to the Layout, sequentially.
+                      - STAGE: N/A
+                      
+                      
+                      IMPORTANT: These should be SNAPSHOT type Answers.
+                      
+                      
+                  items:
+                    $ref: '#/components/schemas/Snapshot'
+                Show:
+                  type: string
+                  enum:
+                    - 'True'
+                    - 'False'
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Controls if the StatsBox is to be rendered with this DSL.
+                      - QS Parameter: StatsBox -> StatsBoxShow
+                      - QS Implemented: YES (To be updated)
+                      - QS Required: NO
+                      - Notes:
+                      - STAGE: @@@ Pending to be updated in code.
+                      
+                      True [
+                        Note:"
+                        - Meaning: Yes, render (Default)
+                        "]
+                        
+                        False [
+                        Note:"
+                        - Meaning:No, hide
+                        "]
+                        
+                        
+                Position:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Indicate where in the map is the StatsBox to be rendered.
+                      - QS Parameter: StatsBoxPosition
+                      - QS Implemented: NO
+                      - QS Required: NO
+                      - Notes:
+                      - STAGE: 
+                      
+                      Top [
+                        Note:"
+                        - Meaning: Render on v-top h-center of the map (Default).
+                        "]
+                        
+                      Bottom [
+                        Note:"
+                        - Meaning: Render on v-bottom h-center of the map.
+                        "]
+                        
+                      Left [
+                        Note:"
+                        - Meaning: Render on v-center h-left of the map.
+                        "]
+                        
+                      Right [
+                        Note:"
+                        - Meaning: Render on v-center h-Right of the map. 
+                        "]
+                  enum:
+                    - Top
+                    - Bottom
+                    - Left
+                    - Right
+                ShowLastUpdate:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     Note: "
+                      - Description: Controls whether the Last Updated info is shown in the StatsBox.
+                      - QS Parameter: N/A
+                      - QS Implemented: NO
+                      - QS Required: NO
+                      - Notes:
+                      - STAGE: @@@ Pending to implemment.
+                      
+                          True [
+                        Note:"
+                        - Meaning: Yes, render (Default)
+                        "]
+                        
+                        False [
+                        Note:"
+                        - Meaning:No, hide
+                        "]
+                  enum:
+                    - 'True'
+                    - 'False'
+            Map:
+              type: object
+              description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  Note: "
+                  - Description: Controls the configuration of the Map provider
+                  - Notes: 
+                  - STAGE: 
+              required:
+                - Region
+                - Zoom
+                - Lat
+                - Lng
+                - DefaultDP
+                - DefaultSnapshotOrder
+              properties:
+                Region:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      Description: Controls the Region to center on map.
+                      QS Parameter: MapRegion
+                      QS Implemented: NO
+                      QS Required: NO
+                      Notes: Predence Default < DSL < QS
+                      
+                      
+                Zoom:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      Description: Controls the level of zoom on map.
+                      QS Parameter: MapZoom
+                      QS Implemented: @@@ Verify
+                      QS Required: NO
+                      Notes: Predence Default < DSL < QS
+                Lat:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      Description: Controls the Latitude for the map's center point.
+                      QS Parameter: MapLat
+                      QS Implemented: @@@ Verify
+                      QS Required: NO
+                      Notes: Predence Default < DSL < QS
+                Lng:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      Description: Controls the Longitude for the landing point.
+                      QS Parameter: MapLng
+                      QS Implemented: @@@ Verify
+                      QS Required: NO
+                      Notes: Predence Default < DSL < QS
+                DefaultDP:
+                  type: object
+                  description: |-
+                    Note: Unclear if we want to use a Child Object or direct params.
+
+                    Indicates the dafault DPs to be associated with the different Map geometries.
+                  required:
+                    - Territory
+                    - Border
+                    - Location
+                  properties:
+                    Territory:
+                      type: string
+                      description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          Note: "
+                          Description: Controls the DEFAULT Datapoint to be rendered in the map for Territory (Surface).
+                          QS Parameter: MapTerritoryDefaultDP
+                          QS Implemented: NO
+                          QS Required: NO
+                          Notes:
+                    Border:
+                      type: string
+                      description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          Note: "
+                          Description: Controls the DEFAULT Datapoint to be rendered in the map for Borders (Line).
+                          QS Parameter: MapBorderDefaultDP
+                          QS Implemented: NO
+                          QS Required: NO
+                          Notes:
+                    Location:
+                      type: string
+                      description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          Note: "
+                          Description: Controls the DEFAULT Datapoint to be rendered in the Map for Location (Point).
+                          QS Parameter: MapLocationDefaultDP
+                          QS Implemented: NO
+                          QS Required: NO
+                          Notes:
+                DefaultSnapshotOrder:
+                  type: array
+                  description: Indicates the order in which the Snapshot SurceTypes are to be rendered.
+                  items:
+                    type: string
+            PressPlay:
+              type: object
+              description: Controls the rendering and behaviour of the PressPlay component & feature.
+              required:
+                - Show
+                - Behavior
+                - StartDelay
+                - Step
+              properties:
+                Show:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Controls whether the Play button is rendered.
+                      - QS Parameter: PressPlayShow
+                      - QS Implemented: NO
+                      - QS Required: NO
+                      - Notes: If StartDate = EndDate then PressPlayShow = False 
+
+                        True [
+                        Note:"
+                        - Meaning: Yes, render (Default)
+                        "]
+                        
+                        False [
+                        Note:"
+                        - Meaning:No, hide
+                        "]
+                  enum:
+                    - 'True'
+                    - 'False'
+                Behavior:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     Note: "
+                      - Description: Controls the behavior of the animation.
+                      - QS Parameter: PressPlayBehavior
+                      - QS Implemented: NO
+                      - QS Required: NO
+                      - Notes: Defaut - 
+
+                    ForwardStop [
+                        Note:"
+                        - Meaning: Animation plays forward in time and stops at end.
+                        - Implemented: @@@ PENDING
+                        "]
+                        
+                        BackwardsStop [
+                        Note:"
+                        - Meaning: Animation plays backward in time and stops at end.
+                        - Implemented: @@@ IGNORE
+                        "]
+                        
+                        ForwardContinous [
+                        Note:"
+                        - Meaning:  Animation plays forward in time, rewinds - repeat.
+                        - Implemented: @@@ PENDING
+                        "]
+                        
+                        BackwardContinous [
+                        Note:"
+                        - Meaning:  Animation plays backward in time, rewinds - repeat.
+                        - Implemented: @@@ IGNORE
+                        "]
+                        
+                        Random [
+                        Note:"
+                        - Meaning:  Animation randomly between dates in range, until all days shown.
+                        - Implemented: @@@ IGNORE
+                        "]
+                        
+                        RandomContinous [
+                        Note:"
+                        - Meaning:  Animation randomly between dates in range, until all days shown - repeat.
+                        - Implemented: @@@ IGNORE
+                        "]
+                        
+                  enum:
+                    - ForwardStop
+                    - BackwardsStop
+                    - ForwardContinous
+                    - BackwardContinous
+                    - Random
+                    - RandomContinous
+                StartDelay:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: 
+                      - QS Parameter: PressPlayStartDelay
+                      - QS Implemented: NO
+                      - QS Required: NO
+                      - Notes: Default value is 3 (DSL loads - wait 3 seconds - start play)
+                      
+                      REALLLY? More likely 0s.
+                      
+                      - IMPORTANT: @@@ Maybe we should add a visual timer for this.
+                  default: '0'
+                  format: time
+                Step:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Indicates DSL days per second. 
+                      - QS Parameter: PressPlayStep
+                      - QS Implemented: NO
+                      - QS Required: NO
+                      - Notes: Default value is 2 (2 days per each play second)
+            UI:
+              type: object
+              description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  Note: "
+                  - Description: Controls the final rendering type of the map.
+                  - QS Parameter: UIMode
+                  - QS Implemented: NO
+                  - QS Required: NO
+                  - Notes:
+              required:
+                - Locale
+                - Mode
+                - Watermark
+              properties:
+                Locale:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      - Description: Controls the language that will be used on the map.
+                      - QS Parameter:
+                      - QS Implemented: @@@ VERIFY
+                      - QS Required: NO
+                      - Notes: Value as per ISO 639-2 Code - Default ENG
+                Mode:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        Common [
+                        Note:"
+                        - Meaning: Use project color palette (Default)
+                        - IMPORTANT: @@@ Match with accessiblity Category.
+                        "]
+                        
+                        HighContrast [
+                        Note:"
+                        - Meaning: Transform color palette into high contrast.
+                        - IMPORTANT: @@@ Match with accessiblity Category.
+                        "]
+                       
+                       Audio [
+                        Note:"
+                        - Meaning: Transform information to be .
+                        - IMPORTANT: @@@ Match with accessiblity Category.
+                        "]
+                        
+                        Tactile [
+                        Note:"
+                        - Meaning: Transform color palette into high contrast.
+                        - IMPORTANT: @@@ Match with accessiblity Category.
+                        "]
+                  enum:
+                    - Common
+                    - Audio
+                    - HighContrast
+                    - Tactile
+                Watermark:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      - Description: Controls the rendering of the PLD watermark on the map.
+                      - QS Parameter: UIWatermark
+                      - QS Implemented: NO
+                      - QS Required: NO
+                      - Notes:  Always forced unless liencense allows (Whitelabeling).
+                      - IMPORTANT: The Licensing system is yet to be implemented (if ever).
+            TerritoryDetailsOverlay:
+              type: object
+              required:
+                - Show
+                - Position
+                - DefaultCategoryUID
+                - Behavior
+                - PLDCode
+                - Categories
+              properties:
+                Show:
+                  type: string
+                  enum:
+                    - 'True'
+                    - 'False'
+                Position:
+                  type: string
+                  enum:
+                    - Top
+                    - Bottom
+                    - Left
+                    - Right
+                    - Center
+                  default: Center
+                DefaultCategoryUID:
+                  type: string
+                  description: "  Note: \"\n  - Description: Selects which Category (tab) is to be opened.\n  - \U0001F4D3 QS Parameter: MapTDOCategory\n  - \U0001F4D3 QS Implemented: NO\n  - \U0001F4D3 QS Required: NO\n  - Notes: If = 0 then Reports opens\n  - ⚡IMPORTANT: Mandatory if TDOBehavior=Forced\n\nIn which category the TDO should open."
+                Behavior:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Description: Controls the behavior of the Territory Details Overlay (TDO).
+                      QS Parameter: MapTDOBehavior
+                      QS Implemented: @@@ VERIFY
+                      QS Required: NO
+                      Notes: 
+                        
+                          OnTap
+                        Note:"
+                        - Meaning: TDO opens as per user's interaction (Default).
+                        - Notes: Standard TDO behavior.
+                        
+                        No 
+                        Note:"
+                        - Meaning: TDO can't be opened.
+                        - Notes: Implies WATERMARK ON.
+                        
+                        Forced
+                        Note:"
+                        - Meaning: TDO is open on loadng.
+                        - Notes: Forcefully opens the TDO on page load.
+                        - IMPORTANT: Implies PLDCode and Panel params mandatory.
+                  enum:
+                    - OnTap
+                    - 'No'
+                    - Forced
+                  example: OnTap
+                PLDCode:
+                  type: string
+                  description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Note: "
+                      - Description: Selects the Territory to be rendered in the Territory Details overlay (TDO).
+                      - QS Parameter: MapTDOPLDCode
+                      - QS Implemented: @@@ PARTIALLY -> It was ISO3
+                      - QS Required: NO
+                      - Notes:
+                      - IMPORTANT: Mandatory if TDOBehavior=Forced
+                      "]
+                Categories:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Category'
+            '???ModuleUID':
+              type: string
+            Name:
+              type: string
+            Description:
+              type: string
+            PLDCode:
+              type: string
+              default: MAP
+            Stats:
+              type: array
+              description: "\U0001F6A7\nStatistics related to this object."
+              items:
+                $ref: '#/components/schemas/Stat'
+          required:
+            - TabMenu
+            - TimeSlider
+            - StatsBox
+            - Map
+            - PressPlay
+            - UI
+            - TerritoryDetailsOverlay
+            - '???ModuleUID'
+            - Name
+            - Description
+            - PLDCode
+            - Stats
+        BO:
+          type: object
+          description: Manages appearance and behavior for all the components conforming BO.
+          properties:
+            Stats:
+              type: array
+              description: "\U0001F6A7\nStatistics related to this object."
+              items:
+                $ref: '#/components/schemas/Stat'
+        WEB:
+          type: object
+          description: Manages appearance and behavior for all the components conforming WEB.
+          properties:
+            Stats:
+              type: array
+              description: "\U0001F6A7\nStatistics related to this object."
+              items:
+                $ref: '#/components/schemas/Stat'
+        DB:
+          type: object
+          description: Manages configuration for all elements in the DB.
+          properties:
+            Stats:
+              type: array
+              description: "\U0001F6A7\nStatistics related to this object."
+              items:
+                $ref: '#/components/schemas/Stat'
+        API:
+          type: object
+          description: Manages configuration for all elements in the DB.
+          properties:
+            Stats:
+              type: array
+              description: "\U0001F6A7\nStatistics related to this object."
+              items:
+                $ref: '#/components/schemas/Stat'
+        Stats:
+          type: array
+          description: "\U0001F6A7\nStatistics related to this object."
+          items:
+            $ref: '#/components/schemas/Stat'
+title: "\U0001F6A7Module"
+examples:
+  - {}
+properties:
+  MAP:
+    type: object
+    description: Manages appearance and behavior for all the components conforming MAP.
+    properties:
+      TabMenu:
+        type: object
+        description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Note: "
+            - Description: Controls the behaviour of the TabMenu.
+            - Notes: 
+            - STAGE: 
+
+          Describes the features and behavior of the Tab Menu (TB) in MAP.
+        properties:
+          Show:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                - Description: Controls if the TabMenu is shown.
+                - QS Parameter:  
+                - QS Implemented:  
+                - QS Required:  
+                - Notes:  
+                
+                
+                True [
+                  Note:"
+                  - Meaning: Yes, render (Default)
+                  "]
+                  
+                 False [
+                  Note:"
+                  - Meaning:No, hide
+                  - IMPORTANT: Implies WATERMARK.
+                  "]
+                  
+                  
+                  Forced
+                  The MAP will load with the TabMenu forcedly open to the page indicated in Page param.
+          Position:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                - Description: Indicates in which position the menu is to be rendered.
+                - QS Parameter: TabMenuPosition
+                - QS Implemented: @@@ VERIFY
+                - QS Required: NO
+                - Notes: This parameter can also be set  as per user is left handed or right handed on the Settings (TO BE IMPLEMENTED)
+                
+                
+                
+              Left [
+                  Note:"
+                  - Meaning: Render on v-2/3 h-left of the map.
+                  "]
+                  
+              Right [
+                  Note:"
+                  - Meaning: Render on v-2/3 h-Right of the map (Default).
+                  "]
+          Page:
+            type: string
+            description: Indicates in which TabMenu page will this UI Component open be default.
+      TimeSlider:
+        type: object
+        description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Note: "
+            - Description: Indicates where is this Initialization object coming from.
+            - Notes: 
+            - STAGE: 
+
+
+          Defines the features and behavior of the Time Slider (TS) in MAP.
+        properties:
+          Position:
+            type: string
+            description: |-
+              Note: "
+                - Description: Controls where in the map is the Time Slider (TS) to be rendered.
+                - QS Parameter: TimeSliderPosition
+                - QS Implemented: @@@ VERIFY
+                - QS Required: NO
+                - Notes: Only for scalability purposes. There are not plans to render this anywhere else than Bottom.
+                "]
+                
+                    Top [
+                  Note:"
+                  - Meaning: Render on v-top h-center of the map.
+                  "]
+                  
+                  Bottom [
+                  Note:"
+                  - Meaning: Render on v-bottom h-center of the map (Default).
+                  "]
+                  
+                  Left [
+                  Note:"
+                  - Meaning: Render on v-center h-left of the map.
+                  "]
+                  
+                  Right [
+                  Note:"
+                  - Meaning: Render on v-center h-Right of the map. 
+                  "]
+          DateStart:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                - Description: Date in format DD/MM/YYYY - UTC+0 referenced 
+                - QS Parameter: TimeSliderStartDate
+                - QS Implemented: @@@ VERIFY
+                - QS Required: NO
+                - Notes:
+                - IMPORTANT: If StartDate <> EndDate then TimeSliderShow = True
+                "]
+          DateEnd:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                - Description: Date in format DD/MM/YYYY - UTC+0 referenced
+                - QS Parameter: TimeSliderEndDate
+                - QS Implemented: @@@ VERIFY
+                - QS Required: NO
+                - Notes:
+                - IMPORTANT: If StartDate <> EndDate then TimeSliderShow = True 
+                "]
+          DateView:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                - Description: Selects the date use for the 10 weeks date range.
+                - QS Parameter: TimeSliderCenterDate
+                - QS Implemented: NO
+                - QS Required: NO
+                - Notes:
+                - IMPORTANT: Currently follows the rule [2 weeks - CenterDate - 8 weeks]
+                "]
+          Show:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                - Description: Controls if the TimeSlider (TS) is to be rendered.
+                - QS Parameter: TimeSlider -> TimeSliderShow
+                - QS Implemented: YES
+                - QS Required: NO
+                - Notes: @@@ PENDING UPDATE
+                
+                True [
+                  Note:"
+                  - Meaning: Yes, render (Default)
+                  "]
+                  
+                 False [
+                  Note:"
+                  - Meaning:No, hide
+                    "]
+      StatsBox:
+        type: object
+        properties:
+          Layout:
+            $ref: ./Layout.yaml
+          DefaultDP:
+            type: array
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               Note: "
+                - Description: Array of DPUIDs that are to be used in the StatsBox when rendering this DSL.
+                - QS Parameter: N/A
+                - QS Implemented: N/A
+                - QS Required: N/A
+                - Notes: Data Points are rendered in the SB according to the Layout, sequentially.
+                - STAGE: N/A
+
+                IMPORTANT: These should be SNAPSHOT type Answers.
+            items:
+              $ref: ./Snapshot.yaml
+          Show:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                - Description: Controls if the StatsBox is to be rendered with this DSL.
+                - QS Parameter: StatsBox -> StatsBoxShow
+                - QS Implemented: YES (To be updated)
+                - QS Required: NO
+                - Notes:
+                - STAGE: @@@ Pending to be updated in code.
+                
+                True [
+                  Note:"
+                  - Meaning: Yes, render (Default)
+                  "]
+                  
+                  False [
+                  Note:"
+                  - Meaning:No, hide
+                  "]
+          Position:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                - Description: Indicate where in the map is the StatsBox to be rendered.
+                - QS Parameter: StatsBoxPosition
+                - QS Implemented: NO
+                - QS Required: NO
+                - Notes:
+                - STAGE: 
+                
+                Top [
+                  Note:"
+                  - Meaning: Render on v-top h-center of the map (Default).
+                  "]
+                  
+                Bottom [
+                  Note:"
+                  - Meaning: Render on v-bottom h-center of the map.
+                  "]
+                  
+                Left [
+                  Note:"
+                  - Meaning: Render on v-center h-left of the map.
+                  "]
+                  
+                Right [
+                  Note:"
+                  - Meaning: Render on v-center h-Right of the map. 
+                  "]
+          ShowLastUpdate:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               Note: "
+                - Description: Controls whether the Last Updated info is shown in the StatsBox.
+                - QS Parameter: N/A
+                - QS Implemented: NO
+                - QS Required: NO
+                - Notes:
+                - STAGE: @@@ Pending to implemment.
+                
+                    True [
+                  Note:"
+                  - Meaning: Yes, render (Default)
+                  "]
+                  
+                  False [
+                  Note:"
+                  - Meaning:No, hide
+                  "]
+      Map:
+        type: object
+        description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Note: "
+            - Description: Controls the configuration of the Map provider
+            - Notes: 
+            - STAGE: 
+        properties:
+          Region:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                Description: Controls the Region to center on map.
+                QS Parameter: MapRegion
+                QS Implemented: NO
+                QS Required: NO
+                Notes: Predence Default < DSL < QS
+          Zoom:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                Description: Controls the level of zoom on map.
+                QS Parameter: MapZoom
+                QS Implemented: @@@ Verify
+                QS Required: NO
+                Notes: Predence Default < DSL < QS
+          Lat:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                Description: Controls the Latitude for the map's center point.
+                QS Parameter: MapLat
+                QS Implemented: @@@ Verify
+                QS Required: NO
+                Notes: Predence Default < DSL < QS
+          Lng:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                Description: Controls the Longitude for the landing point.
+                QS Parameter: MapLng
+                QS Implemented: @@@ Verify
+                QS Required: NO
+                Notes: Predence Default < DSL < QS
+          DefaultDP:
+            type: object
+            description: |-
+              Note: Unclear if we want to use a Child Object or direct params.
+
+              Indicates the dafault DPs to be associated with the different Map geometries.
+            properties:
+              Territory:
+                type: string
+                description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Note: "
+                    Description: Controls the DEFAULT Datapoint to be rendered in the map for Territory (Surface).
+                    QS Parameter: MapTerritoryDefaultDP
+                    QS Implemented: NO
+                    QS Required: NO
+                    Notes:
+              Border:
+                type: string
+                description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Note: "
+                    Description: Controls the DEFAULT Datapoint to be rendered in the map for Borders (Line).
+                    QS Parameter: MapBorderDefaultDP
+                    QS Implemented: NO
+                    QS Required: NO
+                    Notes:
+              Location:
+                type: string
+                description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Note: "
+                    Description: Controls the DEFAULT Datapoint to be rendered in the Map for Location (Point).
+                    QS Parameter: MapLocationDefaultDP
+                    QS Implemented: NO
+                    QS Required: NO
+                    Notes:
+          DeUIfaultSnapshotOrder:
+            type: array
+            description: Indicates the order in which the Snapshot SurceTypes are to be rendered.
+            items:
+              type: string
+      PressPlay:
+        type: object
+        description: Controls the rendering and behaviour of the PressPlay component & feature.
+        properties:
+          Show:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                - Description: Controls whether the Play button is rendered.
+                - QS Parameter: PressPlayShow
+                - QS Implemented: NO
+                - QS Required: NO
+                - Notes: If StartDate = EndDate then PressPlayShow = False 
+
+                  True [
+                  Note:"
+                  - Meaning: Yes, render (Default)
+                  "]
+                  
+                  False [
+                  Note:"
+                  - Meaning:No, hide
+                  "]
+          Behavior:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               Note: "
+                - Description: Controls the behavior of the animation.
+                - QS Parameter: PressPlayBehavior
+                - QS Implemented: NO
+                - QS Required: NO
+                - Notes: Defaut - 
+
+              ForwardStop [
+                  Note:"
+                  - Meaning: Animation plays forward in time and stops at end.
+                  - Implemented: @@@ PENDING
+                  "]
+                  
+                  BackwardsStop [
+                  Note:"
+                  - Meaning: Animation plays backward in time and stops at end.
+                  - Implemented: @@@ IGNORE
+                  "]
+                  
+                  ForwardContinous [
+                  Note:"
+                  - Meaning:  Animation plays forward in time, rewinds - repeat.
+                  - Implemented: @@@ PENDING
+                  "]
+                  
+                  BackwardContinous [
+                  Note:"
+                  - Meaning:  Animation plays backward in time, rewinds - repeat.
+                  - Implemented: @@@ IGNORE
+                  "]
+                  
+                  Random [
+                  Note:"
+                  - Meaning:  Animation randomly between dates in range, until all days shown.
+                  - Implemented: @@@ IGNORE
+                  "]
+                  
+                  RandomContinous [
+                  Note:"
+                  - Meaning:  Animation randomly between dates in range, until all days shown - repeat.
+                  - Implemented: @@@ IGNORE
+                  "]
+                  
+          StartDelay:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                - Description: 
+                - QS Parameter: PressPlayStartDelay
+                - QS Implemented: NO
+                - QS Required: NO
+                - Notes: Default value is 3 (DSL loads - wait 3 seconds - start play)
+                
+                REALLLY? More likely 0s.
+                
+                - IMPORTANT: @@@ Maybe we should add a visual timer for this.
+          Step:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Note: "
+                - Description: Indicates DSL days per second. 
+                - QS Parameter: PressPlayStep
+                - QS Implemented: NO
+                - QS Required: NO
+                - Notes: Default value is 2 (2 days per each play second)
+      UI:
+        type: object
+        description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Note: "
+            - Description: Controls the final rendering type of the map.
+            - QS Parameter: UIMode
+            - QS Implemented: NO
+            - QS Required: NO
+            - Notes:
+        properties:
+          Locale:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                - Description: Controls the language that will be used on the map.
+                - QS Parameter:
+                - QS Implemented: @@@ VERIFY
+                - QS Required: NO
+                - Notes: Value as per ISO 639-2 Code - Default ENG
+          Mode:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  Common [
+                  Note:"
+                  - Meaning: Use project color palette (Default)
+                  - IMPORTANT: @@@ Match with accessiblity Category.
+                  "]
+                  
+                  HighContrast [
+                  Note:"
+                  - Meaning: Transform color palette into high contrast.
+                  - IMPORTANT: @@@ Match with accessiblity Category.
+                  "]
+                 
+                 Audio [
+                  Note:"
+                  - Meaning: Transform information to be .
+                  - IMPORTANT: @@@ Match with accessiblity Category.
+                  "]
+                  
+                  Tactile [
+                  Note:"
+                  - Meaning: Transform color palette into high contrast.
+                  - IMPORTANT: @@@ Match with accessiblity Category.
+                  "]
+          Watermark:
+            type: string
+            description: |2-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                - Description: Controls the rendering of the PLD watermark on the map.
+                - QS Parameter: UIWatermark
+                - QS Implemented: NO
+                - QS Required: NO
+                - Notes:  Always forced unless liencense allows (Whitelabeling).
+                - IMPORTANT: The Licensing system is yet to be implemented (if ever).
+      TerritoryDetailsOverlay:
+        type: object
+        properties:
+          Show:
+            type: string
+          Position:
+            type: string
+          DefaultCategoryUID:
+            type: string
+          Behavior:
+            type: string
+          Categories:
+            type: array
+            items:
+              $ref: ./Category.yaml
+      '???ModuleUID':
+        type: string
+      Name:
+        type: string
+      Description:
+        type: string
+      PLDCode:
+        type: string
+      Stats:
+        type: array
+        items:
+          $ref: ./Stat.yaml
+  BO:
+    type: object
+    properties:
+      Stats:
+        type: array
+        items:
+          $ref: ./Stat.yaml
+  WEB:
+    type: object
+    properties:
+      Stats:
+        type: array
+        items:
+          $ref: ./Stat.yaml
+  DB:
+    type: object
+    properties:
+      Stats:
+        type: array
+        items:
+          $ref: ./Stat.yaml
+  API:
+    type: object
+    properties:
+      Stats:
+        type: array
+        items:
+          $ref: ./Stat.yaml
+  Stats:
+    type: array
+    items:
+      $ref: ./Stat.yaml

@@ -1,0 +1,56 @@
+title: "\U0001F6A7Territory"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\nDecribes PLD Territories.\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n###URL fields\nURLDEI\nPermalink for direct access to the DEI\n\nURLDoc\nPermalink for direct access to the territory info (to be implemented later).\n\n###Date fields\nDateLastUpdate\nLast time the Territory info was updated.\n@@@Probably also put in Log?\n\n\n### Pending\nTERRITORIES should include\nthe necessary language to cover for official pronouncements.\nthe list of official/reliable sources for pronouncements.\n\n\nFor \n"
+properties:
+  TerritoryUID:
+    type: string
+  PLDInfo:
+    type:
+      - string
+      - object
+    properties:
+      PLDInfoUID:
+        type: string
+      PLDCode:
+        type: string
+      PLDCodeParent:
+        type: string
+      Name:
+        type: string
+      UnitCode:
+        type: string
+      Description:
+        type: string
+      Region:
+        $ref: ./Region.yaml
+      Notes:
+        type: string
+  ISOInfo:
+    type:
+      - string
+      - object
+    properties:
+      ISO2:
+        type: string
+      ISO3:
+        type: string
+      Links:
+        $ref: ./Link.yaml
+  UNInfo:
+    type:
+      - string
+      - object
+    properties:
+      LOCODE:
+        type: string
+      Links:
+        $ref: ./Link.yaml
+  NATOInfo:
+    type:
+      - string
+      - object
+    properties:
+      STANAG:
+        type: string
+      Links:
+        $ref: ./Link.yaml

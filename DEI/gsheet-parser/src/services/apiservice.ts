@@ -8,9 +8,7 @@ if (fs.existsSync('.env')) {
   dotenv.config({ path: '.env' });
 }
 
-// const BASEURL = process.env.BASE_URL;
-
-const BASEURL = "http://localhost:4000/api/v2"
+const BASEURL = process.env.BASE_URL;
 
 export const insertData = (endPoint: String, data: any) => {
     const url = `${BASEURL}/${endPoint}`;

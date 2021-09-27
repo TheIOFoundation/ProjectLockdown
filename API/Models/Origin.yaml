@@ -1,0 +1,28 @@
+title: "\U0001F6A7Origin"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n@@@\nAll the info about Origin of Sources.\nCan be seen as Providers.\n\n###URL fields\nURLOrigin\nPoints to the official location where Sources are extracted from."
+properties:
+  OriginUID:
+    type: string
+    description: Origin ID
+  Name:
+    type: string
+  Description:
+    type: string
+  Status:
+    type: string
+  Contact:
+    $ref: ./User.yaml
+  Stats:
+    type: array
+    description: Statistics related to this origin
+    items:
+      $ref: ./Stat.yaml
+  Type:
+    type: string
+  Log:
+    type: array
+    items:
+      $ref: ./Log.yaml
+  URLOrigin:
+    $ref: ./Link.yaml

@@ -1,6 +1,7 @@
 .countriesSearcher #blank {
   display: none;
 }
+
 .countriesSearcher {
   height: 50px;
   min-width: 50px;
@@ -9,36 +10,31 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 180px;
   right: 2vw;
   z-index: 1;
-  background: #fff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  background: var(--ld-bg);
+  color: var(--ld-text);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: width 1s;
 }
-.countriesSearcher.dark {
-  background-color: #333333;
-  color: white;
-}
-.countriesSearcher.dark .icon-provider {
-  color: white;
-}
-.countriesSearcher.dark .countryInput {
-  color: white;
-}
+
 .countriesSearcher:hover {
   cursor: pointer;
 }
+
 .countriesSearcher .icon-provider {
-  color: #333333;
+  color: var(--ld-text);
 }
+
 .countriesSearcher.show {
   border-radius: 25px;
-  padding-left: 15.6px;
+  padding-left: 16px;
 }
+
 .countriesSearcher.show .icon-provider {
-  margin-right: 20.04px;
+  margin-right: 20px;
 }
+
 .countriesSearcher.show > div {
   display: flex;
 }
@@ -48,18 +44,21 @@
   display: none;
   align-items: center;
 }
+
 .countriesSearcher > div .placeholder {
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 0;
   bottom: 0;
   margin: auto;
   z-index: -1;
   background: transparent;
-  border: 0px;
+  border: 0;
 }
+
 .countriesSearcher > div .countryInput {
+  color: var(--ld-text);
   background: transparent;
-  border: 0px;
-  outline: 0px;
+  border: 0;
+  outline: 0;
 }

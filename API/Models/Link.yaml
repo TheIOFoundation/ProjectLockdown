@@ -1,0 +1,20 @@
+title: "\U0001F441️‍\U0001F5E8️Link"
+type: object
+description: "# Status: \U0001F441️‍\U0001F5E8️\n\n## ⚡ About\nAn Link object represents the collection of data that is necessary to set an URL and to describe its function.\n\nThe Type field indicates what kind of information the Link points to:\n- Source: The object itself.\n- Docs: Documentation describing the object.\n- UI: UI asset representing the object.\n- Codebase: Line of code involving this object.\n\U0001F4D1 \n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n\U0001F4D1 Listing of Stats & their definitions\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\U0001F4D1 \n\n## ❓ DUBIOUS FIELDS\nLocalesURL -> To be applied to all?"
+properties:
+  LinkUID:
+    type: string
+  Type:
+    type: string
+  Name:
+    type: string
+  Description:
+    type: string
+  Stats:
+    type: array
+    items:
+      $ref: ./Stat.yaml
+  Help:
+    type: string
+  URL:
+    type: string

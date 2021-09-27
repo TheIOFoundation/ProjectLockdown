@@ -1,0 +1,39 @@
+title: "\U0001F6A7Category"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\nA collection of DataPoints\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\nDescribes PLD Categories."
+properties:
+  CategoryUID:
+    type: string
+  DataPoints:
+    type: array
+    items:
+      $ref: ./DataPoint.yaml
+  PermalinkDocs:
+    type: string
+  Definition:
+    type: object
+    properties:
+      Name:
+        type: string
+      Description:
+        type: string
+      Tags:
+        type: string
+      Order:
+        type: string
+        description: Indicates the render order of this category in the DSL.
+  CategoryStatus:
+    type: string
+  UI:
+    type: object
+    properties:
+      TDOLayout:
+        $ref: ./Layout.yaml
+      TabMaxWidth:
+        type: string
+      TabTitle:
+        type: string
+      TabTooltip:
+        type: string
+  DSLUID:
+    type: string

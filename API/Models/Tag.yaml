@@ -1,0 +1,28 @@
+title: "\U0001F6A7Tag"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n@@@@\nLook into maybe synchronizing some of these Tags with GitHub Labels."
+properties:
+  TagUID:
+    type: string
+  Name:
+    type: string
+  Description:
+    type: string
+  Synonyms:
+    type: array
+    items:
+      $ref: ./Tag.yaml
+  Dates:
+    type: array
+    items:
+      $ref: ./Date.yaml
+  Stats:
+    type: array
+    items:
+      $ref: ./Stat.yaml
+  Links:
+    type: array
+    items:
+      $ref: ./Link.yaml
+  Value:
+    type: string

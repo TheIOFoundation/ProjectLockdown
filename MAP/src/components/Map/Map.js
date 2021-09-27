@@ -17,6 +17,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import CountriesSearcher from '../CountriesSearcher/CountriesSearcher';
 import AppContext from '../../contexts/AppContext';
+import Zoom from '../../components/Zoom/Zoom';
 //import LocalStorage Functions
 import * as router from '../../router';
 import _ from 'lodash';
@@ -538,9 +539,7 @@ export class Map extends React.Component {
   }
 
   render() {
-   const {isCountrySearchVisible} = this.props;
-   
-    
+   const {isCountrySearchVisible, isZoomVisible} = this.props;
     return (
       <>
         <div
@@ -548,8 +547,7 @@ export class Map extends React.Component {
           id="map"
           className="map-container"
         ></div>
-         { isCountrySearchVisible &&  <CountriesSearcher
-          dark={this.props.dark}
+         {isCountrySearchVisible &&  <CountriesSearcher
           i18n={{ locale: 'en, en-US' }}
           map={{
             flyTo: (center, maxDuration) => {
@@ -559,7 +557,27 @@ export class Map extends React.Component {
               });
             },
           }}
+          width={this.props.width}
+          mobileWidth={this.props.mobileWidth}
         /> }
+        {isZoomVisible && <Zoom
+            map={{
+              zoomIn: () => {
+                this.state.map.flyTo({
+                  zoom: this.state.map.getZoom() + 1,
+                  essential: true,
+                });
+              },
+              zoomOut: () => {
+                this.state.map.flyTo({
+                  zoom: this.state.map.getZoom() - Math.min(1, this.state.map.getZoom() - 0.68),
+                  essential: true,
+                });
+              },
+            }}
+            width={this.props.width}
+            mobileWidth={this.props.mobileWidth}
+        />}
         <span id="mapBlank" style={{ display: 'none' }}></span>
       </>
     );

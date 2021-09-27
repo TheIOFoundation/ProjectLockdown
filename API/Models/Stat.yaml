@@ -1,0 +1,26 @@
+title: "\U0001F6A7Stat"
+type: object
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n\nStats are counters we collect across the platform.\n\n###DSL\nCountDataPoints\nA simple count of the DataPoints in this DSL.\n\n###User\nReliability Index\n\n###URL fields\nURLDoc\nIndicates where are the docs explaining this Stat.\n\nURLCode\nIndicates where in the code is this Stat calculated.\n\n###Date fields\nDateLastUpdate\n\n???Fequency"
+properties:
+  StatUID:
+    type: string
+  Name:
+    type: string
+  Description:
+    type: string
+  Notes:
+    type: string
+  Type:
+    type: string
+  Value:
+    type: string
+  URLDoc:
+    $ref: ./Link.yaml
+  Status:
+    type: string
+  DateLastUpdate:
+    $ref: ./Date.yaml
+  URLCode:
+    type: array
+    items:
+      $ref: ./Link.yaml

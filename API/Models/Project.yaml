@@ -1,0 +1,309 @@
+description: "# Status: \U0001F441️‍\U0001F5E8️\n\nOLD QS File >> To be documented in here\nSource: https://docs.google.com/document/d/13yw8LcuH3Zsefsd-FWzUxx2XJ6Mzek13m8LtDUNjjuQ/edit?ts=5ea6156f\n\n## ⚡ About\nA Project object represents the collection of data that is necessary to represent a TIOF project.\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n\U0001F4D1 Listing of Stats & their definitions\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n## ❓ DUBIOUS FIELDS\n\nNote: The following 2 fields are remanents of old documentation. Unclear that they have any use currently.\n  AllowShowURL Unknown [\n  Note: \"\n  - Description: Controls whether we allow the resulting URL to be shown or not.\n  - Notes: \n  - STAGE: UnderConsideration\n  \"]\n  \n  Precedence Unknown [\n  Note: \"\n  - Description: Controls precedence system in the application of Environment parameters.\n  - Notes: \n  - STAGE: UnderConsideration\n  \"]"
+type: object
+x-examples:
+  example-1:
+    ProjectUID: string
+    GlobalVars:
+      Locale: ENG
+      URLSources:
+        LinkUID: string
+        Type: Source
+        Name: string
+        Description: string
+        Stats:
+          - StatUID: string
+            Name: string
+            Description: string
+            Notes: string
+            Type: SourcesPerTerritory
+            Value: string
+            URLDoc: {}
+            Status: string
+            DateLastUpdate:
+              DateUID: string
+              Name: string
+              Description: string
+              Type: string
+              Value: string
+              ValueUTC: string
+              GeneratedBy: string
+              '@@@Highlights': string
+              '???Links':
+                - {}
+              UI:
+                Tooltip: string
+                '???Name': string
+                '???Description': string
+              '???Stats':
+                - null
+            URLCode:
+              - {}
+      DefaultDSL: string
+    Name: string
+    Description: string
+    Dates:
+      DateUID: string
+      Name: string
+      Description: string
+      Type: string
+      Value: string
+      ValueUTC: string
+      GeneratedBy: string
+      '@@@Highlights': string
+      '???Links':
+        - LinkUID: string
+          Type: Source
+          Name: string
+          Description: string
+          Stats:
+            - StatUID: string
+              Name: string
+              Description: string
+              Notes: string
+              Type: SourcesPerTerritory
+              Value: string
+              URLDoc: {}
+              Status: string
+              DateLastUpdate: {}
+              URLCode:
+                - {}
+      UI:
+        Tooltip: string
+        '???Name': string
+        '???Description': string
+      '???Stats':
+        - null
+    Contact:
+      UserUID: string
+      Type: Human
+      Stats:
+        - StatUID: string
+          Name: string
+          Description: string
+          Notes: string
+          Type: SourcesPerTerritory
+          Value: string
+          URLDoc:
+            LinkUID: string
+            Type: Source
+            Name: string
+            Description: string
+            Stats:
+              - {}
+          Status: string
+          DateLastUpdate:
+            DateUID: string
+            Name: string
+            Description: string
+            Type: string
+            Value: string
+            ValueUTC: string
+            GeneratedBy: string
+            '@@@Highlights': string
+            '???Links':
+              - LinkUID: string
+                Type: Source
+                Name: string
+                Description: string
+                Stats:
+                  - {}
+            UI:
+              Tooltip: string
+              '???Name': string
+              '???Description': string
+            '???Stats':
+              - null
+          URLCode:
+            - LinkUID: string
+              Type: Source
+              Name: string
+              Description: string
+              Stats:
+                - {}
+      Licenses:
+        - LicenseUID: string
+          Stats:
+            - StatUID: string
+              Name: string
+              Description: string
+              Notes: string
+              Type: SourcesPerTerritory
+              Value: string
+              URLDoc:
+                LinkUID: string
+                Type: Source
+                Name: string
+                Description: string
+                Stats:
+                  - {}
+              Status: string
+              DateLastUpdate:
+                DateUID: string
+                Name: string
+                Description: string
+                Type: string
+                Value: string
+                ValueUTC: string
+                GeneratedBy: string
+                '@@@Highlights': string
+                '???Links':
+                  - LinkUID: string
+                    Type: Source
+                    Name: string
+                    Description: string
+                    Stats:
+                      - {}
+                UI:
+                  Tooltip: string
+                  '???Name': string
+                  '???Description': string
+                '???Stats':
+                  - null
+              URLCode:
+                - LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - {}
+          DSLUID: string
+          Modules:
+            API: {}
+            MAP:
+              Operations: {}
+      Log:
+        - LogUID: string
+          Operation: Encode
+          UserUID: string
+          Notes: string
+          SourceUID: string
+          Dates:
+            - DateUID: string
+              Name: string
+              Description: string
+              Type: string
+              Value: string
+              ValueUTC: string
+              GeneratedBy: string
+              '@@@Highlights': string
+              '???Links':
+                - LinkUID: string
+                  Type: Source
+                  Name: string
+                  Description: string
+                  Stats:
+                    - StatUID: string
+                      Name: string
+                      Description: string
+                      Notes: string
+                      Type: SourcesPerTerritory
+                      Value: string
+                      URLDoc: {}
+                      Status: string
+                      DateLastUpdate: {}
+                      URLCode:
+                        - {}
+              UI:
+                Tooltip: string
+                '???Name': string
+                '???Description': string
+              '???Stats':
+                - null
+          Module: string
+    Stats:
+      - StatUID: string
+        Name: string
+        Description: string
+        Notes: string
+        Type: SourcesPerTerritory
+        Value: string
+        URLDoc:
+          LinkUID: string
+          Type: Source
+          Name: string
+          Description: string
+          Stats:
+            - {}
+        Status: string
+        DateLastUpdate:
+          DateUID: string
+          Name: string
+          Description: string
+          Type: string
+          Value: string
+          ValueUTC: string
+          GeneratedBy: string
+          '@@@Highlights': string
+          '???Links':
+            - LinkUID: string
+              Type: Source
+              Name: string
+              Description: string
+              Stats:
+                - {}
+          UI:
+            Tooltip: string
+            '???Name': string
+            '???Description': string
+          '???Stats':
+            - null
+        URLCode:
+          - LinkUID: string
+            Type: Source
+            Name: string
+            Description: string
+            Stats:
+              - {}
+title: "\U0001F441️‍\U0001F5E8️Project"
+properties:
+  ProjectUID:
+    type: string
+    minLength: 1
+  GlobalVars:
+    type: object
+    required:
+      - Locale
+      - URLSources
+      - DefaultDSL
+    properties:
+      Locale:
+        type: string
+        minLength: 1
+      URLSources:
+        type: array
+        items:
+          $ref: ./Link.yaml
+      DefaultDSL:
+        type: string
+        minLength: 1
+  Name:
+    type: string
+    minLength: 1
+  Description:
+    type: string
+    minLength: 1
+  Contact:
+    type: array
+    items:
+      $ref: ./User.yaml
+  Stats:
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      $ref: ./Stat.yaml
+  DateCreated:
+    type: array
+    items:
+      $ref: ./Date.yaml
+  Log:
+    type: array
+    items:
+      $ref: ./Log.yaml
+required:
+  - ProjectUID
+  - GlobalVars
+  - Name
+  - Description
+  - Contact
+  - Stats

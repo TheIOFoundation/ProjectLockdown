@@ -1,0 +1,123 @@
+description: "# Status: \U0001F6A7\n\n## ⚡ About  \nA DataSet Layer object represents the collection of data that defines a DSL in Project Lockdown. A DSL is a collection of [DataPoints](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/DataPoint) (DP) that are selected to track the impact of a specific family of policies over a specific Human or Digital Right.\n\nIt is composed by \U0001F4D1:\n\nIt also includes a number of [Statistics](https://theiofoundation.stoplight.io/docs/projectlockdown/API/Reference/Project-Lockdown.v1.json/components/schemas/Stat) that can be used to present information to the user.\n\U0001F4D1 Listing of Stats & their definitions\n\n## \U0001F4E2 Used by\n- \U0001F4D1 ???\n\n## \U0001F517 URL fields\n- URLDocs: Permalink to the documentation explaining this DSL.\n- URLDSL: Permalink for this DSL.\n- URLDEI: Permalink to the DEI for this DSL.\n- URLMethodology: Permalink providing Methodology information for the DSL.\n- \U0001F4D1 URLAPI: Permalink providing access to the API serving this DSL.\n- URLSchema: Permalink providing access to the Schema forming this DSL.\n- \U0001F4D1 URLQALog: Permalink providing access to the QA log for the DSL.\n- URLLicense: Permalink providing Licensing information for the DSL.\n- URLCitingPolicy: Permalink providing Citing information for the DSL.\n\n## \U0001F4C5 Date Fields\n- DateFirstPublished: First time this DSL was published.\n   \U0001F4D1 Note: Maybe we put this in Log too?\n- DateLastUpdated: Last Date and Time the DSL was updated.\n   \U0001F4D1 Note: Maybe we put this in Log too?\n- DateUpdatedNext: Next scheduled Date and Time the DSL will be updated.\n- DateFirstDay: First Day (Left limit) considered in the DSL.\n- DateLastDay: Last Day (Right limit) considered in the DSL.\n\n## ❓ DUBIOUS FIELDS\n- DateTimeFormat\n- UpdatedFreq: Scheduled frequency for updates on the DSL, in milliseconds.\n- MethodologyCode: Extra information inside the Methodology.\n- \U0001F4D1 AccessLevel: Indicates the access conditions for this DSL\n- LicenseCode: Extra information inside the Licensing.\n- CitingPolicyCode: Extra information inside the Citing."
+type: object
+title: DataSet Layer (DSL)
+properties:
+  DSLUID:
+    type: string
+  Name:
+    type: string
+  Version:
+    type: string
+  Type:
+    type: string
+  Status:
+    type: string
+  Description:
+    type: string
+  Contact:
+    $ref: ./User.yaml
+  Audiences:
+    type: array
+    items:
+      $ref: ./Audience.yaml
+  MaxBoundary:
+    type: string
+  SourceTypes:
+    type: array
+    items:
+      $ref: ./SourceType.yaml
+  Tags:
+    type: array
+    items:
+      $ref: ./Tag.yaml
+  Snapshots:
+    type: array
+    items:
+      $ref: ./Snapshot.yaml
+  Sources:
+    type: array
+    items:
+      $ref: ./Source.yaml
+  Stats:
+    type: array
+    items:
+      $ref: ./Stat.yaml
+  Territories:
+    type: array
+    items:
+      $ref: ./Territory.yaml
+  URLDocs:
+    $ref: ./Link.yaml
+  URLDSL:
+    $ref: ./Link.yaml
+  URLDEI:
+    $ref: ./Link.yaml
+  URLMethodology:
+    $ref: ./Link.yaml
+  '???URLAPI':
+    $ref: ./Link.yaml
+  URLSchema:
+    $ref: ./Link.yaml
+  URLQALog:
+    $ref: ./Link.yaml
+  URLLicense:
+    $ref: ./Link.yaml
+  URLCitingPolicy:
+    $ref: ./Link.yaml
+  DateFirstPublished:
+    $ref: ./Date.yaml
+  DateUpdatedNext:
+    $ref: ./Date.yaml
+  DateFirstDay:
+    $ref: ./Date.yaml
+  DateLastDay:
+    $ref: ./Date.yaml
+  ModuleConfigs:
+    type: object
+    properties:
+      MAP:
+        $ref: ./Module.yaml
+      BO:
+        $ref: ./Module.yaml
+      API:
+        $ref: ./Module.yaml
+  Log:
+    type: array
+    items:
+      $ref: ./Log.yaml
+  Categories:
+    type: array
+    items:
+      $ref: ./Category.yaml
+required:
+  - DSLUID
+  - Name
+  - Version
+  - Type
+  - Status
+  - Description
+  - Contact
+  - Audiences
+  - MaxBoundary
+  - SourceTypes
+  - Tags
+  - Snapshots
+  - Sources
+  - Stats
+  - Territories
+  - URLDocs
+  - URLDSL
+  - URLDEI
+  - URLMethodology
+  - '???URLAPI'
+  - URLSchema
+  - URLQALog
+  - URLLicense
+  - URLCitingPolicy
+  - DateFirstPublished
+  - DateUpdatedNext
+  - DateFirstDay
+  - DateLastDay
+  - ModuleConfigs
+  - Log
+  - Categories

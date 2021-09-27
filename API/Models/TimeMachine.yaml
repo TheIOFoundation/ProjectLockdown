@@ -1,0 +1,65 @@
+description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\nREPLACED BY SOURCE???\n\nObjects describing all the different Time Machines used to back up Sources."
+type: object
+x-examples:
+  example-1:
+    TimeMachine:
+      title: "\U0001F6A7 TimeMachine"
+      type: object
+      description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\n\nREPLACED BY SOURCE???\n\n\nObjects describing all the different Time Machines used to back up Sources."
+      x-tags:
+        - Models
+      properties:
+        TimeMachineUID:
+          type: string
+          description: "Universal ID\n\U0001F6A7 Document how it is generated"
+        Priority:
+          type: string
+        Name:
+          type: string
+        Description:
+          type: string
+        CreateURL:
+          $ref: '#/components/schemas/Link'
+        ReadURL:
+          $ref: '#/components/schemas/Link'
+        HelpURL:
+          $ref: '#/components/schemas/Link'
+        Stats:
+          type: array
+          description: "\U0001F6A7\nStatistics related to this object."
+          items:
+            $ref: '#/components/schemas/Stat'
+        DateFirstCreated:
+          $ref: '#/components/schemas/Date'
+        Log:
+          type: array
+          items:
+            $ref: '#/components/schemas/Log'
+title: "\U0001F6A7 TimeMachine"
+properties:
+  TimeMachineUID:
+    type: string
+  Priority:
+    type: string
+  Name:
+    type: string
+  Description:
+    type: string
+  CreateURL:
+    $ref: ./Link.yaml
+  ReadURL:
+    $ref: ./Link.yaml
+  HelpURL:
+    $ref: ./Link.yaml
+  Stats:
+    type: array
+    items:
+      $ref: ./Stat.yaml
+  DateFirstCreated:
+    $ref: ./Date.yaml
+  Log:
+    type: array
+    items:
+      $ref: ./Log.yaml
+required:
+  - TimeMachineUID
