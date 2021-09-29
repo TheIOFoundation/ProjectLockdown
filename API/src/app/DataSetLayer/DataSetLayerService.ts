@@ -6,7 +6,7 @@ import { DataSetLayerDTOInput } from './dataSetLayer.dto';
 import DataSetLayer from './DataSetLayer';
 
 @Injectable()
-export default class DSLService {
+export default class DataSetLayerService {
     constructor(
         @InjectRepository(DataSetLayer)
         private readonly dslRepository: Repository<DataSetLayer>,

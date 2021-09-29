@@ -1,32 +1,32 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ObjectID, Repository } from 'typeorm';
-import DataSetEntries from './DataSetEntries';
+import DataSetEntry from './DataSetEntry';
 
 @Injectable()
-export default class DataSetEntriesService extends Repository<DataSetEntries> {
+export default class DataSetEntryService extends Repository<DataSetEntry> {
     constructor(
-        @InjectRepository(DataSetEntries)
-        private readonly repository: Repository<DataSetEntries>,
+        @InjectRepository(DataSetEntry)
+        private readonly repository: Repository<DataSetEntry>,
     ) {
         super();
     }
 
-    async getAll(): Promise<DataSetEntries[]> {
+    async getAll(): Promise<DataSetEntry[]> {
         return this.repository.find();
     }
 
-    async getOne(id: ObjectID): Promise<DataSetEntries> {
+    async getOne(id: ObjectID): Promise<DataSetEntry> {
         return this.repository.findOneOrFail(id);
     }
 
-    async insertOne(input: DataSetEntries): Promise<DataSetEntries> {
+    async insertOne(input: DataSetEntry): Promise<DataSetEntry> {
         const newDataPoint = this.repository.create(input);
         await this.repository.save(newDataPoint);
         return newDataPoint;
     }
 
-    async updateOne(dataPoint: DataSetEntries): Promise<DataSetEntries> {
+    async updateOne(dataPoint: DataSetEntry): Promise<DataSetEntry> {
         const { id } = dataPoint;
         await this.repository.update({ id }, dataPoint);
         return this.getOne(id);

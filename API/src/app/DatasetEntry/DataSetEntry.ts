@@ -9,8 +9,8 @@ import {
 import { Answer } from '../Answer';
 import { DSE_SOURCE } from '../shared/constant';
 
-@Entity('DataSetEntries')
-export default class DataSetEntries {
+@Entity('DataSetEntry')
+export default class DataSetEntry {
     @ObjectIdColumn()
     id: ObjectID;
     @Column()

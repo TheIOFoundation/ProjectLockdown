@@ -28,8 +28,7 @@ export default class TerritoryService {
 
     async getOneByPLD(code: string): Promise<Territory | null> {
         try {
-            const pld = await this.model.findOne({ pldCode: code }).exec();
-            return pld;
+            return await this.model.findOne({ pldCode: code }).exec();
         } catch (error) {
             throw new NotFoundException();
         }
@@ -41,8 +40,7 @@ export default class TerritoryService {
         const newT = {...input, region: regionModel};
         const newTerritory = new this.model(newT);
         try {
-            const createdTerritory = await newTerritory.save();
-            return createdTerritory;
+            return await newTerritory.save();
         } catch (error) {
             throw new InternalServerErrorException(error);
         }

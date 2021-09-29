@@ -1,4 +1,4 @@
-export { default as DataSetEntriesModule } from './DataSetEntriesModule';
-export { default as DataSetEntryController } from './DataSetEntriesController';
-export { default as DataSetEntries } from './DataSetEntries';
-export { default as DataSetEntriesService } from './DataSetEntriesService';
+export { default as DataSetEntryModule } from './DataSetEntryModule';
+export { default as DataSetEntryController } from './DataSetEntryController';
+export { default as DataSetEntry } from './DataSetEntry';
+export { default as DataSetEntryService } from './DataSetEntryService';
