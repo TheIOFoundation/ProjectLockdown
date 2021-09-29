@@ -4,15 +4,20 @@
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,
+    "resolveJsonModule": true,
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "ES2020",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2017",
     "sourceMap": true,
     "allowJs": true,
     "outDir": "./dist",
     "strictNullChecks": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "strict": false,
+
+
   },
   "include": [
     "src/**/*"

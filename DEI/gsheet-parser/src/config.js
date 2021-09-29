@@ -1,8 +1,14 @@
 import fs from 'fs';
 import path from 'path';
+import dotenv from 'dotenv';
 
 export const lockdownSheetId = '1mVyQxxLxAF3E1dw870WHXTOLgYzmumojvzIekpgvLV0';
 export const lockdownSheetUrl = `https://docs.google.com/spreadsheets/d/${lockdownSheetId}`;
+
+ // load .env
+ if (fs.existsSync('.env')) {
+  dotenv.config({ path: '.env' });
+ }
 
 export const googleServiceCredentialsJson = (() => {
   // Attempt to get from env

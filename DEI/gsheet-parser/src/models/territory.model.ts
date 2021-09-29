@@ -4,41 +4,41 @@ import mongoose, { Schema, Document } from 'mongoose';
 import IRegion = require('./region.model');
 
 export interface ITerritory extends Document {
-    PLD_Code: string;
-    Name: string;
-    Notes?: string;
-    Description?: string;
-    ISO2: string;
-    ISO3: string;
-    UN_Code?: string;
-    NATO_Code?: string;
-    Wikidata_ID?: string;
-    Researcher?: string;
-    Encoder?: string;
-    Editor?: string;
-    Region?: IRegion.IRegion['_id'];
-    BoundaryLevel?: string;
-    SubTerritories?: [ITerritory['_id']];
+    pldCode: string;
+    name: string;
+    notes?: string;
+    description?: string;
+    isO2: string;
+    isO3: string;
+    unCode?: string;
+    natoCode?: string;
+    wikidataId?: string;
+    researcher?: string;
+    encoder?: string;
+    editor?: string;
+    region?: IRegion.IRegion['_id'];
+    boundaryLevel?: string;
+    subTerritories?: [ITerritory['_id']];
     DateCreated?: Date;
     DateUpdated?: Date;
 }
 
 export const TerritorySchema: Schema = new Schema({
-    PLD_Code: { type: String, required: true },  
-    Name: { type: String, required: true },
-    Notes: { type: String },
-    Description: { type: String },
-    ISO2: { type: String, required: true },
-    ISO3: { type: String, required: true },
-    UN_Code: { type: String },
-    NATO_Code: { type: String },
-    Wikidata_ID: { type: String },
-    Researcher: { type: String },
-    Encoder: { type: String },
-    Editor: { type: String },
-    Region: {type: Schema.Types.ObjectId, ref: 'Region'},
-    BoundaryLevel: { type: String },
-    SubTerritories: [{type: Schema.Types.ObjectId, ref: 'Territory'}],
+    pldCode: { type: String, required: true },  
+    name: { type: String, required: true },
+    notes: { type: String },
+    description: { type: String },
+    isO2: { type: String, required: true },
+    isO3: { type: String, required: true },
+    unCode: { type: String },
+    natoCode: { type: String },
+    wikidataId: { type: String },
+    researcher: { type: String },
+    encoder: { type: String },
+    editor: { type: String },
+    region: {type: Schema.Types.ObjectId, ref: 'Region'},
+    boundaryLevel: { type: String },
+    subTerritories: [{type: Schema.Types.ObjectId, ref: 'Territory'}],
     DateCreated: { type: Date },
     DateUpdated: { type: Date }
 });
