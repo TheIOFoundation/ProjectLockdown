@@ -15,7 +15,6 @@ const { v4: uuidv4 } = require('uuid');
 // Number of territories to query through batchGet at a time
 
 // Number of entries to batchGet from google sheet
-const ENTRIES_TO_FETCH = 100;
 
 /**
  * Gets data from "Global" sheet.
@@ -866,12 +865,9 @@ export async function insertEnvironment(db, territoryIds) {
  * @param {array} territories 
  */
 export async function batchGetTerritoriesEntryData(territories) {
-  // const database = await connect();
-  const startCacheColumn = 'H';
-  const startCacheColumnIndex = letterToColumn(startCacheColumn);
   const result = [];
 
-  var territoryIds = [];
+  const territoryIds = [];
   try {
     territories.forEach( row => {
        territoryIds.push(insertTerritory(row));
@@ -881,115 +877,6 @@ export async function batchGetTerritoriesEntryData(territories) {
     throw new Error(`Error during processing territories: ${error}`);
   }
   
-/*   try {
-    // await insertEnvironment(database, territoryIds);
-
-    while (batch = territories.splice(0, BATCH_SIZE)) {
-      if (batch.length < 1) break;
-
-      let gridRanges = batch.map(territory => `${territory['iso3']}!${rangeToCache}`);
-      logger.log(`[Lockdown:WorkSheet] ${batch.map(t => t['iso3']).join(' ')}`);
-      let gridData = await doc.batchGetGridRanges(gridRanges);
-
-      for (let i = 0; i < batch.length; i++) {
-        try {
-          // skip if empty
-          if (!batch[i]['iso3']) break;
-
-          let workSheet = await getWorksheetByTitle(`${batch[i]['iso3']}`);
-          let rowCount = workSheet['gridProperties']['rowCount'];
-          let columnCount = workSheet['gridProperties']['columnCount'];
-
-          let gridSheet = new SimpleGrid(rangeToCache, gridData[i], rowCount, columnCount);
-          let entries = [];
-
-          // How many entries should we loop through according to columns available on sheet
-          let entryCount = Math.ceil((columnCount - startCacheColumnIndex) / ENTRY_COLUMN_LENGTH);
-          for (let entryIndex = 0; entryIndex < entryCount; entryIndex++) {
-            // Cell ranges
-            let entryData = parseEntry(gridSheet, entryIndex);
-            if (entryData) {
-              entries.push(entryData);
-            }
-          }
-          
-          let snapshots = getSnapshots(entries);
-
-
-          try {
-            // country sheet where entries are blank - we need to delete snapshots for the country in the db
-            // 21/6/2020 NPIs also have the same issue - delete country entries first before inserting.
-            let clearResult = await database.snapshotRepository.removeSnapshots(batch[i]['iso2'], batch[i]['iso3']);
-            // example of clearResult is {"result":{"n":0,"ok":1},"connection":{"id":1,"host":"***","port":111},"deletedCount":0,"n":0,"ok":1}
-            if (clearResult.result.n > 0 && clearResult.result.ok == 1) {
-              shouldResetApiCache = true;
-            }
-          } catch (error) {
-            logger.log(`Error removeSnapshots for country ${batch[i]['iso2']} ${batch[i]['iso3']}...`);
-            logger.error(error);
-          }
-
-          if (snapshots.length > 0) {
-            snapshots.forEach(s => {
-              s.iso3 = batch[i]['iso3'];
-              s.iso2 = batch[i]['iso2'];
-              // TODO: test, write out, remove when ready
-              if (!fs.existsSync('./out')) {
-                fs.mkdir('./out', { recursive: true }, (err) => {
-                  logger.error(err);
-                });
-              }
-              fs.writeFileSync('./out/' + s.iso3 + '.json', JSON.stringify(s));
-            });
-
-            try {
-              let insertResult = await database.snapshotRepository.insertMany(snapshots);
-              // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
-              if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
-                shouldResetApiCache = true;
-              }
-            } catch (error) {
-              logger.log(`Error insertMany for country ${batch[i]['iso2']} ${batch[i]['iso3']}...`);
-              logger.error(error);
-            }
-          }
-
-          result.push({
-            iso2: batch[i]['iso2'],
-            iso3: batch[i]['iso3'],
-            name: batch[i]['territory'],
-            lockdown: {
-              snapshots
-            }
-          });
-
-        }
-        catch (error) {
-          throw new Error(`Error during processing ${batch[i]['iso3']}: ${error}`);
-        }
-        // TODO: test, break out
-        break;
-      }
-    }
-
-    if (shouldResetApiCache) {
-      // const cacheMessageBus = new MessagesService(process.env.AZURE_SERVICEBUS_CONNECTION_STRING, process.env.AZURE_SERVICEBUS_CACHE_QUEUE);
-      // await cacheMessageBus.sendMessage(
-      //   `Reset cache`,
-      //   "Reset cache",
-      //   {
-      //     timestamp: new Date()
-      //   }
-      // );
-      // await cacheMessageBus.close();
-    }
-  }
-  catch (error) {
-    database.close();
-    throw error;
-  } */
-
-  // database.close()
   return result;
 }
 

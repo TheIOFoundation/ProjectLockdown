@@ -3,8 +3,8 @@ import * as dotenv from 'dotenv';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
-import RegionModule from './Region/region.module';
-import TerritoryModule from './Territory/territory.module';
+import RegionModule from './Region/RegionModule';
+import TerritoryModule from './Territory/TerritoryModule';
 
 // load .env
 dotenv.config({ path: '.env' });
