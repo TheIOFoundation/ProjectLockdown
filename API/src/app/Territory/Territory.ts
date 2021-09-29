@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { Type } from 'class-transformer';
-import { Region } from '../Region/region.schema';
+import { Region } from '../Region/Region';
 import * as mongoose from 'mongoose';
 
 export type TerritoryDocument = Territory & Document;

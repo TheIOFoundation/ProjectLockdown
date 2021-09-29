@@ -8,8 +8,8 @@ import {
     Post,
 } from '@nestjs/common';
 import { ObjectID } from 'typeorm';
-import Answer from './answer.entity';
-import AnswerService from './answer.service';
+import Answer from './Answer';
+import AnswerService from './AnswerService';
 
 @Controller('Answer')
 export default class AnswerController {

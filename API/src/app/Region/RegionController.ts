@@ -8,9 +8,9 @@ import {
     Put,
     Query,
 } from '@nestjs/common';
-import { Region } from './region.schema';
+import { Region } from './Region';
 import { RegionInputDTO } from './region.dto';
-import RegionService from './region.service';
+import RegionService from './RegionService';
 
 @Controller('Region')
 export default class RegionController {

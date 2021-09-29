@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ObjectID, Repository } from 'typeorm';
-import DataPoint from './dataPoint.entity';
+import DataPoint from './DataPoint';
 
 @Injectable()
 export default class DataPointService {

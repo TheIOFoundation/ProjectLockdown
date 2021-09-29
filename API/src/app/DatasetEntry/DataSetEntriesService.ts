@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ObjectID, Repository } from 'typeorm';
-import DataSetEntries from './dataSetEntries.entity';
+import DataSetEntries from './DataSetEntries';
 
 @Injectable()
 export default class DataSetEntriesService extends Repository<DataSetEntries> {

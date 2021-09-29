@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { plainToClass } from 'class-transformer';
 import { ObjectID, Repository } from 'typeorm';
 import { DataSetLayerDTOInput } from './dataSetLayer.dto';
-import DataSetLayer from './dataSetLayer.entity';
+import DataSetLayer from './DataSetLayer';
 
 @Injectable()
 export default class DSLService {

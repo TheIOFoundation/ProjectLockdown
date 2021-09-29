@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { plainToClass } from 'class-transformer';
 import { Model } from 'mongoose';
 import { RegionInputDTO } from './region.dto';
-import { Region } from './region.schema';
+import { Region } from './Region';
 
 @Injectable()
 export default class RegionService {

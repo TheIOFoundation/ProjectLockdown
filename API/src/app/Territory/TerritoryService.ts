@@ -6,9 +6,9 @@ import {
 import { InjectModel } from '@nestjs/mongoose';
 import { plainToClass } from 'class-transformer';
 import { Model } from 'mongoose';
-import RegionService from '../Region/region.service';
+import RegionService from '../Region/RegionService';
 import { TerritoryInputDTO } from './territory.dto';
-import { Territory } from './territory.schema';
+import { Territory } from './Territory';
 
 @Injectable()
 export default class TerritoryService {

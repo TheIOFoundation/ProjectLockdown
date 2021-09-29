@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import DataPointController from './dataPoint.controller';
-import DataPoint from './dataPoint.entity';
-import DataPointService from './dataPoint.service';
+import DataPointController from './DataPointController';
+import DataPoint from './DataPoint';
+import DataPointService from './DataPointService';
 
 @Module({
     imports: [TypeOrmModule.forFeature([DataPoint])],

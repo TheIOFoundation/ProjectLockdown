@@ -8,8 +8,8 @@ import {
     Post,
 } from '@nestjs/common';
 import { ObjectID } from 'typeorm';
-import Category from './category.entity';
-import CategoryService from './Category.service';
+import Category from './Category';
+import CategoryService from './CategoryService';
 
 @Controller('Category')
 export default class CategoryController {

@@ -9,8 +9,8 @@ import {
     Query,
 } from '@nestjs/common';
 import { ObjectID } from 'typeorm';
-import DataPoint from './dataPoint.entity';
-import DataPointService from './dataPoint.service';
+import DataPoint from './DataPoint';
+import DataPointService from './DataPointService';
 
 @Controller('DataPoint')
 export default class DataPointController {

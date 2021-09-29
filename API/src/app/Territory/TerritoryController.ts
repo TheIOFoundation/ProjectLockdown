@@ -8,9 +8,9 @@ import {
     Put,
     Query,
 } from '@nestjs/common';
-import { Territory } from './territory.schema';
+import { Territory } from './Territory';
 import { TerritoryInputDTO } from './territory.dto';
-import TerritoryService from './territory.service';
+import TerritoryService from './TerritoryService';
 @Controller('Territory')
 export default class TerritoryController {
     constructor(private readonly service: TerritoryService) {}

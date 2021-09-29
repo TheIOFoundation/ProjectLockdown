@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ObjectID } from 'typeorm';
 import { DataSetLayerDTOInput } from './dataSetLayer.dto';
-import DataSetLayer from './dataSetLayer.entity';
-import DSLService from './dataSetLayer.service';
+import DataSetLayer from './DataSetLayer';
+import DSLService from './DataSetLayerService';
 
 @Controller('DSL')
 export default class DataSetLayerController {

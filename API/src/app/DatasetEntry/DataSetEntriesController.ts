@@ -8,8 +8,8 @@ import {
     Post,
 } from '@nestjs/common';
 import { ObjectID } from 'typeorm';
-import DataSetEntries from './dataSetEntries.entity';
-import DataSetEntriesService from './dataSetEntries.service';
+import DataSetEntries from './DataSetEntries';
+import DataSetEntriesService from './DataSetEntriesService';
 
 @Controller('DataSetEntryController')
 export default class DataSetEntryController {

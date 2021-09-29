@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ObjectID, Repository } from 'typeorm';
-import Category from './category.entity';
+import Category from './Category';
 
 @Injectable()
 export default class CategoryService {
