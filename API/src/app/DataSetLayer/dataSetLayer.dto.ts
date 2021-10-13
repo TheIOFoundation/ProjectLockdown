@@ -1,49 +1,22 @@
-import { Expose } from 'class-transformer';
+import { IsArray, IsString } from 'class-validator';
 
 export class DataSetLayerDTOInput {
-    @Expose()
+
+    @IsString()
     name: string;
 
-    @Expose()
+    @IsString()
     version: string;
 
-    @Expose()
+    @IsString()
     status: string;
 
-    @Expose()
+    @IsString()
     type: string;
 
-    @Expose()
+    @IsString()
     description: string;
 
-    @Expose()
+    @IsArray()
     categories: string[];
-}
-
-export class DataSetLayerDTOOutput {
-    @Expose()
-    id: string;
-    @Expose()
-    name: string;
-
-    @Expose()
-    version: string;
-
-    @Expose()
-    status: string;
-
-    @Expose()
-    type: string;
-
-    @Expose()
-    description: string;
-
-    @Expose()
-    categories: string[];
-
-    @Expose()
-    createdAt: string;
-
-    @Expose()
-    updatedAt: string;
 }

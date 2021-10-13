@@ -12,9 +12,7 @@ import * as TiofTerritories from '../../services/territories.services';
 
 const { v4: uuidv4 } = require('uuid');
 
-
 // Number of territories to query through batchGet at a time
-const BATCH_SIZE = 25;
 
 // Number of entries to batchGet from google sheet
 const ENTRIES_TO_FETCH = 100;
@@ -24,7 +22,7 @@ const ENTRIES_TO_FETCH = 100;
  * @returns {array}
  */
 export async function getGlobalData() {
-/*   const sheet = await getWorksheetByTitle('Global');
+  const sheet = await getWorksheetByTitle('Global');
   //const rows = await sheet.getCellsInRange('B5:F253'); // only countries, not including areas, e.g. Beijing, Western Australia, etc
   const rows = await sheet.getCellsInRange('B5:X432'); // including areas, e.g. Beijing, Western Australia, ISO 3166-2
 
@@ -32,17 +30,7 @@ export async function getGlobalData() {
     'territorySource', 'populationSource', 'covid-19Source', 'notes', 'url', 'region',
     'boundariesLevel', 'featureID', 'wikidataID', 'iso3_2', 'unitCode', 'description', 'languages',
     'research', 'encode', 'review', 'iso3166-2'];
-  return transposeRows(headers, rows); */
-
-  const sheet = await getWorksheetByTitle('Global');
-  const rows = await sheet.getCellsInRange('B5:F253');
-  const headers = ['status', 'jump', 'territory', 'iso2', 'iso3'];
   return transposeRows(headers, rows);
-}
-
-export async function getLockdownData(title, cellsInRange) {
-  const sheet = await getWorksheetByTitle(title);
-  const rows = await sheet.getCellsInRange(cellsInRange);
 }
 
 export async function insertTerritory(row) {
@@ -882,28 +870,20 @@ export async function batchGetTerritoriesEntryData(territories) {
   const startCacheColumn = 'H';
   const startCacheColumnIndex = letterToColumn(startCacheColumn);
   const result = [];
-  const doc = await getDocument();
-  const endCacheColumn = columnToLetter(startCacheColumnIndex + (ENTRIES_TO_FETCH * ENTRY_COLUMN_LENGTH));
-  const rangeToCache = `${startCacheColumn}1:${endCacheColumn}65`;
-  let batch = []
-  const shouldResetApiCache = false;
-  const territoryIds = [];
+
+  var territoryIds = [];
   try {
-  /*   territories.forEach( row => {
+    territories.forEach( row => {
        territoryIds.push(insertTerritory(row));
-    }); */
-    territories.forEach(row => {
-      territoryIds.push(row);
-      return false;
     });
   }
   catch (error) {
     throw new Error(`Error during processing territories: ${error}`);
   }
   
-  try {
+/*   try {
     // await insertEnvironment(database, territoryIds);
-     
+
     while (batch = territories.splice(0, BATCH_SIZE)) {
       if (batch.length < 1) break;
 
@@ -911,17 +891,18 @@ export async function batchGetTerritoriesEntryData(territories) {
       logger.log(`[Lockdown:WorkSheet] ${batch.map(t => t['iso3']).join(' ')}`);
       let gridData = await doc.batchGetGridRanges(gridRanges);
 
-      for(let i= 0; i< batch.length; i++){
-        const pldCode = batch[i]['iso3'] 
-        let workSheet = await getWorksheetByTitle(pldCode);
+      for (let i = 0; i < batch.length; i++) {
+        try {
+          // skip if empty
+          if (!batch[i]['iso3']) break;
+
+          let workSheet = await getWorksheetByTitle(`${batch[i]['iso3']}`);
           let rowCount = workSheet['gridProperties']['rowCount'];
           let columnCount = workSheet['gridProperties']['columnCount'];
+
           let gridSheet = new SimpleGrid(rangeToCache, gridData[i], rowCount, columnCount);
           let entries = [];
-          console.log({pldCode});
-          const sheet = workSheet['_rawSheets'];
-          console.log({sheet});
-          
+
           // How many entries should we loop through according to columns available on sheet
           let entryCount = Math.ceil((columnCount - startCacheColumnIndex) / ENTRY_COLUMN_LENGTH);
           for (let entryIndex = 0; entryIndex < entryCount; entryIndex++) {
@@ -931,14 +912,82 @@ export async function batchGetTerritoriesEntryData(territories) {
               entries.push(entryData);
             }
           }
+          
+          let snapshots = getSnapshots(entries);
+
+
+          try {
+            // country sheet where entries are blank - we need to delete snapshots for the country in the db
+            // 21/6/2020 NPIs also have the same issue - delete country entries first before inserting.
+            let clearResult = await database.snapshotRepository.removeSnapshots(batch[i]['iso2'], batch[i]['iso3']);
+            // example of clearResult is {"result":{"n":0,"ok":1},"connection":{"id":1,"host":"***","port":111},"deletedCount":0,"n":0,"ok":1}
+            if (clearResult.result.n > 0 && clearResult.result.ok == 1) {
+              shouldResetApiCache = true;
+            }
+          } catch (error) {
+            logger.log(`Error removeSnapshots for country ${batch[i]['iso2']} ${batch[i]['iso3']}...`);
+            logger.error(error);
+          }
+
+          if (snapshots.length > 0) {
+            snapshots.forEach(s => {
+              s.iso3 = batch[i]['iso3'];
+              s.iso2 = batch[i]['iso2'];
+              // TODO: test, write out, remove when ready
+              if (!fs.existsSync('./out')) {
+                fs.mkdir('./out', { recursive: true }, (err) => {
+                  logger.error(err);
+                });
+              }
+              fs.writeFileSync('./out/' + s.iso3 + '.json', JSON.stringify(s));
+            });
+
+            try {
+              let insertResult = await database.snapshotRepository.insertMany(snapshots);
+              // reference: http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#~insertWriteOpResult
+              if (insertResult.result.n > 0 && insertResult.result.ok == 1) {
+                shouldResetApiCache = true;
+              }
+            } catch (error) {
+              logger.log(`Error insertMany for country ${batch[i]['iso2']} ${batch[i]['iso3']}...`);
+              logger.error(error);
+            }
+          }
+
+          result.push({
+            iso2: batch[i]['iso2'],
+            iso3: batch[i]['iso3'],
+            name: batch[i]['territory'],
+            lockdown: {
+              snapshots
+            }
+          });
+
+        }
+        catch (error) {
+          throw new Error(`Error during processing ${batch[i]['iso3']}: ${error}`);
+        }
+        // TODO: test, break out
+        break;
       }
-      break
     }
- 
+
+    if (shouldResetApiCache) {
+      // const cacheMessageBus = new MessagesService(process.env.AZURE_SERVICEBUS_CONNECTION_STRING, process.env.AZURE_SERVICEBUS_CACHE_QUEUE);
+      // await cacheMessageBus.sendMessage(
+      //   `Reset cache`,
+      //   "Reset cache",
+      //   {
+      //     timestamp: new Date()
+      //   }
+      // );
+      // await cacheMessageBus.close();
+    }
   }
   catch (error) {
+    database.close();
     throw error;
-  }
+  } */
 
   // database.close()
   return result;

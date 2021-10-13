@@ -1,26 +1,28 @@
-import {
-    Entity,
-    Column,
-    CreateDateColumn,
-    UpdateDateColumn,
-    ObjectID,
-    ObjectIdColumn,
-} from 'typeorm';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Category } from '../Category';
+import * as mongoose from 'mongoose';
 
-@Entity('DataSetLayer')
+@Schema({_id: false})
 export default class DataSetLayer {
-    @ObjectIdColumn()
-    id: ObjectID;
-    @Column() name: string;
-    @Column() version: string;
-    @Column() status: string;
-    @Column() type: string;
-    @Column() description?: string;
-    @CreateDateColumn({ name: 'createdAt' })
-    createdAt: Date;
-    @UpdateDateColumn({ name: 'updatedAt' })
+    
+    @Prop({type: mongoose.Types.ObjectId})
+    _id: mongoose.Types.ObjectId;
+    @Prop()
+    
+    @Prop() name: string;
+    @Prop() version: string;
+    @Prop() status: string;
+    @Prop() type: string;
+    @Prop() description?: string;
+    
+    @Prop({ type: Date, default: Date.now })
     updatedAt: Date;
-    @Column((_type) => Category)
+
+    @Prop({ type: Date, default: Date.now })
+    createdAt: Date;
+ 
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Category.name })
+    @Prop(() => Category)
     categories: Category[];
 }
+export const DataSetLayerSchema = SchemaFactory.createForClass(DataSetLayer);

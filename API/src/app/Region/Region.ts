@@ -1,9 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 
-@Schema()
+@Schema({_id:false})
 export class Region extends Document {
 
+        @Prop({type: Types.ObjectId})
+        _id: Types.ObjectId;
+        @Prop()
+        
         @Prop({type: String})  name: string;
         @Prop({type: String})  tld: string;
         @Prop({type: String})  description: string;

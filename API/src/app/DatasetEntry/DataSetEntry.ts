@@ -1,33 +1,35 @@
-import {
-    Column,
-    CreateDateColumn,
-    Entity,
-    ObjectID,
-    ObjectIdColumn,
-    UpdateDateColumn,
-} from 'typeorm';
-import { Answer } from '../Answer';
-import { DSE_SOURCE } from '../shared/constant';
 
-@Entity('DataSetEntry')
-export default class DataSetEntry {
-    @ObjectIdColumn()
-    id: ObjectID;
-    @Column()
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Type } from 'class-transformer';
+import { Answer } from '../Answer';
+import { DSE_SOURCE } from '../shared/constant'
+import * as mongoose from 'mongoose';
+
+@Schema({_id:false})
+export default class DataSetEntry extends Document{
+    @Prop({type: mongoose.Types.ObjectId})
+    _id: mongoose.Types.ObjectId;
+    @Prop()
+    
+    @Prop()
     refId: string;
 
-    @Column({
+    @Prop({
         type: 'enum',
         enum: DSE_SOURCE,
         default: DSE_SOURCE.OTHER,
     })
     role: DSE_SOURCE;
-    @Column()
-    @CreateDateColumn({ name: 'createdAt' })
-    createdAt: Date;
-    @UpdateDateColumn({ name: 'updatedAt' })
+    @Prop()
+
+    @Prop({ type: Date, default: Date.now })
     updatedAt: Date;
 
-    @Column((_type) => Answer)
+    @Prop({ type: Date, default: Date.now })
+    createdAt: Date;
+
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Answer.name })
+    @Type(() => Answer)
     answers: Answer[];
 }
+export const DataSetEntrySchema = SchemaFactory.createForClass(DataSetEntry);

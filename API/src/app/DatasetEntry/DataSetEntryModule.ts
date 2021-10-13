@@ -1,12 +1,20 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import DataSetEntryController from './DataSetEntryController';
-import DataSetEntry from './DataSetEntry';
 import DataSetEntryService from './DataSetEntryService';
+import { Answer, AnswerService } from '../Answer';
+import { AnswerSchema } from '../Answer/Answer';
+import { MongooseModule } from '@nestjs/mongoose';
+import { DataSetLayer } from '../DataSetLayer';
+import { DataSetLayerSchema } from '../DataSetLayer/DataSetLayer';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([DataSetEntry])],
-    controllers: [DataSetEntryController],
+    imports: [
+        MongooseModule.forFeature([
+            { name: Answer.name, schema: AnswerSchema},
+            { name: DataSetLayer.name, schema: DataSetLayerSchema },
+        ]),
+    ],
+    controllers: [DataSetEntryController, AnswerService],
     providers: [DataSetEntryService],
 })
 export default class DataSetEntryModule {}

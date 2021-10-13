@@ -1,42 +1,40 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ObjectID, Repository } from 'typeorm';
+import { Model } from 'mongoose';
+import { DataPointService } from '../DataPoint';
+import { DSLService } from '../DataSetLayer';
 import Category from './Category';
+import { CategoryInputDTO } from './Category.dto';
 
 @Injectable()
 export default class CategoryService {
     constructor(
         @InjectRepository(Category)
-        private readonly repository: Repository<Category>,
+        private readonly model: Model<Category>,
+        private readonly dataPointService: DataPointService,
+        private readonly dslService: DSLService,
     ) {}
 
     async getAll(): Promise<Category[]> {
-        return this.repository.find();
+        return this.model.find();
     }
 
-    async getOne(id: ObjectID): Promise<Category> {
-        return this.repository.findOneOrFail(id);
-    }
-    async insertOne(input: Category): Promise<Category> {
-        const newCategory = this.repository.create(input);
-        await this.repository.save(newCategory);
-        return newCategory;
+    async getOne(id: string ): Promise<Category | null> {
+        return this.model.findById(id).exec();
     }
 
-    async updateOne(category: Category): Promise<Category> {
-        const { id } = category;
-        await this.repository.update({ id }, category);
-        return this.getOne(id);
-    }
-
-    async deleteOne(
-        id: ObjectID,
-    ): Promise<{ deleted: boolean; message?: string }> {
+    async insertOne(input: CategoryInputDTO): Promise<Category> {
         try {
-            await this.repository.delete(id);
-            return { deleted: true };
-        } catch (err) {
-            return { deleted: false, message: err.message };
+            const {dataPoints, dsl} = input;
+            const allDataPoint = dataPoints.map(async (dataPoint) => {
+                return this.dataPointService.getOne(dataPoint);
+            });
+            const dslModel = await this.dslService.getOne(dsl);
+            const newC = {input, dataPoint: allDataPoint, dls: dslModel};
+            const newCategory =  new this.model(newC);
+            return await newCategory.save();
+        } catch (error) {
+            throw new InternalServerErrorException(error);
         }
     }
 }

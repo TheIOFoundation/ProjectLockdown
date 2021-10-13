@@ -1,47 +1,39 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ObjectID, Repository } from 'typeorm';
+import { Model } from 'mongoose';
+import { AnswerService } from '../Answer';
+import { CategoryService } from '../Category';
 import DataPoint from './DataPoint';
+import { DataPointInputDto } from './DataPoint.dto';
 
 @Injectable()
 export default class DataPointService {
     constructor(
         @InjectRepository(DataPoint)
-        private readonly repository: Repository<DataPoint>,
+        private readonly model: Model<DataPoint>,
+        private readonly categoryService: CategoryService,
+        private readonly answerService: AnswerService
     ) {}
 
     async getAll(): Promise<DataPoint[]> {
-        return this.repository.find();
+        return this.model.find();
     }
 
-    async getOne(id: ObjectID): Promise<DataPoint> {
-        return this.repository.findOneOrFail(id);
+    async getOne(id: string): Promise<DataPoint | null> {
+        return this.model.findById(id);
     }
 
-    async getOneByName(name: string): Promise<DataPoint> {
-        return this.repository.findOneOrFail({ name });
+   
+
+    async insertOne(input: DataPointInputDto): Promise<DataPoint> {
+        const {categories, answer} = input;
+        const categoryModel = categories.map(async (category) => {
+            return this.categoryService.getOne(category);
+        });
+        const answerModel = await this.answerService.getOne(answer);
+        const newDataPoint = {...input, categories: categoryModel, answer: answerModel};
+        const dataPoint = new this.model(newDataPoint);
+        return dataPoint.save();
     }
 
-    async insertOne(input: DataPoint): Promise<DataPoint> {
-        const newDataPoint = this.repository.create(input);
-        await this.repository.save(newDataPoint);
-        return newDataPoint;
-    }
-
-    async updateOne(dataPoint: DataPoint): Promise<DataPoint> {
-        const { id } = dataPoint;
-        await this.repository.update({ id }, dataPoint);
-        return this.getOne(id);
-    }
-
-    async deleteOne(
-        id: ObjectID,
-    ): Promise<{ deleted: boolean; message?: string }> {
-        try {
-            await this.repository.delete(id);
-            return { deleted: true };
-        } catch (err) {
-            return { deleted: false, message: err.message };
-        }
-    }
 }

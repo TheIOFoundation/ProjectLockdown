@@ -3,8 +3,6 @@ import {
     Get,
     Param,
     Body,
-    Delete,
-    Patch,
     Post,
 } from '@nestjs/common';
 import { ObjectID } from 'typeorm';
@@ -27,19 +25,5 @@ export default class DataSetEntryController {
     @Post('/new')
     async newDataPoint(@Body() input: DataSetEntry): Promise<DataSetEntry> {
         return this.service.insertOne(input);
-    }
-
-    @Patch('/update')
-    async updateDataPoint(
-        @Body() input: DataSetEntry,
-    ): Promise<DataSetEntry> {
-        return this.service.updateOne(input);
-    }
-
-    @Delete('/delete/:id')
-    async deleteDataPoint(
-        @Param('id') id: ObjectID,
-    ): Promise<{ deleted: boolean }> {
-        return this.service.deleteOne(id);
     }
 }

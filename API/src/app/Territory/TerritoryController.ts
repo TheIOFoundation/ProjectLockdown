@@ -9,7 +9,7 @@ import {
     Query,
 } from '@nestjs/common';
 import { Territory } from './Territory';
-import { TerritoryInputDTO } from './territory.dto';
+import { TerritoryInputDTO } from './Territory.dto';
 import TerritoryService from './TerritoryService';
 @Controller('Territory')
 export default class TerritoryController {

@@ -7,9 +7,13 @@ import * as mongoose from 'mongoose';
 
 export type TerritoryDocument = Territory & Document;
 
-@Schema()
+@Schema({_id: false})
 export class Territory extends Document {
 
+    @Prop({type: mongoose.Types.ObjectId})
+    _id: mongoose.Types.ObjectId;
+    @Prop()
+    
     @Prop({ unique: true })
     pldCode: string;
     @Prop({type: String })
@@ -39,7 +43,7 @@ export class Territory extends Document {
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Region.name })
     @Type(() => Region)
     region: Region;
-    @Prop({type: String})
+    
     @Prop({ type: Date, default: Date.now })
     updatedAt: Date;
 

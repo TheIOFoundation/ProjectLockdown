@@ -1,36 +1,41 @@
-import {
-    Column,
-    CreateDateColumn,
-    Entity,
-    ObjectID,
-    ObjectIdColumn,
-    UpdateDateColumn,
-} from 'typeorm';
-import { DataPoint } from '../DataPoint';
 
-@Entity('Category')
-export default class Category {
-    @ObjectIdColumn()
-    id: ObjectID;
-    @Column()
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Type } from 'class-transformer';
+import { DataPoint } from '../DataPoint';
+import * as mongoose from 'mongoose';
+import { DataSetLayer } from '../DataSetLayer';
+@Schema({_id: false})
+export default class Category extends Document {
+  
+    @Prop({type: mongoose.Types.ObjectId})
+    _id: mongoose.Types.ObjectId;
+    @Prop()
+    
+    @Prop()
     refId: string;
-    @Column()
+    @Prop()
     name: string;
-    @Column({ nullable: true, default: null })
+    @Prop({ nullable: true, default: null })
     description: string;
-    @Column({ nullable: true, default: null })
+    @Prop({ nullable: true, default: null })
     iconId: string;
-    @Column({ nullable: true, default: [], array: true })
+    @Prop({ nullable: true, default: [], array: true })
     tags: string[];
-    @Column()
+    @Prop()
     order: number;
-    @CreateDateColumn({ name: 'DateCreated' })
-    createdAt: Date;
-    @UpdateDateColumn({ name: 'DateUpdate' })
+
+    @Prop({ type: Date, default: Date.now })
     updatedAt: Date;
 
-    @Column()
+    @Prop({ type: Date, default: Date.now })
+    createdAt: Date;
+
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: DataPoint.name })
+    @Type(() => DataPoint)
     dataPoints: DataPoint[];
-    @Column((_type) => ObjectID)
-    dslId: ObjectID;
+
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: DataSetLayer.name })
+    @Type(() => DataSetLayer)
+    dsl: DataSetLayer;
 }
+export const CategorySchema = SchemaFactory.createForClass(Category);
