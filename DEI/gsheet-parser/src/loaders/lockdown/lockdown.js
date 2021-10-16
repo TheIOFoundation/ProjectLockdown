@@ -927,6 +927,7 @@ export async function batchGetTerritoriesEntryData(territories) {
           for (let entryIndex = 0; entryIndex < entryCount; entryIndex++) {
             // Cell ranges
             let entryData = parseEntry(gridSheet, entryIndex);
+            logger.log({entryData});
             if (entryData) {
               entries.push(entryData);
             }
