@@ -12,7 +12,7 @@ import logger from "../utils/logger";
   * Service Methods
   */
   
- export const create = async (newTerritory: CreateQuery<ITerritory>) => {
+ export const create = async (newTerritory: ITerritory) => {
      try {
       return await insertData('Territory', newTerritory);
     } catch (error) {
@@ -20,7 +20,7 @@ import logger from "../utils/logger";
    }
  };
    
- export const findOneOrCreate = async (territory: CreateQuery<ITerritory>) => {
+ export const findOneOrCreate = async (territory: ITerritory) => {
   try {
     const found = await getTerritoryByPLDCode(territory.pldCode);
     const {status, data} = found;

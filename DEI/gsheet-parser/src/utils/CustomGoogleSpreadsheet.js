@@ -1,4 +1,5 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import logger from './logger';
 
 export class CustomGoogleSpreadsheet extends GoogleSpreadsheet {
   /**
@@ -13,8 +14,7 @@ export class CustomGoogleSpreadsheet extends GoogleSpreadsheet {
     params.append('valueRenderOption', 'FORMATTED_VALUE');
     params.append('dateTimeRenderOption', 'FORMATTED_STRING');
     ranges.forEach(range => {
-      // if (!range)
-        params.append('ranges', range);
+      params.append('ranges', range);
     });
     var result;
     try {

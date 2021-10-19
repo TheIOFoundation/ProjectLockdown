@@ -922,11 +922,11 @@ export async function batchGetTerritoriesEntryData(territories) {
           let entryCount = Math.ceil((columnCount - startCacheColumnIndex) / ENTRY_COLUMN_LENGTH);
           for (let entryIndex = 0; entryIndex < entryCount; entryIndex++) {
             // Cell ranges
-            // console.log({gridSheet});
-          
-           let entryData = parseEntry(gridSheet, entryIndex);
-            if (entryData) {
-              entries.push(entryData);
+            let dataSetEntry = parseEntry(gridSheet, entryIndex, pldCode);
+            if (dataSetEntry && dataSetEntry.DSEUID != null) {
+              logger.log({dataSetEntry});
+              entries.push(dataSetEntry);
+              // TODO: Yoyo, you can call DataSetEntry findOneOrCreate with the dataSetEntry, which contains Answers
             }
           }
            for(let entry of entries){
@@ -934,9 +934,7 @@ export async function batchGetTerritoriesEntryData(territories) {
             break
           } 
       }
-      break
-        }
-  
+    }
  
   }
   catch (error) {
