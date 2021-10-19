@@ -13,7 +13,7 @@ export class CustomGoogleSpreadsheet extends GoogleSpreadsheet {
     params.append('valueRenderOption', 'FORMATTED_VALUE');
     params.append('dateTimeRenderOption', 'FORMATTED_STRING');
     ranges.forEach(range => {
-      if (!range)
+      // if (!range)
         params.append('ranges', range);
     });
     var result;

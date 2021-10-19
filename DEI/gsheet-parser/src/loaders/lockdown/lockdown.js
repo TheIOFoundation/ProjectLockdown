@@ -917,23 +917,26 @@ export async function batchGetTerritoriesEntryData(territories) {
           let rowCount = workSheet['gridProperties']['rowCount'];
           let columnCount = workSheet['gridProperties']['columnCount'];
           let gridSheet = new SimpleGrid(rangeToCache, gridData[i], rowCount, columnCount);
-          let entries = [];
-          console.log({pldCode});
-          const sheet = workSheet['_rawSheets'];
-          console.log({sheet});
-          
+          const entries = [];    
           // How many entries should we loop through according to columns available on sheet
           let entryCount = Math.ceil((columnCount - startCacheColumnIndex) / ENTRY_COLUMN_LENGTH);
           for (let entryIndex = 0; entryIndex < entryCount; entryIndex++) {
             // Cell ranges
-            let entryData = parseEntry(gridSheet, entryIndex);
+            // console.log({gridSheet});
+          
+           let entryData = parseEntry(gridSheet, entryIndex);
             if (entryData) {
               entries.push(entryData);
             }
           }
+           for(let entry of entries){
+           const {measure, land, flight,sea} = entry;
+            break
+          } 
       }
       break
-    }
+        }
+  
  
   }
   catch (error) {
