@@ -1,6 +1,6 @@
-import { Prop } from "@nestjs/mongoose";
-import { IsString, IsArray, IsEnum } from "class-validator";
-import { DSE_SOURCE } from "../shared/constant";
+import { Prop } from '@nestjs/mongoose';
+import { IsString, IsArray, IsEnum } from 'class-validator';
+import { DSE_SOURCE } from '../shared/constant';
 
 export class DataSetEntryInputDto {
     @IsString()
@@ -15,8 +15,7 @@ export class DataSetEntryInputDto {
 
     @Prop({ nullable: true, default: null })
     source: string;
-    
+
     @IsArray()
     answers: string[];
-
 }

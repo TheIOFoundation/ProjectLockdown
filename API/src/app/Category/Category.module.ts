@@ -9,13 +9,13 @@ import { DataPointSchema } from '../DataPoint/DataPoint.schema';
 import { DataSetLayerSchema } from '../DataSetLayer/DataSetLayer.schema';
 @Module({
     imports: [
-    MongooseModule.forFeature([
-        { name: Category.name, schema: CategorySchema },
-        { name: DataPoint.name, schema: DataPointSchema},
-        { name: DSLModel.name, schema: DataSetLayerSchema },
-    ]),
-],
-    providers: [CategoryService,DataPointService, DSLService],
+        MongooseModule.forFeature([
+            { name: Category.name, schema: CategorySchema },
+            { name: DataPoint.name, schema: DataPointSchema },
+            { name: DSLModel.name, schema: DataSetLayerSchema },
+        ]),
+    ],
+    providers: [CategoryService, DataPointService, DSLService],
     controllers: [CategoryController],
 })
 export default class CategoryModule {}

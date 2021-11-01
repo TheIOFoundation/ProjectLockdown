@@ -1,13 +1,12 @@
-import { IsString, IsArray, IsNumber } from "class-validator";
+import { IsString, IsArray, IsNumber } from 'class-validator';
 
-export class DataPointInputDto{
-
+export class DataPointInputDto {
     @IsString()
     refId: string;
 
     @IsString()
     name: string;
-    
+
     @IsString()
     description: string;
 

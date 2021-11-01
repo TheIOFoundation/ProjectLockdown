@@ -1,16 +1,13 @@
-
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Type } from 'class-transformer';
 import { DataPoint } from '../DataPoint';
 import * as mongoose from 'mongoose';
-import {DSLModel} from '../DataSetLayer';
-@Schema({_id: false})
+import { DSLModel } from '../DataSetLayer';
+@Schema({ _id: false })
 export default class Category extends Document {
-  
-    @Prop({type: mongoose.Types.ObjectId})
+    @Prop({ type: mongoose.Types.ObjectId })
     _id: mongoose.Types.ObjectId;
     @Prop()
-    
     @Prop()
     refId: string;
     @Prop()

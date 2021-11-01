@@ -3,8 +3,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CategoryService } from '../Category';
 import { DataPointService } from '../DataPoint';
-import { DSLService}  from '../DataSetLayer';
-import Answer from './Answer';
+import { DSLService } from '../DataSetLayer';
+import Answer from './Answer.schema';
 import { AnswerInputDto } from './Answer.dto';
 
 @Injectable()
@@ -21,23 +21,28 @@ export default class AnswerService {
         return this.model.find();
     }
 
-    async getOne(id: string): Promise<Answer| null> {
-        return this.model.findById(id).exec();;
+    async getOne(id: string): Promise<Answer | null> {
+        return this.model.findById(id).exec();
     }
 
     async insertOne(input: AnswerInputDto): Promise<Answer> {
-
         try {
-            const {category, dataPoint, dsl} = input;
+            const { category, dataPoint, dsl } = input;
             const categoryModel = await this.categoryService.getOne(category);
-            const dataPointModel = await this.dataPointService.getOne(dataPoint);
+            const dataPointModel = await this.dataPointService.getOne(
+                dataPoint,
+            );
             const dslModel = await this.dslService.getOne(dsl);
-            const newAn = {input, category: categoryModel, dataPoint: dataPointModel, dsl: dslModel}
+            const newAn = {
+                input,
+                category: categoryModel,
+                dataPoint: dataPointModel,
+                dsl: dslModel,
+            };
             const newAnswer = new this.model(newAn);
             return await newAnswer.save();
         } catch (error) {
             throw new InternalServerErrorException(error);
         }
-
     }
 }

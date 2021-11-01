@@ -1,4 +1,4 @@
-export { default as AnswerController } from './AnswerController';
-export { default as Answer } from './Answer';
-export { default as AnswerService } from './AnswerService';
-export { default as AnswerModule } from './AnswerModule';
+export { default as AnswerController } from './Answer.controller';
+export { default as AnswerModel } from './Answer.schema';
+export { default as AnswerService } from './Answer.service';
+export { default as AnswerModule } from './Answer.module';

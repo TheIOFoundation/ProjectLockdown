@@ -1,16 +1,14 @@
-
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Type } from 'class-transformer';
-import { Answer } from '../Answer';
-import { DSE_SOURCE } from '../shared/constant'
+import { AnswerModel } from '../Answer';
+import { DSE_SOURCE } from '../shared/constant';
 import * as mongoose from 'mongoose';
 
-@Schema({_id:false})
-export default class DataSetEntry extends Document{
-    @Prop({type: mongoose.Types.ObjectId})
+@Schema({ _id: false })
+export default class DataSetEntry extends Document {
+    @Prop({ type: mongoose.Types.ObjectId })
     _id: mongoose.Types.ObjectId;
     @Prop()
-    
     @Prop()
     refId: string;
 
@@ -21,15 +19,14 @@ export default class DataSetEntry extends Document{
     })
     role: DSE_SOURCE;
     @Prop()
-
     @Prop({ type: Date, default: Date.now })
     updatedAt: Date;
 
     @Prop({ type: Date, default: Date.now })
     createdAt: Date;
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Answer.name })
-    @Type(() => Answer)
-    answers: Answer[];
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: AnswerModel.name })
+    @Type(() => AnswerModel)
+    answers: AnswerModel[];
 }
 export const DataSetEntrySchema = SchemaFactory.createForClass(DataSetEntry);

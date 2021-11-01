@@ -1,7 +1,4 @@
-import {
-    Controller,
-    Get,
-} from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import Category from './Category.schema';
 import CategoryService from './Category.service';
 
@@ -13,5 +10,4 @@ export default class CategoryController {
     async getDataPoints(): Promise<Category[]> {
         return this.service.getAll();
     }
-  
 }

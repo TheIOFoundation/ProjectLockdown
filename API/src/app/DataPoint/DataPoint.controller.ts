@@ -1,8 +1,4 @@
-import {
-    Controller,
-    Get,
-    Post,
-} from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import DataPoint from './DataPoint.schema';
 import DataPointService from './DataPoint.service';
 
@@ -19,6 +15,4 @@ export default class DataPointController {
     async newDataPoints(): Promise<DataPoint[]> {
         return this.service.getAll();
     }
-  
-  
 }

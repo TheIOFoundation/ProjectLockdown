@@ -1,9 +1,8 @@
-import {IsDateString, IsString } from "class-validator";
+import { IsDateString, IsString } from 'class-validator';
 
 export class AnswerInputDto {
-
     @IsString()
-    refId: string
+    refId: string;
 
     @IsString()
     detail: string;
@@ -16,10 +15,9 @@ export class AnswerInputDto {
 
     @IsString()
     category: string;
-;
     @IsString()
     dataPoint: string;
 
     @IsString()
-    dsl: string
+    dsl: string;
 }

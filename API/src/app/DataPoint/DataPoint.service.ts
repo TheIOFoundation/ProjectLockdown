@@ -12,7 +12,7 @@ export default class DataPointService {
         @InjectRepository(DataPoint)
         private readonly model: Model<DataPoint>,
         private readonly categoryService: CategoryService,
-        private readonly answerService: AnswerService
+        private readonly answerService: AnswerService,
     ) {}
 
     async getAll(): Promise<DataPoint[]> {
@@ -23,17 +23,18 @@ export default class DataPointService {
         return this.model.findById(id);
     }
 
-   
-
     async insertOne(input: DataPointInputDto): Promise<DataPoint> {
-        const {categories, answer} = input;
+        const { categories, answer } = input;
         const categoryModel = categories.map(async (category) => {
             return this.categoryService.getOne(category);
         });
         const answerModel = await this.answerService.getOne(answer);
-        const newDataPoint = {...input, categories: categoryModel, answer: answerModel};
+        const newDataPoint = {
+            ...input,
+            categories: categoryModel,
+            answer: answerModel,
+        };
         const dataPoint = new this.model(newDataPoint);
         return dataPoint.save();
     }
-
 }

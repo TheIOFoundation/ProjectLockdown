@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ObjectID, Repository } from 'typeorm';
-import DataSetEntry from './DataSetEntry';
+import DataSetEntry from './DataSetEntry.schema';
 
 @Injectable()
 export default class DataSetEntryService extends Repository<DataSetEntry> {
@@ -24,5 +24,5 @@ export default class DataSetEntryService extends Repository<DataSetEntry> {
         const newDataPoint = this.repository.create(input);
         await this.repository.save(newDataPoint);
         return newDataPoint;
-    } 
+    }
 }

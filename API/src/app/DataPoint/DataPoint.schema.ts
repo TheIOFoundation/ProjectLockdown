@@ -1,17 +1,14 @@
-
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Type } from 'class-transformer';
-import { Answer } from '../Answer';
+import { AnswerModel } from '../Answer';
 import { Category } from '../Category';
 import * as mongoose from 'mongoose';
 
-@Schema({_id:false})
+@Schema({ _id: false })
 export default class DataPoint extends Document {
-
-    @Prop({type: mongoose.Types.ObjectId})
+    @Prop({ type: mongoose.Types.ObjectId })
     _id: mongoose.Types.ObjectId;
     @Prop()
-    
     @Prop()
     refId: string;
     @Prop()
@@ -37,8 +34,8 @@ export default class DataPoint extends Document {
     @Type(() => Category)
     category: Category;
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Answer.name })
-    @Type(() => Answer)
-    answer: Answer;
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: AnswerModel.name })
+    @Type(() => AnswerModel)
+    answer: AnswerModel;
 }
-export const DataPointSchema  = SchemaFactory.createForClass(DataPoint);
+export const DataPointSchema = SchemaFactory.createForClass(DataPoint);

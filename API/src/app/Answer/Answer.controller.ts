@@ -1,9 +1,6 @@
-import {
-    Controller,
-    Get,
-} from '@nestjs/common';
-import Answer from './Answer';
-import AnswerService from './AnswerService';
+import { Controller, Get } from '@nestjs/common';
+import Answer from './Answer.schema';
+import AnswerService from './Answer.service';
 
 @Controller('Answer')
 export default class AnswerController {
@@ -12,5 +9,5 @@ export default class AnswerController {
     @Get()
     async getAnswers(): Promise<Answer[]> {
         return this.service.getAll();
-    } 
+    }
 }

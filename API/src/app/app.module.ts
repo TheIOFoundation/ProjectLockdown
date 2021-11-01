@@ -3,13 +3,13 @@ import * as dotenv from 'dotenv';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
-// import RegionModule from './Region/RegionModule';
-// import TerritoryModule from './Territory/TerritoryModule';
-import {DSLModule} from './DataSetLayer';
-// import { DataSetEntryModule } from './DatasetEntry';
-// import { DataPointModule } from './DataPoint';
-// import { CategoryModule } from './Category';
-// import { AnswerModule } from './Answer';
+import { DSLModule } from './DataSetLayer';
+import { AnswerModule } from './Answer';
+import { CategoryModule } from './Category';
+import { DataPointModule } from './DataPoint';
+import { DataSetEntryModule } from './DatasetEntry';
+import { RegionModule } from './Region';
+import TerritoryModule from './Territory/Territory.module';
 
 // load .env
 dotenv.config({ path: '.env' });
@@ -38,13 +38,13 @@ dotenv.config({ path: '.env' });
             },
             inject: [ConfigService],
         }),
-        // TerritoryModule,
-        // RegionModule,
+        TerritoryModule,
+        RegionModule,
         DSLModule,
-        // DataSetEntryModule,
-        // DataPointModule,
-        // CategoryModule,
-        // AnswerModule
+        DataSetEntryModule,
+        DataPointModule,
+        CategoryModule,
+        AnswerModule,
     ],
     controllers: [],
     providers: [],

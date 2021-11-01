@@ -1,16 +1,16 @@
 import { Module } from '@nestjs/common';
-import DataSetEntryController from './DataSetEntryController';
-import DataSetEntryService from './DataSetEntryService';
-import { Answer, AnswerService } from '../Answer';
-import { AnswerSchema } from '../Answer/Answer';
+import DataSetEntryController from './DataSetEntry.controller';
+import DataSetEntryService from './DataSetEntry.service';
+import { AnswerModel, AnswerService } from '../Answer';
+import { AnswerSchema } from '../Answer/Answer.schema';
 import { MongooseModule } from '@nestjs/mongoose';
-import  DataSetLayer  from '../DataSetLayer/DataSetLayer.schema';
+import DataSetLayer from '../DataSetLayer/DataSetLayer.schema';
 import { DataSetLayerSchema } from '../DataSetLayer/DataSetLayer.schema';
 
 @Module({
     imports: [
         MongooseModule.forFeature([
-            { name: Answer.name, schema: AnswerSchema},
+            { name: AnswerModel.name, schema: AnswerSchema },
             { name: DataSetLayer.name, schema: DataSetLayerSchema },
         ]),
     ],

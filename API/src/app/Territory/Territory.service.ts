@@ -6,9 +6,9 @@ import {
 import { InjectModel } from '@nestjs/mongoose';
 import { plainToClass } from 'class-transformer';
 import { Model } from 'mongoose';
-import RegionService from '../Region/RegionService';
+import RegionService from '../Region/Region.service';
 import { TerritoryInputDTO } from './Territory.dto';
-import { Territory } from './Territory';
+import Territory from './Territory.schema';
 
 @Injectable()
 export default class TerritoryService {
@@ -37,8 +37,9 @@ export default class TerritoryService {
     async insertOne(input: TerritoryInputDTO): Promise<Territory> {
         try {
             const { region } = input;
-            const regionModel = (await this.regionService.getOne(region)) ?? null;
-            const newT = {...input, region: regionModel};
+            const regionModel =
+                (await this.regionService.getOne(region)) ?? null;
+            const newT = { ...input, region: regionModel };
             const newTerritory = new this.model(newT);
             return await newTerritory.save();
         } catch (error) {

@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import RegionController from './RegionController';
-import { Region, RegionSchema } from './Region';
-import RegionService from './RegionService';
+import RegionController from './Region.controller';
+import Region, { RegionSchema } from './Region.schema';
+import RegionService from './Region.service';
 
 @Module({
     imports: [

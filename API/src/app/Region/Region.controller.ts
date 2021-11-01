@@ -8,9 +8,9 @@ import {
     Put,
     Query,
 } from '@nestjs/common';
-import { Region } from './Region';
+import Region from './Region.schema';
 import { RegionInputDTO } from './region.dto';
-import RegionService from './RegionService';
+import RegionService from './Region.service';
 
 @Controller('Region')
 export default class RegionController {
@@ -22,9 +22,7 @@ export default class RegionController {
     }
 
     @Get('getByName')
-    async getByName(
-        @Query('name') name: string,
-    ): Promise<Region | null> {
+    async getByName(@Query('name') name: string): Promise<Region | null> {
         return this.service.getOneByName(name);
     }
 

@@ -16,14 +16,13 @@ export default class DataSetLayerService {
     }
 
     async insertOne(input: DataSetLayerDTOInput) {
-        
-        const newDataSetLayer = {...input };
+        const newDataSetLayer = { ...input };
         const dataSetLayer = new this.model(newDataSetLayer);
-        console.log({dataSetLayer});
+        console.log({ dataSetLayer });
         return dataSetLayer.save();
     }
 
-    async getOne(id: string) : Promise<DataSetLayer | null> {
+    async getOne(id: string): Promise<DataSetLayer | null> {
         return this.model.findById(id);
     }
 }

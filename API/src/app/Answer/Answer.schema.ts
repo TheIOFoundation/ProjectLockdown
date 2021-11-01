@@ -1,17 +1,15 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { Type } from "class-transformer";
-import { Category } from "../Category";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Type } from 'class-transformer';
+import { Category } from '../Category';
 import * as mongoose from 'mongoose';
-import { DataPoint } from "../DataPoint";
-import {DSLModel}  from "../DataSetLayer";
+import { DataPoint } from '../DataPoint';
+import { DSLModel } from '../DataSetLayer';
 
-@Schema({_id: false})
-export  default class Answer extends Document{
-    
-    @Prop({type: mongoose.Types.ObjectId})
+@Schema({ _id: false })
+export default class Answer extends Document {
+    @Prop({ type: mongoose.Types.ObjectId })
     _id: mongoose.Types.ObjectId;
     @Prop()
-    
     refId: string;
     @Prop()
     details: string;
@@ -19,7 +17,7 @@ export  default class Answer extends Document{
     dateStart: Date;
     @Prop({ name: 'dateEnd' })
     dateEnd: Date;
-    
+
     @Prop({ type: Date, default: Date.now })
     updatedAt: Date;
 
@@ -33,7 +31,7 @@ export  default class Answer extends Document{
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: DataPoint.name })
     @Type(() => DataPoint)
     dataPoint: DataPoint;
-   
+
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: DSLModel.name })
     @Type(() => DSLModel)
     dsl: DSLModel;

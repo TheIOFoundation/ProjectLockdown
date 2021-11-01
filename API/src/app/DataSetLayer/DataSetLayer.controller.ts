@@ -14,7 +14,7 @@ export default class DataSetLayerController {
     }
     @Get()
     get(): Promise<DataSetLayer[]> {
-        console.log("get");
+        console.log('get');
         return this.dslService.findAll();
     }
     @Get(':id')

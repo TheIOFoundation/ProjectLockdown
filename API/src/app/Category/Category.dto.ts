@@ -1,13 +1,12 @@
-import { IsArray, IsNumber, IsString } from "class-validator";
+import { IsArray, IsNumber, IsString } from 'class-validator';
 
-export class CategoryInputDTO{
-    
+export class CategoryInputDTO {
     @IsString()
     refId: string;
 
     @IsString()
     name: string;
-    
+
     @IsString()
     description: string;
 
@@ -25,5 +24,4 @@ export class CategoryInputDTO{
 
     @IsString()
     dsl: string;
-
 }

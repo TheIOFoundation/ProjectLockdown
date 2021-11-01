@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Region, RegionSchema } from '../Region/Region';
-import RegionService from '../Region/RegionService';
-import TerritoryController from './TerritoryController';
-import { Territory, TerritorySchema } from './Territory';
-import TerritoryService from './TerritoryService';
+import { Region } from '../Region';
+import { RegionSchema } from '../Region/Region.schema';
+import RegionService from '../Region/Region.service';
+import TerritoryController from './Territory.controller';
+import Territory, { TerritorySchema } from './Territory.schema';
+import TerritoryService from './Territory.service';
 
 @Module({
     imports: [

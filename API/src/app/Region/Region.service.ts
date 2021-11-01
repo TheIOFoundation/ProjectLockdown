@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { plainToClass } from 'class-transformer';
 import { Model } from 'mongoose';
 import { RegionInputDTO } from './region.dto';
-import { Region } from './Region';
+import Region from './Region.schema';
 
 @Injectable()
 export default class RegionService {
@@ -17,11 +17,11 @@ export default class RegionService {
     }
 
     async getOne(id: string): Promise<Region | null> {
-        return this.model.findById(id).exec()
+        return this.model.findById(id).exec();
     }
 
     async getOneByName(name: string): Promise<Region | null> {
-        return  this.model.findOne({ name }).exec();
+        return this.model.findOne({ name }).exec();
     }
 
     async insertOne(input: RegionInputDTO): Promise<Region> {

@@ -2,7 +2,7 @@ import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Model } from 'mongoose';
 import { DataPointService } from '../DataPoint';
-import {DSLService} from '../DataSetLayer';
+import { DSLService } from '../DataSetLayer';
 import Category from './Category.schema';
 import { CategoryInputDTO } from './Category.dto';
 
@@ -19,19 +19,19 @@ export default class CategoryService {
         return this.model.find();
     }
 
-    async getOne(id: string ): Promise<Category | null> {
+    async getOne(id: string): Promise<Category | null> {
         return this.model.findById(id).exec();
     }
 
     async insertOne(input: CategoryInputDTO): Promise<Category> {
         try {
-            const {dataPoints, dsl} = input;
+            const { dataPoints, dsl } = input;
             const allDataPoint = dataPoints.map(async (dataPoint) => {
                 return this.dataPointService.getOne(dataPoint);
             });
             const dslModel = await this.dslService.getOne(dsl);
-            const newC = {input, dataPoint: allDataPoint, dls: dslModel};
-            const newCategory =  new this.model(newC);
+            const newC = { input, dataPoint: allDataPoint, dls: dslModel };
+            const newCategory = new this.model(newC);
             return await newCategory.save();
         } catch (error) {
             throw new InternalServerErrorException(error);
