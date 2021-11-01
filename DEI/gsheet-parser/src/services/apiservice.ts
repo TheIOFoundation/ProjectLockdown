@@ -8,10 +8,11 @@ if (fs.existsSync('.env')) {
   dotenv.config({ path: '.env' });
 }
 
-const BASEURL = process.env.BASE_URL;
+const BASEURL = process.env.API_URL;
 
 export const insertData = (endPoint: String, data: any) => {
     const url = `${BASEURL}/${endPoint}`;
+    console.log({url});
     return axios.post(url, data);
 }
 

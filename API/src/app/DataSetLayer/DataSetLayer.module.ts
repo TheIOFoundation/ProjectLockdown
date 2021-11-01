@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import DataSetLayerController from './DataSetLayerController';
-import DataSetLayer, { DataSetLayerSchema } from './DataSetLayer';
-import DSLService from './DataSetLayerService';
+import DataSetLayerController from './DataSetLayer.controller';
+import DataSetLayer, { DataSetLayerSchema } from './DataSetLayer.schema';
+import DataSetLayerService from './DataSetLayer.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Category, CategoryService } from '../Category';
-import { CategorySchema } from '../Category/Category';
+import { CategorySchema } from '../Category/Category.schema';
 
 @Module({
     imports: [
@@ -13,7 +13,7 @@ import { CategorySchema } from '../Category/Category';
             { name: DataSetLayer.name, schema: DataSetLayerSchema },
         ]),
     ],
-    providers: [DSLService, CategoryService],
+    providers: [DataSetLayerService, CategoryService],
     controllers: [DataSetLayerController],
 })
 export default class DataSetLayerModule {}

@@ -4,8 +4,8 @@ import DataSetEntryService from './DataSetEntryService';
 import { Answer, AnswerService } from '../Answer';
 import { AnswerSchema } from '../Answer/Answer';
 import { MongooseModule } from '@nestjs/mongoose';
-import { DataSetLayer } from '../DataSetLayer';
-import { DataSetLayerSchema } from '../DataSetLayer/DataSetLayer';
+import  DataSetLayer  from '../DataSetLayer/DataSetLayer.schema';
+import { DataSetLayerSchema } from '../DataSetLayer/DataSetLayer.schema';
 
 @Module({
     imports: [

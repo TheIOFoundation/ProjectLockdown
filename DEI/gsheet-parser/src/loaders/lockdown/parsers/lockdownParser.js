@@ -1,5 +1,7 @@
 import { getCachedCellsRange } from '../../../utils/sheet';
+// import { toMeasureType, toTravelType, toInteger, isUpdateReady, toEntryDate, toLockdownType } from '../../../utils/typeHelper';
 import { toMeasureType, toTravelType, toInteger, isUpdateReady, toEntryDate, toLockdownType } from '../../../utils/typeHelper';
+
 import { TRAVEL, MEASURE } from '../../../../../../shared/types';
 import { letterToColumn, columnToLetter } from 'google-spreadsheet/lib/utils';
 import Measure from '../../../types/Measure';
@@ -34,10 +36,10 @@ export function parseDataPoint(row, valueTransformer) {
  * @param {number} entryIndex N-th index for entry
  * @param {string} firstEntryColumn The first entry in sheet
  */
-export function getEntryCellRange(rowRange, entryIndex = 0, firstEntryColumn = 'H') {
+export function getEntryCellRange(rowRange, entryIndex = 0, firstEntryColumn = 'H',  entryColumnLength= ENTRY_COLUMN_LENGTH) {
   // Column length between entry start and end
   const initialColumnIndex = letterToColumn(firstEntryColumn);
-  const offset = entryIndex * ENTRY_COLUMN_LENGTH;
+  const offset = entryIndex * entryColumnLength;
   const startColumnIndex = initialColumnIndex + offset;
   const endColumnIndex = startColumnIndex + 2;
   const startLetter = columnToLetter(startColumnIndex);
@@ -55,21 +57,66 @@ export function getEntryCellRange(rowRange, entryIndex = 0, firstEntryColumn = '
  * @returns {Measure}
  */
 export function parseMeasure(sheet, entryIndex) {
-  const entryMeasureRange = getEntryCellRange('19:28', entryIndex);
+  const entryMeasureRange = getEntryCellRange('18:28', entryIndex);
   const entryMeasureRows = getCachedCellsRange(sheet, entryMeasureRange, false);
 
   /** @type {Measure} */
   const data = {
-    lockdown_status: parseDataPoint(entryMeasureRows[0], toLockdownType),
-    city_movement_restriction: parseDataPoint(entryMeasureRows[1], toMeasureType),
-    attending_religious_sites: parseDataPoint(entryMeasureRows[2], toMeasureType),
-    going_to_work: parseDataPoint(entryMeasureRows[3], toMeasureType),
-    military_not_deployed: parseDataPoint(entryMeasureRows[4], toMeasureType),
-    academia_allowed: parseDataPoint(entryMeasureRows[5], toMeasureType),
-    going_to_shops: parseDataPoint(entryMeasureRows[6], toMeasureType),
-    electricity_nominal: parseDataPoint(entryMeasureRows[7], toMeasureType),
-    water_nominal: parseDataPoint(entryMeasureRows[8], toMeasureType),
-    internet_nominal: parseDataPoint(entryMeasureRows[9], toMeasureType),
+    max_assembly: {
+      name: "What is the maximum assembly allowed (PAX)?",
+      short: "allowed",
+      answer: parseDataPoint(entryMeasureRows[0], toInteger),
+    },
+    lockdown_status:{ 
+      name: "Can regular individuals leave their homes?",
+      short: " leave their homes",
+      answer:  parseDataPoint(entryMeasureRows[1], toLockdownType)
+    },
+    city_movement_restriction: {
+      name: "Can regular individuals undertake outdoor activities?",
+      short: "undertake outdoor activities",
+      answer: parseDataPoint(entryMeasureRows[2], toLockdownType)
+    },
+    attending_religious_sites: {
+      name: "Can regular individuals attend religious sites?",
+      short: "attend religious sites",
+      answer: parseDataPoint(entryMeasureRows[3], toLockdownType)
+    },
+    going_to_work: {
+      name: "Can regular individuals go to work?",
+      short: "go to work",
+      answer: parseDataPoint(entryMeasureRows[4], toLockdownType)
+    },
+    military_not_deployed: {
+      name: "No military reinforcements",
+      short: "no military reinforcements",
+      answer: parseDataPoint(entryMeasureRows[5], toLockdownType)
+    },
+    academia_allowed:{
+      name: "Can regular individuals attend classes?",
+      short: "attend classes",
+      answer: parseDataPoint(entryMeasureRows[6], toLockdownType)
+    } ,
+    going_to_shops: {
+      name: "Can regular individuals go shopping?",
+      short: "go shopping",
+      answer: parseDataPoint(entryMeasureRows[7], toLockdownType)
+    },
+    electricity_nominal:{
+      name: "Is Electricity ensured?",
+      short: "ensured",
+      answer: parseDataPoint(entryMeasureRows[8], toLockdownType)
+    },
+    water_nominal: {
+      name: "Is Water supply ensured?",
+      short: "ensured",
+      answer: parseDataPoint(entryMeasureRows[9], toLockdownType)
+    },
+    internet_nominal:{
+      name: "Is Internet (telecommunications) ensured?",
+      short: "ensured",
+      answer: parseDataPoint(entryMeasureRows[10], toLockdownType)
+    }
   }
 
   return data;
@@ -154,6 +201,80 @@ export function parseTravelSea(sheet, entryIndex) {
 }
 
 /**
+ * Parses Travel section (sea)
+ * 
+ * @param {GoogleSpreadsheetWorksheet|SimpleGrid} sheet 
+ * @param {number} entryIndex 
+ * @returns {Travel}
+ */
+export function parseMobility(sheet, entryIndex) {
+
+  const entryLandRange = getEntryCellRange('37:43', entryIndex);
+  const entryLandRows = getCachedCellsRange(sheet, entryLandRange, false);
+
+  const entryFlightRange = getEntryCellRange('47:53', entryIndex);
+  const entryFlightRows = getCachedCellsRange(sheet, entryFlightRange, false); 
+ 
+  const entrySeaRange = getEntryCellRange('57:63', entryIndex);
+  const entrySeaRows = getCachedCellsRange(sheet, entrySeaRange, false);
+
+  /** @type {Mobility} */
+   return  {
+    local: {
+      name: "Local mobility",
+      andAnswer: parseDataPoint(entryLandRows[0], toTravelType),
+      flightAnswer: parseDataPoint(entryFlightRows[0], toTravelType),
+      seaAnswer: parseDataPoint(entrySeaRows[0], toTravelType),
+    },
+    nationals_inbound: {
+      name: "Nationals inbound ",
+      andAnswer: parseDataPoint(entryLandRows[1], toTravelType),
+      flightAnswer: parseDataPoint(entryFlightRows[1], toTravelType),
+      seaAnswer: parseDataPoint(entrySeaRows[1], toTravelType),
+    },
+    nationals_outbound: {
+      name: "Nationals outbound ",
+      andAnswer: parseDataPoint(entryLandRows[2], toTravelType),
+      flightAnswer: parseDataPoint(entryFlightRows[2], toTravelType),
+      seaAnswer: parseDataPoint(entrySeaRows[2], toTravelType),
+    },
+    foreigners_inbound: {
+      name: "Foreigners inbound ",
+      andAnswer: parseDataPoint(entryLandRows[3], toTravelType),
+      flightAnswer: parseDataPoint(entryFlightRows[3], toTravelType),
+      seaAnswer: parseDataPoint(entrySeaRows[3], toTravelType),
+    },
+    
+    foreigners_outbound: {
+      name: "Foreigners outbound ",
+      andAnswer: parseDataPoint(entryLandRows[4], toTravelType),
+      flightAnswer: parseDataPoint(entryFlightRows[4], toTravelType),
+      seaAnswer: parseDataPoint(entrySeaRows[4], toTravelType),
+    },
+    cross_border_workers: {
+      name: "Cross border workers ",
+      andAnswer: TRAVEL.NA,
+      flightAnswer: parseDataPoint(entryFlightRows[5], toTravelType),
+      seaAnswer: parseDataPoint(entrySeaRows[5], toTravelType),
+    },
+    stopovers: {
+      name: "Stopovers ",
+      andAnswer: TRAVEL.NA,
+      flightAnswer: parseDataPoint(entryFlightRows[6], toTravelType),
+      seaAnswer: parseDataPoint(entrySeaRows[6], toTravelType),
+    },
+    commerce: {
+      name: "Commerce",
+      andAnswer: parseDataPoint(entryLandRows[5], toTravelType),
+      flightAnswer: parseDataPoint(entryFlightRows[5], toTravelType),
+      seaAnswer: parseDataPoint(entrySeaRows[5], toTravelType)
+    }
+  };
+
+}
+;
+
+/**
  * Create new datapoint from old datapoint entry format
  * 
  * @param {Entry} dp Old datapoint format
@@ -186,41 +307,66 @@ export function parseTravelSea(sheet, entryIndex) {
  * @param {integer} entryIndex 
  * @returns {Entry}
  */
-export function parseEntry(sheet, entryIndex, territoryCode) {
+export async function parseEntry(sheet, entryIndex, territoryCode) {
 
   /** @type {Entry} */
   const entry = {};
 
   // Entry meta section
-  const entryMetaRows = getCachedCellsRange(sheet, getEntryCellRange('2:8', entryIndex), false);
+  const entryMetaRows = await getCachedCellsRange(sheet, getEntryCellRange('2:8', entryIndex), false);
   entry.entry_uid = entryMetaRows[0][1];    // DPUID = 1
   entry.timestamp = entryMetaRows[1][1];    // DPUID = 2
   entry.issue_id = entryMetaRows[2][2];     // DPUID = 3
   entry.status = entryMetaRows[3][1];       // DPUID = 4
   entry.editor = entryMetaRows[4][1];       // DPUID = 5
   entry.reviewed_by = entryMetaRows[5][1];  // DPUID = 6
-  entry.type = entryMetaRows[6][1];         // DPUID = 7
+  entry.source = entryMetaRows[6][1];         // DPUID = 7
 
   // Entry source section
-  const entrySourceRows = getCachedCellsRange(sheet, getEntryCellRange('13:16', entryIndex), false);
-  entry.source_name = entrySourceRows[0][0];    // DPUID = 10.1
-  entry.source_url = entrySourceRows[1][0];     // DPUID = 10.2
-  entry.source_title_of_status = entrySourceRows[2][0];   // DPUID  = 10.3
-  entry.source_date_of_issuance = entrySourceRows[3][0] ? toEntryDate(entrySourceRows[3][0]) : null;   // DPUID  = 10.4
-  entry.source_start_date = entrySourceRows[3][1] ? toEntryDate(entrySourceRows[3][1]) : null;         // DPUID = 10.4
-  entry.source_end_date = entrySourceRows[3][2] ? toEntryDate(entrySourceRows[3][2]) : null;           // DPUID = 10.4
-
-  // Max gathering
-  const entryMaxGatheringRows = getCachedCellsRange(sheet, getEntryCellRange('18:18', entryIndex), false);  
-  // DPUID = 20.1
-  entry.max_gathering = parseDataPoint(entryMaxGatheringRows[0], toInteger); // What is the maximum assembly allowed (PAX)?
-
-  entry.measure = parseMeasure(sheet, entryIndex);      // DPUID = 20.1 - 20.11
-  entry.land = parseTravelLand(sheet, entryIndex);      // DPUID = 30.1.1 - 30.1.9
-  entry.flight = parseTravelFlight(sheet, entryIndex);  // DPUID = 30.2.1 - 30.2.7
-  entry.sea = parseTravelSea(sheet, entryIndex);        // DPUID = 30.3.1 - 30.3.9
+  const entrySourceRows = await getCachedCellsRange(sheet, getEntryCellRange('13:16', entryIndex), false);
   
-  var dse = {
+  entry.data_entry_source = {
+    dpuid :"10",
+    source_name : entrySourceRows[0][0],    // DPUID = 10.1
+    source_url : entrySourceRows[1][0] ,    // DPUID = 10.2
+    source_title_of_status : entrySourceRows[2][0],  // DPUID  = 10.3
+    source_date_of_issuance : entrySourceRows[3][0] ? toEntryDate(entrySourceRows[3][0]) : null, // DPUID  = 10.4
+    source_start_date  : entrySourceRows[3][1] ? toEntryDate(entrySourceRows[3][1]) : null,        // DPUID = 10.4
+    source_end_date : entrySourceRows[3][2] ? toEntryDate(entrySourceRows[3][2]) : null         // DPUID = 10.4
+  }
+
+
+
+  const daily_life = {
+    dpuid : "20",
+    name: "Daily Life",
+    data_points: {
+        dpuid: "20.1",
+        data: await  parseMeasure(sheet, entryIndex) 
+      }
+  }
+  const mobility = {
+    dpuid: "30",
+    name: "Mobility",
+    data_points: {
+      dpuid: "30.1",
+      data: await parseMobility(sheet, entryIndex)
+    }
+  }
+  entry.category = [daily_life, mobility]; 
+
+
+/*   // Max gathering
+  const entryMaxGatheringRows = await getCachedCellsRange(sheet, getEntryCellRange('18:18', entryIndex), false);  
+  // DPUID = 20.1
+  entry.max_gathering = await parseDataPoint(entryMaxGatheringRows[0], toInteger); // What is the maximum assembly allowed (PAX)?
+  entry.dpuid = '20.1'
+  entry.measure = await  parseMeasure(sheet, entryIndex);      // DPUID = 20.1 - 20.11
+  entry.land = await  parseTravelLand(sheet, entryIndex);      // DPUID = 30.1.1 - 30.1.9
+  entry.flight =await parseTravelFlight(sheet, entryIndex);  // DPUID = 30.2.1 - 30.2.7
+  entry.sea =await  parseTravelSea(sheet, entryIndex);        // DPUID = 30.3.1 - 30.3.9
+ */
+  /* var dse = {
     DSEUID: entry.entry_uid,
     Funnel: 'IS',
     Status: entry.status,
@@ -238,7 +384,12 @@ export function parseEntry(sheet, entryIndex, territoryCode) {
     SourceDateOfIssuance: entry.source_date_of_issuance, 
     SourceStartDate: entry.source_start_date,
     SourceEndDate: entry.source_end_date,
-    Answers: []
+    Answers: [],
+    dpuid: '20.1',
+    measure: entry.measure,
+    land: entry.land,
+    flight: entry.flight,
+    sea: entry.sea,
   };
 
   dse.Answers.push(createDataPoint('20.1', entry.max_gathering, 'Integer', entry.editor, entry.entry_uid, entry.type, entry.source_url, territoryCode));  
@@ -276,6 +427,6 @@ export function parseEntry(sheet, entryIndex, territoryCode) {
   dse.Answers.push(createDataPoint('30.3.5', entry.sea.foreigners_outbound, 'Travel', entry.editor, entry.entry_uid, entry.type, entry.source_url, territoryCode));
   dse.Answers.push(createDataPoint('30.3.6', entry.sea.cross_border_workers, 'Travel', entry.editor, entry.entry_uid, entry.type, entry.source_url, territoryCode));
   dse.Answers.push(createDataPoint('30.3.7', entry.sea.commerce, 'Travel', entry.editor, entry.entry_uid, entry.type, entry.source_url, territoryCode));
-  
-  return dse;
+   */
+  return entry;
 }

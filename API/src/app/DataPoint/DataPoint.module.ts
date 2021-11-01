@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import DataPointController from './DataPointController';
-import DataPoint, { DataPointSchema } from './DataPoint';
-import DataPointService from './DataPointService';
+import DataPointController from './DataPoint.controller';
+import DataPoint, { DataPointSchema } from './DataPoint.schema';
+import DataPointService from './DataPoint.service';
 import { Answer, AnswerService } from '../Answer';
 import { AnswerSchema } from '../Answer/Answer';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Category, CategoryService } from '../Category';
-import { CategorySchema } from '../Category/Category';
+import { CategorySchema } from '../Category/Category.schema';
 
 @Module({
     imports: [

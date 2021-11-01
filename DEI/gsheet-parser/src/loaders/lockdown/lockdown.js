@@ -9,8 +9,19 @@ import { connect } from '../../repositories';
 
 import * as TiofRegions from '../../services/regions.services';
 import * as TiofTerritories from '../../services/territories.services';
+import * as TioCategory from '../../services/categories.services';
+import * as TioAnswers from '../../services/answers.services';
+import * as TioDataPoint from '../../services/datapoints.services';
+import * as TioDataSetLayer from '../../services/datasetlayers.services';
+import * as TioDataSetEntry from '../../services/datasetentries.services';
 
 const { v4: uuidv4 } = require('uuid');
+
+const insertDSL = async (dataSetLayer) => {
+
+  const result = await TioDataSetLayer.create(dataSetLayer);
+  return result;
+}
 
 
 // Number of territories to query through batchGet at a time
@@ -892,6 +903,16 @@ export async function batchGetTerritoriesEntryData(territories) {
   /*   territories.forEach( row => {
        territoryIds.push(insertTerritory(row));
     }); */
+
+
+    const dslInput = {
+      name: "Covid-19 NPI",
+      description: "Covid-19 NPI",
+      type: "",
+      version: "1.0.0",
+    }
+    const DSL = await insertDSL(dslInput);
+    console.log({DSL});
     territories.forEach(row => {
       territoryIds.push(row);
       return false;
@@ -922,19 +943,66 @@ export async function batchGetTerritoriesEntryData(territories) {
           let entryCount = Math.ceil((columnCount - startCacheColumnIndex) / ENTRY_COLUMN_LENGTH);
           for (let entryIndex = 0; entryIndex < entryCount; entryIndex++) {
             // Cell ranges
-            let dataSetEntry = parseEntry(gridSheet, entryIndex, pldCode);
-            if (dataSetEntry && dataSetEntry.DSEUID != null) {
-              logger.log({dataSetEntry});
+            let dataSetEntry = await parseEntry(gridSheet, entryIndex, pldCode);
+            if (dataSetEntry && dataSetEntry.dpuid != null) {
+              // logger.log({dataSetEntry});
               entries.push(dataSetEntry);
-              // TODO: Yoyo, you can call DataSetEntry findOneOrCreate with the dataSetEntry, which contains Answers
             }
           }
            for(let entry of entries){
-           const {measure, land, flight,sea} = entry;
-            break
-          } 
+           const {category= [], source= "", status="",} = entry;
+
+           const dse = {
+             source,
+             status
+           }
+          await TioDataSetEntry.create(dse);
+         
+            category.forEach(async (category, index) => {
+                if(category.name === 'Daily Life'){
+                  const categoryInput = {
+                    dsl: DSL._id,
+                    refId: category.dpuid,
+                    name: category.name,
+                    order: 0
+                  };
+                  const categoryOutput = await TioCategory.create(categoryInput);
+                  console.log(categoryOutput);
+                  const {data_points} = category;;
+                  data_points.data.forEach(async (dataPoint, index) => {
+                    const refIId= `20.+${index+1}`
+                    const dataPointInput = {
+                      refId: refIId,
+                      name: dataPoint.name,
+                      nameShort: dataPoint.short,
+                      order: index,
+                      category: categoryOutput._id
+                    }
+                    const dataPointOutput = await TioDataPoint.create(dataPointInput);
+                    const {answer} = dataPoint;
+                    const answerinput = {
+                      refId: refId,
+                      category: dataPointOutput._id,
+                      dataPoint: dataPointOutput._id,
+                      value: answer.value,
+                      details: answer.details,
+                      dateStart: answer.dateStart,
+                      dateEnd: answer.dateEnd,
+                    }
+                    const answerOutput = await TioAnswer.create(answerinput);
+                    
+                  })
+
+                  let measure = category.value;
+                  let measureId = await insertMeasure(measure);
+                  entry.measureId = measureId;
+                  // logger.log({measureId});
+                }
+            
+            });
       }
     }
+  }
  
   }
   catch (error) {

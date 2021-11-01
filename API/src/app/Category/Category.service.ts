@@ -2,8 +2,8 @@ import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Model } from 'mongoose';
 import { DataPointService } from '../DataPoint';
-import { DSLService } from '../DataSetLayer';
-import Category from './Category';
+import {DSLService} from '../DataSetLayer';
+import Category from './Category.schema';
 import { CategoryInputDTO } from './Category.dto';
 
 @Injectable()

@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Model } from 'mongoose';
 import { AnswerService } from '../Answer';
 import { CategoryService } from '../Category';
-import DataPoint from './DataPoint';
+import DataPoint from './DataPoint.schema';
 import { DataPointInputDto } from './DataPoint.dto';
 
 @Injectable()

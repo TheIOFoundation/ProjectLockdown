@@ -3,7 +3,7 @@ import { Type } from "class-transformer";
 import { Category } from "../Category";
 import * as mongoose from 'mongoose';
 import { DataPoint } from "../DataPoint";
-import { DataSetLayer } from "../DataSetLayer";
+import {DSLModel}  from "../DataSetLayer";
 
 @Schema({_id: false})
 export  default class Answer extends Document{
@@ -34,8 +34,8 @@ export  default class Answer extends Document{
     @Type(() => DataPoint)
     dataPoint: DataPoint;
    
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: DataSetLayer.name })
-    @Type(() => DataSetLayer)
-    dsl: DataSetLayer;
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: DSLModel.name })
+    @Type(() => DSLModel)
+    dsl: DSLModel;
 }
 export const AnswerSchema = SchemaFactory.createForClass(Answer);

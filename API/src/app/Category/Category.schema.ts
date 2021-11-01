@@ -3,7 +3,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Type } from 'class-transformer';
 import { DataPoint } from '../DataPoint';
 import * as mongoose from 'mongoose';
-import { DataSetLayer } from '../DataSetLayer';
+import {DSLModel} from '../DataSetLayer';
 @Schema({_id: false})
 export default class Category extends Document {
   
@@ -34,8 +34,8 @@ export default class Category extends Document {
     @Type(() => DataPoint)
     dataPoints: DataPoint[];
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: DataSetLayer.name })
-    @Type(() => DataSetLayer)
-    dsl: DataSetLayer;
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: DSLModel.name })
+    @Type(() => DSLModel)
+    dsl: DSLModel;
 }
 export const CategorySchema = SchemaFactory.createForClass(Category);

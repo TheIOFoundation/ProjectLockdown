@@ -1,4 +1,4 @@
-import { IsArray, IsString } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class DataSetLayerDTOInput {
 
@@ -16,7 +16,4 @@ export class DataSetLayerDTOInput {
 
     @IsString()
     description: string;
-
-    @IsArray()
-    categories: string[];
 }

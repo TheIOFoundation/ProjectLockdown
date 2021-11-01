@@ -2,8 +2,8 @@ import {
     Controller,
     Get,
 } from '@nestjs/common';
-import Category from './Category';
-import CategoryService from './CategoryService';
+import Category from './Category.schema';
+import CategoryService from './Category.service';
 
 @Controller('Category')
 export default class CategoryController {

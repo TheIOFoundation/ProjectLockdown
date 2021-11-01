@@ -1,4 +1,4 @@
-export { default as CategoryController } from './CategoryController';
-export { default as Category } from './Category';
-export { default as CategoryService } from './CategoryService';
-export { default as CategoryModule } from './CategoryModule';
+export { default as CategoryController } from './Category.controller';
+export { default as Category } from './Category.schema';
+export { default as CategoryService } from './Category.service';
+export { default as CategoryModule } from './Category.module';

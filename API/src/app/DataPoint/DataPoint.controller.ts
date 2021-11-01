@@ -1,16 +1,10 @@
 import {
-    Body,
     Controller,
-    Delete,
     Get,
-    Param,
-    Patch,
     Post,
-    Query,
 } from '@nestjs/common';
-import { ObjectID } from 'typeorm';
-import DataPoint from './DataPoint';
-import DataPointService from './DataPointService';
+import DataPoint from './DataPoint.schema';
+import DataPointService from './DataPoint.service';
 
 @Controller('DataPoint')
 export default class DataPointController {
@@ -20,5 +14,11 @@ export default class DataPointController {
     async getDataPoints(): Promise<DataPoint[]> {
         return this.service.getAll();
     }
+
+    @Post()
+    async newDataPoints(): Promise<DataPoint[]> {
+        return this.service.getAll();
+    }
+  
   
 }
