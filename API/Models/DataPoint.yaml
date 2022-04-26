@@ -2,71 +2,27 @@ title: "\U0001F6A7DataPoint"
 type: object
 description: "# Status: \U0001F6A7\n\n## ⚡ About\n\n\n## \U0001F4E2 Used by\n- \U0001F4A0 \n\nDescribes PLD Data Points.\n\n###URL fields\n???URLIconID\n\nURLDoc\nPermalink where this DataPoint is documented.\n \n???URLDP\n\nURLEditorGuide\nPermalink to the Editor's Guide (Encoding) for this DataPoint. \n\n###Date fields\nDateCreated\n\nDateUpdated"
 properties:
-  DataPointUID:
+  Category:
+    $ref: ./Category.yaml
+  id:
     type: string
-    description: "Universal ID\n\U0001F6A7 Document how it is generated"
-  Definition:
+  nameShort:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  iconID:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+  order:
+    type: number
+  createdAt:
+    type: string
+  updatedAt:
+    type: string
+  category:
     type: object
-    properties:
-      NameShort:
-        type: string
-      Name:
-        type: string
-      Description:
-        type: string
-      IconID:
-        type: string
-      '@@@Inheritance':
-        type: string
-      '@@@DPObjectType':
-        type: string
-      Right:
-        $ref: ./Right.yaml
-      Tags:
-        type:
-          - string
-          - array
-        items:
-          $ref: ./Tag.yaml
-      Tooltip:
-        type: string
-      Definition:
-        type: string
-      Encoding:
-        $ref: ./Encoding.yaml
-  Status:
-    type: string
-  DateCreated:
-    $ref: ./Date.yaml
-  DateUpdated:
-    $ref: ./Date.yaml
-  Stats:
-    type:
-      - string
-      - array
-    items:
-      $ref: ./Stat.yaml
-  Answers:
-    type:
-      - string
-      - array
-    items:
-      $ref: ./Answer.yaml
-  URLDoc:
-    $ref: ./Link.yaml
-  URLEditorGuide:
-    $ref: ./Link.yaml
-  DSLUID:
-    type: string
-  Log:
-    type:
-      - string
-      - array
-    items:
-      $ref: ./Log.yaml
-  SnapshotUID:
-    type:
-      - string
-      - array
-    items:
-      $ref: ./Snapshot.yaml
