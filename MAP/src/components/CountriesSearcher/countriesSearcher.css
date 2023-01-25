@@ -14,7 +14,7 @@
   z-index: 1;
   background: var(--ld-bg);
   color: var(--ld-text);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 8px 0 var(--ld-gray-4);
   transition: width 1s;
 }
 
