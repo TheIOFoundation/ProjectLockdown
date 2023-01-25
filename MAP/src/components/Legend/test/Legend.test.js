@@ -15,7 +15,7 @@ it('renders correctly when there are no items',  () => {
     expect(tree).toMatchSnapshot();
   });
 
-it('render Correctly with context data' , async () => {
+it('>>>render Correctly with context data' , async () => {
     const tree =  renderer.create(
         <AppContext.Provider value={envMock}>
             <Legend {...props} />
